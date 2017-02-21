@@ -11,7 +11,6 @@ require "app.Extends"
 require "app.Functions"
 require "app.data.Strings"
 
-
 local function main()
     require("app.MyApp"):create():run()
 end
