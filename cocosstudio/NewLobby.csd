@@ -553,7 +553,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="headNode" ActionTag="-1825945369" Tag="2168" IconVisible="True" LeftMargin="62.1628" RightMargin="897.8372" TopMargin="47.1225" BottomMargin="492.8775" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="0.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="headNode" ActionTag="-1825945369" Tag="2168" IconVisible="True" LeftMargin="62.1628" RightMargin="897.8372" TopMargin="47.1225" BottomMargin="492.8775" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="62.1628" Y="492.8775" />

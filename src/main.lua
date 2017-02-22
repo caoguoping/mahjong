@@ -6,11 +6,11 @@ cc.FileUtils:getInstance():addSearchPath("res/")
 require "config"
 require "cocos.init"
 
-require "app.data.Constants"
+require "app.views.Constants"
 require "app.Extends"
 require "app.Functions"
-require "app.data.Strings"
-
+require "app.views.Strings"
+--cgp test
 local function main()
     require("app.MyApp"):create():run()
 end

@@ -67,6 +67,7 @@
           <Image Name="button_ok-all_1.png" />
           <Image Name="button_ok-all_2.png" />
           <Image Name="detail_bg.png" />
+          <Image Name="di.png" />
           <Image Name="frame_players_s.png" />
           <Image Name="headshot_1.png" />
           <Image Name="headshot_1_s.png" />
