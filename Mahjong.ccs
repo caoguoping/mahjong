@@ -265,9 +265,13 @@
           <Image Name="touming.png" />
           <Image Name="unfold_bg.png" />
         </Folder>
+        <Folder Name="playScene">
+          <Image Name="playBg.png" />
+        </Folder>
         <Project Name="lobbyHead.csd" Type="Node" />
         <Project Name="LoginScene.csd" Type="Scene" />
         <Project Name="NewLobby.csd" Type="Scene" />
+        <Project Name="playScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>
