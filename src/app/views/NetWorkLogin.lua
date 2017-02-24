@@ -2,7 +2,7 @@
 
 local CURRENT_MODULE_NAME = ...
 local DataMgr     = import(".DataManager"):getInstance()
-local viewMgr = import(".ViewManager"):getInstance()
+local LayerMgr = import(".LayerManager"):getInstance()
 
 local s_inst = nil
 local NetWorkLogin = class("NetWorkLogin", display.newNode)
@@ -71,7 +71,9 @@ function NetWorkLogin:loginComplete( rcv )
     DataMgr.myBaseData.isFirstLogin       = rcv:readDWORD()   
     DataMgr.myBaseData.rmb                = rcv:readDWORD()  
     rcv:destroys()
-    viewMgr.loginScene:getApp():enterScene("LobbyScene")
+   -- viewMgr.loginScene:getApp():enterScene("LobbyScene")
+   -- LayerMgr.LoginScene:getResourceNode():setVisible(false)
+    LayerMgr:showLayer(LayerMgr.Enum.MainLayer)
 
 end
 

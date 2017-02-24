@@ -24,7 +24,7 @@ function NetWorkGame:inits()
 end
 
 
-function LobbyScene:handleEventGame( event)
+function NetWorkGame:handleEventGame( event)
     local rcv = DataRcv:create(event)
     local wMainCmd = rcv:readWORD()
     local wSubCmd = rcv:readWORD()

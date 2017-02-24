@@ -2,7 +2,8 @@ local CURRENT_MODULE_NAME = ...
 
 local DataMgr     = import(".DataManager"):getInstance()
 local NetWorkLogin = import(".NetWorkLogin"):getInstance()
-local viewMgr = import(".ViewManager"):getInstance()
+local LayerMgr = import(".LayerManager"):getInstance()
+
 
 local LoginScene = class("LoginScene", cc.load("mvc").ViewBase)
 LoginScene.RESOURCE_FILENAME = "LoginScene.csb"
@@ -17,7 +18,7 @@ function LoginScene:onEnter()
     local rootNode = self:getResourceNode()
 
 
-    viewMgr.loginScene = self
+    LayerMgr.LoginScene = self
 
     local txUid = rootNode:getChildByName("TextField_uid")
     local btnLogin = rootNode:getChildByName("Button_login")
