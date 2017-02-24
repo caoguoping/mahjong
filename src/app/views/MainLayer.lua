@@ -4,9 +4,6 @@ local CURRENT_MODULE_NAME = ...
 
 local DataMgr     = import(".DataManager"):getInstance()
 local LayerMgr= import(".LayerManager"):getInstance()
-local NetWorkLogin = import(".NetWorkLogin"):getInstance()
-local NetWorkGame = import(".NetWorkGame"):getInstance()
-
 
 local MainLayer = class("MainLayer", display.newLayer)
 

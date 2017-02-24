@@ -2,7 +2,6 @@ local CURRENT_MODULE_NAME = ...
 
 local DataMgr     = import(".DataManager"):getInstance()
 local LayerMgr = import(".LayerManager"):getInstance()
-local NetWorkLogin = import(".NetWorkLogin"):getInstance()
 
 local PlayLayer = class("PlayLayer", display.newLayer)
 
@@ -11,9 +10,11 @@ function PlayLayer:ctor()
     local rootNode = cc.CSLoader:createNode("playScene.csb"):addTo(self)
     self.rootNode = rootNode
     local btnClose = rootNode:getChildByName("Button_Close")
-    btnClose:onClicked(function ()
+    btnClose:onClicked(
+        function ()
         LayerMgr:showLayer(LayerMgr.Enum.MainLayer, params)
-    end)
+        TTSocketClient:getInstance():closeMySocket(girl.SocketType.Game)
+        end)
 
 end
   

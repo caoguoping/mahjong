@@ -41,7 +41,7 @@ function NetWorkLogin:handleEventLogin( event)
         if wSubCmd == 100 then
             self:loginComplete(rcv)
         elseif wSubCmd == 105 then
-            self:registerRole()
+            self:registerRole(rcv)
         else
             --
         end
@@ -65,44 +65,53 @@ function NetWorkLogin:loginComplete( rcv )
     DataMgr.myBaseData.cbGender           = rcv:readByte()    
     DataMgr.myBaseData.cbMoorMachine      = rcv:readByte()    
     DataMgr.myBaseData.szAccounts         = rcv:readString(64)
-    DataMgr.myBaseData.szNickName         =  rcv:readString(64)
+    DataMgr.myBaseData.szNickName         = rcv:readString(64)
     DataMgr.myBaseData.szGroupName        = rcv:readString(64)
     DataMgr.myBaseData.cbShowServerStatus = rcv:readByte()    
     DataMgr.myBaseData.isFirstLogin       = rcv:readDWORD()   
     DataMgr.myBaseData.rmb                = rcv:readDWORD()  
     rcv:destroys()
-   -- viewMgr.loginScene:getApp():enterScene("LobbyScene")
-   -- LayerMgr.LoginScene:getResourceNode():setVisible(false)
+
     LayerMgr:showLayer(LayerMgr.Enum.MainLayer)
 
 end
 
-function NetWorkLogin:registerRole( )
+function NetWorkLogin:registerRole( rcv)
 
-    local uid = "1711514028"
+    local uid = DataMgr.myBaseData.uid
     local dwPlazaVersion = 65536
-    local szMachineID = uid
-    local szPassword = uid
+    local szMachineID = "aaaaaa"
+    local szLogonPass = uid
+    local szInsurePass = uid
     local wFaceID = 1
     local cbGender = 1
 
     local szAccounts = uid
-    local szNickName
-    local szSpreader
-    local szPassPortID
-    local szCompellation
+    local szNickName = uid
+    local szSpreader = ""
+    local szPassPortID = ""
+    local szCompellation = ""
 -- uid
     local cbValidateFlags    
 
     local snd = DataSnd:create(1, 3)
-    snd:wrDWORD(65536)
-    snd:wrString(uid, 66)
-    snd:wrString(uid, 64)
-    snd:wrString(uid, 66)
+    snd:wrDWORD(dwPlazaVersion)
+    snd:wrString(szMachineID, 66)
+    snd:wrString(szLogonPass, 66)
+    snd:wrString(szInsurePass, 66)
+    snd:wrWORD(wFaceID)
+    snd:wrByte(cbGender)
+    snd:wrString(szAccounts, 64)
+    snd:wrString(szNickName, 64)
+    snd:wrString(szSpreader, 64)
+    snd:wrString(szPassPortID, 38)
+    snd:wrString(szCompellation, 32)
     snd:wrString(uid, 32)
-    snd:wrDWORD(3)
+    snd:wrByte(3)
     snd:sendData(girl.SocketType.Login)
     snd:release();
+
+    rcv:destroys()
 end
 
 

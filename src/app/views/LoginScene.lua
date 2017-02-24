@@ -1,9 +1,9 @@
 local CURRENT_MODULE_NAME = ...
 
 local DataMgr     = import(".DataManager"):getInstance()
-local NetWorkLogin = import(".NetWorkLogin"):getInstance()
 local LayerMgr = import(".LayerManager"):getInstance()
-
+local NetWorkLogin = import(".NetWorkLogin"):getInstance()
+local NetWorkGame = import(".NetWorkGame"):getInstance()
 
 local LoginScene = class("LoginScene", cc.load("mvc").ViewBase)
 LoginScene.RESOURCE_FILENAME = "LoginScene.csb"
@@ -47,21 +47,21 @@ function LoginScene:onEnter()
     end)
 
     btnFast2:onClicked(function (  )
-        local strUid = "1711514028"
+        local strUid = "1711514029"
         DataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
     btnFast3:onClicked(function (  )
-        local strUid = "1711514028"
+        local strUid = "1711514030"
         DataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
     btnFast4:onClicked(function (  )
-        local strUid = "1711514028"
+        local strUid = "1711514031"
         DataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
