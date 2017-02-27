@@ -77,10 +77,10 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/headshot_4.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="myName_0_3" ActionTag="923459793" Tag="1688" IconVisible="False" LeftMargin="68.1069" RightMargin="-203.1069" TopMargin="-23.5510" BottomMargin="-1.4490" FontSize="22" LabelText="我是笨笨笨笨" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="myName_0_3" ActionTag="923459793" Tag="1688" IconVisible="False" LeftMargin="68.1069" RightMargin="-203.1069" TopMargin="-23.3644" BottomMargin="-1.6356" FontSize="22" LabelText="我是笨笨笨笨" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="135.0000" Y="25.0000" />
-            <AnchorPoint ScaleX="0.6276" ScaleY="0.4116" />
-            <Position X="152.8329" Y="8.8410" />
+            <AnchorPoint ScaleX="0.6237" ScaleY="0.5172" />
+            <Position X="152.3026" Y="11.2938" />
             <Scale ScaleX="1.0000" ScaleY="0.9293" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
