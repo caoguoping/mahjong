@@ -404,6 +404,87 @@
             <Image Name="ing_zuojia_z_8.png" />
             <Image Name="ing_zuojia_z_9.png" />
           </Folder>
+          <Folder Name="mehand">
+            <Folder Name="paimian">
+              <Image Name="mahjong_tile_big_bing_1.png" />
+              <Image Name="mahjong_tile_big_bing_2.png" />
+              <Image Name="mahjong_tile_big_bing_3.png" />
+              <Image Name="mahjong_tile_big_bing_4.png" />
+              <Image Name="mahjong_tile_big_bing_5.png" />
+              <Image Name="mahjong_tile_big_bing_6.png" />
+              <Image Name="mahjong_tile_big_bing_7.png" />
+              <Image Name="mahjong_tile_big_bing_8.png" />
+              <Image Name="mahjong_tile_big_bing_9.png" />
+              <Image Name="mahjong_tile_big_feng_bei.png" />
+              <Image Name="mahjong_tile_big_feng_dong.png" />
+              <Image Name="mahjong_tile_big_feng_nan.png" />
+              <Image Name="mahjong_tile_big_feng_xi.png" />
+              <Image Name="mahjong_tile_big_flower_chun.png" />
+              <Image Name="mahjong_tile_big_flower_dong.png" />
+              <Image Name="mahjong_tile_big_flower_jv.png" />
+              <Image Name="mahjong_tile_big_flower_lan.png" />
+              <Image Name="mahjong_tile_big_flower_mei.png" />
+              <Image Name="mahjong_tile_big_flower_qiu.png" />
+              <Image Name="mahjong_tile_big_flower_xia.png" />
+              <Image Name="mahjong_tile_big_flower_zhu.png" />
+              <Image Name="mahjong_tile_big_tiao_1.png" />
+              <Image Name="mahjong_tile_big_tiao_2.png" />
+              <Image Name="mahjong_tile_big_tiao_3.png" />
+              <Image Name="mahjong_tile_big_tiao_4.png" />
+              <Image Name="mahjong_tile_big_tiao_5.png" />
+              <Image Name="mahjong_tile_big_tiao_6.png" />
+              <Image Name="mahjong_tile_big_tiao_7.png" />
+              <Image Name="mahjong_tile_big_tiao_8.png" />
+              <Image Name="mahjong_tile_big_tiao_9.png" />
+              <Image Name="mahjong_tile_big_wan_1.png" />
+              <Image Name="mahjong_tile_big_wan_2.png" />
+              <Image Name="mahjong_tile_big_wan_3.png" />
+              <Image Name="mahjong_tile_big_wan_4.png" />
+              <Image Name="mahjong_tile_big_wan_5.png" />
+              <Image Name="mahjong_tile_big_wan_6.png" />
+              <Image Name="mahjong_tile_big_wan_7.png" />
+              <Image Name="mahjong_tile_big_wan_8.png" />
+              <Image Name="mahjong_tile_big_wan_9.png" />
+              <Image Name="mahjong_tile_big_zi_baiban.png" />
+              <Image Name="mahjong_tile_big_zi_fa.png" />
+              <Image Name="mahjong_tile_big_zi_zhong.png" />
+              <Image Name="player.png" />
+            </Folder>
+            <Image Name="dachu_1.png" />
+            <Image Name="dachu_2.png" />
+            <Image Name="dachu_3.png" />
+            <Image Name="dachu_4.png" />
+            <Image Name="Frame_ziji_pingpaibei_1.png" />
+            <Image Name="Frame_ziji_pingpaibei_10.png" />
+            <Image Name="Frame_ziji_pingpaibei_11.png" />
+            <Image Name="Frame_ziji_pingpaibei_12.png" />
+            <Image Name="Frame_ziji_pingpaibei_13.png" />
+            <Image Name="Frame_ziji_pingpaibei_14.png" />
+            <Image Name="Frame_ziji_pingpaibei_2.png" />
+            <Image Name="Frame_ziji_pingpaibei_3.png" />
+            <Image Name="Frame_ziji_pingpaibei_4.png" />
+            <Image Name="Frame_ziji_pingpaibei_5.png" />
+            <Image Name="Frame_ziji_pingpaibei_6.png" />
+            <Image Name="Frame_ziji_pingpaibei_7.png" />
+            <Image Name="Frame_ziji_pingpaibei_8.png" />
+            <Image Name="Frame_ziji_pingpaibei_9.png" />
+            <Image Name="Frame_ziji_pingpaizheng_1.png" />
+            <Image Name="Frame_ziji_pingpaizheng_10.png" />
+            <Image Name="Frame_ziji_pingpaizheng_11.png" />
+            <Image Name="Frame_ziji_pingpaizheng_12.png" />
+            <Image Name="Frame_ziji_pingpaizheng_13.png" />
+            <Image Name="Frame_ziji_pingpaizheng_14.png" />
+            <Image Name="Frame_ziji_pingpaizheng_2.png" />
+            <Image Name="Frame_ziji_pingpaizheng_3.png" />
+            <Image Name="Frame_ziji_pingpaizheng_4.png" />
+            <Image Name="Frame_ziji_pingpaizheng_5.png" />
+            <Image Name="Frame_ziji_pingpaizheng_6.png" />
+            <Image Name="Frame_ziji_pingpaizheng_7.png" />
+            <Image Name="Frame_ziji_pingpaizheng_8.png" />
+            <Image Name="Frame_ziji_pingpaizheng_9.png" />
+            <Image Name="Frame_ziji_shoupai-zhezhao.png" />
+            <Image Name="img_spe_backcard.png" />
+          </Folder>
           <Folder Name="righthand">
             <Folder Name="dachupai">
               <Image Name="Frame_youjia_1_1.png" />
@@ -718,77 +799,8 @@
             <Image Name="Frame_3_yapai_7.png" />
             <Image Name="Frame_3_yapai_8.png" />
             <Image Name="Frame_3_yapai_9.png" />
+            <Image Name="player.png" />
           </Folder>
-          <Image Name="Frame_ziji_dachupai_1.png" />
-          <Image Name="Frame_ziji_dachupai_2.png" />
-          <Image Name="Frame_ziji_dachupai_3.png" />
-          <Image Name="Frame_ziji_dachupai_4.png" />
-          <Image Name="Frame_ziji_pingpaibei_1.png" />
-          <Image Name="Frame_ziji_pingpaibei_10.png" />
-          <Image Name="Frame_ziji_pingpaibei_11.png" />
-          <Image Name="Frame_ziji_pingpaibei_12.png" />
-          <Image Name="Frame_ziji_pingpaibei_13.png" />
-          <Image Name="Frame_ziji_pingpaibei_14.png" />
-          <Image Name="Frame_ziji_pingpaibei_2.png" />
-          <Image Name="Frame_ziji_pingpaibei_3.png" />
-          <Image Name="Frame_ziji_pingpaibei_4.png" />
-          <Image Name="Frame_ziji_pingpaibei_5.png" />
-          <Image Name="Frame_ziji_pingpaibei_6.png" />
-          <Image Name="Frame_ziji_pingpaibei_7.png" />
-          <Image Name="Frame_ziji_pingpaibei_8.png" />
-          <Image Name="Frame_ziji_pingpaibei_9.png" />
-          <Image Name="Frame_ziji_pingpaizheng_1.png" />
-          <Image Name="Frame_ziji_pingpaizheng_10.png" />
-          <Image Name="Frame_ziji_pingpaizheng_11.png" />
-          <Image Name="Frame_ziji_pingpaizheng_12.png" />
-          <Image Name="Frame_ziji_pingpaizheng_13.png" />
-          <Image Name="Frame_ziji_pingpaizheng_14.png" />
-          <Image Name="Frame_ziji_pingpaizheng_2.png" />
-          <Image Name="Frame_ziji_pingpaizheng_3.png" />
-          <Image Name="Frame_ziji_pingpaizheng_4.png" />
-          <Image Name="Frame_ziji_pingpaizheng_5.png" />
-          <Image Name="Frame_ziji_pingpaizheng_6.png" />
-          <Image Name="Frame_ziji_pingpaizheng_7.png" />
-          <Image Name="Frame_ziji_pingpaizheng_8.png" />
-          <Image Name="Frame_ziji_pingpaizheng_9.png" />
-          <Image Name="Frame_ziji_shoupai-zhezhao.png" />
-          <Image Name="img_cardvalue1.png" />
-          <Image Name="img_cardvalue11.png" />
-          <Image Name="img_cardvalue12.png" />
-          <Image Name="img_cardvalue13.png" />
-          <Image Name="img_cardvalue14.png" />
-          <Image Name="img_cardvalue15.png" />
-          <Image Name="img_cardvalue16.png" />
-          <Image Name="img_cardvalue17.png" />
-          <Image Name="img_cardvalue18.png" />
-          <Image Name="img_cardvalue19.png" />
-          <Image Name="img_cardvalue2.png" />
-          <Image Name="img_cardvalue21.png" />
-          <Image Name="img_cardvalue22.png" />
-          <Image Name="img_cardvalue23.png" />
-          <Image Name="img_cardvalue24.png" />
-          <Image Name="img_cardvalue25.png" />
-          <Image Name="img_cardvalue26.png" />
-          <Image Name="img_cardvalue27.png" />
-          <Image Name="img_cardvalue28.png" />
-          <Image Name="img_cardvalue29.png" />
-          <Image Name="img_cardvalue3.png" />
-          <Image Name="img_cardvalue31.png" />
-          <Image Name="img_cardvalue32.png" />
-          <Image Name="img_cardvalue33.png" />
-          <Image Name="img_cardvalue34.png" />
-          <Image Name="img_cardvalue35.png" />
-          <Image Name="img_cardvalue36.png" />
-          <Image Name="img_cardvalue37.png" />
-          <Image Name="img_cardvalue39.png" />
-          <Image Name="img_cardvalue4.png" />
-          <Image Name="img_cardvalue5.png" />
-          <Image Name="img_cardvalue6.png" />
-          <Image Name="img_cardvalue7.png" />
-          <Image Name="img_cardvalue8.png" />
-          <Image Name="img_cardvalue9.png" />
-          <Image Name="img_normal_card.png" />
-          <Image Name="img_spe_backcard.png" />
         </Folder>
         <Folder Name="effect">
           <Image Name="_sdasd.png" />
@@ -1068,10 +1080,6 @@
           <Image Name="unfold_bg.png" />
         </Folder>
         <Folder Name="playScene" />
-        <Project Name="lobbyHead.csd" Type="Node" />
-        <Project Name="LoginScene.csd" Type="Scene" />
-        <Project Name="NewLobby.csd" Type="Scene" />
-        <Project Name="playScene.csd" Type="Scene" />
         <Folder Name="Test">
           <Image Name="Screenshot_2017-02-23-17-33-27.png" />
           <Image Name="Screenshot_2017-02-23-17-33-36.png" />
@@ -1080,6 +1088,10 @@
           <Image Name="Screenshot_2017-02-23-17-41-26.png" />
           <Image Name="Screenshot_2017-02-23-17-41-43.png" />
         </Folder>
+        <Project Name="lobbyHead.csd" Type="Node" />
+        <Project Name="LoginScene.csd" Type="Scene" />
+        <Project Name="NewLobby.csd" Type="Scene" />
+        <Project Name="playScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>
