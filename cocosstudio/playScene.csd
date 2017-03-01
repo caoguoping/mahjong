@@ -451,7 +451,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_wallRight" CanEdit="False" ActionTag="1151725671" Tag="86" IconVisible="False" LeftMargin="1079.8501" RightMargin="70.1499" TopMargin="101.9337" BottomMargin="138.0663" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_wallRight" ActionTag="1151725671" Tag="86" IconVisible="False" LeftMargin="1079.8501" RightMargin="70.1499" TopMargin="101.9337" BottomMargin="138.0663" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="130.0000" Y="480.0000" />
             <Children>
               <AbstractNodeData Name="Image_u18" ActionTag="-1830022192" Tag="87" IconVisible="False" LeftMargin="41.2068" RightMargin="-38.2068" TopMargin="-26.3962" BottomMargin="405.3962" LeftEage="50" RightEage="50" TopEage="38" BottomEage="38" Scale9OriginX="50" Scale9OriginY="38" Scale9Width="27" Scale9Height="25" ctype="ImageViewObjectData">
@@ -826,7 +826,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_standUp" CanEdit="False" ActionTag="1935380487" Tag="364" IconVisible="False" LeftMargin="405.5647" RightMargin="374.4353" TopMargin="-68.3631" BottomMargin="688.3631" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_standUp" ActionTag="1935380487" Tag="364" IconVisible="False" LeftMargin="405.5647" RightMargin="374.4353" TopMargin="-68.3631" BottomMargin="688.3631" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="500.0000" Y="100.0000" />
             <Children>
               <AbstractNodeData Name="Image_u14" ActionTag="-1339850155" Tag="365" IconVisible="False" LeftMargin="-46.3713" RightMargin="461.3713" TopMargin="46.4283" BottomMargin="-48.4283" LeftEage="30" RightEage="30" TopEage="38" BottomEage="38" Scale9OriginX="30" Scale9OriginY="38" Scale9Width="25" Scale9Height="26" ctype="ImageViewObjectData">
@@ -981,7 +981,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_wallUp" CanEdit="False" ActionTag="-904745731" Tag="123" IconVisible="False" LeftMargin="267.6617" RightMargin="262.3383" TopMargin="45.2145" BottomMargin="604.7855" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_wallUp" ActionTag="-904745731" Tag="123" IconVisible="False" LeftMargin="267.6617" RightMargin="262.3383" TopMargin="45.2145" BottomMargin="604.7855" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="750.0000" Y="70.0000" />
             <Children>
               <AbstractNodeData Name="Image_u1" ActionTag="474455693" Tag="158" IconVisible="False" LeftMargin="62.3246" RightMargin="592.6754" TopMargin="-11.9966" BottomMargin="-23.0034" LeftEage="31" RightEage="31" TopEage="38" BottomEage="38" Scale9OriginX="31" Scale9OriginY="38" Scale9Width="33" Scale9Height="29" ctype="ImageViewObjectData">
@@ -1380,7 +1380,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_standLeft" CanEdit="False" ActionTag="1774609203" Tag="297" IconVisible="False" LeftMargin="57.8198" RightMargin="1092.1802" TopMargin="23.9437" BottomMargin="216.0563" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_standLeft" ActionTag="1774609203" Tag="297" IconVisible="False" LeftMargin="57.8198" RightMargin="1092.1802" TopMargin="23.9437" BottomMargin="216.0563" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="130.0000" Y="480.0000" />
             <Children>
               <AbstractNodeData Name="Image_1" ActionTag="-1196696826" Tag="307" IconVisible="False" LeftMargin="66.8829" RightMargin="-27.8829" TopMargin="29.4990" BottomMargin="316.5010" LeftEage="30" RightEage="30" TopEage="38" BottomEage="38" Scale9OriginX="30" Scale9OriginY="38" Scale9Width="31" Scale9Height="58" ctype="ImageViewObjectData">
@@ -1535,7 +1535,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_standRight" CanEdit="False" ActionTag="1104830451" Tag="334" IconVisible="False" LeftMargin="1192.1992" RightMargin="-42.1992" TopMargin="46.8193" BottomMargin="193.1807" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_standRight" ActionTag="1104830451" Tag="334" IconVisible="False" LeftMargin="1192.1992" RightMargin="-42.1992" TopMargin="46.8193" BottomMargin="193.1807" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="130.0000" Y="480.0000" />
             <Children>
               <AbstractNodeData Name="Image_r14" ActionTag="1193413510" Tag="335" IconVisible="False" LeftMargin="63.1010" RightMargin="-24.1010" TopMargin="28.3238" BottomMargin="317.6762" LeftEage="30" RightEage="30" TopEage="38" BottomEage="38" Scale9OriginX="30" Scale9OriginY="38" Scale9Width="31" Scale9Height="58" ctype="ImageViewObjectData">
@@ -1690,198 +1690,544 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_dachuMe" ActionTag="1929398311" Tag="243" IconVisible="False" LeftMargin="244.3521" RightMargin="1015.6479" TopMargin="458.6021" BottomMargin="241.3979" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
-            <Size X="20.0000" Y="20.0000" />
+          <AbstractNodeData Name="Panel_dachuMe" ActionTag="1929398311" Tag="243" IconVisible="False" LeftMargin="560.6703" RightMargin="669.3297" TopMargin="411.2191" BottomMargin="238.7809" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="50.0000" Y="70.0000" />
             <Children>
-              <AbstractNodeData Name="Button_1" ActionTag="585176741" Tag="364" IconVisible="False" LeftMargin="250.1705" RightMargin="-326.1705" TopMargin="-113.5728" BottomMargin="-0.4272" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="66" Scale9Height="112" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="96.0000" Y="134.0000" />
+              <AbstractNodeData Name="Image_1" ActionTag="1322688975" Tag="495" IconVisible="False" LeftMargin="-89.3123" RightMargin="39.3123" TopMargin="-53.7859" BottomMargin="-10.2141" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="34" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="134.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_paiMian" ActionTag="-264725259" Tag="365" IconVisible="False" LeftMargin="4.4008" RightMargin="3.5992" TopMargin="-5.9360" BottomMargin="33.9360" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="ImageFace" ActionTag="-679329417" Tag="496" IconVisible="False" LeftMargin="3.4391" RightMargin="8.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="88.0000" Y="106.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="48.4008" Y="86.9360" />
-                    <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5042" Y="0.6488" />
-                    <PreSize X="0.9167" Y="0.7910" />
-                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                    <PrePosition X="0.4744" Y="0.6639" />
+                    <PreSize X="0.8800" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="298.1705" Y="66.5728" />
-                <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                <Position X="-39.3123" Y="56.7859" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="14.9085" Y="3.3286" />
-                <PreSize X="4.8000" Y="6.7000" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <NormalFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="-0.7862" Y="0.8112" />
+                <PreSize X="2.0000" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_2" ActionTag="870033126" Tag="366" IconVisible="False" LeftMargin="283.8831" RightMargin="-359.8831" TopMargin="-113.8270" BottomMargin="-0.1730" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="66" Scale9Height="112" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="96.0000" Y="134.0000" />
+              <AbstractNodeData Name="Image_2" ActionTag="-291213881" Tag="497" IconVisible="False" LeftMargin="-53.3314" RightMargin="3.3314" TopMargin="-53.7887" BottomMargin="-10.2113" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="34" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="134.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_paiMian" ActionTag="-780685423" Tag="367" IconVisible="False" LeftMargin="4.4008" RightMargin="3.5992" TopMargin="-5.9360" BottomMargin="33.9360" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="ImageFace" ActionTag="698058561" Tag="498" IconVisible="False" LeftMargin="3.4391" RightMargin="8.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="88.0000" Y="106.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="48.4008" Y="86.9360" />
-                    <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5042" Y="0.6488" />
-                    <PreSize X="0.9167" Y="0.7910" />
-                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                    <PrePosition X="0.4744" Y="0.6639" />
+                    <PreSize X="0.8800" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="331.8831" Y="66.8270" />
-                <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                <Position X="-3.3314" Y="56.7887" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="16.5942" Y="3.3413" />
-                <PreSize X="4.8000" Y="6.7000" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <NormalFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="-0.0666" Y="0.8113" />
+                <PreSize X="2.0000" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_3" ActionTag="183664231" Tag="368" IconVisible="False" LeftMargin="317.6560" RightMargin="-393.6560" TopMargin="-113.8270" BottomMargin="-0.1730" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="66" Scale9Height="112" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="96.0000" Y="134.0000" />
+              <AbstractNodeData Name="Image_3" ActionTag="1101747191" Tag="499" IconVisible="False" LeftMargin="-17.7390" RightMargin="-31.2610" TopMargin="-53.7887" BottomMargin="-10.2113" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="33" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="99.0000" Y="134.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_paiMian" ActionTag="-450277366" Tag="369" IconVisible="False" LeftMargin="4.4008" RightMargin="3.5992" TopMargin="-5.9360" BottomMargin="33.9360" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="ImageFace" ActionTag="644880907" Tag="500" IconVisible="False" LeftMargin="3.4391" RightMargin="7.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="88.0000" Y="106.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="48.4008" Y="86.9360" />
-                    <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5042" Y="0.6488" />
-                    <PreSize X="0.9167" Y="0.7910" />
-                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                    <PrePosition X="0.4792" Y="0.6639" />
+                    <PreSize X="0.8889" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_1.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="365.6560" Y="66.8270" />
-                <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                <Position X="31.7610" Y="56.7887" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="18.2828" Y="3.3413" />
-                <PreSize X="4.8000" Y="6.7000" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <NormalFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="0.6352" Y="0.8113" />
+                <PreSize X="1.9800" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_4" ActionTag="-761128302" Tag="370" IconVisible="False" LeftMargin="350.6240" RightMargin="-426.6240" TopMargin="-113.8270" BottomMargin="-0.1730" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="66" Scale9Height="112" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="96.0000" Y="134.0000" />
+              <AbstractNodeData Name="Image_4" ActionTag="-2115105144" Tag="501" IconVisible="False" LeftMargin="17.8959" RightMargin="-66.8959" TopMargin="-53.7887" BottomMargin="-10.2113" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="33" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="99.0000" Y="134.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_paiMian" ActionTag="94767800" Tag="371" IconVisible="False" LeftMargin="4.4008" RightMargin="3.5992" TopMargin="-5.9360" BottomMargin="33.9360" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="ImageFace" ActionTag="527806551" Tag="502" IconVisible="False" LeftMargin="3.4391" RightMargin="7.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="88.0000" Y="106.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="48.4008" Y="86.9360" />
-                    <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5042" Y="0.6488" />
-                    <PreSize X="0.9167" Y="0.7910" />
-                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                    <PrePosition X="0.4792" Y="0.6639" />
+                    <PreSize X="0.8889" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="398.6240" Y="66.8270" />
-                <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                <Position X="67.3959" Y="56.7887" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="19.9312" Y="3.3413" />
-                <PreSize X="4.8000" Y="6.7000" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <NormalFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="1.3479" Y="0.8113" />
+                <PreSize X="1.9800" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_5" ActionTag="-1380962933" Tag="372" IconVisible="False" LeftMargin="383.7748" RightMargin="-459.7748" TopMargin="-113.8271" BottomMargin="-0.1729" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="66" Scale9Height="112" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Image_5" ActionTag="-223555507" Tag="503" IconVisible="False" LeftMargin="54.9119" RightMargin="-100.9119" TopMargin="-53.7887" BottomMargin="-10.2113" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="30" Scale9Height="46" ctype="ImageViewObjectData">
                 <Size X="96.0000" Y="134.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_paiMian" ActionTag="1960616856" Tag="373" IconVisible="False" LeftMargin="4.4008" RightMargin="3.5992" TopMargin="-5.9360" BottomMargin="33.9360" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1786571348" Tag="504" IconVisible="False" LeftMargin="3.8341" RightMargin="4.1659" TopMargin="-9.6459" BottomMargin="37.6459" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="88.0000" Y="106.0000" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="48.4008" Y="86.9360" />
-                    <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                    <AnchorPoint ScaleX="0.4701" ScaleY="0.3938" />
+                    <Position X="45.2014" Y="79.3898" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5042" Y="0.6488" />
+                    <PrePosition X="0.4708" Y="0.5925" />
                     <PreSize X="0.9167" Y="0.7910" />
-                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="431.7748" Y="66.8271" />
-                <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                <Position X="102.9119" Y="56.7887" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="21.5887" Y="3.3414" />
-                <PreSize X="4.8000" Y="6.7000" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <NormalFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="2.0582" Y="0.8113" />
+                <PreSize X="1.9200" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_3.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_6" ActionTag="-1084612559" Tag="374" IconVisible="False" LeftMargin="416.7935" RightMargin="-492.7935" TopMargin="-113.8270" BottomMargin="-0.1730" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="66" Scale9Height="112" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Image_6" ActionTag="-206225206" Tag="505" IconVisible="False" LeftMargin="90.3869" RightMargin="-136.3869" TopMargin="-53.7887" BottomMargin="-10.2113" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="30" Scale9Height="46" ctype="ImageViewObjectData">
                 <Size X="96.0000" Y="134.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_paiMian" ActionTag="772547973" Tag="375" IconVisible="False" LeftMargin="4.4008" RightMargin="3.5992" TopMargin="-5.9360" BottomMargin="33.9360" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="ImageFace" ActionTag="-984465610" Tag="506" IconVisible="False" LeftMargin="1.3340" RightMargin="6.6660" TopMargin="-7.9499" BottomMargin="35.9499" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="88.0000" Y="106.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="48.4008" Y="86.9360" />
-                    <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                    <Position X="45.3340" Y="88.9499" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5042" Y="0.6488" />
+                    <PrePosition X="0.4722" Y="0.6638" />
                     <PreSize X="0.9167" Y="0.7910" />
-                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_9.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="464.7935" Y="66.8270" />
-                <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                <Position X="138.3869" Y="56.7887" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="23.2397" Y="3.3413" />
-                <PreSize X="4.8000" Y="6.7000" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <NormalFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="2.7677" Y="0.8113" />
+                <PreSize X="1.9200" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_3.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_7" ActionTag="-240213101" Tag="376" IconVisible="False" LeftMargin="450.5066" RightMargin="-526.5066" TopMargin="-113.8270" BottomMargin="-0.1730" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="66" Scale9Height="112" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="96.0000" Y="134.0000" />
+              <AbstractNodeData Name="Image_7" ActionTag="-911148429" Tag="507" IconVisible="False" LeftMargin="125.6053" RightMargin="-172.6053" TopMargin="-53.7887" BottomMargin="-10.2113" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="31" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="97.0000" Y="134.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_paiMian" ActionTag="-1816272814" Tag="377" IconVisible="False" LeftMargin="4.4008" RightMargin="3.5992" TopMargin="-5.9360" BottomMargin="33.9360" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="ImageFace" ActionTag="1743268450" Tag="508" IconVisible="False" LeftMargin="3.4391" RightMargin="5.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="88.0000" Y="106.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="48.4008" Y="86.9360" />
-                    <Scale ScaleX="0.9000" ScaleY="0.9000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5042" Y="0.6488" />
-                    <PreSize X="0.9167" Y="0.7910" />
+                    <PrePosition X="0.4891" Y="0.6639" />
+                    <PreSize X="0.9072" Y="0.7910" />
                     <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="498.5066" Y="66.8270" />
-                <Scale ScaleX="0.4000" ScaleY="0.4000" />
+                <Position X="174.1053" Y="56.7887" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="24.9253" Y="3.3413" />
-                <PreSize X="4.8000" Y="6.7000" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <NormalFileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <PrePosition X="3.4821" Y="0.8113" />
+                <PreSize X="1.9400" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_8" ActionTag="-245296909" Tag="509" IconVisible="False" LeftMargin="161.4678" RightMargin="-208.4678" TopMargin="-53.7887" BottomMargin="-10.2113" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="31" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="97.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="317371720" Tag="510" IconVisible="False" LeftMargin="3.4391" RightMargin="5.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4891" Y="0.6639" />
+                    <PreSize X="0.9072" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="209.9678" Y="56.7887" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="4.1994" Y="0.8113" />
+                <PreSize X="1.9400" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_9" ActionTag="-1408278277" Tag="511" IconVisible="False" LeftMargin="-92.5190" RightMargin="42.5190" TopMargin="-13.0813" BottomMargin="-50.9187" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="34" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-53435167" Tag="512" IconVisible="False" LeftMargin="3.4391" RightMargin="8.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4744" Y="0.6639" />
+                    <PreSize X="0.8800" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-42.5190" Y="16.0813" />
+                <Scale ScaleX="0.4300" ScaleY="0.4300" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.8504" Y="0.2297" />
+                <PreSize X="2.0000" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_10" ActionTag="746324978" Tag="513" IconVisible="False" LeftMargin="-56.5382" RightMargin="6.5382" TopMargin="-13.0813" BottomMargin="-50.9187" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="34" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-26221961" Tag="514" IconVisible="False" LeftMargin="3.4391" RightMargin="8.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4744" Y="0.6639" />
+                    <PreSize X="0.8800" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-6.5382" Y="16.0813" />
+                <Scale ScaleX="0.4300" ScaleY="0.4300" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.1308" Y="0.2297" />
+                <PreSize X="2.0000" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_11" ActionTag="-328543142" Tag="515" IconVisible="False" LeftMargin="-19.9420" RightMargin="-29.0580" TopMargin="-13.0813" BottomMargin="-50.9187" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="33" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="99.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1592785473" Tag="516" IconVisible="False" LeftMargin="3.4391" RightMargin="7.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4792" Y="0.6639" />
+                    <PreSize X="0.8889" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_1.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="29.5580" Y="16.0813" />
+                <Scale ScaleX="0.4300" ScaleY="0.4300" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5912" Y="0.2297" />
+                <PreSize X="1.9800" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_12" ActionTag="626248396" Tag="517" IconVisible="False" LeftMargin="16.6903" RightMargin="-65.6903" TopMargin="-13.0813" BottomMargin="-50.9187" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="33" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="99.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1153973260" Tag="518" IconVisible="False" LeftMargin="3.4391" RightMargin="7.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4792" Y="0.6639" />
+                    <PreSize X="0.8889" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="66.1903" Y="16.0813" />
+                <Scale ScaleX="0.4300" ScaleY="0.4300" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="1.3238" Y="0.2297" />
+                <PreSize X="1.9800" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_13" ActionTag="-1989777919" Tag="519" IconVisible="False" LeftMargin="53.7054" RightMargin="-99.7054" TopMargin="-13.0813" BottomMargin="-50.9187" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="30" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="96.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-131870289" Tag="520" IconVisible="False" LeftMargin="3.8341" RightMargin="4.1659" TopMargin="-9.6459" BottomMargin="37.6459" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.4701" ScaleY="0.3938" />
+                    <Position X="45.2014" Y="79.3898" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4708" Y="0.5925" />
+                    <PreSize X="0.9167" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="101.7054" Y="16.0813" />
+                <Scale ScaleX="0.4300" ScaleY="0.4300" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="2.0341" Y="0.2297" />
+                <PreSize X="1.9200" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_14" ActionTag="-1925270331" Tag="521" IconVisible="False" LeftMargin="90.1775" RightMargin="-136.1775" TopMargin="-13.0813" BottomMargin="-50.9187" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="30" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="96.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1164966257" Tag="522" IconVisible="False" LeftMargin="1.3340" RightMargin="6.6660" TopMargin="-7.9499" BottomMargin="35.9499" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.3340" Y="88.9499" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4722" Y="0.6638" />
+                    <PreSize X="0.9167" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="138.1775" Y="16.0813" />
+                <Scale ScaleX="0.4300" ScaleY="0.4300" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="2.7636" Y="0.2297" />
+                <PreSize X="1.9200" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_15" ActionTag="-870528818" Tag="523" IconVisible="False" LeftMargin="126.3979" RightMargin="-173.3979" TopMargin="-13.0813" BottomMargin="-50.9187" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="31" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="97.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="418285754" Tag="524" IconVisible="False" LeftMargin="3.4391" RightMargin="5.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4891" Y="0.6639" />
+                    <PreSize X="0.9072" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="174.8979" Y="16.0813" />
+                <Scale ScaleX="0.4300" ScaleY="0.4300" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="3.4980" Y="0.2297" />
+                <PreSize X="1.9400" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_16" ActionTag="394759011" Tag="525" IconVisible="False" LeftMargin="163.2630" RightMargin="-210.2630" TopMargin="-13.0813" BottomMargin="-50.9187" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="31" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="97.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="529022595" Tag="526" IconVisible="False" LeftMargin="3.4391" RightMargin="5.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4891" Y="0.6639" />
+                    <PreSize X="0.9072" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="211.7630" Y="16.0813" />
+                <Scale ScaleX="0.4300" ScaleY="0.4300" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="4.2353" Y="0.2297" />
+                <PreSize X="1.9400" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_17" ActionTag="1697392006" Tag="527" IconVisible="False" LeftMargin="-96.0029" RightMargin="46.0029" TopMargin="28.5356" BottomMargin="-92.5356" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="34" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1514681732" Tag="528" IconVisible="False" LeftMargin="3.4391" RightMargin="8.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4744" Y="0.6639" />
+                    <PreSize X="0.8800" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-46.0029" Y="-25.5356" />
+                <Scale ScaleX="0.4400" ScaleY="0.4400" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.9201" Y="-0.3648" />
+                <PreSize X="2.0000" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_18" ActionTag="1871783795" Tag="529" IconVisible="False" LeftMargin="-59.0222" RightMargin="9.0222" TopMargin="28.5338" BottomMargin="-92.5338" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="34" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="377000900" Tag="530" IconVisible="False" LeftMargin="3.4391" RightMargin="8.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4744" Y="0.6639" />
+                    <PreSize X="0.8800" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-9.0222" Y="-25.5338" />
+                <Scale ScaleX="0.4400" ScaleY="0.4400" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.1804" Y="-0.3648" />
+                <PreSize X="2.0000" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_19" ActionTag="-760100388" Tag="531" IconVisible="False" LeftMargin="-21.4301" RightMargin="-27.5699" TopMargin="28.5338" BottomMargin="-92.5338" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="33" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="99.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-559478672" Tag="532" IconVisible="False" LeftMargin="3.4391" RightMargin="7.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4792" Y="0.6639" />
+                    <PreSize X="0.8889" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_1.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="28.0699" Y="-25.5338" />
+                <Scale ScaleX="0.4400" ScaleY="0.4400" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5614" Y="-0.3648" />
+                <PreSize X="1.9800" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_20" ActionTag="1842692407" Tag="533" IconVisible="False" LeftMargin="15.2028" RightMargin="-64.2028" TopMargin="28.5338" BottomMargin="-92.5338" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="33" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="99.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1428633817" Tag="534" IconVisible="False" LeftMargin="3.4391" RightMargin="7.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4792" Y="0.6639" />
+                    <PreSize X="0.8889" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="64.7028" Y="-25.5338" />
+                <Scale ScaleX="0.4400" ScaleY="0.4400" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="1.2941" Y="-0.3648" />
+                <PreSize X="1.9800" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_21" ActionTag="-797309567" Tag="535" IconVisible="False" LeftMargin="53.2214" RightMargin="-99.2214" TopMargin="28.5338" BottomMargin="-92.5338" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="30" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="96.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="722908061" Tag="536" IconVisible="False" LeftMargin="3.8341" RightMargin="4.1659" TopMargin="-9.6459" BottomMargin="37.6459" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.4701" ScaleY="0.3938" />
+                    <Position X="45.2014" Y="79.3898" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4708" Y="0.5925" />
+                    <PreSize X="0.9167" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="101.2214" Y="-25.5338" />
+                <Scale ScaleX="0.4400" ScaleY="0.4400" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="2.0244" Y="-0.3648" />
+                <PreSize X="1.9200" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_22" ActionTag="779063952" Tag="537" IconVisible="False" LeftMargin="90.6945" RightMargin="-136.6945" TopMargin="28.5338" BottomMargin="-92.5338" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="30" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="96.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="757282520" Tag="538" IconVisible="False" LeftMargin="1.3340" RightMargin="6.6660" TopMargin="-7.9499" BottomMargin="35.9499" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.3340" Y="88.9499" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4722" Y="0.6638" />
+                    <PreSize X="0.9167" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="138.6945" Y="-25.5338" />
+                <Scale ScaleX="0.4400" ScaleY="0.4400" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="2.7739" Y="-0.3648" />
+                <PreSize X="1.9200" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_23" ActionTag="358608463" Tag="539" IconVisible="False" LeftMargin="127.9137" RightMargin="-174.9137" TopMargin="29.0440" BottomMargin="-93.0440" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="31" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="97.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1280068860" Tag="540" IconVisible="False" LeftMargin="3.4391" RightMargin="5.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4891" Y="0.6639" />
+                    <PreSize X="0.9072" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="176.4137" Y="-26.0440" />
+                <Scale ScaleX="0.4400" ScaleY="0.4400" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="3.5283" Y="-0.3721" />
+                <PreSize X="1.9400" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_24" ActionTag="812880405" Tag="541" IconVisible="False" LeftMargin="164.7771" RightMargin="-211.7771" TopMargin="28.5338" BottomMargin="-92.5338" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="31" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="97.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1224352910" Tag="542" IconVisible="False" LeftMargin="3.4391" RightMargin="5.5609" TopMargin="-7.9574" BottomMargin="35.9574" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.4391" Y="88.9574" />
+                    <Scale ScaleX="0.8500" ScaleY="0.8500" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4891" Y="0.6639" />
+                    <PreSize X="0.9072" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="213.2771" Y="-25.5338" />
+                <Scale ScaleX="0.4400" ScaleY="0.4400" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="4.2655" Y="-0.3648" />
+                <PreSize X="1.9400" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_4.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="244.3521" Y="241.3979" />
+            <Position X="560.6703" Y="238.7809" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1909" Y="0.3353" />
-            <PreSize X="0.0156" Y="0.0278" />
+            <PrePosition X="0.4380" Y="0.3316" />
+            <PreSize X="0.0391" Y="0.0972" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
@@ -2262,10 +2608,10 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_standMe" ActionTag="-65477798" Tag="197" IconVisible="False" LeftMargin="215.8979" RightMargin="314.1021" TopMargin="621.8990" BottomMargin="28.1010" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_standMe" ActionTag="-65477798" Tag="197" IconVisible="False" LeftMargin="215.8979" RightMargin="314.1021" TopMargin="621.0883" BottomMargin="28.9117" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="750.0000" Y="70.0000" />
             <Children>
-              <AbstractNodeData Name="Button_1" ActionTag="1202730439" Tag="268" IconVisible="False" LeftMargin="-186.8050" RightMargin="847.8050" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_1" Visible="False" ActionTag="1202730439" Tag="268" IconVisible="False" LeftMargin="-163.9861" RightMargin="824.9861" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_paiMian" ActionTag="1605736409" Tag="269" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
@@ -2280,10 +2626,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="-142.3050" Y="37.5430" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="-119.4861" Y="37.5430" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="-0.1897" Y="0.5363" />
+                <PrePosition X="-0.1593" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2291,7 +2637,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_2" ActionTag="-268619652" Tag="270" IconVisible="False" LeftMargin="-99.9706" RightMargin="760.9706" TopMargin="-33.3601" BottomMargin="-26.6399" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_2" Visible="False" ActionTag="-268619652" Tag="270" IconVisible="False" LeftMargin="-80.9720" RightMargin="741.9720" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_paiMian" ActionTag="1246079940" Tag="271" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
@@ -2306,10 +2652,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="-55.4706" Y="38.3601" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="-36.4720" Y="37.5430" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="-0.0740" Y="0.5480" />
+                <PrePosition X="-0.0486" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2317,7 +2663,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_3" ActionTag="1478890889" Tag="272" IconVisible="False" LeftMargin="-13.1363" RightMargin="674.1363" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_3" Visible="False" ActionTag="1478890889" Tag="272" IconVisible="False" LeftMargin="1.8100" RightMargin="659.1901" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_paiMian" ActionTag="-1831737532" Tag="273" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
@@ -2332,10 +2678,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="31.3637" Y="37.5430" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="46.3100" Y="37.5430" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0418" Y="0.5363" />
+                <PrePosition X="0.0617" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2343,7 +2689,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_4" ActionTag="2079165724" Tag="274" IconVisible="False" LeftMargin="73.6981" RightMargin="587.3019" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_4" Visible="False" ActionTag="2079165724" Tag="274" IconVisible="False" LeftMargin="84.3096" RightMargin="576.6904" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_paiMian" ActionTag="-473405917" Tag="275" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
@@ -2358,10 +2704,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="118.1981" Y="37.5430" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="128.8096" Y="37.5430" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1576" Y="0.5363" />
+                <PrePosition X="0.1717" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2369,7 +2715,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_5" ActionTag="1279325784" Tag="276" IconVisible="False" LeftMargin="160.5325" RightMargin="500.4675" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_5" Visible="False" ActionTag="1279325784" Tag="276" IconVisible="False" LeftMargin="167.6057" RightMargin="493.3943" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_paiMian" ActionTag="2031894641" Tag="277" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
@@ -2384,10 +2730,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="205.0325" Y="37.5430" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="212.1057" Y="37.5430" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.2734" Y="0.5363" />
+                <PrePosition X="0.2828" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2395,7 +2741,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_6" ActionTag="2135802960" Tag="278" IconVisible="False" LeftMargin="247.3668" RightMargin="413.6332" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_6" Visible="False" ActionTag="2135802960" Tag="278" IconVisible="False" LeftMargin="251.6992" RightMargin="409.3008" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_paiMian" ActionTag="1985356280" Tag="279" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
@@ -2410,10 +2756,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="291.8668" Y="37.5430" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="296.1992" Y="37.5430" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.3892" Y="0.5363" />
+                <PrePosition X="0.3949" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2421,7 +2767,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_7" ActionTag="-1459320246" Tag="280" IconVisible="False" LeftMargin="334.2012" RightMargin="326.7988" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_7" ActionTag="-1459320246" Tag="280" IconVisible="False" LeftMargin="334.1982" RightMargin="326.8018" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_paiMian" ActionTag="977240073" Tag="281" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
@@ -2436,8 +2782,8 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="378.7012" Y="37.5430" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="378.6982" Y="37.5430" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5049" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
@@ -2447,25 +2793,25 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_8" ActionTag="878762536" Tag="282" IconVisible="False" LeftMargin="421.0356" RightMargin="239.9644" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_8" ActionTag="878762536" Tag="282" IconVisible="False" LeftMargin="417.7361" RightMargin="243.2639" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_paiMian" ActionTag="-1471276330" Tag="283" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Image_paiMian" ActionTag="-1471276330" Tag="283" IconVisible="False" LeftMargin="-0.2906" RightMargin="1.2906" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="88.0000" Y="106.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="44.7092" Y="60.1000" />
+                    <Position X="43.7094" Y="60.1000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5024" Y="0.4623" />
+                    <PrePosition X="0.4911" Y="0.4623" />
                     <PreSize X="0.9888" Y="0.8154" />
                     <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_8.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="465.5356" Y="37.5430" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="462.2361" Y="37.5430" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.6207" Y="0.5363" />
+                <PrePosition X="0.6163" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2473,25 +2819,25 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_9" ActionTag="869809757" Tag="284" IconVisible="False" LeftMargin="507.8702" RightMargin="153.1298" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_9" ActionTag="869809757" Tag="284" IconVisible="False" LeftMargin="500.6115" RightMargin="160.3885" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_paiMian" ActionTag="-1587735800" Tag="285" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Image_paiMian" ActionTag="-1587735800" Tag="285" IconVisible="False" LeftMargin="-0.2906" RightMargin="1.2906" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="88.0000" Y="106.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="44.7092" Y="60.1000" />
+                    <Position X="43.7094" Y="60.1000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5024" Y="0.4623" />
+                    <PrePosition X="0.4911" Y="0.4623" />
                     <PreSize X="0.9888" Y="0.8154" />
                     <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="552.3702" Y="37.5430" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="545.1115" Y="37.5430" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.7365" Y="0.5363" />
+                <PrePosition X="0.7268" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2499,7 +2845,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_10" ActionTag="-720858565" Tag="286" IconVisible="False" LeftMargin="594.7047" RightMargin="66.2953" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_10" ActionTag="-720858565" Tag="286" IconVisible="False" LeftMargin="583.2528" RightMargin="77.7472" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_paiMian" ActionTag="-1384542551" Tag="287" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
@@ -2514,10 +2860,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="639.2047" Y="37.5430" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="627.7528" Y="37.5430" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8523" Y="0.5363" />
+                <PrePosition X="0.8370" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2525,25 +2871,25 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_11" ActionTag="-1290031953" Tag="288" IconVisible="False" LeftMargin="681.5392" RightMargin="-20.5392" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_11" ActionTag="-1290031953" Tag="288" IconVisible="False" LeftMargin="666.1803" RightMargin="-5.1803" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_paiMian" ActionTag="613995556" Tag="289" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Image_paiMian" ActionTag="613995556" Tag="289" IconVisible="False" LeftMargin="-0.2908" RightMargin="1.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="88.0000" Y="106.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="44.7092" Y="60.1000" />
+                    <Position X="43.7092" Y="60.1000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5024" Y="0.4623" />
+                    <PrePosition X="0.4911" Y="0.4623" />
                     <PreSize X="0.9888" Y="0.8154" />
                     <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_fa.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="726.0392" Y="37.5430" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="710.6803" Y="37.5430" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9681" Y="0.5363" />
+                <PrePosition X="0.9476" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2551,7 +2897,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_12" ActionTag="-1081308164" Tag="290" IconVisible="False" LeftMargin="768.3737" RightMargin="-107.3737" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_12" ActionTag="-1081308164" Tag="290" IconVisible="False" LeftMargin="749.4152" RightMargin="-88.4152" TopMargin="-32.5430" BottomMargin="-27.4571" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_paiMian" ActionTag="-1692923073" Tag="291" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
@@ -2566,10 +2912,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="812.8737" Y="37.5430" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="793.9152" Y="37.5429" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="1.0838" Y="0.5363" />
+                <PrePosition X="1.0586" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2577,25 +2923,25 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_13" ActionTag="1571150956" Tag="292" IconVisible="False" LeftMargin="855.2081" RightMargin="-194.2081" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_13" ActionTag="1571150956" Tag="292" IconVisible="False" LeftMargin="831.5638" RightMargin="-170.5638" TopMargin="-32.5430" BottomMargin="-27.4571" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
-                  <AbstractNodeData Name="Image_paiMian" ActionTag="-970827795" Tag="293" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                  <AbstractNodeData Name="Image_paiMian" ActionTag="-970827795" Tag="293" IconVisible="False" LeftMargin="-0.2906" RightMargin="1.2906" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
                     <Size X="88.0000" Y="106.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="44.7092" Y="60.1000" />
+                    <Position X="43.7094" Y="60.1000" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
                     <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.5024" Y="0.4623" />
+                    <PrePosition X="0.4911" Y="0.4623" />
                     <PreSize X="0.9888" Y="0.8154" />
                     <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_flower_chun.png" Plist="" />
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="899.7081" Y="37.5430" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="876.0638" Y="37.5429" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="1.1996" Y="0.5363" />
+                <PrePosition X="1.1681" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2603,7 +2949,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_14" ActionTag="-1672931027" Tag="294" IconVisible="False" LeftMargin="959.0633" RightMargin="-298.0632" TopMargin="-33.1067" BottomMargin="-26.8933" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_14" ActionTag="-1672931027" Tag="294" IconVisible="False" LeftMargin="952.1342" RightMargin="-291.1343" TopMargin="-32.5430" BottomMargin="-27.4570" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="89.0000" Y="130.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_paiMian" ActionTag="-2141797799" Tag="295" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
@@ -2618,10 +2964,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="1003.5633" Y="38.1067" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <Position X="996.6342" Y="37.5430" />
+                <Scale ScaleX="0.9500" ScaleY="0.9500" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="1.3381" Y="0.5444" />
+                <PrePosition X="1.3288" Y="0.5363" />
                 <PreSize X="0.1187" Y="1.8571" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
@@ -2631,11 +2977,1941 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="215.8979" Y="28.1010" />
+            <Position X="215.8979" Y="28.9117" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.1687" Y="0.0390" />
+            <PrePosition X="0.1687" Y="0.0402" />
             <PreSize X="0.5859" Y="0.0972" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Panel_dachuRight" ActionTag="898132202" Tag="543" IconVisible="False" LeftMargin="934.5653" RightMargin="295.4347" TopMargin="285.4803" BottomMargin="364.5197" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="50.0000" Y="70.0000" />
+            <Children>
+              <AbstractNodeData Name="Image_24" ActionTag="581115242" Tag="558" IconVisible="False" LeftMargin="-120.5532" RightMargin="56.5532" TopMargin="-139.8790" BottomMargin="111.8790" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="48" Scale9Height="10" ctype="ImageViewObjectData">
+                <Size X="114.0000" Y="98.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-504165929" Tag="559" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="11.8769" RightMargin="14.1231" TopMargin="-24.9100" BottomMargin="16.9100" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="55.8769" Y="69.9100" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4901" Y="0.7134" />
+                    <PreSize X="0.7719" Y="1.0816" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-63.5532" Y="160.8790" />
+                <Scale ScaleX="0.4100" ScaleY="0.4100" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.2711" Y="2.2983" />
+                <PreSize X="2.2800" Y="1.4000" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image23" ActionTag="-1460949246" Tag="556" IconVisible="False" LeftMargin="-117.5818" RightMargin="53.5818" TopMargin="-116.3269" BottomMargin="88.3269" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="48" Scale9Height="10" ctype="ImageViewObjectData">
+                <Size X="114.0000" Y="98.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-808342453" Tag="557" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="11.6429" RightMargin="14.3571" TopMargin="-26.1590" BottomMargin="18.1590" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="55.6429" Y="71.1590" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4881" Y="0.7261" />
+                    <PreSize X="0.7719" Y="1.0816" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-60.5818" Y="137.3269" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.2116" Y="1.9618" />
+                <PreSize X="2.2800" Y="1.4000" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_22" ActionTag="-1633654694" Tag="554" IconVisible="False" LeftMargin="-116.9018" RightMargin="51.9018" TopMargin="-93.9856" BottomMargin="64.9856" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="49" Scale9Height="11" ctype="ImageViewObjectData">
+                <Size X="115.0000" Y="99.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1162116651" Tag="555" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="8.3677" RightMargin="18.6323" TopMargin="-24.7303" BottomMargin="17.7303" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="52.3677" Y="70.7303" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4554" Y="0.7144" />
+                    <PreSize X="0.7652" Y="1.0707" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-59.4018" Y="114.4856" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.1880" Y="1.6355" />
+                <PreSize X="2.3000" Y="1.4143" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_6.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_21" ActionTag="1645821860" Tag="552" IconVisible="False" LeftMargin="-115.3089" RightMargin="48.3089" TopMargin="-70.1077" BottomMargin="41.1077" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="51" Scale9Height="11" ctype="ImageViewObjectData">
+                <Size X="117.0000" Y="99.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-497437375" Tag="553" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="24.7887" RightMargin="4.2113" TopMargin="-32.7642" BottomMargin="25.7642" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.4701" ScaleY="0.3938" />
+                    <Position X="66.1560" Y="67.5081" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5654" Y="0.6819" />
+                    <PreSize X="0.7521" Y="1.0707" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-56.8089" Y="90.6077" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.1362" Y="1.2944" />
+                <PreSize X="2.3400" Y="1.4143" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_5.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_20" ActionTag="-942192413" Tag="550" IconVisible="False" LeftMargin="-113.5037" RightMargin="45.5037" TopMargin="-46.0351" BottomMargin="16.0351" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="52" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="118.0000" Y="100.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-466814248" Tag="551" RotationSkewX="269.0010" RotationSkewY="268.9995" IconVisible="False" LeftMargin="0.2294" RightMargin="29.7706" TopMargin="-22.8446" BottomMargin="16.8446" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5920" ScaleY="0.5626" />
+                    <Position X="52.3285" Y="76.4813" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4435" Y="0.7648" />
+                    <PreSize X="0.7458" Y="1.0600" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-54.5037" Y="66.0351" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.0901" Y="0.9434" />
+                <PreSize X="2.3600" Y="1.4286" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_19" ActionTag="666927974" Tag="548" IconVisible="False" LeftMargin="-112.7290" RightMargin="43.7290" TopMargin="-22.6220" BottomMargin="-9.3780" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="53" Scale9Height="14" ctype="ImageViewObjectData">
+                <Size X="119.0000" Y="102.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1993203155" Tag="549" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="11.9518" RightMargin="19.0482" TopMargin="-22.9299" BottomMargin="18.9299" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="55.9518" Y="71.9299" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4702" Y="0.7052" />
+                    <PreSize X="0.7395" Y="1.0392" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_1.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-53.2290" Y="41.6220" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.0646" Y="0.5946" />
+                <PreSize X="2.3800" Y="1.4571" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_18" ActionTag="2030963168" Tag="546" IconVisible="False" LeftMargin="-110.8583" RightMargin="39.8583" TopMargin="2.2452" BottomMargin="-36.2452" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="55" Scale9Height="16" ctype="ImageViewObjectData">
+                <Size X="121.0000" Y="104.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="200479938" Tag="547" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="16.2990" RightMargin="16.7010" TopMargin="-20.2744" BottomMargin="18.2744" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.2990" Y="71.2744" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4983" Y="0.6853" />
+                    <PreSize X="0.7273" Y="1.0192" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-50.3583" Y="15.7548" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.0072" Y="0.2251" />
+                <PreSize X="2.4200" Y="1.4857" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_17" ActionTag="-1749746509" Tag="544" IconVisible="False" LeftMargin="-108.4955" RightMargin="36.4955" TopMargin="27.4740" BottomMargin="-62.4740" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="56" Scale9Height="17" ctype="ImageViewObjectData">
+                <Size X="122.0000" Y="105.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="624915585" Tag="545" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="17.4381" TopMargin="-21.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4964" Y="0.7007" />
+                    <PreSize X="0.7213" Y="1.0095" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-47.4955" Y="-9.9740" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.9499" Y="-0.1425" />
+                <PreSize X="2.4400" Y="1.5000" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_16" ActionTag="-1149039436" Tag="592" IconVisible="False" LeftMargin="-160.9013" RightMargin="96.9013" TopMargin="-138.7750" BottomMargin="110.7750" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="48" Scale9Height="10" ctype="ImageViewObjectData">
+                <Size X="114.0000" Y="98.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1096904236" Tag="593" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="9.8766" RightMargin="16.1234" TopMargin="-25.9099" BottomMargin="17.9099" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="53.8766" Y="70.9099" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4726" Y="0.7236" />
+                    <PreSize X="0.7719" Y="1.0816" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-103.9013" Y="159.7750" />
+                <Scale ScaleX="0.4100" ScaleY="0.4100" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.0780" Y="2.2825" />
+                <PreSize X="2.2800" Y="1.4000" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_15" ActionTag="1545579560" Tag="594" IconVisible="False" LeftMargin="-158.6925" RightMargin="94.6925" TopMargin="-115.8103" BottomMargin="87.8103" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="48" Scale9Height="10" ctype="ImageViewObjectData">
+                <Size X="114.0000" Y="98.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="583670639" Tag="595" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="13.6426" RightMargin="12.3574" TopMargin="-26.1589" BottomMargin="18.1589" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="57.6426" Y="71.1589" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5056" Y="0.7261" />
+                    <PreSize X="0.7719" Y="1.0816" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-101.6925" Y="136.8103" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.0339" Y="1.9544" />
+                <PreSize X="2.2800" Y="1.4000" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_14" ActionTag="1969825562" Tag="596" IconVisible="False" LeftMargin="-158.2660" RightMargin="93.2660" TopMargin="-93.0220" BottomMargin="64.0220" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="49" Scale9Height="11" ctype="ImageViewObjectData">
+                <Size X="115.0000" Y="99.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1072611037" Tag="597" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="10.3675" RightMargin="16.6325" TopMargin="-24.7301" BottomMargin="17.7301" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="54.3675" Y="70.7301" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4728" Y="0.7144" />
+                    <PreSize X="0.7652" Y="1.0707" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-100.7660" Y="113.5220" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.0153" Y="1.6217" />
+                <PreSize X="2.3000" Y="1.4143" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_6.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_13" ActionTag="-1504108449" Tag="598" IconVisible="False" LeftMargin="-157.5753" RightMargin="90.5753" TopMargin="-69.5226" BottomMargin="40.5226" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="51" Scale9Height="11" ctype="ImageViewObjectData">
+                <Size X="117.0000" Y="99.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1952622194" Tag="599" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="24.7890" RightMargin="4.2110" TopMargin="-32.7643" BottomMargin="25.7643" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.4701" ScaleY="0.3938" />
+                    <Position X="66.1563" Y="67.5082" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5654" Y="0.6819" />
+                    <PreSize X="0.7521" Y="1.0707" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-99.0753" Y="90.0226" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.9815" Y="1.2860" />
+                <PreSize X="2.3400" Y="1.4143" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_5.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_12" ActionTag="-1725243932" Tag="600" IconVisible="False" LeftMargin="-156.3861" RightMargin="88.3861" TopMargin="-45.6116" BottomMargin="15.6116" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="52" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="118.0000" Y="100.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1999478939" Tag="601" RotationSkewX="269.0000" RotationSkewY="269.0000" IconVisible="False" LeftMargin="13.9829" RightMargin="16.0171" TopMargin="-23.6121" BottomMargin="17.6121" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="57.9829" Y="70.6121" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4914" Y="0.7061" />
+                    <PreSize X="0.7458" Y="1.0600" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-97.3861" Y="65.6116" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.9477" Y="0.9373" />
+                <PreSize X="2.3600" Y="1.4286" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_11" ActionTag="-461453628" Tag="602" IconVisible="False" LeftMargin="-156.7724" RightMargin="87.7724" TopMargin="-23.2546" BottomMargin="-8.7454" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="53" Scale9Height="14" ctype="ImageViewObjectData">
+                <Size X="119.0000" Y="102.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="992291193" Tag="603" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="11.9518" RightMargin="19.0482" TopMargin="-22.9299" BottomMargin="18.9299" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="55.9518" Y="71.9299" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4702" Y="0.7052" />
+                    <PreSize X="0.7395" Y="1.0392" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_1.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-97.2724" Y="42.2546" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.9454" Y="0.6036" />
+                <PreSize X="2.3800" Y="1.4571" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_10" ActionTag="-1656471473" Tag="604" IconVisible="False" LeftMargin="-155.2503" RightMargin="84.2503" TopMargin="1.0618" BottomMargin="-35.0618" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="55" Scale9Height="16" ctype="ImageViewObjectData">
+                <Size X="121.0000" Y="104.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1689551411" Tag="605" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="16.2990" RightMargin="16.7010" TopMargin="-20.2744" BottomMargin="18.2744" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.2990" Y="71.2744" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4983" Y="0.6853" />
+                    <PreSize X="0.7273" Y="1.0192" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-94.7503" Y="16.9382" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.8950" Y="0.2420" />
+                <PreSize X="2.4200" Y="1.4857" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_9" ActionTag="-1516599804" Tag="606" IconVisible="False" LeftMargin="-153.8904" RightMargin="81.8904" TopMargin="26.9428" BottomMargin="-61.9428" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="56" Scale9Height="17" ctype="ImageViewObjectData">
+                <Size X="122.0000" Y="105.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1784100233" Tag="607" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="17.4381" TopMargin="-21.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4964" Y="0.7007" />
+                    <PreSize X="0.7213" Y="1.0095" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-92.8904" Y="-9.4428" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.8578" Y="-0.1349" />
+                <PreSize X="2.4400" Y="1.5000" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_8" ActionTag="-298426577" Tag="608" IconVisible="False" LeftMargin="-200.7139" RightMargin="136.7139" TopMargin="-138.9808" BottomMargin="110.9808" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="48" Scale9Height="10" ctype="ImageViewObjectData">
+                <Size X="114.0000" Y="98.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-448004684" Tag="609" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="11.8769" RightMargin="14.1231" TopMargin="-24.9100" BottomMargin="16.9100" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="55.8769" Y="69.9100" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4901" Y="0.7134" />
+                    <PreSize X="0.7719" Y="1.0816" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-143.7139" Y="159.9808" />
+                <Scale ScaleX="0.4100" ScaleY="0.4100" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.8743" Y="2.2854" />
+                <PreSize X="2.2800" Y="1.4000" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_7" ActionTag="53643687" Tag="610" IconVisible="False" LeftMargin="-199.6447" RightMargin="135.6447" TopMargin="-115.7644" BottomMargin="87.7644" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="48" Scale9Height="10" ctype="ImageViewObjectData">
+                <Size X="114.0000" Y="98.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="378724613" Tag="611" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="14.6708" RightMargin="11.3292" TopMargin="-26.1491" BottomMargin="18.1491" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="58.6708" Y="71.1491" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5147" Y="0.7260" />
+                    <PreSize X="0.7719" Y="1.0816" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-142.6447" Y="136.7644" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.8529" Y="1.9538" />
+                <PreSize X="2.2800" Y="1.4000" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_6" ActionTag="-1327950077" Tag="612" IconVisible="False" LeftMargin="-200.0528" RightMargin="135.0528" TopMargin="-93.1982" BottomMargin="64.1982" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="49" Scale9Height="11" ctype="ImageViewObjectData">
+                <Size X="115.0000" Y="99.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-674470181" Tag="613" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="10.3675" RightMargin="16.6325" TopMargin="-24.7301" BottomMargin="17.7301" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="54.3675" Y="70.7301" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4728" Y="0.7144" />
+                    <PreSize X="0.7652" Y="1.0707" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-142.5528" Y="113.6982" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.8511" Y="1.6243" />
+                <PreSize X="2.3000" Y="1.4143" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_6.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_5" ActionTag="634979958" Tag="614" IconVisible="False" LeftMargin="-200.4790" RightMargin="133.4790" TopMargin="-69.5284" BottomMargin="40.5284" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="51" Scale9Height="11" ctype="ImageViewObjectData">
+                <Size X="117.0000" Y="99.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1792965045" Tag="615" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="27.7891" RightMargin="1.2109" TopMargin="-32.7644" BottomMargin="25.7644" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.4701" ScaleY="0.3938" />
+                    <Position X="69.1564" Y="67.5084" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5911" Y="0.6819" />
+                    <PreSize X="0.7521" Y="1.0707" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-141.9790" Y="90.0284" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.8396" Y="1.2861" />
+                <PreSize X="2.3400" Y="1.4143" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_5.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_4" ActionTag="-1567239725" Tag="616" IconVisible="False" LeftMargin="-199.6497" RightMargin="131.6497" TopMargin="-46.0659" BottomMargin="16.0659" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="52" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="118.0000" Y="100.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="141805335" Tag="617" RotationSkewX="269.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="13.9835" RightMargin="16.0165" TopMargin="-23.9453" BottomMargin="17.9453" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="57.9835" Y="70.9453" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4914" Y="0.7095" />
+                    <PreSize X="0.7458" Y="1.0600" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-140.6497" Y="66.0659" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.8130" Y="0.9438" />
+                <PreSize X="2.3600" Y="1.4286" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_3" ActionTag="579747775" Tag="618" IconVisible="False" LeftMargin="-199.9394" RightMargin="130.9394" TopMargin="-23.1581" BottomMargin="-8.8419" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="53" Scale9Height="14" ctype="ImageViewObjectData">
+                <Size X="119.0000" Y="102.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-365634828" Tag="619" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="11.9518" RightMargin="19.0482" TopMargin="-22.9299" BottomMargin="18.9299" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="55.9518" Y="71.9299" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4702" Y="0.7052" />
+                    <PreSize X="0.7395" Y="1.0392" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_1.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-140.4394" Y="42.1581" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.8088" Y="0.6023" />
+                <PreSize X="2.3800" Y="1.4571" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_2" ActionTag="58415674" Tag="620" IconVisible="False" LeftMargin="-199.5178" RightMargin="128.5178" TopMargin="1.1587" BottomMargin="-35.1587" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="55" Scale9Height="16" ctype="ImageViewObjectData">
+                <Size X="121.0000" Y="104.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1982502728" Tag="621" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="16.2990" RightMargin="16.7010" TopMargin="-20.2744" BottomMargin="18.2744" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.2990" Y="71.2744" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4983" Y="0.6853" />
+                    <PreSize X="0.7273" Y="1.0192" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-139.0178" Y="16.8413" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.7804" Y="0.2406" />
+                <PreSize X="2.4200" Y="1.4857" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_1" ActionTag="702839514" Tag="622" IconVisible="False" LeftMargin="-198.8095" RightMargin="126.8095" TopMargin="26.9383" BottomMargin="-61.9383" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="56" Scale9Height="17" ctype="ImageViewObjectData">
+                <Size X="122.0000" Y="105.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="928577719" Tag="623" RotationSkewX="270.0000" RotationSkewY="270.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="17.4381" TopMargin="-21.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.7000" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4964" Y="0.7007" />
+                    <PreSize X="0.7213" Y="1.0095" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-137.8095" Y="-9.4383" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.7562" Y="-0.1348" />
+                <PreSize X="2.4400" Y="1.5000" />
+                <FileData Type="Normal" Path="card/righthand/dachupai/Frame_youjia_1_1.png" Plist="" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint />
+            <Position X="934.5653" Y="364.5197" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.7301" Y="0.5063" />
+            <PreSize X="0.0391" Y="0.0972" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Panel_dachuLeft" ActionTag="2003129789" Tag="624" IconVisible="False" LeftMargin="498.5234" RightMargin="731.4766" TopMargin="332.1716" BottomMargin="317.8284" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="50.0000" Y="70.0000" />
+            <Children>
+              <AbstractNodeData Name="Image_1" ActionTag="-1257111399" Tag="728" IconVisible="False" LeftMargin="-160.9477" RightMargin="94.9477" TopMargin="-140.7411" BottomMargin="110.7411" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="50" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="116.0000" Y="100.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1072853431" Tag="729" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="14.5618" RightMargin="13.4382" TopMargin="-23.5781" BottomMargin="17.5781" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="58.5618" Y="70.5781" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5048" Y="0.7058" />
+                    <PreSize X="0.7586" Y="1.0600" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-102.9477" Y="160.7411" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.0590" Y="2.2963" />
+                <PreSize X="2.3200" Y="1.4286" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_2" ActionTag="1374087024" Tag="730" IconVisible="False" LeftMargin="-164.9679" RightMargin="98.9679" TopMargin="-116.8033" BottomMargin="86.8033" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="50" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="116.0000" Y="100.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="565099725" Tag="731" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="11.4381" TopMargin="-24.5786" BottomMargin="18.5786" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="71.5786" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5221" Y="0.7158" />
+                    <PreSize X="0.7586" Y="1.0600" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-106.9679" Y="136.8033" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.1394" Y="1.9543" />
+                <PreSize X="2.3200" Y="1.4286" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_3" ActionTag="1239043818" Tag="732" IconVisible="False" LeftMargin="-168.5338" RightMargin="100.5338" TopMargin="-93.0759" BottomMargin="63.0759" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="52" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="118.0000" Y="100.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1600016599" Tag="733" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="13.4381" TopMargin="-26.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5132" Y="0.7358" />
+                    <PreSize X="0.7458" Y="1.0600" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-109.5338" Y="113.0759" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.1907" Y="1.6154" />
+                <PreSize X="2.3600" Y="1.4286" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_6.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_4" ActionTag="-656769239" Tag="734" IconVisible="False" LeftMargin="-171.6279" RightMargin="102.6279" TopMargin="-69.2424" BottomMargin="37.2424" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="53" Scale9Height="14" ctype="ImageViewObjectData">
+                <Size X="119.0000" Y="102.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1763837068" Tag="735" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="14.4381" TopMargin="-24.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5089" Y="0.7214" />
+                    <PreSize X="0.7395" Y="1.0392" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-112.1279" Y="88.2424" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.2426" Y="1.2606" />
+                <PreSize X="2.3800" Y="1.4571" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_5.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_5" ActionTag="-876280179" Tag="736" IconVisible="False" LeftMargin="-177.1160" RightMargin="105.1160" TopMargin="-44.6870" BottomMargin="10.6870" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="56" Scale9Height="16" ctype="ImageViewObjectData">
+                <Size X="122.0000" Y="104.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-788163129" Tag="737" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="17.4381" TopMargin="-22.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4964" Y="0.7075" />
+                    <PreSize X="0.7213" Y="1.0192" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-116.1160" Y="62.6870" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.3223" Y="0.8955" />
+                <PreSize X="2.4400" Y="1.4857" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_6" ActionTag="2030012263" Tag="738" IconVisible="False" LeftMargin="-180.5020" RightMargin="107.5020" TopMargin="-18.0998" BottomMargin="-16.9002" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="57" Scale9Height="17" ctype="ImageViewObjectData">
+                <Size X="123.0000" Y="105.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="789297482" Tag="739" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="18.4381" TopMargin="-21.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4924" Y="0.7007" />
+                    <PreSize X="0.7154" Y="1.0095" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-119.0020" Y="35.5998" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.3800" Y="0.5086" />
+                <PreSize X="2.4600" Y="1.5000" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_7" ActionTag="1974366450" Tag="740" IconVisible="False" LeftMargin="-183.9489" RightMargin="109.9489" TopMargin="9.3076" BottomMargin="-45.3076" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="58" Scale9Height="18" ctype="ImageViewObjectData">
+                <Size X="124.0000" Y="106.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="865167959" Tag="741" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="17.7232" RightMargin="18.2768" TopMargin="-22.3819" BottomMargin="22.3819" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="61.7232" Y="75.3819" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4978" Y="0.7112" />
+                    <PreSize X="0.7097" Y="1.0000" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-121.9489" Y="7.6924" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.4390" Y="0.1099" />
+                <PreSize X="2.4800" Y="1.5143" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_8" ActionTag="275175647" Tag="742" IconVisible="False" LeftMargin="-188.6836" RightMargin="112.6836" TopMargin="36.5204" BottomMargin="-73.5204" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="60" Scale9Height="19" ctype="ImageViewObjectData">
+                <Size X="126.0000" Y="107.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="86247873" Tag="743" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="21.4381" TopMargin="-19.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4806" Y="0.6876" />
+                    <PreSize X="0.6984" Y="0.9907" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-125.6836" Y="-20.0204" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-2.5137" Y="-0.2860" />
+                <PreSize X="2.5200" Y="1.5286" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_1_0" ActionTag="-87215774" Tag="744" IconVisible="False" LeftMargin="-120.2171" RightMargin="54.2171" TopMargin="-141.0289" BottomMargin="111.0289" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="50" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="116.0000" Y="100.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="2034261769" Tag="745" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="14.5618" RightMargin="13.4382" TopMargin="-23.5781" BottomMargin="17.5781" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="58.5618" Y="70.5781" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5048" Y="0.7058" />
+                    <PreSize X="0.7586" Y="1.0600" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-62.2171" Y="161.0289" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.2443" Y="2.3004" />
+                <PreSize X="2.3200" Y="1.4286" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_2_0" ActionTag="-772941787" Tag="746" IconVisible="False" LeftMargin="-123.7053" RightMargin="57.7053" TopMargin="-117.3892" BottomMargin="87.3892" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="50" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="116.0000" Y="100.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="2102699379" Tag="747" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="11.4381" TopMargin="-24.5786" BottomMargin="18.5786" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="71.5786" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5221" Y="0.7158" />
+                    <PreSize X="0.7586" Y="1.0600" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-65.7053" Y="137.3892" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.3141" Y="1.9627" />
+                <PreSize X="2.3200" Y="1.4286" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_3_0" ActionTag="-9802460" Tag="748" IconVisible="False" LeftMargin="-126.7020" RightMargin="58.7020" TopMargin="-92.2722" BottomMargin="62.2722" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="52" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="118.0000" Y="100.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1833753468" Tag="749" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="13.4381" TopMargin="-26.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5132" Y="0.7358" />
+                    <PreSize X="0.7458" Y="1.0600" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-67.7020" Y="112.2722" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.3540" Y="1.6039" />
+                <PreSize X="2.3600" Y="1.4286" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_6.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_4_0" ActionTag="-1511938282" Tag="750" IconVisible="False" LeftMargin="-129.9306" RightMargin="60.9306" TopMargin="-68.5891" BottomMargin="36.5891" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="53" Scale9Height="14" ctype="ImageViewObjectData">
+                <Size X="119.0000" Y="102.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1068155335" Tag="751" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="14.4381" TopMargin="-24.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5089" Y="0.7214" />
+                    <PreSize X="0.7395" Y="1.0392" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-70.4306" Y="87.5891" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.4086" Y="1.2513" />
+                <PreSize X="2.3800" Y="1.4571" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_5.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_5_0" ActionTag="398084122" Tag="752" IconVisible="False" LeftMargin="-133.6405" RightMargin="61.6405" TopMargin="-43.1137" BottomMargin="9.1137" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="56" Scale9Height="16" ctype="ImageViewObjectData">
+                <Size X="122.0000" Y="104.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1743113065" Tag="753" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="35.7528" RightMargin="-1.7528" TopMargin="-16.3888" BottomMargin="14.3888" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.4040" ScaleY="0.6126" />
+                    <Position X="71.3037" Y="79.3241" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5845" Y="0.7627" />
+                    <PreSize X="0.7213" Y="1.0192" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_1.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-72.6405" Y="61.1137" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.4528" Y="0.8731" />
+                <PreSize X="2.4400" Y="1.4857" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_6_0" ActionTag="1818951957" Tag="754" IconVisible="False" LeftMargin="-136.4186" RightMargin="63.4186" TopMargin="-17.2128" BottomMargin="-17.7872" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="57" Scale9Height="17" ctype="ImageViewObjectData">
+                <Size X="123.0000" Y="105.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-984322172" Tag="755" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="18.4381" TopMargin="-21.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4924" Y="0.7007" />
+                    <PreSize X="0.7154" Y="1.0095" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-74.9186" Y="34.7128" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.4984" Y="0.4959" />
+                <PreSize X="2.4600" Y="1.5000" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_7_0" ActionTag="1418736404" Tag="756" IconVisible="False" LeftMargin="-138.8853" RightMargin="64.8853" TopMargin="9.3375" BottomMargin="-45.3375" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="58" Scale9Height="18" ctype="ImageViewObjectData">
+                <Size X="124.0000" Y="106.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1163396285" Tag="757" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5620" RightMargin="19.4380" TopMargin="-20.5782" BottomMargin="20.5782" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5620" Y="73.5782" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4884" Y="0.6941" />
+                    <PreSize X="0.7097" Y="1.0000" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-76.8853" Y="7.6625" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.5377" Y="0.1095" />
+                <PreSize X="2.4800" Y="1.5143" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_8_0" ActionTag="-797133454" Tag="758" IconVisible="False" LeftMargin="-142.8374" RightMargin="66.8374" TopMargin="36.7740" BottomMargin="-73.7740" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="60" Scale9Height="19" ctype="ImageViewObjectData">
+                <Size X="126.0000" Y="107.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1369634808" Tag="759" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="21.4381" TopMargin="-19.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4806" Y="0.6876" />
+                    <PreSize X="0.6984" Y="0.9907" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-79.8374" Y="-20.2740" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-1.5967" Y="-0.2896" />
+                <PreSize X="2.5200" Y="1.5286" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_1_1" ActionTag="-1371421654" Tag="760" IconVisible="False" LeftMargin="-78.5755" RightMargin="12.5755" TopMargin="-141.1959" BottomMargin="111.1959" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="50" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="116.0000" Y="100.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="924650088" Tag="761" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="14.5618" RightMargin="13.4382" TopMargin="-23.5781" BottomMargin="17.5781" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="58.5618" Y="70.5781" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5048" Y="0.7058" />
+                    <PreSize X="0.7586" Y="1.0600" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-20.5755" Y="161.1959" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.4115" Y="2.3028" />
+                <PreSize X="2.3200" Y="1.4286" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_2_1" ActionTag="673589814" Tag="762" IconVisible="False" LeftMargin="-81.2197" RightMargin="15.2197" TopMargin="-116.3846" BottomMargin="86.3846" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="50" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="116.0000" Y="100.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="416276444" Tag="763" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="11.4381" TopMargin="-24.5786" BottomMargin="18.5786" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="71.5786" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5221" Y="0.7158" />
+                    <PreSize X="0.7586" Y="1.0600" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-23.2197" Y="136.3846" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.4644" Y="1.9484" />
+                <PreSize X="2.3200" Y="1.4286" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_3_1" ActionTag="-1362387483" Tag="764" IconVisible="False" LeftMargin="-83.7766" RightMargin="15.7766" TopMargin="-91.9852" BottomMargin="61.9852" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="52" Scale9Height="12" ctype="ImageViewObjectData">
+                <Size X="118.0000" Y="100.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="545284950" Tag="765" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="14.5620" RightMargin="15.4380" TopMargin="-26.5787" BottomMargin="20.5787" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="58.5620" Y="73.5787" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4963" Y="0.7358" />
+                    <PreSize X="0.7458" Y="1.0600" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_2.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-24.7766" Y="111.9852" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.4955" Y="1.5998" />
+                <PreSize X="2.3600" Y="1.4286" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_6.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_4_1" ActionTag="-24212590" Tag="766" IconVisible="False" LeftMargin="-86.2873" RightMargin="17.2873" TopMargin="-67.3738" BottomMargin="35.3738" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="53" Scale9Height="14" ctype="ImageViewObjectData">
+                <Size X="119.0000" Y="102.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1315158322" Tag="767" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="14.3580" RightMargin="16.6420" TopMargin="-24.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="58.3580" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4904" Y="0.7214" />
+                    <PreSize X="0.7395" Y="1.0392" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-26.7873" Y="86.3738" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.5357" Y="1.2339" />
+                <PreSize X="2.3800" Y="1.4571" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_5.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_5_1" ActionTag="519683045" Tag="768" IconVisible="False" LeftMargin="-89.0724" RightMargin="17.0724" TopMargin="-42.8280" BottomMargin="8.8280" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="56" Scale9Height="16" ctype="ImageViewObjectData">
+                <Size X="122.0000" Y="104.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1304440956" Tag="769" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="17.4381" TopMargin="-22.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4964" Y="0.7075" />
+                    <PreSize X="0.7213" Y="1.0192" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-28.0724" Y="60.8280" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.5614" Y="0.8690" />
+                <PreSize X="2.4400" Y="1.4857" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_6_1" ActionTag="1402678378" Tag="770" IconVisible="False" LeftMargin="-91.3365" RightMargin="18.3365" TopMargin="-16.9292" BottomMargin="-18.0708" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="57" Scale9Height="17" ctype="ImageViewObjectData">
+                <Size X="123.0000" Y="105.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="51203217" Tag="771" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="18.4381" TopMargin="-21.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4924" Y="0.7007" />
+                    <PreSize X="0.7154" Y="1.0095" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-29.8365" Y="34.4292" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.5967" Y="0.4918" />
+                <PreSize X="2.4600" Y="1.5000" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_7_1" ActionTag="171437375" Tag="772" IconVisible="False" LeftMargin="-93.8020" RightMargin="19.8020" TopMargin="9.6195" BottomMargin="-45.6195" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="58" Scale9Height="18" ctype="ImageViewObjectData">
+                <Size X="124.0000" Y="106.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="76589949" Tag="773" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5620" RightMargin="19.4380" TopMargin="-20.5782" BottomMargin="20.5782" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5620" Y="73.5782" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4884" Y="0.6941" />
+                    <PreSize X="0.7097" Y="1.0000" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-31.8020" Y="7.3805" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.6360" Y="0.1054" />
+                <PreSize X="2.4800" Y="1.5143" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_8_1" ActionTag="-766249493" Tag="774" IconVisible="False" LeftMargin="-97.2100" RightMargin="21.2100" TopMargin="37.0575" BottomMargin="-74.0575" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="60" Scale9Height="19" ctype="ImageViewObjectData">
+                <Size X="126.0000" Y="107.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1245328538" Tag="775" RotationSkewX="90.0000" RotationSkewY="90.0000" IconVisible="False" LeftMargin="16.5619" RightMargin="21.4381" TopMargin="-19.5785" BottomMargin="20.5785" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.5619" Y="73.5785" />
+                    <Scale ScaleX="0.6800" ScaleY="0.9000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4806" Y="0.6876" />
+                    <PreSize X="0.6984" Y="0.9907" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-34.2100" Y="-20.5575" />
+                <Scale ScaleX="0.4200" ScaleY="0.4200" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.6842" Y="-0.2937" />
+                <PreSize X="2.5200" Y="1.5286" />
+                <FileData Type="Normal" Path="card/lefthand/dachupai/Frame_zuojia_1_1.png" Plist="" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint />
+            <Position X="498.5234" Y="317.8284" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.3895" Y="0.4414" />
+            <PreSize X="0.0391" Y="0.0972" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Panel_dachuUp" ActionTag="-291417747" Tag="673" IconVisible="False" LeftMargin="547.4618" RightMargin="682.5382" TopMargin="109.9591" BottomMargin="540.0409" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="50.0000" Y="70.0000" />
+            <Children>
+              <AbstractNodeData Name="Image24" ActionTag="333301813" Tag="674" IconVisible="False" LeftMargin="-89.3699" RightMargin="39.3699" TopMargin="-57.3304" BottomMargin="-6.6696" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="34" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-596105445" Tag="675" IconVisible="False" LeftMargin="3.3846" RightMargin="8.6154" TopMargin="-5.2911" BottomMargin="33.2911" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3846" Y="86.2911" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4738" Y="0.6440" />
+                    <PreSize X="0.8800" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-39.3699" Y="60.3304" />
+                <Scale ScaleX="0.3700" ScaleY="0.3600" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.7874" Y="0.8619" />
+                <PreSize X="2.0000" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image23" ActionTag="1624491604" Tag="676" IconVisible="False" LeftMargin="-56.3889" RightMargin="6.3889" TopMargin="-57.3329" BottomMargin="-6.6671" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="34" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1578494535" Tag="677" IconVisible="False" LeftMargin="3.3839" RightMargin="8.6161" TopMargin="-5.2914" BottomMargin="33.2914" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3839" Y="86.2914" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4738" Y="0.6440" />
+                    <PreSize X="0.8800" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-6.3889" Y="60.3329" />
+                <Scale ScaleX="0.3700" ScaleY="0.3600" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.1278" Y="0.8619" />
+                <PreSize X="2.0000" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image22" ActionTag="995773836" Tag="678" IconVisible="False" LeftMargin="-23.7964" RightMargin="-25.2036" TopMargin="-57.3329" BottomMargin="-6.6671" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="33" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="99.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="2021559649" Tag="679" IconVisible="False" LeftMargin="3.3847" RightMargin="7.6153" TopMargin="-5.2914" BottomMargin="33.2914" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3847" Y="86.2914" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4786" Y="0.6440" />
+                    <PreSize X="0.8889" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_1.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="25.7036" Y="60.3329" />
+                <Scale ScaleX="0.3700" ScaleY="0.3600" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5141" Y="0.8619" />
+                <PreSize X="1.9800" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image21" ActionTag="1500223932" Tag="680" IconVisible="False" LeftMargin="8.8380" RightMargin="-57.8380" TopMargin="-57.3330" BottomMargin="-6.6670" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="33" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="99.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="888405896" Tag="681" IconVisible="False" LeftMargin="3.3849" RightMargin="7.6151" TopMargin="-5.2913" BottomMargin="33.2913" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3849" Y="86.2913" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4786" Y="0.6440" />
+                    <PreSize X="0.8889" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="58.3380" Y="60.3330" />
+                <Scale ScaleX="0.3700" ScaleY="0.3600" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="1.1668" Y="0.8619" />
+                <PreSize X="1.9800" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image20" ActionTag="-1900640526" Tag="682" IconVisible="False" LeftMargin="42.2964" RightMargin="-88.2964" TopMargin="-57.3331" BottomMargin="-6.6669" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="30" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="96.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1899830020" Tag="683" IconVisible="False" LeftMargin="3.7791" RightMargin="4.2209" TopMargin="-23.6480" BottomMargin="51.6480" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.4701" ScaleY="0.3938" />
+                    <Position X="45.1464" Y="93.3919" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4703" Y="0.6970" />
+                    <PreSize X="0.9167" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="90.2964" Y="60.3331" />
+                <Scale ScaleX="0.3700" ScaleY="0.3600" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="1.8059" Y="0.8619" />
+                <PreSize X="1.9200" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image19" ActionTag="1561556927" Tag="684" IconVisible="False" LeftMargin="75.3297" RightMargin="-121.3297" TopMargin="-57.3331" BottomMargin="-6.6669" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="30" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="96.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1281130863" Tag="685" IconVisible="False" LeftMargin="1.2808" RightMargin="6.7192" TopMargin="-5.2841" BottomMargin="33.2841" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.2808" Y="86.2841" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4717" Y="0.6439" />
+                    <PreSize X="0.9167" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="123.3297" Y="60.3331" />
+                <Scale ScaleX="0.3700" ScaleY="0.3600" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="2.4666" Y="0.8619" />
+                <PreSize X="1.9200" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image18" ActionTag="-1836445789" Tag="686" IconVisible="False" LeftMargin="107.5473" RightMargin="-154.5473" TopMargin="-57.3331" BottomMargin="-6.6669" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="31" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="97.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="2083025721" Tag="687" IconVisible="False" LeftMargin="3.3860" RightMargin="5.6140" TopMargin="-5.2924" BottomMargin="33.2924" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3860" Y="86.2924" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4885" Y="0.6440" />
+                    <PreSize X="0.9072" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="156.0473" Y="60.3331" />
+                <Scale ScaleX="0.3700" ScaleY="0.3600" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="3.1209" Y="0.8619" />
+                <PreSize X="1.9400" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image17" ActionTag="-410437650" Tag="688" IconVisible="False" LeftMargin="140.4108" RightMargin="-187.4108" TopMargin="-58.0204" BottomMargin="-5.9796" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="31" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="97.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="383103549" Tag="689" IconVisible="False" LeftMargin="3.3837" RightMargin="5.6163" TopMargin="-5.2929" BottomMargin="33.2929" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3837" Y="86.2929" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4885" Y="0.6440" />
+                    <PreSize X="0.9072" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="188.9108" Y="61.0204" />
+                <Scale ScaleX="0.3700" ScaleY="0.3600" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="3.7782" Y="0.8717" />
+                <PreSize X="1.9400" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image16" ActionTag="-497464665" Tag="690" IconVisible="False" LeftMargin="-91.0586" RightMargin="41.0586" TopMargin="-22.2485" BottomMargin="-41.7515" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="34" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-263928710" Tag="691" IconVisible="False" LeftMargin="3.3863" RightMargin="8.6137" TopMargin="-5.3630" BottomMargin="33.3630" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3863" Y="86.3630" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4739" Y="0.6445" />
+                    <PreSize X="0.8800" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-41.0586" Y="25.2485" />
+                <Scale ScaleX="0.3800" ScaleY="0.3700" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.8212" Y="0.3607" />
+                <PreSize X="2.0000" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image15" ActionTag="1726970497" Tag="692" IconVisible="False" LeftMargin="-58.0780" RightMargin="8.0780" TopMargin="-22.2486" BottomMargin="-41.7514" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="34" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1716624269" Tag="693" IconVisible="False" LeftMargin="3.3865" RightMargin="8.6135" TopMargin="-5.3636" BottomMargin="33.3636" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3865" Y="86.3636" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4739" Y="0.6445" />
+                    <PreSize X="0.8800" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-8.0780" Y="25.2486" />
+                <Scale ScaleX="0.3800" ScaleY="0.3700" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.1616" Y="0.3607" />
+                <PreSize X="2.0000" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image14" ActionTag="-1074044327" Tag="694" IconVisible="False" LeftMargin="-24.4816" RightMargin="-24.5184" TopMargin="-22.2486" BottomMargin="-41.7514" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="33" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="99.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-50962356" Tag="695" IconVisible="False" LeftMargin="3.3877" RightMargin="7.6123" TopMargin="-5.3628" BottomMargin="33.3628" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3877" Y="86.3628" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4787" Y="0.6445" />
+                    <PreSize X="0.8889" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_1.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="25.0184" Y="25.2486" />
+                <Scale ScaleX="0.3800" ScaleY="0.3700" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5004" Y="0.3607" />
+                <PreSize X="1.9800" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image13" ActionTag="1905570726" Tag="696" IconVisible="False" LeftMargin="8.5979" RightMargin="-57.5979" TopMargin="-22.2487" BottomMargin="-41.7513" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="33" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="99.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1590180811" Tag="697" IconVisible="False" LeftMargin="3.3868" RightMargin="7.6132" TopMargin="-5.3630" BottomMargin="33.3630" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3868" Y="86.3630" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4787" Y="0.6445" />
+                    <PreSize X="0.8889" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="58.0979" Y="25.2487" />
+                <Scale ScaleX="0.3800" ScaleY="0.3700" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="1.1620" Y="0.3607" />
+                <PreSize X="1.9800" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image12" ActionTag="-1479715729" Tag="698" IconVisible="False" LeftMargin="43.1656" RightMargin="-89.1656" TopMargin="-22.2487" BottomMargin="-41.7513" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="30" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="96.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-2136503816" Tag="699" IconVisible="False" LeftMargin="3.7805" RightMargin="4.2195" TopMargin="-23.2677" BottomMargin="51.2677" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.4701" ScaleY="0.3938" />
+                    <Position X="45.1478" Y="93.0116" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4703" Y="0.6941" />
+                    <PreSize X="0.9167" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="91.1656" Y="25.2487" />
+                <Scale ScaleX="0.3800" ScaleY="0.3700" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="1.8233" Y="0.3607" />
+                <PreSize X="1.9200" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image11" ActionTag="344844969" Tag="700" IconVisible="False" LeftMargin="75.6378" RightMargin="-121.6378" TopMargin="-22.2488" BottomMargin="-41.7512" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="30" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="96.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="752360148" Tag="701" IconVisible="False" LeftMargin="1.2826" RightMargin="6.7174" TopMargin="-5.3557" BottomMargin="33.3557" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.2826" Y="86.3557" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4717" Y="0.6444" />
+                    <PreSize X="0.9167" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="123.6378" Y="25.2488" />
+                <Scale ScaleX="0.3800" ScaleY="0.3700" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="2.4728" Y="0.3607" />
+                <PreSize X="1.9200" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image10" ActionTag="667443073" Tag="702" IconVisible="False" LeftMargin="108.8584" RightMargin="-155.8584" TopMargin="-22.2488" BottomMargin="-41.7512" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="31" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="97.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="485762163" Tag="703" IconVisible="False" LeftMargin="3.3862" RightMargin="5.6138" TopMargin="-5.3632" BottomMargin="33.3632" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3862" Y="86.3632" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4885" Y="0.6445" />
+                    <PreSize X="0.9072" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="157.3584" Y="25.2488" />
+                <Scale ScaleX="0.3800" ScaleY="0.3700" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="3.1472" Y="0.3607" />
+                <PreSize X="1.9400" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image9" ActionTag="-864830195" Tag="704" IconVisible="False" LeftMargin="141.7237" RightMargin="-188.7237" TopMargin="-22.2488" BottomMargin="-41.7512" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="31" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="97.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1061548009" Tag="705" IconVisible="False" LeftMargin="3.3864" RightMargin="5.6136" TopMargin="-5.3632" BottomMargin="33.3632" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3864" Y="86.3632" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4885" Y="0.6445" />
+                    <PreSize X="0.9072" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="190.2237" Y="25.2488" />
+                <Scale ScaleX="0.3800" ScaleY="0.3700" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="3.8045" Y="0.3607" />
+                <PreSize X="1.9400" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image8" ActionTag="-1656822456" Tag="706" IconVisible="False" LeftMargin="-92.9788" RightMargin="42.9788" TopMargin="12.6585" BottomMargin="-76.6585" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="34" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1703984357" Tag="707" IconVisible="False" LeftMargin="3.3881" RightMargin="8.6119" TopMargin="-5.4317" BottomMargin="33.4317" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3881" Y="86.4317" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4739" Y="0.6450" />
+                    <PreSize X="0.8800" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-42.9788" Y="-9.6585" />
+                <Scale ScaleX="0.3900" ScaleY="0.3800" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.8596" Y="-0.1380" />
+                <PreSize X="2.0000" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image7" ActionTag="681892985" Tag="708" IconVisible="False" LeftMargin="-59.9984" RightMargin="9.9984" TopMargin="12.6573" BottomMargin="-76.6573" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="34" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="100.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="862223541" Tag="709" IconVisible="False" LeftMargin="3.3876" RightMargin="8.6124" TopMargin="-5.4312" BottomMargin="33.4312" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3876" Y="86.4312" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4739" Y="0.6450" />
+                    <PreSize X="0.8800" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-9.9984" Y="-9.6573" />
+                <Scale ScaleX="0.3900" ScaleY="0.3800" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.2000" Y="-0.1380" />
+                <PreSize X="2.0000" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image6" ActionTag="-607450660" Tag="710" IconVisible="False" LeftMargin="-25.4059" RightMargin="-23.5941" TopMargin="12.6573" BottomMargin="-76.6573" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="33" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="99.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-1342640996" Tag="711" IconVisible="False" LeftMargin="3.3895" RightMargin="7.6105" TopMargin="-5.4312" BottomMargin="33.4312" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3895" Y="86.4312" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4787" Y="0.6450" />
+                    <PreSize X="0.8889" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_1.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="24.0941" Y="-9.6573" />
+                <Scale ScaleX="0.3900" ScaleY="0.3800" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.4819" Y="-0.1380" />
+                <PreSize X="1.9800" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image5" ActionTag="-309031686" Tag="712" IconVisible="False" LeftMargin="8.2262" RightMargin="-57.2262" TopMargin="12.6573" BottomMargin="-76.6573" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="33" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="99.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1981249341" Tag="713" IconVisible="False" LeftMargin="3.3884" RightMargin="7.6116" TopMargin="-5.4308" BottomMargin="33.4308" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3884" Y="86.4308" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4787" Y="0.6450" />
+                    <PreSize X="0.8889" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="57.7262" Y="-9.6573" />
+                <Scale ScaleX="0.3900" ScaleY="0.3800" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="1.1545" Y="-0.1380" />
+                <PreSize X="1.9800" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image4" ActionTag="786811730" Tag="714" IconVisible="False" LeftMargin="43.2448" RightMargin="-89.2448" TopMargin="12.6573" BottomMargin="-76.6573" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="30" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="96.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-509318385" Tag="715" IconVisible="False" LeftMargin="3.7830" RightMargin="4.2170" TopMargin="-22.9099" BottomMargin="50.9099" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.4701" ScaleY="0.3938" />
+                    <Position X="45.1503" Y="92.6539" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4703" Y="0.6914" />
+                    <PreSize X="0.9167" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="91.2448" Y="-9.6573" />
+                <Scale ScaleX="0.3900" ScaleY="0.3800" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="1.8249" Y="-0.1380" />
+                <PreSize X="1.9200" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image3" ActionTag="-893462650" Tag="716" IconVisible="False" LeftMargin="76.7177" RightMargin="-122.7177" TopMargin="12.6573" BottomMargin="-76.6573" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="30" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="96.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-304917289" Tag="717" IconVisible="False" LeftMargin="1.2810" RightMargin="6.7190" TopMargin="-5.4239" BottomMargin="33.4239" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="45.2810" Y="86.4239" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4717" Y="0.6450" />
+                    <PreSize X="0.9167" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="124.7177" Y="-9.6573" />
+                <Scale ScaleX="0.3900" ScaleY="0.3800" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="2.4944" Y="-0.1380" />
+                <PreSize X="1.9200" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image2" ActionTag="-176820584" Tag="718" IconVisible="False" LeftMargin="109.9374" RightMargin="-156.9374" TopMargin="13.6090" BottomMargin="-77.6090" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="31" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="97.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="1500914359" Tag="719" IconVisible="False" LeftMargin="3.3874" RightMargin="5.6126" TopMargin="-5.4323" BottomMargin="33.4323" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3874" Y="86.4323" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4885" Y="0.6450" />
+                    <PreSize X="0.9072" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="158.4374" Y="-10.6090" />
+                <Scale ScaleX="0.3900" ScaleY="0.3800" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="3.1687" Y="-0.1516" />
+                <PreSize X="1.9400" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image1" ActionTag="-2098940485" Tag="720" IconVisible="False" LeftMargin="142.8008" RightMargin="-189.8008" TopMargin="12.6572" BottomMargin="-76.6572" LeftEage="33" RightEage="33" TopEage="44" BottomEage="44" Scale9OriginX="33" Scale9OriginY="44" Scale9Width="31" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="97.0000" Y="134.0000" />
+                <Children>
+                  <AbstractNodeData Name="ImageFace" ActionTag="-927169145" Tag="721" IconVisible="False" LeftMargin="3.3871" RightMargin="5.6129" TopMargin="-5.4325" BottomMargin="33.4325" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="47.3871" Y="86.4325" />
+                    <Scale ScaleX="-0.8000" ScaleY="-0.8000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4885" Y="0.6450" />
+                    <PreSize X="0.9072" Y="0.7910" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="191.3008" Y="-9.6572" />
+                <Scale ScaleX="0.3900" ScaleY="0.3800" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="3.8260" Y="-0.1380" />
+                <PreSize X="1.9400" Y="1.9143" />
+                <FileData Type="Normal" Path="card/mehand/dachu_4.png" Plist="" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint />
+            <Position X="547.4618" Y="540.0409" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4277" Y="0.7501" />
+            <PreSize X="0.0391" Y="0.0972" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Panel_pengMe" ActionTag="288344712" Tag="776" IconVisible="False" LeftMargin="127.7852" RightMargin="1102.2147" TopMargin="623.6424" BottomMargin="26.3576" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="50.0000" Y="70.0000" />
+            <Children>
+              <AbstractNodeData Name="Image_1" ActionTag="-668920350" Tag="813" IconVisible="False" LeftMargin="-121.2582" RightMargin="23.2582" TopMargin="-39.2929" BottomMargin="-51.7071" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="52" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="148.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="1100690783" Tag="814" RotationSkewX="11.9998" IconVisible="False" LeftMargin="25.2815" RightMargin="34.7185" TopMargin="7.2314" BottomMargin="47.7686" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="69.2815" Y="100.7686" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4681" Y="0.6259" />
+                    <PreSize X="0.5946" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-47.2582" Y="28.7929" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="-0.9452" Y="0.4113" />
+                <PreSize X="2.9600" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_2" ActionTag="-216193842" Tag="815" IconVisible="False" LeftMargin="-58.7023" RightMargin="-35.2977" TopMargin="-39.2929" BottomMargin="-51.7071" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="48" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="144.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="-1274929879" Tag="816" RotationSkewX="11.9998" IconVisible="False" LeftMargin="25.2811" RightMargin="30.7189" TopMargin="7.2314" BottomMargin="47.7686" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="69.2811" Y="100.7686" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4811" Y="0.6259" />
+                    <PreSize X="0.6111" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="13.2977" Y="28.7929" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.2660" Y="0.4113" />
+                <PreSize X="2.8800" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_3" ActionTag="1308872073" Tag="817" IconVisible="False" LeftMargin="3.3676" RightMargin="-94.3676" TopMargin="-39.2929" BottomMargin="-51.7071" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="45" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="141.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="1337541576" Tag="818" RotationSkewX="11.0001" IconVisible="False" LeftMargin="25.2817" RightMargin="27.7183" TopMargin="7.0471" BottomMargin="47.9529" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="69.2817" Y="100.9529" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4914" Y="0.6270" />
+                    <PreSize X="0.6241" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="73.8676" Y="28.7929" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="1.4774" Y="0.4113" />
+                <PreSize X="2.8200" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_3.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_4" ActionTag="-1388699863" Tag="819" IconVisible="False" LeftMargin="71.8547" RightMargin="-160.8547" TopMargin="-39.2929" BottomMargin="-51.7071" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="43" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="139.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="-1633534537" Tag="820" RotationSkewX="9.9998" IconVisible="False" LeftMargin="25.2795" RightMargin="25.7205" TopMargin="6.8785" BottomMargin="48.1215" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="69.2795" Y="101.1215" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4984" Y="0.6281" />
+                    <PreSize X="0.6331" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="141.3547" Y="28.7929" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="2.8271" Y="0.4113" />
+                <PreSize X="2.7800" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_4.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_5" ActionTag="109594584" Tag="821" IconVisible="False" LeftMargin="135.0240" RightMargin="-219.0240" TopMargin="-39.2929" BottomMargin="-51.7071" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="38" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="134.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="-1921016252" Tag="822" RotationSkewX="8.0002" IconVisible="False" LeftMargin="22.8299" RightMargin="23.1701" TopMargin="6.5889" BottomMargin="48.4111" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="66.8299" Y="101.4111" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4987" Y="0.6299" />
+                    <PreSize X="0.6567" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="202.0240" Y="28.7929" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="4.0405" Y="0.4113" />
+                <PreSize X="2.6800" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_5.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_6" ActionTag="-366648637" Tag="823" IconVisible="False" LeftMargin="197.1456" RightMargin="-278.1456" TopMargin="-39.2929" BottomMargin="-51.7071" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="35" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="131.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="1609465469" Tag="824" RotationSkewX="7.0002" IconVisible="False" LeftMargin="20.2810" RightMargin="22.7190" TopMargin="6.4684" BottomMargin="48.5316" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="64.2810" Y="101.5316" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4907" Y="0.6306" />
+                    <PreSize X="0.6718" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="262.6456" Y="28.7929" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="5.2529" Y="0.4113" />
+                <PreSize X="2.6200" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_6.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_7" Visible="False" ActionTag="-1623958832" Tag="825" IconVisible="False" LeftMargin="265.5436" RightMargin="-342.5436" TopMargin="-39.2929" BottomMargin="-51.7071" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="31" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="127.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="-1949927813" Tag="826" RotationSkewX="6.0001" IconVisible="False" LeftMargin="25.2813" RightMargin="13.7187" TopMargin="6.3635" BottomMargin="48.6365" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="69.2813" Y="101.6365" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5455" Y="0.6313" />
+                    <PreSize X="0.6929" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="329.0436" Y="28.7929" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="6.5809" Y="0.4113" />
+                <PreSize X="2.5400" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_7.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_8" Visible="False" ActionTag="987337044" Tag="827" IconVisible="False" LeftMargin="328.0410" RightMargin="-402.0410" TopMargin="-39.2929" BottomMargin="-51.7071" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="28" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="124.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="-1079520633" Tag="828" RotationSkewX="5.0000" IconVisible="False" LeftMargin="18.2825" RightMargin="17.7175" TopMargin="6.2748" BottomMargin="48.7252" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="62.2825" Y="101.7252" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5023" Y="0.6318" />
+                    <PreSize X="0.7097" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="390.0410" Y="28.7929" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="7.8008" Y="0.4113" />
+                <PreSize X="2.4800" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_8.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_9" Visible="False" ActionTag="609812705" Tag="829" IconVisible="False" LeftMargin="390.3613" RightMargin="-462.3613" TopMargin="-39.2929" BottomMargin="-51.7071" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="26" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="122.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="499316290" Tag="830" RotationSkewX="4.0000" IconVisible="False" LeftMargin="19.2826" RightMargin="14.7174" TopMargin="6.2024" BottomMargin="48.7976" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="63.2826" Y="101.7976" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5187" Y="0.6323" />
+                    <PreSize X="0.7213" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="451.3613" Y="28.7929" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="9.0272" Y="0.4113" />
+                <PreSize X="2.4400" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_9.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_10" Visible="False" ActionTag="1363174445" Tag="831" IconVisible="False" LeftMargin="460.3447" RightMargin="-528.3447" TopMargin="-39.2929" BottomMargin="-51.7071" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="22" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="118.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="-729853883" Tag="832" RotationSkewX="2.0000" IconVisible="False" LeftMargin="16.2788" RightMargin="13.7212" TopMargin="6.1055" BottomMargin="48.8945" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="60.2788" Y="101.8945" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5108" Y="0.6329" />
+                    <PreSize X="0.7458" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="519.3447" Y="28.7929" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="10.3869" Y="0.4113" />
+                <PreSize X="2.3600" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_10.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_11" Visible="False" ActionTag="-2109922838" Tag="833" IconVisible="False" LeftMargin="523.4244" RightMargin="-588.4244" TopMargin="-39.2929" BottomMargin="-51.7071" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="19" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="115.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="-1318115088" Tag="834" RotationSkewX="1.0000" IconVisible="False" LeftMargin="13.2823" RightMargin="13.7177" TopMargin="6.0813" BottomMargin="48.9187" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="57.2823" Y="101.9187" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4981" Y="0.6330" />
+                    <PreSize X="0.7652" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="580.9244" Y="28.7929" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="11.6185" Y="0.4113" />
+                <PreSize X="2.3000" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_11.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_12" Visible="False" ActionTag="226902319" Tag="835" IconVisible="False" LeftMargin="584.2381" RightMargin="-648.2381" TopMargin="-39.2929" BottomMargin="-51.7071" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="18" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="114.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="380488141" Tag="836" IconVisible="False" LeftMargin="13.8888" RightMargin="12.1112" TopMargin="6.0734" BottomMargin="48.9266" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="57.8888" Y="101.9266" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5078" Y="0.6331" />
+                    <PreSize X="0.7719" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="641.2381" Y="28.7929" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="12.8248" Y="0.4113" />
+                <PreSize X="2.2800" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_12.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Image_2_0" ActionTag="-1383895304" Tag="839" IconVisible="False" LeftMargin="-65.7024" RightMargin="-28.2976" TopMargin="-59.2892" BottomMargin="-31.7108" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="48" Scale9Height="55" ctype="ImageViewObjectData">
+                <Size X="144.0000" Y="161.0000" />
+                <Children>
+                  <AbstractNodeData Name="Image_face" ActionTag="-99262246" Tag="840" RotationSkewX="11.9998" IconVisible="False" LeftMargin="25.2811" RightMargin="30.7189" TopMargin="7.2314" BottomMargin="47.7686" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
+                    <Size X="88.0000" Y="106.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="69.2811" Y="100.7686" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.4811" Y="0.6259" />
+                    <PreSize X="0.6111" Y="0.6584" />
+                    <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="6.2976" Y="48.7892" />
+                <Scale ScaleX="0.6000" ScaleY="0.6000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1260" Y="0.6970" />
+                <PreSize X="2.8800" Y="2.3000" />
+                <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_2.png" Plist="" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint />
+            <Position X="127.7852" Y="26.3576" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0998" Y="0.0366" />
+            <PreSize X="0.0391" Y="0.0972" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
