@@ -6,15 +6,15 @@
       <ObjectData Name="Scene" Tag="181" ctype="GameNodeObjectData">
         <Size X="1280.0000" Y="720.0000" />
         <Children>
-          <AbstractNodeData Name="Image_bg" CanEdit="False" ActionTag="633292119" Tag="182" IconVisible="False" LeftMargin="0.7596" RightMargin="-0.7596" TopMargin="1.6265" BottomMargin="-1.6265" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="1250" Scale9Height="690" ctype="ImageViewObjectData">
-            <Size X="1280.0000" Y="720.0000" />
+          <AbstractNodeData Name="FileNode_deskBg" ActionTag="1014137083" Tag="19530" IconVisible="True" LeftMargin="640.0000" RightMargin="640.0000" TopMargin="360.0000" BottomMargin="360.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="0.7596" Y="-1.6265" />
+            <Position X="640.0000" Y="360.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0006" Y="-0.0023" />
-            <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="gameui/img_GameUI_BgNEW.png" Plist="" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="deskBg.csd" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="FileNode_wallLeft" ActionTag="653912486" Tag="11937" IconVisible="True" LeftMargin="262.9240" RightMargin="1017.0760" TopMargin="321.8616" BottomMargin="398.1384" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
@@ -176,29 +176,15 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="standLeft.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_Close" ActionTag="1020678045" Tag="183" IconVisible="False" LeftMargin="1216.9984" RightMargin="-12.9984" TopMargin="5.3679" BottomMargin="663.6321" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="46" Scale9Height="29" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="76.0000" Y="51.0000" />
-            <AnchorPoint ScaleX="0.6098" ScaleY="-0.1545" />
-            <Position X="1263.3433" Y="655.7526" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9870" Y="0.9108" />
-            <PreSize X="0.0594" Y="0.0708" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="bg/button_back_2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="bg/button_back_1.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Image_,round" ActionTag="-590532844" Tag="42" IconVisible="False" LeftMargin="497.9797" RightMargin="496.0203" TopMargin="197.5513" BottomMargin="310.4487" LeftEage="15" RightEage="15" TopEage="15" BottomEage="15" Scale9OriginX="15" Scale9OriginY="15" Scale9Width="256" Scale9Height="182" ctype="ImageViewObjectData">
-            <Size X="286.0000" Y="212.0000" />
+          <AbstractNodeData Name="FileNode_deskUi" ActionTag="-97620542" Tag="20686" IconVisible="True" LeftMargin="640.0000" RightMargin="640.0000" TopMargin="360.0000" BottomMargin="360.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="497.9797" Y="310.4487" />
+            <Position X="640.0000" Y="360.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3890" Y="0.4312" />
-            <PreSize X="0.2234" Y="0.2944" />
-            <FileData Type="Normal" Path="gameui/img_element_gamecenterbg.png" Plist="" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="deskUi.csd" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

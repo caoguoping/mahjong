@@ -1101,6 +1101,8 @@
         <Project Name="pengUp.csd" Type="Node" />
         <Project Name="wallRight.csd" Type="Node" />
         <Project Name="wallLeft.csd" Type="Node" />
+        <Project Name="deskBg.csd" Type="Node" />
+        <Project Name="deskUi.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>
