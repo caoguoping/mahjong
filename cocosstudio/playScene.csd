@@ -36,13 +36,13 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="wallRight.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_pengUp" ActionTag="-266363619" Tag="9961" IconVisible="True" LeftMargin="671.0222" RightMargin="608.9778" TopMargin="28.0273" BottomMargin="691.9727" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_pengUp" ActionTag="-266363619" Tag="9961" IconVisible="True" LeftMargin="639.0126" RightMargin="640.9874" TopMargin="26.7203" BottomMargin="693.2797" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="671.0222" Y="691.9727" />
+            <Position X="639.0126" Y="693.2797" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5242" Y="0.9611" />
+            <PrePosition X="0.4992" Y="0.9629" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="pengUp.csd" Plist="" />
           </AbstractNodeData>
@@ -96,7 +96,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="wallMe.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_standMe" Visible="False" ActionTag="2096001276" Tag="3304" IconVisible="True" LeftMargin="657.6368" RightMargin="622.3632" TopMargin="651.7650" BottomMargin="68.2350" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_standMe" ActionTag="2096001276" Tag="3304" IconVisible="True" LeftMargin="657.6368" RightMargin="622.3632" TopMargin="651.7650" BottomMargin="68.2350" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="657.6368" Y="68.2350" />
@@ -136,13 +136,13 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="dachuUp.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_pengMe" ActionTag="-1527025511" Tag="1447" IconVisible="True" LeftMargin="627.9958" RightMargin="652.0042" TopMargin="660.6667" BottomMargin="59.3333" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_pengMe" ActionTag="-1527025511" Tag="1447" IconVisible="True" LeftMargin="515.2017" RightMargin="764.7983" TopMargin="661.9793" BottomMargin="58.0207" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="627.9958" Y="59.3333" />
+            <Position X="515.2017" Y="58.0207" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4906" Y="0.0824" />
+            <PrePosition X="0.4025" Y="0.0806" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="pengMe.csd" Plist="" />
           </AbstractNodeData>

@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="2758" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Button_1" ActionTag="-2126016459" Tag="3018" IconVisible="False" LeftMargin="-602.1967" RightMargin="513.1967" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_1" Visible="False" ActionTag="-2126016459" Tag="3018" IconVisible="False" LeftMargin="-602.1967" RightMargin="513.1967" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="89.0000" Y="130.0000" />
             <Children>
               <AbstractNodeData Name="Image_paiMian" ActionTag="661274224" Tag="3019" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
@@ -32,7 +32,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_2" ActionTag="-1183875428" Tag="3020" IconVisible="False" LeftMargin="-519.1820" RightMargin="430.1820" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_2" Visible="False" ActionTag="-1183875428" Tag="3020" IconVisible="False" LeftMargin="-519.1820" RightMargin="430.1820" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="89.0000" Y="130.0000" />
             <Children>
               <AbstractNodeData Name="Image_paiMian" ActionTag="-1718540393" Tag="3021" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
@@ -58,7 +58,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_3" ActionTag="104335628" Tag="3022" IconVisible="False" LeftMargin="-436.3960" RightMargin="347.3960" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_3" Visible="False" ActionTag="104335628" Tag="3022" IconVisible="False" LeftMargin="-436.3960" RightMargin="347.3960" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="89.0000" Y="130.0000" />
             <Children>
               <AbstractNodeData Name="Image_paiMian" ActionTag="104504948" Tag="3023" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">

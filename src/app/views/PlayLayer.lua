@@ -58,6 +58,9 @@ function PlayLayer:ctor()
         stndCell[i] = {}
         dachCell[i] = {}
         pengCell[i] = {}
+        for j=1,4 do
+            pengCell[i][j] = {}
+        end
     end
     --堆牌
     for  i = 1,4 do
@@ -67,12 +70,18 @@ function PlayLayer:ctor()
         end
     end
 
-    --碰牌  15-18为杠上牌
+    --碰牌  四个一组,pengCell[1][1][1]，共四组，5,6为13,14张
     for  i = 1,4 do
-        for j=1,18 do
-            local imgName = "Image"..j
-            local imgBg = pengNode[i]:getChildByName(imgName)
-            pengCell[i][j] = imgBg:getChildByName("Image_face")
+        pengCell[i][5] = pengNode[i]:getChildByName("Image13")
+        pengCell[i][6] = pengNode[i]:getChildByName("Image14")
+        for j = 1, 4 do
+            local nodeName = "Node_"..j
+            local nd = pengNode[i]:getChildByName(nodeName)
+            for k = 1, 4 do
+                local imgName = "Image"..k
+                local imgBg = nd:getChildByName(imgName)
+                pengCell[i][j][k] = imgBg:getChildByName("Image_face")
+            end
         end
     end
 
@@ -86,7 +95,7 @@ function PlayLayer:ctor()
     end
 
     wallCell[1][35]:setVisible(false)
-    pengCell[3][12]:loadTexture("8.png")
+    pengCell[2][3][4]:loadTexture("24.png")
     dachCell[4][14]:loadTexture("17.png")
     -- for i = 1,40000 do
     --     for i=1,14 do
