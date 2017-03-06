@@ -55,6 +55,15 @@ function LayerManager:createLayer(panel,params)
 	end
 end
 
+function LayerManager:getLayer(panel,params)
+	local _layer = self.Layers[panel]
+	if not _layer then
+		self.Layers[panel] = self:createLayer(panel, params)
+		self.LoginScene:addChild(self.Layers[panel])
+		self.Layers[panel]:setVisible(false)
+	end	
+end
+
 function LayerManager:showLayer(panel, params)	
 	if  self.NowLayer then	
 		self.NowLayer:setVisible(false)

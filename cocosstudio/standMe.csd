@@ -6,369 +6,145 @@
       <ObjectData Name="Node" Tag="2758" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Button_1" Visible="False" ActionTag="-2126016459" Tag="3018" IconVisible="False" LeftMargin="-602.1967" RightMargin="513.1967" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="661274224" Tag="3019" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="44.7092" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5024" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image1" ActionTag="163390844" Tag="1831" IconVisible="False" LeftMargin="-607.7138" RightMargin="515.7138" TopMargin="-63.9766" BottomMargin="-66.0234" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-557.6967" Y="-0.1549" />
+            <Position X="-561.7138" Y="-1.0234" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_2" Visible="False" ActionTag="-1183875428" Tag="3020" IconVisible="False" LeftMargin="-519.1820" RightMargin="430.1820" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="-1718540393" Tag="3021" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="44.7092" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5024" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image2" ActionTag="-227879990" Tag="1832" IconVisible="False" LeftMargin="-522.6317" RightMargin="430.6317" TopMargin="-63.9766" BottomMargin="-66.0234" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-474.6820" Y="-0.1549" />
+            <Position X="-476.6317" Y="-1.0234" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_3" Visible="False" ActionTag="104335628" Tag="3022" IconVisible="False" LeftMargin="-436.3960" RightMargin="347.3960" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="104504948" Tag="3023" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="44.7092" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5024" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image3" ActionTag="1845506461" Tag="1833" IconVisible="False" LeftMargin="-438.5463" RightMargin="346.5463" TopMargin="-63.9766" BottomMargin="-66.0234" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-391.8960" Y="-0.1549" />
+            <Position X="-392.5463" Y="-1.0234" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_4" ActionTag="1848061659" Tag="3024" IconVisible="False" LeftMargin="-353.8968" RightMargin="264.8968" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="745934144" Tag="3025" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="44.7092" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5024" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image4" ActionTag="575007873" Tag="1834" IconVisible="False" LeftMargin="-355.0017" RightMargin="263.0017" TopMargin="-63.9766" BottomMargin="-66.0234" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-309.3968" Y="-0.1549" />
+            <Position X="-309.0017" Y="-1.0234" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_5" ActionTag="98234389" Tag="3026" IconVisible="False" LeftMargin="-270.6017" RightMargin="181.6017" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="-1119985630" Tag="3027" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="44.7092" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5024" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-226.1017" Y="-0.1549" />
+          <AbstractNodeData Name="Image5" ActionTag="768570345" Tag="1835" IconVisible="False" LeftMargin="-269.3879" RightMargin="177.3879" TopMargin="-63.9989" BottomMargin="-66.0011" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
+            <AnchorPoint ScaleX="0.4612" ScaleY="0.4966" />
+            <Position X="-226.9568" Y="-1.4464" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_6" ActionTag="236826173" Tag="3028" IconVisible="False" LeftMargin="-186.5055" RightMargin="97.5055" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="143729816" Tag="3029" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="44.7092" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5024" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image6" ActionTag="440185087" Tag="1836" IconVisible="False" LeftMargin="-185.3007" RightMargin="93.3007" TopMargin="-63.9766" BottomMargin="-66.0234" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-142.0055" Y="-0.1549" />
+            <Position X="-139.3007" Y="-1.0234" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_7" ActionTag="49383403" Tag="3030" IconVisible="False" LeftMargin="-104.0054" RightMargin="15.0054" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="1679650039" Tag="3031" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="44.7092" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5024" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image7" ActionTag="-1791880446" Tag="1837" IconVisible="False" LeftMargin="-100.7065" RightMargin="8.7065" TopMargin="-63.9766" BottomMargin="-66.0234" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-59.5054" Y="-0.1549" />
+            <Position X="-54.7065" Y="-1.0234" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_8" ActionTag="1120553946" Tag="3032" IconVisible="False" LeftMargin="-20.4698" RightMargin="-68.5302" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="-1295639504" Tag="3033" IconVisible="False" LeftMargin="-0.2906" RightMargin="1.2906" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="43.7094" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4911" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image8" ActionTag="1563180562" Tag="1838" IconVisible="False" LeftMargin="-16.2828" RightMargin="-75.7172" TopMargin="-63.9766" BottomMargin="-66.0234" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="24.0302" Y="-0.1549" />
+            <Position X="29.7172" Y="-1.0234" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_9" ActionTag="-1948807141" Tag="3034" IconVisible="False" LeftMargin="62.4066" RightMargin="-151.4066" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="1253658443" Tag="3035" IconVisible="False" LeftMargin="-0.2906" RightMargin="1.2906" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="43.7094" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4911" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image9" ActionTag="-1040957725" Tag="1839" IconVisible="False" LeftMargin="68.3384" RightMargin="-160.3384" TopMargin="-63.9766" BottomMargin="-66.0234" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="106.9066" Y="-0.1549" />
+            <Position X="114.3384" Y="-1.0234" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_10" ActionTag="-501132232" Tag="3036" IconVisible="False" LeftMargin="145.0457" RightMargin="-234.0457" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="1077237448" Tag="3037" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="44.7092" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5024" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image10" ActionTag="-412871211" Tag="1840" IconVisible="False" LeftMargin="152.8842" RightMargin="-244.8842" TopMargin="-63.9766" BottomMargin="-66.0234" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="189.5457" Y="-0.1549" />
+            <Position X="198.8842" Y="-1.0234" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_11" ActionTag="-2118158453" Tag="3038" IconVisible="False" LeftMargin="227.9733" RightMargin="-316.9733" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="493587617" Tag="3039" IconVisible="False" LeftMargin="-0.2908" RightMargin="1.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="43.7092" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4911" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_7.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image11" ActionTag="410922578" Tag="1841" IconVisible="False" LeftMargin="237.5327" RightMargin="-329.5327" TopMargin="-63.9766" BottomMargin="-66.0234" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="272.4733" Y="-0.1549" />
+            <Position X="283.5327" Y="-1.0234" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_12" ActionTag="924821706" Tag="3040" IconVisible="False" LeftMargin="311.2075" RightMargin="-400.2075" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="32328690" Tag="3041" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="44.7092" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5024" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image12" ActionTag="-1308726939" Tag="1842" IconVisible="False" LeftMargin="322.6124" RightMargin="-414.6124" TopMargin="-63.9766" BottomMargin="-66.0234" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="355.7075" Y="-0.1549" />
+            <Position X="368.6124" Y="-1.0234" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_13" ActionTag="15121261" Tag="3042" IconVisible="False" LeftMargin="393.3569" RightMargin="-482.3569" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="-291196661" Tag="3043" IconVisible="False" LeftMargin="-0.2906" RightMargin="1.2906" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="43.7094" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4911" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image13" ActionTag="-1304300334" Tag="1843" IconVisible="False" LeftMargin="407.2493" RightMargin="-499.2493" TopMargin="-63.9765" BottomMargin="-66.0235" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="437.8569" Y="-0.1549" />
+            <Position X="453.2493" Y="-1.0235" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_14" ActionTag="1198180129" Tag="3044" IconVisible="False" LeftMargin="513.9302" RightMargin="-602.9302" TopMargin="-64.8451" BottomMargin="-65.1549" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="108" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="89.0000" Y="130.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_paiMian" ActionTag="299526268" Tag="3045" IconVisible="False" LeftMargin="0.7092" RightMargin="0.2908" TopMargin="16.9000" BottomMargin="7.1000" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
-                <Size X="88.0000" Y="106.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="44.7092" Y="60.1000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5024" Y="0.4623" />
-                <PreSize X="0.9888" Y="0.8154" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image14" ActionTag="-572184480" Tag="1844" IconVisible="False" LeftMargin="517.4427" RightMargin="-609.4427" TopMargin="-63.9766" BottomMargin="-66.0234" LeftEage="30" RightEage="30" TopEage="42" BottomEage="42" Scale9OriginX="30" Scale9OriginY="42" Scale9Width="32" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="92.0000" Y="130.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="558.4302" Y="-0.1549" />
+            <Position X="563.4427" Y="-1.0234" />
             <Scale ScaleX="0.9500" ScaleY="0.9500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <PressedFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <NormalFileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="card/mehand/paimian/player.png" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

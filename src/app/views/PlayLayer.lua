@@ -1,7 +1,9 @@
 local CURRENT_MODULE_NAME = ...
 
-local DataMgr     = import(".DataManager"):getInstance()
-local LayerMgr = import(".LayerManager"):getInstance()
+local dataMgr     = import(".DataManager"):getInstance()
+local layerMgr = import(".LayerManager"):getInstance()
+local cardMgr = import(".CardManager"):getInstance()
+
 
 local PlayLayer = class("PlayLayer", display.newLayer)
 
@@ -17,6 +19,7 @@ local wallCell = {}
 local stndCell = {}
 local dachCell = {}
 local pengCell = {}
+local testCv = {25, 18, 1, 2, 3, 8, 5, 5, 7, 9, 40, 41, 52, 74}
 
 function PlayLayer:ctor()
     local rootNode = cc.CSLoader:createNode("playScene.csb"):addTo(self)
@@ -49,7 +52,7 @@ function PlayLayer:ctor()
     local btnClose = deskUiNode:getChildByName("Button_Close")
     btnClose:onClicked(
         function ()
-        LayerMgr:showLayer(LayerMgr.Enum.MainLayer, params)
+        layerMgr:showLayer(layerMgr.Enum.MainLayer, params)
         TTSocketClient:getInstance():closeMySocket(girl.SocketType.Game)
         end)
 
@@ -89,10 +92,13 @@ function PlayLayer:ctor()
     for i = 1, 4 do
         for j = 1, 24 do
             local imgName = "Image"..j
-            local imgBg = dachNode[i]:getChildByName(imgName)
+            local imgBg = dachNode[i]:getChildByName(imgName) 
             dachCell[i][j] = imgBg:getChildByName("ImageFace")
         end
     end
+
+
+
 
     wallCell[1][35]:setVisible(false)
     pengCell[2][3][4]:loadTexture("24.png")
@@ -103,7 +109,7 @@ function PlayLayer:ctor()
     --     end
     -- end
 
-
+    self:refresh()
 end
   
 function PlayLayer.create()
@@ -121,7 +127,7 @@ end
 
 function PlayLayer:refresh(params)
     self:resetNodeVisible()
-
+    cardMgr:initCardNodes(testCv)
 
 end
 

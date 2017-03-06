@@ -1081,28 +1081,29 @@
           <Image Name="unfold_bg.png" />
         </Folder>
         <Folder Name="playScene" />
+        <Project Name="dachuLeft.csd" Type="Node" />
+        <Project Name="dachuMe.csd" Type="Node" />
+        <Project Name="dachuRight.csd" Type="Node" />
+        <Project Name="dachuUp.csd" Type="Node" />
+        <Project Name="deskBg.csd" Type="Node" />
+        <Project Name="deskUi.csd" Type="Node" />
         <Project Name="lobbyHead.csd" Type="Node" />
         <Project Name="LoginScene.csd" Type="Scene" />
         <Project Name="NewLobby.csd" Type="Scene" />
-        <Project Name="playScene.csd" Type="Scene" />
-        <Project Name="pengRight.csd" Type="Node" />
         <Project Name="pengLeft.csd" Type="Node" />
         <Project Name="pengMe.csd" Type="Node" />
-        <Project Name="dachuUp.csd" Type="Node" />
-        <Project Name="dachuLeft.csd" Type="Node" />
-        <Project Name="dachuRight.csd" Type="Node" />
-        <Project Name="standMe.csd" Type="Node" />
-        <Project Name="wallMe.csd" Type="Node" />
-        <Project Name="dachuMe.csd" Type="Node" />
-        <Project Name="standRight.csd" Type="Node" />
-        <Project Name="standLeft.csd" Type="Node" />
-        <Project Name="wallUp.csd" Type="Node" />
-        <Project Name="standUp.csd" Type="Node" />
+        <Project Name="pengRight.csd" Type="Node" />
         <Project Name="pengUp.csd" Type="Node" />
-        <Project Name="wallRight.csd" Type="Node" />
+        <Project Name="playScene.csd" Type="Scene" />
+        <Project Name="standLeft.csd" Type="Node" />
+        <Project Name="standMe.csd" Type="Node" />
+        <Project Name="standRight.csd" Type="Node" />
+        <Project Name="standUp.csd" Type="Node" />
         <Project Name="wallLeft.csd" Type="Node" />
-        <Project Name="deskBg.csd" Type="Node" />
-        <Project Name="deskUi.csd" Type="Node" />
+        <Project Name="wallMe.csd" Type="Node" />
+        <Project Name="wallRight.csd" Type="Node" />
+        <Project Name="wallUp.csd" Type="Node" />
+        <Project Name="buttonCard.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>
