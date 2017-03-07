@@ -3,17 +3,25 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Folder Name="actions">
+          <Folder Name="shezi">
+            <Image Name="sezi_0.png" />
+            <Image Name="sezi_1.png" />
+            <Image Name="sezi_2.png" />
+            <Image Name="sezi_3.png" />
+            <Image Name="sezi_4.png" />
+            <Image Name="sezi_5.png" />
+            <Image Name="sezi_6.png" />
+            <Image Name="sezi_7.png" />
+          </Folder>
+        </Folder>
         <Folder Name="bg">
           <Image Name="already-receive_2.png" />
           <Image Name="anniu-guanbi-down.png" />
           <Image Name="anniu-guanbi-up.png" />
           <Image Name="bentouming.png" />
           <Image Name="bg_2nd-ui.png" />
-          <Image Name="bg_cloud.png" />
-          <Image Name="bg_icon.png" />
           <Image Name="bottom_bg.png" />
-          <Image Name="btn1.png" />
-          <Image Name="btn2.png" />
           <Image Name="button_add_1.png" />
           <Image Name="button_add_2.png" />
           <Image Name="button_back_1.png" />
@@ -1081,6 +1089,7 @@
           <Image Name="unfold_bg.png" />
         </Folder>
         <Folder Name="playScene" />
+        <Project Name="buttonCard.csd" Type="Node" />
         <Project Name="dachuLeft.csd" Type="Node" />
         <Project Name="dachuMe.csd" Type="Node" />
         <Project Name="dachuRight.csd" Type="Node" />
@@ -1096,14 +1105,16 @@
         <Project Name="pengUp.csd" Type="Node" />
         <Project Name="playScene.csd" Type="Scene" />
         <Project Name="standLeft.csd" Type="Node" />
-        <Project Name="standMe.csd" Type="Node" />
+        <Project Name="standMeBei.csd" Type="Node" />
         <Project Name="standRight.csd" Type="Node" />
         <Project Name="standUp.csd" Type="Node" />
         <Project Name="wallLeft.csd" Type="Node" />
         <Project Name="wallMe.csd" Type="Node" />
         <Project Name="wallRight.csd" Type="Node" />
         <Project Name="wallUp.csd" Type="Node" />
-        <Project Name="buttonCard.csd" Type="Node" />
+        <Folder Name="actionsCsb">
+          <Project Name="shezi.csd" Type="Node" />
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>

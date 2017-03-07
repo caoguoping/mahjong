@@ -11,8 +11,8 @@ function CardNode:ctor(cardValue)
    -- self.value = 
     local rootNode = cc.CSLoader:createNode("buttonCard.csb"):addTo(self)
     self.rootNode = rootNode
-    local btnBg  = rootNode:getChildByName("Button_1")
-    local imgFace = btnBg:getChildByName("Image_paiMian")
+    self.btnBg  = rootNode:getChildByName("Button_1")
+    local imgFace = self.btnBg:getChildByName("Image_paiMian")
     local imgName = cardValue..".png"
     imgFace:loadTexture(imgName)
 

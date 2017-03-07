@@ -46,7 +46,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="pengUp.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_standUp" Visible="False" ActionTag="58007771" Tag="9047" IconVisible="True" LeftMargin="545.0049" RightMargin="734.9951" TopMargin="32.9812" BottomMargin="687.0188" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_standUp" ActionTag="58007771" Tag="9047" IconVisible="True" LeftMargin="545.0049" RightMargin="734.9951" TopMargin="32.9812" BottomMargin="687.0188" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="545.0049" Y="687.0188" />
@@ -66,7 +66,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="wallUp.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_standRight" Visible="False" ActionTag="1266256954" Tag="6696" IconVisible="True" LeftMargin="1125.8525" RightMargin="154.1475" TopMargin="232.7584" BottomMargin="487.2416" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_standRight" ActionTag="1266256954" Tag="6696" IconVisible="True" LeftMargin="1125.8525" RightMargin="154.1475" TopMargin="232.7584" BottomMargin="487.2416" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="1125.8525" Y="487.2416" />
@@ -96,15 +96,34 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="wallMe.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_standMe" ActionTag="2096001276" Tag="3304" IconVisible="True" LeftMargin="657.6368" RightMargin="622.3632" TopMargin="651.7650" BottomMargin="68.2350" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="Image_touch" CanEdit="False" ActionTag="2050626171" Tag="5526" IconVisible="False" RightMargin="1248.0000" TopMargin="688.0000" TouchEnable="True" LeftEage="10" RightEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="12" Scale9Height="12" ctype="ImageViewObjectData">
+            <Size X="32.0000" Y="32.0000" />
+            <AnchorPoint />
+            <Position />
+            <Scale ScaleX="40.0000" ScaleY="22.5000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0250" Y="0.0444" />
+            <FileData Type="Normal" Path="bg/touming.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_standMe" ActionTag="-1034071504" Tag="8236" IconVisible="True" LeftMargin="656.3615" RightMargin="623.6385" TopMargin="651.7454" BottomMargin="68.2546" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="657.6368" Y="68.2350" />
+            <Position X="656.3615" Y="68.2546" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5138" Y="0.0948" />
+            <PrePosition X="0.5128" Y="0.0948" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="standMe.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_standMeBei" ActionTag="2096001276" Tag="3304" IconVisible="True" LeftMargin="656.1185" RightMargin="623.8815" TopMargin="651.7650" BottomMargin="68.2350" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="656.1185" Y="68.2350" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5126" Y="0.0948" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="standMeBei.csd" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="FileNode_dachuRight" ActionTag="-1004125758" Tag="2708" IconVisible="True" LeftMargin="840.0994" RightMargin="439.9006" TopMargin="280.0949" BottomMargin="439.9051" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
@@ -136,7 +155,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="dachuUp.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_pengMe" Visible="False" ActionTag="-1527025511" Tag="1447" IconVisible="True" LeftMargin="515.2017" RightMargin="764.7983" TopMargin="661.9793" BottomMargin="58.0207" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_pengMe" ActionTag="-1527025511" Tag="1447" IconVisible="True" LeftMargin="515.2017" RightMargin="764.7983" TopMargin="661.9793" BottomMargin="58.0207" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="515.2017" Y="58.0207" />
@@ -176,13 +195,13 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="standLeft.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_deskUi" ActionTag="-97620542" Tag="20686" IconVisible="True" LeftMargin="640.0000" RightMargin="640.0000" TopMargin="360.0000" BottomMargin="360.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_deskUi" ActionTag="-97620542" Tag="20686" IconVisible="True" LeftMargin="640.0010" RightMargin="639.9990" TopMargin="292.2567" BottomMargin="427.7433" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="640.0000" Y="360.0000" />
+            <Position X="640.0010" Y="427.7433" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5000" />
+            <PrePosition X="0.5000" Y="0.5941" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="deskUi.csd" Plist="" />
           </AbstractNodeData>
