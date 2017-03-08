@@ -67,7 +67,11 @@ function LoginScene:onEnter()
         self:startLogin(strUid)
     end)
 
-
+    --test deleteLater
+    local strUid = "1711514028"
+    DataMgr.myBaseData.uid = strUid
+    print("strUid:"..strUid)
+    self:startLogin(strUid)
 
 end
 

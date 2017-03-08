@@ -15,6 +15,9 @@
             <Image Name="sezi_7.png" />
           </Folder>
         </Folder>
+        <Folder Name="actionsCsb">
+          <Project Name="shezi.csd" Type="Node" />
+        </Folder>
         <Folder Name="bg">
           <Image Name="already-receive_2.png" />
           <Image Name="anniu-guanbi-down.png" />
@@ -935,20 +938,6 @@
           <Image Name="jiansuo_layer.png" />
           <Image Name="jiansuo_yuan.png" />
           <Image Name="selfbankerfirsttip.png" />
-          <Image Name="sezi_0.png" />
-          <Image Name="sezi_1.png" />
-          <Image Name="sezi_2.png" />
-          <Image Name="sezi_3.png" />
-          <Image Name="sezi_4.png" />
-          <Image Name="sezi_5.png" />
-          <Image Name="sezi_6.png" />
-          <Image Name="sezi_7.png" />
-          <Image Name="sezi_value1.png" />
-          <Image Name="sezi_value2.png" />
-          <Image Name="sezi_value3.png" />
-          <Image Name="sezi_value4.png" />
-          <Image Name="sezi_value5.png" />
-          <Image Name="sezi_value6.png" />
           <Image Name="shenyupai.png" />
           <Image Name="touxiang.png" />
           <Image Name="zhiyin_shou.png" />
@@ -1088,6 +1077,33 @@
           <Image Name="touming.png" />
           <Image Name="unfold_bg.png" />
         </Folder>
+        <Folder Name="number">
+          <Image Name="img_difen.png" />
+          <Image Name="img_difenWord.png" />
+          <Image Name="img_element_flower0.png" />
+          <Image Name="img_element_flower1.png" />
+          <Image Name="img_element_flower2.png" />
+          <Image Name="img_element_flower3.png" />
+          <Image Name="img_element_flower4.png" />
+          <Image Name="img_element_flower5.png" />
+          <Image Name="img_element_flower6.png" />
+          <Image Name="img_element_flower7.png" />
+          <Image Name="img_element_flower8.png" />
+          <Image Name="img_element_flower9.png" />
+          <Image Name="img_element_flowerx.png" />
+          <Image Name="img_MainMenu_dizhuNo0.png" />
+          <Image Name="img_MainMenu_dizhuNo1.png" />
+          <Image Name="img_MainMenu_dizhuNo2.png" />
+          <Image Name="img_MainMenu_dizhuNo3.png" />
+          <Image Name="img_MainMenu_dizhuNo4.png" />
+          <Image Name="img_MainMenu_dizhuNo5.png" />
+          <Image Name="img_MainMenu_dizhuNo6.png" />
+          <Image Name="img_MainMenu_dizhuNo7.png" />
+          <Image Name="img_MainMenu_dizhuNo8.png" />
+          <Image Name="img_MainMenu_dizhuNo9.png" />
+          <Image Name="leftcardNum.png" />
+          <Image Name="zhongkong_t_shuzi.png" />
+        </Folder>
         <Folder Name="playScene" />
         <Project Name="buttonCard.csd" Type="Node" />
         <Project Name="dachuLeft.csd" Type="Node" />
@@ -1112,9 +1128,6 @@
         <Project Name="wallMe.csd" Type="Node" />
         <Project Name="wallRight.csd" Type="Node" />
         <Project Name="wallUp.csd" Type="Node" />
-        <Folder Name="actionsCsb">
-          <Project Name="shezi.csd" Type="Node" />
-        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -5,10 +5,11 @@ local layerMgr = import(".LayerManager"):getInstance()
 local cardMgr = import(".CardManager"):getInstance()
 local PlayLayer = class("PlayLayer", display.newLayer)
 
--- fileNode  1:me,   2:Right,    3:up,     4:left
+-- fileNode  1:me,   2:left,    3:up,     4:right
 local testCv = {25, 18, 1, 2, 3, 8, 5, 5, 7, 9, 40, 41, 52, 74}
 
 function PlayLayer:ctor()
+--all Node
     local rootNode = cc.CSLoader:createNode("playScene.csb"):addTo(self)
     self.rootNode = rootNode
 
@@ -24,27 +25,23 @@ function PlayLayer:ctor()
     self.deskBgNode  = rootNode:getChildByName("FileNode_deskBg")
     self.deskUiNode  = rootNode:getChildByName("FileNode_deskUi")
     self.wallNode[1]  = rootNode:getChildByName("FileNode_wallMe")
-    self.wallNode[2]  = rootNode:getChildByName("FileNode_wallRight")
+    self.wallNode[4]  = rootNode:getChildByName("FileNode_wallRight")
     self.wallNode[3]  = rootNode:getChildByName("FileNode_wallUp")
-    self.wallNode[4]  = rootNode:getChildByName("FileNode_wallLeft")
+    self.wallNode[2]  = rootNode:getChildByName("FileNode_wallLeft")
     self.stndNode[1]  = rootNode:getChildByName("FileNode_standMe")
-    self.stndNode[2]  = rootNode:getChildByName("FileNode_standRight")
+    self.stndNode[4]  = rootNode:getChildByName("FileNode_standRight")
     self.stndNode[3]  = rootNode:getChildByName("FileNode_standUp")
-    self.stndNode[4]  = rootNode:getChildByName("FileNode_standLeft")
+    self.stndNode[2]  = rootNode:getChildByName("FileNode_standLeft")
     self.dachNode[1]  = rootNode:getChildByName("FileNode_dachuMe")
-    self.dachNode[2]  = rootNode:getChildByName("FileNode_dachuRight")
+    self.dachNode[4]  = rootNode:getChildByName("FileNode_dachuRight")
     self.dachNode[3]  = rootNode:getChildByName("FileNode_dachuUp")
-    self.dachNode[4]  = rootNode:getChildByName("FileNode_dachuLeft")
+    self.dachNode[2]  = rootNode:getChildByName("FileNode_dachuLeft")
     self.pengNode[1]  = rootNode:getChildByName("FileNode_pengMe")
-    self.pengNode[2]  = rootNode:getChildByName("FileNode_pengRight")
+    self.pengNode[4]  = rootNode:getChildByName("FileNode_pengRight")
     self.pengNode[3]  = rootNode:getChildByName("FileNode_pengUp")
-    self.pengNode[4]  = rootNode:getChildByName("FileNode_pengLeft")
+    self.pengNode[2]  = rootNode:getChildByName("FileNode_pengLeft")
     self.stndNodeMeBei = rootNode:getChildByName("FileNode_standMeBei")
     self:resetNodeVisible()
-
-
-
---    
 
     --self:schedule(self,handler(self, self.checkAttackUpdate),2.0)
     --     if self:getPositionX() <= battleManager.hero:getPositionX() then
@@ -60,7 +57,27 @@ function PlayLayer:ctor()
     -- else
     --     self:setLocalZOrder(display.height - self:getPositionY())
     -- end
-    
+
+--bg
+    self.imgFeng = {}
+    self.imgLight= {}
+    for i=1,4 do
+        self.imgLight[i] = {}
+        for j=1,2 do
+            local imgName = "Image_light_"..i + j * 4 - 4
+            self.imgLight[i][j] = self.deskBgNode:getChildByName(imgName)
+        end
+    end
+
+    for i=1,4 do
+        local imgName = "Image_char_"..i
+        self.imgFeng[i] = self.deskBgNode:getChildByName(imgName)
+    end
+
+    self.clock = self.deskBgNode:getChildByName("AtlasLabel_1")
+    --self.clock:setString("0"..8)
+
+--ui
     local btnClose = self.deskUiNode:getChildByName("Button_Close")
     btnClose:onClicked(
         function ()
@@ -77,6 +94,7 @@ function PlayLayer:ctor()
             self.pengCell[i][j] = {}
         end
     end
+--pai
     --堆牌
     for  i = 1,4 do
         for j = 1,36 do
@@ -122,16 +140,6 @@ function PlayLayer:ctor()
         self.stndCell[1][i] = self.stndNodeMeBei:getChildByName(imgName)
     end
 
-
-    -- wallCell[1][35]:setVisible(false)
-    -- pengCell[2][3][4]:loadTexture("24.png")
-    -- dachCell[4][14]:loadTexture("17.png")
-    -- for i = 1,40000 do
-    --     for i=1,14 do
-    --         pengMeCell[1]:loadTexture("24.png")
-    --     end
-    -- end
-
     self:refresh(testCv)
 end
   
@@ -158,6 +166,11 @@ function PlayLayer:refresh(cardValuesMe)
     self:resetNodeVisible()
     self:zhuaPai(cardValuesMe)
     cardMgr:initCardNodes(cardValuesMe, self)
+
+    -- for i=1,4 do
+    --     self.imgLight[i][1]:setVisible(false)
+    --     self.imgLight[i][2]:setVisible(false)
+    -- end
 
 end
 

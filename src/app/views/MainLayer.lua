@@ -18,6 +18,7 @@ function MainLayer:ctor()
         LayerMgr:showLayer(LayerMgr.Enum.PlayLayer, params)
     end
     ) 
+    
 
 end
 

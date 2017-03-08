@@ -77,7 +77,6 @@ function NetWorkLogin:loginComplete( rcv )
 end
 
 function NetWorkLogin:registerRole( rcv)
-
     local uid = DataMgr.myBaseData.uid
     local dwPlazaVersion = 65536
     local szMachineID = "aaaaaa"
@@ -85,15 +84,12 @@ function NetWorkLogin:registerRole( rcv)
     local szInsurePass = uid
     local wFaceID = 1
     local cbGender = 1
-
     local szAccounts = uid
     local szNickName = uid
     local szSpreader = ""
     local szPassPortID = ""
     local szCompellation = ""
--- uid
     local cbValidateFlags    
-
     local snd = DataSnd:create(1, 3)
     snd:wrDWORD(dwPlazaVersion)
     snd:wrString(szMachineID, 66)
@@ -110,7 +106,6 @@ function NetWorkLogin:registerRole( rcv)
     snd:wrByte(3)
     snd:sendData(girl.SocketType.Login)
     snd:release();
-
     rcv:destroys()
 end
 

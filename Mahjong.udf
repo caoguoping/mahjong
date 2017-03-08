@@ -28,16 +28,5 @@
         <LastRunType Value="Windows" />
       </Value>
     </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="playScene.csd" />
-          <FilePathData Path="standMeBei.csd" />
-          <FilePathData Path="actionsCsb/shezi.csd" />
-          <FilePathData Path="deskBg.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="deskBg.csd" />
-      </Value>
-    </Item>
   </Properties>
 </UserData>
