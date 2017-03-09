@@ -155,7 +155,7 @@ end
 function PlayLayer:resetNodeVisible()
     for i=1,4 do
         self.wallNode[i]:setVisible(true)
-        self.stndNode[i]:setVisible(false)
+        self.stndNode[i]:setVisible(true)
         self.dachNode[i]:setVisible(false)
         self.pengNode[i]:setVisible(false)
     end

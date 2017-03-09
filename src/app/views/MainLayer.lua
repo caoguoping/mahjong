@@ -10,15 +10,20 @@ local MainLayer = class("MainLayer", display.newLayer)
 function MainLayer:ctor()
     local rootNode = cc.CSLoader:createNode("NewLobby.csb"):addTo(self)
     self.rootNode = rootNode
-    local scroll = rootNode:getChildByName("ScrollView_button")
-    local btnPlayGold = scroll:getChildByName("Button_playGold")
-    btnPlayGold:onClicked(
+    local btnCreate = rootNode:getChildByName("Button_create")
+    local btnJoin = rootNode:getChildByName("Button_join")
+    btnCreate:onClicked(
     function ()
         self:startGame("139.196.237.203",5010)
         LayerMgr:showLayer(LayerMgr.Enum.PlayLayer, params)
     end
     ) 
-    
+    btnJoin:onClicked(
+    function ()
+        self:startGame("139.196.237.203",5010)
+        LayerMgr:showLayer(LayerMgr.Enum.PlayLayer, params)
+    end
+    )    
 
 end
 

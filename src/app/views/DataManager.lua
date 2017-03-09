@@ -38,6 +38,7 @@ function DataManager:init()
         rmb               
     ]]
 --onDeskData
+    --下标为serverChairId
     self.onDeskData = {}
     for i=1,4 do
         self.onDeskData[i] = {}
@@ -73,15 +74,23 @@ function DataManager:init()
     --下标为服务器Id, 值为客户端ID  
     --[[
     server
-            3
-        2        4
-            1
+            2
+        1        3
+            0
     client
             3
         2        4
             1    
     ]]
     self.chair = {}    
+end
+
+function DataManager:getServiceChairId( clientId )
+    for i=1,4 do
+        if self.chair[i] == clientId then
+            return i - 1  --服务器为0, 3
+        end
+    end
 end
 
 return DataManager

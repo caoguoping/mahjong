@@ -3,7 +3,6 @@
 local CURRENT_MODULE_NAME = ...
 local DataMgr     = import(".DataManager"):getInstance()
 
-
 local s_inst = nil
 local NetWorkGame = class("NetWorkGame", display.newNode)
 
@@ -22,7 +21,6 @@ function NetWorkGame:inits()
     local eventDispatcher = self:getEventDispatcher()
     eventDispatcher:addEventListenerWithFixedPriority(listener, 1)
 end
-
 
 function NetWorkGame:handleEventGame( event)
     local rcv = DataRcv:create(event)
@@ -47,7 +45,7 @@ function NetWorkGame:handleEventGame( event)
         if wSubCmd == 102 then
             self:sitDown(rcv)
         elseif wSubCmd == 100 then
-            
+            self:playerCome(rcv) 
         end
     else 
     --
@@ -65,6 +63,7 @@ function NetWorkGame:sitDown( rcv )
 end
 
 function NetWorkGame:playerCome( rcv )
+--readData and 赋值
     local dwGameID      = rcv:readDWORD();
     local dwUserID      = rcv:readDWORD();
     local dwGroupID     = rcv:readDWORD();
@@ -75,7 +74,7 @@ function NetWorkGame:playerCome( rcv )
     local cbMasterOrder = rcv:readByte();
     local cbUserStatus  = rcv:readByte();
     local wTableID      = rcv:readWORD();
-    local wChairID      = rcv:readWORD();
+    local wChairID      = rcv:readWORD();         --0,3
     local lScore        = rcv:readUInt64();
     local lGrade        = rcv:readUInt64();
     local lInsure       = rcv:readUInt64();
@@ -90,41 +89,43 @@ function NetWorkGame:playerCome( rcv )
     local nick2         = rcv:readWORD();
     local szNickName    = rcv:readString(nick1);
     rcv:destroys()
-    if wChairID > 4 or wChairID < 1 then
+
+    local svrChair = wChairID + 1
+    if svrChair > 4 or svrChair < 1 then
         print("error: wChairID out of range !")
         return
     end
---
-    DataMgr.onDeskData[wChairID].dwGameID      = dwGameID     
-    DataMgr.onDeskData[wChairID].dwUserID      = dwUserID     
-    DataMgr.onDeskData[wChairID].dwGroupID     = dwGroupID    
-    DataMgr.onDeskData[wChairID].wFaceID       = wFaceID      
-    DataMgr.onDeskData[wChairID].dwCustomID    = dwCustomID   
-    DataMgr.onDeskData[wChairID].cbGender      = cbGender     
-    DataMgr.onDeskData[wChairID].cbMemberOrder = cbMemberOrder
-    DataMgr.onDeskData[wChairID].cbMasterOrder = cbMasterOrder
-    DataMgr.onDeskData[wChairID].cbUserStatus  = cbUserStatus 
-    DataMgr.onDeskData[wChairID].wTableID      = wTableID     
-    DataMgr.onDeskData[wChairID].wChairID      = wChairID     
-    DataMgr.onDeskData[wChairID].lScore        = lScore       
-    DataMgr.onDeskData[wChairID].lGrade        = lGrade       
-    DataMgr.onDeskData[wChairID].lInsure       = lInsure      
-    DataMgr.onDeskData[wChairID].dwWinCount    = dwWinCount   
-    DataMgr.onDeskData[wChairID].dwLostCount   = dwLostCount  
-    DataMgr.onDeskData[wChairID].dwDrawCount   = dwDrawCount  
-    DataMgr.onDeskData[wChairID].dwFleeCount   = dwFleeCount  
-    DataMgr.onDeskData[wChairID].dwUserMedal   = dwUserMedal  
-    DataMgr.onDeskData[wChairID].dwExperience  = dwExperience 
-    DataMgr.onDeskData[wChairID].lLoveLiness   = lLoveLiness  
-    DataMgr.onDeskData[wChairID].nick1         = nick1        
-    DataMgr.onDeskData[wChairID].nick2         = nick2        
-    DataMgr.onDeskData[wChairID].szNickName    = szNickName   
-
+    print(svrChair)
+    DataMgr.onDeskData[svrChair].dwGameID      = dwGameID     
+    DataMgr.onDeskData[svrChair].dwUserID      = dwUserID     
+    DataMgr.onDeskData[svrChair].dwGroupID     = dwGroupID    
+    DataMgr.onDeskData[svrChair].wFaceID       = wFaceID      
+    DataMgr.onDeskData[svrChair].dwCustomID    = dwCustomID   
+    DataMgr.onDeskData[svrChair].cbGender      = cbGender     
+    DataMgr.onDeskData[svrChair].cbMemberOrder = cbMemberOrder
+    DataMgr.onDeskData[svrChair].cbMasterOrder = cbMasterOrder
+    DataMgr.onDeskData[svrChair].cbUserStatus  = cbUserStatus 
+    DataMgr.onDeskData[svrChair].wTableID      = wTableID     
+    DataMgr.onDeskData[svrChair].wChairID      = wChairID     
+    DataMgr.onDeskData[svrChair].lScore        = lScore       
+    DataMgr.onDeskData[svrChair].lGrade        = lGrade       
+    DataMgr.onDeskData[svrChair].lInsure       = lInsure      
+    DataMgr.onDeskData[svrChair].dwWinCount    = dwWinCount   
+    DataMgr.onDeskData[svrChair].dwLostCount   = dwLostCount  
+    DataMgr.onDeskData[svrChair].dwDrawCount   = dwDrawCount  
+    DataMgr.onDeskData[svrChair].dwFleeCount   = dwFleeCount  
+    DataMgr.onDeskData[svrChair].dwUserMedal   = dwUserMedal  
+    DataMgr.onDeskData[svrChair].dwExperience  = dwExperience 
+    DataMgr.onDeskData[svrChair].lLoveLiness   = lLoveLiness  
+    DataMgr.onDeskData[svrChair].nick1         = nick1        
+    DataMgr.onDeskData[svrChair].nick2         = nick2        
+    DataMgr.onDeskData[svrChair].szNickName    = szNickName   
+--客户端chairId赋值
     if DataMgr.myBaseData.dwUserID == dwUserId then
-        local svrChairId = wChairID
+        local svrChairId = wChairID + 1    --从1开始, 1, 4
         DataMgr.chair[svrChairId] = 1
         local index = svrChairId
-        for i=1,3 do
+        for i=2,4 do
             index = index + 1
             if index > 4 then
                 index = 1
@@ -132,26 +133,6 @@ function NetWorkGame:playerCome( rcv )
             DataMgr.chair[index] = i
         end
     end
-        if (DATA->myBaseData.dwUserID == result.dwUserID)
-        {
-            playerInDeskModel->chair[dwSvChairID] = 0;
-            DWORD index = dwSvChairID;
-
-            for (DWORD i = 1; i < 4; i++)
-            {
-                ++index;
-                if (index > 3)
-                {
-                    index = 0;
-                }
-                playerInDeskModel->chair[index] = i;
-            }
-            if (DATA->bGameCate == DataManager::E_GameCateMatch)
-            {
-                blueSkyDispatchEvent(EventType::SHOW_PLAYER_ON_DESK_DATA, data);
-            }
-            
-        }
 end
 
 return NetWorkGame

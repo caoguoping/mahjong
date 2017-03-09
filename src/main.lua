@@ -4,6 +4,8 @@ cc.FileUtils:getInstance():addSearchPath("src/")
 cc.FileUtils:getInstance():addSearchPath("res/")
 cc.FileUtils:getInstance():addSearchPath("res/customPng")
 cc.FileUtils:getInstance():addSearchPath("res/cardPng")
+cc.FileUtils:getInstance():addSearchPath("res/csbLobby")
+cc.FileUtils:getInstance():addSearchPath("res/csbPlay")
 
 
 require "config"
