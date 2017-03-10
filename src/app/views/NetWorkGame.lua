@@ -32,13 +32,13 @@ function NetWorkGame:handleEventGame( event)
     --心跳
         if wSubCmd == 1 then
         local snd = DataSnd:create(0, 1)
-          snd:sendData(girl.SocketType.Game)
+          snd:sendData(netTb.SocketType.Game)
           snd:release();
         end
 
     elseif wMainCmd == 1 then
         if wSubCmd == 100 then
-            --self:loginComplete(rcv)
+            self:connectSuccess(rcv)
         end
 
     elseif wMainCmd == 3 then
@@ -50,6 +50,43 @@ function NetWorkGame:handleEventGame( event)
     else 
     --
     end
+end
+
+function NetWorkGame:connectSuccess( rcv )
+                  local snd = DataSnd:create(1, 4)
+    local uid = "1711514028"
+    local dwPlazaVersion = 65536
+    local dwFrameVersion = 65536
+    local dwProcessVersion = 65536
+    local szPassword = uid
+    local szMachineID = uid
+    local wKindID = 2
+    local wTable = 65535
+    local wChair = 65535
+
+    snd:wrDWORD(dwPlazaVersion)
+    snd:wrDWORD(dwFrameVersion)
+    snd:wrDWORD(dwProcessVersion)
+    snd:wrDWORD(DataMgr.myBaseData.dwUserID)
+    snd:wrString(szPassword, 66) 
+    snd:wrString(szMachineID, 66) 
+    snd:wrWORD(wKindID) 
+    snd:wrWORD(wTable)  
+    snd:wrWORD(wChair) 
+    snd:sendData(netTb.SocketType.Game)
+    snd:release();
+
+dataMgr.roomSet.wScore        
+dataMgr.roomSet.wJieSuanLimit 
+dataMgr.roomSet.wBiXiaHu      
+dataMgr.roomSet.bGangHouKaiHua
+dataMgr.roomSet.bZaEr         
+dataMgr.roomSet.bFaFeng       
+dataMgr.roomSet.bYaJue        
+dataMgr.roomSet.bJuShu        
+dataMgr.roomSet.bIsJinyunzi   
+
+
 end
 
 function NetWorkGame:sitDown( rcv )

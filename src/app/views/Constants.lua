@@ -1,10 +1,19 @@
 cc.exports.girl            = girl or {}
+cc.exports.netTb       = netTb or {}
 
-girl.SocketType = 
+netTb.SocketType = 
 {
 	Login  = 0,
 	Game   = 1,
 }
+netTb.ip = "139.196.237.203"
+netTb.port =
+{
+    login = 5050,
+    jinyunzi = 5010,
+    changkaihuan = 5011,
+}
+
 
 girl.Message                =
 {

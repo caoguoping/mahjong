@@ -14,6 +14,21 @@ function DataManager:getInstance()
 end
 
 function DataManager:init()
+--数组下标拷贝
+    --[[
+    [1]  = 
+    [2]  = 
+    [3]  = 
+    [4]  = 
+    [5]  = 
+    [6]  = 
+    [7]  = 
+    [8]  = 
+    [9]  = 
+    [10] = 
+    [11] = 
+    [12] = 
+    ]]
 --myBaseData
     self.myBaseData = {}
     --[[
@@ -71,7 +86,7 @@ function DataManager:init()
         -- szGroupName;szUnderWrite; isClear; 暂时不用
     ]]
 --chair  
-    --下标为服务器Id, 值为客户端ID  
+    --下标为服务器Id, 值为客户端ID  chair[1 - 4] 
     --[[
     server
             2
@@ -82,7 +97,22 @@ function DataManager:init()
         2        4
             1    
     ]]
-    self.chair = {}    
+    self.chair = {}  
+--roomSet
+    self.roomSet = {} 
+     --[[
+    比下胡： 连庄(0bit)，包牌，花杠，        对对胡，杠后开花， 黄庄，
+            天胡， 地胡， 全求独钓，     对对胡，杠后开花， 黄庄(11bit)
+    wScore;                                         //总分数    100， 200， 300
+    wJieSuanLimit;                          //单局结算上限      0：无限制，    100 ：100翻
+    wBiXiaHu;                                       //比下胡 12bit
+    bGangHouKaiHua;                                 //杠后开花  0：翻倍        1：加20花
+    bZaEr;                                          //砸二      0：不砸2，     1：砸2
+    bFaFeng;                                        //罚分      0：不罚分，    1：罚
+    bYaJue;                                         //压绝    3bit  自己对的牌(0bit), 别人对的牌，  已打出的牌(2bit)  
+    bJuShu;                                         //局数     1：1圈，   2:2圈，   4:4圈
+    bIsJinyunzi                                     //是否进园子 1：进园子   ，   0:敞开头    
+    ]] 
 end
 
 function DataManager:getServiceChairId( clientId )

@@ -67,7 +67,7 @@ function LoginScene:onEnter()
         self:startLogin(strUid)
     end)
 
-    --test deleteLater
+    --test delete Later
     local strUid = "1711514028"
     DataMgr.myBaseData.uid = strUid
     print("strUid:"..strUid)
@@ -76,7 +76,7 @@ function LoginScene:onEnter()
 end
 
 function LoginScene:startLogin(_uid)
-    TTSocketClient:getInstance():startSocket("139.196.237.203",5050, girl.SocketType.Login)
+    TTSocketClient:getInstance():startSocket(netTb.ip, netTb.port.login, netTb.SocketType.Login)
 
     local snd = DataSnd:create(1, 2)
     local uid = _uid
@@ -93,7 +93,7 @@ function LoginScene:startLogin(_uid)
     snd:wrString(szAccounts, 66)
     snd:wrString(uid, 32)
     snd:wrDWORD(cbValidateFlags)
-    snd:sendData(girl.SocketType.Login)
+    snd:sendData(netTb.SocketType.Login)
     snd:release();
 
 end

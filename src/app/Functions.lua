@@ -137,6 +137,16 @@ function girl.fixNodePosition(x,y)
     return cc.p(x, size.height - (config.height - y))
 end
 
+--获取位类型变量集合的总值，1为最低位 
+function girl.getAllBitValue(bitTable)
+    local sum = 0
+    for i=1,#bitTable do
+        local once = 2 ^ (i - 1) * bitTable[i]
+        sum = sum + once
+    end
+    return sum
+end
+
 -- local panelFactory = import(".view.controls.PanelFactory"):getInstance()
 
 -- function girl.MsgBox(str, who)

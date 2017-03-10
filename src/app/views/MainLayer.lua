@@ -27,6 +27,10 @@ function MainLayer:ctor()
 
 end
 
+function MainLayer:createRoom(  )
+    
+end
+
 function MainLayer.creator( )
    return MainLayer.new()
 end
@@ -36,7 +40,7 @@ function MainLayer:refresh(params)
 end
 
 function MainLayer:startGame(ip, port)
-    TTSocketClient:getInstance():startSocket(ip, port, girl.SocketType.Game)
+    TTSocketClient:getInstance():startSocket(ip, port, netTb.SocketType.Game)
 
     local snd = DataSnd:create(1, 1)
     local uid = "1711514028"
@@ -58,7 +62,7 @@ function MainLayer:startGame(ip, port)
     snd:wrWORD(wKindID) 
     snd:wrWORD(wTable)  
     snd:wrWORD(wChair) 
-    snd:sendData(girl.SocketType.Game)
+    snd:sendData(netTb.SocketType.Game)
     snd:release();
 end
 

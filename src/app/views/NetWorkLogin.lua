@@ -33,7 +33,7 @@ function NetWorkLogin:handleEventLogin( event)
     if  wMainCmd == 0 then
         if  wSubCmd == 1 then
             local snd = DataSnd:create(0, 1)
-                snd:sendData(girl.SocketType.Login)
+                snd:sendData(netTb.SocketType.Login)
                 snd:release();
         end
 
@@ -104,7 +104,7 @@ function NetWorkLogin:registerRole( rcv)
     snd:wrString(szCompellation, 32)
     snd:wrString(uid, 32)
     snd:wrByte(3)
-    snd:sendData(girl.SocketType.Login)
+    snd:sendData(netTb.SocketType.Login)
     snd:release();
     rcv:destroys()
 end

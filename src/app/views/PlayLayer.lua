@@ -3,11 +3,13 @@ local CURRENT_MODULE_NAME = ...
 local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
 local cardMgr = import(".CardManager"):getInstance()
-local PlayLayer = class("PlayLayer", display.newLayer)
+
 
 -- fileNode  1:me,   2:left,    3:up,     4:right
 local testCv = {25, 18, 1, 2, 3, 8, 5, 5, 7, 9, 40, 41, 52, 74}
 
+
+local PlayLayer = class("PlayLayer", display.newLayer)
 function PlayLayer:ctor()
 --all Node
     local rootNode = cc.CSLoader:createNode("playScene.csb"):addTo(self)
@@ -82,7 +84,7 @@ function PlayLayer:ctor()
     btnClose:onClicked(
         function ()
         layerMgr:showLayer(layerMgr.Enum.MainLayer, params)
-        TTSocketClient:getInstance():closeMySocket(girl.SocketType.Game)
+        TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
         end)
 
     for i = 1, 4 do
