@@ -76,15 +76,15 @@ function NetWorkGame:connectSuccess( rcv )
     snd:sendData(netTb.SocketType.Game)
     snd:release();
 
-dataMgr.roomSet.wScore        
-dataMgr.roomSet.wJieSuanLimit 
-dataMgr.roomSet.wBiXiaHu      
-dataMgr.roomSet.bGangHouKaiHua
-dataMgr.roomSet.bZaEr         
-dataMgr.roomSet.bFaFeng       
-dataMgr.roomSet.bYaJue        
-dataMgr.roomSet.bJuShu        
-dataMgr.roomSet.bIsJinyunzi   
+    -- dataMgr.roomSet.wScore        
+    -- dataMgr.roomSet.wJieSuanLimit 
+    -- dataMgr.roomSet.wBiXiaHu      
+    -- dataMgr.roomSet.bGangHouKaiHua
+    -- dataMgr.roomSet.bZaEr         
+    -- dataMgr.roomSet.bFaFeng       
+    -- dataMgr.roomSet.bYaJue        
+    -- dataMgr.roomSet.bJuShu        
+    -- dataMgr.roomSet.bIsJinyunzi   
 
 
 end
