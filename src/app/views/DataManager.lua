@@ -111,8 +111,13 @@ function DataManager:init()
     bFaFeng;                                        //罚分      0：不罚分，    1：罚
     bYaJue;                                         //压绝    3bit  自己对的牌(0bit), 别人对的牌，  已打出的牌(2bit)  
     bJuShu;                                         //局数     1：1圈，   2:2圈，   4:4圈
-    bIsJinyunzi                                     //是否进园子 1：进园子   ，   0:敞开头    
+    bIsJinyunzi                                     //是否进园子 1：进园子   ，   0:敞开头   
+
+    wChair   高位，一下不在发送数组里面
+    wTable
     ]] 
+
+
 end
 
 function DataManager:getServiceChairId( clientId )

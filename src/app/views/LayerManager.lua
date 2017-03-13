@@ -18,11 +18,20 @@ function LayerManager:inits( )
 	self.Layers = {}
 	self.Layers[1] = nil
 	self.Layers[2] = nil
+	self.boxes = {}
+	self.boxes[1] = nil
+
 end
 
-LayerManager.Enum = table.enumTable({
+LayerManager.layIndex = table.enumTable({
 	"MainLayer",
 	"PlayLayer",
+})
+
+LayerManager.boxIndex = table.enumTable({
+	"CreateRoomBox",
+	"JoinRoomBox",
+
 })
 
 
@@ -52,6 +61,13 @@ function LayerManager:createLayer(panel,params)
 		--cc.Director:getInstance():getTextureCache():removeUnusedTextures()
 		local p = creator(params)
 		return p
+	end
+end
+
+function LayerManager:removeBoxes(boxIndex)
+    if  self.boxes[boxIndex] then
+	    self.boxes[boxIndex]:removeSelf()
+	    self.boxes[boxIndex] = nil
 	end
 end
 

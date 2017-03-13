@@ -83,7 +83,7 @@ function PlayLayer:ctor()
     local btnClose = self.deskUiNode:getChildByName("Button_Close")
     btnClose:onClicked(
         function ()
-        layerMgr:showLayer(layerMgr.Enum.MainLayer, params)
+        layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
         TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
         end)
 

@@ -9,9 +9,20 @@ function createRoomBox:ctor()
 --all Node
     local rootNode = cc.CSLoader:createNode("createRoom.csb"):addTo(self)
     self.rootNode = rootNode
+    rootNode:setPosition(display.center)
     local btnCreate = rootNode:getChildByName("Button_create")
     local btnClose = rootNode:getChildByName("Button_close")
     local imgMask = rootNode:getChildByName("Image_mask")
+    imgMask:onClicked(
+        function (  )
+            self:removeSelf()
+        end
+        )
+    btnClose:onClicked(
+        function (  )
+            self:removeSelf()
+        end)
+
 
     local tbBiaxiahu = {}
     tbBiaxiahu[1]  = 1
@@ -41,12 +52,45 @@ function createRoomBox:ctor()
     dataMgr.roomSet.bYaJue        = girl.getAllBitValue(tbYaJue)
     dataMgr.roomSet.bJuShu        = 1
     dataMgr.roomSet.bIsJinyunzi   = 1
-
-
+    layerMgr.LoginScene:addChild(self, 10000)
     btnCreate:onClicked(
-        function (  )
-  
+        --cgpTest
+        function ( )
+            layerMgr:removeBoxes(layerMgr.boxIndex.CreateRoomBox)
+            layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params) 
         end
-        )
+
+
+        -- function (  )
+        --     self:sendCreateRoom()
+        -- end
+    )
+end
+
+function createRoomBox:sendCreateRoom()
+    --cgpTest
+    print("\ncreateRoomBox")
+
+    local snd = DataSnd:create(1, 4)
+    snd:wrWORD(dataMgr.roomSet.wScore        )
+    snd:wrWORD(dataMgr.roomSet.wJieSuanLimit )
+    snd:wrWORD(dataMgr.roomSet.wBiXiaHu      )
+    snd:wrByte(dataMgr.roomSet.bGangHouKaiHua)
+    snd:wrByte(dataMgr.roomSet.bZaEr         )
+    snd:wrByte(dataMgr.roomSet.bFaFeng       )
+    snd:wrByte(dataMgr.roomSet.bYaJue        )
+    snd:wrByte(dataMgr.roomSet.bJuShu        )
+    snd:wrByte(dataMgr.roomSet.bIsJinyunzi   )
+    snd:sendData(netTb.SocketType.Game)
+    snd:release();
+end
+
+function createRoomBox:init(  )
+    -- body
+end
+
+function createRoomBox.create(  )
+    return createRoomBox.new()
+end
 
 return createRoomBox

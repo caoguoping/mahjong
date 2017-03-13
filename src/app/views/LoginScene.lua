@@ -1,9 +1,9 @@
 local CURRENT_MODULE_NAME = ...
 
-local DataMgr     = import(".DataManager"):getInstance()
-local LayerMgr = import(".LayerManager"):getInstance()
-local NetWorkLogin = import(".NetWorkLogin"):getInstance()
-local NetWorkGame = import(".NetWorkGame"):getInstance()
+local dataMgr     = import(".DataManager"):getInstance()
+local layerMgr = import(".LayerManager"):getInstance()
+local netLogin = import(".NetWorkLogin"):getInstance()
+local netGame = import(".NetWorkGame"):getInstance()
 
 local LoginScene = class("LoginScene", cc.load("mvc").ViewBase)
 LoginScene.RESOURCE_FILENAME = "LoginScene.csb"
@@ -18,7 +18,7 @@ function LoginScene:onEnter()
     local rootNode = self:getResourceNode()
 
 
-    LayerMgr.LoginScene = self
+    layerMgr.LoginScene = self
 
     local txUid = rootNode:getChildByName("TextField_uid")
     local btnLogin = rootNode:getChildByName("Button_login")
@@ -29,7 +29,7 @@ function LoginScene:onEnter()
             strUid = tostring(1711514050 + math.random(1000000, 9000000))
 
         end
-        DataMgr.myBaseData.uid = strUid
+        dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end
@@ -41,37 +41,38 @@ function LoginScene:onEnter()
     local btnFast4 = rootNode:getChildByName("Button_4")
     btnFast1:onClicked(function (  )
         local strUid = "1711514028"
-        DataMgr.myBaseData.uid = strUid
+        dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
     btnFast2:onClicked(function (  )
         local strUid = "1711514029"
-        DataMgr.myBaseData.uid = strUid
+        dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
     btnFast3:onClicked(function (  )
         local strUid = "1711514030"
-        DataMgr.myBaseData.uid = strUid
+        dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
     btnFast4:onClicked(function (  )
         local strUid = "1711514031"
-        DataMgr.myBaseData.uid = strUid
+        dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
-    --test delete Later
+    --cgpTest
     local strUid = "1711514028"
-    DataMgr.myBaseData.uid = strUid
+    dataMgr.myBaseData.uid = strUid
     print("strUid:"..strUid)
-    self:startLogin(strUid)
+    --self:startLogin(strUid)
+    layerMgr:showLayer(layerMgr.layIndex.MainLayer)
 
 end
 

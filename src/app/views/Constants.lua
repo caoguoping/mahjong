@@ -10,6 +10,7 @@ netTb.ip = "139.196.237.203"
 netTb.port =
 {
     login = 5050,
+    game = 5010,
     jinyunzi = 5010,
     changkaihuan = 5011,
 }

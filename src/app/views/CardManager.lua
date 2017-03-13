@@ -1,7 +1,7 @@
 local CURRENT_MODULE_NAME = ...
 
-local DataMgr     = import(".DataManager"):getInstance()
-local LayerMgr = import(".LayerManager"):getInstance()
+local dataMgr     = import(".DataManager"):getInstance()
+local layerMgr = import(".LayerManager"):getInstance()
 local cardNode		= import(".CardNode", CURRENT_MODULE_NAME)
 local s_inst = nil
 local CardManager = class("CardManager")

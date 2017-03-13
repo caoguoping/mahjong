@@ -1,8 +1,8 @@
 
 
 local CURRENT_MODULE_NAME = ...
-local DataMgr     = import(".DataManager"):getInstance()
-local LayerMgr = import(".LayerManager"):getInstance()
+local dataMgr     = import(".DataManager"):getInstance()
+local layerMgr = import(".LayerManager"):getInstance()
 
 local s_inst = nil
 local NetWorkLogin = class("NetWorkLogin", display.newNode)
@@ -52,32 +52,32 @@ end
 
 function NetWorkLogin:loginComplete( rcv )
 
-    DataMgr.myBaseData.wFaceID            = rcv:readWORD()    
-    DataMgr.myBaseData.dwUserID           = rcv:readDWORD()   
-    DataMgr.myBaseData.dwGameID           = rcv:readDWORD()   
-    DataMgr.myBaseData.dwGroupID          = rcv:readDWORD()   
-    DataMgr.myBaseData.dwCustomID         = rcv:readDWORD()   
-    DataMgr.myBaseData.dwUserMedal        = rcv:readDWORD()   
-    DataMgr.myBaseData.dwExperience       = rcv:readDWORD()   
-    DataMgr.myBaseData.dwLoveLiness       = rcv:readDWORD()   
-    DataMgr.myBaseData.lUserScore         = rcv:readUInt64()  
-    DataMgr.myBaseData.lUserInsure        = rcv:readUInt64()  
-    DataMgr.myBaseData.cbGender           = rcv:readByte()    
-    DataMgr.myBaseData.cbMoorMachine      = rcv:readByte()    
-    DataMgr.myBaseData.szAccounts         = rcv:readString(64)
-    DataMgr.myBaseData.szNickName         = rcv:readString(64)
-    DataMgr.myBaseData.szGroupName        = rcv:readString(64)
-    DataMgr.myBaseData.cbShowServerStatus = rcv:readByte()    
-    DataMgr.myBaseData.isFirstLogin       = rcv:readDWORD()   
-    DataMgr.myBaseData.rmb                = rcv:readDWORD()  
+    dataMgr.myBaseData.wFaceID            = rcv:readWORD()    
+    dataMgr.myBaseData.dwUserID           = rcv:readDWORD()   
+    dataMgr.myBaseData.dwGameID           = rcv:readDWORD()   
+    dataMgr.myBaseData.dwGroupID          = rcv:readDWORD()   
+    dataMgr.myBaseData.dwCustomID         = rcv:readDWORD()   
+    dataMgr.myBaseData.dwUserMedal        = rcv:readDWORD()   
+    dataMgr.myBaseData.dwExperience       = rcv:readDWORD()   
+    dataMgr.myBaseData.dwLoveLiness       = rcv:readDWORD()   
+    dataMgr.myBaseData.lUserScore         = rcv:readUInt64()  
+    dataMgr.myBaseData.lUserInsure        = rcv:readUInt64()  
+    dataMgr.myBaseData.cbGender           = rcv:readByte()    
+    dataMgr.myBaseData.cbMoorMachine      = rcv:readByte()    
+    dataMgr.myBaseData.szAccounts         = rcv:readString(64)
+    dataMgr.myBaseData.szNickName         = rcv:readString(64)
+    dataMgr.myBaseData.szGroupName        = rcv:readString(64)
+    dataMgr.myBaseData.cbShowServerStatus = rcv:readByte()    
+    dataMgr.myBaseData.isFirstLogin       = rcv:readDWORD()   
+    dataMgr.myBaseData.rmb                = rcv:readDWORD()  
     rcv:destroys()
 
-    LayerMgr:showLayer(LayerMgr.Enum.MainLayer)
+    layerMgr:showLayer(layerMgr.layIndex.MainLayer)
 
 end
 
 function NetWorkLogin:registerRole( rcv)
-    local uid = DataMgr.myBaseData.uid
+    local uid = dataMgr.myBaseData.uid
     local dwPlazaVersion = 65536
     local szMachineID = "aaaaaa"
     local szLogonPass = uid
