@@ -24,6 +24,7 @@ function joinRoomBox:ctor()
         end)
 
     self.txts = {}
+    self.roomNum = {}  --7位数
     self.nowNum = 0  --已输入的房间位数
     for i=1,7 do
         local tmpStr = "Text_"..i
@@ -33,7 +34,22 @@ function joinRoomBox:ctor()
     local btns = {}
     for i=1,10 do
         local tmpStr = "Button_"..i
-        self.btns[i] = rootNode:getChildByName(tmpStr)
+        btns[i] = rootNode:getChildByName(tmpStr)
+        btns[i]:onClicked(
+        function (  )
+            self.nowNum = self.nowNum + 1;
+            self.txts[self.nowNum]:setString(tostring(i - 1))
+            self.roomNum[self.nowNum] = i - 1
+            if self.nowNum == 7 then
+                local readRoomNum = girl.getAllDicimalValue(self.roomNum, 7)
+                print("@@@@@@@@@@@@@@@@@@\n "..readRoomNum)
+                --self:sendJoinRoom()
+                layerMgr:removeBoxes(layerMgr.boxIndex.JoinRoomBox)
+                layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params) 
+
+            end
+        end
+        )
     end
 
     local btnReput = rootNode:getChildByName("Button_re")

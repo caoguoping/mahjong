@@ -147,6 +147,16 @@ function girl.getAllBitValue(bitTable)
     return sum
 end
 
+--获取数字组成的整数值，1为最低位 
+function girl.getAllDicimalValue(tenTable)
+    local sum = 0
+    for i=1,#tenTable do
+        local once = 10 ^ (i - 1) * tenTable[i]
+        sum = sum + once
+    end
+    return sum
+end
+
 -- local panelFactory = import(".view.controls.PanelFactory"):getInstance()
 
 -- function girl.MsgBox(str, who)
