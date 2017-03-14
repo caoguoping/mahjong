@@ -733,6 +733,35 @@
             <Image Name="player.png" />
           </Folder>
         </Folder>
+        <Folder Name="csbLobby">
+          <Project Name="createRoom.csd" Type="Node" />
+          <Project Name="joinRoom.csd" Type="Node" />
+          <Project Name="NewLobby.csd" Type="Scene" />
+        </Folder>
+        <Folder Name="csbPlay">
+          <Project Name="buttonCard.csd" Type="Node" />
+          <Project Name="dachuLeft.csd" Type="Node" />
+          <Project Name="dachuMe.csd" Type="Node" />
+          <Project Name="dachuRight.csd" Type="Node" />
+          <Project Name="dachuUp.csd" Type="Node" />
+          <Project Name="deskBg.csd" Type="Node" />
+          <Project Name="deskUi.csd" Type="Node" />
+          <Project Name="inviteUi.csd" Type="Node" />
+          <Project Name="pengLeft.csd" Type="Node" />
+          <Project Name="pengMe.csd" Type="Node" />
+          <Project Name="pengRight.csd" Type="Node" />
+          <Project Name="pengUp.csd" Type="Node" />
+          <Project Name="playHeadNode.csd" Type="Node" />
+          <Project Name="playScene.csd" Type="Scene" />
+          <Project Name="standLeft.csd" Type="Node" />
+          <Project Name="standMeBei.csd" Type="Node" />
+          <Project Name="standRight.csd" Type="Node" />
+          <Project Name="standUp.csd" Type="Node" />
+          <Project Name="wallLeft.csd" Type="Node" />
+          <Project Name="wallMe.csd" Type="Node" />
+          <Project Name="wallRight.csd" Type="Node" />
+          <Project Name="wallUp.csd" Type="Node" />
+        </Folder>
         <Folder Name="effect">
           <Image Name="_sdasd.png" />
           <Image Name="blueL-0.png" />
@@ -908,30 +937,6 @@
           <Image Name="button_join.png" />
           <PlistParticleFile Name="snow.plist" />
         </Folder>
-        <Folder Name="csbPlay">
-          <Project Name="buttonCard.csd" Type="Node" />
-          <Project Name="dachuLeft.csd" Type="Node" />
-          <Project Name="dachuMe.csd" Type="Node" />
-          <Project Name="dachuRight.csd" Type="Node" />
-          <Project Name="dachuUp.csd" Type="Node" />
-          <Project Name="inviteUi.csd" Type="Node" />
-          <Project Name="pengLeft.csd" Type="Node" />
-          <Project Name="pengMe.csd" Type="Node" />
-          <Project Name="pengRight.csd" Type="Node" />
-          <Project Name="pengUp.csd" Type="Node" />
-          <Project Name="standLeft.csd" Type="Node" />
-          <Project Name="standMeBei.csd" Type="Node" />
-          <Project Name="standRight.csd" Type="Node" />
-          <Project Name="standUp.csd" Type="Node" />
-          <Project Name="wallLeft.csd" Type="Node" />
-          <Project Name="wallMe.csd" Type="Node" />
-          <Project Name="wallRight.csd" Type="Node" />
-          <Project Name="wallUp.csd" Type="Node" />
-          <Project Name="deskBg.csd" Type="Node" />
-          <Project Name="deskUi.csd" Type="Node" />
-          <Project Name="playHeadNode.csd" Type="Node" />
-          <Project Name="playScene.csd" Type="Scene" />
-        </Folder>
         <Folder Name="number">
           <Image Name="img_difen.png" />
           <Image Name="img_difenWord.png" />
@@ -960,11 +965,6 @@
           <Image Name="zhongkong_t_shuzi.png" />
         </Folder>
         <Project Name="LoginScene.csd" Type="Scene" />
-        <Folder Name="csbLobby">
-          <Project Name="NewLobby.csd" Type="Scene" />
-          <Project Name="createRoom.csd" Type="Node" />
-          <Project Name="joinRoom.csd" Type="Node" />
-        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>
