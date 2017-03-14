@@ -28,17 +28,5 @@
         <LastRunType Value="Windows" />
       </Value>
     </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="csbPlay/playScene.csd" />
-          <FilePathData Path="LoginScene.csd" />
-          <FilePathData Path="csbLobby/NewLobby.csd" />
-          <FilePathData Path="csbLobby/createRoom.csd" />
-          <FilePathData Path="csbLobby/joinRoom.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="csbLobby/joinRoom.csd" />
-      </Value>
-    </Item>
   </Properties>
 </UserData>

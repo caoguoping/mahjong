@@ -2,6 +2,7 @@
 
 local CURRENT_MODULE_NAME = ...
 local dataMgr     = import(".DataManager"):getInstance()
+local cardMgr     = import(".CardDataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
 
 local s_inst = nil
@@ -39,7 +40,12 @@ function NetWorkGame:handleEventGame( event)
 
     elseif wMainCmd == 1 then
         if wSubCmd == 100 then
-            self:connectSuccess(rcv)
+            if dataMgr.roomSet.bIsCreate == 1 then
+                self:connectSuccessCreate(rcv)
+            elseif dataMgr.roomSet.bIsCreate == 0 then
+                self:connectSuccessJoin(rcv)
+            end
+            
         elseif wSubCmd == 104 then
             self:createSuccess(rcv) 
         end
@@ -49,15 +55,65 @@ function NetWorkGame:handleEventGame( event)
         elseif wSubCmd == 100 then
             self:playerCome(rcv) 
         end
+
+        --200,1 出牌，一个byte
+    elseif wMainCmd == 200 then
+            if wSubCmd == 100 then --发牌
+                self:sendCard(rcv)
+            elseif wSubCmd == 101 then --出牌
+                self:rcvOutCard(rcv)
     else 
+            end    
     --
     end
 end
 
-function NetWorkGame:connectSuccess( rcv )
+--发牌
+function NetWorkGame:sendCard( rcv )
+    cardMgr.cardSend.wBankerUser    = rcv:readWORD()               --庄家用户
+    cardMgr.cardSend.wCurrentUser   = rcv:readWORD()               --当前用户
+    cardMgr.cardSend.wReplaceUser   = rcv:readWORD()               --补牌用户
+    cardMgr.cardSend.bSice1         = rcv:readByte()   
+    cardMgr.cardSend.bSice2         = rcv:readByte()
+    cardMgr.cardSend.cbUserAction   = rcv:readByte()               --用户动作
+    for i=1,14 do
+        cardMgr.cardSend.cbCardData[i] = rcv:readByte()
+    end
+    for i=1,14 do
+        cardMgr.cardSend.cbHuaCardData[i] = rcv:readByte()
+    end
+    cardMgr.cardSend.bLianZhuangCount = rcv:readByte()                        --连庄计数
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard()
+    rcv:destroys()
+end
+
+--收到用户出牌
+function NetWorkGame:rcvOutCard( rcv )
+    local outCard = {}
+    outCard.wOutCardUser = rcv:readWORD()
+    outCard.bOutCardData = rcv:readByte()
+    rcv:destroys()
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer):rcvOutCard(outCard)
+end
+
+--创建房间连接成功
+function NetWorkGame:connectSuccessCreate( rcv )
     -- local mainLayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
     -- mainLayer:showCreateRoom()
     layerMgr.boxes[1] = import(".CreateRoomBox",CURRENT_MODULE_NAME).create()
+
+end
+
+--加入房间连接成功
+function NetWorkGame:connectSuccessJoin( rcv )
+    rcv:destroys()
+    local delay = cc.DelayTime:create(1.0)
+    local action = cc.Sequence:create(delay, cc.CallFunc:create(
+        function (  )
+            layerMgr:removeBoxes(layerMgr.boxIndex.JoinRoomBox)
+            layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)  
+        end))
+    self:runAction(action)
 
 end
 
@@ -65,7 +121,7 @@ end
 function NetWorkGame:createSuccess( rcv )
     local wTableId = rcv:readWORD()
     local wChairId = rcv:readWORD()
-
+    rcv:destroys()
     dataMgr.roomSet.wChair = wChairId
     dataMgr.roomSet.wTable = wTableId
     layerMgr:removeBoxes(layerMgr.boxIndex.CreateRoomBox)
@@ -77,6 +133,7 @@ function NetWorkGame:sitDown( rcv )
     local wTableId = rcv:readWORD()
     local wChairId = rcv:readWORD()
     local cbUserStatus = rcv:readByte()
+    rcv:destroys()
     if dataMgr.myBaseData.dwUserID == dwUserId and cbUserStatus == 2 then
         --me sitdown ,fresh data
     end

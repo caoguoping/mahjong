@@ -20,7 +20,9 @@ function MainLayer:ctor()
     --[[
         startGame (1,1),连接游戏服务器成功(1,100)后弹出设置界面,(1,4)创建房间，1,104成功后显示房间
     ]]
-        --self:startGame(netTb.ip, netTb.port.login, netTb.SocketType.Game)  
+                
+        --dataMgr.roomSet.bIsCreate = 1
+        --self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
         --layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
         --self:showCreateRoom()
         layerMgr.boxes[layerMgr.boxIndex.CreateRoomBox] = import(".CreateRoomBox",CURRENT_MODULE_NAME).create()

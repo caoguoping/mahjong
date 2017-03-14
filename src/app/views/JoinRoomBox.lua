@@ -4,8 +4,8 @@ local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
 
 
-local joinRoomBox = class("joinRoomBox", display.newLayer)
-function joinRoomBox:ctor()
+local JoinRoomBox = class("JoinRoomBox", display.newLayer)
+function JoinRoomBox:ctor()
 --all Node
     local rootNode = cc.CSLoader:createNode("joinRoom.csb"):addTo(self)
     self.rootNode = rootNode
@@ -39,13 +39,28 @@ function joinRoomBox:ctor()
         function (  )
             self.nowNum = self.nowNum + 1;
             self.txts[self.nowNum]:setString(tostring(i - 1))
-            self.roomNum[self.nowNum] = i - 1
+            self.roomNum[8 - self.nowNum] = i - 1
+--cgpTest   实际上是进入成功1,100后执行，这边只执行连接游戏
             if self.nowNum == 7 then
-                local readRoomNum = girl.getAllDicimalValue(self.roomNum, 7)
-                print("@@@@@@@@@@@@@@@@@@\n "..readRoomNum)
-                --self:sendJoinRoom()
-                layerMgr:removeBoxes(layerMgr.boxIndex.JoinRoomBox)
-                layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params) 
+
+
+                dataMgr.roomSet.bIsCreate = 0
+                self.readRoomNum = girl.getAllDicimalValue(self.roomNum, 7)
+                local wTable = self.readRoomNum % 65536
+                local wChair = (self.readRoomNum - wTable)/ 65536 
+
+
+                local delay = cc.DelayTime:create(1.0)
+                local action = cc.Sequence:create(delay, cc.CallFunc:create(
+                    function (  )
+                        layerMgr:removeBoxes(layerMgr.boxIndex.JoinRoomBox)
+                        layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)  
+                    end))
+                self:runAction(action)
+
+
+                --self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
+
 
             end
         end
@@ -67,27 +82,37 @@ function joinRoomBox:ctor()
         )
 end
 
-function joinRoomBox:sendJoinRoom()
-    --cgpTest
-    print("\njoinRoomBox")
-    
-    local snd = DataSnd:create(1, 4)
-    snd:wrWORD(dataMgr.roomSet.wScore        )
-    snd:wrWORD(dataMgr.roomSet.wJieSuanLimit )
-    snd:wrWORD(dataMgr.roomSet.wBiXiaHu      )
-    snd:wrByte(dataMgr.roomSet.bGangHouKaiHua)
-    snd:wrByte(dataMgr.roomSet.bZaEr         )
-    snd:wrByte(dataMgr.roomSet.bFaFeng       )
-    snd:wrByte(dataMgr.roomSet.bYaJue        )
-    snd:wrByte(dataMgr.roomSet.bJuShu        )
-    snd:wrByte(dataMgr.roomSet.bIsJinyunzi   )
+function JoinRoomBox:startGame(ip, port)
+    TTSocketClient:getInstance():startSocket(ip, port, netTb.SocketType.Game)
+
+    local snd = DataSnd:create(1, 1)
+    local dwPlazaVersion = 65536
+    local dwFrameVersion = 65536
+    local dwProcessVersion = 65536
+    local szPassword = uid
+    local szMachineID = uid
+    local wKindID = 2
+    local wTable = self.readRoomNum % 65536
+    local wChair = (self.readRoomNum - wTable)/ 65536     
+    --为密码，实际总的tableId为：wChair * 65536 + wTable
+    --创建房间发满的，加入房间发实际的
+
+    snd:wrDWORD(dwPlazaVersion)
+    snd:wrDWORD(dwFrameVersion)
+    snd:wrDWORD(dwProcessVersion)
+    snd:wrDWORD(dataMgr.myBaseData.dwUserID)
+    snd:wrString(szPassword, 66) 
+    snd:wrWORD(wKindID) 
+    snd:wrString(szMachineID, 66) 
+    snd:wrWORD(wTable)  
+    snd:wrWORD(wChair) 
     snd:sendData(netTb.SocketType.Game)
     snd:release();
 end
 
 
-function joinRoomBox.create(  )
-    return joinRoomBox.new()
+function JoinRoomBox.create(  )
+    return JoinRoomBox.new()
 end
 
-return joinRoomBox
+return JoinRoomBox

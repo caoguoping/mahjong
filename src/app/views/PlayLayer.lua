@@ -154,6 +154,17 @@ function PlayLayer:zhuaPai(cardValuesMe)
 
 end
 
+--发牌
+function PlayLayer:sendCard(  )
+    
+end
+
+--收到其他玩家出牌
+function PlayLayer:rcvOutCard(outCard )
+    
+end
+
+
 function PlayLayer:resetNodeVisible()
     for i=1,4 do
         self.wallNode[i]:setVisible(true)
