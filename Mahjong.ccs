@@ -380,6 +380,7 @@
               <Image Name="mahjong_tile_big_zi_fa.png" />
               <Image Name="mahjong_tile_big_zi_zhong.png" />
               <Image Name="player.png" />
+              <Image Name="player2.png" />
             </Folder>
             <Image Name="dachu_1.png" />
             <Image Name="dachu_2.png" />
@@ -414,6 +415,7 @@
             <Image Name="Frame_ziji_pingpaizheng_8.png" />
             <Image Name="Frame_ziji_pingpaizheng_9.png" />
             <Image Name="Frame_ziji_shoupai-zhezhao.png" />
+            <Image Name="img_normal_card.png" />
             <Image Name="img_spe_backcard.png" />
           </Folder>
           <Folder Name="righthand">
@@ -730,7 +732,6 @@
             <Image Name="Frame_3_yapai_7.png" />
             <Image Name="Frame_3_yapai_8.png" />
             <Image Name="Frame_3_yapai_9.png" />
-            <Image Name="player.png" />
           </Folder>
         </Folder>
         <Folder Name="csbLobby">
@@ -931,6 +932,54 @@
           <Image Name="up-anniu02.png" />
           <Image Name="zhnghao.png" />
         </Folder>
+        <Folder Name="mainmenu">
+          <Image Name="Frame_cainiaochang.png" />
+          <Image Name="Frame_guanjiachang.png" />
+          <Image Name="Frame_pingminchang.png" />
+          <Image Name="Frame_tuhaochang.png" />
+          <Image Name="icon_difen.png" />
+          <Image Name="img_bj.png" />
+          <Image Name="img_GameList_FenNum0.png" />
+          <Image Name="img_GameList_FenNum1.png" />
+          <Image Name="img_GameList_FenNum2.png" />
+          <Image Name="img_GameList_FenNum3.png" />
+          <Image Name="img_GameList_FenNum4.png" />
+          <Image Name="img_GameList_FenNum5.png" />
+          <Image Name="img_GameList_FenNum6.png" />
+          <Image Name="img_GameList_FenNum7.png" />
+          <Image Name="img_GameList_FenNum8.png" />
+          <Image Name="img_GameList_FenNum9.png" />
+          <Image Name="img_MainMenu_dizhu.png" />
+          <Image Name="img_MainMenu_duihuanquan.png" />
+          <Image Name="img_MainMenu_jindou.png" />
+          <Image Name="img_MainMenu_RoomName_highlight.png" />
+          <Image Name="img_MainMenu_RoomName0.png" />
+          <Image Name="img_MainMenu_RoomName1.png" />
+          <Image Name="img_MainMenu_RoomName2.png" />
+          <Image Name="img_MainMenu_RoomName3.png" />
+          <Image Name="img_MainMenu_RoomPlant0_1.png" />
+          <Image Name="img_MainMenu_RoomPlant0_2.png" />
+          <Image Name="img_MainMenu_RoomPlant1_1.png" />
+          <Image Name="img_MainMenu_RoomPlant1_2.png" />
+          <Image Name="img_MainMenu_RoomPlant2_1.png" />
+          <Image Name="img_MainMenu_RoomPlant2_2.png" />
+          <Image Name="img_MainMenu_RoomPlant3_1.png" />
+          <Image Name="img_MainMenu_RoomPlant3_2.png" />
+          <Image Name="img_MainMenu_RoomSelectFrame.png" />
+          <Image Name="img_MainMenu_ShadowBg.png" />
+          <Image Name="img_MainMenu_spLine.png" />
+          <Image Name="img_MainMenu_TabNew.png" />
+          <Image Name="img_MainMenu_UserCountIcon.png" />
+          <Image Name="img_MainMenu_UserCountNum.png" />
+          <Image Name="img_MainMenu_UserCountUnit.png" />
+          <Image Name="img_MainMenu_wordframe.png" />
+          <Image Name="img_newMainMenu_roomlistLayer.png" />
+          <Image Name="ing_cainiaochang.png" />
+          <Image Name="ing_guanjiachang.png" />
+          <Image Name="ing_pingminchang.png" />
+          <Image Name="ing_tuhaochang.png" />
+        </Folder>
+        <Folder Name="majiang" />
         <Folder Name="NewLobby">
           <Image Name="bg.png" />
           <Image Name="button_create.png" />

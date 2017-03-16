@@ -3,6 +3,7 @@ local CURRENT_MODULE_NAME = ...
 local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
 local cardMgr = import(".CardManager"):getInstance()
+local cardDataMgr = import(".CardDataManager"):getInstance()
 
 
 -- fileNode  1:me,   2:left,    3:up,     4:right
@@ -43,7 +44,6 @@ function PlayLayer:ctor()
     self.pengNode[3]  = rootNode:getChildByName("FileNode_pengUp")
     self.pengNode[2]  = rootNode:getChildByName("FileNode_pengLeft")
     self.stndNodeMeBei = rootNode:getChildByName("FileNode_standMeBei")
-    self:resetNodeVisible()
 
     --self:schedule(self,handler(self, self.checkAttackUpdate),2.0)
     --     if self:getPositionX() <= battleManager.hero:getPositionX() then
@@ -61,22 +61,19 @@ function PlayLayer:ctor()
     -- end
 
 --bg
-    self.imgFeng = {}
     self.imgLight= {}
+    self.imgFeng = {}
+    self.imgNowFeng = {}
     for i=1,4 do
-        self.imgLight[i] = {}
-        for j=1,2 do
-            local imgName = "Image_light_"..i + j * 4 - 4
-            self.imgLight[i][j] = self.deskBgNode:getChildByName(imgName)
-        end
+        local imgName = "Image_light_"..i
+        local imgName1 = "Image_feng"..i
+        local imgName2 = "Image_nowFeng"..i
+        self.imgLight[i] = self.deskBgNode:getChildByName(imgName)
+        self.imgFeng[i] = self.deskBgNode:getChildByName(imgName1)
+        self.imgNowFeng[i] = self.deskBgNode:getChildByName(imgName2)
     end
-
-    for i=1,4 do
-        local imgName = "Image_char_"..i
-        self.imgFeng[i] = self.deskBgNode:getChildByName(imgName)
-    end
-
-    self.clock = self.deskBgNode:getChildByName("AtlasLabel_1")
+    self.txtClock = self.deskBgNode:getChildByName("AtlasLabel_1")
+    self.nodeShezi = self.deskBgNode:getChildByName("FileNode_shezi")
     --self.clock:setString("0"..8)
 
 --ui
@@ -142,15 +139,34 @@ function PlayLayer:ctor()
         self.stndCell[1][i] = self.stndNodeMeBei:getChildByName(imgName)
     end
 
-    self:refresh(testCv)
 end
   
 function PlayLayer.create()
     return PlayLayer.new()
 end
 
+function PlayLayer:waitJoin()
+   
+    for i=1,4 do
+        self.wallNode[i]:setVisible(false)
+        self.stndNode[i]:setVisible(false)
+        self.dachNode[i]:setVisible(false)
+        self.pengNode[i]:setVisible(false)
+    end
+    self.stndNodeMeBei:setVisible(false)
+
+    for i=1,4 do
+        self.imgLight[i]:setVisible(false)
+        self.imgFeng[i]:setVisible(false)
+        self.imgNowFeng[i]:setVisible(false)
+    end
+
+    self.nodeShezi:setVisible(false)
+
+end
+
 --抓牌
-function PlayLayer:zhuaPai(cardValuesMe)
+function PlayLayer:zhuaPai()
 
 end
 
@@ -161,30 +177,7 @@ end
 
 --收到其他玩家出牌
 function PlayLayer:rcvOutCard(outCard )
-    
-end
-
-
-function PlayLayer:resetNodeVisible()
-    for i=1,4 do
-        self.wallNode[i]:setVisible(true)
-        self.stndNode[i]:setVisible(true)
-        self.dachNode[i]:setVisible(false)
-        self.pengNode[i]:setVisible(false)
-    end
-    self.stndNodeMeBei:setVisible(false)
-end
-
-function PlayLayer:refresh(cardValuesMe)
-    self:resetNodeVisible()
-    self:zhuaPai(cardValuesMe)
-    cardMgr:initCardNodes(cardValuesMe, self)
-
-    -- for i=1,4 do
-    --     self.imgLight[i][1]:setVisible(false)
-    --     self.imgLight[i][2]:setVisible(false)
-    -- end
-
+ --   
 end
 
 

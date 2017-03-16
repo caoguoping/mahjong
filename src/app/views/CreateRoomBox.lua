@@ -58,6 +58,8 @@ function createRoomBox:ctor()
         function ( )
             layerMgr:removeBoxes(layerMgr.boxIndex.CreateRoomBox)
             layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params) 
+            local layer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+            layer:waitJoin()
         end
 
 

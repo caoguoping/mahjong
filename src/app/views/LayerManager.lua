@@ -74,10 +74,11 @@ end
 function LayerManager:getLayer(panel,params)
 	local _layer = self.Layers[panel]
 	if not _layer then
-		self.Layers[panel] = self:createLayer(panel, params)
-		self.LoginScene:addChild(self.Layers[panel])
-		self.Layers[panel]:setVisible(false)
+		 _layer = self:createLayer(panel, params)
+		self.LoginScene:addChild(_layer)
+		self.Layers[panel] = _layer
 	end	
+	return _layer
 end
 
 function LayerManager:showLayer(panel, params)	

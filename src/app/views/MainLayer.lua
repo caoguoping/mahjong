@@ -45,6 +45,10 @@ function MainLayer:ctor()
 
 end
 
+function MainLayer:refresh()
+    -- body
+end
+
 function MainLayer:showCreateRoom(  )
     --local  createRoomBox = import(".CreateRoomBox",CURRENT_MODULE_NAME).create()
 

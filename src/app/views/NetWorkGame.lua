@@ -2,7 +2,7 @@
 
 local CURRENT_MODULE_NAME = ...
 local dataMgr     = import(".DataManager"):getInstance()
-local cardMgr     = import(".CardDataManager"):getInstance()
+local cardDataMgr     = import(".CardDataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
 
 local s_inst = nil
@@ -70,19 +70,19 @@ end
 
 --发牌
 function NetWorkGame:sendCard( rcv )
-    cardMgr.cardSend.wBankerUser    = rcv:readWORD()               --庄家用户
-    cardMgr.cardSend.wCurrentUser   = rcv:readWORD()               --当前用户
-    cardMgr.cardSend.wReplaceUser   = rcv:readWORD()               --补牌用户
-    cardMgr.cardSend.bSice1         = rcv:readByte()   
-    cardMgr.cardSend.bSice2         = rcv:readByte()
-    cardMgr.cardSend.cbUserAction   = rcv:readByte()               --用户动作
+    cardDataMgr.cardSend.wBankerUser    = rcv:readWORD()               --庄家用户
+    cardDataMgr.cardSend.wCurrentUser   = rcv:readWORD()               --当前用户
+    cardDataMgr.cardSend.wReplaceUser   = rcv:readWORD()               --补牌用户
+    cardDataMgr.cardSend.bSice1         = rcv:readByte()   
+    cardDataMgr.cardSend.bSice2         = rcv:readByte()
+    cardDataMgr.cardSend.cbUserAction   = rcv:readByte()               --用户动作
     for i=1,14 do
-        cardMgr.cardSend.cbCardData[i] = rcv:readByte()
+        cardDataMgr.cardSend.cbCardData[i] = rcv:readByte()
     end
     for i=1,14 do
-        cardMgr.cardSend.cbHuaCardData[i] = rcv:readByte()
+        cardDataMgr.cardSend.cbHuaCardData[i] = rcv:readByte()
     end
-    cardMgr.cardSend.bLianZhuangCount = rcv:readByte()                        --连庄计数
+    cardDataMgr.cardSend.bLianZhuangCount = rcv:readByte()                        --连庄计数
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard()
     rcv:destroys()
 end
@@ -126,6 +126,8 @@ function NetWorkGame:createSuccess( rcv )
     dataMgr.roomSet.wTable = wTableId
     layerMgr:removeBoxes(layerMgr.boxIndex.CreateRoomBox)
     layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitJoin()
+
 end
 
 function NetWorkGame:sitDown( rcv )

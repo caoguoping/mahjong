@@ -1,5 +1,12 @@
 <UserData Version="3.10.0.0">
   <Properties>
+    <Item Key="CocosRecentOperation">
+      <Value ctype="CocosRecentOperation">
+        <LastPublishType Value="Resource" />
+        <IsLastPublish Value="False" />
+        <LastRunType Value="Windows" />
+      </Value>
+    </Item>
     <Item Key="PackageParamsKey">
       <Value ctype="PackageParams">
         <LuaIsEncrypt Value="False" />
@@ -19,13 +26,6 @@
         <KeystoreAliasPassword Value="" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
-      </Value>
-    </Item>
-    <Item Key="CocosRecentOperation">
-      <Value ctype="CocosRecentOperation">
-        <LastPublishType Value="Resource" />
-        <IsLastPublish Value="True" />
-        <LastRunType Value="Windows" />
       </Value>
     </Item>
   </Properties>
