@@ -79,7 +79,7 @@ function NetWorkGame:sendCard( rcv )
     for i=1,14 do
         cardDataMgr.cardSend.cbCardData[i] = rcv:readByte()
     end
-    for i=1,14 do
+    for i=1,20 do
         cardDataMgr.cardSend.cbHuaCardData[i] = rcv:readByte()
     end
     cardDataMgr.cardSend.bLianZhuangCount = rcv:readByte()                        --连庄计数
@@ -96,7 +96,7 @@ function NetWorkGame:rcvOutCard( rcv )
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer):rcvOutCard(outCard)
 end
 
---创建房间连接成功
+--房间连接成功创建
 function NetWorkGame:connectSuccessCreate( rcv )
     -- local mainLayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
     -- mainLayer:showCreateRoom()
@@ -104,14 +104,15 @@ function NetWorkGame:connectSuccessCreate( rcv )
 
 end
 
---加入房间连接成功
+--房间连接成功加入
 function NetWorkGame:connectSuccessJoin( rcv )
     rcv:destroys()
     local delay = cc.DelayTime:create(1.0)
     local action = cc.Sequence:create(delay, cc.CallFunc:create(
         function (  )
             layerMgr:removeBoxes(layerMgr.boxIndex.JoinRoomBox)
-            layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)  
+            layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
+            layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitJoin()  
         end))
     self:runAction(action)
 
@@ -124,6 +125,7 @@ function NetWorkGame:createSuccess( rcv )
     rcv:destroys()
     dataMgr.roomSet.wChair = wChairId
     dataMgr.roomSet.wTable = wTableId
+    dataMgr.roomSet.dwRoomNum = wChairId * 65536 + wTableId
     layerMgr:removeBoxes(layerMgr.boxIndex.CreateRoomBox)
     layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitJoin()
@@ -138,6 +140,9 @@ function NetWorkGame:sitDown( rcv )
     rcv:destroys()
     if dataMgr.myBaseData.dwUserID == dwUserId and cbUserStatus == 2 then
         --me sitdown ,fresh data
+        local snd = DataSnd:create(100, 2)
+        snd:sendData(netTb.SocketType.Game)
+        snd:release();
     end
 end
 
@@ -212,6 +217,9 @@ function NetWorkGame:playerCome( rcv )
             dataMgr.chair[index] = i
         end
     end
+
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):showPlayer()
+
 end
 
 return NetWorkGame

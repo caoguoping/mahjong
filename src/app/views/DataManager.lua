@@ -117,7 +117,7 @@ function DataManager:init()
     wChair   高位，
     wTable
     bIsCreate     1:创建 0:加入
-    dwRoomNum     输入的房间号
+    dwRoomNum     输入的房间号或算好的房间号
     ]] 
 
 

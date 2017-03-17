@@ -40,12 +40,11 @@ function JoinRoomBox:ctor()
             self.nowNum = self.nowNum + 1;
             self.txts[self.nowNum]:setString(tostring(i - 1))
             self.roomNum[8 - self.nowNum] = i - 1
+            
 --cgpTest   实际上是进入成功1,100后执行，这边只执行连接游戏
             if self.nowNum == 7 then
-
-
-                dataMgr.roomSet.bIsCreate = 0
                 self.readRoomNum = girl.getAllDicimalValue(self.roomNum, 7)
+                dataMgr.roomSet.dwRoomNum = self.readRoomNum
                 local wTable = self.readRoomNum % 65536
                 local wChair = (self.readRoomNum - wTable)/ 65536 
 
@@ -54,7 +53,8 @@ function JoinRoomBox:ctor()
                 local action = cc.Sequence:create(delay, cc.CallFunc:create(
                     function (  )
                         layerMgr:removeBoxes(layerMgr.boxIndex.JoinRoomBox)
-                        layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)  
+                        layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
+                        layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitJoin()  
                     end))
                 self:runAction(action)
 

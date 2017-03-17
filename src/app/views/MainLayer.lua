@@ -25,6 +25,7 @@ function MainLayer:ctor()
         --self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
         --layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
         --self:showCreateRoom()
+        dataMgr.roomSet.bIsCreate = 1
         layerMgr.boxes[layerMgr.boxIndex.CreateRoomBox] = import(".CreateRoomBox",CURRENT_MODULE_NAME).create()
         --layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
     end
@@ -35,7 +36,7 @@ function MainLayer:ctor()
     --[[
         弹出界面，写完直接发(1, 1)
     ]]
-
+        dataMgr.roomSet.bIsCreate = 0
         layerMgr.boxes[layerMgr.boxIndex.JoinRoomBox] = import(".JoinRoomBox",CURRENT_MODULE_NAME).create()
 
         --self:startGame("139.196.237.203",5010)

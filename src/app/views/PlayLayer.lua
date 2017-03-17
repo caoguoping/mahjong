@@ -84,6 +84,20 @@ function PlayLayer:ctor()
         TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
         end)
 
+    self.headNode = {}
+    self.txtScore = {}
+    self.imgHead = {}
+    for i=1,4 do
+        local strName = "FileNode_"..i
+        self.headNode[i] = self.deskUiNode:getChildByName(strName)
+        self.txtScore[i] = self.headNode[i]:getChildByName("Text_score")
+        self.imgHead[i] = self.headNode[i]:getChildByName("Image_head")
+    end
+
+--invite 邀请好友界面
+    self.inviteNode = rootNode:getChildByName("FileNode_invite")
+    self.txtRoomNum = self.inviteNode:getChildByName("Text_room")
+--pai
     for i = 1, 4 do
         self.wallCell[i] = {}
         self.stndCell[i] = {}
@@ -93,7 +107,6 @@ function PlayLayer:ctor()
             self.pengCell[i][j] = {}
         end
     end
---pai
     --堆牌
     for  i = 1,4 do
         for j = 1,36 do
@@ -147,6 +160,7 @@ end
 
 function PlayLayer:waitJoin()
    
+    self.joinPeople = 0
     for i=1,4 do
         self.wallNode[i]:setVisible(false)
         self.stndNode[i]:setVisible(false)
@@ -162,6 +176,35 @@ function PlayLayer:waitJoin()
     end
 
     self.nodeShezi:setVisible(false)
+    self.inviteNode:setVisible(true)
+    self.txtRoomNum:setString(tostring(dataMgr.roomSet.dwRoomNum))
+
+--cgpTest
+    self.nodeShezi:setVisible(true)
+    local timeLineShezi = cc.CSLoader:createTimeline("shezi.csb")
+    self:runAction(timeLineShezi)
+    timeLineShezi:gotoFrameAndPlay(0, false)
+    timeLineShezi:setLastFrameCallFunc(
+        function ()
+            print("\n\n callFunc Ok")
+       end
+       
+      )
+
+
+end
+
+--显示进来人
+function PlayLayer:showPlayer(svrChairId )  
+    self.joinPeople = self.joinPeople + 1
+    local clientId = dataMgr.getServiceChairId(svrChairId)
+    self.headNode[clientId]:setVisible(true)
+    self.txtScore[clientId]:setString(tostring(dataMgr.onDeskData[svrChairId].lScore))
+    self.imgHead[clientId]:loadTexture("headshot_"..clientId..".png")
+
+    if self.joinPeople == 4 then
+        --todo
+    end
 
 end
 
@@ -171,8 +214,15 @@ function PlayLayer:zhuaPai()
 end
 
 --发牌
-function PlayLayer:sendCard(  )
-    
+function PlayLayer:sendCard()
+
+    self.inviteNode:setVisible(false)
+    for i=1,4 do
+        self.wallNode[i]:setVisible(true)
+    end
+
+
+
 end
 
 --收到其他玩家出牌

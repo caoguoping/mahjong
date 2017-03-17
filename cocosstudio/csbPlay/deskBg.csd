@@ -26,16 +26,6 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="gameui/img_element_gamecenterbg.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_shezi" ActionTag="-1985524858" Tag="18305" IconVisible="True" LeftMargin="-2.4423" RightMargin="2.4423" TopMargin="-57.7655" BottomMargin="57.7655" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
-            <Size X="0.0000" Y="0.0000" />
-            <AnchorPoint />
-            <Position X="-2.4423" Y="57.7655" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="actionsCsb/shezi.csd" Plist="" />
-          </AbstractNodeData>
           <AbstractNodeData Name="Image_light_1" ActionTag="1189442481" Tag="610" IconVisible="False" LeftMargin="-76.0658" RightMargin="-81.9342" TopMargin="-33.1433" BottomMargin="-13.8567" LeftEage="20" RightEage="20" TopEage="15" BottomEage="15" Scale9OriginX="20" Scale9OriginY="15" Scale9Width="118" Scale9Height="17" ctype="ImageViewObjectData">
             <Size X="158.0000" Y="47.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -165,6 +155,16 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="gameui/zk_t_dong_shangxia_01.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_shezi" Visible="False" ActionTag="-1985524858" Tag="18305" IconVisible="True" LeftMargin="-2.4423" RightMargin="2.4423" TopMargin="-57.7655" BottomMargin="57.7655" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="-2.4423" Y="57.7655" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="actionsCsb/shezi.csd" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

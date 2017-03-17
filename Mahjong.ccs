@@ -25,13 +25,25 @@
           <Image Name="button_add_2.png" />
           <Image Name="button_back_1.png" />
           <Image Name="button_back_2.png" />
+          <Image Name="button_close_1.png" />
+          <Image Name="button_close_2.png" />
+          <Image Name="button_help_1.png" />
+          <Image Name="button_help_2.png" />
+          <Image Name="button_setting_1.png" />
+          <Image Name="button_setting_2.png" />
           <Image Name="di.png" />
+          <Image Name="frame_1.png" />
+          <Image Name="frame_2.png" />
           <Image Name="headshot_1.png" />
           <Image Name="headshot_2.png" />
           <Image Name="headshot_3.png" />
           <Image Name="headshot_4.png" />
+          <Image Name="headshot_bottom.png" />
+          <Image Name="headshot_example.png" />
+          <Image Name="headshot_top.png" />
           <Image Name="icon_bag1.png" />
           <Image Name="icon_bag2.png" />
+          <Image Name="icon_card.png" />
           <Image Name="icon_setting_1.png" />
           <Image Name="icon_setting_2.png" />
           <Image Name="img_bj.png" />
@@ -888,6 +900,7 @@
           <Image Name="jiansuo_layer.png" />
           <Image Name="jiansuo_yuan.png" />
           <Image Name="selfbankerfirsttip.png" />
+          <Image Name="sezi_value2.png" />
           <Image Name="shenyupai.png" />
           <Image Name="touxiang.png" />
           <Image Name="zhiyin_shou.png" />
@@ -932,54 +945,6 @@
           <Image Name="up-anniu02.png" />
           <Image Name="zhnghao.png" />
         </Folder>
-        <Folder Name="mainmenu">
-          <Image Name="Frame_cainiaochang.png" />
-          <Image Name="Frame_guanjiachang.png" />
-          <Image Name="Frame_pingminchang.png" />
-          <Image Name="Frame_tuhaochang.png" />
-          <Image Name="icon_difen.png" />
-          <Image Name="img_bj.png" />
-          <Image Name="img_GameList_FenNum0.png" />
-          <Image Name="img_GameList_FenNum1.png" />
-          <Image Name="img_GameList_FenNum2.png" />
-          <Image Name="img_GameList_FenNum3.png" />
-          <Image Name="img_GameList_FenNum4.png" />
-          <Image Name="img_GameList_FenNum5.png" />
-          <Image Name="img_GameList_FenNum6.png" />
-          <Image Name="img_GameList_FenNum7.png" />
-          <Image Name="img_GameList_FenNum8.png" />
-          <Image Name="img_GameList_FenNum9.png" />
-          <Image Name="img_MainMenu_dizhu.png" />
-          <Image Name="img_MainMenu_duihuanquan.png" />
-          <Image Name="img_MainMenu_jindou.png" />
-          <Image Name="img_MainMenu_RoomName_highlight.png" />
-          <Image Name="img_MainMenu_RoomName0.png" />
-          <Image Name="img_MainMenu_RoomName1.png" />
-          <Image Name="img_MainMenu_RoomName2.png" />
-          <Image Name="img_MainMenu_RoomName3.png" />
-          <Image Name="img_MainMenu_RoomPlant0_1.png" />
-          <Image Name="img_MainMenu_RoomPlant0_2.png" />
-          <Image Name="img_MainMenu_RoomPlant1_1.png" />
-          <Image Name="img_MainMenu_RoomPlant1_2.png" />
-          <Image Name="img_MainMenu_RoomPlant2_1.png" />
-          <Image Name="img_MainMenu_RoomPlant2_2.png" />
-          <Image Name="img_MainMenu_RoomPlant3_1.png" />
-          <Image Name="img_MainMenu_RoomPlant3_2.png" />
-          <Image Name="img_MainMenu_RoomSelectFrame.png" />
-          <Image Name="img_MainMenu_ShadowBg.png" />
-          <Image Name="img_MainMenu_spLine.png" />
-          <Image Name="img_MainMenu_TabNew.png" />
-          <Image Name="img_MainMenu_UserCountIcon.png" />
-          <Image Name="img_MainMenu_UserCountNum.png" />
-          <Image Name="img_MainMenu_UserCountUnit.png" />
-          <Image Name="img_MainMenu_wordframe.png" />
-          <Image Name="img_newMainMenu_roomlistLayer.png" />
-          <Image Name="ing_cainiaochang.png" />
-          <Image Name="ing_guanjiachang.png" />
-          <Image Name="ing_pingminchang.png" />
-          <Image Name="ing_tuhaochang.png" />
-        </Folder>
-        <Folder Name="majiang" />
         <Folder Name="NewLobby">
           <Image Name="bg.png" />
           <Image Name="button_create.png" />
@@ -1014,6 +979,7 @@
           <Image Name="zhongkong_t_shuzi.png" />
         </Folder>
         <Project Name="LoginScene.csd" Type="Scene" />
+        <Folder Name="room" />
       </RootFolder>
     </Group>
   </SolutionFolder>
