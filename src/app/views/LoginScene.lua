@@ -40,39 +40,40 @@ function LoginScene:onEnter()
     local btnFast3 = rootNode:getChildByName("Button_3")
     local btnFast4 = rootNode:getChildByName("Button_4")
     btnFast1:onClicked(function (  )
-        local strUid = "1711514028"
+        local strUid = "1811514031"
         dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
     btnFast2:onClicked(function (  )
-        local strUid = "1711514029"
+        local strUid = "1811514032"
         dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
     btnFast3:onClicked(function (  )
-        local strUid = "1711514030"
+        local strUid = "1811514033"
         dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
     btnFast4:onClicked(function (  )
-        local strUid = "1711514031"
+        local strUid = "1811514034"
         dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
     --cgpTest
-    local strUid = "1711514028"
-    dataMgr.myBaseData.uid = strUid
-    print("strUid:"..strUid)
-    --self:startLogin(strUid)
-    layerMgr:showLayer(layerMgr.layIndex.MainLayer)
+    -- local strUid = "1711514223"
+    -- dataMgr.myBaseData.uid = strUid
+    -- print("strUid:"..strUid)
+    
+    -- self:startLogin(strUid)
+    --layerMgr:showLayer(layerMgr.layIndex.MainLayer)
 
 end
 
@@ -88,7 +89,6 @@ function LoginScene:startLogin(_uid)
     local cbValidateFlags = 3
 
     snd:wrDWORD(dwPlazaVersion)
-    print("dwPlazaVersion")
     snd:wrString(szMachineID, 66)
     snd:wrString(szPassword, 64)
     snd:wrString(szAccounts, 66)

@@ -41,25 +41,12 @@ function JoinRoomBox:ctor()
             self.txts[self.nowNum]:setString(tostring(i - 1))
             self.roomNum[8 - self.nowNum] = i - 1
             
---cgpTest   实际上是进入成功1,100后执行，这边只执行连接游戏
+--cgpTest   实际上是进入成功1,102后执行，这边只执行连接游戏
             if self.nowNum == 7 then
                 self.readRoomNum = girl.getAllDicimalValue(self.roomNum, 7)
                 dataMgr.roomSet.dwRoomNum = self.readRoomNum
-                local wTable = self.readRoomNum % 65536
-                local wChair = (self.readRoomNum - wTable)/ 65536 
 
-
-                local delay = cc.DelayTime:create(1.0)
-                local action = cc.Sequence:create(delay, cc.CallFunc:create(
-                    function (  )
-                        layerMgr:removeBoxes(layerMgr.boxIndex.JoinRoomBox)
-                        layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
-                        layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitJoin()  
-                    end))
-                self:runAction(action)
-
-
-                --self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
+                self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
 
 
             end
@@ -91,7 +78,7 @@ function JoinRoomBox:startGame(ip, port)
     local dwProcessVersion = 65536
     local szPassword = uid
     local szMachineID = uid
-    local wKindID = 2
+    local wKindID = 3
     local wTable = self.readRoomNum % 65536
     local wChair = (self.readRoomNum - wTable)/ 65536     
     --为密码，实际总的tableId为：wChair * 65536 + wTable
@@ -102,8 +89,8 @@ function JoinRoomBox:startGame(ip, port)
     snd:wrDWORD(dwProcessVersion)
     snd:wrDWORD(dataMgr.myBaseData.dwUserID)
     snd:wrString(szPassword, 66) 
-    snd:wrWORD(wKindID) 
     snd:wrString(szMachineID, 66) 
+    snd:wrWORD(wKindID) 
     snd:wrWORD(wTable)  
     snd:wrWORD(wChair) 
     snd:sendData(netTb.SocketType.Game)

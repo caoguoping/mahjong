@@ -25,9 +25,9 @@ function CardDataManager:init()
         cbUserAction
         cbCardData[14];    
         cbHuaCardData[14];
-        bLianZhuangCount;                      
-    ]]
-
+        bLianZhuangCount;  
+     ]]
+    self.bankClient = nil
 end
 
 return CardDataManager

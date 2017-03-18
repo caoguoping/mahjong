@@ -978,8 +978,8 @@
           <Image Name="leftcardNum.png" />
           <Image Name="zhongkong_t_shuzi.png" />
         </Folder>
-        <Project Name="LoginScene.csd" Type="Scene" />
         <Folder Name="room" />
+        <Project Name="LoginScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

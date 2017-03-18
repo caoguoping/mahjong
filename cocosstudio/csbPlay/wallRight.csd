@@ -346,7 +346,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="card/lefthand/Frame_zuojia_pingpai_fan_2.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image36" ActionTag="430588363" Tag="10491" IconVisible="False" LeftMargin="-41.1200" RightMargin="-110.8800" TopMargin="154.4416" BottomMargin="-272.4417" LeftEage="50" RightEage="50" TopEage="38" BottomEage="38" Scale9OriginX="50" Scale9OriginY="38" Scale9Width="52" Scale9Height="42" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image36" ActionTag="430588363" Tag="10491" IconVisible="False" LeftMargin="-41.1200" RightMargin="-110.8800" TopMargin="154.4416" BottomMargin="-272.4416" LeftEage="50" RightEage="50" TopEage="38" BottomEage="38" Scale9OriginX="50" Scale9OriginY="38" Scale9Width="52" Scale9Height="42" ctype="ImageViewObjectData">
             <Size X="152.0000" Y="118.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="34.8800" Y="-213.4416" />
@@ -356,7 +356,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="card/lefthand/Frame_zuojia_pingpai_fan_1.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image35" ActionTag="-1881503944" Tag="10492" IconVisible="False" LeftMargin="-47.8164" RightMargin="-104.1836" TopMargin="141.9434" BottomMargin="-259.9435" LeftEage="50" RightEage="50" TopEage="38" BottomEage="38" Scale9OriginX="50" Scale9OriginY="38" Scale9Width="52" Scale9Height="42" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image35" ActionTag="-1881503944" Tag="10492" IconVisible="False" LeftMargin="-47.8164" RightMargin="-104.1836" TopMargin="141.9434" BottomMargin="-259.9434" LeftEage="50" RightEage="50" TopEage="38" BottomEage="38" Scale9OriginX="50" Scale9OriginY="38" Scale9Width="52" Scale9Height="42" ctype="ImageViewObjectData">
             <Size X="152.0000" Y="118.0000" />
             <AnchorPoint ScaleX="0.5532" ScaleY="0.5090" />
             <Position X="36.2700" Y="-199.8814" />

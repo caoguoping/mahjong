@@ -55,17 +55,17 @@ function createRoomBox:ctor()
     layerMgr.LoginScene:addChild(self, 10000)
     btnCreate:onClicked(
         --cgpTest
-        function ( )
-            layerMgr:removeBoxes(layerMgr.boxIndex.CreateRoomBox)
-            layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params) 
-            local layer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
-            layer:waitJoin()
-        end
-
-
-        -- function (  )
-        --     self:sendCreateRoom()
+        -- function ( )
+        --     layerMgr:removeBoxes(layerMgr.boxIndex.CreateRoomBox)
+        --     layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params) 
+        --     local layer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+        --     layer:waitJoin()
         -- end
+
+
+        function (  )
+            self:sendCreateRoom()
+        end
     )
 end
 

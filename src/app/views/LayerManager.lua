@@ -68,6 +68,7 @@ function LayerManager:removeBoxes(boxIndex)
     if  self.boxes[boxIndex] then
 	    self.boxes[boxIndex]:removeSelf()
 	    self.boxes[boxIndex] = nil
+	    print("removeBoxes "..boxIndex)
 	end
 end
 

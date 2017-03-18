@@ -39,19 +39,27 @@ function NetWorkGame:handleEventGame( event)
         end
 
     elseif wMainCmd == 1 then
-        if wSubCmd == 100 then
+        if wSubCmd == 102 then
+            --连接成功
             if dataMgr.roomSet.bIsCreate == 1 then
                 self:connectSuccessCreate(rcv)
             elseif dataMgr.roomSet.bIsCreate == 0 then
                 self:connectSuccessJoin(rcv)
             end
-            
+        --连接失败
+        elseif wSubCmd == 101 then
+            TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
+
+        --创建成功
         elseif wSubCmd == 104 then
             self:createSuccess(rcv) 
         end
+
     elseif wMainCmd == 3 then
+        --坐下
         if wSubCmd == 102 then
             self:sitDown(rcv)
+        --来人
         elseif wSubCmd == 100 then
             self:playerCome(rcv) 
         end
@@ -100,22 +108,27 @@ end
 function NetWorkGame:connectSuccessCreate( rcv )
     -- local mainLayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
     -- mainLayer:showCreateRoom()
-    layerMgr.boxes[1] = import(".CreateRoomBox",CURRENT_MODULE_NAME).create()
+    print("\n\n connectSuccessCreate OK!")
+    layerMgr.boxes[layerMgr.boxIndex.CreateRoomBox] = import(".CreateRoomBox",CURRENT_MODULE_NAME).create()
 
 end
 
 --房间连接成功加入
 function NetWorkGame:connectSuccessJoin( rcv )
     rcv:destroys()
-    local delay = cc.DelayTime:create(1.0)
-    local action = cc.Sequence:create(delay, cc.CallFunc:create(
-        function (  )
+    local wTable = dataMgr.roomSet.dwRoomNum % 65536
+    local wChair = (dataMgr.roomSet.dwRoomNum - wTable)/ 65536 
+
+
+   -- local delay = cc.DelayTime:create(1.0)
+    --local action = cc.Sequence:create(delay, cc.CallFunc:create(
+    --    function (  )
             layerMgr:removeBoxes(layerMgr.boxIndex.JoinRoomBox)
             layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
             layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitJoin()  
-        end))
-    self:runAction(action)
-
+    --    end)
+   -- )
+    --self:runAction(action)
 end
 
 --创建房间成功
@@ -126,6 +139,7 @@ function NetWorkGame:createSuccess( rcv )
     dataMgr.roomSet.wChair = wChairId
     dataMgr.roomSet.wTable = wTableId
     dataMgr.roomSet.dwRoomNum = wChairId * 65536 + wTableId
+    print("\n\n\nwChairID  "..wChairId.."wTableId  "..wTableId)
     layerMgr:removeBoxes(layerMgr.boxIndex.CreateRoomBox)
     layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitJoin()
@@ -179,7 +193,7 @@ function NetWorkGame:playerCome( rcv )
         print("error: wChairID out of range !")
         return
     end
-    print(svrChair)
+
     dataMgr.onDeskData[svrChair].dwGameID      = dwGameID     
     dataMgr.onDeskData[svrChair].dwUserID      = dwUserID     
     dataMgr.onDeskData[svrChair].dwGroupID     = dwGroupID    
@@ -205,7 +219,10 @@ function NetWorkGame:playerCome( rcv )
     dataMgr.onDeskData[svrChair].nick2         = nick2        
     dataMgr.onDeskData[svrChair].szNickName    = szNickName   
 --客户端chairId赋值
-    if dataMgr.myBaseData.dwUserID == dwUserId then
+
+    print("\nmyBaseData.dwUserID  "..dataMgr.myBaseData.dwUserID)
+    print("\ndwUserId  "..dataMgr.myBaseData.dwUserID)
+    if dataMgr.myBaseData.dwUserID == dwUserID then
         local svrChairId = wChairID + 1    --从1开始, 1, 4
         dataMgr.chair[svrChairId] = 1
         local index = svrChairId
@@ -216,9 +233,14 @@ function NetWorkGame:playerCome( rcv )
             end
             dataMgr.chair[index] = i
         end
+
+        for i=1,4 do
+            print("\n\nchairId "..dataMgr.chair[i])
+        end
+        print("\nwChairId   "..wChairID)
     end
 
-    layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):showPlayer()
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):showPlayer(wChairID)
 
 end
 

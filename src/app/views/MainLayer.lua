@@ -21,15 +21,20 @@ function MainLayer:ctor()
         startGame (1,1),连接游戏服务器成功(1,100)后弹出设置界面,(1,4)创建房间，1,104成功后显示房间
     ]]
                 
-        --dataMgr.roomSet.bIsCreate = 1
-        --self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
+        dataMgr.roomSet.bIsCreate = 1
+        dataMgr.joinPeople = 0
+        self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
+        local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+        playLayer:refresh()
+        playLayer:setVisible(false)
         --layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
         --self:showCreateRoom()
-        dataMgr.roomSet.bIsCreate = 1
-        layerMgr.boxes[layerMgr.boxIndex.CreateRoomBox] = import(".CreateRoomBox",CURRENT_MODULE_NAME).create()
+        --dataMgr.roomSet.bIsCreate = 1
+        --layerMgr.boxes[layerMgr.boxIndex.CreateRoomBox] = import(".CreateRoomBox",CURRENT_MODULE_NAME).create()
         --layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
     end
     ) 
+
     btnJoin:onClicked(
     function ()
 --cgpTest
@@ -37,10 +42,11 @@ function MainLayer:ctor()
         弹出界面，写完直接发(1, 1)
     ]]
         dataMgr.roomSet.bIsCreate = 0
+        dataMgr.joinPeople = 0
         layerMgr.boxes[layerMgr.boxIndex.JoinRoomBox] = import(".JoinRoomBox",CURRENT_MODULE_NAME).create()
-
-        --self:startGame("139.196.237.203",5010)
-        --layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
+        local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+        playLayer:refresh()
+        playLayer:setVisible(false)
     end
     )    
 
@@ -67,13 +73,13 @@ function MainLayer:startGame(ip, port)
     TTSocketClient:getInstance():startSocket(ip, port, netTb.SocketType.Game)
 
     local snd = DataSnd:create(1, 1)
-    local uid = "1711514028"
+    local uid = dataMgr.myBaseData.uid
     local dwPlazaVersion = 65536
     local dwFrameVersion = 65536
     local dwProcessVersion = 65536
     local szPassword = uid
     local szMachineID = uid
-    local wKindID = 2
+    local wKindID = 3
     local wTable = 65535
     local wChair = 65535       
     --为密码，实际总的tableId为：wChair * 65536 + wTable
@@ -84,8 +90,9 @@ function MainLayer:startGame(ip, port)
     snd:wrDWORD(dwProcessVersion)
     snd:wrDWORD(dataMgr.myBaseData.dwUserID)
     snd:wrString(szPassword, 66) 
-    snd:wrWORD(wKindID) 
     snd:wrString(szMachineID, 66) 
+    snd:wrWORD(wKindID) 
+
     snd:wrWORD(wTable)  
     snd:wrWORD(wChair) 
     snd:sendData(netTb.SocketType.Game)

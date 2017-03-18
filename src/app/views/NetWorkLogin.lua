@@ -42,8 +42,8 @@ function NetWorkLogin:handleEventLogin( event)
             self:loginComplete(rcv)
         elseif wSubCmd == 105 then
             self:registerRole(rcv)
-        else
-            --
+        elseif wSubCmd == 101 then
+            TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Login)
         end
     else 
     -- --

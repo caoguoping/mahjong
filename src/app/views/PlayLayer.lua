@@ -20,7 +20,7 @@ function PlayLayer:ctor()
     self.stndNode = {}
     self.dachNode = {}
     self.pengNode = {}
-    self.wallCell = {}
+    self.wallCell = {}  --1, 144 已按抓牌顺序排好序
     self.stndCell = {}
     self.dachCell = {}
     self.pengCell = {}
@@ -74,6 +74,8 @@ function PlayLayer:ctor()
     end
     self.txtClock = self.deskBgNode:getChildByName("AtlasLabel_1")
     self.nodeShezi = self.deskBgNode:getChildByName("FileNode_shezi")
+    self.imgShezi1 = self.nodeShezi:getChildByName("Image_1")
+    self.imgShezi2 = self.nodeShezi:getChildByName("Image_2")
     --self.clock:setString("0"..8)
 
 --ui
@@ -99,7 +101,7 @@ function PlayLayer:ctor()
     self.txtRoomNum = self.inviteNode:getChildByName("Text_room")
 --pai
     for i = 1, 4 do
-        self.wallCell[i] = {}
+        --self.wallCell[i] = {}
         self.stndCell[i] = {}
         self.dachCell[i] = {}
         self.pengCell[i] = {}
@@ -107,11 +109,27 @@ function PlayLayer:ctor()
             self.pengCell[i][j] = {}
         end
     end
+    -- --堆牌
+    -- for  i = 1,4 do
+    --     for j = 1,36 do
+    --         local imgName = "Image"..j
+    --         self.wallCell[i][j] =  self.wallNode[i]:getChildByName(imgName)
+    --     end
+    -- end
     --堆牌
+    local sice1 = cardDataMgr.cardSend.bSice1
+    local sice2 = cardDataMgr.cardSend.bSice2
+--cgpTest
+    sice1 = 3
+    sice2 = 4
+    local startDir = math.min(sice1, sice2)
+    local theSum = sice1 + sice2
+    local startIndex = (startDir - 1) * 36 + (theSum - 1) * 2  --相当于0
     for  i = 1,4 do
         for j = 1,36 do
             local imgName = "Image"..j
-            self.wallCell[i][j] =  self.wallNode[i]:getChildByName(imgName)
+            local realPos = ((i - 1) * 36 + j - startIndex + 144) % 144
+            self.wallCell[realPos] =  self.wallNode[i]:getChildByName(imgName)
         end
     end
 
@@ -158,9 +176,14 @@ function PlayLayer.create()
     return PlayLayer.new()
 end
 
-function PlayLayer:waitJoin()
-   
-    self.joinPeople = 0
+--点击创建按钮
+function PlayLayer:refresh( )
+    for i=1,4 do
+        self.imgLight[i]:setVisible(false)
+        self.imgFeng[i]:setVisible(false)
+        self.imgNowFeng[i]:setVisible(false)
+        self.headNode[i]:setVisible(false)
+    end
     for i=1,4 do
         self.wallNode[i]:setVisible(false)
         self.stndNode[i]:setVisible(false)
@@ -169,40 +192,31 @@ function PlayLayer:waitJoin()
     end
     self.stndNodeMeBei:setVisible(false)
 
-    for i=1,4 do
-        self.imgLight[i]:setVisible(false)
-        self.imgFeng[i]:setVisible(false)
-        self.imgNowFeng[i]:setVisible(false)
-    end
+end
+
+--等待其他人加入，在自己进去之后，收到
+function PlayLayer:waitJoin()
 
     self.nodeShezi:setVisible(false)
     self.inviteNode:setVisible(true)
     self.txtRoomNum:setString(tostring(dataMgr.roomSet.dwRoomNum))
 
 --cgpTest
-    self.nodeShezi:setVisible(true)
-    local timeLineShezi = cc.CSLoader:createTimeline("shezi.csb")
-    self:runAction(timeLineShezi)
-    timeLineShezi:gotoFrameAndPlay(0, false)
-    timeLineShezi:setLastFrameCallFunc(
-        function ()
-            print("\n\n callFunc Ok")
-       end
-       
-      )
 
 
 end
 
 --显示进来人
 function PlayLayer:showPlayer(svrChairId )  
-    self.joinPeople = self.joinPeople + 1
-    local clientId = dataMgr.getServiceChairId(svrChairId)
+    dataMgr.joinPeople = dataMgr.joinPeople + 1
+    
+    local clientId = dataMgr.chair[svrChairId + 1]
+    print("\n\nclientId   "..clientId)
     self.headNode[clientId]:setVisible(true)
-    self.txtScore[clientId]:setString(tostring(dataMgr.onDeskData[svrChairId].lScore))
-    self.imgHead[clientId]:loadTexture("headshot_"..clientId..".png")
+    --self.txtScore[clientId]:setString(tostring(dataMgr.onDeskData[svrChairId].lScore))
+   -- self.imgHead[clientId]:loadTexture("headshot_"..clientId..".png")
 
-    if self.joinPeople == 4 then
+    if dataMgr.joinPeople == 4 then
         --todo
     end
 
@@ -211,11 +225,93 @@ end
 --抓牌
 function PlayLayer:zhuaPai()
 
+        local bankClient = dataMgr.chair[cardDataMgr.cardSend.wBankerUser]
+
+        local delay1  = cc.DelayTime:create(0.1)
+        local delay2  = cc.DelayTime:create(0.1)
+        local delay3  = cc.DelayTime:create(0.1)
+        local delay4  = cc.DelayTime:create(0.1)
+        local delay5  = cc.DelayTime:create(0.1)
+        local delay6  = cc.DelayTime:create(0.1)
+        local delay7  = cc.DelayTime:create(0.1)
+        local delay8  = cc.DelayTime:create(0.1)
+        local delay9  = cc.DelayTime:create(0.1)
+        local delay10 = cc.DelayTime:create(0.1)
+        local delay11 = cc.DelayTime:create(0.1)
+        local delay12 = cc.DelayTime:create(0.1)
+        local delay13 = cc.DelayTime:create(0.1)
+        local delay14 = cc.DelayTime:create(0.1)
+        local delay15 = cc.DelayTime:create(0.1)
+        local delay16 = cc.DelayTime:create(0.1)
+        local callFunc1 = cc.CallFunc:create(function ()
+
+            
+        end)            
+  
+
+        local action = cc.Sequence:create(
+            delay1 , callFunc1 ,
+            delay2 , callFunc2 ,
+            delay3 , callFunc3 ,
+            delay4 , callFunc4 ,
+            delay5 , callFunc5 ,
+            delay6 , callFunc6 ,
+            delay7 , callFunc7 ,
+            delay8 , callFunc8 ,
+            delay9 , callFunc9 ,
+            delay10, callFunc10,
+            delay11, callFunc11,
+            delay12, callFunc12,
+            delay13, callFunc13,
+            delay14, callFunc14,
+            delay15, callFunc15,
+            delay16, callFunc16
+            )
+        self:runAction(action)    
 end
 
 --发牌
 function PlayLayer:sendCard()
 
+    self.nodeShezi:setVisible(true)
+    self.imgShezi1:setVisible(false)
+    self.imgShezi2:setVisible(false)
+    local timeLineShezi = cc.CSLoader:createTimeline("shezi.csb")
+    self:runAction(timeLineShezi)
+    timeLineShezi:gotoFrameAndPlay(0, false)
+    timeLineShezi:setLastFrameCallFunc(
+        function ()
+            self.imgShezi1:setVisible(true)
+            self.imgShezi2:setVisible(true)
+            cardDataMgr.cardSend.bSice1 = 3
+            cardDataMgr.cardSend.bSice2 = 4
+            self.imgShezi1:loadTexture("sezi_value"..cardDataMgr.cardSend.bSice1..".png")
+            self.imgShezi2:loadTexture("sezi_value"..cardDataMgr.cardSend.bSice2..".png")
+            --self:zhuaPai()
+            local delay = cc.DelayTime:create(1.0)
+            local action = cc.Sequence:create(delay, cc.CallFunc:create(
+                function (  )
+                    self.imgShezi1:setVisible(false)
+                    self.imgShezi2:setVisible(false)
+
+
+
+                end))
+            self:runAction(action)
+
+
+
+
+        end
+    
+
+
+      )
+
+
+
+
+    cardDataMgr.bankClient = dataMgr.chair[cardDataMgr.cardSend.wBankerUser]
     self.inviteNode:setVisible(false)
     for i=1,4 do
         self.wallNode[i]:setVisible(true)

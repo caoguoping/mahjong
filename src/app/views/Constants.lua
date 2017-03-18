@@ -6,7 +6,7 @@ netTb.SocketType =
 	Login  = 0,
 	Game   = 1,
 }
-netTb.ip = "139.196.237.203"
+netTb.ip = "192.168.3.15"
 netTb.port =
 {
     login = 5050,

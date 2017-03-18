@@ -243,6 +243,7 @@ bool TTSocketClient::ConnectIPv4(const char *ip, unsigned short port, unsigned c
 	int ret = connect(socketTmp, (const struct sockaddr*)&svraddr, sizeof(svraddr));
 	if (ret == SOCKET_ERROR) 
 	{
+		log("\nconnect error");
 		return false;
 	}
 	if (bSocketType == 0)
