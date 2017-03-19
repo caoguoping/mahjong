@@ -28,6 +28,9 @@ function CardDataManager:init()
         bLianZhuangCount;  
      ]]
     self.bankClient = nil
+
+
+
 end
 
 return CardDataManager

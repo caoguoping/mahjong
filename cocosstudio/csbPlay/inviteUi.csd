@@ -6,65 +6,65 @@
       <ObjectData Name="Node" Tag="17195" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Text_1" ActionTag="-1554928329" Tag="17196" IconVisible="False" LeftMargin="-102.4938" RightMargin="2.4938" TopMargin="-43.6293" BottomMargin="9.6293" FontSize="30" LabelText="房间号:" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="100.0000" Y="34.0000" />
+          <AbstractNodeData Name="Image_frame" ActionTag="-1713873219" Tag="696" IconVisible="False" LeftMargin="-143.1516" RightMargin="-138.8484" TopMargin="-93.6183" BottomMargin="9.6183" LeftEage="93" RightEage="93" TopEage="27" BottomEage="27" Scale9OriginX="93" Scale9OriginY="27" Scale9Width="96" Scale9Height="30" ctype="ImageViewObjectData">
+            <Size X="282.0000" Y="84.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-52.4938" Y="26.6293" />
+            <Position X="-2.1516" Y="51.6183" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="gamePlay/text_house_1.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_1" ActionTag="-1554928329" Tag="17196" IconVisible="False" LeftMargin="-111.5116" RightMargin="30.5116" TopMargin="-41.6107" BottomMargin="14.6107" FontSize="24" LabelText="房间号:" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="81.0000" Y="27.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-71.0116" Y="28.1107" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="0" G="85" B="82" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_room" ActionTag="890566065" Tag="17197" IconVisible="False" LeftMargin="10.6756" RightMargin="-125.6756" TopMargin="-42.8696" BottomMargin="8.8696" FontSize="30" LabelText="1003235" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="115.0000" Y="34.0000" />
+          <AbstractNodeData Name="Text_room" ActionTag="890566065" Tag="17197" IconVisible="False" LeftMargin="11.0465" RightMargin="-106.0465" TopMargin="-41.5917" BottomMargin="14.5917" FontSize="24" LabelText="1003235" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="95.0000" Y="27.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="68.1756" Y="25.8696" />
+            <Position X="58.5465" Y="28.0917" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
+            <CColor A="255" R="0" G="85" B="82" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_roomCate" ActionTag="-1993023965" Tag="17198" IconVisible="False" LeftMargin="-62.7689" RightMargin="-30.2311" TopMargin="2.5913" BottomMargin="-36.5913" FontSize="30" LabelText="进园子" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="93.0000" Y="34.0000" />
+          <AbstractNodeData Name="Button_weChat" ActionTag="1153667393" Tag="17199" IconVisible="False" LeftMargin="41.2737" RightMargin="-309.2737" TopMargin="38.5000" BottomMargin="-115.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="238" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="268.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-16.2689" Y="-19.5913" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Button_weChat" ActionTag="1153667393" Tag="17199" IconVisible="False" LeftMargin="-93.5189" RightMargin="47.5189" TopMargin="52.4581" BottomMargin="-88.4581" TouchEnable="True" FontSize="14" ButtonText="微信" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="46.0000" Y="36.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-70.5189" Y="-70.4581" />
+            <Position X="175.2737" Y="-77.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+            <PressedFileData Type="Normal" Path="gamePlay/button_weixin_2.png" Plist="" />
+            <NormalFileData Type="Normal" Path="gamePlay/button_weixin_1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_nativeFriend" ActionTag="-2065233285" Tag="17200" IconVisible="False" LeftMargin="30.9546" RightMargin="-76.9546" TopMargin="50.6978" BottomMargin="-86.6978" TouchEnable="True" FontSize="14" ButtonText="好友" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="46.0000" Y="36.0000" />
+          <AbstractNodeData Name="Button_nativeFriend" ActionTag="-2065233285" Tag="17200" IconVisible="False" LeftMargin="-297.0425" RightMargin="29.0425" TopMargin="35.8053" BottomMargin="-112.8053" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="238" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="268.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="53.9546" Y="-68.6978" />
+            <Position X="-163.0425" Y="-74.3053" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+            <PressedFileData Type="Normal" Path="gamePlay/button_online_2.png" Plist="" />
+            <NormalFileData Type="Normal" Path="gamePlay/button_online_1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

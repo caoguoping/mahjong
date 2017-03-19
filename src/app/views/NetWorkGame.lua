@@ -144,6 +144,18 @@ function NetWorkGame:createSuccess( rcv )
     layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitJoin()
 
+--cgpTest
+    cardDataMgr.cardSend.wBankerUser    =  2              --庄家用户
+    cardDataMgr.cardSend.wCurrentUser   =  2              --当前用户
+    cardDataMgr.cardSend.wReplaceUser   =  2              --补牌用户
+    cardDataMgr.cardSend.bSice1         =  3  
+    cardDataMgr.cardSend.bSice2         =  4
+    cardDataMgr.cardSend.cbUserAction   =  2              --用户动作
+  --连庄计数
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard()
+
+
+
 end
 
 function NetWorkGame:sitDown( rcv )

@@ -76,7 +76,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/standRight.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_dachuMe" ActionTag="-563507462" Tag="5303" IconVisible="True" LeftMargin="643.1199" RightMargin="636.8801" TopMargin="464.1227" BottomMargin="255.8773" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_dachuMe" Visible="False" ActionTag="-563507462" Tag="5303" IconVisible="True" LeftMargin="643.1199" RightMargin="636.8801" TopMargin="464.1227" BottomMargin="255.8773" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="643.1199" Y="255.8773" />
@@ -86,7 +86,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/dachuMe.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_wallMe" ActionTag="1649055047" Tag="4552" IconVisible="True" LeftMargin="639.5261" RightMargin="640.4739" TopMargin="566.1664" BottomMargin="153.8336" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_wallMe" Visible="False" ActionTag="1649055047" Tag="4552" IconVisible="True" LeftMargin="639.5261" RightMargin="640.4739" TopMargin="566.1664" BottomMargin="153.8336" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="639.5261" Y="153.8336" />
@@ -106,7 +106,7 @@
             <PreSize X="0.0250" Y="0.0444" />
             <FileData Type="Normal" Path="bg/touming.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_standMe" ActionTag="-1034071504" Tag="8236" IconVisible="True" LeftMargin="656.3615" RightMargin="623.6385" TopMargin="651.7454" BottomMargin="68.2546" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="0.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_standMe" Visible="False" ActionTag="-1034071504" Tag="8236" IconVisible="True" LeftMargin="656.3615" RightMargin="623.6385" TopMargin="651.7454" BottomMargin="68.2546" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="0.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="656.3615" Y="68.2546" />
@@ -115,7 +115,7 @@
             <PrePosition X="0.5128" Y="0.0948" />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_standMeBei" ActionTag="2096001276" Tag="3304" IconVisible="True" LeftMargin="656.1185" RightMargin="623.8815" TopMargin="651.7650" BottomMargin="68.2350" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_standMeBei" Visible="False" ActionTag="2096001276" VisibleForFrame="False" Tag="3304" IconVisible="True" LeftMargin="656.1185" RightMargin="623.8815" TopMargin="651.7650" BottomMargin="68.2350" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="656.1185" Y="68.2350" />
@@ -155,7 +155,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/dachuUp.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_pengMe" ActionTag="-1527025511" Tag="1447" IconVisible="True" LeftMargin="515.2017" RightMargin="764.7983" TopMargin="661.9793" BottomMargin="58.0207" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_pengMe" Visible="False" ActionTag="-1527025511" Tag="1447" IconVisible="True" LeftMargin="515.2017" RightMargin="764.7983" TopMargin="661.9793" BottomMargin="58.0207" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
             <Position X="515.2017" Y="58.0207" />
@@ -205,13 +205,13 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/deskUi.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_invite" ActionTag="1021855120" Tag="18307" IconVisible="True" LeftMargin="656.8790" RightMargin="623.1210" TopMargin="461.4821" BottomMargin="258.5179" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_invite" ActionTag="1021855120" Tag="18307" IconVisible="True" LeftMargin="638.1656" RightMargin="641.8344" TopMargin="536.1072" BottomMargin="183.8928" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="656.8790" Y="258.5179" />
+            <Position X="638.1656" Y="183.8928" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5132" Y="0.3591" />
+            <PrePosition X="0.4986" Y="0.2554" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/inviteUi.csd" Plist="" />
           </AbstractNodeData>

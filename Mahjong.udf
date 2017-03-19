@@ -1,29 +1,9 @@
 <UserData Version="3.10.0.0">
   <Properties>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="csbPlay/playScene.csd" />
-          <FilePathData Path="csbPlay/deskUi.csd" />
-          <FilePathData Path="csbPlay/deskBg.csd" />
-          <FilePathData Path="csbPlay/inviteUi.csd" />
-          <FilePathData Path="csbPlay/playHeadNode.csd" />
-          <FilePathData Path="actionsCsb/shezi.csd" />
-          <FilePathData Path="csbPlay/wallMe.csd" />
-          <FilePathData Path="csbPlay/wallLeft.csd" />
-          <FilePathData Path="csbPlay/standRight.csd" />
-          <FilePathData Path="csbPlay/wallUp.csd" />
-          <FilePathData Path="csbPlay/wallRight.csd" />
-          <FilePathData Path="csbPlay/standUp.csd" />
-          <FilePathData Path="csbLobby/joinRoom.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="csbLobby/joinRoom.csd" />
-      </Value>
-    </Item>
     <Item Key="CocosRecentOperation">
       <Value ctype="CocosRecentOperation">
         <LastPublishType Value="Resource" />
-        <IsLastPublish Value="True" />
+        <IsLastPublish Value="False" />
         <LastRunType Value="Windows" />
       </Value>
     </Item>
