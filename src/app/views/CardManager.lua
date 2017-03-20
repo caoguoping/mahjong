@@ -41,12 +41,6 @@ function CardManager:hideAllCards(  )
     self.stndNodeMeBei:setVisible(false)
 end
 
-function CardManager:showWallCards( )
-    for i=1,4 do
-        self.wallNode[i]:setVisible(false)
-    end
-end
-
 function CardManager:initAllNodes( param )
 	local rootNode = param.rootNode
 	self.wallNode = {}
@@ -63,6 +57,8 @@ function CardManager:initAllNodes( param )
     self.wallNode[3]  = rootNode:getChildByName("FileNode_wallUp")
     self.wallNode[2]  = rootNode:getChildByName("FileNode_wallLeft")
     self.stndNode[1]  = rootNode:getChildByName("FileNode_standMe")
+--test
+    --self.stndNode[1]:setVisible(true)
     self.stndNode[4]  = rootNode:getChildByName("FileNode_standRight")
     self.stndNode[3]  = rootNode:getChildByName("FileNode_standUp")
     self.stndNode[2]  = rootNode:getChildByName("FileNode_standLeft")
@@ -76,6 +72,24 @@ function CardManager:initAllNodes( param )
     self.pengNode[2]  = rootNode:getChildByName("FileNode_pengLeft")
     self.stndNodeMeBei = rootNode:getChildByName("FileNode_standMeBei")
 
+    -- print("node  "..self.wallNode[1]  )
+    -- print("node  "..self.wallNode[4]  )
+    -- print("node  "..self.wallNode[3]  )
+    -- print("node  "..self.wallNode[2]  )
+    -- print("node  "..self.stndNode[1]  )
+    -- print("node  "..self.stndNode[4]  )
+    -- print("node  "..self.stndNode[3]  )
+    -- print("node  "..self.stndNode[2]  )
+    -- print("node  "..self.dachNode[1]  )
+    -- print("node  "..self.dachNode[4]  )
+    -- print("node  "..self.dachNode[3]  )
+    -- print("node  "..self.dachNode[2]  )
+    -- print("node  "..self.pengNode[1]  )
+    -- print("node  "..self.pengNode[4]  )
+    -- print("node  "..self.pengNode[3]  )
+    -- print("node  "..self.pengNode[2]  )
+    -- print("node  "..self.stndNodeMeBei)
+
     --pai
     for i = 1, 4 do
         --self.wallCell[i] = {}
@@ -86,7 +100,7 @@ function CardManager:initAllNodes( param )
             self.pengCell[i][j] = {}
         end
     end
-    -- --堆牌
+-- --堆牌
     -- for  i = 1,4 do
     --     for j = 1,36 do
     --         local imgName = "Image"..j
@@ -105,11 +119,11 @@ function CardManager:initAllNodes( param )
     for  i = 1,4 do
         for j = 1,36 do
             local imgName = "Image"..j
-            local realPos = ((i - 1) * 36 + j - startIndex + 144) % 144 + 1
+            local realPos = ((i - 1) * 36 + j - startIndex + 144) % 144
             self.wallCell[realPos] =  self.wallNode[i]:getChildByName(imgName)
 
 
-            print(realPos.." ")
+            --print(realPos.." ")
         end
     end
 
@@ -151,13 +165,17 @@ function CardManager:initAllNodes( param )
     end
 end
 
-function CardManager:initcardCreate( cardValues ,playLayer)
-	--table.sort(cardValues)
+function CardManager:initcardCreate(cardValues)
+	self.cardCreate = {}
+	--local cardValues = {25, 18, 1, 2, 3, 8, 5, 5, 7, 9, 40, 41, 52, 74}
+	table.sort(cardValues)
+
 	for i=1,#cardValues do
-		--self.cardCreate[i] = import(".CardNode", CURRENT_MODULE_NAME).create(cardValues[i])
 		self.cardCreate[i] = cardNode.create(cardValues[i])
-		self.cardCreate[i]:setPositionX(self.posx[i])
-		playLayer.stndNode[1]:addChild(self.cardCreate[i])
+		cardDataMgr.handCard[i] = cardValues[i]
+		self.cardCreate[i]:setPositionX(girl.posx[i])
+
+		self.stndNode[1]:addChild(self.cardCreate[i])
 		self.cardCreate[i].sn = i
 		self.cardCreate[i].clickTimes = 0
 
@@ -168,6 +186,26 @@ function CardManager:initcardCreate( cardValues ,playLayer)
 				-- 	self.cardCreate[i]:setPositionY(30)
 				-- elseif self.cardCreate[i].clickTimes == 2 then
 				-- 	--self.cardCreate[i].clickTimes == 0
+
+					--[[
+					local snd = DataSnd:create(200, 1)
+					snd:wrByte(cardValues[i])
+		            snd:sendData(netTb.SocketType.Game)
+		            snd:release();
+					--]]
+					local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer)
+					playLayer.nodeDachu[1]:setVisible(true)
+					playLayer.imgBigDachu[1]:loadTexture(cardValues[i]..".png")
+		            local delay = cc.DelayTime:create(1.0)
+		            local action = cc.Sequence:create(delay, cc.CallFunc:create(
+		                function ()
+		                	playLayer.nodeDachu[1]:setVisible(false)
+		                	cardDataMgr.dachuNum[1] = cardDataMgr.dachuNum[1] + 1
+		                	self.dachCell[1][cardDataMgr.dachuNum[1]]:setVisible(true)
+		                	self.dachCell[1][cardDataMgr.dachuNum[1]]:loadTexture(cardValues[i]..".png")
+               			end))
+
+					playLayer.nodeDachu[1]:runAction(action)
 					self.cardCreate[i]:removeFromParent()
 				--end
 			end

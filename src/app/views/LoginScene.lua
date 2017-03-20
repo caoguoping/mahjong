@@ -75,9 +75,23 @@ function LoginScene:onEnter()
     -- self:startLogin(strUid)
     --layerMgr:showLayer(layerMgr.layIndex.MainLayer)
 
+--testBegin
+
+
+
+    -- print("\n\n#####                      test start               #####\n\n")
+    -- local test = girl.getBitTable(131)
+    -- for i=1,8 do
+    --     print(" "..i.." "..test[i])
+    -- end
+
+ --testEnd 
+
+
 end
 
 function LoginScene:startLogin(_uid)
+
     TTSocketClient:getInstance():startSocket(netTb.ip, netTb.port.login, netTb.SocketType.Login)
 
     local snd = DataSnd:create(1, 2)

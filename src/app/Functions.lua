@@ -157,6 +157,20 @@ function girl.getAllDicimalValue(tenTable)
     return sum
 end
 
+--第一位为低位(1, 8)
+function girl.getBitTable( byteValue )
+    local bitTable = {}
+    local tmp = byteValue
+    for i=1,8 do
+         bitTable[i] = tmp % 2
+         if i ~= 8 then
+             tmp = tmp - bitTable[i]
+             tmp = tmp / 2
+         end
+         print("bit "..i.." "..bitTable[i])
+    end
+    return bitTable
+end
 -- local panelFactory = import(".view.controls.PanelFactory"):getInstance()
 
 -- function girl.MsgBox(str, who)

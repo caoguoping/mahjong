@@ -7,11 +7,14 @@ local cardDataMgr = import(".CardDataManager"):getInstance()
 
 
 -- fileNode  1:me,   2:left,    3:up,     4:right
-local testCv = {25, 18, 1, 2, 3, 8, 5, 5, 7, 9, 40, 41, 52, 74}
+
 
 
 local PlayLayer = class("PlayLayer", display.newLayer)
 function PlayLayer:ctor()
+
+--test
+
 --all Node
     local rootNode = cc.CSLoader:createNode("playScene.csb"):addTo(self)
     self.rootNode = rootNode
@@ -62,9 +65,11 @@ function PlayLayer:ctor()
         TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
         end)
 
-    self.headNode = {}
-    self.txtScore = {}
-    self.imgHead = {}
+    self.headNode = {}  --头像节点
+    self.txtScore = {}  --金币
+    self.imgHead = {}   --头像
+    self.nodeDachu = {}  --打出牌节点
+    self.imgBigDachu = {} --打出牌
     for i=1,4 do
         local strName = "FileNode_"..i
         self.headNode[i] = self.deskUiNode:getChildByName(strName)
@@ -77,9 +82,16 @@ function PlayLayer:ctor()
         self.btnActions[i] = self.deskUiNode:getChildByName(strName)
     end
 
+    for i=1,4 do
+        local strName = "FileNode_dachuBig_"..i
+        self.nodeDachu[i] = self.deskUiNode:getChildByName(strName)
+        self.nodeDachu[i]:setVisible(false)
+        self.imgBigDachu[i] = self.nodeDachu[i]:getChildByName("Image_paiMian")
+    end
+
     self.txtLeftCard = self.deskUiNode:getChildByName("Text_leftCard")
     self.imgLeftCard = self.deskUiNode:getChildByName("Image_leftCard")
-    --碰
+--碰
     self.btnActions[1]:onClicked(
         function (  )
             
@@ -143,6 +155,8 @@ function PlayLayer:refresh( )
     self.imgLeftCard:setVisible(false)
     self.txtLeftCard:setVisible(false)
 
+    
+
 end
 
 --等待其他人加入，在自己进去之后，收到
@@ -175,11 +189,9 @@ function PlayLayer:showPlayer(svrChairId )
 
 end
 
---抓牌
-function PlayLayer:zhuaPai()
-        --test
-        --local bankClient = dataMgr.chair[cardDataMgr.cardSend.wBankerUser]
-        cardMgr:showWallCards()
+--起牌
+function PlayLayer:qiPai()
+
         local bankClient = 3
         local delay1  = cc.DelayTime:create(0.3)
            
@@ -188,7 +200,10 @@ function PlayLayer:zhuaPai()
                 for i=1, 53 do
                     cardMgr.wallCell[i]:setVisible(false)
                 end
-                for i=2,4 do
+
+                -- cardMgr.wallCell[55]:setVisible(false)
+                -- cardMgr.wallCell[54]:setVisible(false)
+                for i=1,4 do
                     cardMgr.stndNode[i]:setVisible(true)
                 end
 
@@ -199,6 +214,43 @@ end
 
 --发牌
 function PlayLayer:sendCard()
+--test start
+
+    local testCard = {9,6, 5,   2, 1, 21,  23, 25,39,   23, 25, 25, 17, 9}
+    local testHuaCard = {75, 74, 72}
+
+    cardDataMgr.cardSend.wBankerUser    = 2               --庄家用户
+    cardDataMgr.cardSend.wCurrentUser   = 2               --当前用户
+    cardDataMgr.cardSend.wReplaceUser   = 2               --补牌用户
+    cardDataMgr.cardSend.bLianZhuangCount = 1 
+    cardDataMgr.cardSend.bHuaCount = 3
+    cardDataMgr.cardSend.bSice1         = 2   
+    cardDataMgr.cardSend.bSice2         = 3
+    cardDataMgr.cardSend.cbUserAction   = 0               --用户动作
+
+    local clientBankId = dataMgr.chair[cardDataMgr.cardSend.wBankerUser + 1]
+    cardDataMgr.bankClient = clientBankId
+    local cardLenth = 13
+    if clientBankId == 1 then
+        cardLenth = 14
+    end
+
+    for i=1, cardLenth do
+        cardDataMgr.cardSend.cbCardData[i] = testCard[i]
+        print("cardValues "..cardDataMgr.cardSend.cbCardData[i])
+    end
+
+    for i=1,cardDataMgr.cardSend.bHuaCount do
+        cardDataMgr.cardSend.cbHuaCardData[i] = testHuaCard[i]
+        print("HuaValues "..cardDataMgr.cardSend.cbHuaCardData[i])
+    end
+
+
+--test end
+
+
+
+
 
     self.nodeShezi:setVisible(true)
     self.imgShezi1:setVisible(false)
@@ -210,11 +262,9 @@ function PlayLayer:sendCard()
         function ()
             self.imgShezi1:setVisible(true)
             self.imgShezi2:setVisible(true)
-            cardDataMgr.cardSend.bSice1 = 3
-            cardDataMgr.cardSend.bSice2 = 4
             self.imgShezi1:loadTexture("sezi_value"..cardDataMgr.cardSend.bSice1..".png")
             self.imgShezi2:loadTexture("sezi_value"..cardDataMgr.cardSend.bSice2..".png")
-            self:zhuaPai()
+            self:qiPai()
             local delay = cc.DelayTime:create(1.0)
             local action = cc.Sequence:create(delay, cc.CallFunc:create(
                 function (  )
@@ -225,24 +275,14 @@ function PlayLayer:sendCard()
 
                 end))
             self:runAction(action)
-
-
-
-
         end
-    
-
-
       )
 
-
-
-
-    cardDataMgr.bankClient = dataMgr.chair[cardDataMgr.cardSend.wBankerUser]
     self.inviteNode:setVisible(false)
     for i=1,4 do
         cardMgr.wallNode[i]:setVisible(true)
     end
+    cardMgr:initcardCreate(cardDataMgr.cardSend.cbCardData)
 
 
 
@@ -253,5 +293,8 @@ function PlayLayer:rcvOutCard(outCard )
  --   
 end
 
+function PlayLayer:zhuaCard( cardZhua )
+    
+end
 
 return PlayLayer

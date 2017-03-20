@@ -15,6 +15,11 @@ netTb.port =
     changkaihuan = 5011,
 }
 
+girl.posx = {}
+for i=1,13 do
+	girl.posx[i] = -586 + 92 * (i - 1) * 0.93
+end
+girl.posx[14] = 564
 
 girl.Message                =
 {

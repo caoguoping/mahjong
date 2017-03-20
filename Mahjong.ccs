@@ -806,6 +806,7 @@
           <Project Name="wallMe.csd" Type="Node" />
           <Project Name="wallRight.csd" Type="Node" />
           <Project Name="wallUp.csd" Type="Node" />
+          <Project Name="dachuBigNode.csd" Type="Node" />
         </Folder>
         <Folder Name="effect">
           <Image Name="_sdasd.png" />

@@ -95,7 +95,7 @@ function DataManager:init()
         -- szGroupName;szUnderWrite; isClear; 暂时不用
     ]]
 --chair  
-    --下标为服务器Id, 值为客户端ID  chair[1 - 4] 
+    --下标为服务器Id, 值为客户端ID  chair下标传入1， 4，即服务器chairId + 1
     --[[
     server
             2

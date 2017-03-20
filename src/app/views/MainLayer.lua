@@ -8,7 +8,6 @@ local layerMgr= import(".LayerManager"):getInstance()
 local MainLayer = class("MainLayer", display.newLayer)
 
 
-
 function MainLayer:ctor()
     local rootNode = cc.CSLoader:createNode("NewLobby.csb"):addTo(self)
     self.rootNode = rootNode
