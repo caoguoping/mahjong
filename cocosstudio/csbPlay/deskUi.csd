@@ -6,15 +6,25 @@
       <ObjectData Name="Node" Tag="17764" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Image_bg" ActionTag="1508503526" Alpha="0" Tag="2998" IconVisible="False" LeftMargin="-639.4822" RightMargin="-640.5178" TopMargin="-358.7203" BottomMargin="-361.2797" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_bg" ActionTag="1508503526" Alpha="0" Tag="2998" IconVisible="False" LeftMargin="-639.4822" RightMargin="-640.5178" TopMargin="-358.7200" BottomMargin="-361.2800" LeftEage="422" RightEage="422" TopEage="237" BottomEage="237" Scale9OriginX="422" Scale9OriginY="237" Scale9Width="436" Scale9Height="246" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="0.5178" Y="-1.2797" />
+            <Position X="0.5178" Y="-1.2800" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="gameui/img_GameUI_BgNEW.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Image_touchOther" ActionTag="689023457" Tag="3140" IconVisible="False" LeftMargin="-639.4825" RightMargin="607.4825" TopMargin="152.7323" BottomMargin="-184.7323" TouchEnable="True" LeftEage="10" RightEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="12" Scale9Height="12" ctype="ImageViewObjectData">
+            <Size X="32.0000" Y="32.0000" />
+            <AnchorPoint />
+            <Position X="-639.4825" Y="-184.7323" />
+            <Scale ScaleX="39.9997" ScaleY="17.0086" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="bg/touming.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="Button_Close" ActionTag="1976608835" Tag="19534" IconVisible="False" LeftMargin="-636.0069" RightMargin="582.0069" TopMargin="-350.7417" BottomMargin="294.7417" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="24" Scale9Height="34" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="54.0000" Y="56.0000" />
@@ -69,6 +79,16 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/playHeadNode.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Image_touchCard" ActionTag="1216716968" Alpha="157" Tag="2551" IconVisible="False" LeftMargin="-15.9998" RightMargin="-16.0002" TopMargin="276.7780" BottomMargin="-308.7780" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="22" Scale9Height="28" ctype="ImageViewObjectData">
+            <Size X="32.0000" Y="32.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="0.0002" Y="-292.7780" />
+            <Scale ScaleX="39.9706" ScaleY="4.2094" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="bg/touming2.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="Button_3" ActionTag="1310498924" Tag="7909" IconVisible="False" LeftMargin="291.5651" RightMargin="-384.5651" TopMargin="162.7268" BottomMargin="-249.7268" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="63" Scale9Height="65" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="93.0000" Y="87.0000" />

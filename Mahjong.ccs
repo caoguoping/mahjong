@@ -47,6 +47,7 @@
           <Image Name="img_bj.png" />
           <Image Name="tishi.png" />
           <Image Name="touming.png" />
+          <Image Name="touming2.png" />
         </Folder>
         <Folder Name="button">
           <Folder Name="new">
@@ -785,6 +786,7 @@
         </Folder>
         <Folder Name="csbPlay">
           <Project Name="buttonCard.csd" Type="Node" />
+          <Project Name="dachuBigNode.csd" Type="Node" />
           <Project Name="dachuLeft.csd" Type="Node" />
           <Project Name="dachuMe.csd" Type="Node" />
           <Project Name="dachuRight.csd" Type="Node" />
@@ -806,7 +808,6 @@
           <Project Name="wallMe.csd" Type="Node" />
           <Project Name="wallRight.csd" Type="Node" />
           <Project Name="wallUp.csd" Type="Node" />
-          <Project Name="dachuBigNode.csd" Type="Node" />
         </Folder>
         <Folder Name="effect">
           <Image Name="_sdasd.png" />

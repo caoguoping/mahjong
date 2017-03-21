@@ -68,8 +68,7 @@ function PlayLayer:ctor()
     self.headNode = {}  --头像节点
     self.txtScore = {}  --金币
     self.imgHead = {}   --头像
-    self.nodeDachu = {}  --打出牌节点
-    self.imgBigDachu = {} --打出牌
+
     for i=1,4 do
         local strName = "FileNode_"..i
         self.headNode[i] = self.deskUiNode:getChildByName(strName)
@@ -82,12 +81,7 @@ function PlayLayer:ctor()
         self.btnActions[i] = self.deskUiNode:getChildByName(strName)
     end
 
-    for i=1,4 do
-        local strName = "FileNode_dachuBig_"..i
-        self.nodeDachu[i] = self.deskUiNode:getChildByName(strName)
-        self.nodeDachu[i]:setVisible(false)
-        self.imgBigDachu[i] = self.nodeDachu[i]:getChildByName("Image_paiMian")
-    end
+
 
     self.txtLeftCard = self.deskUiNode:getChildByName("Text_leftCard")
     self.imgLeftCard = self.deskUiNode:getChildByName("Image_leftCard")
@@ -155,7 +149,7 @@ function PlayLayer:refresh( )
     self.imgLeftCard:setVisible(false)
     self.txtLeftCard:setVisible(false)
 
-    
+
 
 end
 
@@ -216,7 +210,7 @@ end
 function PlayLayer:sendCard()
 --test start
 
-    local testCard = {9,6, 5,   2, 1, 21,  23, 25,39,   23, 25, 25, 17, 9}
+    local testCard = {9,6, 5,   2, 1, 21,  23, 25,39,   23, 25, 25, 17, 8}
     local testHuaCard = {75, 74, 72}
 
     cardDataMgr.cardSend.wBankerUser    = 2               --庄家用户
@@ -230,15 +224,18 @@ function PlayLayer:sendCard()
 
     local clientBankId = dataMgr.chair[cardDataMgr.cardSend.wBankerUser + 1]
     cardDataMgr.bankClient = clientBankId
-    local cardLenth = 13
-    if clientBankId == 1 then
-        cardLenth = 14
-    end
 
-    for i=1, cardLenth do
+    for i=1, 13 do
         cardDataMgr.cardSend.cbCardData[i] = testCard[i]
         print("cardValues "..cardDataMgr.cardSend.cbCardData[i])
     end
+
+   -- local drawCardValue
+   -- if clientBankId == 1 then
+      local  drawCardValue = testCard[14]
+    -- else
+    --     drawCardValue = 0
+    -- end
 
     for i=1,cardDataMgr.cardSend.bHuaCount do
         cardDataMgr.cardSend.cbHuaCardData[i] = testHuaCard[i]
@@ -282,19 +279,13 @@ function PlayLayer:sendCard()
     for i=1,4 do
         cardMgr.wallNode[i]:setVisible(true)
     end
-    cardMgr:initcardCreate(cardDataMgr.cardSend.cbCardData)
+    cardMgr:initcardCreate(cardDataMgr.cardSend.cbCardData, drawCardValue)
 
 
 
 end
 
---收到其他玩家出牌
-function PlayLayer:rcvOutCard(outCard )
- --   
-end
 
-function PlayLayer:zhuaCard( cardZhua )
-    
-end
+
 
 return PlayLayer

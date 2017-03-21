@@ -71,7 +71,7 @@ function NetWorkGame:handleEventGame( event)
             elseif wSubCmd == 101 then --出牌
                 self:rcvOutCard(rcv)
             elseif wSubCmd == 102 then --抓牌（含花牌）
-                self:zhuaCard(rcv)               
+                self:drawCard(rcv)               
             else 
             end    
     --
@@ -276,26 +276,26 @@ function NetWorkGame:rcvOutCard( rcv )
     outCard.wOutCardUser = rcv:readWORD() --svrChair
     outCard.bOutCardData = rcv:readByte()
     rcv:destroys()
-    layerMgr:getLayer(layerMgr.layIndex.PlayLayer):rcvOutCard(outCard)
+    cardMgr:rcvOutCard(outCard)
 end
 
 --抓牌
-function NetWorkGame:zhuaCard( rcv )
+function NetWorkGame:drawCard( rcv )
     local cardZhua = {}
     cardZhua.cbHuaCardData = {}
     cardZhua.wCurrentUser = rcv:readWORD()  
     cardZhua.wReplaceUser = rcv:readWORD()
     cardZhua.wSendCardUser= rcv:readWORD()
     cardZhua.cbCardData   = rcv:readByte()
-    cardZhua.cbActionMask = rcv:readByte()
     cardZhua.cbHuaCount   = rcv:readByte()
+    cardZhua.cbActionMask = rcv:readByte()
     for i=1, cardZhua.cbHuaCount do
         cardZhua.cbHuaCardData = rcv:readByte()
         --print("HuaValues "..cardDataMgr.cardSend.cbHuaCardData[i])
     end
 
     rcv:destroys()
-    layerMgr:getLayer(layerMgr.layIndex.PlayLayer):rcvOutCard(cardZhua)
+    cardMgr:drawCard(cardZhua)
 end
 
 return NetWorkGame

@@ -5,6 +5,9 @@
         <HorizontalList>
           <Guides Direction="Horizontal" Position="-245.9861" />
         </HorizontalList>
+        <VerticalList>
+          <Guides Position="12.5159" />
+        </VerticalList>
       </Value>
     </Item>
   </Properties>

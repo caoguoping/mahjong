@@ -15,11 +15,16 @@ netTb.port =
     changkaihuan = 5011,
 }
 
+--未缩小的原始尺寸
+girl.cardHeight = 130
+girl.cardWidth = 92
+
+girl.posy = 0
 girl.posx = {}
-for i=1,13 do
-	girl.posx[i] = -586 + 92 * (i - 1) * 0.93
-end
-girl.posx[14] = 564
+	for i=1,13 do
+		girl.posx[i] = 640 - 564 + 92 * (i - 1) * 0.93
+	end
+girl.posx[14] = 564 + 640
 
 girl.Message                =
 {
