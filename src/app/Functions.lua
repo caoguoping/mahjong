@@ -171,16 +171,15 @@ function girl.getBitTable( byteValue )
     end
     return bitTable
 end
--- local panelFactory = import(".view.controls.PanelFactory"):getInstance()
 
--- function girl.MsgBox(str, who)
---     local who = who or 1
---     local man = ""
---     if who == 1 then
---         man = "请联系堡主->"
---     else
---         man = "请联系大表哥->"
---     end
---     panelFactory:createPanel(panelFactory.Panels.MessageBoxPanel,nil,{message =man..str})
---                :addTo(display.getRunningScene(),999999999)
--- end
+
+--获取一个新数值在table中的索引，（theTable已经从小到大排列)
+function girl.getTableSortIndex(theTable, value )
+    local index = 1
+    for i=1,#theTable  do
+        if value > theTable[i ] then
+            index = i + 1
+        end
+    end
+    return index
+end

@@ -279,7 +279,7 @@ function PlayLayer:sendCard()
     for i=1,4 do
         cardMgr.wallNode[i]:setVisible(true)
     end
-    cardMgr:initcardCreate(cardDataMgr.cardSend.cbCardData, drawCardValue)
+    cardMgr:inithandCards(cardDataMgr.cardSend.cbCardData, drawCardValue)
 
 
 

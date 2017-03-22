@@ -28,5 +28,23 @@
         <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="csbPlay/deskBg.csd" />
+          <FilePathData Path="csbPlay/playScene.csd" />
+          <FilePathData Path="csbPlay/inviteUi.csd" />
+          <FilePathData Path="csbPlay/deskUi.csd" />
+          <FilePathData Path="csbPlay/playHeadNode.csd" />
+          <FilePathData Path="csbPlay/standMeBei.csd" />
+          <FilePathData Path="csbPlay/standUp.csd" />
+          <FilePathData Path="csbPlay/wallUp.csd" />
+          <FilePathData Path="csbPlay/buttonCard.csd" />
+          <FilePathData Path="csbPlay/dachuBigNode.csd" />
+          <FilePathData Path="csbPlay/dachuMe.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="csbPlay/buttonCard.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>

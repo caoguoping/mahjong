@@ -17,7 +17,8 @@ function CardManager:getInstance()
 end
 
 function CardManager:inits( )
-	self.cardCreate = {}
+	self.handCards = {}
+	self.cardDraw = nil    --抓的牌 node
 	self.whichTouch = nil
 	self.stndMeCnt = nil
 
@@ -88,24 +89,84 @@ function CardManager:initAllNodes( param )
             snd:sendData(netTb.SocketType.Game)
             snd:release();
 			--]]
-			local handvalueIndex = sn - cardDataMgr.pengNum[1] * 3   
-			self.nodeDachu[1]:setVisible(true)
-			self.imgBigDachu[1]:loadTexture(cardDataMgr.handCardValue[handvalueIndex]..".png")
+			local outIndex = sn - cardDataMgr.pengNum[1] * 3    --打出的手牌第几张，去掉了碰  
+			local handCount = 13 - cardDataMgr.pengNum[1] * 3    --手牌的张数，去掉了碰等和进的一张牌
+			local outValueSave = 0
 
-            local delay = cc.DelayTime:create(0.8)
-            local action = cc.Sequence:create(delay, cc.CallFunc:create(
-                function ()
-                	self.nodeDachu[1]:setVisible(false)
-                	cardDataMgr.outNum[1] = cardDataMgr.outNum[1] + 1
-                	self.outCell[1][cardDataMgr.outNum[1]]:setVisible(true)
-                	self.outCellFace[1][cardDataMgr.outNum[1]]:loadTexture(cardDataMgr.handCardValue[handvalueIndex]..".png")
-       			end))
+            self.nodeDachu[1]:setVisible(true)
+--出最后一张
+			if sn == 14 then
+				outValueSave = self.cardDraw.cardValue
+				self.imgBigDachu[1]:loadTexture(outValueSave..".png")
+				local delay1 = cc.DelayTime:create(0.4)
+            	local delay2 = cc.DelayTime:create(0.4)
+	            local action = cc.Sequence:create(delay1, 
+					delay2,
+	            	cc.CallFunc:create(
+	                function ()
+	                	self.nodeDachu[1]:setVisible(false)
+	                	cardDataMgr.outNum[1] = cardDataMgr.outNum[1] + 1
+	                	self.outCell[1][cardDataMgr.outNum[1]]:setVisible(true)
+	                	self.outCellFace[1][cardDataMgr.outNum[1]]:loadTexture(outValueSave..".png")
+	       			end)
+	            )	
+	            self.nodeDachu[1]:runAction(action)
+				self.cardDraw:removeFromParent()
 
-			self.nodeDachu[1]:runAction(action)
-			self.cardCreate[handvalueIndex]:removeFromParent()
-			table.remove(self.cardCreate, handvalueIndex)
-			table.remove(cardDataMgr.handCardValue,  handvalueIndex)
-			print("\n\ntable size "..#self.cardCreate)
+			else
+--打出非最后一张牌		
+				outValueSave = cardDataMgr.handValues[outIndex]
+				self.imgBigDachu[1]:loadTexture(outValueSave..".png")
+				local delay1 = cc.DelayTime:create(0.4)
+            	local delay2 = cc.DelayTime:create(0.4)
+	            local action = cc.Sequence:create(delay1, 
+					cc.CallFunc:create(
+	                function ()
+	                	for i = outIndex, handCount - 1 do   --打出的节点早已移除，并前移了一位
+	                		local action = cc.MoveBy:create(0.2, cc.p(-86, 0))
+
+	                		self.handCards[i]:runAction(action) 
+	                		print("\ni   "..i.."  handCards[i] value"..self.handCards[i].cardValue)
+	                	end
+	                	local insertIndex = girl.getTableSortIndex(cardDataMgr.handValues, self.cardDraw.cardValue)	
+						print("\n###### insert index ######"..insertIndex)
+
+	                	for i = insertIndex, handCount - 1 do   --打出的节点早已移除，并前移了一位
+	                		local action = cc.MoveBy:create(0.2, cc.p(86, 0))
+
+	                		self.handCards[i]:runAction(action) 
+	                	end
+
+	                	local action1 = cc.MoveBy:create(0.2, cc.p(0, 113))
+	                	local action2 = cc.MoveTo:create(0.3, cc.p(girl.posx[insertIndex], 113))
+	                	local action3 = cc.MoveTo:create(0.3, cc.p(girl.posx[insertIndex], 0))
+
+	                	self.cardDraw:runAction(cc.Sequence:create(action1,action2,action3))
+	                	table.insert(self.handCards,  insertIndex, self.cardDraw)
+	                	table.insert(cardDataMgr.handValues,  insertIndex, self.cardDraw.cardValue)
+	                	print("\ntable size After"..#self.handCards.."  sn  "..sn)
+	                	for i=1,#self.handCards do
+	                		print("  "..self.handCards[i].cardValue)
+	                	end
+
+	       			end),
+					delay2,
+	            	cc.CallFunc:create(
+	                function ()
+	                	--显示打出牌
+	                	self.nodeDachu[1]:setVisible(false)
+	                	cardDataMgr.outNum[1] = cardDataMgr.outNum[1] + 1
+	                	self.outCell[1][cardDataMgr.outNum[1]]:setVisible(true)
+	                	self.outCellFace[1][cardDataMgr.outNum[1]]:loadTexture(outValueSave..".png")
+	       			end)
+	            )	
+	            self.nodeDachu[1]:runAction(action)
+				self.handCards[outIndex]:removeFromParent()
+				table.remove(self.handCards, outIndex)
+				table.remove(cardDataMgr.handValues,  outIndex)					
+			end
+
+			print("\ntable size "..#self.handCards.."  sn  "..sn)
     	end
     end)
 
@@ -221,27 +282,28 @@ function CardManager:rcvOutCard(outCard )
  --   
 end
 
-function CardManager:initcardCreate(cardValues, drawCardValue)
-	self.cardCreate = {}    --创建的节点，打出去和碰出去的不算
+function CardManager:inithandCards(cardValues, drawCardValue)
+	self.handCards = {}    --创建的节点，打出去和碰出去的不算
 	--local cardValues = {25, 18, 1, 2, 3, 8, 5, 5, 7, 9, 40, 41, 52, 74}
 	table.sort(cardValues)
 
 	for i=1,13 do
-		self.cardCreate[i] = cardNode.create(cardValues[i])
-		cardDataMgr.handCardValue[i] = cardValues[i]
-		self.cardCreate[i]:setPositionX(girl.posx[i])
+		self.handCards[i] = cardNode.create(cardValues[i])
+		cardDataMgr.handValues[i] = cardValues[i]
+		self.handCards[i]:setPositionX(girl.posx[i])
 
-		self.stndNode[1]:addChild(self.cardCreate[i])
-		self.cardCreate[i].sn = i
-		self.cardCreate[i].clickTimes = 0
+		self.stndNode[1]:addChild(self.handCards[i])
+		--self.stndNode[1]:retain()
+		self.handCards[i].sn = i
+		self.handCards[i].clickTimes = 0
 
-		-- self.cardCreate[i].btnBg:onClicked(
+-- self.handCards[i].btnBg:onClicked(
 		-- 	function ()
-		-- 		-- self.cardCreate[i].clickTimes = self.cardCreate[i].clickTimes + 1
-		-- 		-- if self.cardCreate[i].clickTimes == 1 then
-		-- 		-- 	self.cardCreate[i]:setPositionY(30)
-		-- 		-- elseif self.cardCreate[i].clickTimes == 2 then
-		-- 		-- 	--self.cardCreate[i].clickTimes == 0
+		-- 		-- self.handCards[i].clickTimes = self.handCards[i].clickTimes + 1
+		-- 		-- if self.handCards[i].clickTimes == 1 then
+		-- 		-- 	self.handCards[i]:setPositionY(30)
+		-- 		-- elseif self.handCards[i].clickTimes == 2 then
+		-- 		-- 	--self.handCards[i].clickTimes == 0
 
 		-- 			--[[
 		-- 			local snd = DataSnd:create(200, 1)
@@ -264,9 +326,9 @@ function CardManager:initcardCreate(cardValues, drawCardValue)
 
 
 		-- 			self.nodeDachu[1]:runAction(action)
-		-- 			self.cardCreate[i]:removeFromParent()
-		-- 			table.remove(self.cardCreate, i)
-		-- 			print("\n\ntable size "..#self.cardCreate)
+		-- 			self.handCards[i]:removeFromParent()
+		-- 			table.remove(self.handCards, i)
+		-- 			print("\n\ntable size "..#self.handCards)
 		-- 		--end
 		-- 	end
 
@@ -275,32 +337,10 @@ function CardManager:initcardCreate(cardValues, drawCardValue)
 	end
 
 	if drawCardValue ~= 0 then
-		self.cardCreate[14] = cardNode.create(drawCardValue)
-		cardDataMgr.handCardValue[14] = drawCardValue
-		self.cardCreate[14]:setPositionX(girl.posx[14])
-		self.stndNode[1]:addChild(self.cardCreate[14])
-		self.cardCreate[14].sn = 14
-		self.cardCreate[14].clickTimes = 0
+		self.cardDraw = cardNode.create(drawCardValue)
+		self.cardDraw:setPositionX(girl.posx[14])
+		self.stndNode[1]:addChild(self.cardDraw)
 
-		self.cardCreate[14].btnBg:onClicked(
-			function ()
-					self.nodeDachu[1]:setVisible(true)
-					self.imgBigDachu[1]:loadTexture(drawCardValue..".png")
-		            local delay = cc.DelayTime:create(1.0)
-		            local action = cc.Sequence:create(delay, cc.CallFunc:create(
-		                function ()
-		                	self.nodeDachu[1]:setVisible(false)
-		                	cardDataMgr.outNum[1] = cardDataMgr.outNum[1] + 1
-		                	self.outCell[1][cardDataMgr.outNum[1]]:setVisible(true)
-		                	self.outCellFace[1][cardDataMgr.outNum[1]]:loadTexture(drawCardValue..".png")
-               			end))
-
-					self.nodeDachu[1]:runAction(action)
-					self.cardCreate[14]:removeFromParent()
-				--end
-			end
-
-			)
 	end
 
 end

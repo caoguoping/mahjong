@@ -53,7 +53,7 @@ function CardDataManager:init()
         };
       ]]
 
-    self.handCardValue = {}  --手牌值（只有自己），打出去的去掉
+    self.handValues = {}  --手牌值（只有自己），打出去的去掉
     self.bankClient = 0  --庄家客户端
     self.allLeftCard = 0  --总剩余牌数
     self.pengNum = {}  --碰的个数，4家
