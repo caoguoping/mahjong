@@ -55,7 +55,8 @@ function CardDataManager:init()
 
     self.handValues = {}  --手牌值（只有自己），打出去的去掉
     self.bankClient = 0  --庄家客户端
-    self.allLeftCard = 0  --总剩余牌数
+    self.totalOutNum = 0  --总打出的牌
+    self.outType = 0     --抓牌打出 0,    碰牌打出 1。
     self.pengNum = {}  --碰的个数，4家
     self.pengValue = {}  --碰的值 4家，每家3个相同只取一个  
     for i=1,4 do
@@ -73,7 +74,7 @@ function CardDataManager:refresh(  )
         self.outNum[i] = 0
         self.pengNum[i] = 0
     end
-    self.allLeftCard = 144
+    self.totalOutNum = 0
 end
 
 

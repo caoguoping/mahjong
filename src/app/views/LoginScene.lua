@@ -24,6 +24,7 @@ function LoginScene:onEnter()
     local btnLogin = rootNode:getChildByName("Button_login")
     btnLogin:onClicked(
     function ()
+        self:disableAllButtons()
         local strUid = txUid:getString()
         if #strUid == 0 then
             strUid = tostring(1711514050 + math.random(1000000, 9000000))
@@ -39,33 +40,51 @@ function LoginScene:onEnter()
     local btnFast2 = rootNode:getChildByName("Button_2")
     local btnFast3 = rootNode:getChildByName("Button_3")
     local btnFast4 = rootNode:getChildByName("Button_4")
-    btnFast1:onClicked(function (  )
+    btnFast1:onClicked(
+     function (  )
+        self:disableAllButtons()
+
         local strUid = "1811514031"
         dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
-    btnFast2:onClicked(function (  )
+    btnFast2:onClicked(
+    function (  )
+        self:disableAllButtons()
+
         local strUid = "1811514032"
         dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
-    btnFast3:onClicked(function (  )
+    btnFast3:onClicked(
+    function (  )
+        self:disableAllButtons()
+
         local strUid = "1811514033"
         dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
 
-    btnFast4:onClicked(function (  )
+    btnFast4:onClicked(
+    function (  )
+        self:disableAllButtons()
+        
         local strUid = "1811514034"
         dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
     end)
+
+    self.btnLogin = btnLogin
+    self.btnFast1 = btnFast1
+    self.btnFast2 = btnFast2
+    self.btnFast3 = btnFast3
+    self.btnFast4 = btnFast4
 
     --cgpTest
     -- local strUid = "1711514223"
@@ -113,6 +132,13 @@ function LoginScene:startLogin(_uid)
 
 end
 
+function LoginScene:disableAllButtons(  )
+    self.btnLogin:setVisible(false)
+    self.btnFast1:setVisible(false)
+    self.btnFast2:setVisible(false)
+    self.btnFast3:setVisible(false)
+    self.btnFast4:setVisible(false)
+end
 
 
 return LoginScene

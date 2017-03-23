@@ -774,6 +774,7 @@
           <Image Name="label_rule2_1.png" />
           <Image Name="label_rule2_2.png" />
           <Image Name="line.png" />
+          <Image Name="pop-up_line.png" />
           <Image Name="radio_box.png" />
           <Image Name="radio_selected.png" />
           <Image Name="testCreat.png" />

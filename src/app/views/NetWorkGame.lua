@@ -4,6 +4,7 @@ local CURRENT_MODULE_NAME = ...
 local dataMgr     = import(".DataManager"):getInstance()
 local cardDataMgr     = import(".CardDataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
+local cardMgr = import(".CardManager"):getInstance()
 
 local s_inst = nil
 local NetWorkGame = class("NetWorkGame", display.newNode)
@@ -71,11 +72,71 @@ function NetWorkGame:handleEventGame( event)
             elseif wSubCmd == 101 then --出牌
                 self:rcvOutCard(rcv)
             elseif wSubCmd == 102 then --抓牌（含花牌）
-                self:drawCard(rcv)               
-            else 
+                self:drawCard(rcv)  
+            elseif wSubCmd == 103 then
+                --todo 发给所有人听牌了
+            
+
+            --[[只发给自己，显示碰杠胡]]
+            elseif wSubCmd == 104 then
+                self:waitOption(rcv) 
+
+            --[[ 碰杠胡操作的响应] ]]
+            elseif wSubCmd == 105 then
+                self:optionResult(rcv  )
             end    
     --
     end
+end
+
+--[[   200,104
+    struct CMD_S_OperateNotify
+    {
+        WORD                            wResumeUser;                        //还原用户
+        BYTE                            cbActionMask;                       //动作掩码
+        BYTE                            cbActionCard;                       //动作扑克
+    };
+    ]]
+
+
+    --[[
+      200, 3,  send  
+    //操作命令
+    struct CMD_C_OperateCard
+    {
+        BYTE                            cbOperateCode;                      //操作代码
+        BYTE                            cbOperateCard[3];                   //操作扑克
+    };
+
+    200, 2听
+    ]]
+
+--等待操作，碰杠胡
+function NetWorkGame:waitOption( rcv )
+    rcv:readWORD()
+    local bActionMask = rcv:readByte()
+    local bActionCard = rcv:readByte()
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitOption(bActionMask, bActionCard)
+end
+
+
+--[[操作命令  200,105
+    struct CMD_S_OperateResult
+    {
+        WORD                            wOperateUser;                       //操作用户
+        WORD                            wProvideUser;                       //供应用户
+        BYTE                            cbOperateCode;                      //操作代码
+        BYTE                            cbOperateCard[3];                   //操作扑克
+    };]]
+--操作返回，碰杠胡
+function NetWorkGame:optionResult(rcv  )
+    local optResult = {}
+    optResult.wOperateUser  = rcv:readWORD()
+    optResult.wProvideUser  = rcv:readWORD()
+    optResult.cbOperateCode = rcv:readByte()
+    optResult.cbOperateCard = rcv:readByte()
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):optionResult(optResult)
+    
 end
 
 
@@ -120,16 +181,16 @@ function NetWorkGame:createSuccess( rcv )
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitJoin()
 
 --cgpTest
-    cardDataMgr.cardSend.wBankerUser    =  2              --庄家用户
-    cardDataMgr.cardSend.wCurrentUser   =  2              --当前用户
-    cardDataMgr.cardSend.wReplaceUser   =  2              --补牌用户
-    cardDataMgr.cardSend.bSice1         =  3  
-    cardDataMgr.cardSend.bSice2         =  4
-    cardDataMgr.cardSend.cbUserAction   =  2              --用户动作
-  --连庄计数
+--     cardDataMgr.cardSend.wBankerUser    =  2              --庄家用户
+--     cardDataMgr.cardSend.wCurrentUser   =  2              --当前用户
+--     cardDataMgr.cardSend.wReplaceUser   =  2              --补牌用户
+--     cardDataMgr.cardSend.bSice1         =  3  
+--     cardDataMgr.cardSend.bSice2         =  4
+--     cardDataMgr.cardSend.cbUserAction   =  2              --用户动作
+--   --连庄计数
 
---cgpTest
-    layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard()
+-- --cgpTest
+--     layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard()
 
 
 
@@ -239,7 +300,7 @@ function NetWorkGame:sendCard( rcv )
     cardDataMgr.cardSend.wCurrentUser   = rcv:readWORD()               --当前用户
     cardDataMgr.cardSend.wReplaceUser   = rcv:readWORD()               --补牌用户
     cardDataMgr.cardSend.bLianZhuangCount = rcv:readByte()             --连庄
-    CardDataMgr.cardSend.bHuaCount      = rcv:readByte()
+    cardDataMgr.cardSend.bHuaCount      = rcv:readByte()
     cardDataMgr.cardSend.bSice1         = rcv:readByte()   
     cardDataMgr.cardSend.bSice2         = rcv:readByte()
     cardDataMgr.cardSend.cbUserAction   = rcv:readByte()               --用户动作
@@ -252,21 +313,25 @@ function NetWorkGame:sendCard( rcv )
 
     local clientBankId = dataMgr.chair[cardDataMgr.cardSend.wBankerUser + 1]
     cardDataMgr.bankClient = clientBankId
-    local cardLenth = 13
-    if clientBankId == 1 then
-        cardLenth = 14
-    end
-    for i=1, cardLenth do
+
+    --所有人都发14字节，非庄家14字节无效
+    for i=1, 13 do
         cardDataMgr.cardSend.cbCardData[i] = rcv:readByte()
-        print("cardValues "..cardDataMgr.cardSend.cbCardData[i])
+       -- print("cardValues "..cardDataMgr.cardSend.cbCardData[i])
     end
-    for i=1, CardDataMgr.cardSend.bHuaCount do
+
+    local drawValue = rcv:readByte()
+    if clientBankId ~= 1 then
+        drawValue = 0
+    end
+
+    for i=1, cardDataMgr.cardSend.bHuaCount do
         cardDataMgr.cardSend.cbHuaCardData[i] = rcv:readByte()
-        print("HuaValues "..cardDataMgr.cardSend.cbHuaCardData[i])
+        --print("HuaValues "..cardDataMgr.cardSend.cbHuaCardData[i])
     end
    
-    print("cardDataMgr.cardSend.bLianZhuangCount  "..cardDataMgr.cardSend.bLianZhuangCount)                       --连庄计数
-    layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard()
+   -- print("cardDataMgr.cardSend.bLianZhuangCount  "..cardDataMgr.cardSend.bLianZhuangCount)                       --连庄计数
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard(drawValue)
     rcv:destroys()
 end
 
