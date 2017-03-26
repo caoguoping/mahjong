@@ -75,41 +75,87 @@ function NetWorkGame:handleEventGame( event)
                 self:drawCard(rcv)  
             elseif wSubCmd == 103 then
                 --todo 发给所有人听牌了
-            
 
             --[[只发给自己，显示碰杠胡]]
             elseif wSubCmd == 104 then
                 self:waitOption(rcv) 
 
-            --[[ 碰杠胡操作的响应] ]]
+            --[[ 碰杠(胡)操作的响应] ]]
             elseif wSubCmd == 105 then
                 self:optionResult(rcv  )
-            end    
+
+            elseif wSubCmd == 106 then
+                self:huPai(rcv)
+            end 
     --
     end
 end
 
---[[   200,104
-    struct CMD_S_OperateNotify
-    {
-        WORD                            wResumeUser;                        //还原用户
-        BYTE                            cbActionMask;                       //动作掩码
-        BYTE                            cbActionCard;                       //动作扑克
-    };
-    ]]
+--胡牌数据
+function NetWorkGame:huPai( rcv )
+    local gameEndData = {}
+    gameEndData.lGameTax = rcv:readUInt64()
+    gameEndData.wProvideUser = rcv:readWORD()
+    gameEndData.cbProvideCard = rcv:readByte()
+    gameEndData.dwChiHuKind = {}  --4 个
+    gameEndData.dwChiHuRight = {}  --4*3个
+    for i=1,4 do
+        gameEndData.dwChiHuKind[i] = rcv:readDWORD()
+        print("i"..i..",dwChiHuKind"..gameEndData.dwChiHuKind[i])
+    end
+    for i=1,4 do
+        gameEndData.dwChiHuRight[i] = {}
+        for j =1, 3 do
+            gameEndData.dwChiHuRight[i][j] = rcv:readDWORD()
+             print("i"..i..",j"..j..",dwChiHuRight"..gameEndData.dwChiHuRight[i][j])
+        end
+    end
+    gameEndData.cbHuaCardCount = rcv:readByte()
+    gameEndData.cbFanCount = rcv:readByte()
+    gameEndData.lGameScore = {}
+    for i=1,4 do
+        gameEndData.lGameScore[i] = rcv:readUInt64()     
+    end
+    gameEndData.cbCardCount = {}
+    gameEndData.cbCardData = {}
+    for i=1,4 do
+        gameEndData.cbCardCount[i] = rcv:readByte()
+        gameEndData.cbCardData[i] = {} 
+        for j=1,14 do
+            gameEndData.cbCardData[i][j] = rcv:readByte()
+        end 
+    end
 
+    --玩家手牌
+    --for i=1,4 do
+      --  for j=1,gameEndData.cbCardCount[i] do
+          --  gameEndData.cbCardData[i][j] = rcv:readByte()
+       -- end
+    --end
 
-    --[[
-      200, 3,  send  
-    //操作命令
-    struct CMD_C_OperateCard
-    {
-        BYTE                            cbOperateCode;                      //操作代码
-        BYTE                            cbOperateCard[3];                   //操作扑克
-    };
+--新加的
+    --碰
+    gameEndData.cbCardPeng = {}
+    for i=1,4 do
+        gameEndData.cbCardPeng[i] = {}
+        for j=1,4 do
+            gameEndData.cbCardPeng[i][j] = rcv:readByte()
+        end
+    end
 
-    200, 2听
-    ]]
+    --杠
+    gameEndData.cbCardGang = {}
+    for i=1,4 do
+        gameEndData.cbCardGang[i] = {}
+        for j=1,4 do
+            gameEndData.cbCardGang[i][j] = rcv:readByte()
+        end
+    end
+
+    dataMgr.playerStatus = 2    --游戏结束
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):huPai(gameEndData)
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):refresh()
+end
 
 --等待操作，碰杠胡
 function NetWorkGame:waitOption( rcv )
@@ -120,14 +166,6 @@ function NetWorkGame:waitOption( rcv )
 end
 
 
---[[操作命令  200,105
-    struct CMD_S_OperateResult
-    {
-        WORD                            wOperateUser;                       //操作用户
-        WORD                            wProvideUser;                       //供应用户
-        BYTE                            cbOperateCode;                      //操作代码
-        BYTE                            cbOperateCard[3];                   //操作扑克
-    };]]
 --操作返回，碰杠胡
 function NetWorkGame:optionResult(rcv  )
     local optResult = {}
@@ -175,22 +213,14 @@ function NetWorkGame:createSuccess( rcv )
     dataMgr.roomSet.wChair = wChairId
     dataMgr.roomSet.wTable = wTableId
     dataMgr.roomSet.dwRoomNum = wChairId * 65536 + wTableId
-    print("\n\n\nwChairID  "..wChairId.."wTableId  "..wTableId)
+--    print("\n\n\nwChairID  "..wChairId.."wTableId  "..wTableId)
     layerMgr:removeBoxes(layerMgr.boxIndex.CreateRoomBox)
     layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
+    
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitJoin()
 
 --cgpTest
---     cardDataMgr.cardSend.wBankerUser    =  2              --庄家用户
---     cardDataMgr.cardSend.wCurrentUser   =  2              --当前用户
---     cardDataMgr.cardSend.wReplaceUser   =  2              --补牌用户
---     cardDataMgr.cardSend.bSice1         =  3  
---     cardDataMgr.cardSend.bSice2         =  4
---     cardDataMgr.cardSend.cbUserAction   =  2              --用户动作
---   --连庄计数
-
--- --cgpTest
---     layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard()
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard()
 
 
 
@@ -202,12 +232,15 @@ function NetWorkGame:sitDown( rcv )
     local wChairId = rcv:readWORD()
     local cbUserStatus = rcv:readByte()
     rcv:destroys()
-    if dataMgr.myBaseData.dwUserID == dwUserId and cbUserStatus == 2 then
-        --me sitdown ,fresh data
-        local snd = DataSnd:create(100, 2)
-        snd:sendData(netTb.SocketType.Game)
-        snd:release();
+    if dataMgr.playerStatus == 0 then
+        if dataMgr.myBaseData.dwUserID == dwUserId and cbUserStatus == 2 then
+            --me sitdown ,fresh data
+            local snd = DataSnd:create(100, 2)
+            snd:sendData(netTb.SocketType.Game)
+            snd:release();
+        end
     end
+
 end
 
 function NetWorkGame:playerCome( rcv )
@@ -270,8 +303,6 @@ function NetWorkGame:playerCome( rcv )
     dataMgr.onDeskData[svrChair].szNickName    = szNickName   
 --客户端chairId赋值
 
-    print("\nmyBaseData.dwUserID  "..dataMgr.myBaseData.dwUserID)
-    print("\ndwUserId  "..dataMgr.myBaseData.dwUserID)
     if dataMgr.myBaseData.dwUserID == dwUserID then
         local svrChairId = wChairID + 1    --从1开始, 1, 4
         dataMgr.chair[svrChairId] = 1
@@ -284,10 +315,10 @@ function NetWorkGame:playerCome( rcv )
             dataMgr.chair[index] = i
         end
 
-        for i=1,4 do
-            print("\n\nchairId "..dataMgr.chair[i])
-        end
-        print("\nwChairId   "..wChairID)
+        -- for i=1,4 do
+        --     print("\n\nchairId "..dataMgr.chair[i])
+        -- end
+        -- print("\nwChairId   "..wChairID)
     end
 
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):showPlayer(wChairID)
@@ -300,7 +331,7 @@ function NetWorkGame:sendCard( rcv )
     cardDataMgr.cardSend.wCurrentUser   = rcv:readWORD()               --当前用户
     cardDataMgr.cardSend.wReplaceUser   = rcv:readWORD()               --补牌用户
     cardDataMgr.cardSend.bLianZhuangCount = rcv:readByte()             --连庄
-    cardDataMgr.cardSend.bHuaCount      = rcv:readByte()
+    cardDataMgr.huaNum[1]      = rcv:readByte()
     cardDataMgr.cardSend.bSice1         = rcv:readByte()   
     cardDataMgr.cardSend.bSice2         = rcv:readByte()
     cardDataMgr.cardSend.cbUserAction   = rcv:readByte()               --用户动作
@@ -316,8 +347,8 @@ function NetWorkGame:sendCard( rcv )
 
     --所有人都发14字节，非庄家14字节无效
     for i=1, 13 do
-        cardDataMgr.cardSend.cbCardData[i] = rcv:readByte()
-       -- print("cardValues "..cardDataMgr.cardSend.cbCardData[i])
+        cardDataMgr.handValues[i] = rcv:readByte()
+       -- print("cardValues "..handValues[i])
     end
 
     local drawValue = rcv:readByte()
@@ -325,8 +356,8 @@ function NetWorkGame:sendCard( rcv )
         drawValue = 0
     end
 
-    for i=1, cardDataMgr.cardSend.bHuaCount do
-        cardDataMgr.cardSend.cbHuaCardData[i] = rcv:readByte()
+    for i=1, cardDataMgr.huaNum[1] do
+        cardDataMgr.huaCard[1][i] = rcv:readByte()
         --print("HuaValues "..cardDataMgr.cardSend.cbHuaCardData[i])
     end
    
@@ -347,15 +378,15 @@ end
 --抓牌
 function NetWorkGame:drawCard( rcv )
     local cardZhua = {}
-    cardZhua.cbHuaCardData = {}
     cardZhua.wCurrentUser = rcv:readWORD()  
     cardZhua.wReplaceUser = rcv:readWORD()
     cardZhua.wSendCardUser= rcv:readWORD()
     cardZhua.cbCardData   = rcv:readByte()
     cardZhua.cbHuaCount   = rcv:readByte()
     cardZhua.cbActionMask = rcv:readByte()
+    cardZhua.cbHuaCardData = {}
     for i=1, cardZhua.cbHuaCount do
-        cardZhua.cbHuaCardData = rcv:readByte()
+        cardZhua.cbHuaCardData[i] = rcv:readByte()
         --print("HuaValues "..cardDataMgr.cardSend.cbHuaCardData[i])
     end
 

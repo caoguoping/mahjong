@@ -809,6 +809,9 @@
           <Project Name="wallMe.csd" Type="Node" />
           <Project Name="wallRight.csd" Type="Node" />
           <Project Name="wallUp.csd" Type="Node" />
+          <Project Name="hua.csd" Type="Node" />
+          <Project Name="fieldNum.csd" Type="Node" />
+          <Project Name="info.csd" Type="Node" />
         </Folder>
         <Folder Name="effect">
           <Image Name="_sdasd.png" />
@@ -912,6 +915,7 @@
           <Image Name="frame_game-number.png" />
           <Image Name="img_creator.png" />
           <Image Name="img_dealer.png" />
+          <Image Name="img_hua-number.png" />
           <Image Name="img_normal_0.png" />
           <Image Name="img_normal_1.png" />
           <Image Name="img_normal_2.png" />
@@ -933,6 +937,40 @@
           <Image Name="img_GameUI_sendcardbg.png" />
           <Image Name="sezi_value2.png" />
           <Image Name="zk_t_dong_shangxia_01.png" />
+        </Folder>
+        <Folder Name="JieSuan">
+          <Folder Name="img_number">
+            <Image Name="number_0.png" />
+            <Image Name="number_1.png" />
+            <Image Name="number_2.png" />
+            <Image Name="number_3.png" />
+            <Image Name="number_4.png" />
+            <Image Name="number_5.png" />
+            <Image Name="number_6.png" />
+            <Image Name="number_7.png" />
+            <Image Name="number_8.png" />
+            <Image Name="number_9.png" />
+            <Image Name="number_add.png" />
+          </Folder>
+          <Image Name="bg_players.png" />
+          <Image Name="bg_rules.png" />
+          <Image Name="bottom_line.png" />
+          <Image Name="button_back_1.png" />
+          <Image Name="button_back_2.png" />
+          <Image Name="button_continue_1.png" />
+          <Image Name="button_continue_2.png" />
+          <Image Name="button_share_1.png" />
+          <Image Name="button_share_2.png" />
+          <Image Name="flower.png" />
+          <Image Name="frame_name.png" />
+          <Image Name="img_baopai.png" />
+          <Image Name="img_myself.png" />
+          <Image Name="img_number-bg.png" />
+          <Image Name="title_dianhu_1.png" />
+          <Image Name="title_dianhu_2.png" />
+          <Image Name="title_liuju.png" />
+          <Image Name="title_zimo_1.png" />
+          <Image Name="title_zimo_2.png" />
         </Folder>
         <Folder Name="joinRoom">
           <Folder Name="img_number">
@@ -1051,6 +1089,7 @@
           <Image Name="leftcardNum.png" />
           <Image Name="zhongkong_t_shuzi.png" />
         </Folder>
+        <Project Name="jiesuan.csd" Type="Node" />
         <Project Name="LoginScene.csd" Type="Scene" />
       </RootFolder>
     </Group>

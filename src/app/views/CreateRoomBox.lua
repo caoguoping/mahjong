@@ -3,7 +3,6 @@ local CURRENT_MODULE_NAME = ...
 local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
 
-
 local createRoomBox = class("createRoomBox", display.newLayer)
 function createRoomBox:ctor()
 --all Node
@@ -114,7 +113,8 @@ function createRoomBox:ctor()
     txtstring[11]  = "清一色后"    
     
     local function TextBXH()
-         local strtxt = "无"
+         --local strtxt = "无"
+         local strtxt = nil
          local txt = "、"
 
          --记录4个字符串空行
@@ -123,7 +123,8 @@ function createRoomBox:ctor()
              do
                 if num < 3 then
                       if value ~= '0' then
-                            if strtxt ~='无' then
+                            --if strtxt ~='无' then
+                            if strtxt ~=nil then
                                strtxt = strtxt..txt..value
                             else
                                 strtxt = value
@@ -230,11 +231,13 @@ function createRoomBox:ctor()
     ----***主界面关闭功能-------
     imgMask:onClicked(
         function (  )
+            TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
             self:removeSelf()
         end
         )
     btnClose:onClicked(
         function (  )
+             TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
             self:removeSelf()
         end)
     --局数选择

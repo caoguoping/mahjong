@@ -24,6 +24,7 @@ function CardManager:inits( )
 
 end
 
+--刷新
 function CardManager:hideAllCards(  )
     for i=1,4 do
         self.wallNode[i]:setVisible(false)
@@ -54,8 +55,8 @@ end
 
 --自己抓牌后打牌
 function CardManager:outDrawCard(sn  )
-	local outIndex = sn - cardDataMgr.pengNum[1] * 3    --打出的手牌第几张，去掉了碰  
-	local handCount = 13 - cardDataMgr.pengNum[1] * 3    --手牌的张数，去掉了碰等和进的一张牌
+	local outIndex = sn - cardDataMgr.pengGangNum[1] * 3    --打出的手牌第几张，去掉了碰  
+	local handCount = 13 - cardDataMgr.pengGangNum[1] * 3    --手牌的张数，去掉了碰等和进的一张牌
 	local outValueSave = 0
 
     self.nodeDachu[1]:setVisible(true)
@@ -92,7 +93,6 @@ function CardManager:outDrawCard(sn  )
             		local action = cc.MoveBy:create(0.2, cc.p(-86, 0))
 
             		self.handCards[i]:runAction(action) 
-            		print("\ni   "..i.."  handCards[i] value"..self.handCards[i].cardValue)
             	end
             	local insertIndex = girl.getTableSortIndex(cardDataMgr.handValues, self.cardDraw.cardValue)	
 				print("\n###### insert index ######"..insertIndex)
@@ -137,8 +137,8 @@ end
 
 --自己碰后打牌
 function CardManager:outPengCard(sn  )
-	local outIndex = sn - cardDataMgr.pengNum[1] * 3    --打出的手牌第几张，去掉了碰  
-	local handCount = 14 - cardDataMgr.pengNum[1] * 3    --手牌的张数，去掉碰
+	local outIndex = sn - cardDataMgr.pengGangNum[1] * 3    --打出的手牌第几张，去掉了碰  
+	local handCount = 14 - cardDataMgr.pengGangNum[1] * 3    --手牌的张数，去掉碰
 	local outValueSave = 0
 
     self.nodeDachu[1]:setVisible(true)
@@ -184,10 +184,11 @@ function CardManager:outPengCard(sn  )
             	self.outCellFace[1][cardDataMgr.outNum[1]]:loadTexture(outValueSave..".png")
    			end)
         )	
+        table.remove(self.handCards, outIndex)
+		table.remove(cardDataMgr.handValues,  outIndex)	
         self.nodeDachu[1]:runAction(action)
 		self.handCards[outIndex]:removeFromParent()
-		table.remove(self.handCards, outIndex)
-		table.remove(cardDataMgr.handValues,  outIndex)					
+				
 	end
 	return outValueSave
 end
@@ -224,13 +225,13 @@ function CardManager:initAllNodes( param )
     	if state == 2 then
     		self.imgTouchCard:setTouchEnabled(false)
     		local touchEndPosX = sender:getTouchEndPosition().x
-    		if touchEndPosX < 1247 and touchEndPosX > 1161 then
+    		if touchEndPosX < 1280 and touchEndPosX > 1161 then
     			sn = 14
     		else 
     			sn = math.modf((touchEndPosX - 30) / 86) + 1
     		end
     		self.touchSn = sn
-    		if sn <= cardDataMgr.pengNum[1] * 3 then
+    		if sn <= cardDataMgr.pengGangNum[1] * 3 then
     			return
     		end
 
@@ -375,6 +376,15 @@ function CardManager:drawCard(cardZhua )
 	else
 		self.stndCell[clientChair][14]:setVisible(true)
 	end
+
+	cardDataMgr.huaNum[clientChair] = cardDataMgr.huaNum[clientChair] + cardZhua.cbCardData
+	for i=1,cardZhua.cbHuaCount do
+		table.insert(cardDataMgr.huaCard[clientChair],  cardDataMgr.cbHuaCardData[i])
+	end
+
+	local playlayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer)
+
+	playLayer.huaNum[clientChair]:setString(cardDataMgr.huaNum[clientChair])
 	local outNum = cardDataMgr.totalOutNum + 1
 
 	self.wallCell[outNum]:setVisible(false)
@@ -385,7 +395,7 @@ end
 --收到其他玩家出牌
 function CardManager:rcvOutCard(outCard )
     local clientChair = dataMgr.chair[outCard.wOutCardUser + 1] --svrChair
-    if clientChair == 1 then   --收到字节出牌，直接退出
+    if clientChair == 1 then   --收到自己出牌，直接退出
     	return
     end
     local outValue = outCard.bOutCardData
@@ -417,14 +427,13 @@ function CardManager:createCardDraw(cardValue )
 end
 
 
-function CardManager:inithandCards(cardValues, drawCardValue)
+function CardManager:inithandCards(drawCardValue)
 	self.handCards = {}    --创建的节点，打出去和碰出去的不算
 	--local cardValues = {25, 18, 1, 2, 3, 8, 5, 5, 7, 9, 40, 41, 52, 74}
-	table.sort(cardValues)
+	table.sort(cardDataMgr.handValues)
 
 	for i=1,13 do
-		self.handCards[i] = cardNode.create(cardValues[i])
-		cardDataMgr.handValues[i] = cardValues[i]
+		self.handCards[i] = cardNode.create(cardDataMgr.handValues[i])
 		self.handCards[i]:setPositionX(girl.posx[i])
 
 		self.stndNode[1]:addChild(self.handCards[i])

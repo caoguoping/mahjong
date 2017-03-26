@@ -22,9 +22,13 @@ function MainLayer:ctor()
                 
         dataMgr.roomSet.bIsCreate = 1
         dataMgr.joinPeople = 0
+        dataMgr.playerStatus = 0
+
+
+
         self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
         local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
-        playLayer:refresh()
+        playLayer:createRefresh()
         playLayer:setVisible(false)
         --layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
         --self:showCreateRoom()
@@ -42,12 +46,20 @@ function MainLayer:ctor()
     ]]
         dataMgr.roomSet.bIsCreate = 0
         dataMgr.joinPeople = 0
+        dataMgr.playerStatus = 0
+
+        --test
+        --layerMgr.boxes[layerMgr.boxIndex.JiesuanBox] = import(".JiesuanBox",CURRENT_MODULE_NAME).create()
         layerMgr.boxes[layerMgr.boxIndex.JoinRoomBox] = import(".JoinRoomBox",CURRENT_MODULE_NAME).create()
+
         local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
-        playLayer:refresh()
+        playLayer:createRefresh()
         playLayer:setVisible(false)
     end
-    )    
+    )  
+
+    --预加载playLayer
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer)  
 
 end
 

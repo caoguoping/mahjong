@@ -16,7 +16,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/bentouming.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="frame_1_1" ActionTag="-1361655441" Tag="77" IconVisible="False" LeftMargin="-525.0000" RightMargin="-525.0000" TopMargin="-344.5000" BottomMargin="-344.5000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="frame_1_1" ActionTag="233272250" Tag="222" IconVisible="False" LeftMargin="-525.0000" RightMargin="-525.0000" TopMargin="-344.5000" BottomMargin="-344.5000" TouchEnable="True" LeftEage="346" RightEage="346" TopEage="227" BottomEage="227" Scale9OriginX="346" Scale9OriginY="227" Scale9Width="358" Scale9Height="235" ctype="ImageViewObjectData">
             <Size X="1050.0000" Y="689.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -25,7 +25,6 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/frame_1.png" Plist="" />
-            <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="Button_close" ActionTag="-1774371354" Tag="3102" IconVisible="False" LeftMargin="446.4207" RightMargin="-505.4207" TopMargin="-311.7712" BottomMargin="252.7712" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="29" Scale9Height="37" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="59.0000" Y="59.0000" />
@@ -66,7 +65,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="CheckBox_yuanzi" ActionTag="-1233163979" Tag="171" IconVisible="False" LeftMargin="-469.3134" RightMargin="300.3134" TopMargin="-221.1539" BottomMargin="152.1539" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="196" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="CheckBox_yuanzi" ActionTag="-1233163979" Tag="171" IconVisible="False" LeftMargin="-469.3134" RightMargin="300.3134" TopMargin="-221.1539" BottomMargin="152.1539" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="-15" Scale9OriginY="-11" Scale9Width="30" Scale9Height="22" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="169.0000" Y="69.0000" />
             <Children>
               <AbstractNodeData Name="label_rule1_1_61" ActionTag="-707848543" Tag="176" IconVisible="False" ctype="SpriteObjectData">
@@ -77,7 +76,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="1.0000" Y="1.0000" />
-                <FileData Type="Normal" Path="createRoom/label_rule1_1.png" Plist="" />
+                <FileData Type="Normal" Path="createRoom/label_rule1_2.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="label_rule1_2_62" ActionTag="-1913368446" Tag="177" IconVisible="False" ctype="SpriteObjectData">
@@ -88,7 +87,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="1.0000" Y="1.0000" />
-                <FileData Type="Normal" Path="createRoom/label_rule1_2.png" Plist="" />
+                <FileData Type="Normal" Path="createRoom/label_rule1_1.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>
@@ -113,7 +112,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="1.0000" Y="1.0000" />
-                <FileData Type="Normal" Path="createRoom/label_rule2_1.png" Plist="" />
+                <FileData Type="Normal" Path="createRoom/label_rule2_2.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
               <AbstractNodeData Name="label_rule1_2_62" ActionTag="-1103674478" Tag="189" IconVisible="False" ctype="SpriteObjectData">
@@ -124,7 +123,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="1.0000" Y="1.0000" />
-                <FileData Type="Normal" Path="createRoom/label_rule2_2.png" Plist="" />
+                <FileData Type="Normal" Path="createRoom/label_rule2_1.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
             </Children>
@@ -341,7 +340,7 @@
             <FileData Type="Normal" Path="createRoom/img_tips.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ScrollView_1" ActionTag="1062951730" Tag="81" IconVisible="False" LeftMargin="-297.8905" RightMargin="-473.1095" TopMargin="-232.4134" BottomMargin="-222.5866" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="254" RightEage="254" TopEage="150" BottomEage="150" Scale9OriginX="254" Scale9OriginY="150" Scale9Width="263" Scale9Height="155" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+          <AbstractNodeData Name="ScrollView_1" ActionTag="1062951730" Tag="81" IconVisible="False" LeftMargin="-297.8905" RightMargin="-473.1095" TopMargin="-232.4134" BottomMargin="-222.5866" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="254" RightEage="254" TopEage="150" BottomEage="150" Scale9OriginX="254" Scale9OriginY="150" Scale9Width="263" Scale9Height="155" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
             <Size X="771.0000" Y="455.0000" />
             <Children>
               <AbstractNodeData Name="Sprite_4" ActionTag="-2077288720" Tag="83" IconVisible="False" LeftMargin="18.5001" RightMargin="12.4999" TopMargin="8.0000" BottomMargin="428.0000" ctype="SpriteObjectData">
@@ -407,7 +406,7 @@
                 <FileData Type="Normal" Path="createRoom/bg_rules-1_inner-2.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Sprite_zongfen" ActionTag="355092525" Tag="85" IconVisible="False" LeftMargin="135.9150" RightMargin="504.0850" TopMargin="17.5019" BottomMargin="443.4981" ctype="SpriteObjectData">
+              <AbstractNodeData Name="Sprite_zongfen" ActionTag="355092525" Tag="85" IconVisible="False" LeftMargin="135.9119" RightMargin="504.0881" TopMargin="17.5006" BottomMargin="443.4994" ctype="SpriteObjectData">
                 <Size X="131.0000" Y="39.0000" />
                 <Children>
                   <AbstractNodeData Name="Text_3" ActionTag="721442331" Tag="84" IconVisible="False" LeftMargin="-113.7532" RightMargin="132.7532" TopMargin="2.9999" BottomMargin="2.0001" FontSize="30" LabelText="总分/人:" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -484,7 +483,7 @@
                 <FileData Type="Normal" Path="createRoom/bg_rules-1-2.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_1" ActionTag="521364860" Tag="94" IconVisible="False" LeftMargin="207.3730" RightMargin="443.6270" TopMargin="93.9696" BottomMargin="372.0304" TouchEnable="True" FontSize="30" ButtonText="翻倍" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_1" ActionTag="521364860" Tag="94" IconVisible="False" LeftMargin="207.3730" RightMargin="443.6270" TopMargin="93.9696" BottomMargin="372.0304" TouchEnable="True" FontSize="30" ButtonText="翻倍" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="32" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="120.0000" Y="34.0000" />
                 <Children>
                   <AbstractNodeData Name="radio_box_2" ActionTag="863917822" Tag="96" IconVisible="False" LeftMargin="0.5361" RightMargin="90.4639" TopMargin="2.4129" BottomMargin="2.5871" ctype="SpriteObjectData">
@@ -522,7 +521,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_2" ActionTag="-1499534095" Tag="98" IconVisible="False" LeftMargin="464.2500" RightMargin="116.7500" TopMargin="91.5889" BottomMargin="374.4111" TouchEnable="True" FontSize="30" ButtonText="加20个花" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="30" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_2" ActionTag="-1499534095" Tag="98" IconVisible="False" LeftMargin="464.2500" RightMargin="116.7500" TopMargin="91.5889" BottomMargin="374.4111" TouchEnable="True" FontSize="30" ButtonText="加20个花" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="97" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="190.0000" Y="34.0000" />
                 <Children>
                   <AbstractNodeData Name="radio_box_2" ActionTag="-488761325" Tag="99" IconVisible="False" LeftMargin="0.5361" RightMargin="160.4639" TopMargin="2.4129" BottomMargin="2.5871" ctype="SpriteObjectData">
@@ -659,7 +658,7 @@
                 <FileData Type="Normal" Path="createRoom/bg_rules-4.png" Plist="" />
                 <BlendFunc Src="1" Dst="771" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_3" ActionTag="637010969" Tag="101" IconVisible="False" LeftMargin="187.0167" RightMargin="463.9833" TopMargin="330.1083" BottomMargin="135.8917" TouchEnable="True" FontSize="30" ButtonText="砸2" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="30" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_3" ActionTag="637010969" Tag="101" IconVisible="False" LeftMargin="187.0167" RightMargin="463.9833" TopMargin="330.1083" BottomMargin="135.8917" TouchEnable="True" FontSize="30" ButtonText="砸2" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="19" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="120.0000" Y="34.0000" />
                 <Children>
                   <AbstractNodeData Name="radio_box_2" ActionTag="980216124" Tag="102" IconVisible="False" LeftMargin="-0.9639" RightMargin="88.9639" TopMargin="1.4129" BottomMargin="1.5871" ctype="SpriteObjectData">
@@ -697,7 +696,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_4" ActionTag="-64700101" Tag="104" IconVisible="False" LeftMargin="494.4819" RightMargin="156.5181" TopMargin="327.9665" BottomMargin="138.0335" TouchEnable="True" FontSize="30" ButtonText="罚分" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="15" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_4" ActionTag="-64700101" Tag="104" IconVisible="False" LeftMargin="494.4819" RightMargin="156.5181" TopMargin="327.9665" BottomMargin="138.0335" TouchEnable="True" FontSize="30" ButtonText="罚分" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="33" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="120.0000" Y="34.0000" />
                 <Children>
                   <AbstractNodeData Name="radio_box_2" ActionTag="-1687870795" Tag="105" IconVisible="False" LeftMargin="-7.9634" RightMargin="95.9634" TopMargin="1.4129" BottomMargin="1.5871" ctype="SpriteObjectData">
@@ -735,7 +734,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_5" ActionTag="1577180815" Tag="107" IconVisible="False" LeftMargin="181.3712" RightMargin="469.6288" TopMargin="379.8315" BottomMargin="86.1685" TouchEnable="True" FontSize="30" ButtonText="压绝" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="30" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_5" ActionTag="1577180815" Tag="107" IconVisible="False" LeftMargin="181.3712" RightMargin="469.6288" TopMargin="379.8315" BottomMargin="86.1685" TouchEnable="True" FontSize="30" ButtonText="压绝" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="32" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="120.0000" Y="34.0000" />
                 <Children>
                   <AbstractNodeData Name="radio_box_2" ActionTag="220198660" Tag="108" IconVisible="False" LeftMargin="-7.9634" RightMargin="95.9634" TopMargin="1.4129" BottomMargin="1.5871" ctype="SpriteObjectData">
@@ -773,7 +772,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_6" ActionTag="1446333417" Tag="110" IconVisible="False" LeftMargin="315.3022" RightMargin="245.6978" TopMargin="379.1558" BottomMargin="86.8442" TouchEnable="True" FontSize="30" ButtonText="自己对的牌" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="30" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_6" ActionTag="1446333417" Tag="110" IconVisible="False" LeftMargin="315.3022" RightMargin="245.6978" TopMargin="379.1558" BottomMargin="86.8442" TouchEnable="True" FontSize="30" ButtonText="自己对的牌" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="123" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="210.0000" Y="34.0000" />
                 <Children>
                   <AbstractNodeData Name="radio_box_2" ActionTag="-191637718" Tag="111" IconVisible="False" LeftMargin="-2.9636" RightMargin="180.9636" TopMargin="1.4129" BottomMargin="1.5871" ctype="SpriteObjectData">
@@ -811,7 +810,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_7" ActionTag="-1153416879" Tag="113" IconVisible="False" LeftMargin="542.1553" RightMargin="18.8447" TopMargin="378.7042" BottomMargin="87.2958" TouchEnable="True" FontSize="30" ButtonText="别人对的牌" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_7" ActionTag="-1153416879" Tag="113" IconVisible="False" LeftMargin="542.1553" RightMargin="18.8447" TopMargin="378.7042" BottomMargin="87.2958" TouchEnable="True" FontSize="30" ButtonText="别人对的牌" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="123" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="210.0000" Y="34.0000" />
                 <Children>
                   <AbstractNodeData Name="radio_box_2" ActionTag="2105582539" Tag="114" IconVisible="False" LeftMargin="-2.9636" RightMargin="180.9636" TopMargin="1.4129" BottomMargin="1.5871" ctype="SpriteObjectData">
@@ -849,7 +848,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_8" ActionTag="1424883432" Tag="116" IconVisible="False" LeftMargin="311.7852" RightMargin="249.2148" TopMargin="422.6700" BottomMargin="43.3300" TouchEnable="True" FontSize="30" ButtonText="自己出的牌" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_8" ActionTag="1424883432" Tag="116" IconVisible="False" LeftMargin="311.7852" RightMargin="249.2148" TopMargin="422.6700" BottomMargin="43.3300" TouchEnable="True" FontSize="30" ButtonText="自己出的牌" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="123" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="210.0000" Y="34.0000" />
                 <Children>
                   <AbstractNodeData Name="radio_box_2" ActionTag="-1884012122" Tag="117" IconVisible="False" LeftMargin="-2.9636" RightMargin="180.9636" TopMargin="1.4129" BottomMargin="1.5871" ctype="SpriteObjectData">
@@ -931,10 +930,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="ListView_3" ActionTag="-2052251469" Tag="134" IconVisible="False" LeftMargin="18.0153" RightMargin="17.9847" TopMargin="55.5925" BottomMargin="19.4075" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" ScrollDirectionType="0" ItemMargin="10" DirectionType="Vertical" ctype="ListViewObjectData">
+              <AbstractNodeData Name="ListView_3" ActionTag="-2052251469" Tag="134" IconVisible="False" LeftMargin="18.0153" RightMargin="17.9847" TopMargin="55.5925" BottomMargin="19.4075" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ScrollDirectionType="0" ItemMargin="10" DirectionType="Vertical" ctype="ListViewObjectData">
                 <Size X="320.0000" Y="380.0000" />
                 <Children>
-                  <AbstractNodeData Name="Button_8_0" ActionTag="1657413706" Tag="119" IconVisible="False" BottomMargin="500.0000" TouchEnable="True" FontSize="30" ButtonText="连庄后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_8_0" ActionTag="1657413706" Tag="119" IconVisible="False" BottomMargin="500.0000" TouchEnable="True" FontSize="30" ButtonText="连庄后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="320.0000" Y="40.0000" />
                     <Children>
                       <AbstractNodeData Name="radio_box_2" ActionTag="-2127864287" Tag="120" IconVisible="False" LeftMargin="3.5947" RightMargin="284.4053" TopMargin="4.3011" BottomMargin="4.6989" ctype="SpriteObjectData">
@@ -983,7 +982,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Button_8_1" ActionTag="1287423316" ZOrder="1" Tag="136" IconVisible="False" TopMargin="50.0000" BottomMargin="450.0000" TouchEnable="True" FontSize="30" ButtonText="包牌后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_8_1" ActionTag="1287423316" ZOrder="1" Tag="136" IconVisible="False" TopMargin="50.0000" BottomMargin="450.0000" TouchEnable="True" FontSize="30" ButtonText="包牌后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="320.0000" Y="40.0000" />
                     <Children>
                       <AbstractNodeData Name="radio_box_2" ActionTag="-1672778269" Tag="137" IconVisible="False" LeftMargin="3.5947" RightMargin="284.4053" TopMargin="4.3011" BottomMargin="4.6989" ctype="SpriteObjectData">
@@ -1032,7 +1031,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Button_8_2" ActionTag="1400331788" ZOrder="2" Tag="140" IconVisible="False" TopMargin="100.0000" BottomMargin="400.0000" TouchEnable="True" FontSize="30" ButtonText="花杠后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_8_2" ActionTag="1400331788" ZOrder="2" Tag="140" IconVisible="False" TopMargin="100.0000" BottomMargin="400.0000" TouchEnable="True" FontSize="30" ButtonText="花杠后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="320.0000" Y="40.0000" />
                     <Children>
                       <AbstractNodeData Name="radio_box_2" ActionTag="-1498920959" Tag="141" IconVisible="False" LeftMargin="3.5947" RightMargin="284.4053" TopMargin="4.3011" BottomMargin="4.6989" ctype="SpriteObjectData">
@@ -1081,7 +1080,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Button_8_3" ActionTag="-765463459" ZOrder="3" Tag="144" IconVisible="False" TopMargin="150.0000" BottomMargin="350.0000" TouchEnable="True" FontSize="30" ButtonText="对对胡后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_8_3" ActionTag="-765463459" ZOrder="3" Tag="144" IconVisible="False" TopMargin="150.0000" BottomMargin="350.0000" TouchEnable="True" FontSize="30" ButtonText="对对胡后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="320.0000" Y="40.0000" />
                     <Children>
                       <AbstractNodeData Name="radio_box_2" ActionTag="17669567" Tag="145" IconVisible="False" LeftMargin="3.5947" RightMargin="284.4053" TopMargin="4.3011" BottomMargin="4.6989" ctype="SpriteObjectData">
@@ -1130,7 +1129,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Button_8_4" ActionTag="1199500709" ZOrder="4" Tag="148" IconVisible="False" TopMargin="200.0000" BottomMargin="300.0000" TouchEnable="True" FontSize="30" ButtonText="杠后开花后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_8_4" ActionTag="1199500709" ZOrder="4" Tag="148" IconVisible="False" TopMargin="200.0000" BottomMargin="300.0000" TouchEnable="True" FontSize="30" ButtonText="杠后开花后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="122" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="320.0000" Y="40.0000" />
                     <Children>
                       <AbstractNodeData Name="radio_box_2" ActionTag="-1488330535" Tag="149" IconVisible="False" LeftMargin="3.5947" RightMargin="284.4053" TopMargin="4.3011" BottomMargin="4.6989" ctype="SpriteObjectData">
@@ -1179,7 +1178,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Button_8_5" ActionTag="407806186" ZOrder="5" Tag="152" IconVisible="False" TopMargin="250.0000" BottomMargin="250.0000" TouchEnable="True" FontSize="30" ButtonText="黄庄后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_8_5" ActionTag="407806186" ZOrder="5" Tag="152" IconVisible="False" TopMargin="250.0000" BottomMargin="250.0000" TouchEnable="True" FontSize="30" ButtonText="黄庄后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="320.0000" Y="40.0000" />
                     <Children>
                       <AbstractNodeData Name="radio_box_2" ActionTag="-1136171321" Tag="153" IconVisible="False" LeftMargin="3.5947" RightMargin="284.4053" TopMargin="4.3011" BottomMargin="4.6989" ctype="SpriteObjectData">
@@ -1228,7 +1227,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Button_8_6" ActionTag="-409358244" ZOrder="6" Tag="156" IconVisible="False" TopMargin="300.0000" BottomMargin="200.0000" TouchEnable="True" FontSize="30" ButtonText="天胡后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_8_6" ActionTag="-409358244" ZOrder="6" Tag="156" IconVisible="False" TopMargin="300.0000" BottomMargin="200.0000" TouchEnable="True" FontSize="30" ButtonText="天胡后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="320.0000" Y="40.0000" />
                     <Children>
                       <AbstractNodeData Name="radio_box_2" ActionTag="-1148657637" Tag="157" IconVisible="False" LeftMargin="3.5947" RightMargin="284.4053" TopMargin="4.3011" BottomMargin="4.6989" ctype="SpriteObjectData">
@@ -1277,7 +1276,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Button_8_7" ActionTag="-475638077" ZOrder="7" Tag="160" IconVisible="False" TopMargin="350.0000" BottomMargin="150.0000" TouchEnable="True" FontSize="30" ButtonText="地胡后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_8_7" ActionTag="-475638077" ZOrder="7" Tag="160" IconVisible="False" TopMargin="350.0000" BottomMargin="150.0000" TouchEnable="True" FontSize="30" ButtonText="地胡后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="62" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="320.0000" Y="40.0000" />
                     <Children>
                       <AbstractNodeData Name="radio_box_2" ActionTag="-399614353" Tag="161" IconVisible="False" LeftMargin="3.5947" RightMargin="284.4053" TopMargin="4.3011" BottomMargin="4.6989" ctype="SpriteObjectData">
@@ -1326,7 +1325,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Button_8_8" ActionTag="-1065674376" ZOrder="8" Tag="164" IconVisible="False" TopMargin="400.0000" BottomMargin="100.0000" TouchEnable="True" FontSize="30" ButtonText="全球独钓后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_8_8" ActionTag="-1065674376" ZOrder="8" Tag="164" IconVisible="False" TopMargin="400.0000" BottomMargin="100.0000" TouchEnable="True" FontSize="30" ButtonText="全球独钓后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="122" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="320.0000" Y="40.0000" />
                     <Children>
                       <AbstractNodeData Name="radio_box_2" ActionTag="-2075728585" Tag="165" IconVisible="False" LeftMargin="3.5947" RightMargin="284.4053" TopMargin="4.3011" BottomMargin="4.6989" ctype="SpriteObjectData">
@@ -1375,7 +1374,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Button_8_9" ActionTag="774956296" ZOrder="9" Tag="190" IconVisible="False" TopMargin="450.0000" BottomMargin="50.0000" TouchEnable="True" FontSize="30" ButtonText="混一色后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_8_9" ActionTag="774956296" ZOrder="9" Tag="190" IconVisible="False" TopMargin="450.0000" BottomMargin="50.0000" TouchEnable="True" FontSize="30" ButtonText="混一色后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="320.0000" Y="40.0000" />
                     <Children>
                       <AbstractNodeData Name="radio_box_2" ActionTag="-1357555648" Tag="191" IconVisible="False" LeftMargin="3.5947" RightMargin="284.4053" TopMargin="4.3011" BottomMargin="4.6989" ctype="SpriteObjectData">
@@ -1424,7 +1423,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Button_8_10" ActionTag="791905133" ZOrder="10" Tag="194" IconVisible="False" TopMargin="500.0000" TouchEnable="True" FontSize="30" ButtonText="清一色后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="60" Scale9Height="8" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                  <AbstractNodeData Name="Button_8_10" ActionTag="791905133" ZOrder="10" Tag="194" IconVisible="False" TopMargin="500.0000" TouchEnable="True" FontSize="30" ButtonText="清一色后" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="92" Scale9Height="12" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="320.0000" Y="40.0000" />
                     <Children>
                       <AbstractNodeData Name="radio_box_2" ActionTag="129267741" Tag="195" IconVisible="False" LeftMargin="3.5947" RightMargin="284.4053" TopMargin="4.3011" BottomMargin="4.6989" ctype="SpriteObjectData">

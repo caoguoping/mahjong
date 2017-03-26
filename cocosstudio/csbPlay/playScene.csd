@@ -6,16 +6,6 @@
       <ObjectData Name="Scene" Tag="181" ctype="GameNodeObjectData">
         <Size X="1280.0000" Y="720.0000" />
         <Children>
-          <AbstractNodeData Name="Image_1" ActionTag="130811863" Tag="929" IconVisible="False" LeftMargin="-33.4845" RightMargin="1267.4845" TopMargin="707.4654" BottomMargin="-33.4654" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-            <Size X="46.0000" Y="46.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-10.4845" Y="-10.4654" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="-0.0082" Y="-0.0145" />
-            <PreSize X="0.0359" Y="0.0639" />
-            <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
-          </AbstractNodeData>
           <AbstractNodeData Name="FileNode_deskBg" ActionTag="1014137083" Tag="19530" IconVisible="True" LeftMargin="640.0000" RightMargin="640.0000" TopMargin="360.0000" BottomMargin="360.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />

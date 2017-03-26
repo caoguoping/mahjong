@@ -38,6 +38,11 @@ function DataManager:init()
     [20] = 
     [21] = 
     ]]
+
+--playerStatus
+    --0, 游戏前，   1, 游戏中，    2，   游戏结束
+    self.playerStatus = 0
+
 --myBaseData
     self.myBaseData = {}
     --[[
@@ -128,6 +133,11 @@ function DataManager:init()
     bIsCreate     1:创建 0:加入
     dwRoomNum     输入的房间号或算好的房间号
     ]] 
+
+    self.gameEnd = {}
+    --[[
+    
+    ]]
 
 end
 

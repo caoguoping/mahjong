@@ -75,20 +75,29 @@ function PlayLayer:ctor()
         self.imgHead[i] = self.headNode[i]:getChildByName("Image_head")
     end
 
+
+--剩余牌
+    self.txtLeftCard = self.deskUiNode:getChildByName("Text_leftCard")
+    self.imgLeftCard = self.deskUiNode:getChildByName("Image_leftCard")
+
+    --花
+    self.huaNode = {}
+    self.huaNum = {}
+    for i=1,4 do
+        local strTmp = "FileNode_hua_"..i
+        self.huaNode[i] = self.deskUiNode:getChildByName(strTmp)
+        self.huaNum[i] = self.huaNode[i]:getChildByName("Text_num")
+    end
+--碰杠听胡过btn
     for i=1,5 do
         local strName = "Button_"..i
         self.btnActions[i] = self.deskUiNode:getChildByName(strName)
     end
-
-
-
-    self.txtLeftCard = self.deskUiNode:getChildByName("Text_leftCard")
-    self.imgLeftCard = self.deskUiNode:getChildByName("Image_leftCard")
---碰杠听胡过btn
     self.btnActions[1]:onClicked(
         function (  )
-            self.btnActions[1]:setVisible(false)
-            self.btnActions[5]:setVisible(false)
+            for i=1,5 do
+                self.btnActions[i]:setVisible(false)
+            end
             local snd = DataSnd:create(200, 3)
             snd:wrByte(1)     --0x01
             snd:wrByte(self.actCard)
@@ -102,8 +111,9 @@ function PlayLayer:ctor()
     --杠
     self.btnActions[2]:onClicked(
         function (  )
-            self.btnActions[5]:setVisible(false)
-            self.btnActions[2]:setVisible(false)
+            for i=1,5 do
+                self.btnActions[i]:setVisible(false)
+            end
             local snd = DataSnd:create(200, 3)
             snd:wrByte(self.gangSaveValue)     --保存过的
             snd:wrByte(self.actCard)
@@ -117,8 +127,9 @@ function PlayLayer:ctor()
     --听
     self.btnActions[3]:onClicked(
         function (  )
-            self.btnActions[3]:setVisible(false)
-            self.btnActions[5]:setVisible(false)
+            for i=1,5 do
+                self.btnActions[i]:setVisible(false)
+            end
             local snd = DataSnd:create(200, 2)
             local svrChairId = dataMgr:getServiceChairId(1)
             snd:wrByte(svrChairId)     --任何一个字节
@@ -130,8 +141,9 @@ function PlayLayer:ctor()
     --胡
     self.btnActions[4]:onClicked(
         function (  )
-            self.btnActions[4]:setVisible(false)
-            self.btnActions[5]:setVisible(false)
+            for i=1,5 do
+                self.btnActions[i]:setVisible(false)
+            end
             local snd = DataSnd:create(200, 3)
             snd:wrByte(32)      --0x20
             snd:wrByte(self.actCard)
@@ -173,22 +185,43 @@ function PlayLayer.create()
     return PlayLayer.new()
 end
 
---点击创建按钮
-function PlayLayer:refresh( )
+--点击创建按钮,更新界面和数据
+function PlayLayer:createRefresh(  )
     for i=1,4 do
         self.imgLight[i]:setVisible(false)
         self.imgFeng[i]:setVisible(false)
         self.imgNowFeng[i]:setVisible(false)
         self.headNode[i]:setVisible(false)
+        self.huaNode[i]:setVisible(false)
     end
 
     cardMgr:hideAllCards()
+    cardDataMgr:refresh()
 
     for i=1,5 do
         self.btnActions[i]:setVisible(false)
     end
     self.imgLeftCard:setVisible(false)
     self.txtLeftCard:setVisible(false)
+end
+
+--每局重新开始,更新界面和数据
+function PlayLayer:refresh( )
+    -- for i=1,4 do
+    --     self.imgLight[i]:setVisible(false)
+    --     self.imgFeng[i]:setVisible(false)
+    --     self.imgNowFeng[i]:setVisible(false)
+    --     self.headNode[i]:setVisible(false)
+    -- end
+
+    cardMgr:hideAllCards()
+    cardDataMgr:refresh()
+
+    for i=1,5 do
+        self.btnActions[i]:setVisible(false)
+    end
+    --self.imgLeftCard:setVisible(false)
+    --self.txtLeftCard:setVisible(false)
 
 
 
@@ -213,7 +246,7 @@ function PlayLayer:showPlayer(svrChairId )
     dataMgr.joinPeople = dataMgr.joinPeople + 1
     
     local clientId = dataMgr.chair[svrChairId + 1]
-    print("\n\nclientId   "..clientId)
+    --print("\n\nclientId   "..clientId)
     self.headNode[clientId]:setVisible(true)
     --self.txtScore[clientId]:setString(tostring(dataMgr.onDeskData[svrChairId].lScore))
    -- self.imgHead[clientId]:loadTexture("headshot_"..clientId..".png")
@@ -249,44 +282,57 @@ function PlayLayer:qiPai()
         self:runAction(action)    
 end
 
+--胡牌
+function PlayLayer:huPai(gameEndData)
+    local jiesuanBox = import(".JiesuanBox",CURRENT_MODULE_NAME).create()
+    jiesuanBox:initData(gameEndData)
+    layerMgr.boxes[layerMgr.boxIndex.JiesuanBox] = jiesuanBox
+end
+
+
 --发牌
 function PlayLayer:sendCard(drawValue)
 --test start
 
-   --  local testCard = {9,6, 5,   2, 1, 21,  23, 25,39,   23, 25, 25, 17, 8}
-   --  local testHuaCard = {75, 74, 72}
+    local testCard = {9,6, 5,   2, 1, 21,  23, 25,39,   23, 25, 25, 17, 8}
+    local testHuaCard = {75, 74, 72}
 
-   --  cardDataMgr.cardSend.wBankerUser    = 2               --庄家用户
-   --  cardDataMgr.cardSend.wCurrentUser   = 2               --当前用户
-   --  cardDataMgr.cardSend.wReplaceUser   = 2               --补牌用户
-   --  cardDataMgr.cardSend.bLianZhuangCount = 1 
-   --  cardDataMgr.cardSend.bHuaCount = 3
-   --  cardDataMgr.cardSend.bSice1         = 2   
-   --  cardDataMgr.cardSend.bSice2         = 3
-   --  cardDataMgr.cardSend.cbUserAction   = 0               --用户动作
+    cardDataMgr.cardSend.wBankerUser    = 2               --庄家用户
+    cardDataMgr.cardSend.wCurrentUser   = 2               --当前用户
+    cardDataMgr.cardSend.wReplaceUser   = 2               --补牌用户
+    cardDataMgr.cardSend.bLianZhuangCount = 1 
+    cardDataMgr.huaNum[1] = 3
+    cardDataMgr.cardSend.bSice1         = 2   
+    cardDataMgr.cardSend.bSice2         = 3
+    cardDataMgr.cardSend.cbUserAction   = 0               --用户动作
 
-   --  local clientBankId = dataMgr.chair[cardDataMgr.cardSend.wBankerUser + 1]
-   --  cardDataMgr.bankClient = clientBankId
+    local clientBankId = dataMgr.chair[cardDataMgr.cardSend.wBankerUser + 1]
+    cardDataMgr.bankClient = clientBankId
 
-   --  for i=1, 13 do
-   --      cardDataMgr.cardSend.cbCardData[i] = testCard[i]
-   --      print("cardValues "..cardDataMgr.cardSend.cbCardData[i])
-   --  end
+    for i=1, 13 do
+        cardDataMgr.handValues[i] = testCard[i]
+        print("cardValues "..cardDataMgr.handValues[i])
+    end
 
-   -- -- local drawCardValue
-   -- -- if clientBankId == 1 then
-   --    local  drawCardValue = testCard[14]
-   --  -- else
-   --  --     drawCardValue = 0
-   --  -- end
+   -- local drawCardValue
+   -- if clientBankId == 1 then
+      local  drawCardValue = testCard[14]
+    -- else
+    --     drawCardValue = 0
+    -- end
 
-   --  for i=1,cardDataMgr.cardSend.bHuaCount do
-   --      cardDataMgr.cardSend.cbHuaCardData[i] = testHuaCard[i]
-   --      print("HuaValues "..cardDataMgr.cardSend.cbHuaCardData[i])
-   --  end
+    for i=1,cardDataMgr.huaNum[1] do
+        cardDataMgr.huaCard[1][i] = testHuaCard[i]
+        print("HuaValues "..cardDataMgr.huaCard[1][i])
+    end
 
+    drawValue = 5
+    -- for i=1,4 do
+    --     cardDataMgr.huaNum[i] = i
+    -- end
 
 --test end
+
     self.nodeShezi:setVisible(true)
     self.imgShezi1:setVisible(false)
     self.imgShezi2:setVisible(false)
@@ -306,6 +352,13 @@ function PlayLayer:sendCard(drawValue)
                     self.imgShezi1:setVisible(false)
                     self.imgShezi2:setVisible(false)
 
+                    --补花
+                    for i=1,4 do
+                        self.huaNode[i]:setVisible(true)
+                        self.huaNum[i]:setString(cardDataMgr.huaNum[i])
+                    end
+                    
+                    cardMgr:inithandCards(drawValue)
 
 
                 end))
@@ -317,7 +370,10 @@ function PlayLayer:sendCard(drawValue)
     for i=1,4 do
         cardMgr.wallNode[i]:setVisible(true)
     end
-    cardMgr:inithandCards(cardDataMgr.cardSend.cbCardData, drawValue)
+    -- for i=1,144 do
+    --     cardMgr.wallCell[i]:setVisible(true)
+    -- end
+    
 end
 
 --[[
@@ -336,6 +392,8 @@ end
 
 function PlayLayer:waitOption(options, card   )
 
+    print("myBaseData.dwUserID  "..dataMgr.myBaseData.dwUserID)
+    print("dwUserId  "..dataMgr.myBaseData.dwUserID)
 
     self.actCard = card   --操作的牌值
     self.gangSaveValue = 0
@@ -372,10 +430,11 @@ function PlayLayer:waitOption(options, card   )
 end
 
 function PlayLayer:optMePeng(clientOpt, clientPro, optCard)
-    local pengNum = cardDataMgr.pengNum[1]
+    local pengGangNum = cardDataMgr.pengGangNum[1]
     --碰的牌起始位置
     local startIndex = girl.getTableSortIndex(cardDataMgr.handValues, optCard) 
-    local handCount = 13 - pengNum * 3    --手牌的张数，去掉了碰等和进的一张牌
+    print("optMePeng startIndex "..startIndex)
+    local handCount = 13 - pengGangNum * 3    --手牌的张数，去掉了碰等和进的一张牌
 
     local action = cc.Sequence:create(
         cc.MoveBy:create(0.2, cc.p(0, 113)),
@@ -389,12 +448,6 @@ function PlayLayer:optMePeng(clientOpt, clientPro, optCard)
         cc.DelayTime:create(0.2), 
         cc.CallFunc:create(
             function ()
-                --右边右移1
-                -- for i = startIndex + 2, handCount - 1 do
-                --     local action = cc.MoveBy:create(0.2, cc.p(86, 0))
-                --     cardMgr.handCards[i]:runAction(action) 
-                -- end
-                -- cardMgr.handCards[handCount]:runAction(cc.MoveBy:create(0.2, cc.p(86 + 15, 0)))
                 --右边右移1
                 for i = startIndex + 2, handCount - 1 do
                     local action = cc.MoveBy:create(0.2, cc.p(86, 0))
@@ -414,8 +467,8 @@ function PlayLayer:optMePeng(clientOpt, clientPro, optCard)
             function ()
                 --显示碰牌
                 for i=1,3 do
-                    cardMgr.pengCell[1][pengNum + 1][i]:setVisible(true) 
-                    cardMgr.pengCellFace[1][pengNum + 1][i]:loadTexture(optCard..".png")
+                    cardMgr.pengCell[1][pengGangNum + 1][i]:setVisible(true) 
+                    cardMgr.pengCellFace[1][pengGangNum + 1][i]:loadTexture(optCard..".png")
                 end
             end
         ),
@@ -429,14 +482,16 @@ function PlayLayer:optMePeng(clientOpt, clientPro, optCard)
                 table.remove(cardMgr.handCards, startIndex)  --自动前移一位
                 table.remove(cardDataMgr.handValues,  startIndex)
                 table.remove(cardDataMgr.handValues,  startIndex)
+                cardDataMgr.pengGangNum[1] = cardDataMgr.pengGangNum[1] + 1
                 cardDataMgr.pengNum[1] = cardDataMgr.pengNum[1] + 1
+                cardDataMgr.pengValue[1][cardDataMgr.pengNum[1]] = optCard
                 cardDataMgr.outType = 1  --碰牌
                 cardMgr.imgTouchCard:setTouchEnabled(true)     --打开触摸，容许出牌
 
 
-                print("\nhandvalue after delete")
+                --print("\nhandvalue after delete")
                 for i=1,#cardDataMgr.handValues do
-                    print(" "..cardDataMgr.handValues[i])
+                    --print(" "..cardDataMgr.handValues[i])
                 end
             end
         )
@@ -445,10 +500,10 @@ function PlayLayer:optMePeng(clientOpt, clientPro, optCard)
 end
 
 function PlayLayer:optMeMGang(clientOpt, clientPro, optCard)
-    local pengNum = cardDataMgr.pengNum[1]
+    local pengGangNum = cardDataMgr.pengGangNum[1]
     --碰的牌起始位置
     local startIndex = girl.getTableSortIndex(cardDataMgr.handValues, optCard) 
-    local handCount = 13 - pengNum * 3    --手牌的张数，去掉了碰等和进的一张牌
+    local handCount = 13 - pengGangNum * 3    --手牌的张数，去掉了碰杠和进的一张牌
 
     local action = cc.Sequence:create(
         cc.MoveBy:create(0.2, cc.p(0, 113)),
@@ -476,8 +531,8 @@ function PlayLayer:optMeMGang(clientOpt, clientPro, optCard)
             function ()
                 --显示明杠牌
                 for i=1,4 do
-                    cardMgr.pengCell[1][pengNum + 1][i]:setVisible(true) 
-                    cardMgr.pengCellFace[1][pengNum + 1][i]:loadTexture(optCard..".png")
+                    cardMgr.pengCell[1][pengGangNum + 1][i]:setVisible(true) 
+                    cardMgr.pengCellFace[1][pengGangNum + 1][i]:loadTexture(optCard..".png")
                 end
             end
         ),
@@ -494,27 +549,74 @@ function PlayLayer:optMeMGang(clientOpt, clientPro, optCard)
                 table.remove(cardDataMgr.handValues,  startIndex)
                 table.remove(cardDataMgr.handValues,  startIndex)
                 table.remove(cardDataMgr.handValues,  startIndex)
-                cardDataMgr.pengNum[1] = cardDataMgr.pengNum[1] + 1
+                cardDataMgr.pengGangNum[1] = cardDataMgr.pengGangNum[1] + 1
+                cardDataMgr.gangNum[1] = cardDataMgr.gangNum[1] + 1
+                cardDataMgr.gangValue[1][cardDataMgr.gangNum[1]] = optCard
+
             end
         )
     )
     self:runAction(action2)
 end
 
-function PlayLayer:optMeAGang(clientOpt, clientPro, optCard)
+function PlayLayer:optOtherPeng( clientOpt, clientPro, optCard )
 
+    local  pengGangNum = cardDataMgr.pengGangNum[clientOpt]   
+    cardMgr.stndCell[clientOpt][14]:setVisible(true)
+    local startDown = pengGangNum * 3
+    for i=startDown + 1, startDown + 3 do
+        cardMgr.stndCell[clientOpt][i]:setVisible(false)
+    end
+    for i=1,3 do
+        cardMgr.pengCell[clientOpt][pengGangNum + 1][i]:setVisible(true)
+        cardMgr.pengCellFace[clientOpt][pengGangNum + 1][i]:loadTexture(optCard..".png")
+    end
+    cardDataMgr.pengGangNum[clientOpt] = pengGangNum + 1
+    cardDataMgr.pengNum[clientOpt] = cardDataMgr.pengNum[clientOpt] + 1
+    cardDataMgr.pengValue[clientOpt][cardDataMgr.pengNum[clientOpt]] = optCard
+
+end
+
+function PlayLayer:optOtherGang( clientOpt, clientPro, optCard )
+    local  pengGangNum = cardDataMgr.pengGangNum[clientOpt]  
+    local gangNum =  cardDataMgr.gangNum[clientOpt]
+    --cardMgr.stndCell[clientOpt][14]:setVisible(true)
+    local startDown = pengGangNum * 3
+    for i=startDown + 1, startDown + 3 do
+        cardMgr.stndCell[clientOpt][i]:setVisible(false)
+    end
+    for i=1,4 do
+        cardMgr.pengCell[clientOpt][pengGangNum + 1][i]:setVisible(true)
+        cardMgr.pengCellFace[clientOpt][pengGangNum + 1][i]:loadTexture(optCard..".png")
+    end
+    cardDataMgr.pengGangNum[clientOpt] = pengGangNum + 1
+    cardDataMgr.gangNum[clientOpt] = gangNum + 1
+    cardDataMgr.gangValue[clientOpt][gangNum + 1] = optCard
+end
+
+function PlayLayer:optMeAGang(clientOpt, clientPro, optCard)
+    cardMgr.imgTouchCard:setTouchEnabled(true)     --暗杠禁止打牌，接下来再摸一张牌，
 end
 
 function PlayLayer:optMePGang(clientOpt, clientPro, optCard)
 
 end
 
+function PlayLayer:optOtherAGang(clientOpt, clientPro, optCard)
+
+end
+
+function PlayLayer:optOtherPGang(clientOpt, clientPro, optCard)
+
+end
+
 function PlayLayer:optionResult( optResult)
     local actOption =  girl.getBitTable(optResult.cbOperateCode)  --操作码
     local clientOpt = dataMgr.chair[optResult.wOperateUser + 1]  --操作者的客户端椅子Id 
-    local clientPro = dataMgr.chair[optResult.wOperateUser + 1]  --提供者的客户端椅子Id 
+    local clientPro = dataMgr.chair[optResult.wProvideUser + 1]  --提供者的客户端椅子Id 
     local optCard = optResult.cbOperateCard  --操作的牌值
 
+    printf("clientOpt %d, actOption %02X, optCard %d", clientOpt, optResult.cbOperateCode, optCard)
     if clientOpt == 1 then --自己
         if actOption[1] == 1 then   --peng
             print("optMePeng")
@@ -537,33 +639,26 @@ function PlayLayer:optionResult( optResult)
 
             self:optMePGang(clientOpt, clientPro, optCard)
         end
-
-        if actOption[6] == 1 then   --hu
-            --self.btnActions[4]:setVisible(true)
-        end
     else
-        -- if actOption[1] == 1 then   --peng
-        --     self.btnActions[1]:setVisible(true)
-        -- end
+        if actOption[1] == 1 then   --peng
+            self.btnActions[1]:setVisible(true)
+        end
 
-        -- if actOption[2] == 1 then   --mgang
-        --      self.btnActions[2]:setVisible(true)
-        --      self.gangSaveValue = 2
-        -- end
+        if actOption[2] == 1 then   --mgang
+             self.btnActions[2]:setVisible(true)
+             self.gangSaveValue = 2
+        end
 
-        -- if actOption[3] == 1 then   --agang
-        --      self.btnActions[2]:setVisible(true)
-        --      self.gangSaveValue = 4
-        -- end
+        if actOption[3] == 1 then   --agang
+             self.btnActions[2]:setVisible(true)
+             self.gangSaveValue = 4
+        end
 
-        -- if actOption[4] == 1 then    --pgang
-        --      self.btnActions[2]:setVisible(true)
-        --      self.gangSaveValue = 8
-        -- end
+        if actOption[4] == 1 then    --pgang
+             self.btnActions[2]:setVisible(true)
+             self.gangSaveValue = 8
+        end
 
-        -- if actOption[6] == 1 then   --hu
-        --     self.btnActions[4]:setVisible(true)
-        -- end
     end
 end
 

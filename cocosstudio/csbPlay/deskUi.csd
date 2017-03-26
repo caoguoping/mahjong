@@ -80,7 +80,47 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/playHeadNode.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_touchCard" ActionTag="1216716968" Alpha="23" Tag="2551" IconVisible="False" LeftMargin="-15.9998" RightMargin="-16.0002" TopMargin="276.7780" BottomMargin="-308.7780" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="22" Scale9Height="28" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="FileNode_hua_1" ActionTag="1173391476" Tag="1687" IconVisible="True" LeftMargin="-505.4750" RightMargin="505.4750" TopMargin="203.7266" BottomMargin="-203.7266" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="-505.4750" Y="-203.7266" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbPlay/hua.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_hua_2" ActionTag="-972838207" Tag="1691" IconVisible="True" LeftMargin="-565.1833" RightMargin="565.1833" TopMargin="-127.2424" BottomMargin="127.2424" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="-565.1833" Y="127.2424" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbPlay/hua.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_hua_3" ActionTag="-465818340" Tag="1695" IconVisible="True" LeftMargin="363.0385" RightMargin="-363.0385" TopMargin="-250.3719" BottomMargin="250.3719" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="363.0385" Y="250.3719" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbPlay/hua.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_hua_4" ActionTag="-928734773" Tag="1699" IconVisible="True" LeftMargin="590.5239" RightMargin="-590.5239" TopMargin="-56.5949" BottomMargin="56.5949" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="590.5239" Y="56.5949" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbPlay/hua.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Image_touchCard" ActionTag="1216716968" Alpha="0" Tag="2551" IconVisible="False" LeftMargin="-15.9998" RightMargin="-16.0002" TopMargin="276.7780" BottomMargin="-308.7780" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="22" Scale9Height="28" ctype="ImageViewObjectData">
             <Size X="32.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="0.0002" Y="-292.7780" />
@@ -226,6 +266,26 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/dachuBigNode.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_field" ActionTag="1314504969" Tag="5953" IconVisible="True" LeftMargin="487.2601" RightMargin="-487.2601" TopMargin="-328.4105" BottomMargin="328.4105" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="487.2601" Y="328.4105" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbPlay/fieldNum.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_moreInfo" ActionTag="-1209260724" Tag="5960" IconVisible="True" LeftMargin="605.5185" RightMargin="-605.5185" TopMargin="-226.5274" BottomMargin="226.5274" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="605.5185" Y="226.5274" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbPlay/info.csd" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>
