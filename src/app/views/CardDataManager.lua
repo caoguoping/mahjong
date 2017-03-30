@@ -24,6 +24,7 @@ function CardDataManager:init()
 
     self.handValues = {}  --手牌值（只有自己），打出去的去掉
     self.bankClient = 0  --庄家客户端
+    self.currentClient = 0   --当前客户端
     self.totalOutNum = 0  --总打出的牌
     self.outType = 0     --抓牌打出 0,    碰牌打出 1。
     self.pengGangNum = {}  --碰与杠的和的个数，4家
@@ -37,10 +38,10 @@ function CardDataManager:init()
     end
     self.outNum = {} --打出的牌的个数，4家
     
-    self.huaNum = {}  --花牌个数
-    self.huaCard = {}  --花牌数组4家,客户端
+    self.huaNum = {}  --花牌个数, 客户端
+    self.huaValue = {}  --花牌数组4家,客户端
     for i=1,4 do
-        self.huaCard[i] = {}   --每家的花牌数组
+        self.huaValue[i] = {}   --每家的花牌数组
     end
 
     self.cardUse = {}   --所有可看见的牌，（包括自己的手牌，所有人的碰杠打出, 下标为牌值,值为剩余个数)
@@ -57,7 +58,7 @@ function CardDataManager:refresh(  )
         self.gangNum[i] = 0
         self.pengValue[i] = {}
         self.huaNum[i] = 0
-        self.huaCard[i] = {}
+        self.huaValue[i] = {}
         self.pengValue[i] = {}
         self.gangValue[i] = {}
     end

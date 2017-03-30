@@ -794,6 +794,9 @@
           <Project Name="dachuUp.csd" Type="Node" />
           <Project Name="deskBg.csd" Type="Node" />
           <Project Name="deskUi.csd" Type="Node" />
+          <Project Name="fieldNum.csd" Type="Node" />
+          <Project Name="hua.csd" Type="Node" />
+          <Project Name="info.csd" Type="Node" />
           <Project Name="inviteUi.csd" Type="Node" />
           <Project Name="pengLeft.csd" Type="Node" />
           <Project Name="pengMe.csd" Type="Node" />
@@ -809,9 +812,6 @@
           <Project Name="wallMe.csd" Type="Node" />
           <Project Name="wallRight.csd" Type="Node" />
           <Project Name="wallUp.csd" Type="Node" />
-          <Project Name="hua.csd" Type="Node" />
-          <Project Name="fieldNum.csd" Type="Node" />
-          <Project Name="info.csd" Type="Node" />
         </Folder>
         <Folder Name="effect">
           <Image Name="_sdasd.png" />
@@ -880,6 +880,8 @@
         <Folder Name="font">
           <TTF Name="fangzhengchuyuan.TTF" />
           <Fnt Name="mall.fnt" />
+          <Image Name="number_add.png" />
+          <Image Name="number_minus.png" />
           <Fnt Name="timer.fnt" />
         </Folder>
         <Folder Name="gamePlay">
@@ -966,6 +968,7 @@
           <Image Name="img_baopai.png" />
           <Image Name="img_myself.png" />
           <Image Name="img_number-bg.png" />
+          <Image Name="number_add.png" />
           <Image Name="title_dianhu_1.png" />
           <Image Name="title_dianhu_2.png" />
           <Image Name="title_liuju.png" />
@@ -1090,6 +1093,8 @@
           <Image Name="zhongkong_t_shuzi.png" />
         </Folder>
         <Project Name="jiesuan.csd" Type="Node" />
+        <Project Name="jiesuanFanxing.csd" Type="Node" />
+        <Project Name="jiesuanHead.csd" Type="Node" />
         <Project Name="LoginScene.csd" Type="Scene" />
       </RootFolder>
     </Group>

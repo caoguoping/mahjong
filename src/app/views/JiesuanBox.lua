@@ -1,4 +1,4 @@
---  创建房间弹出界面--
+--  结算弹出界面--
 local CURRENT_MODULE_NAME = ...
 local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
@@ -6,13 +6,11 @@ local layerMgr = import(".LayerManager"):getInstance()
 
 local JiesuanBox = class("JiesuanBox", display.newLayer)
 function JiesuanBox:ctor()
---all Node
     local rootNode = cc.CSLoader:createNode("jiesuan.csb"):addTo(self)
     self.rootNode = rootNode
     rootNode:setPosition(display.center)
     layerMgr.LoginScene:addChild(self, 10000)
   
---赋值
     --返回按钮、继续游戏按钮、分享按钮
     local btnBack = rootNode:getChildByName("Button_back")
     local btnContiue = rootNode:getChildByName("Button_contiue")
@@ -38,129 +36,99 @@ function JiesuanBox:ctor()
     btnShare:onClicked(
     function()
         print("btnShare") 
-
+        self:removeSelf()
     end)
 
-
-    --顶部自摸、流局、点胡
+    --顶部自摸、流局、点胡()
     local topNode= rootNode:getChildByName("TopNode")
     --本家是赢家显示
-    local winDianhu  = topNode:getChildByName("win_dianhu")
-    local winZimo    = topNode:getChildByName("win_zimo")
+    local topImgs = {}   -- 1-5
+    topImgs[1]  = topNode:getChildByName("win_dianhu")
+    topImgs[2]    = topNode:getChildByName("win_zimo")
     --本家为输家显示
-    local lostDianhu = topNode:getChildByName("lost_dianhu") --点胡
-    local lostZimo   = topNode:getChildByName("lost_zimo")   --自摸
+    topImgs[3] = topNode:getChildByName("lost_dianhu") --点胡
+    topImgs[4]   = topNode:getChildByName("lost_zimo")   --自摸
     --流局
-    local liuju      = topNode:getChildByName("liuju")
-    --胡家翻型的具体数据流
-    --翻型
-    local fanxingNode = rootNode:getChildByName("Node_hupaidata_1")
-    local fanxingName = fanxingNode:getChildByName("Text_string") 
-    local fanxingNum = fanxingNode:getChildByName("Text_num")
-    --具体数据
-    local dataNode = rootNode:getChildByName("ListView_hupaidata")
-    local listData_1 = dataNode:getChildByName("Button_1")
-    -----local listData_1_name = listData_1:getChildByName("Text_string")
-    -----local listData_1_num = listData_1:getChildByName("Text_num")
-    local listData_2 = dataNode:getChildByName("Button_1_0")
-    local listData_3 = dataNode:getChildByName("Button_1_1")
-    local listData_4 = dataNode:getChildByName("Button_1_2")
-    local listData_5 = dataNode:getChildByName("Button_1_3")
-    local listData_6 = dataNode:getChildByName("Button_1_4")
-    local listData_7 = dataNode:getChildByName("Button_1_5")
-    local listData_8 = dataNode:getChildByName("Button_1_6")
-    local listData_9 = dataNode:getChildByName("Button_1_7")
-    --赢家头像
-    local winheadNode = rootNode:getChildByName("Node_WinHead")
+    topImgs[5]      = topNode:getChildByName("liuju")
+    
+     --翻型下拉
+    self.listFanXing = rootNode:getChildByName("ListView_fanxing")
 
-    local winheadPic  = winheadNode:getChildByName("headshot_example_27")
-    local winIsbenjia = winheadNode:getChildByName("img_myself_1")
+    --只有我赢了才显示
+    local nodeIsMeWin = rootNode:getChildByName("Node_isMeWin")
 
-    --输家头像1
-    local lostheadNode1= rootNode:getChildByName("Node_WinHead_0")
+    local nodeHead = {}   --4家头像节点, win为4， 其他左边开始1， 2， 3
+    local imgHead = {} 
+    local txtName = {}
+    local txtScore = {}
+    local imgIsMe = {}
+    local imgIsBaopai = {}
 
-    local lostheadPic1  = lostheadNode1:getChildByName("headshot_example_27")
-    local lostIsbenjia = lostheadNode1:getChildByName("img_myself_1")
-    local lostheadIsbaopai1 = lostheadNode1:getChildByName("img_baopai_18")
-    --输家头像2
-    local lostheadNode2= rootNode:getChildByName("Node_WinHead_1")
-    local lostheadPic2  = lostheadNode1:getChildByName("headshot_example_27")
-    local lostheadIsbaopai2 = lostheadNode1:getChildByName("img_baopai_18_0")
-    --输家头像3
-    local lostheadNode3= rootNode:getChildByName("Node_WinHead_2")
-    local lostheadPic3  = lostheadNode1:getChildByName("headshot_example_27")
-    local lostheadIsbaopai3 = lostheadNode1:getChildByName("img_baopai_18_1")
+    for i=1,3 do
+        local tempName = "FileNode_head_"..i
+        nodeHead[i] = rootNode:getChildByName(tempName) 
+        imgHead[i] = nodeHead[i]:getChildByName("Image_head")
+        imgIsMe[i] = nodeHead[i]:getChildByName("img_myself")
+        imgIsBaopai[i] = nodeHead[i]:getChildByName("img_baopai")
+        txtName[i] = nodeHead[i]:getChildByName("name_Text")
+        txtScore[i] = nodeHead[i]:getChildByName("fen_Text")
+    end
 
-    --赢家  总分值
-    local wintxt = rootNode:getChildByName("   ")
-    --输家1 总分值
-    local losttxt1= rootNode:getChildByName("fen_Text_1")
-    --输家2 总分值
-    local losttxt2= rootNode:getChildByName("fen_Text_2")
-    --输家3 总分值
-    local losttxt3= rootNode:getChildByName("fen_Text_3")
-
-    --赢家  名字
-    local winname= rootNode:getChildByName("name_Text_4")
-    --输家1 名字
-    local lostname1= rootNode:getChildByName("name_Text_1")
-    --输家2 名字
-    local lostname2= rootNode:getChildByName("name_Text_2")
-    --输家3 名字
-    local lostname3= rootNode:getChildByName("name_Text_3")
-
-    ---**************服务端数据的解析****
-    --
-    local c_topPic ---顶部显示输赢自摸\点胡、流局判断
+    nodeHead[4] = rootNode:getChildByName("Node_WinHead") 
+    imgHead[4] = nodeHead[4]:getChildByName("Image_head")
+    imgIsMe[4] = nodeHead[4]:getChildByName("img_myself")
+    --imgIsBaopai[4] = nodeHead[i]:getChildByName("img_baopai")
+    txtName[4] = nodeHead[4]:getChildByName("name_Text")
+    txtScore[4] = nodeIsMeWin:getChildByName("AtlasLabel_bigScore")   --在Node_isMeWin节点下
 
 
+    local nodePengMe = rootNode:getChildByName("FileNode_pengMe")
+        --碰牌  四个一组,pengCell[1][1][1]，共四组，5,6为13,14张
+
+    self.pengCell = {}
+    self.pengCellFace = {}
+    self.pengCell[5] =  nodePengMe:getChildByName("Image13")
+    self.pengCell[6] =  nodePengMe:getChildByName("Image14")
+    self.pengCellFace[5] =  self.pengCell[5]:getChildByName("Image_face")
+    self.pengCellFace[6] =  self.pengCell[6]:getChildByName("Image_face")
+    for j = 1, 4 do
+        local nodeName = "Node_"..j
+        local nd =  nodePengMe:getChildByName(nodeName)
+        self.pengCell[j] = {}
+        self.pengCellFace[j] = {}
+
+        for k = 1, 4 do
+            local imgName = "Image"..k
+            self.pengCell[j][k] = nd:getChildByName(imgName)
+            self.pengCellFace[j][k] = self.pengCell[j][k]:getChildByName("Image_face")
+            --self.pengCell[i][j][k]:setVisible(false)
+        end
+    end
+
+
+
+    --self:initData(gameEndData)
 end
 
 function JiesuanBox:initData( gameEndData )
-    
+    --self.listFanXing
+    local itemHeigth = 50
+    local itemWidth = 663
+
+    for i=1,5 do
+        local oneNode = cc.CSLoader:createNode("jiesuanFanxing.csb")
+        local oneLayout = ccui.Layout:create()
+        oneLayout:addChild(oneNode)
+        oneNode:setPosition(cc.p(itemWidth * 0.5, -itemHeigth * 0.5))
+        self.listFanXing:setItemsMargin(itemHeigth + 6)
+        self.listFanXing:pushBackCustomItem(oneLayout)
+    end
+
+
+    self.listFanXing:pushBackCustomItem(ccui.Layout:create())
+
+
 end
-
-
----****显示逻辑***
----顶部显示输赢自摸\点胡、流局判断
-function JiesuanBox:SelectTopPic()
-    -- if c_topPic== then
-    --  --本家点胡
-    --      winDianhu:setVisible(true)
-    --      winZimo:setVisible(false)
-    --      lostDianhu:setVisible(false)
-    --      lostZimo:setVisible(false)
-    --      liuju:setVisible(false)
-    -- elseif c_topPic == then
-    -- --本家自摸
-    --  winDianhu:setVisible(false)
-    --  winZimo:setVisible(true)
-    --  lostDianhu:setVisible(false)
-    --  lostZimo:setVisible(false)
-    --  liuju:setVisible(false)
-    -- elseif c_topPic == then
-    -- --非本家点胡
-    --  winDianhu:setVisible(false)
-    --  winZimo:setVisible(false)
-    --  lostDianhu:setVisible(true)
-    --  lostZimo:setVisible(false)
-    --  liuju:setVisible(false)
-    -- elseif c_topPic ==  then
-    -- --非本家自摸
-    --  winDianhu:setVisible(false)
-    --  winZimo:setVisible(false)
-    --  lostDianhu:setVisible(false)
-    --  lostZimo:setVisible(true)
-    --  liuju:setVisible(false)
-    -- elseif c_topPic ==  then
-    -- --流局
-    --  winDianhu:setVisible(false)
-    --  winZimo:setVisible(false)
-    --  lostDianhu:setVisible(false)
-    --  lostZimo:setVisible(false)
-    --  liuju:setVisible(true)
-    -- end  
-end   
 
 function JiesuanBox.create(  )
     return JiesuanBox.new()

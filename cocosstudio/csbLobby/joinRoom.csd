@@ -60,6 +60,16 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+          <AbstractNodeData Name="TextField_uid" ActionTag="2005294317" Tag="1027" IconVisible="False" LeftMargin="-21.7274" RightMargin="-218.2726" TopMargin="-213.3385" BottomMargin="173.3385" TouchEnable="True" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="" MaxLengthEnable="True" MaxLengthText="11" ctype="TextFieldObjectData">
+            <Size X="240.0000" Y="40.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="98.2726" Y="193.3385" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+          </AbstractNodeData>
           <AbstractNodeData Name="Text_1" ActionTag="807486692" Tag="3112" IconVisible="False" LeftMargin="-12.6417" RightMargin="12.6417" TopMargin="-190.5338" BottomMargin="190.5338" FontSize="36" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -383,7 +393,7 @@
           <AbstractNodeData Name="Button_9" ActionTag="-602748823" Tag="1368" IconVisible="False" LeftMargin="-70.1427" RightMargin="-73.8573" TopMargin="45.1332" BottomMargin="-107.1332" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="114" Scale9Height="40" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="144.0000" Y="62.0000" />
             <Children>
-              <AbstractNodeData Name="Image" ActionTag="1111723550" Tag="1369" IconVisible="False" LeftMargin="57.2465" RightMargin="60.7535" TopMargin="11.7699" BottomMargin="14.2301" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="10" Scale9Height="14" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image" ActionTag="1111723550" Tag="1369" IconVisible="False" LeftMargin="57.2469" RightMargin="60.7531" TopMargin="11.7707" BottomMargin="14.2293" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="10" Scale9Height="14" ctype="ImageViewObjectData">
                 <Size X="26.0000" Y="36.0000" />
                 <AnchorPoint ScaleX="0.4716" ScaleY="0.6643" />
                 <Position X="69.5085" Y="38.1441" />
@@ -442,7 +452,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="joinRoom/title_join.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_close_0" ActionTag="1233978809" Tag="1375" IconVisible="False" LeftMargin="-131.1473" RightMargin="-94.8527" TopMargin="234.0513" BottomMargin="-311.0513" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="196" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_Ok" ActionTag="1233978809" Tag="1375" IconVisible="False" LeftMargin="-131.1473" RightMargin="-94.8527" TopMargin="234.0513" BottomMargin="-311.0513" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="196" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="226.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-18.1473" Y="-272.5513" />

@@ -29,7 +29,7 @@ function NetWorkGame:handleEventGame( event)
     local rcv = DataRcv:create(event)
     local wMainCmd = rcv:readWORD()
     local wSubCmd = rcv:readWORD()
-    print("Game:Main "..wMainCmd..", Sub "..wSubCmd)
+    --print("Game:Main "..wMainCmd..", Sub "..wSubCmd)
     
     if wMainCmd == 0 then
     --心跳
@@ -86,19 +86,35 @@ function NetWorkGame:handleEventGame( event)
 
             elseif wSubCmd == 106 then
                 self:huPai(rcv)
-            end 
+    --补花的个数，发完牌后发一次，4家 ，  num1, num2, num3, num4,  cardv[1] = {}, cardv2= {}，。。。
+            elseif wSubCmd == 111 then  
+                self:getAllBuhua(rcv)
+        end 
+
+
     --
     end
 end
 
---胡牌数据
+--补花个数
+function NetWorkGame:getAllBuhua( rcv )
+    cardDataMgr.huaNum[dataMgr.chair[1]]  =  rcv:readByte()
+    cardDataMgr.huaNum[dataMgr.chair[2]]  =  rcv:readByte()
+    cardDataMgr.huaNum[dataMgr.chair[3]]  =  rcv:readByte()
+    cardDataMgr.huaNum[dataMgr.chair[4]]  =  rcv:readByte()
+end
+
+--胡牌数据（200， 106）
 function NetWorkGame:huPai( rcv )
     local gameEndData = {}
-    gameEndData.lGameTax = rcv:readUInt64()
-    gameEndData.wProvideUser = rcv:readWORD()
-    gameEndData.cbProvideCard = rcv:readByte()
-    gameEndData.dwChiHuKind = {}  --4 个
-    gameEndData.dwChiHuRight = {}  --4*3个
+    gameEndData.lGameTax = rcv:readUInt64()   --税收
+    gameEndData.lGameScore = {}
+    for i=1,4 do
+        gameEndData.lGameScore[i] = rcv:readUInt64()    --积分  
+    end
+
+    gameEndData.dwChiHuKind = {}  --4 个       0,没胡，   
+    gameEndData.dwChiHuRight = {}  --4*3个   翻型
     for i=1,4 do
         gameEndData.dwChiHuKind[i] = rcv:readDWORD()
         print("i"..i..",dwChiHuKind"..gameEndData.dwChiHuKind[i])
@@ -107,33 +123,32 @@ function NetWorkGame:huPai( rcv )
         gameEndData.dwChiHuRight[i] = {}
         for j =1, 3 do
             gameEndData.dwChiHuRight[i][j] = rcv:readDWORD()
-             print("i"..i..",j"..j..",dwChiHuRight"..gameEndData.dwChiHuRight[i][j])
+            print("i "..i..",j "..j..", dwChiHuRight "..gameEndData.dwChiHuRight[i][j])
         end
     end
-    gameEndData.cbHuaCardCount = rcv:readByte()
-    gameEndData.cbFanCount = rcv:readByte()
-    gameEndData.lGameScore = {}
+
     for i=1,4 do
-        gameEndData.lGameScore[i] = rcv:readUInt64()     
+        gameEndData.cbHuaCardCount = rcv:readByte()     --花牌个数
     end
-    gameEndData.cbCardCount = {}
+    
+    for i=1,4 do
+           gameEndData.wFanCount = rcv:readWORD()       --翻数    
+    end
+
+    gameEndData.cbCardCount = {}         
     gameEndData.cbCardData = {}
     for i=1,4 do
-        gameEndData.cbCardCount[i] = rcv:readByte()
+        gameEndData.cbCardCount[i] = rcv:readByte()      --4家的手牌个数
+    end
+
+    for i=1,4 do
         gameEndData.cbCardData[i] = {} 
         for j=1,14 do
-            gameEndData.cbCardData[i][j] = rcv:readByte()
+            gameEndData.cbCardData[i][j] = rcv:readByte()     --4家的手牌值
         end 
     end
 
-    --玩家手牌
-    --for i=1,4 do
-      --  for j=1,gameEndData.cbCardCount[i] do
-          --  gameEndData.cbCardData[i][j] = rcv:readByte()
-       -- end
-    --end
-
---新加的
+    --新加的
     --碰
     gameEndData.cbCardPeng = {}
     for i=1,4 do
@@ -152,8 +167,12 @@ function NetWorkGame:huPai( rcv )
         end
     end
 
+    gameEndData.wProvideUser = rcv:readWORD()
+    gameEndData.cbProvideCard = rcv:readByte()
     dataMgr.playerStatus = 2    --游戏结束
-    layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):huPai(gameEndData)
+    local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+    playLayer:huPai(gameEndData)
+    
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):refresh()
 end
 
@@ -162,6 +181,8 @@ function NetWorkGame:waitOption( rcv )
     rcv:readWORD()
     local bActionMask = rcv:readByte()
     local bActionCard = rcv:readByte()
+    print("mySvrId "..(dataMgr:getServiceChairId(1) + 1))
+    print(" waitOption "..bActionMask.."  "..bActionCard)
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitOption(bActionMask, bActionCard)
 end
 
@@ -190,8 +211,9 @@ end
 --房间连接成功加入
 function NetWorkGame:connectSuccessJoin( rcv )
     rcv:destroys()
-    local wTable = dataMgr.roomSet.dwRoomNum % 65536
-    local wChair = (dataMgr.roomSet.dwRoomNum - wTable)/ 65536 
+
+    --local wTable = dataMgr.roomSet.dwRoomNum % 65536
+    --local wChair = (dataMgr.roomSet.dwRoomNum - wTable)/ 65536 
 
 
    -- local delay = cc.DelayTime:create(1.0)
@@ -205,7 +227,7 @@ function NetWorkGame:connectSuccessJoin( rcv )
     --self:runAction(action)
 end
 
---创建房间成功
+--创建房间成功(1, 104)
 function NetWorkGame:createSuccess( rcv )
     local wTableId = rcv:readWORD()
     local wChairId = rcv:readWORD()
@@ -220,9 +242,10 @@ function NetWorkGame:createSuccess( rcv )
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitJoin()
 
 --cgpTest
-    layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard()
+   -- layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard()
 
-
+    local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+    playLayer:huPai(gameEndData)
 
 end
 
@@ -344,6 +367,7 @@ function NetWorkGame:sendCard( rcv )
 
     local clientBankId = dataMgr.chair[cardDataMgr.cardSend.wBankerUser + 1]
     cardDataMgr.bankClient = clientBankId
+    cardDataMgr.currentClient = dataMgr.chair[cardDataMgr.cardSend.wCurrentUser + 1]
 
     --所有人都发14字节，非庄家14字节无效
     for i=1, 13 do
@@ -357,10 +381,23 @@ function NetWorkGame:sendCard( rcv )
     end
 
     for i=1, cardDataMgr.huaNum[1] do
-        cardDataMgr.huaCard[1][i] = rcv:readByte()
+        cardDataMgr.huaValue[1][i] = rcv:readByte()
         --print("HuaValues "..cardDataMgr.cardSend.cbHuaCardData[i])
     end
    
+
+   --获取东南西北（1， 2， 3， 4),下标为客户端ID
+    dataMgr.direction[clientBankId] = 1
+    local index = clientBankId
+    for i=2,4 do
+        index = index - 1
+        if index < 1 then
+            index = 4
+        end
+        dataMgr.direction[index] = i
+    end
+
+
    -- print("cardDataMgr.cardSend.bLianZhuangCount  "..cardDataMgr.cardSend.bLianZhuangCount)                       --连庄计数
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard(drawValue)
     rcv:destroys()
@@ -382,12 +419,12 @@ function NetWorkGame:drawCard( rcv )
     cardZhua.wReplaceUser = rcv:readWORD()
     cardZhua.wSendCardUser= rcv:readWORD()
     cardZhua.cbCardData   = rcv:readByte()
-    cardZhua.cbHuaCount   = rcv:readByte()
     cardZhua.cbActionMask = rcv:readByte()
+    cardZhua.cbHuaCount   = rcv:readByte()
+
     cardZhua.cbHuaCardData = {}
     for i=1, cardZhua.cbHuaCount do
         cardZhua.cbHuaCardData[i] = rcv:readByte()
-        --print("HuaValues "..cardDataMgr.cardSend.cbHuaCardData[i])
     end
 
     rcv:destroys()

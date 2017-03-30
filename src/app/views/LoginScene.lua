@@ -54,7 +54,8 @@ function LoginScene:onEnter()
     function (  )
         self:disableAllButtons()
 
-        local strUid = "1811514032"
+        local strUid = "1819514032"
+        -- local strUid = "1811514032"
         dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
@@ -86,6 +87,8 @@ function LoginScene:onEnter()
     self.btnFast3 = btnFast3
     self.btnFast4 = btnFast4
 
+
+
     --cgpTest
     -- local strUid = "1711514223"
     -- dataMgr.myBaseData.uid = strUid
@@ -95,9 +98,6 @@ function LoginScene:onEnter()
     --layerMgr:showLayer(layerMgr.layIndex.MainLayer)
 
 --testBegin
-
-
-
     -- print("\n\n#####                      test start               #####\n\n")
     -- local test = girl.getBitTable(131)
     -- for i=1,8 do

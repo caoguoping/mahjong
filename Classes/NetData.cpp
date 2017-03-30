@@ -111,7 +111,7 @@ DataSnd* DataSnd::create(unsigned short wMainCmd, unsigned short wSubCmd)
 	DataSnd *pDataSnd = new DataSnd();
 	if (pDataSnd)
 	{
-		log("[LUA-print] sendData  Main %d,  Sub %d", wMainCmd, wSubCmd);
+		//log("[LUA-print] sendData  Main %d,  Sub %d", wMainCmd, wSubCmd);
 		pDataSnd->pNow = (char*)pDataSnd->pBuf + sizeof(TCP_Info);
 		memcpy(pDataSnd->pNow, &wMainCmd, 2);
 		pDataSnd->pNow += 2;
