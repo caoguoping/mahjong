@@ -105,10 +105,10 @@ function JoinRoomBox:ctor()
         end
         )
 
-
+--关闭点击按钮
 --test
-    dataMgr.roomSet.dwRoomNum = 0
-    self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game) 
+    --dataMgr.roomSet.dwRoomNum = 0
+    --self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game) 
 --test End
 end
 
@@ -122,12 +122,14 @@ function JoinRoomBox:startGame(ip, port)
     local szPassword = uid
     local szMachineID = uid
     local wKindID = 3
+    
+--关闭点击按钮
 --test
-    -- local wTable = self.readRoomNum % 65536
-    -- local wChair = (self.readRoomNum - wTable)/ 65536    
+     local wTable = self.readRoomNum % 65536
+     local wChair = (self.readRoomNum - wTable)/ 65536    
 
-    local wTable = 0
-    local wChair = 0
+   -- local wTable = 0
+   -- local wChair = 0
 --test end
     --为密码，实际总的tableId为：wChair * 65536 + wTable
     --创建房间发满的，加入房间发实际的

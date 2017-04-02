@@ -18,6 +18,9 @@ function MainLayer:ctor()
     --cgpTest
     --[[
         startGame (1,1),连接游戏服务器成功(1,100)后弹出设置界面,(1,4)创建房间，1,104成功后显示房间
+
+        改：
+        先显示界面，点创建界面的创建按钮，连网络(startGame)，连接成功时， 发创建参数
     ]]
                 
         dataMgr.roomSet.bIsCreate = 1
@@ -25,8 +28,8 @@ function MainLayer:ctor()
         dataMgr.playerStatus = 0
 
 
-
-        self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
+        layerMgr.boxes[layerMgr.boxIndex.CreateRoomBox] = import(".CreateRoomBox",CURRENT_MODULE_NAME).create()
+        --self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
         local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
         playLayer:createRefresh()
         playLayer:setVisible(false)
@@ -57,7 +60,7 @@ function MainLayer:ctor()
         playLayer:setVisible(false)
     end
     )  
-
+    cc.SimpleAudioEngine:getInstance():playMusic("bgMusic.mp3", false)
     --预加载playLayer
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer)  
 

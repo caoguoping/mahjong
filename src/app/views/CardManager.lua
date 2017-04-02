@@ -48,7 +48,7 @@ function CardManager:initAllNodes( param )
     self.touchSn = 0   --点击第几张牌
 
 --getTouchSn
-
+    self.imgTouchCard:setTouchEnabled(false)  --初次创建禁止触摸
     self.imgTouchCard:addTouchEventListener(
     --[14]多15
     function (sender, state )
@@ -78,6 +78,7 @@ function CardManager:initAllNodes( param )
             else
                 outValueSave = self:outPengCard(sn)
             end
+            cc.SimpleAudioEngine:getInstance():playEffect(outValueSave.."_L.mp3", false)
 
             --[
             local snd = DataSnd:create(200, 1)
@@ -206,8 +207,21 @@ function CardManager:hideAllCards(  )
     self.stndNodeMeBei:setVisible(false)
 end
 
+--胡牌后删除手牌和抓的牌
+function CardManager:removeHandCards( )
+    for i=1,#self.handCards do
+        self.handCards[i]:removeFromParent()
+    end
+    if  self.cardDraw  then
+        self.cardDraw:removeFromParent()
+        self.cardDraw = nil
+    end
+
+end
+
 --自己抓牌后打牌
 function CardManager:outDrawCard(sn  )
+
 	local outValueSave = 0
 
     self.nodeDachu[1]:setVisible(true)
@@ -216,6 +230,7 @@ function CardManager:outDrawCard(sn  )
 		outValueSave = self.cardDraw.cardValue
 		self.imgBigDachu[1]:loadTexture(outValueSave..".png")
         self.cardDraw:removeFromParent()
+        self.cardDraw = nil
         local action = cc.Sequence:create(cc.DelayTime:create(0.8), 
         	cc.CallFunc:create(
             function ()
@@ -294,6 +309,7 @@ function CardManager:outDrawCard(sn  )
                 function ()
                     table.insert(self.handCards,  insertIndex, self.cardDraw)
                     table.insert(cardDataMgr.handValues,  insertIndex, self.cardDraw.cardValue)
+                    self.cardDraw = nil 
                 end)
         )
         layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params).deskBgNode:runAction(action)    
@@ -384,8 +400,41 @@ function CardManager:outPengCard(sn  )
 	return outValueSave
 end
 
+--获取手牌的暗杠牌值
+function CardManager:getAGangValue(cardValue)
 
+    local tbCardNum = {} --下标为牌值， 值为个数
+    for i=1,75  do
+        tbCardNum[i] = 0
+    end
+    for i=1,#cardDataMgr.handValues do
+        tbCardNum[cardDataMgr.handValues[i]] = tbCardNum[cardDataMgr.handValues[i]] + 1
+    end
+    tbCardNum[cardValue] = tbCardNum[cardValue] + 1
 
+    for i=1, 75 do
+        if tbCardNum[i] == 4 then
+
+            return i
+        end
+
+    end
+end
+
+--获取碰杠的牌值
+function CardManager:getPGangValue(cardValue )
+    local pengNum =  cardDataMgr.pengNum[1]
+    for i=1,pengNum do
+        for j=1, #cardDataMgr.handValues do
+            if cardDataMgr.pengValue[1][i] == cardDataMgr.handValues[j] then   --手牌
+                 return cardDataMgr.handValues[j]
+            end 
+            if cardValue == cardDataMgr.pengValue[1][i] then  --抓的一张
+                return cardValue
+            end
+        end
+    end
+end
 
 --抓一张牌(含暗杠，碰杠，自摸消息通知)
 function CardManager:drawCard(cardZhua )
@@ -396,6 +445,9 @@ function CardManager:drawCard(cardZhua )
     local playlayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer)
     --补花
 	cardDataMgr.huaNum[clientChair] = cardDataMgr.huaNum[clientChair] + cardZhua.cbHuaCount
+   
+
+
 	for i=1,cardZhua.cbHuaCount do
 		table.insert(cardDataMgr.huaValue[clientChair],  cardZhua.cbHuaCardData[i])
 	end
@@ -405,10 +457,14 @@ function CardManager:drawCard(cardZhua )
     cardDataMgr.totalOutNum = cardDataMgr.totalOutNum + 1
 	self.wallCell[cardDataMgr.totalOutNum]:setVisible(false)
 
+    --cardDataMgr.totalOutNum = cardDataMgr.totalOutNum + cardZhua.cbHuaCount + 1  --总牌加上补花 + 1
+    playlayer.txtLeftCard:setString(tostring(144 - cardDataMgr.totalOutNum))  --剩余牌
 
     if clientChair == 1 then  --自己
-        local cardv = cardZhua.cbCardData
+        local cardv = cardZhua.cbCardData  --牌值
         self:createCardDraw(cardv)
+
+       -- playlayer.actCard = cardv   --将抓的牌值存起来，在点击按钮时发送给服务器
 
         print("\n drawcard option")
         local actOption =  girl.getBitTable( cardZhua.cbActionMask ) 
@@ -421,19 +477,23 @@ function CardManager:drawCard(cardZhua )
             playlayer.btnActions[2]:setVisible(true)
             playlayer.gangSaveValue = 4
             haveOption = 1
+            playlayer.actCard = self:getAGangValue(cardv)
+            print("\n\n\nanGang value "..playlayer.actCard)
         end
         if actOption[4] == 1 then    --碰杠
             playlayer.btnActions[2]:setVisible(true)
             playlayer.gangSaveValue = 8
             haveOption = 1
-
+            playlayer.actCard = self:getPGangValue(cardv)
+            print("\n\n\nPGang value "..playlayer.actCard)
         end
 
         if actOption[6] == 1 then   --自摸
             playlayer.btnActions[4]:setVisible(true)
             haveOption = 1
-
+            playlayer.actCard = cardv
         end
+
         if haveOption == 1 then
             playlayer.btnActions[5]:setVisible(true) 
             playlayer:whichTurn(1)
@@ -515,9 +575,10 @@ function CardManager:inithandCards(drawCardValue)
 	end
 
 	if drawCardValue ~= 0 then
+        self.imgTouchCard:setTouchEnabled(true)  --庄家开启触摸
 		self:createCardDraw(drawCardValue)	
 	else
-		self.imgTouchCard:setTouchEnabled(false)
+		self.imgTouchCard:setTouchEnabled(false)  --不是庄家禁止触摸
 	end
 
 end

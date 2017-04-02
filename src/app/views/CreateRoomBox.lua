@@ -676,7 +676,9 @@ function createRoomBox:ctor()
 
 
         function (  )
-            self:sendCreateRoom()
+            local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
+            mainlayer:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
+            
         end
     )
 end

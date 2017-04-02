@@ -119,7 +119,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_3.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image4" ActionTag="-1666999457" Tag="1439" IconVisible="False" LeftMargin="-83.5119" RightMargin="-60.4881" TopMargin="-86.4749" BottomMargin="-74.5251" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="48" Scale9Height="55" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image4" ActionTag="-1666999457" VisibleForFrame="False" Tag="1439" IconVisible="False" LeftMargin="-83.5119" RightMargin="-60.4881" TopMargin="-86.4749" BottomMargin="-74.5251" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="48" Scale9Height="55" ctype="ImageViewObjectData">
                 <Size X="144.0000" Y="161.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_face" ActionTag="2123870663" Tag="1440" RotationSkewX="11.9998" IconVisible="False" LeftMargin="25.2811" RightMargin="30.7189" TopMargin="7.2314" BottomMargin="47.7686" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
@@ -218,7 +218,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_6.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image4" ActionTag="468936595" Tag="1441" IconVisible="False" LeftMargin="-72.7532" RightMargin="-61.2468" TopMargin="-91.9681" BottomMargin="-69.0319" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="38" Scale9Height="55" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image4" ActionTag="468936595" VisibleForFrame="False" Tag="1441" IconVisible="False" LeftMargin="-72.7532" RightMargin="-61.2468" TopMargin="-91.9681" BottomMargin="-69.0319" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="38" Scale9Height="55" ctype="ImageViewObjectData">
                 <Size X="134.0000" Y="161.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_face" ActionTag="728827582" Tag="1442" RotationSkewX="8.0002" IconVisible="False" LeftMargin="22.8299" RightMargin="23.1701" TopMargin="6.5889" BottomMargin="48.4111" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
@@ -317,7 +317,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_9.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image4" ActionTag="451120144" Tag="1443" IconVisible="False" LeftMargin="-66.9318" RightMargin="-57.0682" TopMargin="-86.9659" BottomMargin="-74.0341" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="28" Scale9Height="55" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image4" ActionTag="451120144" VisibleForFrame="False" Tag="1443" IconVisible="False" LeftMargin="-66.9318" RightMargin="-57.0682" TopMargin="-86.9659" BottomMargin="-74.0341" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="28" Scale9Height="55" ctype="ImageViewObjectData">
                 <Size X="124.0000" Y="161.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_face" ActionTag="-16174799" Tag="1444" RotationSkewX="5.0000" IconVisible="False" LeftMargin="18.2825" RightMargin="17.7175" TopMargin="6.2748" BottomMargin="48.7252" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
@@ -416,7 +416,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_12.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image4" ActionTag="903017405" Tag="1445" IconVisible="False" LeftMargin="-55.7078" RightMargin="-59.2922" TopMargin="-93.3944" BottomMargin="-67.6056" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="19" Scale9Height="55" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image4" ActionTag="903017405" VisibleForFrame="False" Tag="1445" IconVisible="False" LeftMargin="-55.7078" RightMargin="-59.2922" TopMargin="-93.3944" BottomMargin="-67.6056" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="19" Scale9Height="55" ctype="ImageViewObjectData">
                 <Size X="115.0000" Y="161.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_face" ActionTag="-2019764208" Tag="1446" RotationSkewX="1.0000" IconVisible="False" LeftMargin="13.2823" RightMargin="13.7177" TopMargin="6.0813" BottomMargin="48.9187" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">

@@ -29,7 +29,7 @@ function NetWorkGame:handleEventGame( event)
     local rcv = DataRcv:create(event)
     local wMainCmd = rcv:readWORD()
     local wSubCmd = rcv:readWORD()
-    --print("Game:Main "..wMainCmd..", Sub "..wSubCmd)
+    print("Game:Main "..wMainCmd..", Sub "..wSubCmd)
     
     if wMainCmd == 0 then
     --心跳
@@ -89,6 +89,8 @@ function NetWorkGame:handleEventGame( event)
     --补花的个数，发完牌后发一次，4家 ，  num1, num2, num3, num4,  cardv[1] = {}, cardv2= {}，。。。
             elseif wSubCmd == 111 then  
                 self:getAllBuhua(rcv)
+            elseif wSubCmd == 112 then
+                self:getRoomConfig(rcv)
         end 
 
 
@@ -96,25 +98,39 @@ function NetWorkGame:handleEventGame( event)
     end
 end
 
+--获取房间配置
+function NetWorkGame:getRoomConfig( rcv )
+    
+end
+
+
 --补花个数
 function NetWorkGame:getAllBuhua( rcv )
-    cardDataMgr.huaNum[dataMgr.chair[1]]  =  rcv:readByte()
-    cardDataMgr.huaNum[dataMgr.chair[2]]  =  rcv:readByte()
-    cardDataMgr.huaNum[dataMgr.chair[3]]  =  rcv:readByte()
-    cardDataMgr.huaNum[dataMgr.chair[4]]  =  rcv:readByte()
+    for i=1,4 do
+        cardDataMgr.huaNum[dataMgr.chair[i]]  =  rcv:readByte()
+        print("getAllBuhua "..cardDataMgr.huaNum[dataMgr.chair[i]])
+    end
 end
 
 --胡牌数据（200， 106）
 function NetWorkGame:huPai( rcv )
     local gameEndData = {}
-    gameEndData.lGameTax = rcv:readUInt64()   --税收
+    --所有玩家按照服务器ID，0,1,2,3发送
     gameEndData.lGameScore = {}
-    for i=1,4 do
-        gameEndData.lGameScore[i] = rcv:readUInt64()    --积分  
-    end
-
-    gameEndData.dwChiHuKind = {}  --4 个       0,没胡，   
+    gameEndData.dwChiHuKind = {}  --4 个       0,没胡，  
     gameEndData.dwChiHuRight = {}  --4*3个   翻型
+    gameEndData.cbHuaCardCount = {}         
+    gameEndData.wFanCount = {}         
+    gameEndData.cbCardCount = {}         
+    gameEndData.cbCardData = {}
+    gameEndData.cbCardPeng = {}--碰
+    gameEndData.cbCardGang = {} --杠
+    --start
+    gameEndData.lGameTax = rcv:readUInt64()   --税收
+    for i=1,4 do
+        gameEndData.lGameScore[i] = rcv:readUInt64()    --积分
+        print(" score "..gameEndData.lGameScore[i])  
+    end
     for i=1,4 do
         gameEndData.dwChiHuKind[i] = rcv:readDWORD()
         print("i"..i..",dwChiHuKind"..gameEndData.dwChiHuKind[i])
@@ -126,54 +142,47 @@ function NetWorkGame:huPai( rcv )
             print("i "..i..",j "..j..", dwChiHuRight "..gameEndData.dwChiHuRight[i][j])
         end
     end
-
     for i=1,4 do
-        gameEndData.cbHuaCardCount = rcv:readByte()     --花牌个数
+        gameEndData.cbHuaCardCount[i] = rcv:readByte()     --花牌个数
+        print("huapai 个数 "..gameEndData.cbHuaCardCount[i])
     end
-    
     for i=1,4 do
-           gameEndData.wFanCount = rcv:readWORD()       --翻数    
+           gameEndData.wFanCount[i] = rcv:readWORD()       --翻数 
+            print("wFanCount "..gameEndData.wFanCount[i])   
     end
-
-    gameEndData.cbCardCount = {}         
-    gameEndData.cbCardData = {}
     for i=1,4 do
         gameEndData.cbCardCount[i] = rcv:readByte()      --4家的手牌个数
-    end
+        print("cbCardCount "..gameEndData.cbCardCount[i])   
 
+    end
     for i=1,4 do
         gameEndData.cbCardData[i] = {} 
         for j=1,14 do
             gameEndData.cbCardData[i][j] = rcv:readByte()     --4家的手牌值
+            print(" i "..i.." j "..j.." cbCardData "..gameEndData.cbCardData[i][j])   
+
         end 
     end
-
-    --新加的
-    --碰
-    gameEndData.cbCardPeng = {}
     for i=1,4 do
         gameEndData.cbCardPeng[i] = {}
         for j=1,4 do
             gameEndData.cbCardPeng[i][j] = rcv:readByte()
+            print(" i "..i.." j "..j.." cbCardPeng "..gameEndData.cbCardPeng[i][j])   
         end
     end
-
-    --杠
-    gameEndData.cbCardGang = {}
     for i=1,4 do
         gameEndData.cbCardGang[i] = {}
         for j=1,4 do
             gameEndData.cbCardGang[i][j] = rcv:readByte()
+            print(" i "..i.." j "..j.." cbCardGang "..gameEndData.cbCardGang[i][j])   
         end
     end
-
     gameEndData.wProvideUser = rcv:readWORD()
     gameEndData.cbProvideCard = rcv:readByte()
     dataMgr.playerStatus = 2    --游戏结束
     local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
     playLayer:huPai(gameEndData)
-    
-    layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):refresh()
+
 end
 
 --等待操作，碰杠胡
@@ -199,12 +208,13 @@ function NetWorkGame:optionResult(rcv  )
 end
 
 
---房间连接成功创建
+--房间连接成功创建，
 function NetWorkGame:connectSuccessCreate( rcv )
     -- local mainLayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
     -- mainLayer:showCreateRoom()
+    layerMgr.boxes[layerMgr.boxIndex.CreateRoomBox]:sendCreateRoom()
     print("\n\n connectSuccessCreate OK!")
-    layerMgr.boxes[layerMgr.boxIndex.CreateRoomBox] = import(".CreateRoomBox",CURRENT_MODULE_NAME).create()
+    --layerMgr.boxes[layerMgr.boxIndex.CreateRoomBox] = import(".CreateRoomBox",CURRENT_MODULE_NAME).create()
 
 end
 
@@ -244,8 +254,8 @@ function NetWorkGame:createSuccess( rcv )
 --cgpTest
    -- layerMgr:getLayer(layerMgr.layIndex.PlayLayer):sendCard()
 
-    local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
-    playLayer:huPai(gameEndData)
+    -- local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+    -- playLayer:huPai(gameEndData)
 
 end
 

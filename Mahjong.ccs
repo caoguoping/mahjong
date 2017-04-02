@@ -938,6 +938,7 @@
           <Image Name="img_GameUI_ready.png" />
           <Image Name="img_GameUI_sendcardbg.png" />
           <Image Name="sezi_value2.png" />
+          <Image Name="test1.png" />
           <Image Name="zk_t_dong_shangxia_01.png" />
         </Folder>
         <Folder Name="JieSuan">
@@ -955,12 +956,14 @@
             <Image Name="number_add.png" />
           </Folder>
           <Image Name="bg_players.png" />
+          <Image Name="bg_players-win.png" />
           <Image Name="bg_rules.png" />
           <Image Name="bottom_line.png" />
           <Image Name="button_back_1.png" />
           <Image Name="button_back_2.png" />
           <Image Name="button_continue_1.png" />
           <Image Name="button_continue_2.png" />
+          <Image Name="button_hu_1.png" />
           <Image Name="button_share_1.png" />
           <Image Name="button_share_2.png" />
           <Image Name="flower.png" />

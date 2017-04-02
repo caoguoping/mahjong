@@ -31,7 +31,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_inputBg" ActionTag="-1815929538" Tag="159" IconVisible="False" LeftMargin="705.2610" RightMargin="338.7390" TopMargin="279.8916" BottomMargin="398.1084" LeftEage="77" RightEage="77" TopEage="13" BottomEage="13" Scale9OriginX="77" Scale9OriginY="13" Scale9Width="82" Scale9Height="16" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_inputBg" ActionTag="-1815929538" VisibleForFrame="False" Tag="159" IconVisible="False" LeftMargin="705.2610" RightMargin="338.7390" TopMargin="279.8916" BottomMargin="398.1084" LeftEage="77" RightEage="77" TopEage="13" BottomEage="13" Scale9OriginX="77" Scale9OriginY="13" Scale9Width="82" Scale9Height="16" ctype="ImageViewObjectData">
             <Size X="236.0000" Y="42.0000" />
             <AnchorPoint ScaleX="0.4462" ScaleY="0.5179" />
             <Position X="810.5642" Y="419.8602" />
@@ -41,7 +41,7 @@
             <PreSize X="0.1844" Y="0.0583" />
             <FileData Type="Normal" Path="bg/di.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="TextField_uid" ActionTag="1119145299" Tag="435" IconVisible="False" LeftMargin="711.1071" RightMargin="328.8929" TopMargin="282.5034" BottomMargin="397.4966" TouchEnable="True" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="" MaxLengthEnable="True" MaxLengthText="11" ctype="TextFieldObjectData">
+          <AbstractNodeData Name="TextField_uid" ActionTag="1119145299" VisibleForFrame="False" Tag="435" IconVisible="False" LeftMargin="711.1071" RightMargin="328.8929" TopMargin="282.5034" BottomMargin="397.4966" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="" MaxLengthEnable="True" MaxLengthText="11" ctype="TextFieldObjectData">
             <Size X="240.0000" Y="40.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="831.1071" Y="417.4966" />
@@ -51,7 +51,7 @@
             <PreSize X="0.1875" Y="0.0556" />
             <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_uid" ActionTag="764325182" Tag="104" IconVisible="False" LeftMargin="662.4485" RightMargin="585.5515" TopMargin="293.5931" BottomMargin="401.4069" TouchEnable="True" FontSize="22" LabelText="uid" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_uid" ActionTag="764325182" VisibleForFrame="False" Tag="104" IconVisible="False" LeftMargin="662.4485" RightMargin="585.5515" TopMargin="293.5931" BottomMargin="401.4069" FontSize="22" LabelText="uid" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="32.0000" Y="25.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="678.4485" Y="413.9069" />
