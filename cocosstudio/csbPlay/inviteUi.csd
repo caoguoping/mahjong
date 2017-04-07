@@ -40,10 +40,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_weChat" ActionTag="1153667393" Tag="17199" IconVisible="False" LeftMargin="41.2737" RightMargin="-309.2737" TopMargin="38.5000" BottomMargin="-115.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="238" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_weChat" ActionTag="1153667393" Tag="17199" IconVisible="False" LeftMargin="51.5538" RightMargin="-319.5538" TopMargin="32.3580" BottomMargin="-109.3580" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="238" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="268.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="175.2737" Y="-77.0000" />
+            <Position X="185.5538" Y="-70.8580" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -54,10 +54,10 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_nativeFriend" ActionTag="-2065233285" Tag="17200" IconVisible="False" LeftMargin="-297.0425" RightMargin="29.0425" TopMargin="35.8053" BottomMargin="-112.8053" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="238" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_nativeFriend" ActionTag="-2065233285" VisibleForFrame="False" Tag="17200" IconVisible="False" LeftMargin="-134.3123" RightMargin="-133.6877" TopMargin="35.8053" BottomMargin="-112.8053" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="238" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="268.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-163.0425" Y="-74.3053" />
+            <Position X="-0.3123" Y="-74.3053" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -65,6 +65,20 @@
             <TextColor A="255" R="65" G="65" B="70" />
             <PressedFileData Type="Normal" Path="gamePlay/button_online_2.png" Plist="" />
             <NormalFileData Type="Normal" Path="gamePlay/button_online_1.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Button_dismissRoom" ActionTag="-104404504" Tag="5889" IconVisible="False" LeftMargin="-281.9584" RightMargin="55.9584" TopMargin="32.3583" BottomMargin="-109.3583" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="196" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="226.0000" Y="77.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-168.9584" Y="-70.8583" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <PressedFileData Type="Normal" Path="gamePlay/button_dissolve_2.png" Plist="" />
+            <NormalFileData Type="Normal" Path="gamePlay/button_dissolve_1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

@@ -66,11 +66,7 @@ function JoinRoomBox:ctor()
     local btnReput = rootNode:getChildByName("Button_re")
     btnReput:onClicked(
         function (  )
-            self.roomNum = {}  --7位数
-            self.nowNum = 0  --已输入的房间位数
-            for i=1,7 do
-                self.txts[i]:setVisible(false)
-            end
+            self:reputRoomNum()
         end
         )
 
@@ -110,6 +106,14 @@ function JoinRoomBox:ctor()
     --dataMgr.roomSet.dwRoomNum = 0
     --self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game) 
 --test End
+end
+
+function JoinRoomBox:reputRoomNum(  )
+    self.roomNum = {}  --7位数
+    self.nowNum = 0  --已输入的房间位数
+    for i=1,7 do
+        self.txts[i]:setVisible(false)
+    end
 end
 
 function JoinRoomBox:startGame(ip, port)

@@ -11,9 +11,17 @@ local MainLayer = class("MainLayer", display.newLayer)
 function MainLayer:ctor()
     local rootNode = cc.CSLoader:createNode("NewLobby.csb"):addTo(self)
     self.rootNode = rootNode
-    local btnCreate = rootNode:getChildByName("Button_create")
+
+    local txtName = rootNode:getChildByName("Text_name")
+    local txtFangKa = rootNode:getChildByName("Text_fangKa")
+
+    txtFangKa:setString(tostring(dataMgr.prop[10]))  
+
+    self.btnCreate = rootNode:getChildByName("Button_create")
     local btnJoin = rootNode:getChildByName("Button_join")
-    btnCreate:onClicked(
+    self.btncreateAlready = rootNode:getChildByName("Button_createAlready")  
+
+    self.btnCreate:onClicked(
     function ()
     --cgpTest
     --[[
@@ -60,10 +68,36 @@ function MainLayer:ctor()
         playLayer:setVisible(false)
     end
     )  
+
+    --返回房间
+    self.btncreateAlready:onClicked(
+    function (  )
+        local snd = DataSnd:create(3, 13)
+        snd:wrByte(2)   --坐下
+        snd:sendData(netTb.SocketType.Game)
+        snd:release()
+        layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
+
+    end
+    )  
+
+
+    self:btnCreateOrBack(true)
     cc.SimpleAudioEngine:getInstance():playMusic("bgMusic.mp3", false)
     --预加载playLayer
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer)  
 
+end
+
+--创建房间按钮还是返回按钮   true ,创建房间，   false  返回房间
+function MainLayer:btnCreateOrBack( isCreate )    
+    if isCreate then      --显示创建房间按钮
+        self.btnCreate:setVisible(true)
+        self.btncreateAlready:setVisible(false)
+    else
+        self.btncreateAlready:setVisible(true)
+        self.btnCreate:setVisible(false)
+    end
 end
 
 function MainLayer:refresh()

@@ -5,6 +5,7 @@ local layerMgr = import(".LayerManager"):getInstance()
 
 local createRoomBox = class("createRoomBox", display.newLayer)
 function createRoomBox:ctor()
+     print("createRoomBox1:")
 --all Node
     local rootNode = cc.CSLoader:createNode("createRoom.csb"):addTo(self)
     self.rootNode = rootNode
@@ -182,7 +183,7 @@ function createRoomBox:ctor()
     local c_bJuShu = 1   --1:1圈、2:2圈、4:4圈 
     local c_bIsJinyunzi = 1  --1：进园子、2：敞开怀
 
-   --局数选择按钮
+--局数选择按钮
     Check_btn1:getChildByName("label_rule1_1_61"):setVisible(true)
     Check_btn2:getChildByName("label_rule1_1_61"):setVisible(false)
     Check_btn3:getChildByName("label_rule1_1_61"):setVisible(false)
@@ -648,21 +649,6 @@ function createRoomBox:ctor()
         end)
 
 
-
-
-  --***************数据获取——汇总*************
-
-    dataMgr.roomSet.wScore        = 200  --c_wScore
-    dataMgr.roomSet.wJieSuanLimit = 0    --c_wJieSuanLimit
-    dataMgr.roomSet.wBiXiaHu      = girl.getAllBitValue(tbBiaxiahu)
-    dataMgr.roomSet.bGangHouKaiHua= 1    --c_bGangHouKaiHua 
-    dataMgr.roomSet.bZaEr         = 0    --c_bZaEr  
-    dataMgr.roomSet.bFaFeng       = 1    --c_bFaFeng 
-    dataMgr.roomSet.bYaJue        = girl.getAllBitValue(tbYaJue)
-    dataMgr.roomSet.bJuShu        = 1    --c_bJuShu 
-    dataMgr.roomSet.bIsJinyunzi   = 1    --c_bIsJinyunzi 
-   --dataMgr.roomSet.bIsYaJue = c_bIsYaJue 
-
     layerMgr.LoginScene:addChild(self, 10000)
 
     btnCreate:onClicked(
@@ -676,6 +662,18 @@ function createRoomBox:ctor()
 
 
         function (  )
+				--***************数据获取——汇总*************
+			dataMgr.roomSet.wScore        = c_wScore --200  --c_wScore
+			dataMgr.roomSet.wJieSuanLimit = c_wJieSuanLimit --0    --c_wJieSuanLimit
+			dataMgr.roomSet.wBiXiaHu      = girl.getAllBitValue(tbBiaxiahu)
+			dataMgr.roomSet.bGangHouKaiHua= c_bGangHouKaiHua --1    --c_bGangHouKaiHua 
+			dataMgr.roomSet.bZaEr         = c_bZaEr --0    --c_bZaEr  
+			dataMgr.roomSet.bFaFeng       = c_bFaFeng --1    --c_bFaFeng 
+			dataMgr.roomSet.bYaJue        = girl.getAllBitValue(tbYaJue)
+			dataMgr.roomSet.bJuShu        = c_bJuShu --1    --c_bJuShu	
+			dataMgr.roomSet.bIsJinyunzi   = c_bIsJinyunzi --1    --c_bIsJinyunzi 
+		   --dataMgr.roomSet.bIsYaJue = c_bIsYaJue 
+		
             local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
             mainlayer:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
             
@@ -686,7 +684,7 @@ end
 function createRoomBox:sendCreateRoom()
     --cgpTest
     print("\ncreateRoomBox")
-
+    
     local snd = DataSnd:create(1, 4)
     snd:wrWORD(dataMgr.roomSet.wScore        )
     snd:wrWORD(dataMgr.roomSet.wJieSuanLimit )
@@ -696,6 +694,7 @@ function createRoomBox:sendCreateRoom()
     snd:wrByte(dataMgr.roomSet.bFaFeng       )
     snd:wrByte(dataMgr.roomSet.bYaJue        )
     snd:wrByte(dataMgr.roomSet.bJuShu        )
+	print("dataMgr.roomSet.bJuShu:"..dataMgr.roomSet.bJuShu)
     snd:wrByte(dataMgr.roomSet.bIsJinyunzi   )
     --snd:wrByte(dataMgr.roomSet.bIsYaJue   )
     snd:sendData(netTb.SocketType.Game)

@@ -13,19 +13,25 @@ function JiesuanBox:ctor()
   
     --返回按钮、继续游戏按钮、分享按钮
     local btnBack = rootNode:getChildByName("Button_back")
-    local btnContiue = rootNode:getChildByName("Button_contiue")
+    self.btnContiue = rootNode:getChildByName("Button_contiue")
     local btnShare = rootNode:getChildByName("Button_share")
 
-    --返回按钮、继续游戏按钮、分享按钮
+    --返回按钮、
     btnBack:onClicked(
     function()
+        local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
+        mainlayer:btnCreateOrBack(true)
+
+        dataMgr.isNormalEnd = true
         layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
         TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
         self:removeSelf()
     end)
 
-    btnContiue:onClicked(
+    --继续游戏按钮
+    self.btnContiue:onClicked(
     function()
+        dataMgr.isNormalEnd = true
         local snd = DataSnd:create(100, 2)
         snd:sendData(netTb.SocketType.Game)
         snd:release();
@@ -33,8 +39,10 @@ function JiesuanBox:ctor()
         self:removeSelf()
     end)
 
+    --、分享按钮
     btnShare:onClicked(
     function()
+        dataMgr.isNormalEnd = true
         print("btnShare") 
         self:removeSelf()
     end)
@@ -54,53 +62,46 @@ function JiesuanBox:ctor()
     --只有我赢了才显示
     self.nodeIsMeWin = rootNode:getChildByName("Node_isMeWin")
 
-    local nodeHead = {}   --4家头像节点, win为4， 其他左边开始1， 2， 3
+    local nodeHead = {}   --3家头像节点, clientId 1,2,3,4去掉赢的人
     self.imgHead = {} 
     self.txtName = {}
     self.txtScore = {}
     self.imgClient = {}  --本家，上，对，下
     self.imgIsBaopai = {}
-    self.imgHuLight = {}   --胡的亮光
-    self.imgFrameWin = {}   --胡的亮框
 
-    --下标为clientId
-    for i=1,4 do
+
+    --下标为下排三个头像，从左到右1,2,3
+    for i=1,3 do
         local tempName = "FileNode_head_"..i
         nodeHead[i] = rootNode:getChildByName(tempName) 
         self.imgHead[i] = nodeHead[i]:getChildByName("Image_head")  --头像
-        --local svrId = dataMgr:getServiceChairId(i)
-        self.imgHead[i]:loadTexture("test"..i..".png")
         self.imgClient[i] = nodeHead[i]:getChildByName("img_myself")
-        --self.imgClient[i]:loadTexture(i.."client.png")    --显示本家，上，对，下
         self.imgIsBaopai[i] = nodeHead[i]:getChildByName("img_baopai")
         self.imgIsBaopai[i]:setVisible(false)
         self.txtName[i] = nodeHead[i]:getChildByName("name_Text")
         self.txtScore[i] = nodeHead[i]:getChildByName("fen_Text")
-        self.imgHuLight[i] = nodeHead[i]:getChildByName("Image_hu")
-        self.imgHuLight[i]:setVisible(false)
-        self.imgFrameWin[i] = nodeHead[i]:getChildByName("frame_name_win")
-        self.imgFrameWin[i]:setVisible(false)
     end
 
-    --本家
-    for i=2,4 do
-        self.imgClient[i]:setVisible(false)
-    end
+    --赢家
+    self.imgHeadWin = rootNode:getChildByName("Image_headWin")
+    self.imgBenjia = rootNode:getChildByName("img_myself")
+    self.txtNameWin = rootNode:getChildByName("Text_myName")
+
 
   --在Node_isMeWin节点下,大写的分数，只有我赢了才显示
     self.txtScoreWin = self.nodeIsMeWin:getChildByName("AtlasLabel_bigScore") 
-    local nodePengMe = rootNode:getChildByName("FileNode_pengMe")
+    self.nodePengMe = rootNode:getChildByName("FileNode_pengMe")
         --碰牌  四个一组,pengCell[1][1][1]，共四组，5,6为13,14张
 
     self.pengCell = {}
     self.pengCellFace = {}
-    self.pengCell[5] =  nodePengMe:getChildByName("Image13")
-    self.pengCell[6] =  nodePengMe:getChildByName("Image14")
+    self.pengCell[5] =  self.nodePengMe:getChildByName("Image13")
+    self.pengCell[6] =  self.nodePengMe:getChildByName("Image14")
     self.pengCellFace[5] =  self.pengCell[5]:getChildByName("Image_face")
     self.pengCellFace[6] =  self.pengCell[6]:getChildByName("Image_face")
     for j = 1, 4 do
         local nodeName = "Node_"..j
-        local nd =  nodePengMe:getChildByName(nodeName)
+        local nd =  self.nodePengMe:getChildByName(nodeName)
         self.pengCell[j] = {}
         self.pengCellFace[j] = {}
 
@@ -116,15 +117,11 @@ end
 
 function JiesuanBox:initData( gameEndData )
 
-    local mySvrId = dataMgr:getServiceChairId(1) + 1   --已转我1，到4
---显示手牌
+    local mySvrId = dataMgr:getServiceChairId(1) + 1   --已转 我 1，到4
+
     local winClient = 1   --要显示的赢家的客户端ID,默认是自己
     local winSvr = mySvrId     
     local fanSave = gameEndData.wFanCount[winSvr]
-
-    for i=1,4 do
-         print("#####\n wFanCount "..gameEndData.wFanCount[i])
-    end
 
     for i=2,4 do  --i 为客户端id
         local tempWinSvr = dataMgr:getServiceChairId(i) + 1
@@ -137,12 +134,22 @@ function JiesuanBox:initData( gameEndData )
         print("\n\n\ntempWinSvr "..tempWinSvr.." fanSave "..fanSave.."  i  "..i.." winClient "..winClient)
     end
 
+--流局
+    if fanSave == 0 then  --流局
+        self:setTopImg(5)
+        self.nodeIsMeWin:setVisible(false)
+        self.nodePengMe:setVisible(false)
+        return
+    end
+
+
     local pengGangNum = 0
     --杠
     for i=1,4 do
         if girl.isCardValue(gameEndData.cbCardGang[winSvr][i]) then
             pengGangNum = pengGangNum + 1
             for j=1,4 do
+                self.pengCell[pengGangNum][j]:setVisible(true)
                 self.pengCellFace[pengGangNum][j]:setVisible(true)
                 self.pengCellFace[pengGangNum][j]:loadTexture(gameEndData.cbCardGang[winSvr][i]..".png")
             end
@@ -177,28 +184,41 @@ function JiesuanBox:initData( gameEndData )
             self.pengCellFace[i][j]:loadTexture(gameEndData.cbCardData[winSvr][(i - pengGangNum)* 3 + j]..".png")  
         end
     end
---显示名称
-    for i=1,4 do  --下标为客户端id
-        local svrId = dataMgr:getServiceChairId(i) + 1
-        --显示名称
-        self.txtName[i]:setString(dataMgr.onDeskData[svrId].szNickName)
-        --显示分数
-        self.txtScore[i]:setString(tostring(gameEndData.lGameScore[svrId]))
 
+--显示名称
+    --赢家
+    self.txtNameWin:setString(dataMgr.onDeskData[winSvr].szNickName)
+    self.imgHeadWin:loadTexture("test"..winSvr..".png")
+    if mySvrId == winSvr then
+        self.imgBenjia:setVisible(true)
+    else
+        self.imgBenjia:setVisible(false)
     end
 
---流局
-    if fanSave == 0 then  --流局
-        self:setTopImg(5)
-        self.nodeIsMeWin:setVisible(false)
-        return
+    local leftSvr = {}  --下标为1,2,3, 值为服务器Id(剔除了赢家)
+    local svrIndex = 1
+    for i=1,4 do
+        if i ~= winSvr then
+            leftSvr[svrIndex] = i
+            svrIndex = svrIndex + 1
+        end
+    end
+    for i=1,3 do  --下标为1,2,3(对应图形）,   值为服务器ID（对应数据）
+        local svrIndex = leftSvr[i]
+        --显示名称
+        self.txtName[i]:setString(dataMgr.onDeskData[svrIndex].szNickName)
+        --显示分数
+        self.txtScore[i]:setString(tostring(gameEndData.lGameScore[svrIndex]))
+        self.imgClient[i]:setVisible(false)
+        self.imgHead[i]:loadTexture("test"..svrIndex..".png")
+        --自己
+        if svrIndex == mySvrId then
+            self.imgClient[i]:setVisible(true)
+        end
     end
 
 --一定有赢家
     local isMeWin = 0   --自己是否胡牌， 1，胡牌
-    --胡的亮光
-    self.imgHuLight[winClient]:setVisible(true)
-    self.imgFrameWin[winClient]:setVisible(true)
 
     print("gameEndData.dwChiHuKind[mySvrId] "..gameEndData.dwChiHuKind[mySvrId])
     if gameEndData.dwChiHuKind[mySvrId] ~= 0 then
@@ -244,7 +264,6 @@ function JiesuanBox:initData( gameEndData )
         end
     end
     self.listFanXing:pushBackCustomItem(ccui.Layout:create())  --bugs fake
-
 
 end
 

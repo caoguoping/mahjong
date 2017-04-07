@@ -42,6 +42,13 @@ function DataManager:init()
 --playerStatus
     --0, 游戏前，   1, 游戏中，    2，   游戏结束
     self.playerStatus = 0
+    self.isNormalEnd = true    --true  单局结算   false   总结算
+
+    self.prop = {}    --道具，，下标为道具ID， 值为数量
+    self.prop[10] = 0
+    --[[
+        10:房卡
+    ]]
 
 --myBaseData
     self.myBaseData = {}

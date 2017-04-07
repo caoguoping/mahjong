@@ -183,7 +183,7 @@ function girl.getDWORDTable( byteValue )
              tmp = tmp - bitTable[i]
              tmp = tmp / 2
          end
-         print("bit "..i.." "..bitTable[i])
+         --print("bit "..i.." "..bitTable[i])
     end
     return bitTable
 end

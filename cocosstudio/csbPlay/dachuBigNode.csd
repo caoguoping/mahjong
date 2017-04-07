@@ -30,11 +30,11 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_paiMian" ActionTag="-334480364" Tag="1962" IconVisible="False" LeftMargin="-41.1547" RightMargin="-46.8453" TopMargin="-47.9813" BottomMargin="-58.0187" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_paiMian" ActionTag="-334480364" Tag="1962" IconVisible="False" LeftMargin="-41.1547" RightMargin="-46.8453" TopMargin="-50.9813" BottomMargin="-55.0187" LeftEage="29" RightEage="29" TopEage="34" BottomEage="34" Scale9OriginX="29" Scale9OriginY="34" Scale9Width="30" Scale9Height="38" ctype="ImageViewObjectData">
             <Size X="88.0000" Y="106.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="2.8453" Y="-5.0187" />
-            <Scale ScaleX="1.2000" ScaleY="1.2000" />
+            <Position X="2.8453" Y="-2.0187" />
+            <Scale ScaleX="1.4019" ScaleY="1.3500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />

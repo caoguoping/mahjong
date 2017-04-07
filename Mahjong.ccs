@@ -32,6 +32,7 @@
           <Image Name="di.png" />
           <Image Name="frame_1.png" />
           <Image Name="frame_2.png" />
+          <Image Name="frame_pop-up.png" />
           <Image Name="headshot_1.png" />
           <Image Name="headshot_2.png" />
           <Image Name="headshot_3.png" />
@@ -892,10 +893,14 @@
           <Image Name="bg_score.png" />
           <Image Name="button_back_1.png" />
           <Image Name="button_back_2.png" />
+          <Image Name="button_cancel_1.png" />
+          <Image Name="button_cancel_2.png" />
           <Image Name="button_chat_1.png" />
           <Image Name="button_chat_2.png" />
           <Image Name="button_delete_1.png" />
           <Image Name="button_delete_2.png" />
+          <Image Name="button_dissolve_1.png" />
+          <Image Name="button_dissolve_2.png" />
           <Image Name="button_gang_1.png" />
           <Image Name="button_gang_2.png" />
           <Image Name="button_guo_1.png" />
@@ -904,6 +909,8 @@
           <Image Name="button_hu_2.png" />
           <Image Name="button_more_1.png" />
           <Image Name="button_more_2.png" />
+          <Image Name="button_ok_1.png" />
+          <Image Name="button_ok_2.png" />
           <Image Name="button_online_1.png" />
           <Image Name="button_online_2.png" />
           <Image Name="button_peng_1.png" />
@@ -966,6 +973,7 @@
           <Image Name="button_hu_1.png" />
           <Image Name="button_share_1.png" />
           <Image Name="button_share_2.png" />
+          <Image Name="fellow.jpg" />
           <Image Name="flower.png" />
           <Image Name="frame_name.png" />
           <Image Name="img_baopai.png" />
@@ -1096,9 +1104,11 @@
           <Image Name="zhongkong_t_shuzi.png" />
         </Folder>
         <Project Name="jiesuan.csd" Type="Node" />
+        <Project Name="JiesuanCard.csd" Type="Node" />
         <Project Name="jiesuanFanxing.csd" Type="Node" />
         <Project Name="jiesuanHead.csd" Type="Node" />
         <Project Name="LoginScene.csd" Type="Scene" />
+        <Project Name="popUpBox.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -11,7 +11,7 @@ LoginScene.RESOURCE_FILENAME = "LoginScene.csb"
 
 function LoginScene:onCreate()
     printf("resource node = %s", tostring(self:getResourceNode()))
-    ContentManager:getInstance():test()
+    --ContentManager:getInstance():test()
 end
   
 function LoginScene:onEnter()
@@ -116,6 +116,15 @@ function LoginScene:onEnter()
     -- local jiesuanBox = import(".JiesuanBox",CURRENT_MODULE_NAME).create()
     -- jiesuanBox:initData(gameEndData)
     -- layerMgr.boxes[layerMgr.boxIndex.JiesuanBox] = jiesuanBox
+
+       -- function ( )
+        --     self:removeFromParent()
+        -- end, 
+        -- function (  )
+        --     self:removeFromParent()
+        -- end)
+
+
  --testEnd 
 
 

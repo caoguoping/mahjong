@@ -40,12 +40,28 @@ function PlayLayer:ctor()
 --ui
     self.deskUiNode  = rootNode:getChildByName("FileNode_deskUi")
     self.btnActions = {}
-    local btnClose = self.deskUiNode:getChildByName("Button_Close")
-    btnClose:onClicked(
+
+    --返回房间按钮， 如果是房主不断socket,掩藏，创建房间按钮变为返回按钮    ;如果是加入的人则退出房间，断socket
+    local btnBacks = self.deskUiNode:getChildByName("Button_back")
+    btnBacks:onClicked(
         function ()
-        layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
-        TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
+            if dataMgr.roomSet.bIsCreate == 1 then    --房主
+                --TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
+                local snd = DataSnd:create(3, 13)
+                snd:wrByte(1)   --起立
+                snd:sendData(netTb.SocketType.Game)
+                snd:release()
+                layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
+                local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
+                mainlayer:btnCreateOrBack(false)
+                print("backHome fangzhu")
+            else --非房主
+                TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
+                layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
+                print("backHome no fangzhu")
+            end
         end)
+
 
     self.headNode = {}  --头像节点
     self.txtScore = {}  --总积分
@@ -59,7 +75,7 @@ function PlayLayer:ctor()
         self.txtSvrChair[i] = self.headNode[i]:getChildByName("Text_svrId")
         self.imgHead[i] = self.headNode[i]:getChildByName("Image_head")
         --local svrId = dataMgr:getServiceChairId(i)
-        self.imgHead[i]:loadTexture("test"..i..".png")
+        
     end
 
 
@@ -91,7 +107,7 @@ function PlayLayer:ctor()
             snd:wrByte(self.actCard)
             snd:wrByte(self.actCard)
             snd:sendData(netTb.SocketType.Game)
-            snd:release(); 
+            snd:release()
             self:stopClock()          
         end
         )
@@ -137,10 +153,10 @@ function PlayLayer:ctor()
             end
             local snd = DataSnd:create(200, 3)
             snd:wrByte(32)      --0x20
-            snd:wrByte(self.actCard)
-            snd:wrByte(self.actCard)
-            snd:wrByte(self.actCard)
-            print("\n hu card "..self.actCard)
+            snd:wrByte(self.huCard)
+            snd:wrByte(self.huCard)
+            snd:wrByte(self.huCard)
+            print("\n hu card "..self.huCard)
             snd:sendData(netTb.SocketType.Game)
             snd:release(); 
             self:stopClock()            
@@ -170,8 +186,38 @@ function PlayLayer:ctor()
 --invite 邀请好友界面
     self.inviteNode = rootNode:getChildByName("FileNode_invite")
     self.txtRoomNum = self.inviteNode:getChildByName("Text_room")
+        
+    --解散房间 ,只发消息，收到状态变化，桌子号为无效时，解散房间
+    self.btnDisRoom = self.inviteNode:getChildByName("Button_dismissRoom")
+    self.btnDisRoom:onClicked(
+        function ()
+        local snd = DataSnd:create(3, 12)
+        snd:sendData(netTb.SocketType.Game)
+        print("send 3,  12  disRoom")
+        snd:release()
+        local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
+        mainlayer:btnCreateOrBack(true)
+
+        end)
 
 
+    --邀请微信好友
+    local btnWeChat = self.inviteNode:getChildByName("Button_weChat")
+    btnWeChat:onClicked(
+        function ()
+            --layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
+        end)
+
+    --     --解散房间
+    -- local self.btnDisRoom = self.deskUiNode:getChildByName("Button_dismissRoom")
+    -- self.btnDisRoom:onClicked(
+    --     function ()
+    --     local snd = DataSnd:create(3, 12)
+    --     snd:sendData(netTb.SocketType.Game)
+    --     snd:release()
+    --      --TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
+    --       layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
+    --     end)
 end
   
 function PlayLayer.create()
@@ -196,6 +242,7 @@ function PlayLayer:createRefresh(  )
     end
     self.imgLeftCard:setVisible(false)
     self.txtLeftCard:setVisible(false)
+    cardMgr.imgTouchCard:setTouchEnabled(false)
 end
 
 --每局重新开始,更新界面和数据
@@ -234,22 +281,29 @@ function PlayLayer:waitJoin()
 
 end
 
---显示进来人
-function PlayLayer:showPlayer(svrChairId )  
-    dataMgr.joinPeople = dataMgr.joinPeople + 1
-    
-    local clientId = dataMgr.chair[svrChairId + 1]
-    --print("\n\nclientId   "..clientId)
-    self.headNode[clientId]:setVisible(true)
-
---test for name
-    self.txtSvrChair[clientId]:setString(tostring(svrChairId + 1))
-    --self.txtScore[clientId]:setString(tostring(svrChairId + 1))
-    --self.txtScore[clientId]:setString(tostring(dataMgr.onDeskData[svrChairId].lScore))
-   -- self.imgHead[clientId]:loadTexture("headshot_"..clientId..".png")
+--显示进来人   svrChairId[0, 3],  showOrHide  ,true 显示，   false 隐藏
+function PlayLayer:showPlayer(svrChairId ,showOrHide)  
+    if showOrHide then
+        dataMgr.joinPeople = dataMgr.joinPeople + 1
+        local clientId = dataMgr.chair[svrChairId + 1]
+        self.headNode[clientId]:setVisible(true)
+        self.imgHead[clientId]:loadTexture("test"..(svrChairId + 1)..".png")
+        self.txtScore[clientId]:setString(tostring(100))
+        self.txtSvrChair[clientId]:setString(tostring(svrChairId + 1))  --test for name
+    else
+        dataMgr.joinPeople = dataMgr.joinPeople - 1
+        local clientId = dataMgr.chair[svrChairId + 1]
+        print(" svrId "..svrChairId)
+        print("clientId "..clientId)
+        self.headNode[clientId]:setVisible(false)
+    end
 
     if dataMgr.joinPeople == 4 then
-        --todo
+        --发送准备
+        local snd = DataSnd:create(100, 2)
+        print("\n  ^^^^^^^^^^^^^^^^^^^^^ zhunbei , 100, 2")
+        snd:sendData(netTb.SocketType.Game)
+        snd:release()
     end
 
 end
@@ -294,6 +348,8 @@ end
 --发牌
 function PlayLayer:sendCard(drawValue)
 
+   --一开始就禁止触摸
+    cardMgr.imgTouchCard:setTouchEnabled(false)
     self.nodeShezi:setVisible(true)
     self.imgShezi1:setVisible(false)
     self.imgShezi2:setVisible(false)
@@ -334,7 +390,6 @@ function PlayLayer:sendCard(drawValue)
     for i=1,4 do
         cardMgr.wallNode[i]:setVisible(true)
     end
-
 
 -- --堆牌重新赋值
     --堆牌
@@ -377,6 +432,33 @@ function PlayLayer:sendCard(drawValue)
     else
         self:whichTurn(cardDataMgr.currentClient)
     end
+
+    --天胡，暗杠
+    local actOption =  girl.getBitTable( cardDataMgr.cardSend.cbUserAction) 
+    self.gangSaveValue = 0
+    local haveOption = 0  --  1有操作, 0 没有
+    if actOption[3] == 1 then   --暗杠
+        self.btnActions[2]:setVisible(true)
+        self.gangSaveValue = 4
+        haveOption = 1
+        self.actCard =cardMgr:getAGangValue(drawValue)
+    end
+
+    if actOption[6] == 1 then   --自摸
+        self.btnActions[4]:setVisible(true)
+        haveOption = 1
+        self.huCard = drawValue
+    end
+
+    if haveOption == 1 then
+        self.btnActions[5]:setVisible(true) 
+        self:whichTurn(1)
+    else
+    --没有操作，摸牌后打开触摸
+        cardDataMgr.outType = 0  --摸牌
+
+    end
+
     
 end
 
@@ -438,28 +520,21 @@ function PlayLayer:optMePeng(clientOpt, clientPro, optCard)
     local startIndex = girl.getTableSortIndex(cardDataMgr.handValues, optCard) 
     print("optMePeng startIndex "..startIndex)
     local handCount = 13 - pengGangNum * 3    --手牌的张数，没去掉要放下的两张
-
     --碰要放下的牌
     local saveNode1 = cardMgr.handCards[startIndex]
     local saveNode2 = cardMgr.handCards[startIndex + 1]
-
     --删除table，
     table.remove(cardMgr.handCards, startIndex)
     table.remove(cardDataMgr.handValues,  startIndex)
-  
     table.remove(cardMgr.handCards, startIndex)  --自动前移一位
     table.remove(cardDataMgr.handValues,  startIndex)
-
-
     handCount = handCount - 2
     --修改值
     cardDataMgr.pengGangNum[1] = cardDataMgr.pengGangNum[1] + 1
     cardDataMgr.pengNum[1] = cardDataMgr.pengNum[1] + 1
     cardDataMgr.pengValue[1][cardDataMgr.pengNum[1]] = optCard
     cardDataMgr.outType = 1  --碰牌
-
-
-    --放下的两张牌
+--放下的两张牌
     local actionOpen1 = cc.Sequence:create(
         cc.MoveBy:create(0.2, cc.p(0, 113)),
         cc.DelayTime:create(0.2),
@@ -469,7 +544,6 @@ function PlayLayer:optMePeng(clientOpt, clientPro, optCard)
                 saveNode1:removeFromParent()
             end
         )
-
     )
     local actionOpen2 = cc.Sequence:create(
         cc.MoveBy:create(0.2, cc.p(0, 113)),
@@ -480,17 +554,13 @@ function PlayLayer:optMePeng(clientOpt, clientPro, optCard)
                  saveNode2:removeFromParent()
             end
         )
-
     )
-
     saveNode1:runAction(actionOpen1)
     saveNode2:runAction(actionOpen2)
-
-    print("\n before runAction(action)")
-    for i, v in pairs(cardMgr.handCards) do
-        print(i, v)
-    end
-
+    -- print("\n before runAction(action)")
+    -- for i, v in pairs(cardMgr.handCards) do
+    --     print(i, v)
+    -- end
      --碰的牌放下后，右边右移1(不含最后一张)
     for i = startIndex, handCount - 1 do
         local action = cc.Sequence:create(
@@ -508,8 +578,6 @@ function PlayLayer:optMePeng(clientOpt, clientPro, optCard)
                 )
         cardMgr.handCards[handCount]:runAction(actionLast) 
     end
-
-
     --碰的牌放下后的左边右移3位
     if startIndex > 1 then
         for i=1, startIndex -1 do
@@ -520,8 +588,7 @@ function PlayLayer:optMePeng(clientOpt, clientPro, optCard)
             cardMgr.handCards[i]:runAction(action) 
         end
     end
-
-    --0.4秒后显示桌面的碰牌
+--0.4秒后显示桌面的碰牌
     local action2 = cc.Sequence:create( 
         cc.DelayTime:create(0.4), 
         cc.CallFunc:create(
@@ -531,6 +598,13 @@ function PlayLayer:optMePeng(clientOpt, clientPro, optCard)
                     cardMgr.pengCell[1][pengGangNum + 1][i]:setVisible(true) 
                     cardMgr.pengCellFace[1][pengGangNum + 1][i]:loadTexture(optCard..".png")
                 end
+
+                --掩藏被碰家的一张出牌
+                local outNum = cardDataMgr.outNum[clientPro]
+                cardMgr.outCell[clientPro][outNum]:setVisible(false)
+                cardDataMgr.outNum[clientPro] = outNum - 1
+
+
                 cardMgr.imgTouchCard:setTouchEnabled(true)     --打开触摸，容许出牌
                 --0.4秒后开启定时器和触摸
                 local playlayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer)
@@ -579,6 +653,13 @@ function PlayLayer:optMeMGang(clientOpt, clientPro, optCard)
                     cardMgr.pengCell[1][pengGangNum + 1][i]:setVisible(true) 
                     cardMgr.pengCellFace[1][pengGangNum + 1][i]:loadTexture(optCard..".png")
                 end
+
+                --掩藏被明杠玩家的一张出牌
+                local outNum = cardDataMgr.outNum[clientPro]
+                cardMgr.outCell[clientPro][outNum]:setVisible(false)
+                cardDataMgr.outNum[clientPro] = outNum - 1
+
+
             end
         ),
         cc.DelayTime:create(0.1), 
@@ -595,8 +676,11 @@ function PlayLayer:optMeMGang(clientOpt, clientPro, optCard)
                 table.remove(cardDataMgr.handValues,  startIndex)
                 table.remove(cardDataMgr.handValues,  startIndex)
                 cardDataMgr.pengGangNum[1] = cardDataMgr.pengGangNum[1] + 1
+                cardDataMgr.pengGangValue[1][cardDataMgr.pengGangNum[1]] = optCard
+
                 cardDataMgr.gangNum[1] = cardDataMgr.gangNum[1] + 1
                 cardDataMgr.gangValue[1][cardDataMgr.gangNum[1]] = optCard
+               
 
             end
         )
@@ -606,14 +690,15 @@ end
 
 --暗杠
 function PlayLayer:optMeAGang(clientOpt, clientPro, optCard)
-        --摸完牌才能暗杠， 杠完再摸一张，再打一张牌，
-    local pengGangNum = cardDataMgr.pengGangNum[1]
-    --暗杠的牌起始位置，  
-    local startIndex = girl.getTableSortIndex(cardDataMgr.handValues, optCard) 
-    local handCount = 13 - pengGangNum * 3    --手牌的张数，去掉了碰杠和进的一张牌
+
 
 --1).已有三张， 摸到第四张
-    if dataMgr.cardDraw.cardValue == optCard then
+    if cardMgr.cardDraw.cardValue == optCard then
+        --摸完牌才能暗杠， 杠完再摸一张，再打一张牌，
+        local pengGangNum = cardDataMgr.pengGangNum[1]
+        --暗杠的牌起始位置，  
+        local startIndex = girl.getTableSortIndex(cardDataMgr.handValues, optCard)
+        local handCount = 13 - pengGangNum * 3    --手牌的张数，去掉了碰杠和进的一张牌
         local action = cc.Sequence:create(
             cc.MoveBy:create(0.2, cc.p(0, 113)),
             cc.DelayTime:create(0.2),
@@ -662,6 +747,7 @@ function PlayLayer:optMeAGang(clientOpt, clientPro, optCard)
                     table.remove(cardDataMgr.handValues,  startIndex)
                     table.remove(cardDataMgr.handValues,  startIndex)
                     cardDataMgr.pengGangNum[1] = cardDataMgr.pengGangNum[1] + 1
+                    cardDataMgr.pengGangValue[1][cardDataMgr.pengGangNum[1]] = optCard
                     cardDataMgr.gangNum[1] = cardDataMgr.gangNum[1] + 1
                     cardDataMgr.gangValue[1][cardDataMgr.gangNum[1]] = optCard
 
@@ -670,7 +756,23 @@ function PlayLayer:optMeAGang(clientOpt, clientPro, optCard)
         )
         self:runAction(action2) 
     else
---已有四张，摸牌时  
+--已有四张，摸牌时 
+        --摸完牌才能暗杠， 杠完再摸一张，再打一张牌，
+        local pengGangNum = cardDataMgr.pengGangNum[1]
+        --抓的牌插入的起始位置， 
+         local insertIndex = girl.getTableSortIndex(cardDataMgr.handValues, cardMgr.cardDraw.cardValue) 
+        local handCount = 13 - pengGangNum * 3    --手牌的张数，去掉了碰杠和进的一张牌 
+
+        for i = insertIndex, handCount do   --待插入节点的右边（含）右移一位
+            cardMgr.handCards[i]:setPositionX(cardMgr.handCards[i]:getPositionX() + 86)
+        end
+        cardMgr.cardDraw:setPositionX(girl.posx[insertIndex])
+        table.insert(cardMgr.handCards,  insertIndex, cardMgr.cardDraw)
+        table.insert(cardDataMgr.handValues,  insertIndex, cardMgr.cardDraw.cardValue)
+        handCount = handCount + 1
+
+        --杠牌的起始位置，已经加入了第14张
+        local startIndex = girl.getTableSortIndex(cardDataMgr.handValues, optCard)
         local action = cc.Sequence:create(
             cc.MoveBy:create(0.2, cc.p(0, 113)),
             cc.DelayTime:create(0.2),
@@ -685,12 +787,17 @@ function PlayLayer:optMeAGang(clientOpt, clientPro, optCard)
             cc.DelayTime:create(0.2), 
             cc.CallFunc:create(
                 function ()
-                --左边右移4位
+                --左边右移3位
                     if startIndex > 1 then
                         for i=1, startIndex -1 do
-                            cardMgr.handCards[i]:runAction(cc.MoveBy:create(0.2, cc.p(86*4, 0))) 
+                            cardMgr.handCards[i]:runAction(cc.MoveBy:create(0.2, cc.p(86*3, 0))) 
                         end
                     end
+                --右边左移1位
+                    for i=startIndex + 4, handCount do
+                        cardMgr.handCards[i]:runAction(cc.MoveBy:create(0.2, cc.p(-86, 0))) 
+                    end
+
                 end
             ),
             cc.DelayTime:create(0.2), 
@@ -720,6 +827,7 @@ function PlayLayer:optMeAGang(clientOpt, clientPro, optCard)
                     table.remove(cardDataMgr.handValues,  startIndex)
                     table.remove(cardDataMgr.handValues,  startIndex)
                     cardDataMgr.pengGangNum[1] = cardDataMgr.pengGangNum[1] + 1
+                    cardDataMgr.pengGangValue[1][cardDataMgr.pengGangNum[1]] = optCard
                     cardDataMgr.gangNum[1] = cardDataMgr.gangNum[1] + 1
                     cardDataMgr.gangValue[1][cardDataMgr.gangNum[1]] = optCard
 
@@ -731,14 +839,33 @@ function PlayLayer:optMeAGang(clientOpt, clientPro, optCard)
 end
 
 
+-- --获取碰杠牌的index，1， 2， 3， 4
+-- function PlayLayer:getPGangIndex(clientId, pGangValue )
+    
+--     for i=1,#cardDataMgr.pengValue[clientId] do
+--         if cardDataMgr.pengValue[clientId][i] == pGangValue   then
+--             return i
+--         end
+--     end
+-- end
+
+--获取碰杠牌的index，1， 2， 3， 4
+function PlayLayer:getPGangIndex(clientId, pGangValue )
+    
+    for i=1,#cardDataMgr.pengGangValue[clientId] do
+        if cardDataMgr.pengGangValue[clientId][i] == pGangValue   then
+            return i
+        end
+    end
+end
+
+
 --自己碰杠操作
 function PlayLayer:optMePGang(clientOpt, clientPro, optCard)
     --摸完牌才能碰杠， 杠完再摸一张，再打一张牌，
     --local pengGangNum = cardDataMgr.pengGangNum[1]
     --暗杠的牌起始位置，  
-   
     --local handCount = 13 - pengGangNum * 3    --手牌的张数，去掉了碰杠和进的一张牌
-
     --删除要杠的牌，  补的一张牌就在后面的一个消息里
 
 --抓的牌就是碰杠的牌
@@ -746,9 +873,9 @@ function PlayLayer:optMePGang(clientOpt, clientPro, optCard)
         print("cardMgr.cardDraw.cardValue == optCard "..cardMgr.cardDraw.cardValue.."  "..optCard)
         cardMgr.cardDraw:removeFromParent()
         --显示碰杠的牌，。。。cgpTest
-
-
-
+        local pIndex = self:getPGangIndex(1, optCard)
+        cardMgr.pengCell[1][pIndex][4]:setVisible(true)
+        cardMgr.pengCellFace[1][pIndex][4]:loadTexture(optCard..".png")
     else      --有碰杠没有杠，下次抓牌时,非抓牌的碰杠
         print("cardMgr.cardDraw.cardValue ~= optCard")
         for i=1,#cardMgr.handCards do
@@ -765,7 +892,9 @@ function PlayLayer:optMePGang(clientOpt, clientPro, optCard)
                 table.insert(cardMgr.handCards, cardMgr.cardDraw)
 
                 --显示碰杠的牌，。。。cgpTest
-
+                local pIndex = self:getPGangIndex(1, optCard)
+                cardMgr.pengCell[1][pIndex][4]:setVisible(true)
+                cardMgr.pengCellFace[1][pIndex][4]:loadTexture(optCard..".png")
                 break
             end
         end
@@ -793,9 +922,7 @@ function PlayLayer:optOtherPeng( clientOpt, clientPro, optCard )
     cardDataMgr.pengGangNum[clientOpt] = pengGangNum + 1
     cardDataMgr.pengNum[clientOpt] = cardDataMgr.pengNum[clientOpt] + 1
     cardDataMgr.pengValue[clientOpt][cardDataMgr.pengNum[clientOpt]] = optCard
-
 end
-
 --其他玩家明杠
 function PlayLayer:optOtherMGang( clientOpt, clientPro, optCard )
     local  pengGangNum = cardDataMgr.pengGangNum[clientOpt]  
@@ -813,7 +940,6 @@ function PlayLayer:optOtherMGang( clientOpt, clientPro, optCard )
     cardDataMgr.gangNum[clientOpt] = gangNum + 1
     cardDataMgr.gangValue[clientOpt][gangNum + 1] = optCard
 end
-
 --其他玩家暗杠
 function PlayLayer:optOtherAGang(clientOpt, clientPro, optCard)
     local  pengGangNum = cardDataMgr.pengGangNum[clientOpt]   
@@ -831,19 +957,17 @@ function PlayLayer:optOtherAGang(clientOpt, clientPro, optCard)
     cardDataMgr.gangNum[clientOpt] = gangNum + 1
     cardDataMgr.gangValue[clientOpt][gangNum + 1] = optCard
 end
-
 --其他玩家碰杠
 function PlayLayer:optOtherPGang(clientOpt, clientPro, optCard)
-
+    --显示碰杠的牌，。。。cgpTest
+    local pIndex = self:getPGangIndex(clientOpt, optCard)
+    cardMgr.pengCell[clientOpt][pIndex][4]:setVisible(true)
+    cardMgr.pengCellFace[clientOpt][pIndex][4]:loadTexture(optCard..".png")
 end
 
 
 --[[
     button 碰杠听胡过（1- 5）
-    8         7          6          5          4          3         2          1  tableValue 
-    7         6          5          4          3          2         1          0
-    no       hu         ting       pgang       agang     mgang     peng       no    
-    #define WIK_NULL                    0x00                                //没有类型
     #define WIK_PENG                    0x01                                //碰牌类型
     #define WIK_MGANG                   0x02                                //明杠牌类型
     #define WIK_AGANG                   0x04                                //暗杠牌类型
@@ -866,6 +990,7 @@ function PlayLayer:waitOption(options, card   )
     self:whichTurn(1)
 
     self.actCard = card   --操作的牌值
+    self.huCard = card     --胡牌的牌值
 
     print("\n################### card  "..card)
     self.gangSaveValue = 0
@@ -877,15 +1002,6 @@ function PlayLayer:waitOption(options, card   )
          self.btnActions[2]:setVisible(true)
          self.gangSaveValue = 2
     end
-    --暗杠，碰杠，自摸胡在抓牌的消息里
-    -- if actOption[3] == 1 then   --agang
-    --      self.btnActions[2]:setVisible(true)
-    --      self.gangSaveValue = 4
-    -- end
-    -- if actOption[4] == 1 then    --pgang
-    --      self.btnActions[2]:setVisible(true)
-    --      self.gangSaveValue = 8
-    -- end
 
     if actOption[6] == 1 then   --吃胡
         self.btnActions[4]:setVisible(true)

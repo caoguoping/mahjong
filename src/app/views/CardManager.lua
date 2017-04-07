@@ -78,6 +78,7 @@ function CardManager:initAllNodes( param )
             else
                 outValueSave = self:outPengCard(sn)
             end
+            print("\n  outValueSave "..outValueSave)
             cc.SimpleAudioEngine:getInstance():playEffect(outValueSave.."_L.mp3", false)
 
             --[
@@ -204,7 +205,9 @@ function CardManager:hideAllCards(  )
         end
     end
 
+    --结算后，更新时禁止触摸
     self.stndNodeMeBei:setVisible(false)
+    self.imgTouchCard:setTouchEnabled(false)
 end
 
 --胡牌后删除手牌和抓的牌
@@ -324,7 +327,6 @@ function CardManager:outPengCard(sn  )
 	local handCount = 14 - cardDataMgr.pengGangNum[1] * 3    --手牌的张数，去掉碰
 	local outValueSave = 0
 
-	printf(" handCount %d outIndex %d", handCount, outIndex)
 
     self.nodeDachu[1]:setVisible(true)
 	--打出最后一张
@@ -376,11 +378,11 @@ function CardManager:outPengCard(sn  )
                 cc.DelayTime:create(0.4), 
                 cc.MoveBy:create(0.2, cc.p(-86-15, 0))
                 )
-        print("\n pairs handCount "..handCount)
-        for k, v in pairs(self.handCards) do
-            print(k, v)
-            print(v.cardValue)
-        end
+        -- print("\n pairs handCount "..handCount)
+        -- for k, v in pairs(self.handCards) do
+        --     print(k, v)
+        --     print(v.cardValue)
+        -- end
         self.handCards[handCount]:runAction(actionLast)
 
         local action = cc.Sequence:create( 
@@ -400,8 +402,8 @@ function CardManager:outPengCard(sn  )
 	return outValueSave
 end
 
---获取手牌的暗杠牌值
-function CardManager:getAGangValue(cardValue)
+--获取手牌的暗杠牌值 
+function CardManager:getAGangValue(cardValue)   --cardValue  抓的牌
 
     local tbCardNum = {} --下标为牌值， 值为个数
     for i=1,75  do
@@ -463,9 +465,6 @@ function CardManager:drawCard(cardZhua )
     if clientChair == 1 then  --自己
         local cardv = cardZhua.cbCardData  --牌值
         self:createCardDraw(cardv)
-
-       -- playlayer.actCard = cardv   --将抓的牌值存起来，在点击按钮时发送给服务器
-
         print("\n drawcard option")
         local actOption =  girl.getBitTable( cardZhua.cbActionMask ) 
         for i=1,8 do
@@ -477,8 +476,10 @@ function CardManager:drawCard(cardZhua )
             playlayer.btnActions[2]:setVisible(true)
             playlayer.gangSaveValue = 4
             haveOption = 1
+            print(" drawCard "..cardv)
+            print(" handCardsLenth "..#cardDataMgr.handValues)
             playlayer.actCard = self:getAGangValue(cardv)
-            print("\n\n\nanGang value "..playlayer.actCard)
+            print("\nanGang value "..playlayer.actCard)
         end
         if actOption[4] == 1 then    --碰杠
             playlayer.btnActions[2]:setVisible(true)
@@ -491,7 +492,7 @@ function CardManager:drawCard(cardZhua )
         if actOption[6] == 1 then   --自摸
             playlayer.btnActions[4]:setVisible(true)
             haveOption = 1
-            playlayer.actCard = cardv
+            playlayer.huCard = cardv
         end
 
         if haveOption == 1 then
@@ -544,6 +545,8 @@ function CardManager:createCardDraw(cardValue )
 	self.cardDraw = cardNode.create(cardValue)
 	self.cardDraw:setPositionX(girl.posx[14])
 	self.stndNode[1]:addChild(self.cardDraw)
+    print(cardValue)
+    print("cardDraw "..self.cardDraw.cardValue)
 
 end
 
@@ -577,8 +580,8 @@ function CardManager:inithandCards(drawCardValue)
 	if drawCardValue ~= 0 then
         self.imgTouchCard:setTouchEnabled(true)  --庄家开启触摸
 		self:createCardDraw(drawCardValue)	
-	else
-		self.imgTouchCard:setTouchEnabled(false)  --不是庄家禁止触摸
+	-- else
+	-- 	self.imgTouchCard:setTouchEnabled(false)  --不是庄家禁止触摸
 	end
 
 end
