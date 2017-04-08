@@ -117,14 +117,14 @@ end
 
 function JiesuanBox:initData( gameEndData )
 
-    local mySvrId = dataMgr:getServiceChairId(1) + 1   --已转 我 1，到4
+    local mySvrId = dataMgr:getServiceChairId(1)  --已转 我 1，到4
 
     local winClient = 1   --要显示的赢家的客户端ID,默认是自己
     local winSvr = mySvrId     
     local fanSave = gameEndData.wFanCount[winSvr]
 
     for i=2,4 do  --i 为客户端id
-        local tempWinSvr = dataMgr:getServiceChairId(i) + 1
+        local tempWinSvr = dataMgr:getServiceChairId(i)
         
         if gameEndData.wFanCount[tempWinSvr] > fanSave then
             winSvr = tempWinSvr

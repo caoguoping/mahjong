@@ -18,7 +18,7 @@ function MainLayer:ctor()
     txtFangKa:setString(tostring(dataMgr.prop[10]))  
 
     self.btnCreate = rootNode:getChildByName("Button_create")
-    local btnJoin = rootNode:getChildByName("Button_join")
+    self.btnJoin = rootNode:getChildByName("Button_join")
     self.btncreateAlready = rootNode:getChildByName("Button_createAlready")  
 
     self.btnCreate:onClicked(
@@ -49,7 +49,7 @@ function MainLayer:ctor()
     end
     ) 
 
-    btnJoin:onClicked(
+    self.btnJoin:onClicked(
     function ()
 --cgpTest
     --[[
@@ -94,9 +94,11 @@ function MainLayer:btnCreateOrBack( isCreate )
     if isCreate then      --显示创建房间按钮
         self.btnCreate:setVisible(true)
         self.btncreateAlready:setVisible(false)
+        self.btnJoin:setTouchEnabled(true)
     else
         self.btncreateAlready:setVisible(true)
         self.btnCreate:setVisible(false)
+        self.btnJoin:setTouchEnabled(false)
     end
 end
 

@@ -65,6 +65,9 @@ function NetWorkGame:handleEventGame( event)
         --来人
         elseif wSubCmd == 100 then
             self:playerCome(rcv) 
+        --房主， 在第一个3， 100之后
+        elseif wSubCmd == 107 then
+            self:whoIsFangzhu(rcv) 
         end
 
         --200,1 出牌，一个byte
@@ -100,6 +103,13 @@ function NetWorkGame:handleEventGame( event)
     end
 end
 
+--谁是房主
+function NetWorkGame:whoIsFangzhu( rcv )
+    rcv:readDWORD()
+    dataMgr.fangzhuSvr = rcv:readByte()
+    rcv:destroys()
+end
+
 --获取房间配置
 function NetWorkGame:getRoomConfig( rcv )
     
@@ -120,7 +130,7 @@ function NetWorkGame:joinRoomFail( rcv )
         popupbox:remove()
     end)
 
-    
+    rcv:destroys()
     print("joinRoomFail(rcv)")
 end
 
@@ -131,6 +141,7 @@ function NetWorkGame:getAllBuhua( rcv )
         cardDataMgr.huaNum[dataMgr.chair[i]]  =  rcv:readByte()
        -- print("getAllBuhua "..cardDataMgr.huaNum[dataMgr.chair[i]])
     end
+    rcv:destroys()
 end
 
 --胡牌数据（200， 106）
@@ -203,6 +214,9 @@ function NetWorkGame:huPai( rcv )
         end
         gameEndData.wProvideUser = rcv:readWORD()
         gameEndData.cbProvideCard = rcv:readByte()
+
+
+
         dataMgr.playerStatus = 2    --游戏结束
         local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
         playLayer:huPai(gameEndData)
@@ -216,7 +230,7 @@ function NetWorkGame:huPai( rcv )
 
 
     end
-
+    rcv:destroys()  
 
 end
 
@@ -225,7 +239,8 @@ function NetWorkGame:waitOption( rcv )
     rcv:readWORD()
     local bActionMask = rcv:readByte()
     local bActionCard = rcv:readByte()
-    print("mySvrId "..(dataMgr:getServiceChairId(1) + 1))
+    rcv:destroys()
+
     print(" waitOption "..bActionMask.."  "..bActionCard)
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitOption(bActionMask, bActionCard)
 end
@@ -238,6 +253,8 @@ function NetWorkGame:optionResult(rcv  )
     optResult.wProvideUser  = rcv:readWORD()
     optResult.cbOperateCode = rcv:readByte()
     optResult.cbOperateCard = rcv:readByte()
+    rcv:destroys()
+
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):optionResult(optResult)
     
 end
@@ -302,32 +319,49 @@ function NetWorkGame:changeState( rcv )
     local cbUserStatus = rcv:readByte()
     rcv:destroys()
 
-    if wTableId == 65535 then    --房间解散
-        TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game) 
-        layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)   
-        return   
-    end
-   
     if dataMgr.playerStatus == 0 then
         if dataMgr.myBaseData.dwUserID == dwUserId and cbUserStatus == 2 then
             --me changeState ,fresh data
             --加入房间时，显示房间
-             local playlayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+            local playlayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
             if dataMgr.roomSet.bIsCreate == 0 then
+
                 layerMgr:removeBoxes(layerMgr.boxIndex.JoinRoomBox)
                 layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
                
                 playlayer:waitJoin() 
-                playlayer.btnDisRoom:setEnabled(false)
+                playlayer.btnDisRoom:setTouchEnabled(false)
             else
-                playlayer.btnDisRoom:setEnabled(true)
+                playlayer.btnDisRoom:setTouchEnabled(true)
             end
         end
 
-        --起立
-        if cbUserStatus == 1 then
-            layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):showPlayer(wChairId, false)
+        --退出房间与加入房间相反，每个人的退出都会群发，
+        if wTableId == 65535 then    --有人退出
+            if dataMgr.myBaseData.dwUserID == dwUserId then     --自己退出
+                TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game) 
+                layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
+            else   --其他人退出
+                local svrChairId = dataMgr:getSvrIdByUserId(dwUserId)   --[1,4]
+                layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):showPlayer(svrChairId, false)
+                dataMgr.onDeskData[svrChairId].dwUserID = 0
+            end
+
+        else   --房主暂时返回房间
+            --房主起立了
+            if cbUserStatus == 1 then
+                print()
+                layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):showPlayer(wChairId + 1, false)
+            end 
+            --房主回来了
+            if cbUserStatus == 2  and  dataMgr.onDeskData[wChairId + 1].dwUserID ~= 0  then
+                layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):showPlayer(wChairId + 1, true)
+            end
+
+
         end
+
+
     end
 
 end
@@ -346,21 +380,6 @@ function NetWorkGame:playerCome( rcv )
     local cbUserStatus  = rcv:readByte()
     local wTableID      = rcv:readWORD()
     local wChairID      = rcv:readWORD()        --0,3
-    local lScore        = rcv:readUInt64()
-    local lGrade        = rcv:readUInt64()
-    local lInsure       = rcv:readUInt64()
-    local dwWinCount    = rcv:readDWORD()
-    local dwLostCount   = rcv:readDWORD()
-    local dwDrawCount   = rcv:readDWORD()
-    local dwFleeCount   = rcv:readDWORD()
-    local dwUserMedal   = rcv:readDWORD()
-    local dwExperience  = rcv:readDWORD()
-    local lLoveLiness   = rcv:readDWORD()
-    local nick1         = rcv:readWORD()  
-    local nick2         = rcv:readWORD()
-    local szNickName    = rcv:readString(nick1)
-    rcv:destroys()
-
     local svrChair = wChairID + 1
     if svrChair > 4 or svrChair < 1 then
         print("error: wChairID out of range !")
@@ -377,21 +396,24 @@ function NetWorkGame:playerCome( rcv )
     dataMgr.onDeskData[svrChair].cbMasterOrder = cbMasterOrder
     dataMgr.onDeskData[svrChair].cbUserStatus  = cbUserStatus 
     dataMgr.onDeskData[svrChair].wTableID      = wTableID     
-    dataMgr.onDeskData[svrChair].wChairID      = wChairID     
-    dataMgr.onDeskData[svrChair].lScore        = lScore       
-    dataMgr.onDeskData[svrChair].lGrade        = lGrade       
-    dataMgr.onDeskData[svrChair].lInsure       = lInsure      
-    dataMgr.onDeskData[svrChair].dwWinCount    = dwWinCount   
-    dataMgr.onDeskData[svrChair].dwLostCount   = dwLostCount  
-    dataMgr.onDeskData[svrChair].dwDrawCount   = dwDrawCount  
-    dataMgr.onDeskData[svrChair].dwFleeCount   = dwFleeCount  
-    dataMgr.onDeskData[svrChair].dwUserMedal   = dwUserMedal  
-    dataMgr.onDeskData[svrChair].dwExperience  = dwExperience 
-    dataMgr.onDeskData[svrChair].lLoveLiness   = lLoveLiness  
-    dataMgr.onDeskData[svrChair].nick1         = nick1        
-    dataMgr.onDeskData[svrChair].nick2         = nick2        
-    dataMgr.onDeskData[svrChair].szNickName    = szNickName   
---客户端chairId赋值
+    dataMgr.onDeskData[svrChair].wChairID      = wChairID  
+
+    dataMgr.onDeskData[svrChair].lScore        = rcv:readUInt64()
+    dataMgr.onDeskData[svrChair].lGrade        = rcv:readUInt64()
+    dataMgr.onDeskData[svrChair].lInsure       = rcv:readUInt64()
+    dataMgr.onDeskData[svrChair].dwWinCount    = rcv:readDWORD()
+    dataMgr.onDeskData[svrChair].dwLostCount   = rcv:readDWORD()
+    dataMgr.onDeskData[svrChair].dwDrawCount   = rcv:readDWORD()
+    dataMgr.onDeskData[svrChair].dwFleeCount   = rcv:readDWORD()
+    dataMgr.onDeskData[svrChair].dwUserMedal   = rcv:readDWORD()
+    dataMgr.onDeskData[svrChair].dwExperience  = rcv:readDWORD()
+    dataMgr.onDeskData[svrChair].lLoveLiness   = rcv:readDWORD()
+    dataMgr.onDeskData[svrChair].nick1         = rcv:readWORD()  
+    dataMgr.onDeskData[svrChair].nick2         = rcv:readWORD()
+    dataMgr.onDeskData[svrChair].szNickName    = rcv:readString(dataMgr.onDeskData[svrChair].nick1)
+    rcv:destroys()
+
+    --客户端chairId赋值
 
     if dataMgr.myBaseData.dwUserID == dwUserID then
         local svrChairId = wChairID + 1    --从1开始, 1, 4
@@ -407,7 +429,7 @@ function NetWorkGame:playerCome( rcv )
         end
     end
 
-    layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):showPlayer(wChairID, true)
+    layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):showPlayer(wChairID + 1, true)
 
 end
 

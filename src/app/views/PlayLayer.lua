@@ -74,7 +74,6 @@ function PlayLayer:ctor()
         self.txtScore[i] = self.headNode[i]:getChildByName("Text_score")
         self.txtSvrChair[i] = self.headNode[i]:getChildByName("Text_svrId")
         self.imgHead[i] = self.headNode[i]:getChildByName("Image_head")
-        --local svrId = dataMgr:getServiceChairId(i)
         
     end
 
@@ -136,7 +135,7 @@ function PlayLayer:ctor()
                 self.btnActions[i]:setVisible(false)
             end
             local snd = DataSnd:create(200, 2)
-            local svrChairId = dataMgr:getServiceChairId(1)
+            local svrChairId = dataMgr:getServiceChairId(1) - 1
             snd:wrByte(svrChairId)     --任何一个字节
             snd:sendData(netTb.SocketType.Game)
             snd:release();  
@@ -224,7 +223,7 @@ function PlayLayer.create()
     return PlayLayer.new()
 end
 
---点击创建按钮,更新界面和数据
+--点击创建或加入按钮,更新界面和数据
 function PlayLayer:createRefresh(  )
     for i=1,4 do
         self.imgLight[i]:setVisible(false)
@@ -243,6 +242,10 @@ function PlayLayer:createRefresh(  )
     self.imgLeftCard:setVisible(false)
     self.txtLeftCard:setVisible(false)
     cardMgr.imgTouchCard:setTouchEnabled(false)
+    
+    for i=1,4 do
+        dataMgr.onDeskData[i].dwUserID = 0    --用于是否是第一次进入界面
+    end
 end
 
 --每局重新开始,更新界面和数据
@@ -281,18 +284,18 @@ function PlayLayer:waitJoin()
 
 end
 
---显示进来人   svrChairId[0, 3],  showOrHide  ,true 显示，   false 隐藏
+--显示进来人   svrChairId[1, 4],  showOrHide  ,true 显示，   false 隐藏
 function PlayLayer:showPlayer(svrChairId ,showOrHide)  
     if showOrHide then
         dataMgr.joinPeople = dataMgr.joinPeople + 1
-        local clientId = dataMgr.chair[svrChairId + 1]
+        local clientId = dataMgr.chair[svrChairId]
         self.headNode[clientId]:setVisible(true)
-        self.imgHead[clientId]:loadTexture("test"..(svrChairId + 1)..".png")
+        self.imgHead[clientId]:loadTexture("test"..svrChairId..".png")
         self.txtScore[clientId]:setString(tostring(100))
-        self.txtSvrChair[clientId]:setString(tostring(svrChairId + 1))  --test for name
+        self.txtSvrChair[clientId]:setString(tostring(svrChairId))  --test for name
     else
         dataMgr.joinPeople = dataMgr.joinPeople - 1
-        local clientId = dataMgr.chair[svrChairId + 1]
+        local clientId = dataMgr.chair[svrChairId]
         print(" svrId "..svrChairId)
         print("clientId "..clientId)
         self.headNode[clientId]:setVisible(false)
@@ -379,8 +382,6 @@ function PlayLayer:sendCard(drawValue)
                     self.txtLeftCard:setString(tostring(144 - cardDataMgr.totalOutNum))  --剩余牌
                     
                     cardMgr:inithandCards(drawValue)
-                    print("\n\n mySvrId  "..(dataMgr:getServiceChairId(1) + 1) )
-
                 end))
             self:runAction(action)
         end

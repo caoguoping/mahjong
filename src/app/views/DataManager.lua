@@ -156,15 +156,27 @@ function DataManager:init()
     ]]
     self.timeLeft = 0     --出牌剩余时间
     self.schedulerID = 0   --出牌剩余时间定时器
+    self.fangzhuSvr = 1    --谁是房主[1, 4] svr chairId
 
 end
 
 function DataManager:getServiceChairId( clientId )
     for i=1,4 do
         if self.chair[i] == clientId then
-            return i - 1  --服务器为0, 3
+            return i  --服务器为[1, 4]
         end
     end
+end
+
+--svrId 1,4    
+function DataManager:getSvrIdByUserId( dwUserID )
+    for k, v in pairs(self.onDeskData) do
+        if v.dwUserID == dwUserID then
+            return k
+        end
+    end
+
+
 end
 
 return DataManager
