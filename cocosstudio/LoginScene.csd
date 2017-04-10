@@ -14,20 +14,20 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="1.0000" Y="1.0000" />
-            <FileData Type="Normal" Path="bg/img_bj.png" Plist="" />
+            <FileData Type="Normal" Path="bg/bg.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_login" ActionTag="766968075" Tag="88" IconVisible="False" LeftMargin="808.3242" RightMargin="338.6758" TopMargin="346.3695" BottomMargin="310.6305" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="103" Scale9Height="41" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="133.0000" Y="63.0000" />
+          <AbstractNodeData Name="Button_login" ActionTag="766968075" Tag="88" IconVisible="False" LeftMargin="676.1544" RightMargin="270.8456" TopMargin="388.6254" BottomMargin="234.3746" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="303" Scale9Height="75" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="333.0000" Y="97.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="874.8242" Y="342.1305" />
+            <Position X="842.6544" Y="282.8746" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.6835" Y="0.4752" />
-            <PreSize X="0.1039" Y="0.0875" />
+            <PrePosition X="0.6583" Y="0.3929" />
+            <PreSize X="0.2602" Y="0.1347" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="login/anniu-denglu-down.png" Plist="" />
-            <NormalFileData Type="Normal" Path="login/anniu-denglu-up.png" Plist="" />
+            <PressedFileData Type="Normal" Path="bg/button_login_2.png" Plist="" />
+            <NormalFileData Type="Normal" Path="bg/button_login_1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -63,7 +63,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_1" ActionTag="434426269" Tag="160" IconVisible="False" LeftMargin="167.2563" RightMargin="1042.7437" TopMargin="657.5061" BottomMargin="-5.5061" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="46" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_1" ActionTag="434426269" VisibleForFrame="False" Tag="160" IconVisible="False" LeftMargin="167.2563" RightMargin="1042.7437" TopMargin="657.5061" BottomMargin="-5.5061" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="46" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="70.0000" Y="68.0000" />
             <AnchorPoint ScaleX="0.5300" ScaleY="0.6018" />
             <Position X="204.3563" Y="35.4163" />
@@ -77,7 +77,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_2" ActionTag="-580330487" Tag="161" IconVisible="False" LeftMargin="357.8085" RightMargin="852.1915" TopMargin="657.5047" BottomMargin="-5.5047" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="46" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_2" ActionTag="-580330487" VisibleForFrame="False" Tag="161" IconVisible="False" LeftMargin="357.8085" RightMargin="852.1915" TopMargin="657.5047" BottomMargin="-5.5047" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="46" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="70.0000" Y="68.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="392.8085" Y="28.4953" />
@@ -91,7 +91,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_3" ActionTag="-1234801520" Tag="162" IconVisible="False" LeftMargin="548.3621" RightMargin="661.6379" TopMargin="657.5047" BottomMargin="-5.5047" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="46" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_3" ActionTag="-1234801520" VisibleForFrame="False" Tag="162" IconVisible="False" LeftMargin="548.3621" RightMargin="661.6379" TopMargin="657.5047" BottomMargin="-5.5047" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="46" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="70.0000" Y="68.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="583.3621" Y="28.4953" />
@@ -105,7 +105,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_4" ActionTag="-1788728453" Tag="163" IconVisible="False" LeftMargin="738.9155" RightMargin="471.0845" TopMargin="657.5047" BottomMargin="-5.5047" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="46" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_4" ActionTag="-1788728453" VisibleForFrame="False" Tag="163" IconVisible="False" LeftMargin="738.9155" RightMargin="471.0845" TopMargin="657.5047" BottomMargin="-5.5047" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="40" Scale9Height="46" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="70.0000" Y="68.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="773.9155" Y="28.4953" />
@@ -116,6 +116,21 @@
             <TextColor A="255" R="65" G="65" B="70" />
             <PressedFileData Type="Normal" Path="bg/headshot_1.png" Plist="" />
             <NormalFileData Type="Normal" Path="bg/headshot_4.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Button_WindowsLogin" ActionTag="717831751" Tag="9341" IconVisible="False" LeftMargin="3.2167" RightMargin="1240.7833" TopMargin="678.9494" BottomMargin="1.0506" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="6" Scale9Height="18" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="36.0000" Y="40.0000" />
+            <AnchorPoint ScaleX="0.4206" ScaleY="0.7204" />
+            <Position X="18.3598" Y="29.8658" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0143" Y="0.0415" />
+            <PreSize X="0.0281" Y="0.0556" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="bg/icon_setting_2.png" Plist="" />
+            <NormalFileData Type="Normal" Path="bg/icon_setting_1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>

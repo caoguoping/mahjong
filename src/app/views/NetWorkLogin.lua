@@ -4,6 +4,8 @@ local CURRENT_MODULE_NAME = ...
 local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
 
+
+
 local s_inst = nil
 local NetWorkLogin = class("NetWorkLogin", display.newNode)
 

@@ -4,9 +4,10 @@ local CURRENT_MODULE_NAME = ...
 
 local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr= import(".LayerManager"):getInstance()
+local musicMgr = import(".MusicManager"):getInstance()
+local actMgr = import(".ActionManager"):getInstance()
 
 local MainLayer = class("MainLayer", display.newLayer)
-
 
 function MainLayer:ctor()
     local rootNode = cc.CSLoader:createNode("NewLobby.csb"):addTo(self)
@@ -83,7 +84,9 @@ function MainLayer:ctor()
 
 
     self:btnCreateOrBack(true)
-    cc.SimpleAudioEngine:getInstance():playMusic("bgMusic.mp3", false)
+    musicMgr:playMusic("bgMusic.mp3", true)
+    --cc.SimpleAudioEngine:getInstance():playMusic("bgMusic.mp3", false)
+   -- girl.playMusic("bgMusic.mp3", false)
     --预加载playLayer
     layerMgr:getLayer(layerMgr.layIndex.PlayLayer)  
 

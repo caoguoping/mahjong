@@ -16,17 +16,6 @@
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Normal" Path="NewLobby/bg.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Particle_snow" ActionTag="1426945480" Tag="331" IconVisible="True" LeftMargin="639.6447" RightMargin="640.3553" TopMargin="29.6739" BottomMargin="690.3261" ctype="ParticleObjectData">
-            <Size X="0.0000" Y="0.0000" />
-            <AnchorPoint />
-            <Position X="639.6447" Y="690.3261" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4997" Y="0.9588" />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="NewLobby/snow.plist" Plist="" />
-            <BlendFunc Src="772" Dst="771" />
-          </AbstractNodeData>
           <AbstractNodeData Name="Button_create" ActionTag="1703358603" Tag="16639" IconVisible="False" LeftMargin="654.5378" RightMargin="324.4622" TopMargin="129.6832" BottomMargin="302.3168" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="271" Scale9Height="266" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="301.0000" Y="288.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -290,6 +279,16 @@
             <PrePosition X="0.7547" Y="0.2998" />
             <PreSize X="0.4187" Y="0.2667" />
             <FileData Type="Normal" Path="NewLobby/test.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_huaban" ActionTag="-461305645" Tag="811" IconVisible="True" LeftMargin="640.0000" RightMargin="640.0000" TopMargin="360.0000" BottomMargin="360.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="640.0000" Y="360.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="actionsCsb/huaban.csd" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

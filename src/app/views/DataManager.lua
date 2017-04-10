@@ -149,6 +149,18 @@ function DataManager:init()
     bIsCreate     1:创建 0:加入
     dwRoomNum     输入的房间号或算好的房间号
     ]] 
+    self.zhangJiData = {}
+    self.zhangJiCount = 5
+    for i=1,16 do
+        self.zhangJiData[i] = {}
+        for j=1,4 do
+            self.zhangJiData[i][j] = {}
+            self.zhangJiData[i][j].name = ""
+            self.zhangJiData[i][j].dwUserID = 1
+            self.zhangJiData[i][j].lScore = 0
+        end
+    end
+
 
     self.gameEnd = {}
     --[[
@@ -157,6 +169,9 @@ function DataManager:init()
     self.timeLeft = 0     --出牌剩余时间
     self.schedulerID = 0   --出牌剩余时间定时器
     self.fangzhuSvr = 1    --谁是房主[1, 4] svr chairId
+
+    self.isMusicOn = true
+    self.isEffectOn = true
 
 end
 

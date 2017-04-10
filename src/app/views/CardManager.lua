@@ -2,6 +2,7 @@ local CURRENT_MODULE_NAME = ...
 
 local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
+local musicMgr = import(".MusicManager"):getInstance()
 local cardNode		= import(".CardNode", CURRENT_MODULE_NAME)
 local s_inst = nil
 local cardDataMgr = import(".CardDataManager"):getInstance()
@@ -79,8 +80,7 @@ function CardManager:initAllNodes( param )
                 outValueSave = self:outPengCard(sn)
             end
             print("\n  outValueSave "..outValueSave)
-            cc.SimpleAudioEngine:getInstance():playEffect(outValueSave.."_L.mp3", false)
-
+            musicMgr:playEffect(outValueSave.."_L.mp3", false)
             --[
             local snd = DataSnd:create(200, 1)
             snd:wrByte(outValueSave)
@@ -523,6 +523,7 @@ function CardManager:rcvOutCard(outCard )
     local outValue = outCard.bOutCardData
     self.nodeDachu[clientChair]:setVisible(true)
 	self.imgBigDachu[clientChair]:loadTexture(outValue..".png")
+    musicMgr:playEffect(outValue.."_L.mp3", false)
 	self.stndCell[clientChair][14]:setVisible(false)
 	
     local delay1 = cc.DelayTime:create(0.4)

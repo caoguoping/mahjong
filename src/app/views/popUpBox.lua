@@ -2,6 +2,8 @@
 local CURRENT_MODULE_NAME = ...
 local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
+local musicMgr = import(".MusicManager"):getInstance()
+
 
 
 local popUpBox = class("popUpBox", display.newLayer)

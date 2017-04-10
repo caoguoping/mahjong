@@ -5,6 +5,7 @@ local layerMgr = import(".LayerManager"):getInstance()
 local netLogin = import(".NetWorkLogin"):getInstance()
 local netGame = import(".NetWorkGame"):getInstance()
 
+
 local LoginScene = class("LoginScene", cc.load("mvc").ViewBase)
 LoginScene.RESOURCE_FILENAME = "LoginScene.csb"
 
@@ -21,7 +22,28 @@ function LoginScene:onEnter()
     layerMgr.LoginScene = self
 
     local txUid = rootNode:getChildByName("TextField_uid")
-    local btnLogin = rootNode:getChildByName("Button_login")
+    local btnLoginWin = rootNode:getChildByName("Button_WindowsLogin")   --windows登录
+    btnLoginWin:onClicked(
+    function ()
+        self:disableAllButtons()
+        --local strUid = txUid:getString()
+        --if #strUid == 0 then
+            --strUid = tostring(1711514050 + math.random(1000000, 9000000))
+            
+            local time1 = os.time()
+         
+            local time2 = math.random(1, 100)
+            local strUid  = tostring(time1 * 100 + time2)
+               
+
+       -- end
+        dataMgr.myBaseData.uid = strUid
+        print("strUid:"..strUid)
+        self:startLogin(strUid)
+    end
+    )
+
+    local btnLogin = rootNode:getChildByName("Button_login")   --微信登录
     btnLogin:onClicked(
     function ()
         self:disableAllButtons()

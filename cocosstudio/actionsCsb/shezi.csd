@@ -51,15 +51,15 @@
       <ObjectData Name="Node" Tag="16064" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Sprite_1" ActionTag="-1985139426" Tag="36" IconVisible="False" LeftMargin="-54.5000" RightMargin="-48.5000" TopMargin="-46.0000" BottomMargin="-36.0000" ctype="SpriteObjectData">
-            <Size X="103.0000" Y="82.0000" />
+          <AbstractNodeData Name="Sprite_1" ActionTag="-1985139426" Tag="36" IconVisible="False" LeftMargin="-19.0000" RightMargin="-13.0000" TopMargin="-21.0000" BottomMargin="-11.0000" ctype="SpriteObjectData">
+            <Size X="32.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-3.0000" Y="5.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="actions/shezi/sezi_0.png" Plist="" />
+            <FileData Type="Normal" Path="bg/touming.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
           <AbstractNodeData Name="Image_1" ActionTag="-824714014" Tag="3051" IconVisible="False" LeftMargin="-5.2188" RightMargin="-31.7812" TopMargin="-34.7611" BottomMargin="-14.2389" LeftEage="12" RightEage="12" TopEage="16" BottomEage="16" Scale9OriginX="12" Scale9OriginY="16" Scale9Width="13" Scale9Height="17" ctype="ImageViewObjectData">

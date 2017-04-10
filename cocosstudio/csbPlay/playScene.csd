@@ -76,13 +76,43 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/standRight.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_dachuMe" ActionTag="-563507462" Tag="5303" IconVisible="True" LeftMargin="643.1199" RightMargin="636.8801" TopMargin="464.1227" BottomMargin="255.8773" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="FileNode_dachuUp" ActionTag="-150581477" Tag="1757" IconVisible="True" LeftMargin="610.3452" RightMargin="669.6548" TopMargin="59.5742" BottomMargin="660.4258" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="643.1199" Y="255.8773" />
+            <Position X="610.3452" Y="660.4258" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5024" Y="0.3554" />
+            <PrePosition X="0.4768" Y="0.9173" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbPlay/dachuUp.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_dachuLeft" ActionTag="337107180" Tag="2288" IconVisible="True" LeftMargin="324.4208" RightMargin="955.5792" TopMargin="307.9183" BottomMargin="412.0817" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="324.4208" Y="412.0817" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.2535" Y="0.5723" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbPlay/dachuLeft.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_dachuRight" ActionTag="-1004125758" Tag="2708" IconVisible="True" LeftMargin="959.9417" RightMargin="320.0583" TopMargin="212.9608" BottomMargin="507.0392" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="959.9417" Y="507.0392" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.7500" Y="0.7042" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbPlay/dachuRight.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_dachuMe" ActionTag="-563507462" Tag="5303" IconVisible="True" LeftMargin="635.3737" RightMargin="644.6263" TopMargin="451.4091" BottomMargin="268.5909" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="635.3737" Y="268.5909" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4964" Y="0.3730" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/dachuMe.csd" Plist="" />
           </AbstractNodeData>
@@ -114,36 +144,6 @@
             <PrePosition X="0.5126" Y="0.0948" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/standMeBei.csd" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_dachuRight" ActionTag="-1004125758" Tag="2708" IconVisible="True" LeftMargin="868.0972" RightMargin="411.9028" TopMargin="279.0928" BottomMargin="440.9072" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
-            <Size X="0.0000" Y="0.0000" />
-            <AnchorPoint />
-            <Position X="868.0972" Y="440.9072" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.6782" Y="0.6124" />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="csbPlay/dachuRight.csd" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_dachuLeft" ActionTag="337107180" Tag="2288" IconVisible="True" LeftMargin="405.7535" RightMargin="874.2465" TopMargin="347.1555" BottomMargin="372.8445" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
-            <Size X="0.0000" Y="0.0000" />
-            <AnchorPoint />
-            <Position X="405.7535" Y="372.8445" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3170" Y="0.5178" />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="csbPlay/dachuLeft.csd" Plist="" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_dachuUp" ActionTag="-150581477" Tag="1757" IconVisible="True" LeftMargin="622.1201" RightMargin="657.8799" TopMargin="155.2317" BottomMargin="564.7683" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
-            <Size X="0.0000" Y="0.0000" />
-            <AnchorPoint />
-            <Position X="622.1201" Y="564.7683" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4860" Y="0.7844" />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="csbPlay/dachuUp.csd" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="FileNode_pengMe" ActionTag="-1527025511" Tag="1447" IconVisible="True" LeftMargin="515.2021" RightMargin="764.7979" TopMargin="654.5063" BottomMargin="65.4937" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
@@ -204,6 +204,16 @@
             <PrePosition X="0.4986" Y="0.2554" />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/inviteUi.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_action" ActionTag="849419255" Tag="1821" IconVisible="True" LeftMargin="955.4758" RightMargin="324.5242" TopMargin="291.9057" BottomMargin="428.0943" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="955.4758" Y="428.0943" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.7465" Y="0.5946" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbPlay/actionNode.csd" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

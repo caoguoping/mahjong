@@ -2,6 +2,8 @@
 local CURRENT_MODULE_NAME = ...
 local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
+local musicMgr = import(".MusicManager"):getInstance()
+
 
 
 local JiesuanBox = class("JiesuanBox", display.newLayer)
@@ -249,7 +251,21 @@ function JiesuanBox:initData( gameEndData )
     local itemHeigth = 50
     local itemWidth = 663
 
-    for i=4,17 do  --对对胡，到门清
+    --胡牌10翻
+    local oneNode = cc.CSLoader:createNode("jiesuanFanxing.csb")
+    local txtFangxin = oneNode:getChildByName("Text_string")
+    local txtNum     = oneNode:getChildByName("Text_num")
+    if true then   --有相应的翻型
+        txtFangxin:setString(fxString[1])
+        txtNum:setString(fxValue[1])
+        local oneLayout = ccui.Layout:create()
+        oneLayout:addChild(oneNode)
+        oneNode:setPosition(cc.p(itemWidth * 0.5, -itemHeigth * 0.5))
+        self.listFanXing:setItemsMargin(itemHeigth + 6)
+        self.listFanXing:pushBackCustomItem(oneLayout)
+    end
+
+    for i=4,25 do  --对对胡，到门清
         local oneNode = cc.CSLoader:createNode("jiesuanFanxing.csb")
         local txtFangxin = oneNode:getChildByName("Text_string")
         local txtNum     = oneNode:getChildByName("Text_num")
@@ -259,7 +275,7 @@ function JiesuanBox:initData( gameEndData )
             local oneLayout = ccui.Layout:create()
             oneLayout:addChild(oneNode)
             oneNode:setPosition(cc.p(itemWidth * 0.5, -itemHeigth * 0.5))
-            self.listFanXing:setItemsMargin(itemHeigth + 6)
+           -- self.listFanXing:setItemsMargin(itemHeigth + 6)
             self.listFanXing:pushBackCustomItem(oneLayout)
         end
     end

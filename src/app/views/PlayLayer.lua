@@ -4,7 +4,8 @@ local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
 local cardMgr = import(".CardManager"):getInstance()
 local cardDataMgr = import(".CardDataManager"):getInstance()
-
+local musicMgr = import(".MusicManager"):getInstance()
+local actMgr = import(".ActionManager"):getInstance()
 
 -- fileNode  1:me,   2:left,    3:up,     4:right
 
@@ -1027,23 +1028,27 @@ function PlayLayer:optionResult( optResult)
         if actOption[1] == 1 then   --peng
             print("optMePeng")
             self:optMePeng(clientOpt, clientPro, optCard)
+            actMgr:playAction(2, clientOpt)
         end
 
         if actOption[2] == 1 then   --mgang
             print("optMeGang")
-             self:optMeMGang(clientOpt, clientPro, optCard)
+            self:optMeMGang(clientOpt, clientPro, optCard)
+            actMgr:playAction(3, clientOpt)
         end
 
         if actOption[3] == 1 then   --agang
             print("optAGang")
 
             self:optMeAGang(clientOpt, clientPro, optCard)
+            actMgr:playAction(3, clientOpt)
         end
 
         if actOption[4] == 1 then    --pgang
             print("optPGang")
 
             self:optMePGang(clientOpt, clientPro, optCard)
+            actMgr:playAction(3, clientOpt)
         end
 
         --自己点击了过，并且是自己提供的，（自己摸牌后，杠胡点过)
@@ -1060,18 +1065,22 @@ function PlayLayer:optionResult( optResult)
     else
         if actOption[1] == 1 then   --peng
             self:optOtherPeng(clientOpt, clientPro, optCard)
+            actMgr:playAction(2, clientOpt)
             return
 
         elseif actOption[2] == 1 then   --mgang
              self:optOtherMGang(clientOpt, clientPro, optCard) 
+             actMgr:playAction(3, clientOpt)
              return 
 
         elseif actOption[3] == 1 then   --agang
             self:optOtherAGang(clientOpt, clientPro, optCard)
+            actMgr:playAction(3, clientOpt)
             return
 
         elseif actOption[4] == 1 then    --pgang
             self:optOtherPGang(clientOpt, clientPro, optCard)
+            actMgr:playAction(3, clientOpt)
             return
         end
 
