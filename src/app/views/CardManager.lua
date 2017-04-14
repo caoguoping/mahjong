@@ -6,6 +6,9 @@ local musicMgr = import(".MusicManager"):getInstance()
 local cardNode		= import(".CardNode", CURRENT_MODULE_NAME)
 local s_inst = nil
 local cardDataMgr = import(".CardDataManager"):getInstance()
+--local actMgr = import(".ActionManager"):getInstance() loopDebug
+
+
 local CardManager = class("CardManager")
 
 
@@ -80,15 +83,14 @@ function CardManager:initAllNodes( param )
                 outValueSave = self:outPengCard(sn)
             end
             print("\n  outValueSave "..outValueSave)
-            musicMgr:playEffect(outValueSave.."_L.mp3", false)
-            --[
+
+            musicMgr:playCardValueEffect(dataMgr.myBaseData.cbGender ,dataMgr.myBaseData.young,  outValueSave)
+
             local snd = DataSnd:create(200, 1)
             snd:wrByte(outValueSave)
             snd:sendData(netTb.SocketType.Game)
             snd:release();
-            --]]
-
-            print("\ntable size "..#self.handCards.."  sn  "..sn)
+            --print("\ntable size "..#self.handCards.."  sn  "..sn)
         end
     end)
 
@@ -224,6 +226,7 @@ end
 
 --自己抓牌后打牌
 function CardManager:outDrawCard(sn  )
+     local playlayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer)
 
 	local outValueSave = 0
 
@@ -241,6 +244,9 @@ function CardManager:outDrawCard(sn  )
             	cardDataMgr.outNum[1] = cardDataMgr.outNum[1] + 1
             	self.outCell[1][cardDataMgr.outNum[1]]:setVisible(true)
             	self.outCellFace[1][cardDataMgr.outNum[1]]:loadTexture(outValueSave..".png")
+                --箭头指向
+                playlayer:playJianTou(1, self.outCell[1][cardDataMgr.outNum[1]]:getPositionX(), 
+                self.outCell[1][cardDataMgr.outNum[1]]:getPositionY() - 5)
    			end)
         )	
         self.nodeDachu[1]:runAction(action)
@@ -302,6 +308,11 @@ function CardManager:outDrawCard(sn  )
                     cardDataMgr.outNum[1] = cardDataMgr.outNum[1] + 1
                     self.outCell[1][cardDataMgr.outNum[1]]:setVisible(true)
                     self.outCellFace[1][cardDataMgr.outNum[1]]:loadTexture(outValueSave..".png")
+
+
+                    --箭头指向
+                    playlayer:playJianTou(1, self.outCell[1][cardDataMgr.outNum[1]]:getPositionX(), 
+                    self.outCell[1][cardDataMgr.outNum[1]]:getPositionY() - 5)
                 end)
             )
         self.nodeDachu[1]:runAction(actionDachu)
@@ -322,6 +333,8 @@ end
 
 --自己碰后打牌
 function CardManager:outPengCard(sn  )
+
+    local playlayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer)
 
 	local outIndex = sn - cardDataMgr.pengGangNum[1] * 3    --打出的手牌第几张，去掉了碰  
 	local handCount = 14 - cardDataMgr.pengGangNum[1] * 3    --手牌的张数，去掉碰
@@ -348,6 +361,9 @@ function CardManager:outPengCard(sn  )
             	cardDataMgr.outNum[1] = cardDataMgr.outNum[1] + 1
             	self.outCell[1][cardDataMgr.outNum[1]]:setVisible(true)
             	self.outCellFace[1][cardDataMgr.outNum[1]]:loadTexture(outValueSave..".png")
+                --箭头指向
+                playlayer:playJianTou(1, self.outCell[1][cardDataMgr.outNum[1]]:getPositionX(), 
+                self.outCell[1][cardDataMgr.outNum[1]]:getPositionY() - 5)
    			end)
         )	
         self.nodeDachu[1]:runAction(action)
@@ -393,6 +409,10 @@ function CardManager:outPengCard(sn  )
                 	cardDataMgr.outNum[1] = cardDataMgr.outNum[1] + 1
                 	self.outCell[1][cardDataMgr.outNum[1]]:setVisible(true)
                 	self.outCellFace[1][cardDataMgr.outNum[1]]:loadTexture(outValueSave..".png")
+
+                    --箭头指向
+                    playlayer:playJianTou(1, self.outCell[1][cardDataMgr.outNum[1]]:getPositionX(), 
+                    self.outCell[1][cardDataMgr.outNum[1]]:getPositionY() - 5)
        			end)
         )   
 
@@ -523,8 +543,10 @@ function CardManager:rcvOutCard(outCard )
     local outValue = outCard.bOutCardData
     self.nodeDachu[clientChair]:setVisible(true)
 	self.imgBigDachu[clientChair]:loadTexture(outValue..".png")
-    musicMgr:playEffect(outValue.."_L.mp3", false)
-	self.stndCell[clientChair][14]:setVisible(false)
+
+    musicMgr:playCardValueEffect(dataMgr.myBaseData.cbGender ,dataMgr.myBaseData.young,  outValue)
+	
+    self.stndCell[clientChair][14]:setVisible(false)
 	
     local delay1 = cc.DelayTime:create(0.4)
 	local delay2 = cc.DelayTime:create(0.4)
@@ -536,6 +558,12 @@ function CardManager:rcvOutCard(outCard )
         	local outNum = cardDataMgr.outNum[clientChair] + 1
         	self.outCell[clientChair][outNum]:setVisible(true)
         	self.outCellFace[clientChair][outNum]:loadTexture(outValue..".png")
+            musicMgr:playEffect("cardTodesk.mp3", false)
+            --箭头指向
+           
+            playlayer:playJianTou(clientChair, self.outCell[clientChair][outNum]:getPositionX(), 
+                self.outCell[clientChair][outNum]:getPositionY() -5)
+
         	cardDataMgr.outNum[clientChair] = outNum
 			end)
     )	

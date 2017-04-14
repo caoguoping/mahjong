@@ -25,11 +25,13 @@ function JoinRoomBox:ctor()
     local imgMask = rootNode:getChildByName("Image_mask")
     imgMask:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             self:removeSelf()
         end
         )
     btnClose:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             self:removeSelf()
         end)
 
@@ -47,6 +49,7 @@ function JoinRoomBox:ctor()
         btns[i] = rootNode:getChildByName(tmpStr)
         btns[i]:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             self.nowNum = self.nowNum + 1;
             self.txts[self.nowNum]:setString(tostring(i - 1))
             self.txts[self.nowNum]:setVisible(true)
@@ -68,6 +71,7 @@ function JoinRoomBox:ctor()
     local btnReput = rootNode:getChildByName("Button_re")
     btnReput:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             self:reputRoomNum()
         end
         )
@@ -75,6 +79,7 @@ function JoinRoomBox:ctor()
     local btnDelete = rootNode:getChildByName("Button_delete")
     btnDelete:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             if self.nowNum < 1 then
                return
             else
@@ -89,7 +94,7 @@ function JoinRoomBox:ctor()
     local btnOk = rootNode:getChildByName("Button_Ok")
     btnOk:onClicked(
         function (  )
-
+            musicMgr:playEffect("game_button_click.mp3", false)
             local strUid = txUid:getString()
             if #strUid < 7 then
                 return

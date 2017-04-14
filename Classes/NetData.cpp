@@ -111,7 +111,7 @@ DataSnd* DataSnd::create(unsigned short wMainCmd, unsigned short wSubCmd)
 	DataSnd *pDataSnd = new DataSnd();
 	if (pDataSnd)
 	{
-		//log("[LUA-print] sendData  Main %d,  Sub %d", wMainCmd, wSubCmd);
+		log("[LUA-print] sendData  Main %d,  Sub %d", wMainCmd, wSubCmd);
 		pDataSnd->pNow = (char*)pDataSnd->pBuf + sizeof(TCP_Info);
 		memcpy(pDataSnd->pNow, &wMainCmd, 2);
 		pDataSnd->pNow += 2;
@@ -214,5 +214,48 @@ void  DataSnd::sendData(unsigned char bSocketType)
 	tcpInfo->wPacketSize = wDataSize;   //全部长度，包含TCP_Head8字节
 
 	TTSocketClient::getInstance()->Send((char*)pBuf, wDataSize, bSocketType);
+}
+
+
+SDKLoginData* SDKLoginData::create(EventCustom*  pEvent)
+{
+	SDKLoginData *pSDKLoginData = new SDKLoginData();
+	if (pSDKLoginData)
+	{
+		pSDKLoginData->weChatData = *(stWeChatData*)pEvent->getUserData();
+		pSDKLoginData->autorelease();
+		pSDKLoginData->retain();
+	}
+	else
+	{
+		CC_SAFE_DELETE(pSDKLoginData);
+	}
+	return pSDKLoginData;
+}
+
+
+std::string SDKLoginData::readOpenid()
+{
+	return weChatData.openid;
+}
+
+std::string SDKLoginData::readNickName()
+{
+	return weChatData.nickName;
+}
+
+std::string SDKLoginData::readSex()
+{
+	return weChatData.sex;
+}
+
+std::string SDKLoginData::readHeadimgurl()
+{
+	return weChatData.headimgurl;
+}
+
+std::string SDKLoginData::readCity()
+{
+	return weChatData.city;
 }
 

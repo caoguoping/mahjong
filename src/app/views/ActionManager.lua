@@ -18,8 +18,17 @@ function ActionManager:getInstance()
 end
 
 function ActionManager:init()
-    local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+    local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)    --定时器运行 在deskBg层
     self.nodeAction = playLayer.rootNode:getChildByName("FileNode_action")   --特效节点
+    --self.nodeUi = playLayer.rootNode:getChildByName("FileNode_deskUi")    
+
+    self.outNode = {}
+    self.outNode[1]  =  playLayer.rootNode:getChildByName("FileNode_dachuMe")    --打出牌节点，上面运行箭头特效
+    self.outNode[2]  =  playLayer.rootNode:getChildByName("FileNode_dachuLeft")
+    self.outNode[3]  =  playLayer.rootNode:getChildByName("FileNode_dachuUp")
+    self.outNode[4]  =  playLayer.rootNode:getChildByName("FileNode_dachuRight")
+
+
 
     self.actNode = {}  --[1,7] 补花，碰，杠，胡，杠开， 天胡，地胡
     for i=1,7 do
@@ -45,27 +54,32 @@ function ActionManager:init()
         )
     end
 
-    --self.actNode[2]:setVisible(true)
-   -- playLayer:runAction(self.timeLine[2])
-  -- self:playAction(2, 1)
+     --箭头
+    self.jianTouNodes = {}
+    self.jianTouTimeLines = {}
+    for i=1,4 do
+        self.jianTouNodes[i] = cc.CSLoader:createNode("jianTou.csb"):addTo(self.outNode[i])
+        self.jianTouTimeLines[i] = cc.CSLoader:createTimeline("jianTou.csb")
+        self.outNode[i]:runAction( self.jianTouTimeLines[i])
+        self.jianTouNodes[i]:setVisible(false)
+    end
 end
 
--- function ActionManager:createTimeLine(fileName, father)
---     local timeLine = cc.CSLoader:createTimeline(fileName)
---     father:runAction(timeLine)
---     timeLineShezi:gotoFrameAndPlay(0, false)
--- end
-
 function ActionManager:playAction(actIndex, clientId)
-    print("\nclientId "..clientId)
     self.actNode[actIndex]:setVisible(true)
     self.timeLine[actIndex]:gotoFrameAndPlay(0, false)
-    
     self.nodeAction:setPositionX(girl.effPosX[clientId])
     self.nodeAction:setPositionY(girl.effPosY[clientId])
-    print(girl.effPosX[clientId].." Pos "..girl.effPosY[clientId])
-    --self.nodeAction:setPositionX(girl.effPosX[clientId])
-    --self.nodeAction:setPositionY(girl.effPosY[clientId])
+end
+
+function ActionManager:playJianTou(clientId, posx, posy)
+    for i=1,4 do
+        self.jianTouNodes[i]:setVisible(false)
+    end
+    self.jianTouNodes[clientId]:setVisible(true)
+    self.jianTouTimeLines[clientId]:gotoFrameAndPlay(0, true)
+    self.jianTouNodes[clientId]:setPosition(posx, posy + 30)
+
 
 end
 

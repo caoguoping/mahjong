@@ -4,6 +4,8 @@ local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
 local netLogin = import(".NetWorkLogin"):getInstance()
 local netGame = import(".NetWorkGame"):getInstance()
+local sdkHelper = import(".SDKHelper"):getInstance()
+local musicMgr = import(".MusicManager"):getInstance()
 
 
 local LoginScene = class("LoginScene", cc.load("mvc").ViewBase)
@@ -22,21 +24,15 @@ function LoginScene:onEnter()
     layerMgr.LoginScene = self
 
     local txUid = rootNode:getChildByName("TextField_uid")
-    local btnLoginWin = rootNode:getChildByName("Button_WindowsLogin")   --windows登录
-    btnLoginWin:onClicked(
+    self.btnLoginWin = rootNode:getChildByName("Button_WindowsLogin")   --windows登录
+    
+    self.btnLoginWin:onClicked(
     function ()
         self:disableAllButtons()
-        --local strUid = txUid:getString()
-        --if #strUid == 0 then
-            --strUid = tostring(1711514050 + math.random(1000000, 9000000))
-            
+        musicMgr:playEffect("game_button_click.mp3", false)
             local time1 = os.time()
-         
             local time2 = math.random(1, 100)
             local strUid  = tostring(time1 * 100 + time2)
-               
-
-       -- end
         dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
@@ -46,21 +42,11 @@ function LoginScene:onEnter()
     local btnLogin = rootNode:getChildByName("Button_login")   --微信登录
     btnLogin:onClicked(
     function ()
+        musicMgr:playEffect("game_button_click.mp3", false)
         self:disableAllButtons()
-        --local strUid = txUid:getString()
-        --if #strUid == 0 then
-            --strUid = tostring(1711514050 + math.random(1000000, 9000000))
-            
-            local time1 = os.time()
-         
-            local time2 = math.random(1, 100)
-            local strUid  = tostring(time1 * 100 + time2)
-               
+        Helpers:callJavaLogin() 
 
-       -- end
-        dataMgr.myBaseData.uid = strUid
-        print("strUid:"..strUid)
-        self:startLogin(strUid)
+
     end
     )
 
@@ -72,7 +58,7 @@ function LoginScene:onEnter()
      function (  )
         self:disableAllButtons()
 
-        local strUid = "1811514031"
+        local strUid = "149198809352"
         dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
@@ -116,44 +102,16 @@ function LoginScene:onEnter()
     self.btnFast4 = btnFast4
 
 
-
-    --cgpTest
-    -- local strUid = "1711514223"
-    -- dataMgr.myBaseData.uid = strUid
-    -- print("strUid:"..strUid)
-    
-    -- self:startLogin(strUid)
-    --layerMgr:showLayer(layerMgr.layIndex.MainLayer)
-
---testBegin
-    -- print("\n\n#####      test start       #####\n\n")
-
-    -- local time1 = os.time()
-    -- print("random time "..time1)
-    -- local time2 = math.random(1000000, 9000000)
-    -- print("random math "..time2)
-
-    -- print(fxString[2])
-
-    -- local jiesuanBox = import(".JiesuanBox",CURRENT_MODULE_NAME).create()
-    -- jiesuanBox:initData(gameEndData)
-    -- layerMgr.boxes[layerMgr.boxIndex.JiesuanBox] = jiesuanBox
-
-       -- function ( )
-        --     self:removeFromParent()
-        -- end, 
-        -- function (  )
-        --     self:removeFromParent()
-        -- end)
-
-
- --testEnd 
-
+    --预加载MainLayer
+    local mainLayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)  
+    mainLayer:setVisible(false)
 
 end
 
+
 function LoginScene:startLogin(_uid)
 
+    print("openid ".._uid)
     TTSocketClient:getInstance():startSocket(netTb.ip, netTb.port.login, netTb.SocketType.Login)
 
     local snd = DataSnd:create(1, 2)
@@ -176,11 +134,12 @@ function LoginScene:startLogin(_uid)
 end
 
 function LoginScene:disableAllButtons(  )
-    self.btnLogin:setVisible(false)
-    self.btnFast1:setVisible(false)
-    self.btnFast2:setVisible(false)
-    self.btnFast3:setVisible(false)
-    self.btnFast4:setVisible(false)
+    self.btnLoginWin:setTouchEnabled(false)
+    self.btnLogin:setTouchEnabled(false)
+    self.btnFast1:setTouchEnabled(false)
+    self.btnFast2:setTouchEnabled(false)
+    self.btnFast3:setTouchEnabled(false)
+    self.btnFast4:setTouchEnabled(false)
 end
 
 

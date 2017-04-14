@@ -2,6 +2,7 @@ cc.exports.girl            = girl or {}
 cc.exports.netTb       = netTb or {}
 cc.exports.fxString       = fxString or {}
 cc.exports.fxValue       = fxValue or {}
+cc.exports.soundCnt      = SoundCnt or {}
 
 netTb.SocketType = 
 {
@@ -9,7 +10,7 @@ netTb.SocketType =
 	Game   = 1,
 }
 --netTb.ip = "192.168.3.15"
-netTb.ip = "101.66.251.195"
+netTb.ip = "101.37.20.36"
 netTb.port =
 {
     login = 5050,
@@ -108,200 +109,191 @@ fxValue[25] = 3
 	nv_11_2_1.mp3     中年女子碰的第一个音效
 ]]
 
--- --男声1每种声音的个数
--- NanCnt1 = {}
--- --万
--- NanCnt1[1 ] = 
--- NanCnt1[2 ] = 
--- NanCnt1[3 ] = 
--- NanCnt1[4 ] = 
--- NanCnt1[5 ] = 
--- NanCnt1[6 ] = 
--- NanCnt1[7 ] = 
--- NanCnt1[8 ] = 
--- NanCnt1[9 ] = 
--- --补花(10)， 碰(11)，杠（12），胡（13）， 杠开（14）， 天胡（15）， 地胡（16）
--- NanCnt1[10] = 
--- NanCnt1[11] = 
--- NanCnt1[12] = 
--- NanCnt1[13] = 
--- NanCnt1[14] = 
--- NanCnt1[15] = 
--- NanCnt1[16] = 
--- --条
--- NanCnt1[17] = 
--- NanCnt1[18] = 
--- NanCnt1[19] = 
--- NanCnt1[20] = 
--- NanCnt1[21] = 
--- NanCnt1[22] = 
--- NanCnt1[23] = 
--- NanCnt1[24] = 
--- NanCnt1[25] = 
--- --饼
--- NanCnt1[33] = 
--- NanCnt1[34] = 
--- NanCnt1[35] = 
--- NanCnt1[36] = 
--- NanCnt1[37] = 
--- NanCnt1[38] = 
--- NanCnt1[39] = 
--- NanCnt1[40] = 
--- NanCnt1[41] = 
+--[性别][青年][牌值]
+soundCnt = {}
+soundCnt[1] = {} --男
+soundCnt[2] = {} --女
+soundCnt[1][1] = {}   --男 青年
+soundCnt[1][2] = {}   --男 中年
+soundCnt[2][1] = {}   --女 青年
+soundCnt[2][2] = {}   --女 中年
+--男声1每种声音的个数
+--万
+soundCnt[1][1][1 ] = 2
+soundCnt[1][1][2 ] = 4
+soundCnt[1][1][3 ] = 1
+soundCnt[1][1][4 ] = 1
+soundCnt[1][1][5 ] = 1
+soundCnt[1][1][6 ] = 2
+soundCnt[1][1][7 ] = 1
+soundCnt[1][1][8 ] = 3
+soundCnt[1][1][9 ] = 1
+--补花(10)， 碰(11)，杠(12），胡（13）， 杠开（14）， 天胡（15）， 地胡（16）
+soundCnt[1][1][10] =4
+soundCnt[1][1][11] =4 
+soundCnt[1][1][12] =0
+soundCnt[1][1][13] =1
+soundCnt[1][1][14] =1 
+soundCnt[1][1][15] =1 
+soundCnt[1][1][16] =1 
+--条
+soundCnt[1][1][17] =3 
+soundCnt[1][1][18] =2 
+soundCnt[1][1][19] =2 
+soundCnt[1][1][20] =2 
+soundCnt[1][1][21] =3 
+soundCnt[1][1][22] =2 
+soundCnt[1][1][23] =2 
+soundCnt[1][1][24] =2 
+soundCnt[1][1][25] =1 
+--饼
+soundCnt[1][1][33] =2 
+soundCnt[1][1][34] =3 
+soundCnt[1][1][35] =2 
+soundCnt[1][1][36] =3 
+soundCnt[1][1][37] =2 
+soundCnt[1][1][38] =1 
+soundCnt[1][1][39] =2 
+soundCnt[1][1][40] =4 
+soundCnt[1][1][41] =2 
+--东南西北
+soundCnt[1][1][49] =2 
+soundCnt[1][1][51] =3 
+soundCnt[1][1][53] =4 
+soundCnt[1][1][55] =2 
+--女声1每种声音的个数
+--万
+soundCnt[2][1][1 ] =2 
+soundCnt[2][1][2 ] =3 
+soundCnt[2][1][3 ] =1 
+soundCnt[2][1][4 ] =1 
+soundCnt[2][1][5 ] =1
+soundCnt[2][1][6 ] =2 
+soundCnt[2][1][7 ] =1 
+soundCnt[2][1][8 ] =3 
+soundCnt[2][1][9 ] =1 
+--补花， 碰，杠，胡， 杠开， 天胡， 地胡
+soundCnt[2][1][10] =4 
+soundCnt[2][1][11] =3 
+soundCnt[2][1][12] =0 
+soundCnt[2][1][13] =1 
+soundCnt[2][1][14] =1 
+soundCnt[2][1][15] =1 
+soundCnt[2][1][16] =1 
+--条
+soundCnt[2][1][17] =3 
+soundCnt[2][1][18] =2 
+soundCnt[2][1][19] =2 
+soundCnt[2][1][20] =2 
+soundCnt[2][1][21] =3 
+soundCnt[2][1][22] =2 
+soundCnt[2][1][23] =2 
+soundCnt[2][1][24] =2 
+soundCnt[2][1][25] =1 
+--饼
+soundCnt[2][1][33] =2 
+soundCnt[2][1][34] =3 
+soundCnt[2][1][35] =2 
+soundCnt[2][1][36] =3 
+soundCnt[2][1][37] =2 
+soundCnt[2][1][38] =1 
+soundCnt[2][1][39] =2 
+soundCnt[2][1][40] =4 
+soundCnt[2][1][41] =2 
+--东南西北
+soundCnt[2][1][49] =3 
+soundCnt[2][1][51] =3 
+soundCnt[2][1][53] =4 
+soundCnt[2][1][55] =2 
 
--- --东南西北
--- NanCnt1[49] = 
--- NanCnt1[50] = 
--- NanCnt1[51] = 
--- NanCnt1[52] = 
+--男声2每种声音的个数
+--万
+soundCnt[1][2][1 ] =2 
+soundCnt[1][2][2 ] =3 
+soundCnt[1][2][3 ] =1 
+soundCnt[1][2][4 ] =1 
+soundCnt[1][2][5 ] =1 
+soundCnt[1][2][6 ] =2 
+soundCnt[1][2][7 ] =1 
+soundCnt[1][2][8 ] =3 
+soundCnt[1][2][9 ] =1 
+--补花， 碰，杠，胡， 杠开， 天胡， 地胡
+soundCnt[1][2][10] =4 
+soundCnt[1][2][11] =3 
+soundCnt[1][2][12] =0 
+soundCnt[1][2][13] =1 
+soundCnt[1][2][14] =1 
+soundCnt[1][2][15] =1 
+soundCnt[1][2][16] =1 
+--条
+soundCnt[1][2][17] =3 
+soundCnt[1][2][18] =2 
+soundCnt[1][2][19] =2 
+soundCnt[1][2][20] =2 
+soundCnt[1][2][21] =3 
+soundCnt[1][2][22] =2 
+soundCnt[1][2][23] =2 
+soundCnt[1][2][24] =2 
+soundCnt[1][2][25] =1 
+--饼
+soundCnt[1][2][33] =2 
+soundCnt[1][2][34] =3 
+soundCnt[1][2][35] =2 
+soundCnt[1][2][36] =3 
+soundCnt[1][2][37] =2 
+soundCnt[1][2][38] =1 
+soundCnt[1][2][39] =2 
+soundCnt[1][2][40] =4 
+soundCnt[1][2][41] =2 
+--东南西北
+soundCnt[1][2][49] =2 
+soundCnt[1][2][51] =3 
+soundCnt[1][2][53] =3 
+soundCnt[1][2][55] =2 
 
-
--- --女声1每种声音的个数
--- NvCnt1 = {}
--- --万
--- NvCnt1[1 ] = 
--- NvCnt1[2 ] = 
--- NvCnt1[3 ] = 
--- NvCnt1[4 ] = 
--- NvCnt1[5 ] = 
--- NvCnt1[6 ] = 
--- NvCnt1[7 ] = 
--- NvCnt1[8 ] = 
--- NvCnt1[9 ] = 
--- --补花， 碰，杠，胡， 杠开， 天胡， 地胡
--- NvCnt1[10] = 
--- NvCnt1[11] = 
--- NvCnt1[12] = 
--- NvCnt1[13] = 
--- NvCnt1[14] = 
--- NvCnt1[15] = 
--- NvCnt1[16] = 
--- --条
--- NvCnt1[17] = 
--- NvCnt1[18] = 
--- NvCnt1[19] = 
--- NvCnt1[20] = 
--- NvCnt1[21] = 
--- NvCnt1[22] = 
--- NvCnt1[23] = 
--- NvCnt1[24] = 
--- NvCnt1[25] = 
--- --饼
--- NvCnt1[33] = 
--- NvCnt1[34] = 
--- NvCnt1[35] = 
--- NvCnt1[36] = 
--- NvCnt1[37] = 
--- NvCnt1[38] = 
--- NvCnt1[39] = 
--- NvCnt1[40] = 
--- NvCnt1[41] = 
-
--- --东南西北
--- NvCnt1[49] = 
--- NvCnt1[50] = 
--- NvCnt1[51] = 
--- NvCnt1[52] = 
-
-
-
-
-
-
--- --男声2每种声音的个数
--- NanCnt2 = {}
--- --万
--- NanCnt2[1 ] = 
--- NanCnt2[2 ] = 
--- NanCnt2[3 ] = 
--- NanCnt2[4 ] = 
--- NanCnt2[5 ] = 
--- NanCnt2[6 ] = 
--- NanCnt2[7 ] = 
--- NanCnt2[8 ] = 
--- NanCnt2[9 ] = 
--- --补花， 碰，杠，胡， 杠开， 天胡， 地胡
--- NanCnt2[10] = 
--- NanCnt2[11] = 
--- NanCnt2[12] = 
--- NanCnt2[13] = 
--- NanCnt2[14] = 
--- NanCnt2[15] = 
--- NanCnt2[16] = 
--- --条
--- NanCnt2[17] = 
--- NanCnt2[18] = 
--- NanCnt2[19] = 
--- NanCnt2[20] = 
--- NanCnt2[21] = 
--- NanCnt2[22] = 
--- NanCnt2[23] = 
--- NanCnt2[24] = 
--- NanCnt2[25] = 
--- --饼
--- NanCnt2[33] = 
--- NanCnt2[34] = 
--- NanCnt2[35] = 
--- NanCnt2[36] = 
--- NanCnt2[37] = 
--- NanCnt2[38] = 
--- NanCnt2[39] = 
--- NanCnt2[40] = 
--- NanCnt2[41] = 
-
--- --东南西北
--- NanCnt2[49] = 
--- NanCnt2[50] = 
--- NanCnt2[51] = 
--- NanCnt2[52] = 
-
-
--- --女声2每种声音的个数
--- NvCnt2 = {}
--- --万
--- NvCnt2[1 ] = 
--- NvCnt2[2 ] = 
--- NvCnt2[3 ] = 
--- NvCnt2[4 ] = 
--- NvCnt2[5 ] = 
--- NvCnt2[6 ] = 
--- NvCnt2[7 ] = 
--- NvCnt2[8 ] = 
--- NvCnt2[9 ] = 
--- --补花， 碰，杠，胡， 杠开， 天胡， 地胡
--- NvCnt2[10] = 
--- NvCnt2[11] = 
--- NvCnt2[12] = 
--- NvCnt2[13] = 
--- NvCnt2[14] = 
--- NvCnt2[15] = 
--- NvCnt2[16] = 
--- --条
--- NvCnt2[17] = 
--- NvCnt2[18] = 
--- NvCnt2[19] = 
--- NvCnt2[20] = 
--- NvCnt2[21] = 
--- NvCnt2[22] = 
--- NvCnt2[23] = 
--- NvCnt2[24] = 
--- NvCnt2[25] = 
--- --饼
--- NvCnt2[33] = 
--- NvCnt2[34] = 
--- NvCnt2[35] = 
--- NvCnt2[36] = 
--- NvCnt2[37] = 
--- NvCnt2[38] = 
--- NvCnt2[39] = 
--- NvCnt2[40] = 
--- NvCnt2[41] = 
-
--- --东南西北
--- NvCnt2[49] = 
--- NvCnt2[50] = 
--- NvCnt2[51] = 
--- NvCnt2[52] = 
-
+--女声2每种声音的个数
+--万
+soundCnt[2][2][1 ] =2 
+soundCnt[2][2][2 ] =3 
+soundCnt[2][2][3 ] =1 
+soundCnt[2][2][4 ] =1 
+soundCnt[2][2][5 ] =1 
+soundCnt[2][2][6 ] =2 
+soundCnt[2][2][7 ] =1 
+soundCnt[2][2][8 ] =3 
+soundCnt[2][2][9 ] =1 
+--补花， 碰，杠，胡， 杠开， 天胡， 地胡
+soundCnt[2][2][10] =4 
+soundCnt[2][2][11] =3 
+soundCnt[2][2][12] =1 
+soundCnt[2][2][13] =1 
+soundCnt[2][2][14] =0
+soundCnt[2][2][15] =1 
+soundCnt[2][2][16] =1 
+--条
+soundCnt[2][2][17] =3 
+soundCnt[2][2][18] =2 
+soundCnt[2][2][19] =2 
+soundCnt[2][2][20] =2 
+soundCnt[2][2][21] =3 
+soundCnt[2][2][22] =2 
+soundCnt[2][2][23] =2 
+soundCnt[2][2][24] =2 
+soundCnt[2][2][25] =1 
+--饼
+soundCnt[2][2][33] =2 
+soundCnt[2][2][34] =3 
+soundCnt[2][2][35] =2 
+soundCnt[2][2][36] =3 
+soundCnt[2][2][37] =2 
+soundCnt[2][2][38] =1 
+soundCnt[2][2][39] =2 
+soundCnt[2][2][40] =4 
+soundCnt[2][2][41] =2 
+--东南西北
+soundCnt[2][2][49] =2 
+soundCnt[2][2][50] =3 
+soundCnt[2][2][51] =4 
+soundCnt[2][2][52] =2 
 
 

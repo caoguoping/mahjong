@@ -25,7 +25,8 @@ typedef int				SOCKET;
 #define SOCKET_ERROR	-1
 #endif
 
-#define SOCKET_TCP_BUFFER	4096	
+//#define SOCKET_TCP_BUFFER	4096	
+#define SOCKET_TCP_BUFFER	16384     //16K
 //ÍøÂçÄÚºË
 struct TCP_Info
 {

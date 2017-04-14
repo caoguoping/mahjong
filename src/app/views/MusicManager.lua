@@ -1,5 +1,7 @@
 local CURRENT_MODULE_NAME = ...
 
+
+
 local s_inst = nil
 local MusicManager = class("MusicManager")
 
@@ -32,6 +34,22 @@ function MusicManager:playEffect(fileName, loop)
 
 end
 
+--1,男，  2，女
+function MusicManager:playCardValueEffect( sex,  young, cardValue)
+    local maxNum = soundCnt[sex][young][cardValue]
+    local randNum = math.random(maxNum)
+    local strSoundName
+    if sex == 1 then
+        strSoundName = "nan_" 
+    elseif sex == 2 then
+        strSoundName = "nv_" 
+    end
+    strSoundName = strSoundName..cardValue.."_"..young.."_"..randNum..".mp3"
+    print("strSoundName")
+    print(strSoundName)
+    self:playEffect(strSoundName, false)
+ end
+
 function MusicManager:stopMusic( )
     if self.isMusicOn then
          cc.SimpleAudioEngine:getInstance():stopMusic(true)
@@ -40,14 +58,14 @@ end
 
 function MusicManager:halfMusicVolume()
     local engine = cc.SimpleAudioEngine:getInstance()
-    local volume = engine:getMusicVolume()
-    engine:setMusicVolume(volume * 0.5)
+    engine:setMusicVolume(0.2)
+    print("Music half"..engine:getMusicVolume())
 end
 
-function MusicManager:doubleMusicVolume()
+function MusicManager:FullMusicVolume()
     local engine = cc.SimpleAudioEngine:getInstance()
-    local volume = engine:getMusicVolume()
-    engine:setMusicVolume(volume * 2)
+    engine:setMusicVolume(1.0)
+    print("Music half"..engine:getMusicVolume())
 end
 
 return MusicManager

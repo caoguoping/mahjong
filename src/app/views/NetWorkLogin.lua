@@ -30,7 +30,7 @@ function NetWorkLogin:handleEventLogin( event)
     local rcv = DataRcv:create(event)
     local wMainCmd = rcv:readWORD()
     local wSubCmd = rcv:readWORD()
-   -- print("Login Main "..wMainCmd..", Sub "..wSubCmd)
+    print("Login Main "..wMainCmd..", Sub "..wSubCmd)
   
     if  wMainCmd == 0 then
         if  wSubCmd == 1 then
@@ -46,6 +46,85 @@ function NetWorkLogin:handleEventLogin( event)
             self:registerRole(rcv)
         elseif wSubCmd == 101 then
             TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Login)
+         elseif wSubCmd == 108 then         ---游戏登录，向服务器获取该玩家的历史记录
+           local wCount = rcv:readWORD()  -- 战绩总条数
+           local wFlag = rcv:readWORD()    -- 分包情况使用 超过50条 0 - 不是最后一条 1 - 最后一条       
+           --2个空字节
+           print("wCount",wCount)
+           rcv:readDWORD()
+           local data = dataMgr.HistroyRecords
+           if wFlag == 0 then
+                for i= data.ItemCount+1, data.ItemCount+50 do 
+                    data[i] = {}
+                    --data[i].wTable = rcv:readUInt64()
+                    data[i].lScore = rcv:readUInt64()
+                    data[i].wTableID = rcv:readDWORD()
+                    data[i].wData = rcv:readDWORD()
+                    data[i].cbType = rcv:readByte()
+
+                    -- 7个空字节
+                     rcv:readDWORD()
+                     rcv:readDWORD()
+                     rcv:readByte()
+                end
+                data.ItemCount = data.ItemCount + 50
+            elseif wFlag == 1 then
+                for i = 1, wCount do 
+                    data[i] = {}
+                    data[i].lScore = rcv:readUInt64()
+                    data[i].wTableID = rcv:readDWORD()
+                    data[i].wData = rcv:readDWORD()
+                    data[i].cbType = rcv:readByte() 
+                    -- 7个空字节
+                    rcv:readDWORD()
+                    rcv:readDWORD()
+                    rcv:readByte()
+                    print(data[i].wTableID)
+                end 
+                data.ItemCount = wCount
+                print(wCount)
+            end 
+
+        elseif wSubCmd == 107 then
+            local wCount = rcv:readWORD()  -- 战绩总条数
+            local wFlag = rcv:readWORD()    -- 分包情况使用 超过50条 0 - 不是最后一条 1 - 最后一条  当前应该不要用
+            rcv:readDWORD()
+            print("wCount",wCount)
+            print("wFlag",wFlag)
+            print("IndexRecords"..dataMgr.IndexRecords)
+            dataMgr.HistroyRecords[dataMgr.IndexRecords].Records = {} 
+            for i = 1, wCount do
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i] = {}             
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username1 = rcv:readString(64)
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username2 = rcv:readString(64)
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username3 = rcv:readString(64)
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username4 = rcv:readString(64)
+
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore1 = rcv:readUInt64()
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore2 = rcv:readUInt64()
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore3 = rcv:readUInt64()
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore4 = rcv:readUInt64()
+
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID1 = rcv:readDWORD()
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID2 = rcv:readDWORD()
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID3 = rcv:readDWORD()
+                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID4 = rcv:readDWORD()
+               
+                print("username1",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username1)
+                print("score1",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore1)
+                print("userid1",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID1)
+                                print("username2",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username2)
+                print("score2",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore2)
+                print("userid2",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID2)
+                                print("username3",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username3)
+                print("score3",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore3)
+                print("userid3",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID3)
+                                print("username4",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username4)
+                print("score4",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore4)
+                print("userid4",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID4)
+               
+            end
+
         end
     else 
     -- --
@@ -67,7 +146,8 @@ function NetWorkLogin:loginComplete( rcv )
     dataMgr.myBaseData.cbGender           = rcv:readByte()    
     dataMgr.myBaseData.cbMoorMachine      = rcv:readByte()    
     dataMgr.myBaseData.szAccounts         = rcv:readString(64)
-    dataMgr.myBaseData.szNickName         = rcv:readString(64)
+    --dataMgr.myBaseData.szNickName         = rcv:readString(64)
+    rcv:readString(64)
     dataMgr.myBaseData.szGroupName        = rcv:readString(64)
     dataMgr.myBaseData.cbShowServerStatus = rcv:readByte()    
     dataMgr.myBaseData.isFirstLogin       = rcv:readDWORD()   
@@ -75,6 +155,9 @@ function NetWorkLogin:loginComplete( rcv )
     rcv:destroys()
 
     layerMgr:showLayer(layerMgr.layIndex.MainLayer)
+    --musicMgr:playMusic("bgMusic.mp3", true)
+    local mainLayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
+    mainLayer:refresh()
 
 end
 
@@ -85,9 +168,9 @@ function NetWorkLogin:registerRole( rcv)
     local szLogonPass = uid
     local szInsurePass = uid
     local wFaceID = 1
-    local cbGender = 1
+    local cbGender = dataMgr.myBaseData.cbGender
     local szAccounts = uid
-    local szNickName = uid
+    local szNickName = dataMgr.myBaseData.szNickName
     local szSpreader = ""
     local szPassPortID = ""
     local szCompellation = ""

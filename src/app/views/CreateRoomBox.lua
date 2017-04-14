@@ -234,12 +234,14 @@ function createRoomBox:ctor()
     ----***主界面关闭功能-------
     imgMask:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
             self:removeSelf()
         end
         )
     btnClose:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
              TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
             self:removeSelf()
         end)
@@ -664,6 +666,7 @@ function createRoomBox:ctor()
 
 
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
 				--***************数据获取——汇总*************
 			dataMgr.roomSet.wScore        = c_wScore --200  --c_wScore
 			dataMgr.roomSet.wJieSuanLimit = c_wJieSuanLimit --0    --c_wJieSuanLimit

@@ -29,13 +29,8 @@ void MTCustomEventQueue::pushCustomEvents(float dt)
 
 void MTCustomEventQueue::pushCustomEvent(const char* name, const char* pData)
 {
+	
 	LifeCircleMutexLock(&shareNotificationQueueLock);
-
-// 	NotificationArgs arg;
-// 	arg.name = name;
-// 	arg.pData = pData;
-// 	vecNotifications.push_back(arg);
-
 	NotificationArgs*  arg = new NotificationArgs();
 	arg->name = name;
 	arg->pData = pData;

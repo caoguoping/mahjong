@@ -119,8 +119,31 @@ function Node:unscheduleEx(schedule)
     end
 end
 
-function Node:schedule(node, callback, delay)
+--self:schedule(self,handler(self, self.checkAttackUpdate),2.0)
+--self:unschedule(self.aiSchedule)
+--[[
+    self:schedule(self,function()
+        self:updateAi(0.5)
+    end,0.5)
 
+
+    function BaseRole:updateAi(dt)
+		if battleManager.mapW>0 then
+			self:setShadowScale(self.bornPosY)
+			--极端检测(地图尽头)
+			if (self:getPositionX() > battleManager.mapW-display.width*0.2) then
+	        	self:setPositionX(battleManager.mapW-display.width*0.2)
+		    elseif (self:getPositionX() <=0) then
+		        self:setPositionX(0)
+		    end
+		end
+	end
+
+	--停止定时器
+	self:unschedule()
+
+]]
+function Node:schedule(node, callback, delay)
 	if not self.actionPool then
         self.actionPool = {}
     end

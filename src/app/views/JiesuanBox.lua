@@ -21,10 +21,12 @@ function JiesuanBox:ctor()
     --返回按钮、
     btnBack:onClicked(
     function()
+        musicMgr:playEffect("game_button_click.mp3", false)
         local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
         mainlayer:btnCreateOrBack(true)
 
         dataMgr.isNormalEnd = true
+--        musicMgr:playMusic("bgMusic.mp3", true)
         layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
         TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
         self:removeSelf()
@@ -33,6 +35,7 @@ function JiesuanBox:ctor()
     --继续游戏按钮
     self.btnContiue:onClicked(
     function()
+        musicMgr:playEffect("game_button_click.mp3", false)
         dataMgr.isNormalEnd = true
         local snd = DataSnd:create(100, 2)
         snd:sendData(netTb.SocketType.Game)
@@ -44,6 +47,7 @@ function JiesuanBox:ctor()
     --、分享按钮
     btnShare:onClicked(
     function()
+        musicMgr:playEffect("game_button_click.mp3", false)
         dataMgr.isNormalEnd = true
         print("btnShare") 
         self:removeSelf()
@@ -241,8 +245,10 @@ function JiesuanBox:initData( gameEndData )
     if isMeWin == 0 then  --lose
         self:setTopImg(2 + isZimo + 1)
         self.nodeIsMeWin:setVisible(false)
+        musicMgr:playEffect("lose.mp3", false)
     else
         --赢了
+        musicMgr:playEffect("win.mp3", false)
         self:setTopImg(isZimo + 1)
         self.txtScoreWin:setString(tostring(gameEndData.lGameScore[winSvr])  ) 
     end

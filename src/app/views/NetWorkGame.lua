@@ -220,7 +220,7 @@ function NetWorkGame:huPai( rcv )
         dataMgr.playerStatus = 2    --游戏结束
         local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
         playLayer:huPai(gameEndData)
-    else   --第二次收到
+    else   --第二次收到,4圈已打完
         local jiesuanBox = layerMgr.boxes[layerMgr.boxIndex.JiesuanBox]
         if  jiesuanBox then
             jiesuanBox.btnContiue:setVisible(false)
@@ -341,6 +341,7 @@ function NetWorkGame:changeState( rcv )
             if dataMgr.myBaseData.dwUserID == dwUserId then     --自己退出
                 TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game) 
                 layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
+--                musicMgr:playMusic("bgMusic.mp3", true)
             else   --其他人退出
                 local svrChairId = dataMgr:getSvrIdByUserId(dwUserId)   --[1,4]
                 layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):showPlayer(svrChairId, false)

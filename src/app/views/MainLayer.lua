@@ -6,21 +6,36 @@ local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr= import(".LayerManager"):getInstance()
 local musicMgr = import(".MusicManager"):getInstance()
 local actMgr = import(".ActionManager"):getInstance()
-
+    
 local MainLayer = class("MainLayer", display.newLayer)
 
 function MainLayer:ctor()
+    --musicMgr:FullMusicVolume()
+
     local rootNode = cc.CSLoader:createNode("NewLobby.csb"):addTo(self)
     self.rootNode = rootNode
 
-    local txtName = rootNode:getChildByName("Text_name")
-    local txtFangKa = rootNode:getChildByName("Text_fangKa")
+    self.txtName = rootNode:getChildByName("Text_name")
+    self.txtFangKa = rootNode:getChildByName("Text_fangKa")
 
-    txtFangKa:setString(tostring(dataMgr.prop[10]))  
 
     self.btnCreate = rootNode:getChildByName("Button_create")
     self.btnJoin = rootNode:getChildByName("Button_join")
-    self.btncreateAlready = rootNode:getChildByName("Button_createAlready")  
+    self.btncreateAlready = rootNode:getChildByName("Button_createAlready")
+    --------------  
+    self.btnRecord = rootNode:getChildByName("Button_record")
+    self.btnRules = rootNode:getChildByName("Button_rules")
+    self.btnCardAdd = rootNode:getChildByName("Button_cardAdd")
+    self.btnSetting = rootNode:getChildByName("Button_setting")
+
+    self.btnSetting:onClicked(
+        function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
+            layerMgr.boxes[layerMgr.boxIndex.SettingBox] = import(".SettingBox",CURRENT_MODULE_NAME).create()
+        end
+
+        )
+
 
     self.btnCreate:onClicked(
     function ()
@@ -31,7 +46,7 @@ function MainLayer:ctor()
         改：
         先显示界面，点创建界面的创建按钮，连网络(startGame)，连接成功时， 发创建参数
     ]]
-                
+        musicMgr:playEffect("game_button_click.mp3", false)     
         dataMgr.roomSet.bIsCreate = 1
         dataMgr.joinPeople = 0
         dataMgr.playerStatus = 0
@@ -56,6 +71,7 @@ function MainLayer:ctor()
     --[[
         弹出界面，写完直接发(1, 1)
     ]]
+        musicMgr:playEffect("game_button_click.mp3", false)
         dataMgr.roomSet.bIsCreate = 0
         dataMgr.joinPeople = 0
         dataMgr.playerStatus = 0
@@ -73,23 +89,50 @@ function MainLayer:ctor()
     --返回房间
     self.btncreateAlready:onClicked(
     function (  )
+        musicMgr:playEffect("game_button_click.mp3", false)
         local snd = DataSnd:create(3, 13)
         snd:wrByte(2)   --坐下
         snd:sendData(netTb.SocketType.Game)
         snd:release()
+--        musicMgr:playMusic("bgMusic.mp3", true)
         layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
 
     end
     )  
-
+    -------------------
+    --打开游戏记录
+    self.btnRecord:onClicked(
+    function (  )
+        musicMgr:playEffect("game_button_click.mp3", false)
+        layerMgr.boxes[layerMgr.boxIndex.ZhanJiListBox] = import(".ZhanJiListBox",CURRENT_MODULE_NAME).create()
+    end
+    )
+    -- --打开玩法规则
+    self.btnRules:onClicked(
+    function (  )
+        musicMgr:playEffect("game_button_click.mp3", false)
+        layerMgr.boxes[layerMgr.boxIndex.RulesBox] = import(".RulesBox",CURRENT_MODULE_NAME).create()
+    end
+    )
+    self.btnCardAdd:onClicked(
+    function (  )
+        musicMgr:playEffect("game_button_click.mp3", false)
+        layerMgr.boxes[layerMgr.boxIndex.TuiGuangBox] = import(".TuiGuangBox",CURRENT_MODULE_NAME).create()
+    end
+    )
+    --------------
 
     self:btnCreateOrBack(true)
+    --musicMgr:halfMusicVolume()
+    --cc.SimpleAudioEngine:getInstance():playMusic("bgMusic.mp3", true)
+   -- cc.SimpleAudioEngine:getInstance():setMusicVolume(0.2)
+    --print("Music half")
+    --local volume = cc.SimpleAudioEngine:getInstance():getMusicVolume()
+    --print(volume)
     musicMgr:playMusic("bgMusic.mp3", true)
-    --cc.SimpleAudioEngine:getInstance():playMusic("bgMusic.mp3", false)
-   -- girl.playMusic("bgMusic.mp3", false)
     --预加载playLayer
-    layerMgr:getLayer(layerMgr.layIndex.PlayLayer)  
-
+    local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer)  
+    playLayer:setVisible(false)
 end
 
 --创建房间按钮还是返回按钮   true ,创建房间，   false  返回房间
@@ -106,7 +149,11 @@ function MainLayer:btnCreateOrBack( isCreate )
 end
 
 function MainLayer:refresh()
-    -- body
+    print("refresh ")
+    print(dataMgr.myBaseData.szNickName)
+    print(tostring(dataMgr.prop[10]))
+    self.txtName:setString(dataMgr.myBaseData.szNickName)
+    self.txtFangKa:setString(tostring(dataMgr.prop[10]))  
 end
 
 function MainLayer:showCreateRoom(  )
@@ -118,9 +165,9 @@ function MainLayer.creator( )
    return MainLayer.new()
 end
 
-function MainLayer:refresh(params)
-    -- body
-end
+-- function MainLayer:refresh(params)
+--     -- body
+-- end
 
 function MainLayer:startGame(ip, port)
     TTSocketClient:getInstance():startSocket(ip, port, netTb.SocketType.Game)

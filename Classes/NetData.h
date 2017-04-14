@@ -7,6 +7,15 @@
 USING_NS_CC;
 
 
+struct stWeChatData
+{
+	char  openid[32];
+	char  nickName[32];
+	char  sex[32];
+	char  headimgurl[256];
+	char  city[32];
+};
+
 
 class  DataRcv:public Ref
 {
@@ -51,5 +60,21 @@ public:
 	void wrDouble(double);
 	void wrString(std::string str, int len);
 };	 
+
+
+//sdkLoginData
+class  SDKLoginData:public Ref
+{
+public:
+	static SDKLoginData * create(EventCustom*  pEvent);
+	std::string readOpenid();
+	std::string readNickName();
+	std::string readSex();
+	std::string readHeadimgurl();
+	std::string readCity();
+public:
+	stWeChatData  weChatData;
+
+};
 
 #endif

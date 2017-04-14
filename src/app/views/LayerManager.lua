@@ -34,6 +34,10 @@ LayerManager.boxIndex = table.enumTable({
 	"CreateRoomBox",
 	"JoinRoomBox",
 	"JiesuanBox",
+	"RulesBox",
+	"ZhanJiListBox",
+	"TuiGuangBox",
+	"SettingBox"
 
 })
 

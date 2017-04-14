@@ -8,165 +8,6 @@
 #include "LuaBasicConversions.h"
 
 
-static int lua_cgpCustom_Helpers_finalize(lua_State* tolua_S)
-{
-    printf("luabindings: finalizing LUA object (Helpers)");
-    return 0;
-}
-
-int lua_register_cgpCustom_Helpers(lua_State* tolua_S)
-{
-    tolua_usertype(tolua_S,"Helpers");
-    tolua_cclass(tolua_S,"Helpers","Helpers","",nullptr);
-
-    tolua_beginmodule(tolua_S,"Helpers");
-    tolua_endmodule(tolua_S);
-    std::string typeName = typeid(Helpers).name();
-    g_luaType[typeName] = "Helpers";
-    g_typeCast["Helpers"] = "Helpers";
-    return 1;
-}
-
-int lua_cgpCustom_ContentManager_test(lua_State* tolua_S)
-{
-    int argc = 0;
-    ContentManager* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertype(tolua_S,1,"ContentManager",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    cobj = (ContentManager*)tolua_tousertype(tolua_S,1,0);
-
-#if COCOS2D_DEBUG >= 1
-    if (!cobj) 
-    {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_ContentManager_test'", nullptr);
-        return 0;
-    }
-#endif
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_ContentManager_test'", nullptr);
-            return 0;
-        }
-        cobj->test();
-        lua_settop(tolua_S, 1);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ContentManager:test",argc, 0);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_ContentManager_test'.",&tolua_err);
-#endif
-
-    return 0;
-}
-int lua_cgpCustom_ContentManager_getInstance(lua_State* tolua_S)
-{
-    int argc = 0;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-#if COCOS2D_DEBUG >= 1
-    if (!tolua_isusertable(tolua_S,1,"ContentManager",0,&tolua_err)) goto tolua_lerror;
-#endif
-
-    argc = lua_gettop(tolua_S) - 1;
-
-    if (argc == 0)
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_ContentManager_getInstance'", nullptr);
-            return 0;
-        }
-        ContentManager* ret = ContentManager::getInstance();
-        object_to_luaval<ContentManager>(tolua_S, "ContentManager",(ContentManager*)ret);
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "ContentManager:getInstance",argc, 0);
-    return 0;
-#if COCOS2D_DEBUG >= 1
-    tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_ContentManager_getInstance'.",&tolua_err);
-#endif
-    return 0;
-}
-int lua_cgpCustom_ContentManager_constructor(lua_State* tolua_S)
-{
-    int argc = 0;
-    ContentManager* cobj = nullptr;
-    bool ok  = true;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_Error tolua_err;
-#endif
-
-
-
-    argc = lua_gettop(tolua_S)-1;
-    if (argc == 0) 
-    {
-        if(!ok)
-        {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_ContentManager_constructor'", nullptr);
-            return 0;
-        }
-        cobj = new ContentManager();
-        cobj->autorelease();
-        int ID =  (int)cobj->_ID ;
-        int* luaID =  &cobj->_luaID ;
-        toluafix_pushusertype_ccobject(tolua_S, ID, luaID, (void*)cobj,"ContentManager");
-        return 1;
-    }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ContentManager:ContentManager",argc, 0);
-    return 0;
-
-#if COCOS2D_DEBUG >= 1
-    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_ContentManager_constructor'.",&tolua_err);
-#endif
-
-    return 0;
-}
-
-static int lua_cgpCustom_ContentManager_finalize(lua_State* tolua_S)
-{
-    printf("luabindings: finalizing LUA object (ContentManager)");
-    return 0;
-}
-
-int lua_register_cgpCustom_ContentManager(lua_State* tolua_S)
-{
-    tolua_usertype(tolua_S,"ContentManager");
-    tolua_cclass(tolua_S,"ContentManager","ContentManager","cc.Ref",nullptr);
-
-    tolua_beginmodule(tolua_S,"ContentManager");
-        tolua_function(tolua_S,"new",lua_cgpCustom_ContentManager_constructor);
-        tolua_function(tolua_S,"test",lua_cgpCustom_ContentManager_test);
-        tolua_function(tolua_S,"getInstance", lua_cgpCustom_ContentManager_getInstance);
-    tolua_endmodule(tolua_S);
-    std::string typeName = typeid(ContentManager).name();
-    g_luaType[typeName] = "ContentManager";
-    g_typeCast["ContentManager"] = "ContentManager";
-    return 1;
-}
-
 int lua_cgpCustom_MTCustomEventQueue_pushCustomEvent(lua_State* tolua_S)
 {
     int argc = 0;
@@ -1975,6 +1816,698 @@ int lua_register_cgpCustom_DataSnd(lua_State* tolua_S)
     g_typeCast["DataSnd"] = "DataSnd";
     return 1;
 }
+
+int lua_cgpCustom_SDKLoginData_readOpenid(lua_State* tolua_S)
+{
+    int argc = 0;
+    SDKLoginData* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"SDKLoginData",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (SDKLoginData*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_SDKLoginData_readOpenid'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_SDKLoginData_readOpenid'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->readOpenid();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "SDKLoginData:readOpenid",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_readOpenid'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_SDKLoginData_readCity(lua_State* tolua_S)
+{
+    int argc = 0;
+    SDKLoginData* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"SDKLoginData",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (SDKLoginData*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_SDKLoginData_readCity'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_SDKLoginData_readCity'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->readCity();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "SDKLoginData:readCity",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_readCity'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_SDKLoginData_readNickName(lua_State* tolua_S)
+{
+    int argc = 0;
+    SDKLoginData* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"SDKLoginData",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (SDKLoginData*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_SDKLoginData_readNickName'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_SDKLoginData_readNickName'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->readNickName();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "SDKLoginData:readNickName",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_readNickName'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_SDKLoginData_readHeadimgurl(lua_State* tolua_S)
+{
+    int argc = 0;
+    SDKLoginData* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"SDKLoginData",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (SDKLoginData*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_SDKLoginData_readHeadimgurl'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_SDKLoginData_readHeadimgurl'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->readHeadimgurl();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "SDKLoginData:readHeadimgurl",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_readHeadimgurl'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_SDKLoginData_readSex(lua_State* tolua_S)
+{
+    int argc = 0;
+    SDKLoginData* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"SDKLoginData",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (SDKLoginData*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_SDKLoginData_readSex'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_SDKLoginData_readSex'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->readSex();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "SDKLoginData:readSex",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_readSex'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_SDKLoginData_create(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"SDKLoginData",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        cocos2d::EventCustom* arg0;
+        ok &= luaval_to_object<cocos2d::EventCustom>(tolua_S, 2, "cc.EventCustom",&arg0, "SDKLoginData:create");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_SDKLoginData_create'", nullptr);
+            return 0;
+        }
+        SDKLoginData* ret = SDKLoginData::create(arg0);
+        object_to_luaval<SDKLoginData>(tolua_S, "SDKLoginData",(SDKLoginData*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "SDKLoginData:create",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_create'.",&tolua_err);
+#endif
+    return 0;
+}
+static int lua_cgpCustom_SDKLoginData_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (SDKLoginData)");
+    return 0;
+}
+
+int lua_register_cgpCustom_SDKLoginData(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"SDKLoginData");
+    tolua_cclass(tolua_S,"SDKLoginData","SDKLoginData","cc.Ref",nullptr);
+
+    tolua_beginmodule(tolua_S,"SDKLoginData");
+        tolua_function(tolua_S,"readOpenid",lua_cgpCustom_SDKLoginData_readOpenid);
+        tolua_function(tolua_S,"readCity",lua_cgpCustom_SDKLoginData_readCity);
+        tolua_function(tolua_S,"readNickName",lua_cgpCustom_SDKLoginData_readNickName);
+        tolua_function(tolua_S,"readHeadimgurl",lua_cgpCustom_SDKLoginData_readHeadimgurl);
+        tolua_function(tolua_S,"readSex",lua_cgpCustom_SDKLoginData_readSex);
+        tolua_function(tolua_S,"create", lua_cgpCustom_SDKLoginData_create);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(SDKLoginData).name();
+    g_luaType[typeName] = "SDKLoginData";
+    g_typeCast["SDKLoginData"] = "SDKLoginData";
+    return 1;
+}
+
+int lua_cgpCustom_Helpers_callWechatShare(lua_State* tolua_S)
+{
+    int argc = 0;
+    Helpers* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"Helpers",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (Helpers*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_Helpers_callWechatShare'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        const char* arg0;
+
+        std::string arg0_tmp; ok &= luaval_to_std_string(tolua_S, 2, &arg0_tmp, "Helpers:callWechatShare"); arg0 = arg0_tmp.c_str();
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Helpers_callWechatShare'", nullptr);
+            return 0;
+        }
+        cobj->callWechatShare(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "Helpers:callWechatShare",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_callWechatShare'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_Helpers_callJavaLogin(lua_State* tolua_S)
+{
+    int argc = 0;
+    Helpers* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"Helpers",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (Helpers*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_Helpers_callJavaLogin'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Helpers_callJavaLogin'", nullptr);
+            return 0;
+        }
+        cobj->callJavaLogin();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "Helpers:callJavaLogin",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_callJavaLogin'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_Helpers_sendLoginData(lua_State* tolua_S)
+{
+    int argc = 0;
+    Helpers* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"Helpers",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (Helpers*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_Helpers_sendLoginData'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Helpers_sendLoginData'", nullptr);
+            return 0;
+        }
+        cobj->sendLoginData();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "Helpers:sendLoginData",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_sendLoginData'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_Helpers_jstringTostring(lua_State* tolua_S)
+{
+    int argc = 0;
+    Helpers* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"Helpers",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (Helpers*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_Helpers_jstringTostring'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 2) 
+    {
+        _JNIEnv* arg0;
+        _jstring* arg1;
+
+        #pragma warning NO CONVERSION TO NATIVE FOR _JNIEnv*
+		ok = false;
+
+        ok &= luaval_to_object<_jstring>(tolua_S, 3, "_jstring",&arg1, "Helpers:jstringTostring");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Helpers_jstringTostring'", nullptr);
+            return 0;
+        }
+        char* ret = cobj->jstringTostring(arg0, arg1);
+        tolua_pushstring(tolua_S,(const char*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "Helpers:jstringTostring",argc, 2);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_jstringTostring'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_Helpers_getInstance(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"Helpers",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Helpers_getInstance'", nullptr);
+            return 0;
+        }
+        Helpers* ret = Helpers::getInstance();
+        object_to_luaval<Helpers>(tolua_S, "Helpers",(Helpers*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "Helpers:getInstance",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_getInstance'.",&tolua_err);
+#endif
+    return 0;
+}
+static int lua_cgpCustom_Helpers_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (Helpers)");
+    return 0;
+}
+
+int lua_register_cgpCustom_Helpers(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"Helpers");
+    tolua_cclass(tolua_S,"Helpers","Helpers","",nullptr);
+
+    tolua_beginmodule(tolua_S,"Helpers");
+        tolua_function(tolua_S,"callWechatShare",lua_cgpCustom_Helpers_callWechatShare);
+        tolua_function(tolua_S,"callJavaLogin",lua_cgpCustom_Helpers_callJavaLogin);
+        tolua_function(tolua_S,"sendLoginData",lua_cgpCustom_Helpers_sendLoginData);
+        tolua_function(tolua_S,"jstringTostring",lua_cgpCustom_Helpers_jstringTostring);
+        tolua_function(tolua_S,"getInstance", lua_cgpCustom_Helpers_getInstance);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(Helpers).name();
+    g_luaType[typeName] = "Helpers";
+    g_typeCast["Helpers"] = "Helpers";
+    return 1;
+}
+
+int lua_cgpCustom_ContentManager_test(lua_State* tolua_S)
+{
+    int argc = 0;
+    ContentManager* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"ContentManager",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (ContentManager*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_ContentManager_test'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_ContentManager_test'", nullptr);
+            return 0;
+        }
+        cobj->test();
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ContentManager:test",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_ContentManager_test'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_ContentManager_getInstance(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"ContentManager",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 0)
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_ContentManager_getInstance'", nullptr);
+            return 0;
+        }
+        ContentManager* ret = ContentManager::getInstance();
+        object_to_luaval<ContentManager>(tolua_S, "ContentManager",(ContentManager*)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "ContentManager:getInstance",argc, 0);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_ContentManager_getInstance'.",&tolua_err);
+#endif
+    return 0;
+}
+int lua_cgpCustom_ContentManager_constructor(lua_State* tolua_S)
+{
+    int argc = 0;
+    ContentManager* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_ContentManager_constructor'", nullptr);
+            return 0;
+        }
+        cobj = new ContentManager();
+        cobj->autorelease();
+        int ID =  (int)cobj->_ID ;
+        int* luaID =  &cobj->_luaID ;
+        toluafix_pushusertype_ccobject(tolua_S, ID, luaID, (void*)cobj,"ContentManager");
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "ContentManager:ContentManager",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_ContentManager_constructor'.",&tolua_err);
+#endif
+
+    return 0;
+}
+
+static int lua_cgpCustom_ContentManager_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (ContentManager)");
+    return 0;
+}
+
+int lua_register_cgpCustom_ContentManager(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"ContentManager");
+    tolua_cclass(tolua_S,"ContentManager","ContentManager","cc.Ref",nullptr);
+
+    tolua_beginmodule(tolua_S,"ContentManager");
+        tolua_function(tolua_S,"new",lua_cgpCustom_ContentManager_constructor);
+        tolua_function(tolua_S,"test",lua_cgpCustom_ContentManager_test);
+        tolua_function(tolua_S,"getInstance", lua_cgpCustom_ContentManager_getInstance);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(ContentManager).name();
+    g_luaType[typeName] = "ContentManager";
+    g_typeCast["ContentManager"] = "ContentManager";
+    return 1;
+}
 TOLUA_API int register_all_cgpCustom(lua_State* tolua_S)
 {
 	tolua_open(tolua_S);
@@ -1983,6 +2516,7 @@ TOLUA_API int register_all_cgpCustom(lua_State* tolua_S)
 	tolua_beginmodule(tolua_S,nullptr);
 
 	lua_register_cgpCustom_LifeCircleMutexLocker(tolua_S);
+	lua_register_cgpCustom_SDKLoginData(tolua_S);
 	lua_register_cgpCustom_TTSocketClient(tolua_S);
 	lua_register_cgpCustom_MTCustomEventQueue(tolua_S);
 	lua_register_cgpCustom_Helpers(tolua_S);

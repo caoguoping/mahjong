@@ -52,6 +52,8 @@ function DataManager:init()
 
 --myBaseData
     self.myBaseData = {}
+    self.myBaseData.cbGender = 2    --男，   2，女
+    self.myBaseData.young = 1     --1,青年，   2,老年
     --[[
         uid
         wFaceID           
@@ -64,14 +66,17 @@ function DataManager:init()
         dwLoveLiness      
         lUserScore        
         lUserInsure       
-        cbGender          
+        cbGender  --性别        
         cbMoorMachine     
         szAccounts        
         szNickName        
         szGroupName       
         cbShowServerStatus
         isFirstLogin      
-        rmb               
+        rmb   
+        --
+        headimgurl
+        city         
     ]]
 --onDeskData
     --下标为serverChairId
@@ -149,6 +154,30 @@ function DataManager:init()
     bIsCreate     1:创建 0:加入
     dwRoomNum     输入的房间号或算好的房间号
     ]] 
+    self.IndexRecords = 0       -----检索一场详细游戏数据的HistroyRecords[i]的i值
+    self.ThisTableRecords = 0   -----检索本局的历史数据key值，HistroyRecords最后一行数据,0没有开局,游戏一局结算时插入该值
+    self.HistroyRecords = {}    -----游戏历史每场详细数据 ----第一维的数据为登录游戏时，服务器发送的历史数据
+    self.HistroyRecords.ItemCount = 0           ----ItemCount记录历史数据的条数
+    -- for i=1,20 do                                   ----第三维的数据是该场次四个玩家每一局的数据
+    --     self.HistroyRecords[i] = {}
+    --     self.HistroyRecords[i].wTable = 0            --未分解的数据，包含日期、时间、桌子号
+    --     self.HistroyRecords[i].lScore = 0            --该场次的总积分
+    --     self.HistroyRecords[i].dwUserID = 0          --用户账号
+    --     self.HistroyRecords[i].cbType = 1            --模式，1、进园子 2、敞开怀
+    --  self.HistroyRecords[i].Records = {}
+    --  for j=1,16 do
+    --      self.HistroyRecords[i].Records[j] = {}
+    --         for n=1,4 do             ---该场次一局的结算数据，包含4个玩家
+    --             self.HistroyRecords[i].Records[j][n] = {}
+    --             self.HistroyRecords[i].Records[j][n].lScore = 0         --该局的结算分
+    --             self.HistroyRecords[i].Records[j][n].dwUserID = 0       --用户id
+    --             self.HistroyRecords[i].Records[j][n].username = "admin"       --用户名
+    --         end
+    --     end
+        
+    -- end
+
+
     self.zhangJiData = {}
     self.zhangJiCount = 5
     for i=1,16 do

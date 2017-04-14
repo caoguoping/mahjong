@@ -92,7 +92,7 @@ bool TTSocketClient::recvDateLogin()
 			wPacketSizeSave = wPacketSize = pInfoHead.wPacketSize - sizeof(TCP_Info);  //去除TCP_info后的长度
 			if (wPacketSize > SOCKET_TCP_BUFFER)
 			{
-				log("TTSocketClient recvDataLogin wPacketSize > 4096, error!");
+				log("TTSocketClient recvDataLogin wPacketSize > 16384, error!");
 				continue;
 			}
 			if (mSocketLogin == 0)
@@ -167,7 +167,7 @@ bool TTSocketClient::recvDateGame()
 			wPacketSizeSave = wPacketSize = pInfoHead.wPacketSize - sizeof(TCP_Info);  //去除TCP_info后的长度
 			if (wPacketSize > SOCKET_TCP_BUFFER)
 			{
-				log("TTSocketClient recvDataGame wPacketSize > 4096, error!");
+				log("TTSocketClient recvDataGame wPacketSize > 16384, error!");
 				continue;
 			}
 			if (mSocketGame == 0)
@@ -316,6 +316,7 @@ int TTSocketClient::closeMySocket(unsigned char bSocketType)
 #ifdef WIN32
 	return (closesocket(socketTmp));
 #else
+	shutdown(socketTmp,SHUT_RDWR);
 	return (close(socketTmp));
 #endif
 	
