@@ -63,6 +63,9 @@ function ActionManager:init()
         self.outNode[i]:runAction( self.jianTouTimeLines[i])
         self.jianTouNodes[i]:setVisible(false)
     end
+
+
+
 end
 
 function ActionManager:playAction(actIndex, clientId)
@@ -72,15 +75,16 @@ function ActionManager:playAction(actIndex, clientId)
     self.nodeAction:setPositionY(girl.effPosY[clientId])
 end
 
+--clientId ==0时
 function ActionManager:playJianTou(clientId, posx, posy)
     for i=1,4 do
         self.jianTouNodes[i]:setVisible(false)
     end
-    self.jianTouNodes[clientId]:setVisible(true)
-    self.jianTouTimeLines[clientId]:gotoFrameAndPlay(0, true)
-    self.jianTouNodes[clientId]:setPosition(posx, posy + 30)
-
-
+    if clientId ~= 0 then
+        self.jianTouNodes[clientId]:setVisible(true)
+        self.jianTouTimeLines[clientId]:gotoFrameAndPlay(0, true)
+        self.jianTouNodes[clientId]:setPosition(posx, posy + 30)
+    end
 end
 
 

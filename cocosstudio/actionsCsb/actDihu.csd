@@ -2,19 +2,19 @@
   <PropertyGroup Name="actDihu" Type="Node" ID="bd7e19d7-4bd8-49a2-8188-27cf0259154e" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="90" Speed="1.0000">
+      <Animation Duration="69" Speed="1.0000">
         <Timeline ActionTag="-1477323281" Property="Position">
-          <PointFrame FrameIndex="90" X="0.0000" Y="0.0000">
+          <PointFrame FrameIndex="69" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
         </Timeline>
         <Timeline ActionTag="-1477323281" Property="Scale">
-          <ScaleFrame FrameIndex="90" X="1.0000" Y="1.0000">
+          <ScaleFrame FrameIndex="69" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
         <Timeline ActionTag="-1477323281" Property="RotationSkew">
-          <ScaleFrame FrameIndex="90" X="0.0000" Y="0.0000">
+          <ScaleFrame FrameIndex="69" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
@@ -89,27 +89,6 @@
             <TextureFile Type="Normal" Path="actions/dihu/dihu_00022.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="69" Tween="False">
-            <TextureFile Type="Normal" Path="actions/dihu/dihu_00023.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="72" Tween="False">
-            <TextureFile Type="Normal" Path="actions/dihu/dihu_00024.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="75" Tween="False">
-            <TextureFile Type="Normal" Path="actions/dihu/dihu_00025.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="78" Tween="False">
-            <TextureFile Type="Normal" Path="actions/dihu/dihu_00026.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="81" Tween="False">
-            <TextureFile Type="Normal" Path="actions/dihu/dihu_00027.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="84" Tween="False">
-            <TextureFile Type="Normal" Path="actions/dihu/dihu_00028.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="87" Tween="False">
-            <TextureFile Type="Normal" Path="actions/dihu/dihu_00029.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="90" Tween="False">
             <TextureFile Type="Normal" Path="bg/touming.png" Plist="" />
           </TextureFrame>
         </Timeline>

@@ -235,3 +235,75 @@ function display.getRunningScene()
     local scene = cc.Director:getInstance():getRunningScene()
     return scene
 end
+
+
+
+--裁剪圆形
+--[[
+以上两个方法，区别是剪切后缩放到哪个图片的大小。第一个是缩放到模板图片大小，第二个方法是缩放到原始图片（比如头像）大小。
+local sp = display.createMaskedSprite("head.png", "mask.png")
+]]
+
+function display.createMaskedSprite(srcFile, maskFile)  
+    local src = display.newSprite(srcFile)  
+    local mask = display.newSprite(maskFile)  
+  
+    local size_src = src:getContentSize()  
+    local size_mask = mask:getContentSize()  
+  
+    local canva = cc.RenderTexture:create(size_src.width, size_src.height, cc.TEXTURE2_D_PIXEL_FORMAT_RGB_A8888)  
+      
+    local ratiow = size_src.width / size_mask.width  
+    local ratioh = size_src.height / size_mask.height  
+    mask:setScaleX(ratiow)  
+    mask:setScaleY(ratioh)  
+  
+    mask:setPosition(size_src.width / 2, size_src.height / 2)  
+    src:setPosition(size_src.width / 2, size_src.height / 2)  
+  
+    local blendfunc_mask = cc.blendFunc(gl.ONE, gl.ZERO)  
+    mask:setBlendFunc(blendfunc_mask)  
+    local blendfunc_src = cc.blendFunc(gl.DST_ALPHA, gl.ZERO)  
+    src:setBlendFunc(blendfunc_src)  
+  
+    canva:begin()  
+    mask:visit()  
+    src:visit()  
+    canva:endToLua()  
+  
+    local masked_sprite = cc.Sprite:createWithTexture(canva:getSprite():getTexture())  
+    masked_sprite:setFlippedY(true)  
+    return masked_sprite  
+end  
+  
+function display.createCircleSprite(srcFile, maskFile)  
+    local src = display.newSprite(srcFile)  
+    local mask = display.newSprite(maskFile)  
+  
+    local size_src = src:getContentSize()  
+    local size_mask = mask:getContentSize()  
+  
+    local canva = cc.RenderTexture:create(size_mask.width, size_mask.height, cc.TEXTURE2_D_PIXEL_FORMAT_RGB_A8888)  
+      
+    local ratiow = size_mask.width / size_src.width  
+    local ratioh = size_mask.height / size_src.height  
+    src:setScaleX(ratiow)  
+    src:setScaleY(ratioh)  
+  
+    mask:setPosition(size_mask.width / 2, size_mask.height / 2)  
+    src:setPosition(size_mask.width / 2, size_mask.height / 2)  
+  
+    local blendfunc_mask = cc.blendFunc(gl.ONE, gl.ZERO)  
+    mask:setBlendFunc(blendfunc_mask)  
+    local blendfunc_src = cc.blendFunc(gl.DST_ALPHA, gl.ZERO)  
+    src:setBlendFunc(blendfunc_src)  
+  
+    canva:begin()  
+    mask:visit()  
+    src:visit()  
+    canva:endToLua()  
+  
+    local masked_sprite = cc.Sprite:createWithTexture(canva:getSprite():getTexture())  
+    masked_sprite:setFlippedY(true)  
+    return masked_sprite  
+end  

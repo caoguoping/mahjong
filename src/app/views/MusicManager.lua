@@ -36,6 +36,11 @@ end
 
 --1,男，  2，女
 function MusicManager:playCardValueEffect( sex,  young, cardValue)
+    print("sex "..sex.."  young "..young.."  cardCalue "..cardValue)
+    print("soundCnt into ")
+    if sex == 0 then
+        sex = 2
+    end
     local maxNum = soundCnt[sex][young][cardValue]
     local randNum = math.random(maxNum)
     local strSoundName

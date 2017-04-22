@@ -16,12 +16,7 @@ function LayerManager:inits( )
 	self.LoginScene = nil
 	self.NowLayer = nil
 	self.Layers = {}
-	self.Layers[1] = nil
-	self.Layers[2] = nil
 	self.boxes = {}
-	self.boxes[1] = nil
-	self.boxes[2] = nil
-	self.boxes[3] = nil
 
 end
 
@@ -37,7 +32,10 @@ LayerManager.boxIndex = table.enumTable({
 	"RulesBox",
 	"ZhanJiListBox",
 	"TuiGuangBox",
-	"SettingBox"
+	"SettingBox",
+	"RankShareBox",
+	"ShoppingBox",
+	"PersonInfoBox",
 
 })
 

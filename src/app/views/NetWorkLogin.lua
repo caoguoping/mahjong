@@ -25,12 +25,24 @@ function NetWorkLogin:inits()
     eventDispatcher:addEventListenerWithFixedPriority(listener, 1)
 end
 
+function NetWorkLogin:loginFail( rcv )
+    TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Login)
+    local popupbox =  import(".popUpBox",CURRENT_MODULE_NAME).create() 
+    popupbox:setInfo(Strings.connectLoginFail)
+    local btnOk, btnCancel  = popupbox:getBtns()
+    btnOk:onClicked(function (  )
+    popupbox:remove()
+    end)
+    btnCancel:onClicked(function (  )
+    popupbox:remove()
+    end)
+end
 
 function NetWorkLogin:handleEventLogin( event)
     local rcv = DataRcv:create(event)
     local wMainCmd = rcv:readWORD()
     local wSubCmd = rcv:readWORD()
-    print("Login Main "..wMainCmd..", Sub "..wSubCmd)
+    --print("Login Main "..wMainCmd..", Sub "..wSubCmd)
   
     if  wMainCmd == 0 then
         if  wSubCmd == 1 then
@@ -45,8 +57,48 @@ function NetWorkLogin:handleEventLogin( event)
         elseif wSubCmd == 105 then
             self:registerRole(rcv)
         elseif wSubCmd == 101 then
-            TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Login)
-         elseif wSubCmd == 108 then         ---游戏登录，向服务器获取该玩家的历史记录
+            self:loginFail(rcv)
+           
+        elseif wSubCmd == 108 then         ---游戏登录，向服务器获取该玩家的历史记录
+           local wCount = rcv:readWORD()  -- 战绩总条数
+           local wFlag = rcv:readWORD()    -- 分包情况使用 超过50条 0 - 不是最后一条 1 - 最后一条       
+           --2个空字节
+           print("wCount",wCount)
+           rcv:readDWORD()
+           local data = dataMgr.HistroyRecords
+           if wFlag == 0 then
+                for i= data.ItemCount+1, data.ItemCount+50 do 
+                    data[i] = {}
+                    --data[i].wTable = rcv:readUInt64()
+                    data[i].lScore = rcv:readUInt64()
+                    data[i].wTableID = rcv:readDWORD()
+                    data[i].wData = rcv:readDWORD()
+                    data[i].cbType = rcv:readByte()
+
+                    -- 7个空字节
+                     rcv:readDWORD()
+                     rcv:readWORD()
+                     rcv:readByte()
+                end
+                data.ItemCount = data.ItemCount + 50
+            elseif wFlag == 1 then
+                for i = 1, wCount do 
+                    data[i] = {}
+                    data[i].lScore = rcv:readUInt64()
+                    data[i].wTableID = rcv:readDWORD()
+                    data[i].wData = rcv:readDWORD()
+                    data[i].cbType = rcv:readByte() 
+                    -- 7个空字节
+                    rcv:readDWORD()
+                    rcv:readWORD()
+                    rcv:readByte()
+                    print(data[i].wTableID)
+                end 
+                data.ItemCount = wCount
+                print(wCount)
+            end 
+
+        elseif wSubCmd == 108 then         ---游戏登录，向服务器获取该玩家的历史记录
            local wCount = rcv:readWORD()  -- 战绩总条数
            local wFlag = rcv:readWORD()    -- 分包情况使用 超过50条 0 - 不是最后一条 1 - 最后一条       
            --2个空字节
@@ -68,6 +120,8 @@ function NetWorkLogin:handleEventLogin( event)
                      rcv:readByte()
                 end
                 data.ItemCount = data.ItemCount + 50
+                ----游戏重新登录后，赋初始值KEY值
+                dataMgr.ThisTableRecords = data.ItemCount
             elseif wFlag == 1 then
                 for i = 1, wCount do 
                     data[i] = {}
@@ -157,6 +211,10 @@ function NetWorkLogin:loginComplete( rcv )
     layerMgr:showLayer(layerMgr.layIndex.MainLayer)
     --musicMgr:playMusic("bgMusic.mp3", true)
     local mainLayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
+
+    --显示mainLayer的剪切头像
+    mainLayer:cutHeadImg()
+
     mainLayer:refresh()
 
 end
@@ -188,7 +246,14 @@ function NetWorkLogin:registerRole( rcv)
     snd:wrString(szPassPortID, 38)
     snd:wrString(szCompellation, 32)
     snd:wrString(uid, 32)
+    if  device.platform == "android" then
+
+    else
+        
+    end
+    snd:wrString(dataMgr.myBaseData.headimgurl, 200)
     snd:wrByte(3)
+
     snd:sendData(netTb.SocketType.Login)
     snd:release();
     rcv:destroys()

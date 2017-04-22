@@ -10,11 +10,13 @@ netTb.SocketType =
 	Game   = 1,
 }
 --netTb.ip = "192.168.3.15"
+--netTb.ip = "192.168.3.19"
 netTb.ip = "101.37.20.36"
 netTb.port =
 {
     login = 5050,
-    game = 5010,
+    game = 5010,    --15 或 36
+    --game = 5020,      -- 19 
     jinyunzi = 5010,
     changkaihuan = 5011,
 }
@@ -131,7 +133,7 @@ soundCnt[1][1][9 ] = 1
 --补花(10)， 碰(11)，杠(12），胡（13）， 杠开（14）， 天胡（15）， 地胡（16）
 soundCnt[1][1][10] =4
 soundCnt[1][1][11] =4 
-soundCnt[1][1][12] =0
+soundCnt[1][1][12] =1
 soundCnt[1][1][13] =1
 soundCnt[1][1][14] =1 
 soundCnt[1][1][15] =1 
@@ -175,7 +177,7 @@ soundCnt[2][1][9 ] =1
 --补花， 碰，杠，胡， 杠开， 天胡， 地胡
 soundCnt[2][1][10] =4 
 soundCnt[2][1][11] =3 
-soundCnt[2][1][12] =0 
+soundCnt[2][1][12] =1 
 soundCnt[2][1][13] =1 
 soundCnt[2][1][14] =1 
 soundCnt[2][1][15] =1 
@@ -220,7 +222,7 @@ soundCnt[1][2][9 ] =1
 --补花， 碰，杠，胡， 杠开， 天胡， 地胡
 soundCnt[1][2][10] =4 
 soundCnt[1][2][11] =3 
-soundCnt[1][2][12] =0 
+soundCnt[1][2][12] =1 
 soundCnt[1][2][13] =1 
 soundCnt[1][2][14] =1 
 soundCnt[1][2][15] =1 
@@ -267,7 +269,7 @@ soundCnt[2][2][10] =4
 soundCnt[2][2][11] =3 
 soundCnt[2][2][12] =1 
 soundCnt[2][2][13] =1 
-soundCnt[2][2][14] =0
+soundCnt[2][2][14] =1
 soundCnt[2][2][15] =1 
 soundCnt[2][2][16] =1 
 --条
@@ -292,8 +294,8 @@ soundCnt[2][2][40] =4
 soundCnt[2][2][41] =2 
 --东南西北
 soundCnt[2][2][49] =2 
-soundCnt[2][2][50] =3 
-soundCnt[2][2][51] =4 
-soundCnt[2][2][52] =2 
+soundCnt[2][2][51] =3 
+soundCnt[2][2][53] =4 
+soundCnt[2][2][55] =2 
 
 

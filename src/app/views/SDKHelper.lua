@@ -25,7 +25,6 @@ function SDKHelper:inits()
     eventDispatcher:addEventListenerWithFixedPriority(listener, 1)
 end
 
-
 function SDKHelper:handleSDKLogin( event)
     local sdkData = SDKLoginData:create(event)
     local openid = sdkData:readOpenid()
@@ -36,12 +35,33 @@ function SDKHelper:handleSDKLogin( event)
 
     dataMgr.myBaseData.uid = openid
     dataMgr.myBaseData.szNickName = nickName
+    if sex == 0 then
+        sex = math.random(2)   --随机性别
+    end
     dataMgr.myBaseData.cbGender = sex
+
+
     dataMgr.myBaseData.headimgurl = headimgurl
     dataMgr.myBaseData.city = city
 
-    print("openid "..openid.."  nickName "..nickName.." sex "..sex.." headimgurl "..headimgurl.." city "..city)
-    layerMgr.LoginScene:startLogin(openid)
+        local xmlHttpReq = cc.XMLHttpRequest:new()
+        dataMgr:getUrlImgByClientId(xmlHttpReq, 1, dataMgr.myBaseData.headimgurl,
+        function ()
+            if xmlHttpReq.readyState == 4 and (xmlHttpReq.status >= 200 and xmlHttpReq.status < 207) then
+                local fileData = xmlHttpReq.response
+                local fullFileName = cc.FileUtils:getInstance():getWritablePath()..xmlHttpReq._urlFileName
+                print("LUA-print"..fullFileName)
+                local file = io.open(fullFileName,"wb")
+                file:write(fileData)
+                file:close()
+                layerMgr.LoginScene:startLogin(openid)
+            end
+        end
+        )
+    --dataMgr:getUrlImgByClientId(1, dataMgr.myBaseData.headimgurl)
+
+    print("openid "..openid.."  nickName "..nickName.." sex "..sex.." headimgurl "..headimgurl.." city "..city.." cbGender "..dataMgr.myBaseData.cbGender)
+
 
 end
 

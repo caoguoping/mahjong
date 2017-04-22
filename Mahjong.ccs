@@ -28,13 +28,6 @@
             <Image Name="buhua_00020.png" />
             <Image Name="buhua_00021.png" />
             <Image Name="buhua_00022.png" />
-            <Image Name="buhua_00023.png" />
-            <Image Name="buhua_00024.png" />
-            <Image Name="buhua_00025.png" />
-            <Image Name="buhua_00026.png" />
-            <Image Name="buhua_00027.png" />
-            <Image Name="buhua_00028.png" />
-            <Image Name="buhua_00029.png" />
           </Folder>
           <Folder Name="dihu">
             <Image Name="dihu_00000.png" />
@@ -60,45 +53,31 @@
             <Image Name="dihu_00020.png" />
             <Image Name="dihu_00021.png" />
             <Image Name="dihu_00022.png" />
-            <Image Name="dihu_00023.png" />
-            <Image Name="dihu_00024.png" />
-            <Image Name="dihu_00025.png" />
-            <Image Name="dihu_00026.png" />
-            <Image Name="dihu_00027.png" />
-            <Image Name="dihu_00028.png" />
-            <Image Name="dihu_00029.png" />
           </Folder>
           <Folder Name="ganghoukaihua">
-            <Image Name="ganghoukaihua_00000.png" />
-            <Image Name="ganghoukaihua_00001.png" />
-            <Image Name="ganghoukaihua_00002.png" />
-            <Image Name="ganghoukaihua_00003.png" />
-            <Image Name="ganghoukaihua_00004.png" />
-            <Image Name="ganghoukaihua_00005.png" />
-            <Image Name="ganghoukaihua_00006.png" />
-            <Image Name="ganghoukaihua_00007.png" />
-            <Image Name="ganghoukaihua_00008.png" />
-            <Image Name="ganghoukaihua_00009.png" />
-            <Image Name="ganghoukaihua_00010.png" />
-            <Image Name="ganghoukaihua_00011.png" />
-            <Image Name="ganghoukaihua_00012.png" />
-            <Image Name="ganghoukaihua_00013.png" />
-            <Image Name="ganghoukaihua_00014.png" />
-            <Image Name="ganghoukaihua_00015.png" />
-            <Image Name="ganghoukaihua_00016.png" />
-            <Image Name="ganghoukaihua_00017.png" />
-            <Image Name="ganghoukaihua_00018.png" />
-            <Image Name="ganghoukaihua_00019.png" />
-            <Image Name="ganghoukaihua_00020.png" />
-            <Image Name="ganghoukaihua_00021.png" />
-            <Image Name="ganghoukaihua_00022.png" />
-            <Image Name="ganghoukaihua_00023.png" />
-            <Image Name="ganghoukaihua_00024.png" />
-            <Image Name="ganghoukaihua_00025.png" />
-            <Image Name="ganghoukaihua_00026.png" />
-            <Image Name="ganghoukaihua_00027.png" />
-            <Image Name="ganghoukaihua_00028.png" />
-            <Image Name="ganghoukaihua_00029.png" />
+            <Image Name="gangkai_00000.png" />
+            <Image Name="gangkai_00001.png" />
+            <Image Name="gangkai_00002.png" />
+            <Image Name="gangkai_00003.png" />
+            <Image Name="gangkai_00004.png" />
+            <Image Name="gangkai_00005.png" />
+            <Image Name="gangkai_00006.png" />
+            <Image Name="gangkai_00007.png" />
+            <Image Name="gangkai_00008.png" />
+            <Image Name="gangkai_00009.png" />
+            <Image Name="gangkai_00010.png" />
+            <Image Name="gangkai_00011.png" />
+            <Image Name="gangkai_00012.png" />
+            <Image Name="gangkai_00013.png" />
+            <Image Name="gangkai_00014.png" />
+            <Image Name="gangkai_00015.png" />
+            <Image Name="gangkai_00016.png" />
+            <Image Name="gangkai_00017.png" />
+            <Image Name="gangkai_00018.png" />
+            <Image Name="gangkai_00019.png" />
+            <Image Name="gangkai_00020.png" />
+            <Image Name="gangkai_00021.png" />
+            <Image Name="gangkai_00022.png" />
           </Folder>
           <Folder Name="gangpai">
             <Image Name="gang_00000.png" />
@@ -124,13 +103,6 @@
             <Image Name="gang_00020.png" />
             <Image Name="gang_00021.png" />
             <Image Name="gang_00022.png" />
-            <Image Name="gang_00023.png" />
-            <Image Name="gang_00024.png" />
-            <Image Name="gang_00025.png" />
-            <Image Name="gang_00026.png" />
-            <Image Name="gang_00027.png" />
-            <Image Name="gang_00028.png" />
-            <Image Name="gang_00029.png" />
           </Folder>
           <Folder Name="huaban">
             <Image Name="huaban_00004.png" />
@@ -238,13 +210,6 @@
             <Image Name="hu_00020.png" />
             <Image Name="hu_00021.png" />
             <Image Name="hu_00022.png" />
-            <Image Name="hu_00023.png" />
-            <Image Name="hu_00024.png" />
-            <Image Name="hu_00025.png" />
-            <Image Name="hu_00026.png" />
-            <Image Name="hu_00027.png" />
-            <Image Name="hu_00028.png" />
-            <Image Name="hu_00029.png" />
           </Folder>
           <Folder Name="jiantou">
             <Image Name="jiantou_00000.png" />
@@ -300,13 +265,6 @@
             <Image Name="peng_00020.png" />
             <Image Name="peng_00021.png" />
             <Image Name="peng_00022.png" />
-            <Image Name="peng_00023.png" />
-            <Image Name="peng_00024.png" />
-            <Image Name="peng_00025.png" />
-            <Image Name="peng_00026.png" />
-            <Image Name="peng_00027.png" />
-            <Image Name="peng_00028.png" />
-            <Image Name="peng_00029.png" />
           </Folder>
           <Folder Name="shezi">
             <Image Name="sezi_0.png" />
@@ -342,13 +300,6 @@
             <Image Name="tianhu_00020.png" />
             <Image Name="tianhu_00021.png" />
             <Image Name="tianhu_00022.png" />
-            <Image Name="tianhu_00023.png" />
-            <Image Name="tianhu_00024.png" />
-            <Image Name="tianhu_00025.png" />
-            <Image Name="tianhu_00026.png" />
-            <Image Name="tianhu_00027.png" />
-            <Image Name="tianhu_00028.png" />
-            <Image Name="tianhu_00029.png" />
           </Folder>
         </Folder>
         <Folder Name="actionsCsb">
@@ -383,6 +334,7 @@
           <Image Name="frame_3.png" />
           <Image Name="frame_4.png" />
           <Image Name="frame_pop-up.png" />
+          <Image Name="headImage_1.png" />
           <Image Name="headshot_1.png" />
           <Image Name="headshot_2.png" />
           <Image Name="headshot_3.png" />
@@ -395,10 +347,10 @@
           <Image Name="icon_card.png" />
           <Image Name="icon_setting_1.png" />
           <Image Name="icon_setting_2.png" />
-          <Image Name="img_bj.png" />
           <Image Name="tishi.png" />
           <Image Name="touming.png" />
           <Image Name="touming2.png" />
+          <Image Name="toumingHead.png" />
         </Folder>
         <Folder Name="button">
           <Folder Name="new">
@@ -1137,6 +1089,7 @@
           <Project Name="NewLobby.csd" Type="Scene" />
           <Project Name="RulesBox.csd" Type="Node" />
           <Project Name="SetBox.csd" Type="Node" />
+          <Project Name="shopping.csd" Type="Node" />
           <Project Name="TuiGuangBox.csd" Type="Node" />
           <Project Name="ZhanJiInfolist.csd" Type="Node" />
           <Project Name="ZhanJiListBox.csd" Type="Node" />
@@ -1293,7 +1246,6 @@
           <Image Name="text_house_2.png" />
         </Folder>
         <Folder Name="gameui">
-          <Image Name="headshot_1.png" />
           <Image Name="img_dir_0.png" />
           <Image Name="img_dir_1.png" />
           <Image Name="img_dir_2.png" />
@@ -1303,6 +1255,7 @@
           <Image Name="img_GameUI_BgNEW.png" />
           <Image Name="img_GameUI_ready.png" />
           <Image Name="img_GameUI_sendcardbg.png" />
+          <Image Name="img_ready.png" />
           <Image Name="sezi_value2.png" />
           <Image Name="test1.png" />
           <Image Name="zk_t_dong_shangxia_01.png" />
@@ -1426,6 +1379,8 @@
           <Image Name="button_service_2.png" />
           <Image Name="button_share_1.png" />
           <Image Name="button_share_2.png" />
+          <Image Name="button_store_1.png" />
+          <Image Name="button_store_2.png" />
           <Image Name="flower.png" />
           <Image Name="img_new-point.png" />
           <Image Name="label_acquaintance.png" />
@@ -1461,6 +1416,10 @@
           <Image Name="img_MainMenu_dizhuNo9.png" />
           <Image Name="leftcardNum.png" />
           <Image Name="zhongkong_t_shuzi.png" />
+        </Folder>
+        <Folder Name="personInfo">
+          <Image Name="bg.png" />
+          <Image Name="img_card.png" />
         </Folder>
         <Folder Name="RankShare">
           <Image Name="bg_1.png" />
@@ -1503,6 +1462,18 @@
           <Image Name="img_music.png" />
           <Image Name="title_setting.png" />
         </Folder>
+        <Folder Name="shopping">
+          <Image Name="bg_store.png" />
+          <Image Name="button_buy_1.png" />
+          <Image Name="button_buy_2.png" />
+          <Image Name="follow.jpg" />
+          <Image Name="text_10.png" />
+          <Image Name="text_168.png" />
+          <Image Name="text_30.png" />
+          <Image Name="text_6.png" />
+          <Image Name="text_88.png" />
+          <Image Name="text_888.png" />
+        </Folder>
         <Folder Name="TuiGuang">
           <Image Name="bg_inner.png" />
           <Image Name="bg_number.png" />
@@ -1543,6 +1514,7 @@
         <Project Name="LoginScene.csd" Type="Scene" />
         <Project Name="popUpBox.csd" Type="Node" />
         <Project Name="RankShare.csd" Type="Node" />
+        <Project Name="personInfo.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="12" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Image_642" ActionTag="-2062138533" Alpha="180" Tag="71" IconVisible="False" LeftMargin="-8.0000" RightMargin="-8.0000" TopMargin="-4.5000" BottomMargin="-4.5000" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="6" Scale9Height="5" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_642" ActionTag="-2062138533" Alpha="165" Tag="71" IconVisible="False" LeftMargin="-8.0000" RightMargin="-8.0000" TopMargin="-4.5000" BottomMargin="-4.5000" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="6" Scale9Height="5" ctype="ImageViewObjectData">
             <Size X="16.0000" Y="9.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -203,10 +203,10 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="RankShare/img_changkaihuai.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="FileNode_1" ActionTag="-1175581508" Tag="131" IconVisible="True" LeftMargin="80.0000" RightMargin="-80.0000" TopMargin="-100.0000" BottomMargin="100.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+              <AbstractNodeData Name="FileNode_1" ActionTag="-1175581508" Tag="131" IconVisible="True" LeftMargin="70.8928" RightMargin="-70.8928" TopMargin="-94.7963" BottomMargin="94.7963" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <AnchorPoint />
-                <Position X="80.0000" Y="100.0000" />
+                <Position X="70.8928" Y="94.7963" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />

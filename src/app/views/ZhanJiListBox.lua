@@ -2,7 +2,6 @@
 local CURRENT_MODULE_NAME = ...
 local dataMgr = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
-local musicMgr = import(".MusicManager"):getInstance()
 
 local ZhanJiListBox = class("ZhanJiListBox", display.newLayer)
 function ZhanJiListBox:ctor()
@@ -37,7 +36,7 @@ function ZhanJiListBox:ctor()
 			local Text_fangjianhao = oneNode:getChildByName("Text_fangjianhao")
 			local Text_jifen = oneNode:getChildByName("Text_jifen")
 				---解析房间号
-			Text_date:setString(os.date("%Y/%m/%d/%H:%M",dataMgr.HistroyRecords[i].wData))
+			Text_date:setString(os.date("%Y/%m/%d %H:%M",dataMgr.HistroyRecords[i].wData))
 			
 			Text_fangjianhao:setString(dataMgr.HistroyRecords[i].wTableID)
 				---获取积分
@@ -61,11 +60,15 @@ function ZhanJiListBox:ctor()
 				dataMgr.IndexRecords = i
 				print("dataMgr.IndexRecords",dataMgr.IndexRecords)
 				---根据索引，检索该场数据是否存在
+				if dataMgr.HistroyRecords[dataMgr.IndexRecords].Records == nil then
 				dataMgr.HistroyRecords[dataMgr.IndexRecords].Records = {}
+				end
+				
 				local Hcount = 0  
-				for k,v in pairs(dataMgr.HistroyRecords[dataMgr.IndexRecords].Records) do  
+				for k,v in ipairs(dataMgr.HistroyRecords[dataMgr.IndexRecords].Records) do  
 				Hcount = Hcount + 1 
 				end
+				print("Hcount",Hcount)
 				---Hcount== 0 数据不存在，向服务器发送获取数据请求
 				if Hcount == 0 then
 					---打开详细信息界面

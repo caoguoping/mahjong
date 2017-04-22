@@ -217,6 +217,7 @@ function CardManager:removeHandCards( )
     for i=1,#self.handCards do
         self.handCards[i]:removeFromParent()
     end
+    self.handCards = {}
     if  self.cardDraw  then
         self.cardDraw:removeFromParent()
         self.cardDraw = nil
@@ -544,7 +545,7 @@ function CardManager:rcvOutCard(outCard )
     self.nodeDachu[clientChair]:setVisible(true)
 	self.imgBigDachu[clientChair]:loadTexture(outValue..".png")
 
-    musicMgr:playCardValueEffect(dataMgr.myBaseData.cbGender ,dataMgr.myBaseData.young,  outValue)
+    musicMgr:playCardValueEffect(dataMgr.onDeskData[outCard.wOutCardUser + 1].cbGender ,dataMgr.onDeskData[outCard.wOutCardUser + 1].young,  outValue)
 	
     self.stndCell[clientChair][14]:setVisible(false)
 	
@@ -596,13 +597,6 @@ function CardManager:inithandCards(drawCardValue)
 		self.handCards[i].sn = i
 		self.handCards[i].clickTimes = 0
 
--- self.handCards[i].btnBg:onClicked(
-		-- 	function ()
-		-- 		-- self.handCards[i].clickTimes = self.handCards[i].clickTimes + 1
-		-- 		-- if self.handCards[i].clickTimes == 1 then
-		-- 		-- 	self.handCards[i]:setPositionY(30)
-		-- 		-- elseif self.handCards[i].clickTimes == 2 then
-		-- 		-- 	--self.handCards[i].clickTimes == 0
 
 	end
 

@@ -2,23 +2,23 @@
   <PropertyGroup Name="actBuhua" Type="Node" ID="fc3da3af-5e31-4611-aff4-5081dce4243d" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="90" Speed="1.0000">
-        <Timeline ActionTag="-682937583" Property="Position">
-          <PointFrame FrameIndex="90" X="5.3128" Y="2.1251">
+      <Animation Duration="69" Speed="1.0000">
+        <Timeline ActionTag="1067360779" Property="Position">
+          <PointFrame FrameIndex="69" X="0.5123" Y="0.3690">
             <EasingData Type="0" />
           </PointFrame>
         </Timeline>
-        <Timeline ActionTag="-682937583" Property="Scale">
-          <ScaleFrame FrameIndex="90" X="1.0000" Y="1.0000">
+        <Timeline ActionTag="1067360779" Property="Scale">
+          <ScaleFrame FrameIndex="69" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
-        <Timeline ActionTag="-682937583" Property="RotationSkew">
-          <ScaleFrame FrameIndex="90" X="0.0000" Y="0.0000">
+        <Timeline ActionTag="1067360779" Property="RotationSkew">
+          <ScaleFrame FrameIndex="69" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
-        <Timeline ActionTag="-682937583" Property="FileData">
+        <Timeline ActionTag="1067360779" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
             <TextureFile Type="Normal" Path="actions/buhua/buhua_00000.png" Plist="" />
           </TextureFrame>
@@ -89,27 +89,6 @@
             <TextureFile Type="Normal" Path="actions/buhua/buhua_00022.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="69" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00023.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="72" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00024.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="75" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00025.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="78" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00026.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="81" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00027.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="84" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00028.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="87" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00029.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="90" Tween="False">
             <TextureFile Type="Normal" Path="bg/touming.png" Plist="" />
           </TextureFrame>
         </Timeline>
@@ -117,10 +96,10 @@
       <ObjectData Name="Node" Tag="67" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Sprite_1" ActionTag="-682937583" Tag="68" IconVisible="False" LeftMargin="-494.6872" RightMargin="-505.3128" TopMargin="-322.1251" BottomMargin="-317.8749" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Sprite_1" ActionTag="1067360779" Tag="9352" IconVisible="False" LeftMargin="-739.4877" RightMargin="-740.5123" TopMargin="-640.3690" BottomMargin="-639.6310" ctype="SpriteObjectData">
             <Size X="32.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="5.3128" Y="2.1251" />
+            <Position X="0.5123" Y="0.3690" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

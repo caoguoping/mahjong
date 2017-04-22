@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="1409" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Image13" ActionTag="487003845" Tag="1435" IconVisible="False" LeftMargin="330.1055" RightMargin="-446.1055" TopMargin="-68.1756" BottomMargin="-92.8244" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="20" Scale9Height="55" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image13" ActionTag="487003845" Tag="1435" IconVisible="False" LeftMargin="294.6478" RightMargin="-410.6478" TopMargin="-68.1756" BottomMargin="-92.8244" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="20" Scale9Height="55" ctype="ImageViewObjectData">
             <Size X="116.0000" Y="161.0000" />
             <Children>
               <AbstractNodeData Name="Image_face" ActionTag="-1127117664" Tag="1436" IconVisible="False" LeftMargin="14.8889" RightMargin="13.1111" TopMargin="6.0734" BottomMargin="48.9266" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
@@ -21,14 +21,14 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="388.1055" Y="-12.3244" />
+            <Position X="352.6478" Y="-12.3244" />
             <Scale ScaleX="0.6500" ScaleY="0.6500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="card/mehand/Frame_ziji_pingpaizheng_13.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image14" ActionTag="476860114" Tag="1437" IconVisible="False" LeftMargin="394.4352" RightMargin="-513.4352" TopMargin="-68.1756" BottomMargin="-92.8244" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="23" Scale9Height="55" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image14" ActionTag="476860114" Tag="1437" IconVisible="False" LeftMargin="358.9781" RightMargin="-477.9781" TopMargin="-68.1756" BottomMargin="-92.8244" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="23" Scale9Height="55" ctype="ImageViewObjectData">
             <Size X="119.0000" Y="161.0000" />
             <Children>
               <AbstractNodeData Name="Image_face" ActionTag="-1824911709" Tag="1438" IconVisible="False" LeftMargin="13.8888" RightMargin="17.1112" TopMargin="6.0734" BottomMargin="48.9266" LeftEage="29" RightEage="29" TopEage="53" BottomEage="53" Scale9OriginX="29" Scale9OriginY="53" Scale9Width="30" Scale9Height="1" ctype="ImageViewObjectData">
@@ -43,7 +43,7 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="453.9352" Y="-12.3244" />
+            <Position X="418.4781" Y="-12.3244" />
             <Scale ScaleX="0.6500" ScaleY="0.6500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -149,7 +149,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Node_2" ActionTag="1985133801" Tag="32077" IconVisible="True" LeftMargin="-166.1027" RightMargin="166.1027" TopMargin="1.2480" BottomMargin="-1.2480" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="Node_2" ActionTag="1985133801" Tag="32077" IconVisible="True" LeftMargin="-177.9714" RightMargin="177.9714" TopMargin="0.4002" BottomMargin="-0.4002" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="Image1" ActionTag="-1316731177" Tag="1417" IconVisible="False" LeftMargin="-136.2676" RightMargin="-2.7324" TopMargin="-69.4235" BottomMargin="-91.5765" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="43" Scale9Height="55" ctype="ImageViewObjectData">
@@ -242,13 +242,13 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="-166.1027" Y="-1.2480" />
+            <Position X="-177.9714" Y="-0.4002" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Node_3" ActionTag="156441200" Tag="32078" IconVisible="True" LeftMargin="42.0124" RightMargin="-42.0124" TopMargin="-2.7706" BottomMargin="2.7706" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="Node_3" ActionTag="156441200" Tag="32078" IconVisible="True" LeftMargin="22.5138" RightMargin="-22.5138" TopMargin="-3.4661" BottomMargin="3.4661" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="Image1" ActionTag="2057157150" Tag="1423" IconVisible="False" LeftMargin="-131.9073" RightMargin="4.9073" TopMargin="-65.4049" BottomMargin="-95.5951" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="31" Scale9Height="55" ctype="ImageViewObjectData">
@@ -341,13 +341,13 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="42.0124" Y="2.7706" />
+            <Position X="22.5138" Y="3.4661" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Node_4" ActionTag="969312448" Tag="32079" IconVisible="True" LeftMargin="244.1278" RightMargin="-244.1278" TopMargin="2.7794" BottomMargin="-2.7794" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="Node_4" ActionTag="969312448" Tag="32079" IconVisible="True" LeftMargin="216.9988" RightMargin="-216.9988" TopMargin="2.7797" BottomMargin="-2.7797" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="Image1" ActionTag="1639117827" Tag="1429" IconVisible="False" LeftMargin="-123.0942" RightMargin="5.0942" TopMargin="-70.9549" BottomMargin="-90.0451" LeftEage="48" RightEage="48" TopEage="53" BottomEage="53" Scale9OriginX="48" Scale9OriginY="53" Scale9Width="22" Scale9Height="55" ctype="ImageViewObjectData">
@@ -440,7 +440,7 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint />
-            <Position X="244.1278" Y="-2.7794" />
+            <Position X="216.9988" Y="-2.7797" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

@@ -6,7 +6,7 @@
       <ObjectData Name="Node" Tag="1165" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="bentouming_1" ActionTag="-962718838" Alpha="218" Tag="223" IconVisible="False" LeftMargin="-8.0000" RightMargin="-8.0000" TopMargin="-4.5000" BottomMargin="-4.5000" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="6" Scale9Height="5" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="bentouming_1" ActionTag="-962718838" Alpha="165" Tag="223" IconVisible="False" LeftMargin="-8.0000" RightMargin="-8.0000" TopMargin="-4.5000" BottomMargin="-4.5000" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="6" Scale9Height="5" ctype="ImageViewObjectData">
             <Size X="16.0000" Y="9.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
@@ -262,7 +262,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="bg/headshot_example.png" Plist="" />
+            <FileData Type="Normal" Path="bg/toumingHead.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="headshot_top_28" ActionTag="500338876" Tag="2027" IconVisible="False" LeftMargin="-406.6187" RightMargin="288.6187" TopMargin="-198.9156" BottomMargin="77.9156" ctype="SpriteObjectData">
             <Size X="118.0000" Y="121.0000" />

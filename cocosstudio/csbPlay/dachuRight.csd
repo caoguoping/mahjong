@@ -17,7 +17,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5073" Y="0.7113" />
                 <PreSize X="0.7097" Y="1.0392" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -61,7 +61,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4953" Y="0.7110" />
                 <PreSize X="0.6929" Y="1.0095" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_9.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -83,7 +83,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5654" Y="0.7191" />
                 <PreSize X="0.7521" Y="1.0928" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -105,7 +105,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4397" Y="0.7949" />
                 <PreSize X="0.7395" Y="1.0707" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -149,7 +149,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4943" Y="0.7222" />
                 <PreSize X="0.7213" Y="1.0600" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -193,7 +193,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4993" Y="0.7126" />
                 <PreSize X="0.7040" Y="1.0192" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -237,7 +237,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4854" Y="0.7337" />
                 <PreSize X="0.7586" Y="1.0928" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_9.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -259,7 +259,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5654" Y="0.7078" />
                 <PreSize X="0.7521" Y="1.0707" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -281,7 +281,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4914" Y="0.7238" />
                 <PreSize X="0.7458" Y="1.0707" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -325,7 +325,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4930" Y="0.7028" />
                 <PreSize X="0.7213" Y="1.0392" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -369,7 +369,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4990" Y="0.7109" />
                 <PreSize X="0.7097" Y="1.0095" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_bing_9.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -413,7 +413,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4728" Y="0.7144" />
                 <PreSize X="0.7652" Y="1.0707" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_9.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -435,7 +435,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5911" Y="0.7019" />
                 <PreSize X="0.7521" Y="1.0707" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_4.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -457,7 +457,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4914" Y="0.7109" />
                 <PreSize X="0.7458" Y="1.0600" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_zi_baiban.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -501,7 +501,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4900" Y="0.7036" />
                 <PreSize X="0.7273" Y="1.0192" />
-                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_tiao_8.png" Plist="" />
+                <FileData Type="Normal" Path="card/mehand/paimian/mahjong_tile_big_wan_9.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />

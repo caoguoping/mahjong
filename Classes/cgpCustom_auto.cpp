@@ -2113,7 +2113,7 @@ int lua_register_cgpCustom_SDKLoginData(lua_State* tolua_S)
     return 1;
 }
 
-int lua_cgpCustom_Helpers_callWechatShare(lua_State* tolua_S)
+int lua_cgpCustom_Helpers_callWechatShareJoin(lua_State* tolua_S)
 {
     int argc = 0;
     Helpers* cobj = nullptr;
@@ -2133,32 +2133,94 @@ int lua_cgpCustom_Helpers_callWechatShare(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_Helpers_callWechatShare'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_Helpers_callWechatShareJoin'", nullptr);
         return 0;
     }
 #endif
 
     argc = lua_gettop(tolua_S)-1;
-    if (argc == 1) 
+    if (argc == 4) 
     {
         const char* arg0;
+        const char* arg1;
+        int arg2;
+        int arg3;
 
-        std::string arg0_tmp; ok &= luaval_to_std_string(tolua_S, 2, &arg0_tmp, "Helpers:callWechatShare"); arg0 = arg0_tmp.c_str();
+        std::string arg0_tmp; ok &= luaval_to_std_string(tolua_S, 2, &arg0_tmp, "Helpers:callWechatShareJoin"); arg0 = arg0_tmp.c_str();
+
+        std::string arg1_tmp; ok &= luaval_to_std_string(tolua_S, 3, &arg1_tmp, "Helpers:callWechatShareJoin"); arg1 = arg1_tmp.c_str();
+
+        ok &= luaval_to_int32(tolua_S, 4,(int *)&arg2, "Helpers:callWechatShareJoin");
+
+        ok &= luaval_to_int32(tolua_S, 5,(int *)&arg3, "Helpers:callWechatShareJoin");
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Helpers_callWechatShare'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Helpers_callWechatShareJoin'", nullptr);
             return 0;
         }
-        cobj->callWechatShare(arg0);
+        cobj->callWechatShareJoin(arg0, arg1, arg2, arg3);
         lua_settop(tolua_S, 1);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "Helpers:callWechatShare",argc, 1);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "Helpers:callWechatShareJoin",argc, 4);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_callWechatShare'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_callWechatShareJoin'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_Helpers_callWechatShareResult(lua_State* tolua_S)
+{
+    int argc = 0;
+    Helpers* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"Helpers",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (Helpers*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_Helpers_callWechatShareResult'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 2) 
+    {
+        const char* arg0;
+        int arg1;
+
+        std::string arg0_tmp; ok &= luaval_to_std_string(tolua_S, 2, &arg0_tmp, "Helpers:callWechatShareResult"); arg0 = arg0_tmp.c_str();
+
+        ok &= luaval_to_int32(tolua_S, 3,(int *)&arg1, "Helpers:callWechatShareResult");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Helpers_callWechatShareResult'", nullptr);
+            return 0;
+        }
+        cobj->callWechatShareResult(arg0, arg1);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "Helpers:callWechatShareResult",argc, 2);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_callWechatShareResult'.",&tolua_err);
 #endif
 
     return 0;
@@ -2357,7 +2419,8 @@ int lua_register_cgpCustom_Helpers(lua_State* tolua_S)
     tolua_cclass(tolua_S,"Helpers","Helpers","",nullptr);
 
     tolua_beginmodule(tolua_S,"Helpers");
-        tolua_function(tolua_S,"callWechatShare",lua_cgpCustom_Helpers_callWechatShare);
+        tolua_function(tolua_S,"callWechatShareJoin",lua_cgpCustom_Helpers_callWechatShareJoin);
+        tolua_function(tolua_S,"callWechatShareResult",lua_cgpCustom_Helpers_callWechatShareResult);
         tolua_function(tolua_S,"callJavaLogin",lua_cgpCustom_Helpers_callJavaLogin);
         tolua_function(tolua_S,"sendLoginData",lua_cgpCustom_Helpers_sendLoginData);
         tolua_function(tolua_S,"jstringTostring",lua_cgpCustom_Helpers_jstringTostring);

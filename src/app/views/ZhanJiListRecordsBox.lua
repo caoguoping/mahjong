@@ -2,7 +2,6 @@
 local CURRENT_MODULE_NAME = ...
 local dataMgr = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
-local musicMgr = import(".MusicManager"):getInstance()
 local scheduler = cc.Director:getInstance():getScheduler()
 
 local ZhanJiListRecordsBox = class("ZhanJiListRecordsBox", display.newLayer)
@@ -62,7 +61,7 @@ function ZhanJiListRecordsBox:ctor()
 			rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(3000, 2000))
 			rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))
 
-			 
+
 			for k,v in ipairs(dataMgr.HistroyRecords[count].Records) do  
 			Hcount = Hcount + 1
 			end
@@ -72,6 +71,7 @@ function ZhanJiListRecordsBox:ctor()
 			if Hcount>0 then
 				scheduler:unscheduleScriptEntry(sss)
 			end
+			
 			--流水
 			local itemHeigth = 108
 			local itemWidth = 934
@@ -91,51 +91,51 @@ function ZhanJiListRecordsBox:ctor()
 				local name3 = oneNode:getChildByName("FileNode_3"):getChildByName("name_Text")
 				local name4 = oneNode:getChildByName("FileNode_4"):getChildByName("name_Text")
 				num:setString(i)
-				for j=1,4 do
-					if j == 1 then
-						txtfen1:setString(dataMgr.HistroyRecords[count].Records[i].lScore1)
-						print("lScore1"..dataMgr.HistroyRecords[count].Records[i].lScore1)
-						--headimg1:setString(self.zhangJiData)
-						name1:setString(dataMgr.HistroyRecords[count].Records[i].username1)
-					---
-						if dataMgr.HistroyRecords[count].Records[i].lScore1 > 0 then
-							AllNum[1].winnum = AllNum[1].winnum + 1
-						end
-						AllNum[1].name = dataMgr.HistroyRecords[count].Records[i].username1
-						AllNum[1].dwUserID = dataMgr.HistroyRecords[count].Records[i].dwUserID1
-						AllNum[1].lScore = AllNum[1].lScore + dataMgr.HistroyRecords[count].Records[i].lScore1
-					elseif j==2 then
-						txtfen2:setString(dataMgr.HistroyRecords[count].Records[i].lScore2)
-						name2:setString(dataMgr.HistroyRecords[count].Records[i].username2)
-					---
-						if dataMgr.HistroyRecords[count].Records[i].lScore2 > 0 then
-							AllNum[2].winnum = AllNum[2].winnum + 1
-						end
-						AllNum[2].name = dataMgr.HistroyRecords[count].Records[i].username2
-						AllNum[2].dwUserID = dataMgr.HistroyRecords[count].Records[i].dwUserID2
-						AllNum[2].lScore = AllNum[2].lScore + dataMgr.HistroyRecords[count].Records[i].lScore2
-					elseif j == 3 then
-						txtfen3:setString(dataMgr.HistroyRecords[count].Records[i].lScore3)
-						name3:setString(dataMgr.HistroyRecords[count].Records[i].username3)
-					-----
-						if dataMgr.HistroyRecords[count].Records[i].lScore3 > 0 then
-							AllNum[3].winnum = AllNum[3].winnum + 1
-						end
-						AllNum[3].name = dataMgr.HistroyRecords[count].Records[i].username3
-						AllNum[3].dwUserID = dataMgr.HistroyRecords[count].Records[i].dwUserID3
-						AllNum[3].lScore = AllNum[3].lScore + dataMgr.HistroyRecords[count].Records[i].lScore3
-					else
-						txtfen4:setString(dataMgr.HistroyRecords[count].Records[i].lScore4)
-						name4:setString(dataMgr.HistroyRecords[count].Records[i].username4)
-					------
-						if dataMgr.HistroyRecords[count].Records[i].lScore4 > 0 then
-							AllNum[4].winnum = AllNum[4].winnum + 1
-						end
-						AllNum[4].name = dataMgr.HistroyRecords[count].Records[i].username4
-						AllNum[4].dwUserID = dataMgr.HistroyRecords[count].Records[i].dwUserID4
-						AllNum[4].lScore = AllNum[4].lScore + dataMgr.HistroyRecords[count].Records[i].lScore4
-					end
-				end 
+				local hhhcount = 0
+				for k,v in ipairs(dataMgr.HistroyRecords[count].Records[i]) do  
+				hhhcount = hhhcount + 1
+				end
+				print("hhhcount:::::",hhhcount)
+				txtfen1:setString(dataMgr.HistroyRecords[count].Records[i].lScore1)
+				print("lScore1"..dataMgr.HistroyRecords[count].Records[i].lScore1)
+				--headimg1:setString(self.zhangJiData)
+				name1:setString(dataMgr.HistroyRecords[count].Records[i].username1)
+				print("username1"..dataMgr.HistroyRecords[count].Records[i].username1)
+				if dataMgr.HistroyRecords[count].Records[i].lScore1 > 0 then
+					AllNum[1].winnum = AllNum[1].winnum + 1
+				end
+				AllNum[1].name = dataMgr.HistroyRecords[count].Records[i].username1
+				AllNum[1].dwUserID = dataMgr.HistroyRecords[count].Records[i].dwUserID1
+				AllNum[1].lScore = AllNum[1].lScore + dataMgr.HistroyRecords[count].Records[i].lScore1
+				---
+				txtfen2:setString(dataMgr.HistroyRecords[count].Records[i].lScore2)
+				name2:setString(dataMgr.HistroyRecords[count].Records[i].username2)
+				if dataMgr.HistroyRecords[count].Records[i].lScore2 > 0 then
+					AllNum[2].winnum = AllNum[2].winnum + 1
+				end
+				AllNum[2].name = dataMgr.HistroyRecords[count].Records[i].username2
+				AllNum[2].dwUserID = dataMgr.HistroyRecords[count].Records[i].dwUserID2
+				AllNum[2].lScore = AllNum[2].lScore + dataMgr.HistroyRecords[count].Records[i].lScore2
+				------
+				txtfen3:setString(dataMgr.HistroyRecords[count].Records[i].lScore3)
+				name3:setString(dataMgr.HistroyRecords[count].Records[i].username3)
+				if dataMgr.HistroyRecords[count].Records[i].lScore3 > 0 then
+					AllNum[3].winnum = AllNum[3].winnum + 1
+				end
+				AllNum[3].name = dataMgr.HistroyRecords[count].Records[i].username3
+				AllNum[3].dwUserID = dataMgr.HistroyRecords[count].Records[i].dwUserID3
+				AllNum[3].lScore = AllNum[3].lScore + dataMgr.HistroyRecords[count].Records[i].lScore3
+				-----
+				txtfen4:setString(dataMgr.HistroyRecords[count].Records[i].lScore4)
+				name4:setString(dataMgr.HistroyRecords[count].Records[i].username4)
+				if dataMgr.HistroyRecords[count].Records[i].lScore4 > 0 then
+					AllNum[4].winnum = AllNum[4].winnum + 1
+				end
+				AllNum[4].name = dataMgr.HistroyRecords[count].Records[i].username4
+				AllNum[4].dwUserID = dataMgr.HistroyRecords[count].Records[i].dwUserID4
+				AllNum[4].lScore = AllNum[4].lScore + dataMgr.HistroyRecords[count].Records[i].lScore4
+				
+				
 				local oneLayout = ccui.Layout:create()
 				oneLayout:addChild(oneNode)
 				oneNode:setPosition(cc.p(itemWidth * 0.5, -itemHeigth * 0.5))
@@ -145,12 +145,12 @@ function ZhanJiListRecordsBox:ctor()
 			end
 			ListView_liushui:pushBackCustomItem(ccui.Layout:create())  --bugs fake
 			----------------总分排行榜的显示
-			for i = 1,4 do
-				local min = AllNum[i].lScore
+			for i1 = 1,4 do
+				local min = AllNum[i1].lScore
 				for j = 1,3 do --重新排序，根据总分从大到小
 					if min >= AllNum[j].lScore then
-					local atnum = AllNum[i]
-					AllNum[i] = AllNum[j]
+					local atnum = AllNum[i1]
+					AllNum[i1] = AllNum[j]
 					AllNum[j] = atnum
 					end
 				end
@@ -172,9 +172,10 @@ function ZhanJiListRecordsBox:ctor()
 			Image_zongfen:getChildByName("Text_fen_4"):setString(AllNum[4].lScore)
 			Image_zongfen:getChildByName("FileNode_6_2"):getChildByName("name_Text"):setString(AllNum[4].name)
 
-			
+		print("zhangjilistrecords is over read")
 		end
 	end
+	
 
 
 		btnliushui:onClicked(

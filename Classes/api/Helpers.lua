@@ -5,9 +5,20 @@
 
 --------------------------------
 -- 
--- @function [parent=#Helpers] callWechatShare 
+-- @function [parent=#Helpers] callWechatShareJoin 
 -- @param self
 -- @param #char imgPath
+-- @param #char url
+-- @param #int roomNum
+-- @param #int isToAll
+-- @return Helpers#Helpers self (return value: Helpers)
+        
+--------------------------------
+-- 
+-- @function [parent=#Helpers] callWechatShareResult 
+-- @param self
+-- @param #char imgPath
+-- @param #int isToAll
 -- @return Helpers#Helpers self (return value: Helpers)
         
 --------------------------------

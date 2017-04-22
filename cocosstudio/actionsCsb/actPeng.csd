@@ -2,23 +2,23 @@
   <PropertyGroup Name="actPeng" Type="Node" ID="7a7cb66c-d865-4773-a3bc-d5d91ec133d5" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="90" Speed="1.0000">
-        <Timeline ActionTag="603397255" Property="Position">
-          <PointFrame FrameIndex="90" X="0.0000" Y="0.0000">
+      <Animation Duration="69" Speed="1.0000">
+        <Timeline ActionTag="1242443757" Property="Position">
+          <PointFrame FrameIndex="69" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
         </Timeline>
-        <Timeline ActionTag="603397255" Property="Scale">
-          <ScaleFrame FrameIndex="90" X="1.0000" Y="1.0000">
+        <Timeline ActionTag="1242443757" Property="Scale">
+          <ScaleFrame FrameIndex="69" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
-        <Timeline ActionTag="603397255" Property="RotationSkew">
-          <ScaleFrame FrameIndex="90" X="0.0000" Y="0.0000">
+        <Timeline ActionTag="1242443757" Property="RotationSkew">
+          <ScaleFrame FrameIndex="69" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
-        <Timeline ActionTag="603397255" Property="FileData">
+        <Timeline ActionTag="1242443757" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
             <TextureFile Type="Normal" Path="actions/pengpai/peng_00000.png" Plist="" />
           </TextureFrame>
@@ -89,27 +89,6 @@
             <TextureFile Type="Normal" Path="actions/pengpai/peng_00022.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="69" Tween="False">
-            <TextureFile Type="Normal" Path="actions/pengpai/peng_00023.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="72" Tween="False">
-            <TextureFile Type="Normal" Path="actions/pengpai/peng_00024.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="75" Tween="False">
-            <TextureFile Type="Normal" Path="actions/pengpai/peng_00025.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="78" Tween="False">
-            <TextureFile Type="Normal" Path="actions/pengpai/peng_00026.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="81" Tween="False">
-            <TextureFile Type="Normal" Path="actions/pengpai/peng_00027.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="84" Tween="False">
-            <TextureFile Type="Normal" Path="actions/pengpai/peng_00028.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="87" Tween="False">
-            <TextureFile Type="Normal" Path="actions/pengpai/peng_00029.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="90" Tween="False">
             <TextureFile Type="Normal" Path="bg/touming.png" Plist="" />
           </TextureFrame>
         </Timeline>
@@ -117,7 +96,7 @@
       <ObjectData Name="Node" Tag="57" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Sprite_1" ActionTag="603397255" Tag="58" IconVisible="False" LeftMargin="-375.0000" RightMargin="-375.0000" TopMargin="-290.0000" BottomMargin="-290.0000" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Sprite_1" ActionTag="1242443757" Tag="9366" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-640.0000" BottomMargin="-640.0000" ctype="SpriteObjectData">
             <Size X="32.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />

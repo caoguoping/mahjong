@@ -37,20 +37,31 @@ function JiesuanBox:ctor()
     function()
         musicMgr:playEffect("game_button_click.mp3", false)
         dataMgr.isNormalEnd = true
+        print("btnContiue") 
         local snd = DataSnd:create(100, 2)
         snd:sendData(netTb.SocketType.Game)
         snd:release();
-        print("btnContiue") 
+        dataMgr.playerStatus = 0    --回到游戏前状态
         self:removeSelf()
+
+        --显示剩余钱
+        local playlayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+        for i=1,4 do
+            local svrId = dataMgr:getServiceChairId(i)
+            playlayer.txtScore[i]:setString(dataMgr.onDeskData[svrId].LeftMoney)
+        end
+
+
+
     end)
 
     --、分享按钮
     btnShare:onClicked(
     function()
-        musicMgr:playEffect("game_button_click.mp3", false)
-        dataMgr.isNormalEnd = true
-        print("btnShare") 
-        self:removeSelf()
+        -- musicMgr:playEffect("game_button_click.mp3", false)
+        -- dataMgr.isNormalEnd = true
+        -- print("btnShare") 
+        -- self:removeSelf()
     end)
 
     --顶部自摸、流局、点胡()
@@ -137,7 +148,7 @@ function JiesuanBox:initData( gameEndData )
             winClient = i
             fanSave = gameEndData.wFanCount[tempWinSvr]
         end
-        print("\n\n\ntempWinSvr "..tempWinSvr.." fanSave "..fanSave.."  i  "..i.." winClient "..winClient)
+       -- print("\n\n\ntempWinSvr "..tempWinSvr.." fanSave "..fanSave.."  i  "..i.." winClient "..winClient)
     end
 
 --流局
@@ -194,7 +205,13 @@ function JiesuanBox:initData( gameEndData )
 --显示名称
     --赢家
     self.txtNameWin:setString(dataMgr.onDeskData[winSvr].szNickName)
-    self.imgHeadWin:loadTexture("test"..winSvr..".png")
+    
+    --赢家头像
+    local winHeadPath =  cc.FileUtils:getInstance():getWritablePath().."headImage_"..winClient..".png"
+    local headSize = self.imgHeadWin:getContentSize()
+    local sp = display.createCircleSprite(winHeadPath, "headshot_example.png"):addTo(self.imgHeadWin)
+    sp:setPosition(headSize.width * 0.5, headSize.height * 0.5)
+    
     if mySvrId == winSvr then
         self.imgBenjia:setVisible(true)
     else
@@ -211,22 +228,29 @@ function JiesuanBox:initData( gameEndData )
     end
     for i=1,3 do  --下标为1,2,3(对应图形）,   值为服务器ID（对应数据）
         local svrIndex = leftSvr[i]
+        local clientId = dataMgr.chair[svrIndex]  --客户端id
         --显示名称
         self.txtName[i]:setString(dataMgr.onDeskData[svrIndex].szNickName)
         --显示分数
         self.txtScore[i]:setString(tostring(gameEndData.lGameScore[svrIndex]))
-        self.imgClient[i]:setVisible(false)
-        self.imgHead[i]:loadTexture("test"..svrIndex..".png")
+        self.imgClient[i]:setVisible(false)   --本家
+
+        --剩余三家头像，
+        local HeadPath =  cc.FileUtils:getInstance():getWritablePath().."headImage_"..clientId..".png"
+        local headSize = self.imgHead[i]:getContentSize()
+        local sp2 = display.createCircleSprite(HeadPath, "headshot_example.png"):addTo(self.imgHead[i])
+        sp2:setPosition(headSize.width * 0.5, headSize.height * 0.5)
+
         --自己
         if svrIndex == mySvrId then
-            self.imgClient[i]:setVisible(true)
+            self.imgClient[i]:setVisible(true)    --本家
         end
     end
 
 --一定有赢家
     local isMeWin = 0   --自己是否胡牌， 1，胡牌
 
-    print("gameEndData.dwChiHuKind[mySvrId] "..gameEndData.dwChiHuKind[mySvrId])
+   -- print("gameEndData.dwChiHuKind[mySvrId] "..gameEndData.dwChiHuKind[mySvrId])
     if gameEndData.dwChiHuKind[mySvrId] ~= 0 then
        isMeWin = 1
     else
@@ -294,7 +318,7 @@ function JiesuanBox.create(  )
 end
 
 function JiesuanBox:setTopImg( index )  --1, 5, winDian ,winMo, loseDian, loseMo, liuju
-    print("setTopImg index "..index)
+   -- print("setTopImg index "..index)
     for i=1,5 do
          self.topImgs[i]:setVisible(false)
     end

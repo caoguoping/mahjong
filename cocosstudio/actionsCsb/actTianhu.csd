@@ -2,23 +2,23 @@
   <PropertyGroup Name="actTianhu" Type="Node" ID="6d90191c-4da4-4eb4-892a-744af42ea1d3" Version="3.10.0.0" />
   <Content ctype="GameProjectContent">
     <Content>
-      <Animation Duration="90" Speed="1.0000">
-        <Timeline ActionTag="-1028755148" Property="Position">
-          <PointFrame FrameIndex="90" X="0.6896" Y="0.5758">
+      <Animation Duration="69" Speed="1.0000">
+        <Timeline ActionTag="-892189006" Property="Position">
+          <PointFrame FrameIndex="69" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </PointFrame>
         </Timeline>
-        <Timeline ActionTag="-1028755148" Property="Scale">
-          <ScaleFrame FrameIndex="90" X="1.0000" Y="1.0000">
+        <Timeline ActionTag="-892189006" Property="Scale">
+          <ScaleFrame FrameIndex="69" X="1.0000" Y="1.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
-        <Timeline ActionTag="-1028755148" Property="RotationSkew">
-          <ScaleFrame FrameIndex="90" X="0.0000" Y="0.0000">
+        <Timeline ActionTag="-892189006" Property="RotationSkew">
+          <ScaleFrame FrameIndex="69" X="0.0000" Y="0.0000">
             <EasingData Type="0" />
           </ScaleFrame>
         </Timeline>
-        <Timeline ActionTag="-1028755148" Property="FileData">
+        <Timeline ActionTag="-892189006" Property="FileData">
           <TextureFrame FrameIndex="0" Tween="False">
             <TextureFile Type="Normal" Path="actions/tianhu/tianhu_00000.png" Plist="" />
           </TextureFrame>
@@ -89,27 +89,6 @@
             <TextureFile Type="Normal" Path="actions/tianhu/tianhu_00022.png" Plist="" />
           </TextureFrame>
           <TextureFrame FrameIndex="69" Tween="False">
-            <TextureFile Type="Normal" Path="actions/tianhu/tianhu_00023.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="72" Tween="False">
-            <TextureFile Type="Normal" Path="actions/tianhu/tianhu_00024.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="75" Tween="False">
-            <TextureFile Type="Normal" Path="actions/tianhu/tianhu_00025.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="78" Tween="False">
-            <TextureFile Type="Normal" Path="actions/tianhu/tianhu_00026.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="81" Tween="False">
-            <TextureFile Type="Normal" Path="actions/tianhu/tianhu_00027.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="84" Tween="False">
-            <TextureFile Type="Normal" Path="actions/tianhu/tianhu_00028.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="87" Tween="False">
-            <TextureFile Type="Normal" Path="actions/tianhu/tianhu_00029.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="90" Tween="False">
             <TextureFile Type="Normal" Path="bg/touming.png" Plist="" />
           </TextureFrame>
         </Timeline>
@@ -117,10 +96,10 @@
       <ObjectData Name="Node" Tag="63" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Sprite_1" ActionTag="-1028755148" Tag="64" IconVisible="False" LeftMargin="-739.3104" RightMargin="-740.6896" TopMargin="-640.5758" BottomMargin="-639.4242" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Sprite_1" ActionTag="-892189006" Tag="9369" IconVisible="False" LeftMargin="-740.0000" RightMargin="-740.0000" TopMargin="-640.0000" BottomMargin="-640.0000" ctype="SpriteObjectData">
             <Size X="32.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="0.6896" Y="0.5758" />
+            <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />

@@ -10,8 +10,6 @@ Helpers* Helpers::getInstance()
 	return m_instance;
 }
 
-
-
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 #include "platform/android/jni/JniHelper.h"
 #include <jni.h>
@@ -25,16 +23,23 @@ JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_LoginCallback(JNIEnv * en
 	const char* strOpenid     = helpers->jstringTostring(env, openid);
 	const char* strNickName   = helpers->jstringTostring(env, nickname);
 	const char* strSex        = helpers->jstringTostring(env, sex);
+	log("LUA-print jniCall before headimgurl");
 	const char* strHeadimgurl = helpers->jstringTostring(env, headimgurl);
+	log("LUA-print jniCall headimgurl");
 	const char* strCity       = helpers->jstringTostring(env, city);
 
-	strncpy(helpers->weChatData.openid    , strOpenid    , 32);
-	strncpy(helpers->weChatData.nickName  , strNickName  , 32);
-	strncpy(helpers->weChatData.sex       , strSex       , 32);
-	strncpy(helpers->weChatData.headimgurl, strHeadimgurl, 256);
-	strncpy(helpers->weChatData.city      , strCity      , 32);
+	memcpy(helpers->weChatData.openid    , strOpenid    , 32);
+	memcpy(helpers->weChatData.nickName  , strNickName  , 32);
+	memcpy(helpers->weChatData.sex       , strSex       , 32);
+	log("LUA-print jniCall before headimgurl copy");
+	memcpy(helpers->weChatData.headimgurl, strHeadimgurl, 256);
+	log("LUA-print jniCall headimgurl copy");
 
+	memcpy(helpers->weChatData.city      , strCity      , 32);
+
+	log("LUA-print jniCall headimgurl");
     helpers->sendLoginData();
+	log("LUA-print helpser->sendLoginData");
 }
 
 
@@ -68,19 +73,36 @@ void Helpers::callJavaLogin(void)
 	}
 }
 
-void Helpers::callWechatShare(const char* imgPath)
+// 邀请微信好友 path 图片路径  url 网址  ，  isToAll  1:分享到朋友圈， 0  分享给好友  
+void Helpers::callWechatShareJoin(const char* imgPath, const char* url,  int roomNum,  int isToAll)
 {
 	JniMethodInfo info;
-	bool ret = JniHelper::getStaticMethodInfo(info, "org/cocos2dx/lua/AppActivity", "weChatShare", "(Ljava/lang/String;)V");
+	bool ret = JniHelper::getStaticMethodInfo(info, "org/cocos2dx/lua/AppActivity", "WechatShareJoin", "(Ljava/lang/String;Ljava/lang/String;II)V");
+	if (ret)
+	{
+		log("LUA-print callWechatShare success\n");
+		jstring jimgPath = info.env->NewStringUTF(imgPath); 
+		jstring jurl = info.env->NewStringUTF(url); 
+		info.env->CallStaticVoidMethod(info.classID, info.methodID, jimgPath, jurl, roomNum, isToAll);
+		info.env->DeleteLocalRef(jimgPath);
+		info.env->DeleteLocalRef(jurl);
+	}
+}
+
+
+//分享战绩  //path 图片路径    isToAllFriends  1:分享到朋友圈， 0  分享给好友  
+void Helpers::callWechatShareResult(const char* imgPath, int isToAll)
+{
+	JniMethodInfo info;
+	bool ret = JniHelper::getStaticMethodInfo(info, "org/cocos2dx/lua/AppActivity", "weChatShare", "(Ljava/lang/String;I)V");
 	if (ret)
 	{
 		log("LUA-print callWechatShare success\n");
 		jstring jMsg = info.env->NewStringUTF(imgPath); 
-		info.env->CallStaticVoidMethod(info.classID, info.methodID, jMsg);
+		info.env->CallStaticVoidMethod(info.classID, info.methodID, jMsg, isToAll);
 		info.env->DeleteLocalRef(jMsg);
 	}
 }
-
 // void showExitPt(const char *title, const char *msg) {  　　
 // 	JniMethodInfo t;  　　
 // 	//getStaticMethodInfo判断是否在java中实现了名字showTipDialog的方法 　　

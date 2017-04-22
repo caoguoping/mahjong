@@ -12,15 +12,9 @@ local actMgr = import(".ActionManager"):getInstance()
 
 
 local PlayLayer = class("PlayLayer", display.newLayer)
-function PlayLayer:ctor()
-    --musicMgr:halfMusicVolume()
---test
---all Node
-    local rootNode = cc.CSLoader:createNode("playScene.csb"):addTo(self)
-    self.rootNode = rootNode
-    cardMgr:initAllNodes(self)
---bg
-    self.deskBgNode  = rootNode:getChildByName("FileNode_deskBg")
+
+function PlayLayer:ctorBg( )
+    self.deskBgNode  = self.rootNode:getChildByName("FileNode_deskBg")
     self.imgLight= {}
     self.imgFeng = {}
     self.imgNowFeng = {}
@@ -36,53 +30,91 @@ function PlayLayer:ctor()
     self.nodeShezi = self.deskBgNode:getChildByName("FileNode_shezi")
     self.imgShezi1 = self.nodeShezi:getChildByName("Image_1")
     self.imgShezi2 = self.nodeShezi:getChildByName("Image_2")
-    --self.clock:setString("0"..8)
-
---ui
-    self.deskUiNode  = rootNode:getChildByName("FileNode_deskUi")
+end
+function PlayLayer:ctorUi(  )
+    self.deskUiNode  = self.rootNode:getChildByName("FileNode_deskUi")
     self.btnActions = {}
-
-    --返回房间按钮， 如果是房主不断socket,掩藏，创建房间按钮变为返回按钮    ;如果是加入的人则退出房间，断socket
-    local btnBacks = self.deskUiNode:getChildByName("Button_back")
-    btnBacks:onClicked(
+        ---打开游戏记录
+    local btnRecodr = self.rootNode:getChildByName("FileNode_deskUi"):getChildByName("FileNode_field"):getChildByName("Button_Records")
+    btnRecodr:onClicked(
         function ()
+        layerMgr.boxes[layerMgr.boxIndex.ZhanJiBox] = import(".ZhanJiBox",CURRENT_MODULE_NAME).create()
+        end
+    )
+    --返回房间按钮， 如果是房主不断socket,隐藏，创建房间按钮变为返回按钮    ;如果是加入的人则退出房间，断socket
+    local btnBacks = self.deskUiNode:getChildByName("Button_back")
+    
+    --返回按钮实际处理函数
+    local funcRealBack =  function ()
             musicMgr:playEffect("game_button_click.mp3", false)
             if dataMgr.roomSet.bIsCreate == 1 then    --房主
-                --TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
                 local snd = DataSnd:create(3, 13)
                 snd:wrByte(1)   --起立
                 snd:sendData(netTb.SocketType.Game)
                 snd:release()
---                musicMgr:playMusic("bgMusic.mp3", true)
                 layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
                 local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
                 mainlayer:btnCreateOrBack(false)
+                mainlayer:refresh()
                 print("backHome fangzhu")
             else --非房主
                 TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
-                --musicMgr:playMusic("bgMusic.mp3", true)
                 layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
+                local mainLayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
+                mainLayer:refresh()
                 print("backHome no fangzhu")
             end
-        end)
+        end
+    btnBacks:onClicked(
+        --二级弹框
+        function ()
+            local popupbox =  import(".popUpBox",CURRENT_MODULE_NAME).create() 
+            if dataMgr.roomSet.bIsCreate == 1 then    --房主
+                popupbox:setInfo(Strings.backRoomFangzhu)
+            else
+                popupbox:setInfo(Strings.backRoomJoin)
+            end
 
+            local btnOk, btnCancel  = popupbox:getBtns()
+            btnOk:onClicked(function (  )
+                popupbox:remove()
+                funcRealBack()
+            end)
+            btnCancel:onClicked(function (  )
+                popupbox:remove()
+            end)
+        end
+    )
 
     self.headNode = {}  --头像节点
     self.txtScore = {}  --总积分
     self.txtSvrChair = {}  --服务器椅子ID，测试用
     self.imgHead = {}   --头像
+    self.imgReady = {}  --准备
 
-    for i=1,4 do
+    local personInfoX = {120, 120,620,860}
+    local personInfoY = {150,550, 570,400}
+    for i=1,4 do   --下标为clientId
         local strName = "FileNode_"..i
         self.headNode[i] = self.deskUiNode:getChildByName(strName)
         self.txtScore[i] = self.headNode[i]:getChildByName("Text_score")
         self.txtSvrChair[i] = self.headNode[i]:getChildByName("Text_svrId")
         self.imgHead[i] = self.headNode[i]:getChildByName("Image_head")
+        self.imgReady[i] = self.headNode[i]:getChildByName("Image_ready")
+
+        self.imgHead[i]:onTouch(
+        function(event)
+            if "began" == event.name then
+                layerMgr.boxes[layerMgr.boxIndex.PersonInfoBox] = import(".PersonInfoBox",CURRENT_MODULE_NAME).create()
+                layerMgr.boxes[layerMgr.boxIndex.PersonInfoBox]:init(i, personInfoX[i], personInfoY[i])
+            elseif "ended" == event.name then
+                layerMgr:removeBoxes(layerMgr.boxIndex.PersonInfoBox)
+            end
+        end)
         
-    end
+    end 
 
-
---剩余牌
+   --剩余牌
     self.txtLeftCard = self.deskUiNode:getChildByName("Text_leftCard")
     self.imgLeftCard = self.deskUiNode:getChildByName("Image_leftCard")
 
@@ -93,8 +125,11 @@ function PlayLayer:ctor()
         local strTmp = "FileNode_hua_"..i
         self.huaNode[i] = self.deskUiNode:getChildByName(strTmp)
         self.txtHuaNum[i] = self.huaNode[i]:getChildByName("Text_num")
-    end
---碰杠听胡过btn
+    end      
+end
+
+function PlayLayer:ctorUiBtns(  )
+    --碰杠听胡过btn
     for i=1,5 do
         local strName = "Button_"..i
         self.btnActions[i] = self.deskUiNode:getChildByName(strName)
@@ -188,25 +223,40 @@ function PlayLayer:ctor()
         end
 
         )
+end
 
+    --invite 邀请好友界面
+function PlayLayer:ctorInvite(  )
 
---invite 邀请好友界面
-    self.inviteNode = rootNode:getChildByName("FileNode_invite")
+    self.inviteNode = self.rootNode:getChildByName("FileNode_invite")
     self.txtRoomNum = self.inviteNode:getChildByName("Text_room")
         
     --解散房间 ,只发消息，收到状态变化，桌子号为无效时，解散房间
     self.btnDisRoom = self.inviteNode:getChildByName("Button_dismissRoom")
-    self.btnDisRoom:onClicked(
-        function ()
+    local funDisRoom = function (  )
             musicMgr:playEffect("game_button_click.mp3", false)
-        local snd = DataSnd:create(3, 12)
-        snd:sendData(netTb.SocketType.Game)
-        print("send 3,  12  disRoom")
-        snd:release()
-        local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
-        mainlayer:btnCreateOrBack(true)
-
-        end)
+            local snd = DataSnd:create(3, 12)
+            snd:sendData(netTb.SocketType.Game)
+            print("send 3,  12  disRoom")
+            snd:release()
+            local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
+            mainlayer:btnCreateOrBack(true)
+    end
+    self.btnDisRoom:onClicked(
+        --二级弹框
+        function ()
+            local popupbox =  import(".popUpBox",CURRENT_MODULE_NAME).create() 
+            popupbox:setInfo(Strings.dismissRoom)
+            local btnOk, btnCancel  = popupbox:getBtns()
+            btnOk:onClicked(function (  )
+                popupbox:remove()
+                funDisRoom()
+            end)
+            btnCancel:onClicked(function (  )
+                popupbox:remove()
+            end)
+        end
+        )
 
 
     --邀请微信好友
@@ -215,28 +265,25 @@ function PlayLayer:ctor()
         function ()
             musicMgr:playEffect("game_button_click.mp3", false)
             local targetPlatform = cc.Application:getInstance():getTargetPlatform()
-            if  cc.PLATFORM_OS_ANDROID == targetPlatform then
+            if  device.platform == "android" then
                 print(" android !!!!!!")
-                Helpers:callWechatShare("/sdcard/headshot_example.png") 
+                --path, roomNum, type, isToAllfriends
+                --//图片路径  ，roomNum,  type (1邀请好友打牌  2分享战绩)，  isToAllFriends(1分享到朋友圈，0分享给好友)
+                Helpers:callWechatShareJoin("/sdcard/headshot_example.png","http://101.37.20.36:8383/index.html", dataMgr.roomSet.dwRoomNum , 0) 
             else
                 print("windows!!!!!!")
             end
-            
-
-
-
         end)
+end
 
-    --     --解散房间
-    -- local self.btnDisRoom = self.deskUiNode:getChildByName("Button_dismissRoom")
-    -- self.btnDisRoom:onClicked(
-    --     function ()
-    --     local snd = DataSnd:create(3, 12)
-    --     snd:sendData(netTb.SocketType.Game)
-    --     snd:release()
-    --      --TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
-    --       layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
-    --     end)
+function PlayLayer:ctor()
+    local rootNode = cc.CSLoader:createNode("playScene.csb"):addTo(self)
+    self.rootNode = rootNode
+    cardMgr:initAllNodes(self)
+    self:ctorBg()
+    self:ctorUi()
+    self:ctorUiBtns()
+    self:ctorInvite()
 end
   
 function PlayLayer.create()
@@ -274,12 +321,7 @@ end
 
 --每局重新开始,更新界面和数据
 function PlayLayer:refresh( )
-    -- for i=1,4 do
-    --     self.imgLight[i]:setVisible(false)
-    --     self.imgFeng[i]:setVisible(false)
-    --     self.imgNowFeng[i]:setVisible(false)
-    --     self.headNode[i]:setVisible(false)
-    -- end
+
 
     cardMgr:hideAllCards()
     cardMgr:removeHandCards()
@@ -288,10 +330,18 @@ function PlayLayer:refresh( )
     for i=1,5 do
         self.btnActions[i]:setVisible(false)
     end
-    --self.imgLeftCard:setVisible(false)
-    --self.txtLeftCard:setVisible(false)
 
+    --隐藏箭头
+    actMgr:playJianTou(0, 0, 0 )
 
+    --隐藏所有人物信息， 补花信息
+    for i=1,4 do
+        self.imgReady[i]:setVisible(false)
+        self.huaNode[i]:setVisible(false)
+    end
+
+    self:stopClock()   --停定时器
+    self.txtClock:setString("0")
 
 end
 
@@ -300,28 +350,32 @@ function PlayLayer:waitJoin()
 
     self.nodeShezi:setVisible(false)
     self.inviteNode:setVisible(true)
-    
     self.txtRoomNum:setString(string.format("%07d", dataMgr.roomSet.dwRoomNum))
-
---cgpTest
-
-
 end
 
 --显示进来人   svrChairId[1, 4],  showOrHide  ,true 显示，   false 隐藏
 function PlayLayer:showPlayer(svrChairId ,showOrHide)  
     if showOrHide then
+
         dataMgr.joinPeople = dataMgr.joinPeople + 1
+        print("joinPeople "..dataMgr.joinPeople)
         local clientId = dataMgr.chair[svrChairId]
         self.headNode[clientId]:setVisible(true)
-        self.imgHead[clientId]:loadTexture("test"..svrChairId..".png")
-        self.txtScore[clientId]:setString(tostring(100))
-        self.txtSvrChair[clientId]:setString(tostring(svrChairId))  --test for name
+
+        --裁剪头像
+        local headPath = cc.FileUtils:getInstance():getWritablePath().."headImage_"..clientId..".png"
+        local headSize = self.imgHead[clientId]:getContentSize()
+        local sp = display.createCircleSprite(headPath, "headshot_example.png"):addTo(self.imgHead[clientId])
+        sp:setPosition(headSize.width * 0.5, headSize.height * 0.5)
+
+      --  print("left money "..dataMgr.onDeskData[svrChairId].LeftMoney)
+        self.txtScore[clientId]:setString(dataMgr.onDeskData[svrChairId].LeftMoney)
+        self.imgReady[clientId]:setVisible(true)
+
+        --self.txtSvrChair[clientId]:setString(tostring(svrChairId))  --test for name
     else
         dataMgr.joinPeople = dataMgr.joinPeople - 1
         local clientId = dataMgr.chair[svrChairId]
-        print(" svrId "..svrChairId)
-        print("clientId "..clientId)
         self.headNode[clientId]:setVisible(false)
     end
 
@@ -366,12 +420,105 @@ function PlayLayer:huPai(gameEndData)
     musicMgr:playCardValueEffect(dataMgr.myBaseData.cbGender ,dataMgr.myBaseData.young,  13)  --胡牌
     self:stopClock()  --定时器
 
-    local jiesuanBox = import(".JiesuanBox",CURRENT_MODULE_NAME).create()
-    jiesuanBox:initData(gameEndData)
-    layerMgr.boxes[layerMgr.boxIndex.JiesuanBox] = jiesuanBox
+    cardMgr:removeHandCards()
+    for i=1,4 do
+        cardMgr.stndNode[i]:setVisible(false)
+    end
+            
 
-    --清理手牌
-    self:refresh()
+    local mySvrId = dataMgr:getServiceChairId(1)  --已转 我 1，到4
+    local winClient = 1   --要显示的赢家的客户端ID,默认是自己
+    local winSvr = mySvrId   --赢家的服务器ID  
+    local fanSave = gameEndData.wFanCount[winSvr]
+    for i=2,4 do  --i 为客户端id
+        local tempWinSvr = dataMgr:getServiceChairId(i)
+        
+        if gameEndData.wFanCount[tempWinSvr] > fanSave then
+            winSvr = tempWinSvr
+            winClient = i
+            fanSave = gameEndData.wFanCount[tempWinSvr]
+        end
+--        print("\n\n\ntempWinSvr "..tempWinSvr.." fanSave "..fanSave.."  i  "..i.." winClient "..winClient)
+    end
+    if fanSave ~= 0 then  --有赢家
+        actMgr:playAction(4, winClient)
+    end
+
+    --放下牌
+    --碰杠的总数目
+    local pengGangNum = {}
+    for svr=1,4 do   --4家svrChairId
+        --杠
+        local clientId = dataMgr.chair[svr]  --客户端ChairId
+        pengGangNum[svr] = 0
+       
+        for i=1,4 do          --4堆
+            if girl.isCardValue(gameEndData.cbCardGang[svr][i]) then
+                pengGangNum[svr] = pengGangNum[svr] + 1
+                for j=1,4 do     --每堆的4张牌
+                    cardMgr.pengCell[clientId][pengGangNum[svr]][j]:setVisible(true)
+                    cardMgr.pengCellFace[clientId][pengGangNum[svr]][j]:setVisible(true)
+                  --  print("gameEndData.cbCardGang svr "..svr.."  i "..i.." j "..j)
+                    cardMgr.pengCellFace[clientId][pengGangNum[svr]][j]:loadTexture(gameEndData.cbCardGang[svr][i]..".png")
+                end
+            else
+               break
+            end
+        end
+
+        --碰
+        for i=1,4 do    --4堆
+            if girl.isCardValue(gameEndData.cbCardPeng[svr][i]) then
+                pengGangNum[svr] = pengGangNum[svr] + 1
+                for j=1,3 do
+                    cardMgr.pengCellFace[clientId][pengGangNum[svr]][j]:loadTexture(gameEndData.cbCardPeng[svr][i]..".png")
+                end
+            else
+               break
+            end
+        end
+
+        --手牌
+        local leftHandCounts = gameEndData.cbCardCount[svr]
+       -- print("leftHandCounts "..leftHandCounts.."  svr "..svr)
+        if svr == winSvr then   --赢家14张
+            cardMgr.pengCell[clientId][5]:setVisible(true)
+            cardMgr.pengCellFace[clientId][5]:setVisible(true)
+            cardMgr.pengCellFace[clientId][5]:loadTexture(gameEndData.cbCardData[svr][leftHandCounts  - 1]..".png")  --第13张
+            cardMgr.pengCell[clientId][6]:setVisible(true)
+            cardMgr.pengCellFace[clientId][6]:setVisible(true)
+            cardMgr.pengCellFace[clientId][6]:loadTexture(gameEndData.cbCardData[svr][leftHandCounts]..".png")          --第14张
+        else
+            cardMgr.pengCell[clientId][5]:setVisible(true)
+            cardMgr.pengCellFace[clientId][5]:setVisible(true)
+            cardMgr.pengCellFace[clientId][5]:loadTexture(gameEndData.cbCardData[svr][leftHandCounts]..".png")  --第13张
+        end
+
+        pengGangNum[svr] = pengGangNum[svr] + 1  --接着的节点显示 ,已碰 + 1
+        for i=pengGangNum[svr], 4 do    
+            for j=1,3 do
+                cardMgr.pengCell[clientId][i][j]:setVisible(true)
+                cardMgr.pengCellFace[clientId][i][j]:setVisible(true)
+                cardMgr.pengCellFace[clientId][i][j]:loadTexture(gameEndData.cbCardData[svr][(i - pengGangNum[svr])* 3 + j]..".png")  
+            end
+        end
+    end
+
+
+    local delay1  = cc.DelayTime:create(3.0)
+    local action = cc.Sequence:create(delay1 , cc.CallFunc:create(
+        function ()
+            if dataMgr.isNormalEnd == true then
+                local jiesuanBox = import(".JiesuanBox",CURRENT_MODULE_NAME).create()
+                print("step into jiesuanBox  in playerLayer")
+                jiesuanBox:initData(gameEndData)
+                layerMgr.boxes[layerMgr.boxIndex.JiesuanBox] = jiesuanBox
+                --清理手牌
+                self:refresh()
+            end
+
+        end))
+    self:runAction(action)  
 end
 
 
@@ -379,6 +526,12 @@ end
 function PlayLayer:sendCard(drawValue)
 --    musicMgr:stopMusic()
     musicMgr:playEffect("saizi.mp3", false)
+    for i=1,4 do
+        self.imgReady[i]:setVisible(false)
+    end
+    
+
+
    --一开始就禁止触摸
     cardMgr.imgTouchCard:setTouchEnabled(false)
     self.nodeShezi:setVisible(true)
@@ -924,14 +1077,14 @@ function PlayLayer:optMePGang(clientOpt, clientPro, optCard)
 
 --抓的牌就是碰杠的牌
     if cardMgr.cardDraw.cardValue == optCard then
-        print("cardMgr.cardDraw.cardValue == optCard "..cardMgr.cardDraw.cardValue.."  "..optCard)
+       -- print("cardMgr.cardDraw.cardValue == optCard "..cardMgr.cardDraw.cardValue.."  "..optCard)
         cardMgr.cardDraw:removeFromParent()
         --显示碰杠的牌，。。。cgpTest
         local pIndex = self:getPGangIndex(1, optCard)
         cardMgr.pengCell[1][pIndex][4]:setVisible(true)
         cardMgr.pengCellFace[1][pIndex][4]:loadTexture(optCard..".png")
     else      --有碰杠没有杠，下次抓牌时,非抓牌的碰杠
-        print("cardMgr.cardDraw.cardValue ~= optCard")
+       -- print("cardMgr.cardDraw.cardValue ~= optCard")
         for i=1,#cardMgr.handCards do
             if cardMgr.handCards[i].cardValue == optCard then    --要碰杠的值
                 cardMgr.handCards[i]:removeFromParent()
@@ -958,7 +1111,8 @@ end
 --其他玩家碰
 function PlayLayer:optOtherPeng( clientOpt, clientPro, optCard )
 
-    musicMgr:playCardValueEffect(dataMgr.myBaseData.cbGender ,dataMgr.myBaseData.young,  11)  --碰
+    local svrChair = dataMgr:getServiceChairId(clientOpt)
+    musicMgr:playCardValueEffect(dataMgr.onDeskData[svrChair].cbGender ,dataMgr.onDeskData[svrChair].young,  11)  --碰
     --开启定时器
     local playlayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer)
     playlayer:whichTurn(clientOpt)
@@ -980,7 +1134,8 @@ function PlayLayer:optOtherPeng( clientOpt, clientPro, optCard )
 end
 --其他玩家明杠
 function PlayLayer:optOtherMGang( clientOpt, clientPro, optCard )
-    musicMgr:playCardValueEffect(dataMgr.myBaseData.cbGender ,dataMgr.myBaseData.young,  12)  --杠
+    local svrChair = dataMgr:getServiceChairId(clientOpt)
+    musicMgr:playCardValueEffect(dataMgr.onDeskData[svrChair].cbGender ,dataMgr.onDeskData[svrChair].young,  12)  --杠
     local  pengGangNum = cardDataMgr.pengGangNum[clientOpt]  
     local gangNum =  cardDataMgr.gangNum[clientOpt]
     --cardMgr.stndCell[clientOpt][14]:setVisible(true)
@@ -996,9 +1151,11 @@ function PlayLayer:optOtherMGang( clientOpt, clientPro, optCard )
     cardDataMgr.gangNum[clientOpt] = gangNum + 1
     cardDataMgr.gangValue[clientOpt][gangNum + 1] = optCard
 end
+
 --其他玩家暗杠
 function PlayLayer:optOtherAGang(clientOpt, clientPro, optCard)
-    musicMgr:playCardValueEffect(dataMgr.myBaseData.cbGender ,dataMgr.myBaseData.young,  12)  --杠
+    local svrChair = dataMgr:getServiceChairId(clientOpt)
+    musicMgr:playCardValueEffect(dataMgr.onDeskData[svrChair].cbGender ,dataMgr.onDeskData[svrChair].young,  12)  --杠
     local  pengGangNum = cardDataMgr.pengGangNum[clientOpt]   
     local gangNum =  cardDataMgr.gangNum[clientOpt]
     --cardMgr.stndCell[clientOpt][14]:setVisible(true)
@@ -1017,7 +1174,8 @@ end
 --其他玩家碰杠
 function PlayLayer:optOtherPGang(clientOpt, clientPro, optCard)
     --显示碰杠的牌，。。。cgpTest
-    musicMgr:playCardValueEffect(dataMgr.myBaseData.cbGender ,dataMgr.myBaseData.young,  12)  --杠   
+        local svrChair = dataMgr:getServiceChairId(clientOpt)
+    musicMgr:playCardValueEffect(dataMgr.onDeskData[svrChair].cbGender ,dataMgr.onDeskData[svrChair].young,  12)  --杠   
     local pIndex = self:getPGangIndex(clientOpt, optCard)
     cardMgr.pengCell[clientOpt][pIndex][4]:setVisible(true)
     cardMgr.pengCellFace[clientOpt][pIndex][4]:loadTexture(optCard..".png")
@@ -1038,11 +1196,11 @@ end
 --只发给自己（其他人打的牌，等待自己操作）
 function PlayLayer:waitOption(options, card   )
 
-    print("\nWait options  "..options.."    \n")
+   -- print("\nWait options  "..options.."    \n")
     local actOption =  girl.getBitTable( options ) 
    
     for i=1,8 do
-        print(" "..actOption[i])
+       -- print(" "..actOption[i])
     end
     --timer
     self:whichTurn(1)
@@ -1050,7 +1208,7 @@ function PlayLayer:waitOption(options, card   )
     self.actCard = card   --操作的牌值
     self.huCard = card     --胡牌的牌值
 
-    print("\n################### card  "..card)
+   -- print("\n################### card  "..card)
     self.gangSaveValue = 0
 
     if actOption[1] == 1 then   --peng

@@ -28,6 +28,16 @@
             <FileData Type="Normal" Path="JieSuan/bg_players-win.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Image_head" ActionTag="-44484209" Tag="314" IconVisible="False" LeftMargin="-70.6788" RightMargin="-47.3212" TopMargin="-63.5970" BottomMargin="-57.4030" TouchEnable="True" LeftEage="38" RightEage="38" TopEage="39" BottomEage="39" Scale9OriginX="38" Scale9OriginY="39" Scale9Width="42" Scale9Height="43" ctype="ImageViewObjectData">
+            <Size X="118.0000" Y="121.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-11.6788" Y="3.0970" />
+            <Scale ScaleX="0.8000" ScaleY="0.8000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="bg/toumingHead.png" Plist="" />
+          </AbstractNodeData>
           <AbstractNodeData Name="headshot_top_28" ActionTag="-1071544499" Tag="231" IconVisible="False" LeftMargin="-71.3875" RightMargin="-46.6125" TopMargin="-63.5969" BottomMargin="-57.4031" ctype="SpriteObjectData">
             <Size X="118.0000" Y="121.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -38,16 +48,6 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="bg/headshot_top.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="Image_head" ActionTag="-44484209" Tag="314" IconVisible="False" LeftMargin="-71.3875" RightMargin="-46.6125" TopMargin="-63.5969" BottomMargin="-57.4031" LeftEage="38" RightEage="38" TopEage="39" BottomEage="39" Scale9OriginX="38" Scale9OriginY="39" Scale9Width="42" Scale9Height="43" ctype="ImageViewObjectData">
-            <Size X="118.0000" Y="121.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-12.3875" Y="3.0969" />
-            <Scale ScaleX="0.8000" ScaleY="0.8000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition />
-            <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="bg/headshot_example.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="img_baopai" ActionTag="481064085" Tag="229" IconVisible="False" LeftMargin="163.0000" RightMargin="-215.0000" TopMargin="12.5000" BottomMargin="-39.5000" ctype="SpriteObjectData">
             <Size X="52.0000" Y="27.0000" />

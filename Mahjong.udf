@@ -28,26 +28,5 @@
         <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="csbLobby/ZhanJiListBox.csd" />
-          <FilePathData Path="csbLobby/RulesBox.csd" />
-          <FilePathData Path="csbLobby/TuiGuangBox.csd" />
-          <FilePathData Path="csbPlay/deskBg.csd" />
-          <FilePathData Path="csbPlay/playScene.csd" />
-          <FilePathData Path="csbPlay/dachuMe.csd" />
-          <FilePathData Path="csbPlay/dachuRight.csd" />
-          <FilePathData Path="csbLobby/SetBox.csd" />
-          <FilePathData Path="csbLobby/NewLobby.csd" />
-          <FilePathData Path="RankShare.csd" />
-          <FilePathData Path="csbPlay/ZhanJiHead.csd" />
-          <FilePathData Path="LoginScene.csd" />
-          <FilePathData Path="csbPlay/deskUi.csd" />
-          <FilePathData Path="csbPlay/inviteUi.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="csbPlay/inviteUi.csd" />
-      </Value>
-    </Item>
   </Properties>
 </UserData>
