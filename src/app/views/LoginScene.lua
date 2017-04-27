@@ -18,12 +18,25 @@ end
   
 function LoginScene:onEnter()
     local rootNode = self:getResourceNode()
+    local imgBg = rootNode:getChildByName("background")
+    local imgHealth = rootNode:getChildByName("Image_health")
+
+    local seq = cc.Sequence:create(
+                cc.DelayTime:create(1.0),
+                cc.FadeOut:create(0.5),
+                cc.CallFunc:create(
+                function ()
+                    imgBg:setVisible(true)
+                    imgHealth:setVisible(false)
+                end)
+                )
+    imgHealth:runAction(seq)
 
 
+    imgBg:setVisible(false)
     layerMgr.LoginScene = self
 
-    local txUid = rootNode:getChildByName("TextField_uid")
-    self.btnLoginWin = rootNode:getChildByName("Button_WindowsLogin")   --windows登录
+    self.btnLoginWin = imgBg:getChildByName("Button_WindowsLogin")   --windows登录
     
     self.btnLoginWin:onClicked(
     function ()
@@ -38,26 +51,67 @@ function LoginScene:onEnter()
     end
     )
 
-    local btnLogin = rootNode:getChildByName("Button_login")   --微信登录
+    local btnLogin = imgBg:getChildByName("Button_login")   --微信登录
     btnLogin:onClicked(
     function ()
         musicMgr:playEffect("game_button_click.mp3", false)
         self:disableAllButtons()
         Helpers:callJavaLogin() 
-
-
     end
     )
 
-    local btnFast1 = rootNode:getChildByName("Button_1")
-    local btnFast2 = rootNode:getChildByName("Button_2")
-    local btnFast3 = rootNode:getChildByName("Button_3")
-    local btnFast4 = rootNode:getChildByName("Button_4")
+
+    local txtUid = imgBg:getChildByName("TextField_uid")
+    local txtPassword = imgBg:getChildByName("TextField_password")
+
+
+
+
+    local btnLoginGD = imgBg:getChildByName("Button_loginGD")   --广电登录
+    btnLoginGD:onClicked(
+    function ()
+        self:disableAllButtons()
+        musicMgr:playEffect("game_button_click.mp3", false)
+        local inputUid = txtUid:getString()
+        local inputPassword = txtPassword:getString()
+        local strUid = ""
+        if inputUid == "ceshi1" and inputPassword == "ceshi1" then
+            strUid = "ceshi1"
+        end
+        if inputUid == "ceshi2" and inputPassword == "ceshi2" then
+            strUid = "ceshi2"
+        end
+        if inputUid == "ceshi3" and inputPassword == "ceshi3" then
+            strUid = "ceshi3"
+        end
+        if inputUid == "ceshi4" and inputPassword == "ceshi4" then
+            strUid = "ceshi4"
+        end
+        if strUid ~= "" then
+            dataMgr.myBaseData.uid = strUid
+            print("strUid:"..strUid)
+            print(txtUid:getString())
+            self:startLogin(strUid)
+        else
+            layerMgr:showSystemMessage("用户名或密码错误，请重新输入", 200, 0, cc.c4f(255,255,255,255), true)
+            txtUid:setString("")
+            txtPassword:setString("")
+        end
+
+        --
+    end
+    )
+
+
+    local btnFast1 = imgBg:getChildByName("Button_1")
+    local btnFast2 = imgBg:getChildByName("Button_2")
+    local btnFast3 = imgBg:getChildByName("Button_3")
+    local btnFast4 = imgBg:getChildByName("Button_4")
     btnFast1:onClicked(
      function (  )
         self:disableAllButtons()
 
-        local strUid = "149198809352"
+        local strUid = "ceshi4"
         dataMgr.myBaseData.uid = strUid
         print("strUid:"..strUid)
         self:startLogin(strUid)
@@ -100,7 +154,8 @@ function LoginScene:onEnter()
     self.btnFast3 = btnFast3
     self.btnFast4 = btnFast4
   
-    if(device.platform == "windows") then
+    --if(device.platform == "windows") then 
+    if true then        --广电测试
         local xmlHttpReq = cc.XMLHttpRequest:new()
         dataMgr:getUrlImgByClientId(xmlHttpReq, 1, "http://wx.qlogo.cn/mmopen/9r6A4jA1ibTQFTnZTABJGlfDj26ehcMc6GHq4L1krtwbwzmHLghzU2Kyw9UhqqktB6fdicwk5ianexFB89WNvyf8dZCY5NJUOPL/0",
         function ()

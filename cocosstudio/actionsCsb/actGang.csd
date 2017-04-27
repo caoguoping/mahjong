@@ -96,15 +96,15 @@
       <ObjectData Name="Node" Tag="59" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Sprite_1" ActionTag="-803969727" Tag="9357" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-640.0000" BottomMargin="-640.0000" ctype="SpriteObjectData">
-            <Size X="32.0000" Y="32.0000" />
+          <AbstractNodeData Name="Sprite_1" ActionTag="-803969727" Tag="9357" IconVisible="False" LeftMargin="-16.0000" RightMargin="-16.0000" TopMargin="-16.0000" BottomMargin="-16.0000" ctype="SpriteObjectData">
+            <Size X="1280.0000" Y="1280.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="bg/touming.png" Plist="" />
+            <FileData Type="Normal" Path="actions/gangpai/gang_00001.png" Plist="" />
             <BlendFunc Src="1" Dst="771" />
           </AbstractNodeData>
         </Children>

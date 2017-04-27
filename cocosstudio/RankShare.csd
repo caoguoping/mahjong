@@ -95,10 +95,10 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="RankShare/bg_2nd.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_3_3" ActionTag="-1881980102" Tag="25" IconVisible="False" LeftMargin="-204.0000" RightMargin="-524.0000" TopMargin="49.5000" BottomMargin="-150.5000" LeftEage="15" RightEage="15" TopEage="20" BottomEage="20" Scale9OriginX="15" Scale9OriginY="20" Scale9Width="698" Scale9Height="61" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_3_3" ActionTag="-1881980102" Tag="25" IconVisible="False" LeftMargin="-204.0000" RightMargin="-524.0000" TopMargin="48.5000" BottomMargin="-149.5000" LeftEage="15" RightEage="15" TopEage="20" BottomEage="20" Scale9OriginX="15" Scale9OriginY="20" Scale9Width="698" Scale9Height="61" ctype="ImageViewObjectData">
                 <Size X="728.0000" Y="101.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="160.0000" Y="-100.0000" />
+                <Position X="160.0000" Y="-99.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
@@ -135,7 +135,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="RankShare/img_erweima.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_dj1" ActionTag="-1421431816" Tag="170" IconVisible="False" LeftMargin="115.0000" RightMargin="-185.0000" TopMargin="-81.0000" BottomMargin="59.0000" FontSize="20" LabelText="对局数：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_dj1" ActionTag="-1421431816" Tag="170" IconVisible="False" LeftMargin="115.0000" RightMargin="-185.0000" TopMargin="-81.0000" BottomMargin="59.0000" FontSize="20" LabelText="胜局数：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="70.0000" Y="22.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="150.0000" Y="70.0000" />
@@ -147,7 +147,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_dj2" ActionTag="518146903" Tag="171" IconVisible="False" LeftMargin="95.0000" RightMargin="-165.0000" TopMargin="19.0000" BottomMargin="-41.0000" FontSize="20" LabelText="对局数：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_dj2" ActionTag="518146903" Tag="171" IconVisible="False" LeftMargin="95.0000" RightMargin="-165.0000" TopMargin="19.0000" BottomMargin="-41.0000" FontSize="20" LabelText="胜局数：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="70.0000" Y="22.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="130.0000" Y="-30.0000" />
@@ -159,7 +159,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_dj3" ActionTag="-1741909173" Tag="172" IconVisible="False" LeftMargin="75.0000" RightMargin="-145.0000" TopMargin="119.0000" BottomMargin="-141.0000" FontSize="20" LabelText="对局数：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_dj3" ActionTag="-1741909173" Tag="172" IconVisible="False" LeftMargin="75.0000" RightMargin="-145.0000" TopMargin="119.0000" BottomMargin="-141.0000" FontSize="20" LabelText="胜局数：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="70.0000" Y="22.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="110.0000" Y="-130.0000" />
@@ -171,7 +171,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_dj4" ActionTag="2122411764" Tag="173" IconVisible="False" LeftMargin="55.0000" RightMargin="-125.0000" TopMargin="219.0000" BottomMargin="-241.0000" FontSize="20" LabelText="对局数：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_dj4" ActionTag="2122411764" Tag="173" IconVisible="False" LeftMargin="55.0000" RightMargin="-125.0000" TopMargin="219.0000" BottomMargin="-241.0000" FontSize="20" LabelText="胜局数：" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="70.0000" Y="22.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="90.0000" Y="-230.0000" />
@@ -347,7 +347,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_wx" ActionTag="-721174017" Tag="181" IconVisible="False" LeftMargin="-340.5000" RightMargin="59.5000" TopMargin="261.5000" BottomMargin="-338.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="251" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_wx" ActionTag="-721174017" VisibleForFrame="False" Tag="181" IconVisible="False" LeftMargin="-340.5000" RightMargin="59.5000" TopMargin="261.5000" BottomMargin="-338.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="251" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="281.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-200.0000" Y="-300.0000" />
@@ -362,7 +362,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_pyq" ActionTag="-77156197" Tag="182" IconVisible="False" LeftMargin="59.5000" RightMargin="-340.5000" TopMargin="261.5000" BottomMargin="-338.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="251" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_pyq" ActionTag="-77156197" VisibleForFrame="False" Tag="182" IconVisible="False" LeftMargin="59.5000" RightMargin="-340.5000" TopMargin="261.5000" BottomMargin="-338.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="251" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="281.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="200.0000" Y="-300.0000" />

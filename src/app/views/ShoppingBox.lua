@@ -31,8 +31,17 @@ function ShoppingBox:ctor()
         btns[i] = rootNode:getChildByName(tmpStr)
         btns[i]:onClicked(
         function (  )
+            print("buyCount")
             musicMgr:playEffect("game_button_click.mp3", false)
-            dataMgr.prop[10] = dataMgr.prop[10] + cardMoney[i]
+                local snd = DataSnd:create(3, 504)
+                local dwUserId = dataMgr.myBaseData.dwUserID
+                local buyCount = cardMoney[i]
+                local kindId = 10
+                snd:wrDWORD(dwUserId)
+                snd:wrWORD(buyCount)
+                snd:wrWORD(kindId)
+                snd:sendData(netTb.SocketType.Login)
+                snd:release();
         end
         )
     end

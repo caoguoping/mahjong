@@ -57,7 +57,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_share" ActionTag="-1681877918" Tag="1179" IconVisible="False" LeftMargin="475.2769" RightMargin="-529.2769" TopMargin="-218.5493" BottomMargin="147.5493" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="24" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_share" ActionTag="-1681877918" VisibleForFrame="False" Tag="1179" IconVisible="False" LeftMargin="475.2769" RightMargin="-529.2769" TopMargin="-218.5493" BottomMargin="147.5493" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="24" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="54.0000" Y="71.0000" />
             <AnchorPoint ScaleX="0.6131" ScaleY="0.4833" />
             <Position X="508.3843" Y="181.8636" />

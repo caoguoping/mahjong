@@ -19,27 +19,18 @@ JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_LoginCallback(JNIEnv * en
 {
     log("LUA-print jniCall LoginCallback");
     Helpers*  helpers = Helpers::getInstance();
-	//const char* strUid = helpers->jstringTostring(env, uid);
 	const char* strOpenid     = helpers->jstringTostring(env, openid);
 	const char* strNickName   = helpers->jstringTostring(env, nickname);
 	const char* strSex        = helpers->jstringTostring(env, sex);
-	log("LUA-print jniCall before headimgurl");
 	const char* strHeadimgurl = helpers->jstringTostring(env, headimgurl);
-	log("LUA-print jniCall headimgurl");
 	const char* strCity       = helpers->jstringTostring(env, city);
 
 	memcpy(helpers->weChatData.openid    , strOpenid    , 32);
 	memcpy(helpers->weChatData.nickName  , strNickName  , 32);
 	memcpy(helpers->weChatData.sex       , strSex       , 32);
-	log("LUA-print jniCall before headimgurl copy");
-	memcpy(helpers->weChatData.headimgurl, strHeadimgurl, 256);
-	log("LUA-print jniCall headimgurl copy");
-
+	memcpy(helpers->weChatData.headimgurl, strHeadimgurl, 200);
 	memcpy(helpers->weChatData.city      , strCity      , 32);
-
-	log("LUA-print jniCall headimgurl");
     helpers->sendLoginData();
-	log("LUA-print helpser->sendLoginData");
 }
 
 

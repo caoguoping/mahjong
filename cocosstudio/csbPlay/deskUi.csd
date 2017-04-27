@@ -120,7 +120,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/hua.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_touchCard" ActionTag="1216716968" Alpha="0" Tag="2551" IconVisible="False" LeftMargin="-15.9998" RightMargin="-16.0002" TopMargin="276.7780" BottomMargin="-308.7780" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="22" Scale9Height="28" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_touchCard" CanEdit="False" ActionTag="1216716968" Alpha="0" Tag="2551" IconVisible="False" LeftMargin="-15.9998" RightMargin="-16.0002" TopMargin="276.7780" BottomMargin="-308.7780" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="22" Scale9Height="28" ctype="ImageViewObjectData">
             <Size X="32.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="0.0002" Y="-292.7780" />

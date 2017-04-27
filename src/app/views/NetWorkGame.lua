@@ -53,7 +53,8 @@ function NetWorkGame:handleEventGame( event)
         --加入时房间验证失败
         elseif wSubCmd == 103 then
             self:joinRoomFail(rcv) 
-        --创建房间成功与否
+        
+        --创建房间成功
         elseif wSubCmd == 104 then
             self:createRoom(rcv) 
         end
@@ -68,6 +69,13 @@ function NetWorkGame:handleEventGame( event)
         --房主， 在第一个3， 100之后
         elseif wSubCmd == 107 then
             self:whoIsFangzhu(rcv) 
+        --房间配置
+        elseif wSubCmd == 108 then
+            self:getroomSet(rcv)
+             print("\n\n getroomSet \n\n")
+
+        elseif wSubCmd == 351 then
+            self:propChange(rcv)
         end
 
         --200,1 出牌，一个byte
@@ -94,13 +102,12 @@ function NetWorkGame:handleEventGame( event)
     --补花的个数，发完牌后发一次，4家 ，  num1, num2, num3, num4,  cardv[1] = {}, cardv2= {}，。。。
             elseif wSubCmd == 111 then  
                 self:getAllBuhua(rcv)
-            elseif wSubCmd == 112 then
-                self:getRoomConfig(rcv)
-                print("\n getRoomConfig")
+            elseif wSubCmd == 113 then
+                self:moneyChange(rcv) 
             elseif wSubCmd == 114 then
             -----游戏结束后，获取游戏结束状态标志,游戏开始前需要将GameOverState置0
-                    dataMgr.GameOverState = rcv:readByte() 
-                   -- print(" dataMgr.GameOverState::::::::::", dataMgr.GameOverState)
+                dataMgr.GameOverState = rcv:readByte() 
+                
         end 
 
         --114 ,byte  1,正常v,    2， 游戏中退出，    3， 结算退出
@@ -108,6 +115,37 @@ function NetWorkGame:handleEventGame( event)
     --
     end
 end
+
+function NetWorkGame:propChange( rcv )
+    local userId = rcv:readDWORD()
+    local wIndex = rcv:readWORD()   --  //道具ID
+    local wCount = rcv:readWORD()   --  //道具数量
+    local wFlag = rcv:readWORD()   --      //1-增加 2 - 减少
+    if wFlag == 1 then   --退房卡时已经断开socket， 收不到了
+        -- dataMgr.prop[wIndex] = dataMgr.prop[wIndex] + wCount
+        -- print("wIndex", wIndex, wCount, wFlag)
+    elseif wFlag == 2 then   
+        dataMgr.prop[wIndex] = dataMgr.prop[wIndex] - wCount
+        print("wIndex", wIndex, wCount, wFlag)
+    end
+    
+end
+
+--杠牌或罚分等金钱变化
+function NetWorkGame:moneyChange(rcv)
+    local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+    local score = {}
+    for i=1,4 do
+        score[i] = rcv:readUInt64()
+        print("\nscore  "..score[i].." i "..i)
+        if score[i] > 0 then
+            playLayer:createScoreChange(i, 1, score[i])
+        elseif score[i] < 0 then 
+            playLayer:createScoreChange(i, 0, score[i])
+        end
+    end
+end
+
 
 ---一场游戏结束后，向HistroyRecords[]表插入记录
 function NetWorkGame:GameOverInsterData()
@@ -159,7 +197,7 @@ function NetWorkGame:GameOverInsterData()
         dataMgr.HistroyRecords[dataMgr.ThisTableRecords].wTableID = dataMgr.roomSet.dwRoomNum
        -- print("myBaseData.wTableID:",dataMgr.HistroyRecords[dataMgr.ThisTableRecords].wTableID)
         ---获取模式1、进园子2、敞开怀
-        dataMgr.HistroyRecords[dataMgr.ThisTableRecords].cbType = dataMgr.RoomConfig.bIsJinyunzi
+        dataMgr.HistroyRecords[dataMgr.ThisTableRecords].cbType = dataMgr.roomSet.bIsJinyunzi
        -- print("myBaseData.cbType:",dataMgr.HistroyRecords[dataMgr.ThisTableRecords].cbType)
         ---获取客户端玩家的总分
         dataMgr.HistroyRecords[dataMgr.ThisTableRecords].lScore = MyAllScore
@@ -172,35 +210,46 @@ function NetWorkGame:GameOverInsterData()
 end
 --谁是房主
 function NetWorkGame:whoIsFangzhu( rcv )
-    rcv:readDWORD()
-    dataMgr.fangzhuSvr = rcv:readByte()
+    local userId = rcv:readDWORD()
+    dataMgr.fangzhuSvr = dataMgr:getSvrIdByUserId(userId)
+    print("who is Fangzhu "..dataMgr.fangzhuSvr)
     rcv:destroys()
+
+    local fangzhuClient = dataMgr.chair[dataMgr.fangzhuSvr] 
+    local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+    playLayer.imgFangzhu[fangzhuClient]:setVisible(true)   --显示房主
+
+
+    if  dataMgr.chair[dataMgr.fangzhuSvr] == 1  then    --我是是房主
+        playLayer.btnDisRoom:setVisible(true)
+    else
+        playLayer.btnDisRoom:setVisible(false)
+    end
+
 end
 
---获取房间配置
-function NetWorkGame:getRoomConfig( rcv )
-    dataMgr.RoomConfig.wScore = rcv:readWORD()   --100\200\300\400 
-    dataMgr.RoomConfig.wJieSuanLimit = rcv:readWORD()  --0无限制、100\200\300
-    dataMgr.RoomConfig.wBiXiaHu = rcv:readWORD()      ---比下胡
-    dataMgr.RoomConfig.bGangHouKaiHua = rcv:readByte()  --0翻倍\1加200花
-    dataMgr.RoomConfig.bZaEr = rcv:readByte()    --0不砸2、1砸二
-    dataMgr.RoomConfig.bFaFeng = rcv:readByte()  --0不罚、1罚-
-    dataMgr.RoomConfig.bYaJue = rcv:readByte()    --0不压绝、1压
-    dataMgr.RoomConfig.bJuShu = rcv:readByte()     --1:1圈、2:2圈、4:4圈 
-    dataMgr.RoomConfig.bIsJinyunzi = rcv:readByte() --1：进园子、2：敞开怀
+--获取房间配置,  房主不发
+function NetWorkGame:getroomSet( rcv )
+    dataMgr.roomSet.wScore = rcv:readWORD()   --100\200\300\400 
 
-    ---snd:wrWORD(dataMgr.roomSet.wScore        )
-    ---snd:wrWORD(dataMgr.roomSet.wJieSuanLimit )
-    ---snd:wrWORD(dataMgr.roomSet.wBiXiaHu      )
-    ---snd:wrByte(dataMgr.roomSet.bGangHouKaiHua)
-    ---snd:wrByte(dataMgr.roomSet.bZaEr         )
-    -- snd:wrByte(dataMgr.roomSet.bFaFeng       )
-    ---snd:wrByte(dataMgr.roomSet.bYaJue        )
-    -- snd:wrByte(dataMgr.roomSet.bJuShu        )
-    ---snd:wrByte(dataMgr.roomSet.bIsJinyunzi   )   
-    for i=1,4 do
-        dataMgr.onDeskData[i].LeftMoney = dataMgr.RoomConfig.wScore       --剩余钱
-    end
+
+    dataMgr.roomSet.wJieSuanLimit = rcv:readWORD()  --0无限制、100\200\300
+    dataMgr.roomSet.wBiXiaHu = rcv:readWORD()      ---比下胡
+    dataMgr.roomSet.bGangHouKaiHua = rcv:readByte()  --0翻倍\1加200花
+    dataMgr.roomSet.bZaEr = rcv:readByte()    --0不砸2、1砸二
+    dataMgr.roomSet.bFaFeng = rcv:readByte()  --0不罚、1罚-
+    dataMgr.roomSet.bYaJue = rcv:readByte()    --0不压绝、1压
+    dataMgr.roomSet.bJuShu = rcv:readByte()     --1:1圈、2:2圈、4:4圈 
+    dataMgr.roomSet.bIsJinyunzi = rcv:readByte() --1：进园子、2：敞开怀
+    print("getroomSet "..dataMgr.roomSet.wScore.."  "..dataMgr.roomSet.bJuShu.."  "..dataMgr.roomSet.bIsJinyunzi)
+
+    -- for i=1,4 do
+    --     dataMgr.onDeskData[i].LeftMoney = dataMgr.roomSet.wScore       --剩余钱
+    -- end
+    local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+    playLayer:showJushuAndJinyunzi()
+
+
 
 end
 
@@ -467,11 +516,11 @@ function NetWorkGame:createRoom( rcv )
         TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
         layerMgr:removeBoxes(layerMgr.boxIndex.CreateRoomBox)
     else
-       --print("\n\n\nwChairID  "..wChairId.."wTableId  "..wTableId)
         layerMgr:removeBoxes(layerMgr.boxIndex.CreateRoomBox)
         layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
-        
-        layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params):waitJoin()
+        local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+        playLayer:showJushuAndJinyunzi()
+        playLayer:waitJoin()
     end
 
 

@@ -12,7 +12,7 @@ struct stWeChatData
 	char  openid[32];
 	char  nickName[32];
 	char  sex[32];
-	char  headimgurl[256];
+	char  headimgurl[200];
 	char  city[32];
 };
 
@@ -32,7 +32,7 @@ public:
 	unsigned char readByte();
 	unsigned short readWORD();
 	unsigned int readDWORD();
-	long long readUInt64();
+	long long readUInt64();     //сп╥Ш╨её╛ сп╢Мак
 	double readDouble();
 	std::string readString(int len);
 };

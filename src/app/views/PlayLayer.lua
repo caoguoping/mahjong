@@ -34,13 +34,8 @@ end
 function PlayLayer:ctorUi(  )
     self.deskUiNode  = self.rootNode:getChildByName("FileNode_deskUi")
     self.btnActions = {}
-        ---打开游戏记录
-    local btnRecodr = self.rootNode:getChildByName("FileNode_deskUi"):getChildByName("FileNode_field"):getChildByName("Button_Records")
-    btnRecodr:onClicked(
-        function ()
-        layerMgr.boxes[layerMgr.boxIndex.ZhanJiBox] = import(".ZhanJiBox",CURRENT_MODULE_NAME).create()
-        end
-    )
+
+
     --返回房间按钮， 如果是房主不断socket,隐藏，创建房间按钮变为返回按钮    ;如果是加入的人则退出房间，断socket
     local btnBacks = self.deskUiNode:getChildByName("Button_back")
     
@@ -91,9 +86,12 @@ function PlayLayer:ctorUi(  )
     self.txtSvrChair = {}  --服务器椅子ID，测试用
     self.imgHead = {}   --头像
     self.imgReady = {}  --准备
+    self.imgFangzhu = {} --房主
 
     local personInfoX = {120, 120,620,860}
     local personInfoY = {150,550, 570,400}
+
+    
     for i=1,4 do   --下标为clientId
         local strName = "FileNode_"..i
         self.headNode[i] = self.deskUiNode:getChildByName(strName)
@@ -101,6 +99,8 @@ function PlayLayer:ctorUi(  )
         self.txtSvrChair[i] = self.headNode[i]:getChildByName("Text_svrId")
         self.imgHead[i] = self.headNode[i]:getChildByName("Image_head")
         self.imgReady[i] = self.headNode[i]:getChildByName("Image_ready")
+        self.imgFangzhu[i] = self.headNode[i]:getChildByName("Image_fangzhu")
+        self.imgFangzhu[i]:setVisible(false)
 
         self.imgHead[i]:onTouch(
         function(event)
@@ -114,6 +114,8 @@ function PlayLayer:ctorUi(  )
         
     end 
 
+
+
    --剩余牌
     self.txtLeftCard = self.deskUiNode:getChildByName("Text_leftCard")
     self.imgLeftCard = self.deskUiNode:getChildByName("Image_leftCard")
@@ -125,7 +127,22 @@ function PlayLayer:ctorUi(  )
         local strTmp = "FileNode_hua_"..i
         self.huaNode[i] = self.deskUiNode:getChildByName(strTmp)
         self.txtHuaNum[i] = self.huaNode[i]:getChildByName("Text_num")
-    end      
+    end   
+
+
+
+    --剩余局数
+    local nodeField = self.deskUiNode:getChildByName("FileNode_field")   
+    self.txtAllJushu = nodeField:getChildByName("Text_totalField")   
+    self.txtNowJushu = nodeField:getChildByName("Text_nowField")   
+
+    ---打开游戏记录
+    local btnRecodr = nodeField:getChildByName("Button_Records")
+    btnRecodr:onClicked(
+        function ()
+        layerMgr.boxes[layerMgr.boxIndex.ZhanJiBox] = import(".ZhanJiBox",CURRENT_MODULE_NAME).create()
+        end
+    )
 end
 
 function PlayLayer:ctorUiBtns(  )
@@ -230,27 +247,48 @@ function PlayLayer:ctorInvite(  )
 
     self.inviteNode = self.rootNode:getChildByName("FileNode_invite")
     self.txtRoomNum = self.inviteNode:getChildByName("Text_room")
-        
-    --解散房间 ,只发消息，收到状态变化，桌子号为无效时，解散房间
+    self.imgJinyuanzi = self.inviteNode:getChildByName("Image_jinyuanzi")
+    self.imgChangkaihuai = self.inviteNode:getChildByName("Image_changkaihuai")
+
+    --解散房间 ,只发消息 ， 将房卡退回，收到状态变化，桌子号为无效时，解散房间， 
     self.btnDisRoom = self.inviteNode:getChildByName("Button_dismissRoom")
     local funDisRoom = function (  )
+            --self.btnDisRoom:setTouchEnabled(false)  --禁用， 2s再开启
+
+           
             musicMgr:playEffect("game_button_click.mp3", false)
             local snd = DataSnd:create(3, 12)
             snd:sendData(netTb.SocketType.Game)
-            print("send 3,  12  disRoom")
             snd:release()
+            
             local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
             mainlayer:btnCreateOrBack(true)
+            mainlayer:refresh()
+
+            -- local seq = cc.Sequence:create(
+            --             cc.DelayTime:create(2.0),
+            --             cc.CallFunc:create(
+            --                 function ()
+            --                     self.btnDisRoom:setTouchEnabled(true)
+            --                 end)
+            --             )
+            -- self.btnDisRoom:runAction(seq)
     end
+
     self.btnDisRoom:onClicked(
         --二级弹框
         function ()
             local popupbox =  import(".popUpBox",CURRENT_MODULE_NAME).create() 
             popupbox:setInfo(Strings.dismissRoom)
             local btnOk, btnCancel  = popupbox:getBtns()
-            btnOk:onClicked(function (  )
-                popupbox:remove()
-                funDisRoom()
+            btnOk:onClicked(
+                function (  )
+                    btnOk:setTouchEnabled(false)
+                    local cardNum = girl.juToFang[dataMgr.roomSet.bJuShu]
+                    dataMgr.prop[10] = dataMgr.prop[10] + cardNum
+                    print("disRoom add Card "..dataMgr.prop[10])
+                    popupbox:remove()
+                    funDisRoom()
             end)
             btnCancel:onClicked(function (  )
                 popupbox:remove()
@@ -317,7 +355,33 @@ function PlayLayer:createRefresh(  )
     for i=1,4 do
         dataMgr.onDeskData[i].dwUserID = 0    --用于是否是第一次进入界面
     end
+
 end
+
+--创建或加入时显示局数和进园子,钱
+function PlayLayer:showJushuAndJinyunzi(  )
+
+    for i=1,4 do
+        dataMgr.onDeskData[i].LeftMoney = dataMgr.roomSet.wScore       --剩余钱
+    end
+
+    dataMgr.roomSet.currentJushu = 0
+    dataMgr.roomSet.AllJushu = dataMgr.roomSet.bJuShu * 4
+    if dataMgr.roomSet.bIsJinyunzi == 1 then
+        self.imgJinyuanzi:setVisible(true)
+        self.imgChangkaihuai:setVisible(false)
+    elseif dataMgr.roomSet.bIsJinyunzi == 2 then
+        self.imgJinyuanzi:setVisible(false)
+        self.imgChangkaihuai:setVisible(true)
+    end
+
+    self.txtAllJushu:setString(dataMgr.roomSet.AllJushu)
+    self.txtNowJushu:setString(dataMgr.roomSet.currentJushu)   
+end
+
+
+
+
 
 --每局重新开始,更新界面和数据
 function PlayLayer:refresh( )
@@ -343,6 +407,7 @@ function PlayLayer:refresh( )
     self:stopClock()   --停定时器
     self.txtClock:setString("0")
 
+
 end
 
 --等待其他人加入，在自己进去之后，收到
@@ -351,6 +416,39 @@ function PlayLayer:waitJoin()
     self.nodeShezi:setVisible(false)
     self.inviteNode:setVisible(true)
     self.txtRoomNum:setString(string.format("%07d", dataMgr.roomSet.dwRoomNum))
+end
+
+function PlayLayer:createScoreChange(svrId, isAdd, changeScore )
+    local clientId = dataMgr.chair[svrId]
+    local csbName = "minusScore.csb"
+    if isAdd == 1 then
+        csbName = "addScore.csb"
+    end
+
+    dataMgr.onDeskData[svrId].LeftMoney = dataMgr.onDeskData[svrId].LeftMoney + changeScore
+
+
+    local nodeScore = cc.CSLoader:createNode(csbName):addTo(self.deskUiNode)
+    local txtScore = nodeScore:getChildByName("AtlasLabel_bigScore")
+    txtScore:setString(math.abs(changeScore))
+    nodeScore:setPosition(girl.scorePosX[clientId] - 0.5 * display.width , girl.scorePosY[clientId] - 0.5 * display.height)
+
+
+
+    local seq = cc.Sequence:create(
+                cc.Spawn:create(
+                    cc.ScaleBy:create(0.3, 1.5),
+                    cc.MoveBy:create(0.3, cc.p(20, 20))
+                    ),
+                cc.FadeOut:create(1),
+                cc.CallFunc:create(
+                function ()
+                    self.txtScore[clientId]:setString(dataMgr.onDeskData[svrId].LeftMoney)    --刷新积分
+                    nodeScore:removeFromParent()    
+                end)
+                )
+    nodeScore:runAction(seq)
+
 end
 
 --显示进来人   svrChairId[1, 4],  showOrHide  ,true 显示，   false 隐藏
@@ -530,6 +628,9 @@ function PlayLayer:sendCard(drawValue)
         self.imgReady[i]:setVisible(false)
     end
     
+    --更新当前局数
+    dataMgr.roomSet.currentJushu = dataMgr.roomSet.currentJushu + 1
+        self.txtNowJushu:setString(dataMgr.roomSet.currentJushu)
 
 
    --一开始就禁止触摸

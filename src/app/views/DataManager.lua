@@ -138,9 +138,13 @@ function DataManager:init()
     
 
     ]]
+
+    ------游戏结束后的状态标识
+    self.GameOverState = 0 --0:游戏未结束，或者未开始 1.小局结束 2:是一场游戏正常结束 3:游戏进行中逃跑 4:解散,结算时有玩家逃跑
+
     self.chair = {}  
     self.direction = {}  --东南西北（1， 2， 3， 4) 东为庄家
---roomSet
+--roomSet   f房间设置
     self.roomSet = {} 
      --[[
     比下胡： 连庄(0bit)，包牌，花杠，        对对胡，杠后开花， 黄庄，
@@ -161,20 +165,21 @@ function DataManager:init()
     bIsCreate     1:创建 0:加入
     dwRoomNum     输入的房间号或算好的房间号
     ]] 
-    ------游戏结束后的状态标识
-    self.GameOverState = 0 --0:游戏未结束，或者未开始 1.小局结束 2:是一场游戏正常结束 3:游戏进行中逃跑 4:解散,结算时有玩家逃跑
 
     -----------获取房间配置---------------------
-    self.RoomConfig = {}
-    self.RoomConfig.wScore = 0   --100\200\300\400 
-    self.RoomConfig.wJieSuanLimit = 0  --0无限制、100\200\300
-    self.RoomConfig.wBiXiaHu = 0      ---比下胡
-    self.RoomConfig.bGangHouKaiHua = 0  --0翻倍\1加200花
-    self.RoomConfig.bZaEr = 0    --0不砸2、1砸二
-    self.RoomConfig.bFaFeng = 0  --0不罚、1罚-
-    self.RoomConfig.bYaJue = 0    --0不压绝、1压
-    self.RoomConfig.bJuShu = 0     --1:1圈、2:2圈、4:4圈 
-    self.RoomConfig.bIsJinyunzi = 0 --1：进园子、2：敞开怀
+    self.roomSet.wScore = 200   --100\200\300\400 
+    self.roomSet.wJieSuanLimit = 0  --0无限制、100\200\300
+    self.roomSet.wBiXiaHu = 2047     ---比下胡
+    self.roomSet.bGangHouKaiHua = 0  --0翻倍 1加20花
+    self.roomSet.bZaEr = 0    --0不砸2、1砸二
+    self.roomSet.bFaFeng = 1  --0不罚、1罚-
+    self.roomSet.bYaJue = 1    --0不压绝、1压
+    self.roomSet.bJuShu = 1     --1:1圈、2:2圈、4:4圈 
+    self.roomSet.bIsJinyunzi = 1 --1：进园子、2：敞开怀
+
+    self.roomSet.currentJushu = 1   --当前局数
+    self.roomSet.AllJushu    = 4   --本场的总局数
+    
     ------------------战绩记录表
     self.RankShareIdex = 0    -------用于战绩排行界面的数据索引KEY
     self.IndexRecords = 0       -----检索历史场次，一场详细游戏数据的HistroyRecords[i]的i值

@@ -102,5 +102,29 @@ function LayerManager:showLayer(panel, params)
 	end
 end
 
+function LayerManager:showSystemMessage( msg, x, y, color, isShowBg )
+	local rootNode = cc.CSLoader:createNode("sysMsgTouming.csb"):addTo(self.LoginScene, 10001)
+	local pos = cc.p(display.width * 0.5 + x, display.height * 0.5 + y)
+    rootNode:setPosition(pos)
+    local imgBg = rootNode:getChildByName("Image_1")
+    if not isShowBg then
+    	imgBg:setVisible(false)
+    end
+    local txtMsg = rootNode:getChildByName("Text_1")
+    txtMsg:setString(msg)
+    txtMsg:setColor(color)
+
+    local seq = cc.Sequence:create(
+    			cc.MoveBy:create(0.7, cc.p(0, 10)),
+    			cc.DelayTime:create(0.5),
+    			cc.FadeOut:create(0.5),
+                cc.CallFunc:create(
+                function ()
+                	rootNode:removeFromParent()
+                end)
+                )
+    rootNode:runAction(seq)
+end
+
 
 return LayerManager

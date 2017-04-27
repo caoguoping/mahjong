@@ -80,6 +80,16 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="gameui/img_ready.png" Plist="" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Image_fangzhu" ActionTag="-97302574" Tag="495" IconVisible="False" LeftMargin="-60.4741" RightMargin="32.4741" TopMargin="-65.0867" BottomMargin="36.0867" LeftEage="9" RightEage="9" TopEage="13" BottomEage="13" Scale9OriginX="9" Scale9OriginY="13" Scale9Width="10" Scale9Height="3" ctype="ImageViewObjectData">
+            <Size X="28.0000" Y="29.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-46.4741" Y="50.5867" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="gamePlay/img_creator.png" Plist="" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

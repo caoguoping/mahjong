@@ -15,6 +15,7 @@ require "config"
 require "cocos.init"
 
 require "app.views.Constants"
+require "app.views.SoundCnt"
 require "app.Extends"
 require "app.Functions"
 require "app.views.Strings"

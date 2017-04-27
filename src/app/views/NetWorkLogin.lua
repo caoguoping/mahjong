@@ -58,132 +58,136 @@ function NetWorkLogin:handleEventLogin( event)
             self:registerRole(rcv)
         elseif wSubCmd == 101 then
             self:loginFail(rcv)
-           
         elseif wSubCmd == 108 then         ---游戏登录，向服务器获取该玩家的历史记录
-           local wCount = rcv:readWORD()  -- 战绩总条数
-           local wFlag = rcv:readWORD()    -- 分包情况使用 超过50条 0 - 不是最后一条 1 - 最后一条       
-           --2个空字节
-           print("wCount",wCount)
-           rcv:readDWORD()
-           local data = dataMgr.HistroyRecords
-           if wFlag == 0 then
-                for i= data.ItemCount+1, data.ItemCount+50 do 
-                    data[i] = {}
-                    --data[i].wTable = rcv:readUInt64()
-                    data[i].lScore = rcv:readUInt64()
-                    data[i].wTableID = rcv:readDWORD()
-                    data[i].wData = rcv:readDWORD()
-                    data[i].cbType = rcv:readByte()
-
-                    -- 7个空字节
-                     rcv:readDWORD()
-                     rcv:readWORD()
-                     rcv:readByte()
-                end
-                data.ItemCount = data.ItemCount + 50
-            elseif wFlag == 1 then
-                for i = 1, wCount do 
-                    data[i] = {}
-                    data[i].lScore = rcv:readUInt64()
-                    data[i].wTableID = rcv:readDWORD()
-                    data[i].wData = rcv:readDWORD()
-                    data[i].cbType = rcv:readByte() 
-                    -- 7个空字节
-                    rcv:readDWORD()
-                    rcv:readWORD()
-                    rcv:readByte()
-                    print(data[i].wTableID)
-                end 
-                data.ItemCount = wCount
-                print(wCount)
-            end 
-
-        elseif wSubCmd == 108 then         ---游戏登录，向服务器获取该玩家的历史记录
-           local wCount = rcv:readWORD()  -- 战绩总条数
-           local wFlag = rcv:readWORD()    -- 分包情况使用 超过50条 0 - 不是最后一条 1 - 最后一条       
-           --2个空字节
-           print("wCount",wCount)
-           rcv:readDWORD()
-           local data = dataMgr.HistroyRecords
-           if wFlag == 0 then
-                for i= data.ItemCount+1, data.ItemCount+50 do 
-                    data[i] = {}
-                    --data[i].wTable = rcv:readUInt64()
-                    data[i].lScore = rcv:readUInt64()
-                    data[i].wTableID = rcv:readDWORD()
-                    data[i].wData = rcv:readDWORD()
-                    data[i].cbType = rcv:readByte()
-
-                    -- 7个空字节
-                     rcv:readDWORD()
-                     rcv:readDWORD()
-                     rcv:readByte()
-                end
-                data.ItemCount = data.ItemCount + 50
-                ----游戏重新登录后，赋初始值KEY值
-                dataMgr.ThisTableRecords = data.ItemCount
-            elseif wFlag == 1 then
-                for i = 1, wCount do 
-                    data[i] = {}
-                    data[i].lScore = rcv:readUInt64()
-                    data[i].wTableID = rcv:readDWORD()
-                    data[i].wData = rcv:readDWORD()
-                    data[i].cbType = rcv:readByte() 
-                    -- 7个空字节
-                    rcv:readDWORD()
-                    rcv:readDWORD()
-                    rcv:readByte()
-                    print(data[i].wTableID)
-                end 
-                data.ItemCount = wCount
-                print(wCount)
-            end 
-
+            self:HistroyRecordsByLogin(rcv)
         elseif wSubCmd == 107 then
-            local wCount = rcv:readWORD()  -- 战绩总条数
-            local wFlag = rcv:readWORD()    -- 分包情况使用 超过50条 0 - 不是最后一条 1 - 最后一条  当前应该不要用
-            rcv:readDWORD()
-            print("wCount",wCount)
-            print("wFlag",wFlag)
-            print("IndexRecords"..dataMgr.IndexRecords)
-            dataMgr.HistroyRecords[dataMgr.IndexRecords].Records = {} 
-            for i = 1, wCount do
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i] = {}             
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username1 = rcv:readString(64)
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username2 = rcv:readString(64)
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username3 = rcv:readString(64)
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username4 = rcv:readString(64)
-
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore1 = rcv:readUInt64()
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore2 = rcv:readUInt64()
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore3 = rcv:readUInt64()
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore4 = rcv:readUInt64()
-
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID1 = rcv:readDWORD()
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID2 = rcv:readDWORD()
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID3 = rcv:readDWORD()
-                dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID4 = rcv:readDWORD()
-               
-                print("username1",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username1)
-                print("score1",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore1)
-                print("userid1",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID1)
-                                print("username2",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username2)
-                print("score2",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore2)
-                print("userid2",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID2)
-                                print("username3",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username3)
-                print("score3",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore3)
-                print("userid3",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID3)
-                                print("username4",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username4)
-                print("score4",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore4)
-                print("userid4",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID4)
-               
-            end
-
+            self:Zhanji(rcv)
         end
-    else 
+    elseif wMainCmd == 3 then
+            if wSubCmd == 502 then
+               self:propChange(rcv)
+            end
+    elseif wMainCmd == 500 then
+        if wSubCmd == 501 then
+            print(500, 501)
+            self:getBagInfo(rcv)
+        end
+    else
     -- --
     end
 end
+
+--背包
+function NetWorkLogin:getBagInfo( rcv )
+    local bagSize = rcv:readByte()
+
+    for i=1,bagSize do
+        local propId = rcv:readDWORD()
+        local propCount = rcv:readWORD()
+        local kindId = rcv:readWORD()
+        print("propId "..propId.."  "..propCount.."  "..kindId)
+        dataMgr.prop[kindId] = propCount
+    end
+
+    layerMgr:getLayer(layerMgr.layIndex.MainLayer, params).txtFangKa:setString(tostring(dataMgr.prop[10]))
+    print("bagSize "..bagSize)
+end
+
+--道具变更 3, 501
+function NetWorkLogin:propChange( rcv )
+    print("3, 501   道具变更")
+    local userId = rcv:readDWORD()
+    local count = rcv:readWORD()     --总数
+    local kindId = rcv:readWORD()
+    dataMgr.prop[kindId] = count
+end
+
+
+--战绩, 1, 107
+function NetWorkLogin:Zhanji( rcv )
+    local wCount = rcv:readWORD()  -- 战绩总条数
+    local wFlag = rcv:readWORD()    -- 分包情况使用 超过50条 0 - 不是最后一条 1 - 最后一条  当前应该不要用
+    rcv:readDWORD()
+    print("wCount",wCount)
+    print("wFlag",wFlag)
+    print("IndexRecords"..dataMgr.IndexRecords)
+    dataMgr.HistroyRecords[dataMgr.IndexRecords].Records = {} 
+    for i = 1, wCount do
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i] = {}             
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username1 = rcv:readString(64)
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username2 = rcv:readString(64)
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username3 = rcv:readString(64)
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username4 = rcv:readString(64)
+
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore1 = rcv:readUInt64()
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore2 = rcv:readUInt64()
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore3 = rcv:readUInt64()
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore4 = rcv:readUInt64()
+
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID1 = rcv:readDWORD()
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID2 = rcv:readDWORD()
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID3 = rcv:readDWORD()
+        dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID4 = rcv:readDWORD()
+       
+        print("username1",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username1)
+        print("score1",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore1)
+        print("userid1",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID1)
+                        print("username2",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username2)
+        print("score2",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore2)
+        print("userid2",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID2)
+                        print("username3",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username3)
+        print("score3",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore3)
+        print("userid3",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID3)
+                        print("username4",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].username4)
+        print("score4",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].lScore4)
+        print("userid4",dataMgr.HistroyRecords[dataMgr.IndexRecords].Records[i].dwUserID4)
+       
+    end
+
+end   
+
+
+---游戏登录，向服务器获取该玩家的历史记录 1, 108
+function NetWorkLogin:HistroyRecordsByLogin( rcv )
+    local wCount = rcv:readWORD()  -- 战绩总条数
+    local wFlag = rcv:readWORD()    -- 分包情况使用 超过50条 0 - 不是最后一条 1 - 最后一条       
+    --2个空字节
+    print("wCount",wCount)
+    rcv:readDWORD()
+    local data = dataMgr.HistroyRecords
+    if wFlag == 0 then
+        for i= data.ItemCount+1, data.ItemCount+50 do 
+            data[i] = {}
+            --data[i].wTable = rcv:readUInt64()
+            data[i].lScore = rcv:readUInt64()
+            data[i].wTableID = rcv:readDWORD()
+            data[i].wData = rcv:readDWORD()
+            data[i].cbType = rcv:readByte()
+
+            -- 7个空字节
+             rcv:readDWORD()
+             rcv:readWORD()
+             rcv:readByte()
+        end
+        data.ItemCount = data.ItemCount + 50
+    elseif wFlag == 1 then
+        for i = 1, wCount do 
+            data[i] = {}
+            data[i].lScore = rcv:readUInt64()
+            data[i].wTableID = rcv:readDWORD()
+            data[i].wData = rcv:readDWORD()
+            data[i].cbType = rcv:readByte() 
+            -- 7个空字节
+            rcv:readDWORD()
+            rcv:readWORD()
+            rcv:readByte()
+            print(data[i].wTableID)
+        end 
+        data.ItemCount = wCount
+        print(wCount)
+    end 
+end
+
 
 function NetWorkLogin:loginComplete( rcv )
 

@@ -78,7 +78,7 @@ function MainLayer:ctor()
 
     self.btnJoin:onClicked(
     function ()
-    --弹出界面，写完直接发(1, 1)
+    --弹出界面
         musicMgr:playEffect("game_button_click.mp3", false)
         dataMgr.roomSet.bIsCreate = 0
         dataMgr.joinPeople = 0
@@ -178,9 +178,7 @@ end
 
 
 function MainLayer:refresh()
-    print("refresh ")
-    print(dataMgr.myBaseData.szNickName)
-    print(tostring(dataMgr.prop[10]))
+    print("mainLayer refresh ")
     self.txtName:setString(dataMgr.myBaseData.szNickName)
     self.txtFangKa:setString(tostring(dataMgr.prop[10]))  
 end

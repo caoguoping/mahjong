@@ -347,10 +347,12 @@
           <Image Name="icon_card.png" />
           <Image Name="icon_setting_1.png" />
           <Image Name="icon_setting_2.png" />
+          <Image Name="tips_bg.png" />
           <Image Name="tishi.png" />
           <Image Name="touming.png" />
           <Image Name="touming2.png" />
           <Image Name="toumingHead.png" />
+          <Image Name="word.png" />
         </Folder>
         <Folder Name="button">
           <Folder Name="new">
@@ -1194,7 +1196,9 @@
           <TTF Name="fangzhengchuyuan.TTF" />
           <Fnt Name="mall.fnt" />
           <Image Name="number_add.png" />
+          <Image Name="number_add2.png" />
           <Image Name="number_minus.png" />
+          <Image Name="number_minus2.png" />
           <Fnt Name="timer.fnt" />
         </Folder>
         <Folder Name="gamePlay">
@@ -1332,6 +1336,8 @@
           <Image Name="anniu-denglu-up.png" />
           <Image Name="anniu-zhuce-down.png" />
           <Image Name="anniu-zhuce-up.png" />
+          <Image Name="button_login_1.png" />
+          <Image Name="button_login_2.png" />
           <Image Name="button_pingtai_1.png" />
           <Image Name="button_pingtai_2.png" />
           <Image Name="button_youke_1.png" />
@@ -1342,6 +1348,7 @@
           <Image Name="di01.png" />
           <Image Name="down-anniu01.png" />
           <Image Name="down-anniu02.png" />
+          <Image Name="frame_text.png" />
           <Image Name="kuang01.png" />
           <Image Name="logo_bottom.png" />
           <Image Name="logo_text.png" />
@@ -1371,6 +1378,8 @@
           <Image Name="button_join_2.png" />
           <Image Name="button_mail_1.png" />
           <Image Name="button_mail_2.png" />
+          <Image Name="button_promotion_1.png" />
+          <Image Name="button_promotion_2.png" />
           <Image Name="button_record_1.png" />
           <Image Name="button_record_2.png" />
           <Image Name="button_rules_1.png" />
@@ -1507,14 +1516,17 @@
           <Image Name="label_3_2.png" />
           <Image Name="title_record.png" />
         </Folder>
+        <Project Name="addScore.csd" Type="Node" />
         <Project Name="jiesuan.csd" Type="Node" />
         <Project Name="JiesuanCard.csd" Type="Node" />
         <Project Name="jiesuanFanxing.csd" Type="Node" />
         <Project Name="jiesuanHead.csd" Type="Node" />
         <Project Name="LoginScene.csd" Type="Scene" />
+        <Project Name="minusScore.csd" Type="Node" />
+        <Project Name="personInfo.csd" Type="Node" />
         <Project Name="popUpBox.csd" Type="Node" />
         <Project Name="RankShare.csd" Type="Node" />
-        <Project Name="personInfo.csd" Type="Node" />
+        <Project Name="sysMsgTouming.csd" Type="Node" />
       </RootFolder>
     </Group>
   </SolutionFolder>

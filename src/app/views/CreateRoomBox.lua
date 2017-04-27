@@ -656,13 +656,6 @@ function createRoomBox:ctor()
     layerMgr.LoginScene:addChild(self, 10000)
 
     btnCreate:onClicked(
-        --cgpTest
-        -- function ( )
-        --     layerMgr:removeBoxes(layerMgr.boxIndex.CreateRoomBox)
-        --     layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params) 
-        --     local layer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
-        --     layer:waitJoin()
-        -- end
 
 
         function (  )
@@ -677,8 +670,25 @@ function createRoomBox:ctor()
 			dataMgr.roomSet.bYaJue        = girl.getAllBitValue(tbYaJue)
 			dataMgr.roomSet.bJuShu        = c_bJuShu --1    --c_bJuShu	
 			dataMgr.roomSet.bIsJinyunzi   = c_bIsJinyunzi --1    --c_bIsJinyunzi 
-		   --dataMgr.roomSet.bIsYaJue = c_bIsYaJue 
-		
+
+            local cardNum = girl.juToFang[dataMgr.roomSet.bJuShu]
+           
+--房卡不够，弹出
+            if dataMgr.prop[10] < cardNum then
+                local popupbox =  import(".popUpBox",CURRENT_MODULE_NAME).create() 
+                popupbox:setInfo(Strings.noRoomCard)
+                local btnOk, btnCancel  = popupbox:getBtns()
+                btnOk:onClicked(function (  )    --确定
+                    popupbox:remove()
+                    musicMgr:playEffect("game_button_click.mp3", false)
+                    layerMgr.boxes[layerMgr.boxIndex.TuiGuangBox] = import(".ShoppingBox",CURRENT_MODULE_NAME).create()
+                end)
+                btnCancel:onClicked(function (  )
+                    popupbox:remove()
+                end)
+                return
+            end
+
             local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
             mainlayer:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
             
@@ -702,6 +712,10 @@ function createRoomBox:sendCreateRoom()
 	print("dataMgr.roomSet.bJuShu:"..dataMgr.roomSet.bJuShu)
     snd:wrByte(dataMgr.roomSet.bIsJinyunzi   )
     --snd:wrByte(dataMgr.roomSet.bIsYaJue   )
+
+    print("setroomSet "..dataMgr.roomSet.wScore.."  "..dataMgr.roomSet.bJuShu.."  "..dataMgr.roomSet.bIsJinyunzi)
+
+
     snd:sendData(netTb.SocketType.Game)
     snd:release();
 end
