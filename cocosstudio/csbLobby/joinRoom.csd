@@ -6,10 +6,10 @@
       <ObjectData Name="Node" Tag="3103" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Image_mask" ActionTag="-775882866" Alpha="165" Tag="3106" IconVisible="False" LeftMargin="-9.6146" RightMargin="-6.3854" TopMargin="-4.5000" BottomMargin="-4.5000" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="6" Scale9Height="5" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_mask" ActionTag="-775882866" Alpha="165" Tag="3106" IconVisible="False" LeftMargin="-8.5601" RightMargin="-7.4399" TopMargin="-4.4999" BottomMargin="-4.5001" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="6" Scale9Height="5" ctype="ImageViewObjectData">
             <Size X="16.0000" Y="9.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-1.6146" />
+            <Position X="-0.5601" Y="-0.0001" />
             <Scale ScaleX="80.0000" ScaleY="80.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -36,10 +36,10 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="joinRoom/bg_inner.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_input" ActionTag="1627755473" Alpha="218" Tag="1374" IconVisible="False" LeftMargin="-242.6937" RightMargin="-238.3063" TopMargin="-224.0072" BottomMargin="180.0072" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="471" Scale9Height="40" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_input" ActionTag="1627755473" Alpha="218" Tag="1374" IconVisible="False" LeftMargin="-240.5842" RightMargin="-240.4158" TopMargin="-217.6797" BottomMargin="173.6797" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="471" Scale9Height="40" ctype="ImageViewObjectData">
             <Size X="481.0000" Y="44.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-2.1937" Y="202.0072" />
+            <Position X="-0.0842" Y="195.6797" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -452,11 +452,11 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="joinRoom/title_join.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_Ok" ActionTag="1233978809" VisibleForFrame="False" Tag="1375" IconVisible="False" LeftMargin="-131.1473" RightMargin="-94.8527" TopMargin="234.0513" BottomMargin="-311.0513" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="196" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_Ok" ActionTag="1233978809" VisibleForFrame="False" Tag="1375" IconVisible="False" LeftMargin="-573.4501" RightMargin="347.4501" TopMargin="273.1287" BottomMargin="-350.1287" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="196" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="226.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-18.1473" Y="-272.5513" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Position X="-460.4501" Y="-311.6287" />
+            <Scale ScaleX="0.3499" ScaleY="0.7970" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />

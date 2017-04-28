@@ -164,8 +164,9 @@ function DataManager:init()
     wTable
     bIsCreate     1:创建 0:加入
     dwRoomNum     输入的房间号或算好的房间号
+    autoJoin      --1:通过被邀请自动加入游戏 0:正常加入游戏
     ]] 
-
+    self.roomSet.autoJoin = 0
     -----------获取房间配置---------------------
     self.roomSet.wScore = 200   --100\200\300\400 
     self.roomSet.wJieSuanLimit = 0  --0无限制、100\200\300

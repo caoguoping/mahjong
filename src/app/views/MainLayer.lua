@@ -78,16 +78,7 @@ function MainLayer:ctor()
 
     self.btnJoin:onClicked(
     function ()
-    --弹出界面
-        musicMgr:playEffect("game_button_click.mp3", false)
-        dataMgr.roomSet.bIsCreate = 0
-        dataMgr.joinPeople = 0
-        dataMgr.playerStatus = 0
-        layerMgr.boxes[layerMgr.boxIndex.JoinRoomBox] = import(".JoinRoomBox",CURRENT_MODULE_NAME).create()
-
-        local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
-        playLayer:createRefresh()
-        playLayer:setVisible(false)
+        self:btnJoinRoom()
     end
     )  
 
@@ -99,7 +90,7 @@ function MainLayer:ctor()
         snd:wrByte(2)   --坐下
         snd:sendData(netTb.SocketType.Game)
         snd:release()
---        musicMgr:playMusic("bgMusic.mp3", true)
+--        musicMgr:playMusic("bg.mp3", true)
         layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
 
     end
@@ -156,11 +147,27 @@ function MainLayer:ctor()
 
 
     self:btnCreateOrBack(true)
-    musicMgr:playMusic("bgMusic.mp3", true)
+    musicMgr:playMusic("bg.mp3", true)
     --预加载playLayer
     local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer)  
     playLayer:setVisible(false)
 end
+
+--加入房间
+function MainLayer:btnJoinRoom(  )
+--弹出界面
+    print("btnJoinRoom")
+    musicMgr:playEffect("game_button_click.mp3", false)
+    dataMgr.roomSet.bIsCreate = 0
+    dataMgr.joinPeople = 0
+    dataMgr.playerStatus = 0
+    layerMgr.boxes[layerMgr.boxIndex.JoinRoomBox] = import(".JoinRoomBox",CURRENT_MODULE_NAME).create()
+
+    local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+    playLayer:createRefresh()
+    playLayer:setVisible(false)
+end
+
 
 --创建房间按钮还是返回按钮   true ,创建房间，   false  返回房间
 function MainLayer:btnCreateOrBack( isCreate )    

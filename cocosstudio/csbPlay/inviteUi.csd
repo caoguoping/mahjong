@@ -50,7 +50,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_weChat" ActionTag="1153667393" VisibleForFrame="False" Tag="17199" IconVisible="False" LeftMargin="51.5538" RightMargin="-319.5538" TopMargin="32.3580" BottomMargin="-109.3580" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="238" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_weChat" ActionTag="1153667393" Tag="17199" IconVisible="False" LeftMargin="51.5538" RightMargin="-319.5538" TopMargin="32.3580" BottomMargin="-109.3580" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="238" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="268.0000" Y="77.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="185.5538" Y="-70.8580" />

@@ -14,13 +14,7 @@ function JoinRoomBox:ctor()
     rootNode:setPosition(display.center)
     layerMgr.LoginScene:addChild(self, 10000)
 
---test
     local txUid = rootNode:getChildByName("TextField_uid")
-
---test end
-
-
-
     local btnClose = rootNode:getChildByName("Button_close")
     local imgMask = rootNode:getChildByName("Image_mask")
     imgMask:onClicked(
@@ -54,12 +48,9 @@ function JoinRoomBox:ctor()
             self.txts[self.nowNum]:setString(tostring(i - 1))
             self.txts[self.nowNum]:setVisible(true)
             self.roomNum[8 - self.nowNum] = i - 1
-            
---cgpTest   实际上是进入成功1,102后执行，这边只执行连接游戏
-            if self.nowNum == 7 then
-                self.readRoomNum = girl.getAllDicimalValue(self.roomNum, 7)
-                dataMgr.roomSet.dwRoomNum = self.readRoomNum
 
+            if self.nowNum == 7 then
+                dataMgr.roomSet.dwRoomNum = girl.getAllDicimalValue(self.roomNum, 7)
                 self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
 
 
@@ -100,7 +91,6 @@ function JoinRoomBox:ctor()
                 return
             else
                 dataMgr.roomSet.dwRoomNum = tonumber(strUid)
-                self.readRoomNum = dataMgr.roomSet.dwRoomNum 
                 self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game) 
             end
  
@@ -108,11 +98,13 @@ function JoinRoomBox:ctor()
         end
         )
 
---关闭点击按钮
---test
-    --dataMgr.roomSet.dwRoomNum = 0
-    --self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game) 
---test End
+        --自动启动游戏
+    if dataMgr.roomSet.autoJoin == 1 then
+        print("joinRoomBox,  auto startGame")
+        self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)
+        return
+    end
+
 end
 
 function JoinRoomBox:reputRoomNum(  )
@@ -136,8 +128,8 @@ function JoinRoomBox:startGame(ip, port)
     
 --关闭点击按钮
 --test
-     local wTable = self.readRoomNum % 65536
-     local wChair = (self.readRoomNum - wTable)/ 65536    
+     local wTable = dataMgr.roomSet.dwRoomNum % 65536
+     local wChair = (dataMgr.roomSet.dwRoomNum - wTable)/ 65536    
 
    -- local wTable = 0
    -- local wChair = 0

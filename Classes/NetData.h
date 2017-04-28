@@ -13,7 +13,7 @@ struct stWeChatData
 	char  nickName[32];
 	char  sex[32];
 	char  headimgurl[200];
-	char  city[32];
+	char  city[32];    //实际上是房间号
 };
 
 

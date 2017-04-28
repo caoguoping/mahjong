@@ -22,7 +22,7 @@ function LoginScene:onEnter()
     local imgHealth = rootNode:getChildByName("Image_health")
 
     local seq = cc.Sequence:create(
-                cc.DelayTime:create(1.0),
+                --cc.DelayTime:create(1.0),   --广电测试
                 cc.FadeOut:create(0.5),
                 cc.CallFunc:create(
                 function ()
@@ -154,8 +154,8 @@ function LoginScene:onEnter()
     self.btnFast3 = btnFast3
     self.btnFast4 = btnFast4
   
-    --if(device.platform == "windows") then 
-    if true then        --广电测试
+    if(device.platform == "windows") then 
+    --if true then        --广电测试
         local xmlHttpReq = cc.XMLHttpRequest:new()
         dataMgr:getUrlImgByClientId(xmlHttpReq, 1, "http://wx.qlogo.cn/mmopen/9r6A4jA1ibTQFTnZTABJGlfDj26ehcMc6GHq4L1krtwbwzmHLghzU2Kyw9UhqqktB6fdicwk5ianexFB89WNvyf8dZCY5NJUOPL/0",
         function ()
@@ -175,12 +175,37 @@ function LoginScene:onEnter()
     local mainLayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)  
     mainLayer:setVisible(false)
 
+
+
 end
 
 
 function LoginScene:startLogin(_uid)
 
     print("openid ".._uid)
+
+    -- local fileName = "printScreen.png"
+    --     -- 移除纹理缓存
+    --     cc.Director:getInstance():getTextureCache():removeTextureForKey(fileName)
+    --     self:removeChildByTag(1000)
+    --     -- 截屏
+    --     cc.utils:captureScreen(
+    --         function(succeed, outputFile)
+    --             if succeed then
+    --               local winSize = cc.Director:getInstance():getWinSize()
+    --               local sp = cc.Sprite:create(outputFile)
+    --               self:addChild(sp, 0, 1000)
+    --               sp:setPosition(winSize.width / 2, winSize.height / 2)
+    --               sp:setScale(0.5) -- 显示缩放
+    --                 print("\n\n\n\noutputFile \n\n\n\n")
+    --                 print(outputFile)
+    --             else
+    --                 cc.showTextTips("截屏失败")
+    --             end
+    --         end, 
+    --         fileName)
+
+    
     TTSocketClient:getInstance():startSocket(netTb.ip, netTb.port.login, netTb.SocketType.Login)
 
     local snd = DataSnd:create(1, 2)

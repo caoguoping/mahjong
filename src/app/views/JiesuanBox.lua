@@ -1,6 +1,7 @@
 --  结算弹出界面--
 local CURRENT_MODULE_NAME = ...
 local dataMgr     = import(".DataManager"):getInstance()
+local cardDataMgr     = import(".CardDataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
 local musicMgr = import(".MusicManager"):getInstance()
 
@@ -26,7 +27,7 @@ function JiesuanBox:ctor()
         mainlayer:btnCreateOrBack(true)
 
         dataMgr.isNormalEnd = true
---        musicMgr:playMusic("bgMusic.mp3", true)
+--        musicMgr:playMusic("bg.mp3", true)
         layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
         TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
         self:removeSelf()
@@ -280,35 +281,63 @@ function JiesuanBox:initData( gameEndData )
     --self.listFanXing
     local itemHeigth = 50
     local itemWidth = 663
+    self.listFanXing:setItemsMargin(itemHeigth + 6)
 
-    --胡牌10翻
-    local oneNode = cc.CSLoader:createNode("jiesuanFanxing.csb")
-    local txtFangxin = oneNode:getChildByName("Text_string")
-    local txtNum     = oneNode:getChildByName("Text_num")
-    if true then   --有相应的翻型
-        txtFangxin:setString(fxString[1])
-        txtNum:setString(fxValue[1])
-        local oneLayout = ccui.Layout:create()
-        oneLayout:addChild(oneNode)
-        oneNode:setPosition(cc.p(itemWidth * 0.5, -itemHeigth * 0.5))
-        self.listFanXing:setItemsMargin(itemHeigth + 6)
-        self.listFanXing:pushBackCustomItem(oneLayout)
-    end
-
-    for i=4,25 do  --对对胡，到门清
+    local funcFanxing = function (fangxingName,  fangxingValue)
         local oneNode = cc.CSLoader:createNode("jiesuanFanxing.csb")
         local txtFangxin = oneNode:getChildByName("Text_string")
         local txtNum     = oneNode:getChildByName("Text_num")
+        txtFangxin:setString(fangxingName)
+        txtNum:setString(fangxingValue)
+        local oneLayout = ccui.Layout:create()
+        oneLayout:addChild(oneNode)
+        oneNode:setPosition(cc.p(itemWidth * 0.5, -itemHeigth * 0.5))
+        self.listFanXing:pushBackCustomItem(oneLayout)
+    end
+
+--胡牌10翻
+    -- local oneNode = cc.CSLoader:createNode("jiesuanFanxing.csb")
+    -- local txtFangxin = oneNode:getChildByName("Text_string")
+    -- local txtNum     = oneNode:getChildByName("Text_num")
+    -- if true then   --有相应的翻型
+    --     txtFangxin:setString(fxString[1])
+    --     txtNum:setString(fxValue[1])
+    --     local oneLayout = ccui.Layout:create()
+    --     oneLayout:addChild(oneNode)
+    --     oneNode:setPosition(cc.p(itemWidth * 0.5, -itemHeigth * 0.5))
+    --     self.listFanXing:setItemsMargin(itemHeigth + 6)
+    --     self.listFanXing:pushBackCustomItem(oneLayout)
+-- end
+
+    for i=4,17 do  --对对胡，到门清
+
         if fanxingTb[i] == 1 then   --有相应的翻型
-            txtFangxin:setString(fxString[i])
-            txtNum:setString(fxValue[i])
-            local oneLayout = ccui.Layout:create()
-            oneLayout:addChild(oneNode)
-            oneNode:setPosition(cc.p(itemWidth * 0.5, -itemHeigth * 0.5))
-           -- self.listFanXing:setItemsMargin(itemHeigth + 6)
-            self.listFanXing:pushBackCustomItem(oneLayout)
+            funcFanxing(fxString[i], fxValue[i])
         end
     end
+
+    --胡牌10翻
+    funcFanxing(fxString[1], fxValue[1])
+
+    for i=18,25 do  --压档等小翻
+        if fanxingTb[i] == 1 then   --有相应的翻型
+            funcFanxing(fxString[i], fxValue[i])
+        end
+    end
+
+    --花牌个数
+    if dataMgr.roomSet.bZaEr == 1 then
+        funcFanxing(fxString[31], "+ "..cardDataMgr.huaNum[dataMgr.chair[winSvr]] * 2)
+    else
+        funcFanxing(fxString[30], "+ "..cardDataMgr.huaNum[dataMgr.chair[winSvr]])
+    end
+
+    --比下胡
+    if cardDataMgr.cardSend.isBiXiaHu == 1 then
+        funcFanxing(fxString[32], fxValue[32])
+    end
+
+    --cocos bugs fack
     self.listFanXing:pushBackCustomItem(ccui.Layout:create())  --bugs fake
 
 end

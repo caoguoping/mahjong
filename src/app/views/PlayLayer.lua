@@ -120,6 +120,9 @@ function PlayLayer:ctorUi(  )
     self.txtLeftCard = self.deskUiNode:getChildByName("Text_leftCard")
     self.imgLeftCard = self.deskUiNode:getChildByName("Image_leftCard")
 
+    --比下胡
+    self.imgBixiahu = self.deskUiNode:getChildByName("Image_bixiahu")
+    self.imgBixiahu:setVisible(false)
     --花
     self.huaNode = {}
     self.txtHuaNum = {}
@@ -128,8 +131,6 @@ function PlayLayer:ctorUi(  )
         self.huaNode[i] = self.deskUiNode:getChildByName(strTmp)
         self.txtHuaNum[i] = self.huaNode[i]:getChildByName("Text_num")
     end   
-
-
 
     --剩余局数
     local nodeField = self.deskUiNode:getChildByName("FileNode_field")   
@@ -385,7 +386,7 @@ end
 
 --每局重新开始,更新界面和数据
 function PlayLayer:refresh( )
-
+    self.imgBixiahu:setVisible(false)
 
     cardMgr:hideAllCards()
     cardMgr:removeHandCards()
@@ -411,7 +412,7 @@ function PlayLayer:refresh( )
 end
 
 --等待其他人加入，在自己进去之后，收到
-function PlayLayer:waitJoin()
+function PlayLayer:JoinInit()
 
     self.nodeShezi:setVisible(false)
     self.inviteNode:setVisible(true)
@@ -622,6 +623,14 @@ end
 
 --发牌
 function PlayLayer:sendCard(drawValue)
+    --比下胡的显示
+    if cardDataMgr.cardSend.isBiXiaHu == 1 then
+        self.imgBixiahu:setVisible(true)
+    else
+        self.imgBixiahu:setVisible(false)
+    end
+
+
 --    musicMgr:stopMusic()
     musicMgr:playEffect("saizi.mp3", false)
     for i=1,4 do

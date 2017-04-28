@@ -287,6 +287,16 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/info.csd" Plist="" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Image_bixiahu" ActionTag="835641527" Tag="118" IconVisible="False" LeftMargin="-473.4124" RightMargin="370.4124" TopMargin="-346.4104" BottomMargin="299.4104" LeftEage="33" RightEage="33" TopEage="15" BottomEage="15" Scale9OriginX="33" Scale9OriginY="15" Scale9Width="37" Scale9Height="17" ctype="ImageViewObjectData">
+            <Size X="103.0000" Y="47.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-421.9124" Y="322.9104" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="gameui/img_bixiahu.png" Plist="" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

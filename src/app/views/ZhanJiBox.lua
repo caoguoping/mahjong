@@ -43,6 +43,7 @@ function ZhanJiBox:ctor()
 		rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))       
 	else
 	--有数据
+		rootNode:getChildByName("Text_57"):setVisible(false)
 		rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(true)
 		rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(false)
 		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)
@@ -162,35 +163,57 @@ function ZhanJiBox:ctor()
 
 		btnliushui:onClicked(
 		function()
-		rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(true)
-		rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(false)
-		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)
-		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(true)
-		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
-		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
+		if count == 0 then
+			rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(true)
+			rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(false)
+			rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)
+			rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(true)
+			rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
+			rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
+			rootNode:getChildByName("Text_57"):setVisible(true)
+			rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))
+		else
+			rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(true)
+			rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(false)
+			rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)
+			rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(true)
+			rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
+			rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
 
-		rootNode:getChildByName("ListView_liushui"):setPosition(cc.p(-467.00, -293.00))
-		rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(3000, 2000))
-		rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))
-
+			rootNode:getChildByName("ListView_liushui"):setPosition(cc.p(-467.00, -293.00))
+			rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(3000, 2000))
+			rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))
+		end
 		end)
 
 		btnzongfen:onClicked(
 		function()
-		rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(false)
-		rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(true)
-		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(true)
-		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(false)
-		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
-		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
+		if count == 0 then
+			rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(false)
+			rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(true)
+			rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(true)
+			rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(false)
+			rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
+			rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
+			rootNode:getChildByName("Text_57"):setVisible(true)
+			rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))
+		else
+			rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(false)
+			rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(true)
+			rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(true)
+			rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(false)
+			rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
+			rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
 
-		rootNode:getChildByName("ListView_liushui"):setPosition(cc.p(3000, 2000))
-		rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(0, -70.00))
-		rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))
+			rootNode:getChildByName("ListView_liushui"):setPosition(cc.p(3000, 2000))
+			rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(0, -70.00))
+			rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))
+		end
 		end)
 
 		btnguizhe:onClicked(
 		function()
+		rootNode:getChildByName("Text_57"):setVisible(false)
 		rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(false)
 		rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(true)
 		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)

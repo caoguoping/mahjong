@@ -28,5 +28,30 @@
         <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="LoginScene.csd" />
+          <FilePathData Path="RankShare.csd" />
+          <FilePathData Path="sysMsgTouming.csd" />
+          <FilePathData Path="jiesuanFanxing.csd" />
+          <FilePathData Path="jiesuan.csd" />
+          <FilePathData Path="addScore.csd" />
+          <FilePathData Path="jiesuanHead.csd" />
+          <FilePathData Path="minusScore.csd" />
+          <FilePathData Path="personInfo.csd" />
+          <FilePathData Path="csbPlay/deskUi.csd" />
+          <FilePathData Path="csbPlay/playHeadNode.csd" />
+          <FilePathData Path="csbPlay/inviteUi.csd" />
+          <FilePathData Path="popUpBox.csd" />
+          <FilePathData Path="csbPlay/playScene.csd" />
+          <FilePathData Path="csbLobby/NewLobby.csd" />
+          <FilePathData Path="csbLobby/joinRoom.csd" />
+          <FilePathData Path="csbPlay/ZhanJiHead.csd" />
+          <FilePathData Path="csbPlay/ZhanJiBox.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="csbPlay/ZhanJiBox.csd" />
+      </Value>
+    </Item>
   </Properties>
 </UserData>

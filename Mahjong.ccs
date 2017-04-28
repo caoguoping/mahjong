@@ -1250,6 +1250,7 @@
           <Image Name="text_house_2.png" />
         </Folder>
         <Folder Name="gameui">
+          <Image Name="img_bixiahu.png" />
           <Image Name="img_dir_0.png" />
           <Image Name="img_dir_1.png" />
           <Image Name="img_dir_2.png" />

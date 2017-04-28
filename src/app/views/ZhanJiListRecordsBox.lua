@@ -15,11 +15,30 @@ function ZhanJiListRecordsBox:ctor()
 	local btnclose = rootNode:getChildByName("Button_close")
     local btnliushui = rootNode:getChildByName("Node_liushui"):getChildByName("Button_liushui")
     local btnzongfen = rootNode:getChildByName("Node_zongfen"):getChildByName("Button_zongfen")
-    local btnguizhe = rootNode:getChildByName("Node_guizhe"):getChildByName("Button_guizhe")
+	rootNode:getChildByName("Node_guizhe"):setVisible(false)
+    --local btnguizhe = rootNode:getChildByName("Node_guizhe"):getChildByName("Button_guizhe")
+	--btnguizhe:setVisible(false)
     local ListView_liushui = rootNode:getChildByName("ListView_liushui")
 	local Image_zongfen = rootNode:getChildByName("Image_zongfen")
 	local Image_guize = rootNode:getChildByName("Image_guize")
-	
+
+	rootNode:getChildByName("Text_57"):setVisible(false)
+	rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(true)
+	rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(false)
+	rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)
+	rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(true)
+	--rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
+	--rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
+
+	rootNode:getChildByName("ListView_liushui"):setPosition(cc.p(-467.00, -293.00))
+	rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(3000, 2000))
+	rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))
+	---	禁用头像框
+	rootNode:getChildByName("Image_zongfen"):getChildByName("FileNode_6"):getChildByName("headshot_top_28"):setVisible(false)
+	rootNode:getChildByName("Image_zongfen"):getChildByName("FileNode_6_0"):getChildByName("headshot_top_28"):setVisible(false)
+	rootNode:getChildByName("Image_zongfen"):getChildByName("FileNode_6_1"):getChildByName("headshot_top_28"):setVisible(false)
+	rootNode:getChildByName("Image_zongfen"):getChildByName("FileNode_6_2"):getChildByName("headshot_top_28"):setVisible(false)
+
 	---根据检索key值，检索对应详细信息，如果不在HistroyDetailedRecords表里，则向服务器请求该条详细数据
 	  ---读一场游戏结算数据
       --检测是否有数据
@@ -39,29 +58,9 @@ function ZhanJiListRecordsBox:ctor()
 	local function getRecordsData()
 		local count = dataMgr.IndexRecords
 		print("....................."..count)
-		if count == 0 then--没有数据
-			rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(true)
-			rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(false)
-			rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)
-			rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(true)
-			rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
-			rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
-			rootNode:getChildByName("ListView_liushui"):setPosition(cc.p(3000, 2000))
-			rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(3000, 2000))
-			rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))       
+		if count == 0 then--没有数据      
 		else
-		--有数据
-			rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(true)
-			rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(false)
-			rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)
-			rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(true)
-			rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
-			rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
-			rootNode:getChildByName("ListView_liushui"):setPosition(cc.p(-467.00, -293.00))
-			rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(3000, 2000))
-			rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))
-
-
+		--有数据 
 			for k,v in ipairs(dataMgr.HistroyRecords[count].Records) do  
 			Hcount = Hcount + 1
 			end
@@ -82,10 +81,10 @@ function ZhanJiListRecordsBox:ctor()
 				local txtfen2 = oneNode:getChildByName("fen_2")
 				local txtfen3 = oneNode:getChildByName("fen_3")
 				local txtfen4 = oneNode:getChildByName("fen_4")
-				local headimg1 = oneNode:getChildByName("FileNode_1"):getChildByName("Image_head")
-				local headimg2 = oneNode:getChildByName("FileNode_2"):getChildByName("Image_head")
-				local headimg3 = oneNode:getChildByName("FileNode_3"):getChildByName("Image_head")
-				local headimg4 = oneNode:getChildByName("FileNode_4"):getChildByName("Image_head")
+				oneNode:getChildByName("FileNode_1"):getChildByName("headshot_top_28"):setVisible(false)
+			 	oneNode:getChildByName("FileNode_2"):getChildByName("headshot_top_28"):setVisible(false)
+			 	oneNode:getChildByName("FileNode_3"):getChildByName("headshot_top_28"):setVisible(false)
+				oneNode:getChildByName("FileNode_4"):getChildByName("headshot_top_28"):setVisible(false)
 				local name1 = oneNode:getChildByName("FileNode_1"):getChildByName("name_Text")
 				local name2 = oneNode:getChildByName("FileNode_2"):getChildByName("name_Text")
 				local name3 = oneNode:getChildByName("FileNode_3"):getChildByName("name_Text")
@@ -143,7 +142,7 @@ function ZhanJiListRecordsBox:ctor()
 				ListView_liushui:pushBackCustomItem(oneLayout)
 				--ListView_liushui:pushBackCustomItem(ccui.Layout:create())  --bugs fake
 			end
-			ListView_liushui:pushBackCustomItem(ccui.Layout:create())  --bugs fake
+			---ListView_liushui:pushBackCustomItem(ccui.Layout:create())  --bugs fake
 			----------------总分排行榜的显示
 			for i1 = 1,4 do
 				local min = AllNum[i1].lScore
@@ -184,8 +183,8 @@ function ZhanJiListRecordsBox:ctor()
 		rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(false)
 		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)
 		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(true)
-		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
-		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
+		--rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
+		--rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
 
 		rootNode:getChildByName("ListView_liushui"):setPosition(cc.p(-467.00, -293.00))
 		rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(3000, 2000))
@@ -199,27 +198,27 @@ function ZhanJiListRecordsBox:ctor()
 		rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(true)
 		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(true)
 		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(false)
-		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
-		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
+		--rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
+		--rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
 
 		rootNode:getChildByName("ListView_liushui"):setPosition(cc.p(3000, 2000))
 		rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(0, -70.00))
 		rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))
 		end)
 
-		btnguizhe:onClicked(
-		function()
-		rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(false)
-		rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(true)
-		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)
-		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(true)
-		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(true)
-		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(false)
+		-- btnguizhe:onClicked(
+		-- function()
+		-- rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(false)
+		-- rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(true)
+		-- rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)
+		-- rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(true)
+		-- rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(true)
+		-- rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(false)
 
-		rootNode:getChildByName("ListView_liushui"):setPosition(cc.p(3000, 2000))
-		rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(3000, 2000))
-		rootNode:getChildByName("Image_guize"):setPosition(cc.p(0, -70.00))
-		end)
+		-- rootNode:getChildByName("ListView_liushui"):setPosition(cc.p(3000, 2000))
+		-- rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(3000, 2000))
+		-- rootNode:getChildByName("Image_guize"):setPosition(cc.p(0, -70.00))
+		-- end)
 		btnclose:onClicked(
         function (  )
              --TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)

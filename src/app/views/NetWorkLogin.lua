@@ -213,13 +213,18 @@ function NetWorkLogin:loginComplete( rcv )
     rcv:destroys()
 
     layerMgr:showLayer(layerMgr.layIndex.MainLayer)
-    --musicMgr:playMusic("bgMusic.mp3", true)
+    --musicMgr:playMusic("bg.mp3", true)
     local mainLayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
 
     --显示mainLayer的剪切头像
     mainLayer:cutHeadImg()
 
     mainLayer:refresh()
+
+    --自动启动房间
+    if dataMgr.roomSet.autoJoin == 1 then
+        mainLayer:btnJoinRoom()
+    end
 
 end
 

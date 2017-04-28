@@ -31,7 +31,16 @@ function SDKHelper:handleSDKLogin( event)
     local nickName = sdkData:readNickName()
     local sex = sdkData:readSex()
     local headimgurl = sdkData:readHeadimgurl()
-    local city = sdkData:readCity()
+    local city = sdkData:readCity()  --实际上是房间号
+
+    local roomNum = tonumber(city)
+    print("roomNum   in SDKHelper "..roomNum)
+    if roomNum == 0 then   --非自动启动
+        dataMgr.roomSet.autoJoin = 0
+    else
+        dataMgr.roomSet.autoJoin = 1  --自动启动
+        dataMgr.roomSet.dwRoomNum = roomNum
+    end
 
     dataMgr.myBaseData.uid = openid
     dataMgr.myBaseData.szNickName = nickName
@@ -42,7 +51,7 @@ function SDKHelper:handleSDKLogin( event)
 
 
     dataMgr.myBaseData.headimgurl = headimgurl
-    dataMgr.myBaseData.city = city
+    --dataMgr.myBaseData.city = city
 
         local xmlHttpReq = cc.XMLHttpRequest:new()
         dataMgr:getUrlImgByClientId(xmlHttpReq, 1, dataMgr.myBaseData.headimgurl,
@@ -60,7 +69,7 @@ function SDKHelper:handleSDKLogin( event)
         )
     --dataMgr:getUrlImgByClientId(1, dataMgr.myBaseData.headimgurl)
 
-    print("openid "..openid.."  nickName "..nickName.." sex "..sex.." headimgurl "..headimgurl.." city "..city.." cbGender "..dataMgr.myBaseData.cbGender)
+    print("openid "..openid.."  nickName "..nickName.." sex "..sex.." headimgurl "..headimgurl.." roomNum "..city.." cbGender "..dataMgr.myBaseData.cbGender)
 
 
 end

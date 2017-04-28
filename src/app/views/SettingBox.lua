@@ -35,7 +35,7 @@ function SettingBox:ctor()
 			imgMusicOn:setVisible(true)
 			imgMusicOff:setVisible(false)
 			dataMgr.isMusicOn = true
-    		musicMgr:playMusic("bgMusic.mp3", true)
+    		musicMgr:playMusic("bg.mp3", true)
 			print("Off to on")
 		end
 	end)

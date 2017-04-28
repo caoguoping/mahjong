@@ -107,7 +107,8 @@ function NetWorkGame:handleEventGame( event)
             elseif wSubCmd == 114 then
             -----游戏结束后，获取游戏结束状态标志,游戏开始前需要将GameOverState置0
                 dataMgr.GameOverState = rcv:readByte() 
-                
+            elseif wSubCmd == 115 then
+                cardDataMgr.cardSend.isBiXiaHu      = rcv:readByte()               --1：比下胡  
         end 
 
         --114 ,byte  1,正常v,    2， 游戏中退出，    3， 结算退出
@@ -520,7 +521,7 @@ function NetWorkGame:createRoom( rcv )
         layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
         local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
         playLayer:showJushuAndJinyunzi()
-        playLayer:waitJoin()
+        playLayer:JoinInit()
     end
 
 
@@ -536,7 +537,6 @@ end
 
 
 --状态变化   1:起立，  2， 坐下，   3， 准备，   
-
 --3, 102,   桌子号为0xFFFF,房间解散
 function NetWorkGame:changeState( rcv )
     local dwUserId = rcv:readDWORD()
@@ -557,23 +557,13 @@ function NetWorkGame:changeState( rcv )
                 layerMgr:removeBoxes(layerMgr.boxIndex.JoinRoomBox)
                 layerMgr:showLayer(layerMgr.layIndex.PlayLayer, params)
                
-                playlayer:waitJoin() 
-                playlayer.btnDisRoom:setTouchEnabled(false)
-            else
-                playlayer.btnDisRoom:setTouchEnabled(true)
+                playlayer:JoinInit() 
             end
         end
 
         if cbUserStatus == 3 then   --准备状态
             local clientId =  dataMgr.chair[wChairId + 1]
             playlayer.imgReady[clientId]:setVisible(true)
-           
-
-            -- for i=1,4 do
-            --     local svrId = dataMgr:getServiceChairId(i)
-            --     playlayer.txtScore[i]:setString(dataMgr.onDeskData[svrId].LeftMoney)
-            -- end
-
         end
         
 
@@ -582,7 +572,7 @@ function NetWorkGame:changeState( rcv )
             if dataMgr.myBaseData.dwUserID == dwUserId then     --自己退出
                 TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game) 
                 layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
---                musicMgr:playMusic("bgMusic.mp3", true)
+--                musicMgr:playMusic("bg.mp3", true)
             else   --其他人退出
                 local svrChairId = dataMgr:getSvrIdByUserId(dwUserId)   --[1,4]
                 playlayer:showPlayer(svrChairId, false)

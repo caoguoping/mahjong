@@ -19,7 +19,7 @@
           <AbstractNodeData Name="Image_643" ActionTag="-488436972" Tag="1771" IconVisible="False" LeftMargin="-525.0000" RightMargin="-525.0000" TopMargin="-344.5000" BottomMargin="-344.5000" LeftEage="346" RightEage="346" TopEage="227" BottomEage="227" Scale9OriginX="346" Scale9OriginY="227" Scale9Width="358" Scale9Height="235" ctype="ImageViewObjectData">
             <Size X="1050.0000" Y="689.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position Y="0.0000" />
+            <Position />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -74,7 +74,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="ZhanJI/label_1_2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_liushui" ActionTag="-2123117665" Tag="1774" IconVisible="False" LeftMargin="-107.0000" RightMargin="-107.0000" TopMargin="-31.0000" BottomMargin="-31.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="184" Scale9Height="40" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_liushui" ActionTag="-2123117665" Tag="1774" IconVisible="False" LeftMargin="-107.0000" RightMargin="-107.0000" TopMargin="-31.0000" BottomMargin="-31.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="-15" Scale9OriginY="-11" Scale9Width="30" Scale9Height="22" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="214.0000" Y="62.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -118,7 +118,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="ZhanJI/label_2_2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_zongfen" ActionTag="990704059" Tag="1775" IconVisible="False" LeftMargin="-107.0000" RightMargin="-107.0000" TopMargin="-31.0000" BottomMargin="-31.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="184" Scale9Height="40" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_zongfen" ActionTag="990704059" Tag="1775" IconVisible="False" LeftMargin="-107.0000" RightMargin="-107.0000" TopMargin="-31.0000" BottomMargin="-31.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="-15" Scale9OriginY="-11" Scale9Width="30" Scale9Height="22" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="214.0000" Y="62.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -162,7 +162,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="ZhanJI/label_3_2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_guizhe" ActionTag="-1986059908" Tag="1776" IconVisible="False" LeftMargin="-107.0000" RightMargin="-107.0000" TopMargin="-31.0000" BottomMargin="-31.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="184" Scale9Height="40" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_guizhe" ActionTag="-1986059908" Tag="1776" IconVisible="False" LeftMargin="-107.0000" RightMargin="-107.0000" TopMargin="-31.0000" BottomMargin="-31.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="-15" Scale9OriginY="-11" Scale9Width="30" Scale9Height="22" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="214.0000" Y="62.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position />
@@ -185,20 +185,6 @@
           </AbstractNodeData>
           <AbstractNodeData Name="Image_bg" ActionTag="1209930069" Tag="2457" IconVisible="False" LeftMargin="-482.5729" RightMargin="-479.4271" TopMargin="-170.8071" BottomMargin="-309.1929" LeftEage="317" RightEage="317" TopEage="158" BottomEage="158" Scale9OriginX="317" Scale9OriginY="158" Scale9Width="328" Scale9Height="164" ctype="ImageViewObjectData">
             <Size X="962.0000" Y="480.0000" />
-            <Children>
-              <AbstractNodeData Name="Text_57" ActionTag="78160967" Tag="2465" IconVisible="False" LeftMargin="190.0000" RightMargin="352.0000" TopMargin="58.5000" BottomMargin="378.5000" FontSize="38" LabelText="暂无任何记录，请玩一局" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="420.0000" Y="43.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="400.0000" Y="400.0000" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4158" Y="0.8333" />
-                <PreSize X="0.4366" Y="0.0896" />
-                <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-            </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-1.5729" Y="-69.1929" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -603,6 +589,18 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="ZhanJI/bg_table.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_57" ActionTag="78160967" Tag="2465" IconVisible="False" LeftMargin="-364.7734" RightMargin="-55.2266" TopMargin="-111.0902" BottomMargin="68.0902" FontSize="38" LabelText="暂无任何记录，请玩一局" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="420.0000" Y="43.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-154.7734" Y="89.5902" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>
