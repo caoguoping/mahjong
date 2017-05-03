@@ -6,6 +6,12 @@
 
 --------------------------------
 -- 
+-- @function [parent=#SDKLoginData] readIp 
+-- @param self
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- 
 -- @function [parent=#SDKLoginData] readOpenid 
 -- @param self
 -- @return string#string ret (return value: string)
@@ -18,13 +24,13 @@
         
 --------------------------------
 -- 
--- @function [parent=#SDKLoginData] readNickName 
+-- @function [parent=#SDKLoginData] readHeadimgurl 
 -- @param self
 -- @return string#string ret (return value: string)
         
 --------------------------------
 -- 
--- @function [parent=#SDKLoginData] readHeadimgurl 
+-- @function [parent=#SDKLoginData] readNickName 
 -- @param self
 -- @return string#string ret (return value: string)
         

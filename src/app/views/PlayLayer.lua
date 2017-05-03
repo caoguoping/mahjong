@@ -107,7 +107,7 @@ function PlayLayer:ctorUi(  )
             if "began" == event.name then
                 layerMgr.boxes[layerMgr.boxIndex.PersonInfoBox] = import(".PersonInfoBox",CURRENT_MODULE_NAME).create()
                 layerMgr.boxes[layerMgr.boxIndex.PersonInfoBox]:init(i, personInfoX[i], personInfoY[i])
-            elseif "ended" == event.name then
+            elseif "ended" == event.name or "cancelled" == event.name then
                 layerMgr:removeBoxes(layerMgr.boxIndex.PersonInfoBox)
             end
         end)

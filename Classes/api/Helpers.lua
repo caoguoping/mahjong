@@ -5,12 +5,14 @@
 
 --------------------------------
 -- 
--- @function [parent=#Helpers] callWechatShareJoin 
+-- @function [parent=#Helpers] callJavaLogin 
 -- @param self
--- @param #char imgPath
--- @param #char url
--- @param #int roomNum
--- @param #int isToAll
+-- @return Helpers#Helpers self (return value: Helpers)
+        
+--------------------------------
+-- 
+-- @function [parent=#Helpers] sendLoginData 
+-- @param self
 -- @return Helpers#Helpers self (return value: Helpers)
         
 --------------------------------
@@ -23,14 +25,20 @@
         
 --------------------------------
 -- 
--- @function [parent=#Helpers] callJavaLogin 
+-- @function [parent=#Helpers] callWechatShareJoin 
 -- @param self
+-- @param #char imgPath
+-- @param #char url
+-- @param #int roomNum
+-- @param #int isToAll
 -- @return Helpers#Helpers self (return value: Helpers)
         
 --------------------------------
 -- 
--- @function [parent=#Helpers] sendLoginData 
+-- @function [parent=#Helpers] callWeChatPay 
 -- @param self
+-- @param #char prePayId
+-- @param #char saves
 -- @return Helpers#Helpers self (return value: Helpers)
         
 --------------------------------

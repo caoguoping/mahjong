@@ -13,7 +13,7 @@ extern "C" {
  * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_LoginCallback
-  (JNIEnv *, jclass, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jclass, jstring, jstring, jstring, jstring, jstring, jstring);
 
 /*
  * Class:     org_cocos2dx_lua_SDKPlugin

@@ -259,3 +259,8 @@ std::string SDKLoginData::readCity()
 	return weChatData.city;
 }
 
+std::string SDKLoginData::readIp()
+{
+	return weChatData.hostIp;
+}
+

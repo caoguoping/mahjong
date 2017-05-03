@@ -24,6 +24,9 @@ public:
 	void callWechatShareJoin(const char* imgPath, const char* url,  int roomNum,  int isToAll);
 	//分享战绩
 	void callWechatShareResult(const char* imgPath, int isToAll);
+	//微信支付
+	void callWeChatPay(const char* prePayId, const char*  saves  );
+
 	char* jstringTostring(JNIEnv* env, jstring jstr);
 	void callJavaLogin(void);
 #endif

@@ -15,7 +15,7 @@ Helpers* Helpers::getInstance()
 #include <jni.h>
 #include "org_cocos2dx_lua_SDKPlugin.h"
 
-JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_LoginCallback(JNIEnv * env, jclass jc, jstring openid, jstring nickname, jstring sex, jstring headimgurl, jstring city)
+JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_LoginCallback(JNIEnv * env, jclass jc, jstring openid, jstring nickname, jstring sex, jstring headimgurl, jstring city, jstring hostIp)
 {
     log("LUA-print jniCall LoginCallback");
     Helpers*  helpers = Helpers::getInstance();
@@ -24,12 +24,14 @@ JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_LoginCallback(JNIEnv * en
 	const char* strSex        = helpers->jstringTostring(env, sex);
 	const char* strHeadimgurl = helpers->jstringTostring(env, headimgurl);
 	const char* strCity       = helpers->jstringTostring(env, city);
+	const char* strIp       = helpers->jstringTostring(env, hostIp);
 
 	memcpy(helpers->weChatData.openid    , strOpenid    , 32);
 	memcpy(helpers->weChatData.nickName  , strNickName  , 32);
 	memcpy(helpers->weChatData.sex       , strSex       , 32);
 	memcpy(helpers->weChatData.headimgurl, strHeadimgurl, 200);
 	memcpy(helpers->weChatData.city      , strCity      , 32);
+	memcpy(helpers->weChatData.hostIp      , strIp      , 16);
     helpers->sendLoginData();
 }
 
@@ -80,6 +82,21 @@ void Helpers::callWechatShareJoin(const char* imgPath, const char* url,  int roo
 	}
 }
 
+//微信支付
+void Helpers::callWeChatPay(const char* prePayId, const char*  saves  )
+{
+	JniMethodInfo info;
+	bool ret = JniHelper::getStaticMethodInfo(info, "org/cocos2dx/lua/AppActivity", "callWeChatPay", "(Ljava/lang/String;Ljava/lang/String;)V");
+	if (ret)
+	{
+		log("LUA-print callWechatShare success\n");
+		jstring jPrePayId = info.env->NewStringUTF(prePayId); 
+		jstring jSaves = info.env->NewStringUTF(saves); 
+		info.env->CallStaticVoidMethod(info.classID, info.methodID, jPrePayId, jSaves);
+		info.env->DeleteLocalRef(jPrePayId);
+		info.env->DeleteLocalRef(jSaves);
+	}
+}
 
 //分享战绩  //path 图片路径    isToAllFriends  1:分享到朋友圈， 0  分享给好友  
 void Helpers::callWechatShareResult(const char* imgPath, int isToAll)

@@ -14,6 +14,7 @@ struct stWeChatData
 	char  sex[32];
 	char  headimgurl[200];
 	char  city[32];    //实际上是房间号
+	char  hostIp[16];   //ip
 };
 
 
@@ -72,6 +73,7 @@ public:
 	std::string readSex();
 	std::string readHeadimgurl();
 	std::string readCity();
+	std::string readIp();
 public:
 	stWeChatData  weChatData;
 
