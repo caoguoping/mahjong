@@ -13,8 +13,10 @@ struct stWeChatData
 	char  nickName[32];
 	char  sex[32];
 	char  headimgurl[200];
-	char  city[32];    //实际上是房间号
+	char  roomNum[32];    //实际上是房间号
 	char  hostIp[16];   //ip
+	char  unionId[64];  //统一标识 
+	char  saves[32];
 };
 
 
@@ -72,8 +74,10 @@ public:
 	std::string readNickName();
 	std::string readSex();
 	std::string readHeadimgurl();
-	std::string readCity();
+	std::string readRoomNum();
 	std::string readIp();
+	std::string readUnionId();
+	std::string readSaves();
 public:
 	stWeChatData  weChatData;
 

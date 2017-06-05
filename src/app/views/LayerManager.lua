@@ -38,6 +38,9 @@ LayerManager.boxIndex = table.enumTable({
 	"RankShareBox",
 	"ShoppingBox",
 	"PersonInfoBox",
+	"popupbox",
+	"LiujuBox",
+	"ChatUIBox"
 
 })
 

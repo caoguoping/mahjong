@@ -19,75 +19,29 @@
           </ScaleFrame>
         </Timeline>
         <Timeline ActionTag="1067360779" Property="FileData">
-          <TextureFrame FrameIndex="0" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00000.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="3" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00001.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="6" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00002.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="9" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00003.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="12" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00004.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="15" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00005.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="18" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00006.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="21" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00007.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="24" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00008.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="27" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00009.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="30" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00010.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="33" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00011.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="36" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00012.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="39" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00013.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="42" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00014.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="45" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00015.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="48" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00016.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="51" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00017.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="54" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00018.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="57" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00019.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="60" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00020.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="63" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00021.png" Plist="" />
-          </TextureFrame>
-          <TextureFrame FrameIndex="66" Tween="False">
-            <TextureFile Type="Normal" Path="actions/buhua/buhua_00022.png" Plist="" />
-          </TextureFrame>
+          <TextureFrame FrameIndex="0" Tween="False" />
+          <TextureFrame FrameIndex="3" Tween="False" />
+          <TextureFrame FrameIndex="6" Tween="False" />
+          <TextureFrame FrameIndex="9" Tween="False" />
+          <TextureFrame FrameIndex="12" Tween="False" />
+          <TextureFrame FrameIndex="15" Tween="False" />
+          <TextureFrame FrameIndex="18" Tween="False" />
+          <TextureFrame FrameIndex="21" Tween="False" />
+          <TextureFrame FrameIndex="24" Tween="False" />
+          <TextureFrame FrameIndex="27" Tween="False" />
+          <TextureFrame FrameIndex="30" Tween="False" />
+          <TextureFrame FrameIndex="33" Tween="False" />
+          <TextureFrame FrameIndex="36" Tween="False" />
+          <TextureFrame FrameIndex="39" Tween="False" />
+          <TextureFrame FrameIndex="42" Tween="False" />
+          <TextureFrame FrameIndex="45" Tween="False" />
+          <TextureFrame FrameIndex="48" Tween="False" />
+          <TextureFrame FrameIndex="51" Tween="False" />
+          <TextureFrame FrameIndex="54" Tween="False" />
+          <TextureFrame FrameIndex="57" Tween="False" />
+          <TextureFrame FrameIndex="60" Tween="False" />
+          <TextureFrame FrameIndex="63" Tween="False" />
+          <TextureFrame FrameIndex="66" Tween="False" />
           <TextureFrame FrameIndex="69" Tween="False">
             <TextureFile Type="Normal" Path="bg/touming.png" Plist="" />
           </TextureFrame>

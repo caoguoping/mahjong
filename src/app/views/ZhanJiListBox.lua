@@ -2,6 +2,7 @@
 local CURRENT_MODULE_NAME = ...
 local dataMgr = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
+local musicMgr = import(".MusicManager"):getInstance()
 
 local ZhanJiListBox = class("ZhanJiListBox", display.newLayer)
 function ZhanJiListBox:ctor()
@@ -95,7 +96,6 @@ print("isclosed?1")
         --dataMgr.HistroyRecords[i].dwUserID
 	btnclose:onClicked(
 	function (  )
-			--TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
 		self:removeSelf()
 	end)
 end

@@ -29,13 +29,11 @@ function NetWorkLogin:loginFail( rcv )
     TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Login)
     local popupbox =  import(".popUpBox",CURRENT_MODULE_NAME).create() 
     popupbox:setInfo(Strings.connectLoginFail)
-    local btnOk, btnCancel  = popupbox:getBtns()
+    local btnOk  = popupbox:getBtns(1)
     btnOk:onClicked(function (  )
     popupbox:remove()
     end)
-    btnCancel:onClicked(function (  )
-    popupbox:remove()
-    end)
+
 end
 
 function NetWorkLogin:handleEventLogin( event)
@@ -62,19 +60,27 @@ function NetWorkLogin:handleEventLogin( event)
             self:HistroyRecordsByLogin(rcv)
         elseif wSubCmd == 107 then
             self:Zhanji(rcv)
+        elseif wSubCmd == 106 then
+            self:TuiGuang(rcv)
+        elseif wSubCmd == 109 then  
+            self:checkBind(rcv)  
         end
     elseif wMainCmd == 3 then
             if wSubCmd == 502 then
                self:propChange(rcv)
             --充值返回值  0：成功  ，   其他失败
+            elseif wSubCmd == 500 then
+                self:getBagInfo(rcv)
+            elseif wSubCmd == 506 then
+                self:propChange(rcv)   --道具变更
+
+            elseif wSubCmd == 515 then
+                self:getShopInfo(rcv)
+            --todo
             elseif wSubCmd == 854 then
                 self:getChargeResult(rcv)
             end
-    elseif wMainCmd == 500 then
-        if wSubCmd == 501 then
-            print(500, 501)
-            self:getBagInfo(rcv)
-        end
+
     else
     -- --
     end
@@ -92,30 +98,81 @@ function NetWorkLogin:getChargeResult( rcv )
 end
 
 
---背包
+--背包(3, 500)
 function NetWorkLogin:getBagInfo( rcv )
     local bagSize = rcv:readByte()
+    print("bagSize "..bagSize)
 
     for i=1,bagSize do
-        local propId = rcv:readDWORD()
-        local propCount = rcv:readWORD()
         local kindId = rcv:readWORD()
-        print("propId "..propId.."  "..propCount.."  "..kindId)
+        local propCount = rcv:readWORD()
+        print("kindId propcount")
+        print(kindId)
+        print(propCount)
         dataMgr.prop[kindId] = propCount
     end
 
     layerMgr:getLayer(layerMgr.layIndex.MainLayer, params).txtFangKa:setString(tostring(dataMgr.prop[10]))
-    print("bagSize "..bagSize)
 end
 
---道具变更 3, 501
-function NetWorkLogin:propChange( rcv )
-    print("3, 501   道具变更")
-    local userId = rcv:readDWORD()
-    local count = rcv:readWORD()     --总数
-    local kindId = rcv:readWORD()
-    dataMgr.prop[kindId] = count
+
+
+-- //商城信息
+-- struct Shop_Info
+-- {
+--     WORD       ID         ;                点击了第几个
+--     WORD       ProtoID    ;                //商品ID 10
+--     WORD       Cnt         ;                        //商品数量
+--     WORD       RCnt       ;                   //真实数量
+--     WORD       Cost       ;                       //商品价格
+--     WORD       RCost       ;                  //实际价格
+--     char       ProtoName[32];          //商品名称
+-- };
+
+--商店目录
+function NetWorkLogin:getShopInfo( rcv )    
+    local shopCount = rcv:readWORD()     --商品数量
+    if shopCount > 6 then
+        shopCount = 6
+    end
+    print("shopCount ")
+    print(shopCount)
+    dataMgr.shoppingCount = shopCount
+    for i=1,shopCount do
+        dataMgr.shoppingData[i] = {}
+        dataMgr.shoppingData[i].ID        = rcv:readWORD()
+        dataMgr.shoppingData[i].ProtoID   = rcv:readWORD()
+        dataMgr.shoppingData[i].Cnt       = rcv:readWORD()
+        dataMgr.shoppingData[i].RCnt      = rcv:readWORD()
+        dataMgr.shoppingData[i].Cost      = rcv:readWORD()
+        dataMgr.shoppingData[i].RCost     = rcv:readWORD()
+        dataMgr.shoppingData[i].ProtoName = rcv:readString(64)
+        print("protoName")
+        print(dataMgr.shoppingData[i].ProtoName)
+    end
 end
+ 
+--道具变更 3, 506     
+function NetWorkLogin:propChange( rcv )
+
+    local kindId = rcv:readWORD()
+    local count = rcv:readWORD()     --总数
+    dataMgr.prop[kindId] = count
+    print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  3, 506   propChange,  prop[10]")
+    print("kindId "..kindId.."count "..count)
+    if dataMgr.prop[10] == dataMgr.buy.cardSave then  --没有变化
+        dataMgr.buy.isCardChange = false
+    else
+        dataMgr.buy.isCardChange = true
+    end
+    local mainLayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
+    mainLayer:refresh()
+    if layerMgr.boxes[layerMgr.boxIndex.ShoppingBox] then
+        print("shoppingBox ############")
+        layerMgr.boxes[layerMgr.boxIndex.ShoppingBox]:refresh()
+    end
+end
+
 
 
 --战绩, 1, 107
@@ -161,6 +218,51 @@ function NetWorkLogin:Zhanji( rcv )
 
 end   
 
+---推广，1，106
+function NetWorkLogin:TuiGuang ( rcv )
+    local result = rcv:readDWORD()
+
+    local popupbox =  import(".popUpBox",CURRENT_MODULE_NAME).create() 
+
+    if result == 0 then
+        --成功
+        print("charge success!")
+        dataMgr.myBaseData.isBind = 1
+        popupbox:setInfo(Strings.tuiGuangSuccess)
+        local btnOk = popupbox:getBtns(1)
+        btnOk:onClicked(function (  )
+            popupbox:remove()
+            layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
+        end)
+    elseif result == 1 then
+        popupbox:setInfo(Strings.tuiGuangFailOne)
+        local btnOk = popupbox:getBtns(1)
+        btnOk:onClicked(function (  )
+            popupbox:remove()
+            -- layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
+        end)
+    elseif result == 2 then
+        popupbox:setInfo(Strings.tuiGuangFailTwo)
+        local btnOk = popupbox:getBtns(1)
+        btnOk:onClicked(function (  )
+            popupbox:remove()
+            -- layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
+        end)
+    elseif result == 3 then
+        popupbox:setInfo(Strings.tuiGuangFailThree)
+        local btnOk = popupbox:getBtns(1)
+        btnOk:onClicked(function (  )
+            popupbox:remove()
+            layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
+        end)
+    end 
+end
+
+--- 检测是否可以绑定  1, 109
+function NetWorkLogin:checkBind( rcv )
+    local  isBind = rcv:readWORD()
+    dataMgr.myBaseData.isBind = isBind
+end
 
 ---游戏登录，向服务器获取该玩家的历史记录 1, 108
 function NetWorkLogin:HistroyRecordsByLogin( rcv )
@@ -276,6 +378,9 @@ function NetWorkLogin:registerRole( rcv)
         
     end
     snd:wrString(dataMgr.myBaseData.headimgurl, 200)
+    snd:wrString(dataMgr.myBaseData.unionId, 64)
+    print("unionId ")
+    print(dataMgr.myBaseData.unionId)
     snd:wrByte(3)
 
     snd:sendData(netTb.SocketType.Login)

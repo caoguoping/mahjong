@@ -10,18 +10,18 @@ extern "C" {
 /*
  * Class:     org_cocos2dx_lua_SDKPlugin
  * Method:    LoginCallback
- * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+ * Signature: (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
  */
 JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_LoginCallback
-  (JNIEnv *, jclass, jstring, jstring, jstring, jstring, jstring, jstring);
+  (JNIEnv *, jclass, jstring, jstring, jstring, jstring, jstring, jstring, jstring, jstring);
 
 /*
  * Class:     org_cocos2dx_lua_SDKPlugin
- * Method:    paySecessCallback
- * Signature: (Ljava/lang/String;Ljava/lang/String;)V
+ * Method:    payCallback
+ * Signature: (ILjava/lang/String;)V
  */
-JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_paySecessCallback
-  (JNIEnv *, jclass, jstring, jstring);
+JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_payCallback
+  (JNIEnv *, jclass, jint, jstring);
 
 #ifdef __cplusplus
 }

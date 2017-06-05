@@ -42,40 +42,42 @@ function DataManager:init()
 --微信相关
     self.weChat = {}
     --微信相关
-
-
-
     self.weChat.appid = "wx28da1972ed3f2ee3"
     self.weChat.mch_id = "1459102302"
     self.weChat.nonce_str = ""     --随机数
     self.weChat.body = "秦淮南京麻将-房卡充值"
+    --self.weChat.body = "Nanjing QingHuai Majiang charge"
     self.weChat.out_trade_no = ""    --订单号
     self.weChat.total_fee = "1"    --总金额
     self.weChat.spbill_create_ip = "192.168.1.109"    --ip
     self.weChat.trade_type = "APP"
 
-
-
-
-
---playerStatus
-    --0, 游戏前，   1, 游戏中，    2，   游戏结束
-    self.playerStatus = 0
+    self.status = {}  --各种状态
+    self.status.player = 0   --0, 游戏前，   1, 游戏中，    2，   游戏结束
+    self.status.auto = false   -- 是否托管
+    self.status.isMeOut = 0    -- 0:没有轮到我出牌    1：轮到我出牌    --我抓牌碰牌后 1， 我打牌后 0
+    self.status.isMeOption = 0     -- 0:没有轮到我操作牌（碰，杠， 过，胡）    1：轮到我    --发牌有操作，waitOoption :1， optionResult client1 : 0
+    self.status.isMoreInfoOpen = true   --0:游戏中更多信息折叠   1：游戏中更多信息展开
+    self.status.canAuto = true    --抓牌或点击碰后设置为true，可以托管， 出牌后设为false,不可以托管
+    self.status.gameEnd = 1       ----当前状态   ,新添加  1, 单场结束， 2，整场结束，   3， 逃跑
     self.isNormalEnd = true    --true  单局结算   false   总结算
-
     self.prop = {}    --道具，，下标为道具ID， 值为数量
     self.prop[10] = 0
     --[[
         10:房卡
     ]]
+    self.optType = 0   --操作 1 碰  2 杠  3 听   4 胡   5 过
+
 
 --myBaseData
     self.myBaseData = {}
     self.myBaseData.cbGender = 2    --男，   2，女
     self.myBaseData.young = math.random(2)         --1,青年，   2,老年
-    print("dataMgr.init ")
     self.myBaseData.headimgurl = "http://wx.qlogo.cn/mmopen/9r6A4jA1ibTQFTnZTABJGlfDj26ehcMc6GHq4L1krtwbwzmHLghzU2Kyw9UhqqktB6fdicwk5ianexFB89WNvyf8dZCY5NJUOPL/0"
     self.myBaseData.szNickName = math.random(100000000)
+    self.myBaseData.unionId = "123456789"    --统一Id
+
+    self.myBaseData.isBind = 0  --推广 0,未绑定  1已绑定
     --[[
         uid
         wFaceID           
@@ -137,7 +139,7 @@ function DataManager:init()
         szNickName
         -- szGroupName;szUnderWrite; isClear; 暂时不用
     ]]
---chair  
+    --chair  
     --下标为服务器Id, 值为客户端ID  chair下标传入1， 4，即服务器chairId + 1
     --[[
     server
@@ -163,27 +165,27 @@ function DataManager:init()
 
     self.chair = {}  
     self.direction = {}  --东南西北（1， 2， 3， 4) 东为庄家
---roomSet   f房间设置
+    --roomSet   f房间设置
     self.roomSet = {} 
-     --[[
-    比下胡： 连庄(0bit)，包牌，花杠，        对对胡，杠后开花， 黄庄，
-            天胡， 地胡， 全求独钓，     对对胡，杠后开花， 黄庄(11bit)
-    wScore;                                         //总分数    100， 200， 300
-    wJieSuanLimit;                          //单局结算上限      0：无限制，    100 ：100翻
-    wBiXiaHu;                                       //比下胡 12bit
-    bGangHouKaiHua;                                 //杠后开花  0：翻倍        1：加20花
-    bZaEr;                                          //砸二      0：不砸2，     1：砸2
-    bFaFeng;                                        //罚分      0：不罚分，    1：罚
-    bYaJue;                                         //压绝    3bit  自己对的牌(0bit), 别人对的牌，  已打出的牌(2bit)  
-    bJuShu;                                         //局数     1：1圈，   2:2圈，   4:4圈
-    bIsJinyunzi                                     //是否进园子 1：进园子   ，   0:敞开头   
+    --[[
+        比下胡： 连庄(0bit)，包牌，花杠，        对对胡，杠后开花， 黄庄，
+                天胡， 地胡， 全求独钓，     对对胡，杠后开花， 黄庄(11bit)
+        wScore;                                         //总分数    100， 200， 300
+        wJieSuanLimit;                          //单局结算上限      0：无限制，    100 ：100翻
+        wBiXiaHu;                                       //比下胡 12bit
+        bGangHouKaiHua;                                 //杠后开花  0：翻倍        1：加20花
+        bZaEr;                                          //砸二      0：不砸2，     1：砸2
+        bFaFeng;                                        //罚分      0：不罚分，    1：罚
+        bYaJue;                                         //压绝    3bit  自己对的牌(0bit), 别人对的牌，  已打出的牌(2bit)  
+        bJuShu;                                         //局数     1：1圈，   2:2圈，   4:4圈
+        bIsJinyunzi                                     //是否进园子 1：进园子   ，   0:敞开头   
 
-    以下不在发送数组里面
-    wChair   高位，
-    wTable
-    bIsCreate     1:创建 0:加入
-    dwRoomNum     输入的房间号或算好的房间号
-    autoJoin      --1:通过被邀请自动加入游戏 0:正常加入游戏
+        以下不在发送数组里面
+        wChair   高位，
+        wTable
+        bIsCreate     1:创建 0:加入
+        dwRoomNum     输入的房间号或算好的房间号
+        autoJoin      --1:通过被邀请自动加入游戏 0:正常加入游戏
     ]] 
     self.roomSet.autoJoin = 0
     -----------获取房间配置---------------------
@@ -197,7 +199,7 @@ function DataManager:init()
     self.roomSet.bJuShu = 1     --1:1圈、2:2圈、4:4圈 
     self.roomSet.bIsJinyunzi = 1 --1：进园子、2：敞开怀
 
-    self.roomSet.currentJushu = 1   --当前局数
+    self.roomSet.currentJushu = 0   --当前局数
     self.roomSet.AllJushu    = 4   --本场的总局数
     
     ------------------战绩记录表
@@ -206,32 +208,6 @@ function DataManager:init()
     self.ThisTableRecords = 0   -----检索当前游戏进行中的场次，历史数据key值，HistroyRecords最后一行数据,0没有开局,游戏一局结算时插入该值
     self.HistroyRecords = {}    -----游戏历史每场详细数据 ----第一维的数据为登录游戏时，服务器发送的历史数据
     self.HistroyRecords.ItemCount = 0           ----ItemCount记录历史数据的条数
-    -- for i=1,20 do                                   ----第2维的数据是该场次四个玩家每一局的数据
-    --     self.HistroyRecords[i] = {}
-    -------self.HistroyRecords[i].wData = 0 时间
-    --     self.HistroyRecords[i].lScore = 0  积分          
-    --     self.HistroyRecords[i].wTableID = 0  桌子号
-    --     self.HistroyRecords[i].cbType = 1    --模式，1、进园子 2、敞开怀
-    --                            wSvrChair    --服务器椅子号
-    --  self.HistroyRecords[i].Records = {}
-    --  for j=1,16 do       ---------j 等于局数
-    --           self.HistroyRecords[i].Records[j] = {}
-    --           self.HistroyRecords[i].Records[j].username1 = ----第一个玩家名字
-    --           self.HistroyRecords[i].Records[j].username2 = 
-    --           self.HistroyRecords[i].Records[j].username3 =
-    --           self.HistroyRecords[i].Records[j].username4 =
-    --           self.HistroyRecords[i].Records[j].lScore1 = -----第一个玩家积分
-    --           self.HistroyRecords[i].Records[j].lScore2 = 
-    --           self.HistroyRecords[i].Records[j].lScore3 =
-    --           self.HistroyRecords[i].Records[j].lScore4 = 
-    --           self.HistroyRecords[i].Records[j].dwUserID1 = -----第二个玩家ID
-    --           self.HistroyRecords[i].Records[j].dwUserID2 =
-    --           self.HistroyRecords[i].Records[j].dwUserID3 = 
-    --           self.HistroyRecords[i].Records[j].dwUserID4 =  
-    --       
-    --     end
-        
-    -- end
 
     self.zhangJiData = {}
     self.zhangJiCount = 5
@@ -245,17 +221,19 @@ function DataManager:init()
         end
     end
 
-
     self.gameEnd = {}
-    --[[
-    
-    ]]
     self.timeLeft = 0     --出牌剩余时间
-    self.schedulerID = 0   --出牌剩余时间定时器
     self.fangzhuSvr = 1    --谁是房主[1, 4] svr chairId
+    
+    self.shoppingCount = 0
+    self.shoppingData = {}       --1, 2, ..., 每一个又有ID, ProtoID; Cnt; RCnt; Cost; RCost; ProtoName[32]; 
 
-    self.isMusicOn = true
-    self.isEffectOn = true
+    self.lastRcvTime = 0   --最后一次收到心跳的时间
+    self.buy = {}     --商店购买相关
+    self.buy.cardSave = 0    --购买之前的房卡
+    self.buy.isCardChange = false   --购买后是否有房卡变动， 买之前清，
+
+
 
 end
 

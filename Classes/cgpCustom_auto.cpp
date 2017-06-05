@@ -4,6 +4,8 @@
 #include "MTCustomEventQueue.h"
 #include "TTSocketClient.h"
 #include "NetData.h"
+#include "CCCrypto.h"
+#include "md5.h"
 #include "tolua_fix.h"
 #include "LuaBasicConversions.h"
 
@@ -1817,7 +1819,7 @@ int lua_register_cgpCustom_DataSnd(lua_State* tolua_S)
     return 1;
 }
 
-int lua_cgpCustom_SDKLoginData_readIp(lua_State* tolua_S)
+int lua_cgpCustom_SDKLoginData_readUnionId(lua_State* tolua_S)
 {
     int argc = 0;
     SDKLoginData* cobj = nullptr;
@@ -1837,7 +1839,7 @@ int lua_cgpCustom_SDKLoginData_readIp(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_SDKLoginData_readIp'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_SDKLoginData_readUnionId'", nullptr);
         return 0;
     }
 #endif
@@ -1847,19 +1849,19 @@ int lua_cgpCustom_SDKLoginData_readIp(lua_State* tolua_S)
     {
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_SDKLoginData_readIp'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_SDKLoginData_readUnionId'", nullptr);
             return 0;
         }
-        std::string ret = cobj->readIp();
+        std::string ret = cobj->readUnionId();
         tolua_pushcppstring(tolua_S,ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "SDKLoginData:readIp",argc, 0);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "SDKLoginData:readUnionId",argc, 0);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_readIp'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_readUnionId'.",&tolua_err);
 #endif
 
     return 0;
@@ -1911,7 +1913,7 @@ int lua_cgpCustom_SDKLoginData_readOpenid(lua_State* tolua_S)
 
     return 0;
 }
-int lua_cgpCustom_SDKLoginData_readCity(lua_State* tolua_S)
+int lua_cgpCustom_SDKLoginData_readIp(lua_State* tolua_S)
 {
     int argc = 0;
     SDKLoginData* cobj = nullptr;
@@ -1931,7 +1933,7 @@ int lua_cgpCustom_SDKLoginData_readCity(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     if (!cobj) 
     {
-        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_SDKLoginData_readCity'", nullptr);
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_SDKLoginData_readIp'", nullptr);
         return 0;
     }
 #endif
@@ -1941,19 +1943,19 @@ int lua_cgpCustom_SDKLoginData_readCity(lua_State* tolua_S)
     {
         if(!ok)
         {
-            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_SDKLoginData_readCity'", nullptr);
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_SDKLoginData_readIp'", nullptr);
             return 0;
         }
-        std::string ret = cobj->readCity();
+        std::string ret = cobj->readIp();
         tolua_pushcppstring(tolua_S,ret);
         return 1;
     }
-    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "SDKLoginData:readCity",argc, 0);
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "SDKLoginData:readIp",argc, 0);
     return 0;
 
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
-    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_readCity'.",&tolua_err);
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_readIp'.",&tolua_err);
 #endif
 
     return 0;
@@ -2001,6 +2003,100 @@ int lua_cgpCustom_SDKLoginData_readHeadimgurl(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_readHeadimgurl'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_SDKLoginData_readRoomNum(lua_State* tolua_S)
+{
+    int argc = 0;
+    SDKLoginData* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"SDKLoginData",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (SDKLoginData*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_SDKLoginData_readRoomNum'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_SDKLoginData_readRoomNum'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->readRoomNum();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "SDKLoginData:readRoomNum",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_readRoomNum'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_SDKLoginData_readSaves(lua_State* tolua_S)
+{
+    int argc = 0;
+    SDKLoginData* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"SDKLoginData",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (SDKLoginData*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_SDKLoginData_readSaves'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_SDKLoginData_readSaves'", nullptr);
+            return 0;
+        }
+        std::string ret = cobj->readSaves();
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "SDKLoginData:readSaves",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_SDKLoginData_readSaves'.",&tolua_err);
 #endif
 
     return 0;
@@ -2147,10 +2243,12 @@ int lua_register_cgpCustom_SDKLoginData(lua_State* tolua_S)
     tolua_cclass(tolua_S,"SDKLoginData","SDKLoginData","cc.Ref",nullptr);
 
     tolua_beginmodule(tolua_S,"SDKLoginData");
-        tolua_function(tolua_S,"readIp",lua_cgpCustom_SDKLoginData_readIp);
+        tolua_function(tolua_S,"readUnionId",lua_cgpCustom_SDKLoginData_readUnionId);
         tolua_function(tolua_S,"readOpenid",lua_cgpCustom_SDKLoginData_readOpenid);
-        tolua_function(tolua_S,"readCity",lua_cgpCustom_SDKLoginData_readCity);
+        tolua_function(tolua_S,"readIp",lua_cgpCustom_SDKLoginData_readIp);
         tolua_function(tolua_S,"readHeadimgurl",lua_cgpCustom_SDKLoginData_readHeadimgurl);
+        tolua_function(tolua_S,"readRoomNum",lua_cgpCustom_SDKLoginData_readRoomNum);
+        tolua_function(tolua_S,"readSaves",lua_cgpCustom_SDKLoginData_readSaves);
         tolua_function(tolua_S,"readNickName",lua_cgpCustom_SDKLoginData_readNickName);
         tolua_function(tolua_S,"readSex",lua_cgpCustom_SDKLoginData_readSex);
         tolua_function(tolua_S,"create", lua_cgpCustom_SDKLoginData_create);
@@ -2204,6 +2302,147 @@ int lua_cgpCustom_Helpers_callJavaLogin(lua_State* tolua_S)
 #if COCOS2D_DEBUG >= 1
     tolua_lerror:
     tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_callJavaLogin'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_Helpers_callGetIp(lua_State* tolua_S)
+{
+    int argc = 0;
+    Helpers* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"Helpers",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (Helpers*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_Helpers_callGetIp'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Helpers_callGetIp'", nullptr);
+            return 0;
+        }
+        int ret = cobj->callGetIp();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "Helpers:callGetIp",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_callGetIp'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_Helpers_getPayResCode(lua_State* tolua_S)
+{
+    int argc = 0;
+    Helpers* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"Helpers",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (Helpers*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_Helpers_getPayResCode'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Helpers_getPayResCode'", nullptr);
+            return 0;
+        }
+        int ret = cobj->getPayResCode();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "Helpers:getPayResCode",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_getPayResCode'.",&tolua_err);
+#endif
+
+    return 0;
+}
+int lua_cgpCustom_Helpers_callGetRoomNum(lua_State* tolua_S)
+{
+    int argc = 0;
+    Helpers* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"Helpers",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (Helpers*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_Helpers_callGetRoomNum'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 0) 
+    {
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Helpers_callGetRoomNum'", nullptr);
+            return 0;
+        }
+        int ret = cobj->callGetRoomNum();
+        tolua_pushnumber(tolua_S,(lua_Number)ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "Helpers:callGetRoomNum",argc, 0);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_callGetRoomNum'.",&tolua_err);
 #endif
 
     return 0;
@@ -2367,6 +2606,56 @@ int lua_cgpCustom_Helpers_callWechatShareJoin(lua_State* tolua_S)
 
     return 0;
 }
+int lua_cgpCustom_Helpers_sendPayData(lua_State* tolua_S)
+{
+    int argc = 0;
+    Helpers* cobj = nullptr;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertype(tolua_S,1,"Helpers",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    cobj = (Helpers*)tolua_tousertype(tolua_S,1,0);
+
+#if COCOS2D_DEBUG >= 1
+    if (!cobj) 
+    {
+        tolua_error(tolua_S,"invalid 'cobj' in function 'lua_cgpCustom_Helpers_sendPayData'", nullptr);
+        return 0;
+    }
+#endif
+
+    argc = lua_gettop(tolua_S)-1;
+    if (argc == 1) 
+    {
+        int arg0;
+
+        ok &= luaval_to_int32(tolua_S, 2,(int *)&arg0, "Helpers:sendPayData");
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Helpers_sendPayData'", nullptr);
+            return 0;
+        }
+        cobj->sendPayData(arg0);
+        lua_settop(tolua_S, 1);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d \n", "Helpers:sendPayData",argc, 1);
+    return 0;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Helpers_sendPayData'.",&tolua_err);
+#endif
+
+    return 0;
+}
 int lua_cgpCustom_Helpers_callWeChatPay(lua_State* tolua_S)
 {
     int argc = 0;
@@ -2521,9 +2810,13 @@ int lua_register_cgpCustom_Helpers(lua_State* tolua_S)
 
     tolua_beginmodule(tolua_S,"Helpers");
         tolua_function(tolua_S,"callJavaLogin",lua_cgpCustom_Helpers_callJavaLogin);
+        tolua_function(tolua_S,"callGetIp",lua_cgpCustom_Helpers_callGetIp);
+        tolua_function(tolua_S,"getPayResCode",lua_cgpCustom_Helpers_getPayResCode);
+        tolua_function(tolua_S,"callGetRoomNum",lua_cgpCustom_Helpers_callGetRoomNum);
         tolua_function(tolua_S,"sendLoginData",lua_cgpCustom_Helpers_sendLoginData);
         tolua_function(tolua_S,"callWechatShareResult",lua_cgpCustom_Helpers_callWechatShareResult);
         tolua_function(tolua_S,"callWechatShareJoin",lua_cgpCustom_Helpers_callWechatShareJoin);
+        tolua_function(tolua_S,"sendPayData",lua_cgpCustom_Helpers_sendPayData);
         tolua_function(tolua_S,"callWeChatPay",lua_cgpCustom_Helpers_callWeChatPay);
         tolua_function(tolua_S,"jstringTostring",lua_cgpCustom_Helpers_jstringTostring);
         tolua_function(tolua_S,"getInstance", lua_cgpCustom_Helpers_getInstance);
@@ -2673,6 +2966,62 @@ int lua_register_cgpCustom_ContentManager(lua_State* tolua_S)
     g_typeCast["ContentManager"] = "ContentManager";
     return 1;
 }
+
+int lua_cgpCustom_Crypto_getMd5String(lua_State* tolua_S)
+{
+    int argc = 0;
+    bool ok  = true;
+
+#if COCOS2D_DEBUG >= 1
+    tolua_Error tolua_err;
+#endif
+
+#if COCOS2D_DEBUG >= 1
+    if (!tolua_isusertable(tolua_S,1,"Crypto",0,&tolua_err)) goto tolua_lerror;
+#endif
+
+    argc = lua_gettop(tolua_S) - 1;
+
+    if (argc == 1)
+    {
+        const char* arg0;
+        std::string arg0_tmp; ok &= luaval_to_std_string(tolua_S, 2, &arg0_tmp, "Crypto:getMd5String"); arg0 = arg0_tmp.c_str();
+        if(!ok)
+        {
+            tolua_error(tolua_S,"invalid arguments in function 'lua_cgpCustom_Crypto_getMd5String'", nullptr);
+            return 0;
+        }
+        std::string ret = Crypto::getMd5String(arg0);
+        tolua_pushcppstring(tolua_S,ret);
+        return 1;
+    }
+    luaL_error(tolua_S, "%s has wrong number of arguments: %d, was expecting %d\n ", "Crypto:getMd5String",argc, 1);
+    return 0;
+#if COCOS2D_DEBUG >= 1
+    tolua_lerror:
+    tolua_error(tolua_S,"#ferror in function 'lua_cgpCustom_Crypto_getMd5String'.",&tolua_err);
+#endif
+    return 0;
+}
+static int lua_cgpCustom_Crypto_finalize(lua_State* tolua_S)
+{
+    printf("luabindings: finalizing LUA object (Crypto)");
+    return 0;
+}
+
+int lua_register_cgpCustom_Crypto(lua_State* tolua_S)
+{
+    tolua_usertype(tolua_S,"Crypto");
+    tolua_cclass(tolua_S,"Crypto","Crypto","",nullptr);
+
+    tolua_beginmodule(tolua_S,"Crypto");
+        tolua_function(tolua_S,"getMd5String", lua_cgpCustom_Crypto_getMd5String);
+    tolua_endmodule(tolua_S);
+    std::string typeName = typeid(Crypto).name();
+    g_luaType[typeName] = "Crypto";
+    g_typeCast["Crypto"] = "Crypto";
+    return 1;
+}
 TOLUA_API int register_all_cgpCustom(lua_State* tolua_S)
 {
 	tolua_open(tolua_S);
@@ -2680,6 +3029,7 @@ TOLUA_API int register_all_cgpCustom(lua_State* tolua_S)
 	tolua_module(tolua_S,nullptr,0);
 	tolua_beginmodule(tolua_S,nullptr);
 
+	lua_register_cgpCustom_Crypto(tolua_S);
 	lua_register_cgpCustom_LifeCircleMutexLocker(tolua_S);
 	lua_register_cgpCustom_SDKLoginData(tolua_S);
 	lua_register_cgpCustom_TTSocketClient(tolua_S);

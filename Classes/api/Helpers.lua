@@ -11,6 +11,24 @@
         
 --------------------------------
 -- 
+-- @function [parent=#Helpers] callGetIp 
+-- @param self
+-- @return int#int ret (return value: int)
+        
+--------------------------------
+-- 
+-- @function [parent=#Helpers] getPayResCode 
+-- @param self
+-- @return int#int ret (return value: int)
+        
+--------------------------------
+-- 
+-- @function [parent=#Helpers] callGetRoomNum 
+-- @param self
+-- @return int#int ret (return value: int)
+        
+--------------------------------
+-- 
 -- @function [parent=#Helpers] sendLoginData 
 -- @param self
 -- @return Helpers#Helpers self (return value: Helpers)
@@ -31,6 +49,13 @@
 -- @param #char url
 -- @param #int roomNum
 -- @param #int isToAll
+-- @return Helpers#Helpers self (return value: Helpers)
+        
+--------------------------------
+-- 
+-- @function [parent=#Helpers] sendPayData 
+-- @param self
+-- @param #int 
 -- @return Helpers#Helpers self (return value: Helpers)
         
 --------------------------------

@@ -20,23 +20,37 @@ end
 
 function SDKHelper:inits()
     print("SDKHelper:inits OK")
-    local listener = cc.EventListenerCustom:create("rcvSDKLogin", handler(self, self.handleSDKLogin))
-    local eventDispatcher = self:getEventDispatcher()
-    eventDispatcher:addEventListenerWithFixedPriority(listener, 1)
+    self.listenerLogin = cc.EventListenerCustom:create("rcvSDKLogin", handler(self, self.handleSDKLogin))
+    self.listenerPay = cc.EventListenerCustom:create("rcvSDKPay", handler(self, self.handleSDKPay))
+    self.eventDispatcher = self:getEventDispatcher()
+    self.eventDispatcher:addEventListenerWithFixedPriority(self.listenerLogin, 1)
+    self.eventDispatcher:addEventListenerWithFixedPriority(self.listenerPay, 1)
+
 end
 
 function SDKHelper:handleSDKLogin( event)
+    print("handleSDKLogin")
+    self.eventDispatcher:removeEventListener(self.listenerLogin)
     local sdkData = SDKLoginData:create(event)
     local openid = sdkData:readOpenid()
     local nickName = sdkData:readNickName()
     local sex = sdkData:readSex()
     local headimgurl = sdkData:readHeadimgurl()
-    local city = sdkData:readCity()  --实际上是房间号
+    local strRoomNum = sdkData:readRoomNum()  --房间号
     local hostip = sdkData:readIp()   --手机IP
+    local unionId = sdkData:readUnionId()
+    local saves = sdkData:readSaves()
     dataMgr.weChat.spbill_create_ip = hostip
 
+    cc.UserDefault:getInstance():setBoolForKey("first_time", false)
+    cc.UserDefault:getInstance():setStringForKey("openid", openid)
+    cc.UserDefault:getInstance():setStringForKey("nickName", nickName)
+    cc.UserDefault:getInstance():setStringForKey("sex", sex)
+    cc.UserDefault:getInstance():setStringForKey("headimgurl", headimgurl)
+    cc.UserDefault:getInstance():setStringForKey("unionId", unionId)
+    cc.UserDefault:getInstance():flush()
 
-    local roomNum = tonumber(city)
+    local roomNum = tonumber(strRoomNum)
     print("roomNum   in SDKHelper "..roomNum)
     if roomNum == 0 then   --非自动启动
         dataMgr.roomSet.autoJoin = 0
@@ -47,6 +61,7 @@ function SDKHelper:handleSDKLogin( event)
 
     dataMgr.myBaseData.uid = openid
     dataMgr.myBaseData.szNickName = nickName
+    dataMgr.myBaseData.unionId = unionId
     if sex == 0 then
         sex = math.random(2)   --随机性别
     end
@@ -54,7 +69,7 @@ function SDKHelper:handleSDKLogin( event)
 
 
     dataMgr.myBaseData.headimgurl = headimgurl
-    --dataMgr.myBaseData.city = city
+    --dataMgr.myBaseData.roomNum = roomNum
 
         local xmlHttpReq = cc.XMLHttpRequest:new()
         dataMgr:getUrlImgByClientId(xmlHttpReq, 1, dataMgr.myBaseData.headimgurl,
@@ -63,7 +78,7 @@ function SDKHelper:handleSDKLogin( event)
                 local fileData = xmlHttpReq.response
                 local fullFileName = cc.FileUtils:getInstance():getWritablePath()..xmlHttpReq._urlFileName
                 print("LUA-print"..fullFileName)
-                local file = io.open(fullFileName,"wb")
+                local file = io.open(fullFileName,"wb+")
                 file:write(fileData)
                 file:close()
                 layerMgr.LoginScene:startLogin(openid)
@@ -72,12 +87,49 @@ function SDKHelper:handleSDKLogin( event)
         )
     --dataMgr:getUrlImgByClientId(1, dataMgr.myBaseData.headimgurl)
 
-    print("openid "..openid.."  nickName "..nickName.." sex "..sex.." headimgurl "..headimgurl.." roomNum "..city.." cbGender "..dataMgr.myBaseData.cbGender)
+    print("openid "..openid.."  nickName "..nickName.." sex "..sex.." headimgurl "..headimgurl.." roomNum "..roomNum.." cbGender "..dataMgr.myBaseData.cbGender)
+end
+
+function SDKHelper:handleSDKPay( event)
+    print("handleSDKPay")
+    self.eventDispatcher:removeEventListener(self.listenerPay)
+    local resCode = Helpers:getPayResCode()
+    print("resCode in lua ")
+    print(resCode)
+    if resCode == 0 then   --购买成功
+
+        local delayAction     = cc.DelayTime:create(2.0)
+        local callFuncAction1 = cc.CallFunc:create(
+            function()
+                local snd = DataSnd:create(3, 501)
+                snd:wrDWORD(dataMgr.myBaseData.dwUserID)
+                snd:wrDWORD(10)
+                snd:sendData(netTb.SocketType.Login)
+                snd:release()
+            end)
+        local sequenceAction  = cc.Sequence:create(delayAction, callFuncAction1)
+        local repeatAction    = cc.Repeat:create(sequenceAction, 5)
+        layerMgr.LoginScene.btnTimers[1]:runAction(repeatAction)
+
+        local popupbox =  import(".popUpBox",CURRENT_MODULE_NAME).create() 
+        popupbox:setInfo(Strings.buyOk)
+        local btnOk = popupbox:getBtns(1)
+        btnOk:onClicked(function (  )
+            popupbox:remove()
+            
+        end)
+    else   --购买失败
+        local popupbox =  import(".popUpBox",CURRENT_MODULE_NAME).create() 
+        popupbox:setInfo(Strings.buyFail)
+        local btnOk = popupbox:getBtns(1)
+        btnOk:onClicked(function (  )
+            popupbox:remove()
+            
+        end)
+    end
 
 
 end
-
-
 
 
 

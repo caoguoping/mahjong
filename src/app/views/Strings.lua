@@ -13,7 +13,25 @@ Strings.backRoomFangzhu          = "是否离开房间？（如果30分钟内没
 Strings.backRoomJoin          = "是否退出房间"
 Strings.connectGameFail        = "连接游戏服务器失败"
 Strings.connectLoginFail       = "连接登录服务器失败"
+Strings.buyOk                ="购买成功！"
+Strings.heartLost            ="您的游戏已经断开连接，游戏退到大厅！"
+Strings.tuiGuangFailOne            ="您输入的邀请码错误，请重新输入"
+Strings.tuiGuangFailTwo            ="出现未知导致绑定失败，请重新绑定"
+Strings.tuiGuangFailThree            ="您已领取过该，无法再次绑定"
+Strings.tuiGuangSuccess         ="绑定成功，恭喜你获得房卡*12"
+Strings.buyFail        ="购买失败！"
+Strings.notopen        ="该功能暂未开通"
 
+
+Strings.chatText = {
+	"来来来，带快点带快点",
+	"你这么打会没朋友的",
+	"真是有钱难买左膀子对哦",
+	"手气不错，今天又是个发财的日子",
+	"不急不慌，还有后面的老鳖汤",
+	"归归，宝庆银楼真精哦",
+	"哎呀！打错牌了，说不定错打错成"
+}
 
 
 -- 服务器错误码

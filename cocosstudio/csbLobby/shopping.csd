@@ -6,10 +6,10 @@
       <ObjectData Name="Node" Tag="105" ctype="GameNodeObjectData">
         <Size X="0.0000" Y="0.0000" />
         <Children>
-          <AbstractNodeData Name="Image_mask" ActionTag="-229751541" Tag="165" IconVisible="False" LeftMargin="-640.0000" RightMargin="-640.0000" TopMargin="-360.0000" BottomMargin="-360.0000" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="1270" Scale9Height="716" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_mask" ActionTag="-229751541" Tag="165" IconVisible="False" LeftMargin="-642.3539" RightMargin="-637.6461" TopMargin="-361.4000" BottomMargin="-358.6000" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="1270" Scale9Height="716" ctype="ImageViewObjectData">
             <Size X="1280.0000" Y="720.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position />
+            <Position X="-2.3539" Y="1.4000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -31,167 +31,107 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button__1" ActionTag="311362531" Tag="982" IconVisible="False" LeftMargin="-215.0410" RightMargin="29.0410" TopMargin="-35.0192" BottomMargin="-30.9808" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="156" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="186.0000" Y="66.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_634" ActionTag="970412371" Tag="983" IconVisible="False" LeftMargin="37.3707" RightMargin="47.6293" TopMargin="17.5933" BottomMargin="18.4067" LeftEage="33" RightEage="33" TopEage="9" BottomEage="9" Scale9OriginX="33" Scale9OriginY="9" Scale9Width="35" Scale9Height="12" ctype="ImageViewObjectData">
-                <Size X="101.0000" Y="30.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="87.8707" Y="33.4067" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4724" Y="0.5062" />
-                <PreSize X="0.5430" Y="0.4545" />
-                <FileData Type="Normal" Path="shopping/text_6.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-122.0410" Y="2.0192" />
+          <AbstractNodeData Name="Image_itemsNumBg" ActionTag="-2090959006" Tag="56" IconVisible="False" LeftMargin="-583.2582" RightMargin="343.2582" TopMargin="269.8507" BottomMargin="-337.8507" LeftEage="79" RightEage="79" TopEage="22" BottomEage="22" Scale9OriginX="79" Scale9OriginY="22" Scale9Width="82" Scale9Height="24" ctype="ImageViewObjectData">
+            <Size X="240.0000" Y="68.0000" />
+            <AnchorPoint ScaleX="0.4846" ScaleY="0.5771" />
+            <Position X="-466.9542" Y="-298.6079" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="shopping/button_buy_2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="shopping/button_buy_1.png" Plist="" />
+            <FileData Type="Normal" Path="shopping/bg_number.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_itemsNum" ActionTag="-755692065" Tag="1116" IconVisible="False" LeftMargin="-474.4422" RightMargin="439.4422" TopMargin="286.8704" BottomMargin="-317.8704" FontSize="28" LabelText="20" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="35.0000" Y="31.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-456.9422" Y="-302.3704" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button__2" ActionTag="1026862209" Tag="984" IconVisible="False" LeftMargin="75.9749" RightMargin="-261.9749" TopMargin="-41.9312" BottomMargin="-24.0688" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="156" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="186.0000" Y="66.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_634" ActionTag="945212997" Tag="985" IconVisible="False" LeftMargin="31.8707" RightMargin="42.1293" TopMargin="17.5933" BottomMargin="18.4067" LeftEage="33" RightEage="33" TopEage="9" BottomEage="9" Scale9OriginX="33" Scale9OriginY="9" Scale9Width="46" Scale9Height="12" ctype="ImageViewObjectData">
-                <Size X="112.0000" Y="30.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="87.8707" Y="33.4067" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4724" Y="0.5062" />
-                <PreSize X="0.6022" Y="0.4545" />
-                <FileData Type="Normal" Path="shopping/text_10.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
+          <AbstractNodeData Name="Image_items" ActionTag="44143552" Tag="57" IconVisible="False" LeftMargin="-590.6742" RightMargin="522.6742" TopMargin="263.9253" BottomMargin="-336.9253" LeftEage="22" RightEage="22" TopEage="22" BottomEage="22" Scale9OriginX="22" Scale9OriginY="22" Scale9Width="24" Scale9Height="29" ctype="ImageViewObjectData">
+            <Size X="68.0000" Y="73.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="168.9749" Y="8.9312" />
+            <Position X="-556.6742" Y="-300.4253" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="shopping/button_buy_2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="shopping/button_buy_1.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="shopping/icon_card.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button__3" ActionTag="-183141691" Tag="986" IconVisible="False" LeftMargin="369.5887" RightMargin="-555.5887" TopMargin="-52.7473" BottomMargin="-13.2527" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="156" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="186.0000" Y="66.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_634" ActionTag="-925080636" Tag="987" IconVisible="False" LeftMargin="29.8706" RightMargin="36.1294" TopMargin="17.5934" BottomMargin="18.4066" LeftEage="33" RightEage="33" TopEage="9" BottomEage="9" Scale9OriginX="33" Scale9OriginY="9" Scale9Width="54" Scale9Height="12" ctype="ImageViewObjectData">
-                <Size X="120.0000" Y="30.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="89.8706" Y="33.4066" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4832" Y="0.5062" />
-                <PreSize X="0.6452" Y="0.4545" />
-                <FileData Type="Normal" Path="shopping/text_30.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="462.5887" Y="19.7473" />
+          <AbstractNodeData Name="FileNode_1" ActionTag="-833991912" Tag="86" IconVisible="True" LeftMargin="-125.6100" RightMargin="125.6100" TopMargin="-97.6113" BottomMargin="97.6113" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="-125.6100" Y="97.6113" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="shopping/button_buy_2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="shopping/button_buy_1.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="csbLobby/shoppingNode.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button__4" ActionTag="-573127916" Tag="988" IconVisible="False" LeftMargin="-214.9634" RightMargin="28.9634" TopMargin="251.2769" BottomMargin="-317.2769" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="156" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="186.0000" Y="66.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_634" ActionTag="2133406870" Tag="989" IconVisible="False" LeftMargin="27.8707" RightMargin="38.1293" TopMargin="17.5933" BottomMargin="18.4067" LeftEage="33" RightEage="33" TopEage="9" BottomEage="9" Scale9OriginX="33" Scale9OriginY="9" Scale9Width="54" Scale9Height="12" ctype="ImageViewObjectData">
-                <Size X="120.0000" Y="30.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="87.8707" Y="33.4067" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4724" Y="0.5062" />
-                <PreSize X="0.6452" Y="0.4545" />
-                <FileData Type="Normal" Path="shopping/text_88.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="-121.9634" Y="-284.2769" />
+          <AbstractNodeData Name="FileNode_2" ActionTag="-1969598040" Tag="95" IconVisible="True" LeftMargin="143.4102" RightMargin="-143.4102" TopMargin="-97.4116" BottomMargin="97.4116" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="143.4102" Y="97.4116" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="shopping/button_buy_2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="shopping/button_buy_1.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="csbLobby/shoppingNode.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button__5" ActionTag="1812879167" Tag="990" IconVisible="False" LeftMargin="79.9534" RightMargin="-265.9534" TopMargin="253.4712" BottomMargin="-319.4712" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="156" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="186.0000" Y="66.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_634" ActionTag="-1610576511" Tag="991" IconVisible="False" LeftMargin="22.3706" RightMargin="32.6294" TopMargin="15.5933" BottomMargin="20.4067" LeftEage="33" RightEage="33" TopEage="9" BottomEage="9" Scale9OriginX="33" Scale9OriginY="9" Scale9Width="65" Scale9Height="12" ctype="ImageViewObjectData">
-                <Size X="131.0000" Y="30.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="87.8706" Y="35.4067" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4724" Y="0.5365" />
-                <PreSize X="0.7043" Y="0.4545" />
-                <FileData Type="Normal" Path="shopping/text_168.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="172.9534" Y="-286.4712" />
+          <AbstractNodeData Name="FileNode_3" ActionTag="797146944" Tag="104" IconVisible="True" LeftMargin="418.0344" RightMargin="-418.0344" TopMargin="-98.6125" BottomMargin="98.6125" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="418.0344" Y="98.6125" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="shopping/button_buy_2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="shopping/button_buy_1.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="csbLobby/shoppingNode.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button__6" ActionTag="533838041" Tag="992" IconVisible="False" LeftMargin="370.9674" RightMargin="-556.9674" TopMargin="251.7629" BottomMargin="-317.7629" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="156" Scale9Height="44" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="186.0000" Y="66.0000" />
-            <Children>
-              <AbstractNodeData Name="Image_634" ActionTag="-1677733609" Tag="993" IconVisible="False" LeftMargin="26.3707" RightMargin="30.6293" TopMargin="15.5933" BottomMargin="20.4067" LeftEage="33" RightEage="33" TopEage="9" BottomEage="9" Scale9OriginX="33" Scale9OriginY="9" Scale9Width="63" Scale9Height="12" ctype="ImageViewObjectData">
-                <Size X="129.0000" Y="30.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="90.8707" Y="35.4067" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4886" Y="0.5365" />
-                <PreSize X="0.6935" Y="0.4545" />
-                <FileData Type="Normal" Path="shopping/text_888.png" Plist="" />
-              </AbstractNodeData>
-            </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="463.9674" Y="-284.7629" />
+          <AbstractNodeData Name="FileNode_4" ActionTag="-1133561800" Tag="113" IconVisible="True" LeftMargin="-118.0127" RightMargin="118.0127" TopMargin="188.0097" BottomMargin="-188.0097" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="-118.0127" Y="-188.0097" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Normal" Path="shopping/button_buy_2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="shopping/button_buy_1.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <FileData Type="Normal" Path="csbLobby/shoppingNode.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_5" ActionTag="1095513859" Tag="122" IconVisible="True" LeftMargin="149.6100" RightMargin="-149.6100" TopMargin="188.6090" BottomMargin="-188.6090" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="149.6100" Y="-188.6090" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbLobby/shoppingNode.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_6" ActionTag="-1554189915" Tag="131" IconVisible="True" LeftMargin="427.0316" RightMargin="-427.0316" TopMargin="185.0079" BottomMargin="-185.0079" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="427.0316" Y="-185.0079" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbLobby/shoppingNode.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Image_1" ActionTag="1302544803" Tag="99" IconVisible="False" LeftMargin="-618.5671" RightMargin="319.5672" TopMargin="116.2094" BottomMargin="-258.2094" LeftEage="98" RightEage="98" TopEage="46" BottomEage="46" Scale9OriginX="98" Scale9OriginY="46" Scale9Width="103" Scale9Height="50" ctype="ImageViewObjectData">
+            <Size X="299.0000" Y="142.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-469.0672" Y="-187.2094" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="shopping/img_text.png" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

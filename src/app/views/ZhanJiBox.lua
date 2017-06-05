@@ -2,6 +2,7 @@
 local CURRENT_MODULE_NAME = ...
 local dataMgr = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
+local musicMgr = import(".MusicManager"):getInstance()
 
 local ZhanJiBox = class("ZhanJiBox", display.newLayer)
 function ZhanJiBox:ctor()
@@ -19,6 +20,90 @@ function ZhanJiBox:ctor()
 	local Image_zongfen = rootNode:getChildByName("Image_zongfen")
 	local Image_guize = rootNode:getChildByName("Image_guize")
 
+	-------获取房间规则，不需要判断是否有数据-------------------
+	if dataMgr.roomSet.bIsJinyunzi == 2 then
+		Image_guize:getChildByName("Text_51_2"):setString("敞开怀")
+	elseif dataMgr.roomSet.bIsJinyunzi == 1 then
+		Image_guize:getChildByName("Text_51_2"):setString("进园子")
+	end
+	-------------------------------------------------------
+	local qitaguize = {}
+	if dataMgr.roomSet.bGangHouKaiHua == 0 then
+		qitaguize[1] = "翻倍"
+	elseif dataMgr.roomSet.bGangHouKaiHua == 1 then
+		qitaguize[1] = "加20花"
+	end
+	-----
+	if dataMgr.roomSet.bZaEr == 0 then
+		qitaguize[2] = ""
+	elseif dataMgr.roomSet.bZaEr == 1 then
+		qitaguize[2] = "砸二"
+	end
+	-----
+	if dataMgr.roomSet.bFaFeng == 0 then
+		qitaguize[3] = ""
+	elseif dataMgr.roomSet.bFaFeng == 1 then
+		qitaguize[3] = "罚分"
+	end
+	------
+	if dataMgr.roomSet.bYaJue == 0 then
+		qitaguize[4] = ""
+	else
+		qitaguize[4] = "压绝："
+		local YaJueTale = girl.splitAllBitValue(3,dataMgr.roomSet.bYaJue)
+		for i = 1,3 do
+			if YaJueTale[i] == 0 then
+				qitaguize[4] = qitaguize[4]..""
+			else
+				if i == 1 then
+					qitaguize[4] = qitaguize[4].."自己对的牌"
+				elseif i == 2 then
+					qitaguize[4] = qitaguize[4].."、别人对的牌"
+				elseif i == 3 then
+					qitaguize[4] = qitaguize[4].."、已打出的牌"
+				end
+			end
+		end
+	end
+	local qitaguize_str = "杠后开花："..qitaguize[1].."\n"..qitaguize[2].."\n"..qitaguize[3].."\n"..qitaguize[4]
+	Image_guize:getChildByName("Text_51_4"):setString(qitaguize_str)
+	-------------------------------------------------------
+	qitaguize[5]=""
+	local txtstring = {}
+    txtstring[1]  = "连庄后"
+    txtstring[2]  = "、包牌后"
+    txtstring[3]  = "、花杠后"
+    txtstring[4]  = "、对对胡后"
+    txtstring[5]  = "、杠后开花后"
+    txtstring[6]  = "、黄庄后"
+    txtstring[7]  = "、天胡后"
+    txtstring[8]  = "、地胡后"
+    txtstring[9]  = "、全球独钓后"
+    txtstring[10]  = "、混一色后"
+    txtstring[11]  = "、清一色后" 
+	if dataMgr.roomSet.wBiXiaHu == 0 then
+		qitaguize[5] = "不带"
+	else
+		local wBiXiaHu = girl.splitAllBitValue(11,dataMgr.roomSet.wBiXiaHu)
+		local numb = 0
+		for ii=1,11 do
+			if numb < 6 then 
+				if wBiXiaHu[ii] == 1 then
+					qitaguize[5] = qitaguize[5]..txtstring[ii]
+				end
+				numb = numb +1
+			else
+				if wBiXiaHu[ii] == 1 then
+					qitaguize[5] = qitaguize[5].."\n"..txtstring[ii]
+				end
+				numb = 0
+			end
+		end
+	end
+	Image_guize:getChildByName("Text_51_3"):setString(qitaguize[5])
+	--------
+	-----------
+
 	local AllNum = {} ---计算玩家的总分
 	for i=1,4 do
         AllNum[i] = {}
@@ -32,15 +117,16 @@ function ZhanJiBox:ctor()
     local count = dataMgr.ThisTableRecords
 	print("....................."..count)
 	if count == 0 then--没有数据
-		rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(true)
-		rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(false)
+		rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(false)
+		rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(true)
 		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)
 		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_2"):setVisible(true)
-		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(false)
-		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(true)
+		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_1"):setVisible(true)
+		rootNode:getChildByName("Node_guizhe"):getChildByName("Image_2"):setVisible(false)
 		rootNode:getChildByName("ListView_liushui"):setPosition(cc.p(3000, 2000))
 		rootNode:getChildByName("Image_zongfen"):setPosition(cc.p(3000, 2000))
-		rootNode:getChildByName("Image_guize"):setPosition(cc.p(3000, 2000))       
+		rootNode:getChildByName("Image_guize"):setPosition(cc.p(0, -70.00))  
+		rootNode:getChildByName("Text_57"):setVisible(false)     
 	else
 	--有数据
 		rootNode:getChildByName("Text_57"):setVisible(false)
@@ -163,6 +249,7 @@ function ZhanJiBox:ctor()
 
 		btnliushui:onClicked(
 		function()
+			musicMgr:playEffect("game_button_click.mp3", false)
 		if count == 0 then
 			rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(true)
 			rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(false)
@@ -188,6 +275,7 @@ function ZhanJiBox:ctor()
 
 		btnzongfen:onClicked(
 		function()
+			musicMgr:playEffect("game_button_click.mp3", false)
 		if count == 0 then
 			rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(false)
 			rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(true)
@@ -213,6 +301,7 @@ function ZhanJiBox:ctor()
 
 		btnguizhe:onClicked(
 		function()
+			musicMgr:playEffect("game_button_click.mp3", false)
 		rootNode:getChildByName("Text_57"):setVisible(false)
 		rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(false)
 		rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(true)
@@ -227,7 +316,7 @@ function ZhanJiBox:ctor()
 		end)
 		btnclose:onClicked(
         function (  )
-             --TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
+        	musicMgr:playEffect("game_button_click.mp3", false)
             self:removeSelf()
         end)
 end

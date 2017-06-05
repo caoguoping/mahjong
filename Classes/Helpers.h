@@ -1,4 +1,4 @@
-
+//平台相关
 
 #include "cocos2d.h"
 #include "network/HttpClient.h"
@@ -16,10 +16,14 @@ public:
 	static Helpers* getInstance();
 
 	stWeChatData  weChatData;
+	int payResCode = -1;
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID
 
 	void sendLoginData(void);
+	void sendPayData(int);
+	
+	int getPayResCode();
 	//邀请好友
 	void callWechatShareJoin(const char* imgPath, const char* url,  int roomNum,  int isToAll);
 	//分享战绩
@@ -29,6 +33,11 @@ public:
 
 	char* jstringTostring(JNIEnv* env, jstring jstr);
 	void callJavaLogin(void);
+
+	//获取房间号
+	int callGetRoomNum(void);
+	//获取ip
+	int callGetIp(void);
 #endif
 
     

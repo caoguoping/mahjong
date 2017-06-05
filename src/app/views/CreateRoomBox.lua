@@ -7,7 +7,6 @@ local musicMgr = import(".MusicManager"):getInstance()
 
 local createRoomBox = class("createRoomBox", display.newLayer)
 function createRoomBox:ctor()
-     print("createRoomBox1:")
 --all Node
     local rootNode = cc.CSLoader:createNode("createRoom.csb"):addTo(self)
     self.rootNode = rootNode
@@ -140,14 +139,6 @@ function createRoomBox:ctor()
                       end
                        num = 0
                 end
-
-
-             --if num == 4 then
-                --strtxt = strtxt..txt..value..txtt
-               -- num = 0
-             --else 
-                --strtxt = strtxt..txt..value
-             --end 
          end
          return strtxt
     end
@@ -235,19 +226,18 @@ function createRoomBox:ctor()
     imgMask:onClicked(
         function (  )
             musicMgr:playEffect("game_button_click.mp3", false)
-            TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
             self:removeSelf()
         end
         )
     btnClose:onClicked(
         function (  )
             musicMgr:playEffect("game_button_click.mp3", false)
-             TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
             self:removeSelf()
         end)
     --局数选择
     Check_btn1:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             c_bJuShu = 1
                Check_btn1:getChildByName("label_rule1_1_61"):setVisible(true)
                Check_btn2:getChildByName("label_rule1_1_61"):setVisible(false)
@@ -255,6 +245,7 @@ function createRoomBox:ctor()
         end)
     Check_btn2:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         c_bJuShu = 2
                Check_btn1:getChildByName("label_rule1_1_61"):setVisible(false)
                Check_btn2:getChildByName("label_rule1_1_61"):setVisible(true)
@@ -262,6 +253,7 @@ function createRoomBox:ctor()
         end)
     Check_btn3:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         c_bJuShu = 4
                Check_btn1:getChildByName("label_rule1_1_61"):setVisible(false)
                Check_btn2:getChildByName("label_rule1_1_61"):setVisible(false)
@@ -271,6 +263,7 @@ function createRoomBox:ctor()
    --进园子、敞开怀模式选择
      Check_btn4:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         c_bIsJinyunzi = 1 
         Check_btn4:getChildByName("label_rule1_2_62"):setVisible(true)
         Check_btn5:getChildByName("label_rule1_2_62"):setVisible(false)
@@ -285,9 +278,11 @@ function createRoomBox:ctor()
 
      Check_btn5:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
          c_bIsJinyunzi = 2
         Check_btn4:getChildByName("label_rule1_2_62"):setVisible(false)
         Check_btn5:getChildByName("label_rule1_2_62"):setVisible(true) 
+        c_wScore = 0
         --敞开怀没有总分选项
         zonfenNode:setPosition(cc.p(2000, 200)) 
        
@@ -299,6 +294,7 @@ function createRoomBox:ctor()
        ---下拉按钮
        btnzongfen:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         local posX, posY = zonfenlist:getPosition()
         if posX == -165 and posY == 15 then
         zonfenlist:setPosition(cc.p(2000, 200))     
@@ -309,6 +305,7 @@ function createRoomBox:ctor()
          --下拉按钮
        btnshangxian:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         local posX, posY = shangxianlist:getPosition()
         if posX ==230 and posY ==  17 then
         shangxianlist:setPosition(cc.p(2000, 200))
@@ -321,6 +318,7 @@ function createRoomBox:ctor()
     --杠后开花：翻倍按钮
      btnfanbei:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         c_bGangHouKaiHua = 0 
         btnfanbei:getChildByName("radio_selected_3"):setVisible(true)
         btnjiahua:getChildByName("radio_selected_3"):setVisible(false)    
@@ -328,6 +326,7 @@ function createRoomBox:ctor()
     --杠后开花：加20个花按钮
      btnjiahua:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
        c_bGangHouKaiHua = 1
        btnjiahua:getChildByName("radio_selected_3"):setVisible(true)
        btnfanbei:getChildByName("radio_selected_3"):setVisible(false)
@@ -335,12 +334,13 @@ function createRoomBox:ctor()
     --比下胡：修改按钮
      btnxiugai:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         bixiahuNode:setPosition(cc.p(0, 0))    
         end)
     --砸2按钮
      btnzaer:onClicked(
         function (  )
-         
+         musicMgr:playEffect("game_button_click.mp3", false)
         if c_bZaEr == 0 then
         c_bZaEr = 1
         btnzaer:getChildByName("radio_selected_3"):setVisible(true)
@@ -353,7 +353,7 @@ function createRoomBox:ctor()
     --罚分按钮
      btnfafen:onClicked(
         function (  )
-    
+        musicMgr:playEffect("game_button_click.mp3", false)
         if c_bFaFeng  == 0 then
         c_bFaFeng  = 1
         btnfafen:getChildByName("radio_selected_3"):setVisible(true)
@@ -366,7 +366,7 @@ function createRoomBox:ctor()
     --压绝按钮
      btnyajue:onClicked(
         function (  )
-        
+        musicMgr:playEffect("game_button_click.mp3", false)
         if c_bIsYaJue   == 0 then
         c_bIsYaJue   = 1
         btnyajue:getChildByName("radio_selected_3"):setVisible(true)
@@ -403,7 +403,7 @@ function createRoomBox:ctor()
        --自己对的牌
     tbYaJue1:onClicked(
         function (  )
-
+        musicMgr:playEffect("game_button_click.mp3", false)    
         if tbYaJue[1]   == 0 then
         tbYaJue[1]   = 1
         tbYaJue1:getChildByName("radio_selected_3"):setVisible(true)
@@ -416,7 +416,7 @@ function createRoomBox:ctor()
        --别人对的牌
     tbYaJue2:onClicked(
         function (  )
-        
+        musicMgr:playEffect("game_button_click.mp3", false)
         if tbYaJue[2] == 0 then
         tbYaJue[2]  = 1
         tbYaJue2:getChildByName("radio_selected_3"):setVisible(true)
@@ -428,7 +428,7 @@ function createRoomBox:ctor()
        --自己出的牌
     tbYaJue3:onClicked(
         function (  )
-        
+        musicMgr:playEffect("game_button_click.mp3", false)
         if tbYaJue[3]   == 0 then
         tbYaJue[3]   = 1
         tbYaJue3:getChildByName("radio_selected_3"):setVisible(true)
@@ -440,11 +440,13 @@ function createRoomBox:ctor()
 --------关闭按钮功能-------
     imgMask:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             self:removeSelf()
         end
         )
     btnClose:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             self:removeSelf()
         end)
 -----******比下胡修改配置表，总节点****
@@ -452,12 +454,14 @@ function createRoomBox:ctor()
     --关闭按钮
      btnclosebixiahu:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         bixiahutxt:setString(TextBXH())
         bixiahuNode:setPosition(cc.p(2000, 200))    
         end)
     ---必下胡修改按钮组
     tbBiaxiahu1:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         if tbBiaxiahu[1] == 0 then
         tbBiaxiahu[1] = 1
         txtstring[1]  = "连庄后"
@@ -471,6 +475,7 @@ function createRoomBox:ctor()
 
     tbBiaxiahu2:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         if tbBiaxiahu[2] == 0 then
         tbBiaxiahu[2] = 1
         txtstring[2]  = "包牌后"
@@ -484,6 +489,7 @@ function createRoomBox:ctor()
 
     tbBiaxiahu3:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         if tbBiaxiahu[3] == 0 then
         tbBiaxiahu[3] = 1
         txtstring[3]  = "花杠后"
@@ -497,6 +503,7 @@ function createRoomBox:ctor()
 
     tbBiaxiahu4:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         if tbBiaxiahu[4] == 0 then
         tbBiaxiahu[4] = 1
         txtstring[4]  = "对对胡后"
@@ -510,6 +517,7 @@ function createRoomBox:ctor()
 
     tbBiaxiahu5:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         if tbBiaxiahu[5] == 0 then
         tbBiaxiahu[5] = 1
         txtstring[5]  = "杠后开花后"
@@ -523,6 +531,7 @@ function createRoomBox:ctor()
 
     tbBiaxiahu6:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         if tbBiaxiahu[6] == 0 then
         tbBiaxiahu[6] = 1
         txtstring[6]  = "黄庄后"
@@ -536,6 +545,7 @@ function createRoomBox:ctor()
 
     tbBiaxiahu7:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
          if tbBiaxiahu[7] == 0 then
         tbBiaxiahu[7] = 1
         txtstring[7]  = "天胡后"
@@ -549,6 +559,7 @@ function createRoomBox:ctor()
 
     tbBiaxiahu8:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         if tbBiaxiahu[8] == 0 then
         tbBiaxiahu[8] = 1
         txtstring[8]  = "地胡后"
@@ -562,6 +573,7 @@ function createRoomBox:ctor()
 
     tbBiaxiahu9:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         if tbBiaxiahu[9] == 0 then
         tbBiaxiahu[9] = 1
         txtstring[9]  = "全球独钓后"
@@ -574,6 +586,7 @@ function createRoomBox:ctor()
         end)
     tbBiaxiahu10:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         if tbBiaxiahu[10] == 0 then
         tbBiaxiahu[10] = 1
         txtstring[10]  = "混一色后"
@@ -586,6 +599,7 @@ function createRoomBox:ctor()
         end)
     tbBiaxiahu11:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         if tbBiaxiahu[11] == 0 then
         tbBiaxiahu[11] = 1
         txtstring[11]  = "清一色后"
@@ -602,24 +616,28 @@ function createRoomBox:ctor()
    -- local zonfenlist = rootNode:getChildByName("ListView_1")
      btnzf1:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         c_wScore = 100
          txtzongfen:setString("100")
          zonfenlist:setPosition(cc.p(2000, 200))     
         end)
      btnzf2:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         c_wScore = 200
          txtzongfen:setString("200")
          zonfenlist:setPosition(cc.p(2000, 200))   
         end)
      btnzf3:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         c_wScore = 300
          txtzongfen:setString("300")
          zonfenlist:setPosition(cc.p(2000, 200))   
         end)
      btnzf5:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         c_wScore = 500
          txtzongfen:setString("500")
          zonfenlist:setPosition(cc.p(2000, 200))   
@@ -629,24 +647,28 @@ function createRoomBox:ctor()
     --local shangxianlist = rootNode:getChildByName("ListView_2")
      btnsxno:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         c_wJieSuanLimit = 0
         txtshangxian:setString("无限制")
         shangxianlist:setPosition(cc.p(2000, 200))      
         end)
      btnsx1:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         c_wJieSuanLimit = 100
          txtshangxian:setString("100")
          shangxianlist:setPosition(cc.p(2000, 200))  
         end)
      btnsx2:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         c_wJieSuanLimit = 200
          txtshangxian:setString("200")
          shangxianlist:setPosition(cc.p(2000, 200))   
         end)
      btnsx3:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
         c_wJieSuanLimit = 300
          txtshangxian:setString("300")
          shangxianlist:setPosition(cc.p(2000, 200))  
@@ -655,10 +677,11 @@ function createRoomBox:ctor()
 
     layerMgr.LoginScene:addChild(self, 10000)
 
+
+    --创建房间按钮
     btnCreate:onClicked(
-
-
         function (  )
+            btnCreate:setTouchEnabled(false)    --防止重复点击
             musicMgr:playEffect("game_button_click.mp3", false)
 				--***************数据获取——汇总*************
 			dataMgr.roomSet.wScore        = c_wScore --200  --c_wScore
@@ -670,18 +693,17 @@ function createRoomBox:ctor()
 			dataMgr.roomSet.bYaJue        = girl.getAllBitValue(tbYaJue)
 			dataMgr.roomSet.bJuShu        = c_bJuShu --1    --c_bJuShu	
 			dataMgr.roomSet.bIsJinyunzi   = c_bIsJinyunzi --1    --c_bIsJinyunzi 
-
             local cardNum = girl.juToFang[dataMgr.roomSet.bJuShu]
-           
 --房卡不够，弹出
             if dataMgr.prop[10] < cardNum then
                 local popupbox =  import(".popUpBox",CURRENT_MODULE_NAME).create() 
                 popupbox:setInfo(Strings.noRoomCard)
-                local btnOk, btnCancel  = popupbox:getBtns()
+                local btnOk, btnCancel  = popupbox:getBtns(2)
                 btnOk:onClicked(function (  )    --确定
                     popupbox:remove()
                     musicMgr:playEffect("game_button_click.mp3", false)
-                    layerMgr.boxes[layerMgr.boxIndex.TuiGuangBox] = import(".ShoppingBox",CURRENT_MODULE_NAME).create()
+                    --layerMgr.boxes[layerMgr.boxIndex.TuiGuangBox] = import(".ShoppingBox",CURRENT_MODULE_NAME).create()
+                    layerMgr.boxes[layerMgr.boxIndex.ShoppingBox] = import(".ShoppingBox",CURRENT_MODULE_NAME).create()
                 end)
                 btnCancel:onClicked(function (  )
                     popupbox:remove()
@@ -689,6 +711,7 @@ function createRoomBox:ctor()
                 return
             end
 
+            
             local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
             mainlayer:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
             

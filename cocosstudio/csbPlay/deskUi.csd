@@ -16,10 +16,10 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="gameui/img_GameUI_BgNEW.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_touchOther" ActionTag="689023457" Tag="3140" IconVisible="False" LeftMargin="-639.4726" RightMargin="607.4726" TopMargin="151.8650" BottomMargin="-183.8650" TouchEnable="True" LeftEage="10" RightEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="12" Scale9Height="12" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_touchOther" ActionTag="689023457" Tag="3140" IconVisible="False" LeftMargin="-639.4724" RightMargin="607.4724" TopMargin="151.8650" BottomMargin="-183.8650" TouchEnable="True" LeftEage="10" RightEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="12" Scale9Height="12" ctype="ImageViewObjectData">
             <Size X="32.0000" Y="32.0000" />
             <AnchorPoint />
-            <Position X="-639.4726" Y="-183.8650" />
+            <Position X="-639.4724" Y="-183.8650" />
             <Scale ScaleX="39.9997" ScaleY="17.0086" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
@@ -120,7 +120,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/hua.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_touchCard" CanEdit="False" ActionTag="1216716968" Alpha="0" Tag="2551" IconVisible="False" LeftMargin="-15.9998" RightMargin="-16.0002" TopMargin="276.7780" BottomMargin="-308.7780" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="22" Scale9Height="28" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_touchCard" ActionTag="1216716968" Alpha="0" Tag="2551" IconVisible="False" LeftMargin="-15.9998" RightMargin="-16.0002" TopMargin="276.7780" BottomMargin="-308.7780" TouchEnable="True" LeftEage="5" RightEage="5" TopEage="2" BottomEage="2" Scale9OriginX="5" Scale9OriginY="2" Scale9Width="22" Scale9Height="28" ctype="ImageViewObjectData">
             <Size X="32.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="0.0002" Y="-292.7780" />
@@ -296,6 +296,55 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="gameui/img_bixiahu.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Image_auto" ActionTag="-1381013001" Tag="257" IconVisible="False" LeftMargin="-640.4233" RightMargin="-639.5767" TopMargin="175.2398" BottomMargin="-322.2398" TouchEnable="True" LeftEage="422" RightEage="422" TopEage="48" BottomEage="48" Scale9OriginX="422" Scale9OriginY="48" Scale9Width="436" Scale9Height="51" ctype="ImageViewObjectData">
+            <Size X="1280.0000" Y="147.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-0.4233" Y="-248.7398" />
+            <Scale ScaleX="1.0000" ScaleY="1.5312" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="gameui/bg_auto.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Button_cancelAuto" ActionTag="-1861396190" Tag="258" IconVisible="False" LeftMargin="-115.9401" RightMargin="-110.0599" TopMargin="214.2845" BottomMargin="-291.2845" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="196" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="226.0000" Y="77.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-2.9401" Y="-252.7845" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="gameui/btn_cancel_2.png" Plist="" />
+            <NormalFileData Type="Normal" Path="gameui/btn_cancel_1.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_timeLastHeart" ActionTag="1535713629" Tag="1761" IconVisible="False" LeftMargin="-133.7323" RightMargin="114.7323" TopMargin="-338.4355" BottomMargin="307.4355" FontSize="28" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="19.0000" Y="31.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="-124.2323" Y="322.9355" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="200" B="0" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_timeSub" ActionTag="-193102538" Tag="1762" IconVisible="False" LeftMargin="99.1066" RightMargin="-118.1066" TopMargin="-336.5978" BottomMargin="305.5978" FontSize="28" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="19.0000" Y="31.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="108.6066" Y="321.0978" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="200" B="0" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="font/fangzhengchuyuan.TTF" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

@@ -6,7 +6,7 @@ local layerMgr = import(".LayerManager"):getInstance()
 local CardNode = class("CardNode", display.newNode)
 
 function CardNode:ctor(cardValue)
-    self.sn = nil
+--    self.sn = nil
     self.cardValue = cardValue
    -- self.value = 
     local rootNode = cc.CSLoader:createNode("buttonCard.csb"):addTo(self)

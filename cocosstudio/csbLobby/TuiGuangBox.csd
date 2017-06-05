@@ -149,7 +149,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Node_3" Visible="False" ActionTag="1056873441" Tag="373" IconVisible="True" TopMargin="65.0000" BottomMargin="-65.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="Node_3" ActionTag="1056873441" Tag="373" IconVisible="True" TopMargin="65.0000" BottomMargin="-65.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="Button_8" ActionTag="499071595" Tag="377" IconVisible="False" LeftMargin="-87.1506" RightMargin="-138.8494" TopMargin="76.1163" BottomMargin="-153.1163" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="196" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -161,7 +161,6 @@
                 <PrePosition />
                 <PreSize X="0.0000" Y="0.0000" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Normal" Path="TuiGuang/button_binding_2.png" Plist="" />
                 <NormalFileData Type="Normal" Path="TuiGuang/button_binding_1.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
@@ -199,7 +198,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="TuiGuang/bg_number.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="TextField_1" ActionTag="-1001654248" Tag="378" IconVisible="False" LeftMargin="-79.1506" RightMargin="-190.8494" TopMargin="-16.8837" BottomMargin="-18.1163" TouchEnable="True" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="23214214" MaxLengthText="10" ctype="TextFieldObjectData">
+              <AbstractNodeData Name="TextField_1" ActionTag="-1001654248" Tag="378" IconVisible="False" LeftMargin="-79.1506" RightMargin="-190.8494" TopMargin="-16.8837" BottomMargin="-18.1163" TouchEnable="True" FontSize="30" IsCustomSize="True" LabelText="" PlaceHolderText="请输入邀请码" MaxLengthText="10" ctype="TextFieldObjectData">
                 <Size X="270.0000" Y="35.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="55.8494" Y="-0.6163" />
@@ -217,7 +216,7 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Node_4" ActionTag="-1842189314" Tag="379" IconVisible="True" TopMargin="60.0000" BottomMargin="-60.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="Node_4" Visible="False" ActionTag="-1842189314" Tag="379" IconVisible="True" TopMargin="60.0000" BottomMargin="-60.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="Text_5" ActionTag="2080456939" Tag="381" IconVisible="False" LeftMargin="-336.7000" RightMargin="-340.3000" TopMargin="-139.9529" BottomMargin="-157.0471" FontSize="24" LabelText="当您满足以下条件时，就可以申请《秦淮南京麻将》游戏代理人&#xA;资格：&#xA;&#xA;         1.热爱麻将，拥有麻将微信群或QQ群。&#xA;         2.能严格保证在做推广员期间不违法违规，保证自己旗下推&#xA;             广员及用户不涉及违法违规事项。&#xA;&#xA;&#xA;         有意者请加微信咨询：100869527&#xA;                               QQ咨询：100869527&#xA;" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">

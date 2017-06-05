@@ -20,39 +20,24 @@ end
 function ActionManager:init()
     local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)    --定时器运行 在deskBg层
     self.nodeAction = playLayer.rootNode:getChildByName("FileNode_action")   --特效节点
-    --self.nodeUi = playLayer.rootNode:getChildByName("FileNode_deskUi")    
 
+        --peng,gang,hu等特效
+    self.animate = playLayer.rootNode:getChildByName("ArmatureNode_1")
     self.outNode = {}
     self.outNode[1]  =  playLayer.rootNode:getChildByName("FileNode_dachuMe")    --打出牌节点，上面运行箭头特效
     self.outNode[2]  =  playLayer.rootNode:getChildByName("FileNode_dachuLeft")
     self.outNode[3]  =  playLayer.rootNode:getChildByName("FileNode_dachuUp")
     self.outNode[4]  =  playLayer.rootNode:getChildByName("FileNode_dachuRight")
 
-
-
-    self.actNode = {}  --[1,7] 补花，碰，杠，胡，杠开， 天胡，地胡
-    for i=1,7 do
-        self.actNode[i] = self.nodeAction:getChildByName("FileNode_"..i)
-        self.actNode[i]:setVisible(false)
-    end
-    self.timeLine = {}
-
-    self.timeLine[1] = cc.CSLoader:createTimeline("actBuhua.csb")
-    self.timeLine[2] = cc.CSLoader:createTimeline("actPeng.csb")
-    self.timeLine[3] = cc.CSLoader:createTimeline("actGang.csb")
-    self.timeLine[4] = cc.CSLoader:createTimeline("actHupai.csb")
-    self.timeLine[5] = cc.CSLoader:createTimeline("actGanghoukaihua.csb")
-    self.timeLine[6] = cc.CSLoader:createTimeline("actTianhu.csb")
-    self.timeLine[7] = cc.CSLoader:createTimeline("actDihu.csb")
-
-    for i=1,7 do
-        self.nodeAction:runAction(self.timeLine[i])
-        self.timeLine[i]:setLastFrameCallFunc(
-        function ()
-            self.actNode[i]:setVisible(false)
-        end
-        )
-    end
+    self.actionName = {
+    "buhua",
+    "peng",
+    "gang",
+    "hu",
+    "gangkai",
+    "dihu",
+    "tianhu",
+}
 
      --箭头
     self.jianTouNodes = {}
@@ -64,16 +49,39 @@ function ActionManager:init()
         self.jianTouNodes[i]:setVisible(false)
     end
 
-
+    --loading 
+    -- self.loadingNode = cc.CSLoader:createNode("loadingLoad.csb"):addTo(layerMgr.LoginScene, 10000)
+    -- self.loadingTimeLines = cc.CSLoader:createTimeline("loadingLoad.csb")
+    -- layerMgr.LoginScene:runAction( self.loadingTimeLines)
+    -- self.loadingNode:setVisible(false)
 
 end
+
+-- function ActionManager:playAction(actIndex, clientId)
+--     self.actNode[actIndex]:setVisible(true)
+--     self.timeLine[actIndex]:gotoFrameAndPlay(0, false)
+--     self.nodeAction:setPositionX(girl.effPosX[clientId])
+--     self.nodeAction:setPositionY(girl.effPosY[clientId])
+-- end
 
 function ActionManager:playAction(actIndex, clientId)
-    self.actNode[actIndex]:setVisible(true)
-    self.timeLine[actIndex]:gotoFrameAndPlay(0, false)
-    self.nodeAction:setPositionX(girl.effPosX[clientId])
-    self.nodeAction:setPositionY(girl.effPosY[clientId])
+    self.animate:setVisible(true)
+    self.animate:getAnimation():play(self.actionName[actIndex], -1, 0)
+    self.animate:setPositionX(girl.effPosX[clientId])
+    self.animate:setPositionY(girl.effPosY[clientId])
+    local seq = cc.Sequence:create(
+                cc.DelayTime:create(1.0),
+                cc.CallFunc:create(
+                function ()
+                    self.animate:setVisible(false) 
+                    --self.animate:getAnimation():stop()
+                end)
+                )
+
+    local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)    --定时器运行 在deskBg层
+   playLayer.deskUiNode:runAction(seq)   
 end
+
 
 --clientId ==0时
 function ActionManager:playJianTou(clientId, posx, posy)
@@ -85,6 +93,19 @@ function ActionManager:playJianTou(clientId, posx, posy)
         self.jianTouTimeLines[clientId]:gotoFrameAndPlay(0, true)
         self.jianTouNodes[clientId]:setPosition(posx, posy + 30)
     end
+end
+
+function ActionManager:playLoading( posx, posy )
+    -- self.loadingNode:setVisible(true)
+    -- self.loadingTimeLines:gotoFrameAndPlay(0, true)
+    -- self.loadingNode:setPosition(display.width * 0.5 + posx, display.height *0.5 + posy)
+end
+
+function ActionManager:stopLoading(  )
+    -- if self.loadingNode then
+    --     self.loadingNode:setVisible(false)
+    -- end
+    
 end
 
 

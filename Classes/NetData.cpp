@@ -254,13 +254,23 @@ std::string SDKLoginData::readHeadimgurl()
 	return weChatData.headimgurl;
 }
 
-std::string SDKLoginData::readCity()
+std::string SDKLoginData::readRoomNum()
 {
-	return weChatData.city;
+	return weChatData.roomNum;
 }
 
 std::string SDKLoginData::readIp()
 {
 	return weChatData.hostIp;
+}
+
+std::string SDKLoginData::readUnionId()
+{
+	return weChatData.unionId;
+}
+
+std::string SDKLoginData::readSaves()
+{
+	return weChatData.saves;
 }
 

@@ -147,6 +147,21 @@ function girl.getAllBitValue(bitTable)
     return sum
 end
 
+--拆分getAllBitValue\bitnum位数自定义
+function girl.splitAllBitValue(bitnum,byteValue)
+    local bitTable = {}
+    local tmp = byteValue
+    for i=1,bitnum do
+         bitTable[i] = tmp % 2
+         if i ~= bitnum then
+             tmp = tmp - bitTable[i]
+             tmp = tmp / 2
+         end
+         --print("bit "..i.." "..bitTable[i])
+    end
+    return bitTable
+end
+
 --获取数字组成的整数值，1为最低位 
 function girl.getAllDicimalValue(tenTable)
     local sum = 0

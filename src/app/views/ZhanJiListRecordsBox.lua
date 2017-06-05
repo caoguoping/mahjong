@@ -2,6 +2,8 @@
 local CURRENT_MODULE_NAME = ...
 local dataMgr = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
+local musicMgr = import(".MusicManager"):getInstance()
+
 local scheduler = cc.Director:getInstance():getScheduler()
 
 local ZhanJiListRecordsBox = class("ZhanJiListRecordsBox", display.newLayer)
@@ -179,6 +181,7 @@ function ZhanJiListRecordsBox:ctor()
 
 		btnliushui:onClicked(
 		function()
+			musicMgr:playEffect("game_button_click.mp3", false)
 		rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(true)
 		rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(false)
 		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(false)
@@ -194,6 +197,7 @@ function ZhanJiListRecordsBox:ctor()
 
 		btnzongfen:onClicked(
 		function()
+			musicMgr:playEffect("game_button_click.mp3", false)
 		rootNode:getChildByName("Node_liushui"):getChildByName("Image_1"):setVisible(false)
 		rootNode:getChildByName("Node_liushui"):getChildByName("Image_2"):setVisible(true)
 		rootNode:getChildByName("Node_zongfen"):getChildByName("Image_1"):setVisible(true)
@@ -221,7 +225,7 @@ function ZhanJiListRecordsBox:ctor()
 		-- end)
 		btnclose:onClicked(
         function (  )
-             --TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
+        	musicMgr:playEffect("game_button_click.mp3", false)
             self:removeSelf()
         end)
 		

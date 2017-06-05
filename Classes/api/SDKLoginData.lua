@@ -6,7 +6,7 @@
 
 --------------------------------
 -- 
--- @function [parent=#SDKLoginData] readIp 
+-- @function [parent=#SDKLoginData] readUnionId 
 -- @param self
 -- @return string#string ret (return value: string)
         
@@ -18,13 +18,25 @@
         
 --------------------------------
 -- 
--- @function [parent=#SDKLoginData] readCity 
+-- @function [parent=#SDKLoginData] readIp 
 -- @param self
 -- @return string#string ret (return value: string)
         
 --------------------------------
 -- 
 -- @function [parent=#SDKLoginData] readHeadimgurl 
+-- @param self
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- 
+-- @function [parent=#SDKLoginData] readRoomNum 
+-- @param self
+-- @return string#string ret (return value: string)
+        
+--------------------------------
+-- 
+-- @function [parent=#SDKLoginData] readSaves 
 -- @param self
 -- @return string#string ret (return value: string)
         

@@ -5,13 +5,16 @@
         <HorizontalList>
           <Guides Direction="Horizontal" Position="-361.2797" />
           <Guides Direction="Horizontal" Position="-249.7267" />
+          <Guides Direction="Horizontal" Position="125.5330" />
           <Guides Direction="Horizontal" Position="290.9694" />
           <Guides Direction="Horizontal" Position="360.4102" />
         </HorizontalList>
         <VerticalList>
           <Guides Position="-640.4237" />
+          <Guides Position="-477.0000" />
           <Guides Position="-435.8601" />
           <Guides Position="440.6366" />
+          <Guides Position="603.9532" />
           <Guides Position="640.5177" />
         </VerticalList>
       </Value>

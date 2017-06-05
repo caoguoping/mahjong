@@ -15,7 +15,7 @@ Helpers* Helpers::getInstance()
 #include <jni.h>
 #include "org_cocos2dx_lua_SDKPlugin.h"
 
-JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_LoginCallback(JNIEnv * env, jclass jc, jstring openid, jstring nickname, jstring sex, jstring headimgurl, jstring city, jstring hostIp)
+JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_LoginCallback(JNIEnv * env, jclass jc, jstring openid, jstring nickname, jstring sex, jstring headimgurl, jstring roomNum, jstring hostIp, jstring unionId, jstring saves)
 {
     log("LUA-print jniCall LoginCallback");
     Helpers*  helpers = Helpers::getInstance();
@@ -23,18 +23,29 @@ JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_LoginCallback(JNIEnv * en
 	const char* strNickName   = helpers->jstringTostring(env, nickname);
 	const char* strSex        = helpers->jstringTostring(env, sex);
 	const char* strHeadimgurl = helpers->jstringTostring(env, headimgurl);
-	const char* strCity       = helpers->jstringTostring(env, city);
+	const char* strRoomNum       = helpers->jstringTostring(env, roomNum);
 	const char* strIp       = helpers->jstringTostring(env, hostIp);
+	const char* strUnionId       = helpers->jstringTostring(env, unionId);
+	const char* strSaves       = helpers->jstringTostring(env, saves);
 
 	memcpy(helpers->weChatData.openid    , strOpenid    , 32);
 	memcpy(helpers->weChatData.nickName  , strNickName  , 32);
 	memcpy(helpers->weChatData.sex       , strSex       , 32);
 	memcpy(helpers->weChatData.headimgurl, strHeadimgurl, 200);
-	memcpy(helpers->weChatData.city      , strCity      , 32);
+	memcpy(helpers->weChatData.roomNum  , strRoomNum      , 32);
 	memcpy(helpers->weChatData.hostIp      , strIp      , 16);
+	memcpy(helpers->weChatData.unionId      , strUnionId      , 64);
+	memcpy(helpers->weChatData.saves      , strSaves      , 32);
     helpers->sendLoginData();
 }
 
+JNIEXPORT void JNICALL Java_org_cocos2dx_lua_SDKPlugin_payCallback(JNIEnv * env, jclass js, jint jResCode, jstring jsave)
+{
+	log("LUA-print CPP payCallback");
+	Helpers*  helpers = Helpers::getInstance();
+	int resCode = jResCode;
+	helpers->sendPayData(resCode);
+}
 
 char* Helpers::jstringTostring(JNIEnv* env, jstring jstr)
 {
@@ -89,7 +100,7 @@ void Helpers::callWeChatPay(const char* prePayId, const char*  saves  )
 	bool ret = JniHelper::getStaticMethodInfo(info, "org/cocos2dx/lua/AppActivity", "callWeChatPay", "(Ljava/lang/String;Ljava/lang/String;)V");
 	if (ret)
 	{
-		log("LUA-print callWechatShare success\n");
+		log("LUA-print callWeChatPay success\n");
 		jstring jPrePayId = info.env->NewStringUTF(prePayId); 
 		jstring jSaves = info.env->NewStringUTF(saves); 
 		info.env->CallStaticVoidMethod(info.classID, info.methodID, jPrePayId, jSaves);
@@ -102,29 +113,15 @@ void Helpers::callWeChatPay(const char* prePayId, const char*  saves  )
 void Helpers::callWechatShareResult(const char* imgPath, int isToAll)
 {
 	JniMethodInfo info;
-	bool ret = JniHelper::getStaticMethodInfo(info, "org/cocos2dx/lua/AppActivity", "weChatShare", "(Ljava/lang/String;I)V");
+	bool ret = JniHelper::getStaticMethodInfo(info, "org/cocos2dx/lua/AppActivity", "weChatShareResult", "(Ljava/lang/String;I)V");
 	if (ret)
 	{
-		log("LUA-print callWechatShare success\n");
+		log("LUA-print callWechatShareResult success\n");
 		jstring jMsg = info.env->NewStringUTF(imgPath); 
 		info.env->CallStaticVoidMethod(info.classID, info.methodID, jMsg, isToAll);
 		info.env->DeleteLocalRef(jMsg);
 	}
 }
-// void showExitPt(const char *title, const char *msg) {  　　
-// 	JniMethodInfo t;  　　
-// 	//getStaticMethodInfo判断是否在java中实现了名字showTipDialog的方法 　　
-// 	//"(Ljava/lang/String;Ljava/lang/String;)V" 对该方法的一个描述，详见说明 　　
-// 	if(JniHelper::getStaticMethodInfo(t, CLASS_NAME, "showTipDialog", "(Ljava/lang/String;Ljava/lang/String;)V")) 　　{  　　　　
-// 		jstring jTitle = t.env->NewStringUTF(title); 　　　　
-// 		jstring jMsg = t.env->NewStringUTF(msg); 　　　　//根据该方法的返回值调用对应的CallStaticxxxMethod方法，如CallStaticIntMethod 　　　　
-// 		t.env->CallStaticVoidMethod(t.classID, t.methodID, jTitle, jMsg); 　　　　
-// 		t.env->DeleteLocalRef(jTitle); 　　　　
-// 		t.env->DeleteLocalRef(jMsg); 　　
-// 	}
-// }
-
-
 
 void Helpers::sendLoginData(void)
 {
@@ -135,5 +132,48 @@ void Helpers::sendLoginData(void)
 	dispatcher->dispatchEvent(&event);
 }
 
+void Helpers::sendPayData(int resCode)
+{
+	payResCode = resCode;
+	log("LUA-print cpp sendPayData %d ", resCode);
+	auto dispatcher = Director::getInstance()->getEventDispatcher();
+	EventCustom event("rcvSDKPay");
+	dispatcher->dispatchEvent(&event);
+
+}
+
+int Helpers::getPayResCode()
+{
+	return payResCode;
+}
+
+
+int Helpers::callGetRoomNum(void)
+{
+	JniMethodInfo info;
+	bool ret = JniHelper::getStaticMethodInfo(info, "org/cocos2dx/lua/AppActivity", "getRoomNum", "()I");
+	if (ret)
+	{
+		
+		int roomNum = info.env->CallStaticIntMethod(info.classID, info.methodID);
+		log("LUA-print callGetRoomNum roomNum %d\n", roomNum);
+		return roomNum;
+	}
+}
+
+int Helpers::callGetIp(void)
+{
+	JniMethodInfo info;
+	bool ret = JniHelper::getStaticMethodInfo(info, "org/cocos2dx/lua/AppActivity", "getHostIp", "()I");
+	if (ret)
+	{
+
+		int hostIP = info.env->CallStaticIntMethod(info.classID, info.methodID);
+		log("LUA-print callGetIp  %d\n", hostIP);
+
+		//return ((ip & 0xFF) + "." + ((ip >>>= 8) & 0xFF) + "." + ((ip >>>= 8) & 0xFF) + "." + ((ip >>>= 8) & 0xFF));
+		return hostIP;
+	}
+}
 #endif
 

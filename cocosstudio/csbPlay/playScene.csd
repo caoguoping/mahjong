@@ -195,6 +195,26 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/deskUi.csd" Plist="" />
           </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_chat" ActionTag="272720091" Tag="2502" IconVisible="True" LeftMargin="1174.0000" RightMargin="106.0000" TopMargin="405.4438" BottomMargin="314.5562" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="1174.0000" Y="314.5562" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9172" Y="0.4369" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbPlay/chat.csd" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="FileNode_chatUI" ActionTag="-2037847982" VisibleForFrame="False" Tag="9670" IconVisible="True" LeftMargin="1054.4741" RightMargin="225.5259" TopMargin="351.0000" BottomMargin="369.0000" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="1054.4741" Y="369.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8238" Y="0.5125" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="csbPlay/chatUI.csd" Plist="" />
+          </AbstractNodeData>
           <AbstractNodeData Name="FileNode_invite" Visible="False" ActionTag="1021855120" Tag="18307" IconVisible="True" LeftMargin="638.1653" RightMargin="641.8347" TopMargin="536.1072" BottomMargin="183.8928" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
@@ -205,15 +225,15 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="csbPlay/inviteUi.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="FileNode_action" Visible="False" ActionTag="849419255" Tag="1821" IconVisible="True" LeftMargin="955.4758" RightMargin="324.5242" TopMargin="291.9057" BottomMargin="428.0943" StretchWidthEnable="False" StretchHeightEnable="False" InnerActionSpeed="1.0000" CustomSizeEnabled="False" ctype="ProjectNodeObjectData">
+          <AbstractNodeData Name="ArmatureNode_1" ActionTag="218463625" VisibleForFrame="False" Tag="2286" IconVisible="True" LeftMargin="953.6171" RightMargin="326.3829" TopMargin="291.2164" BottomMargin="428.7836" IsLoop="False" IsAutoPlay="True" CurrentAnimationName="gang" ctype="ArmatureNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />
-            <Position X="955.4758" Y="428.0943" />
+            <Position X="953.6171" Y="428.7836" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.7465" Y="0.5946" />
+            <PrePosition X="0.7450" Y="0.5955" />
             <PreSize X="0.0000" Y="0.0000" />
-            <FileData Type="Normal" Path="csbPlay/actionNode.csd" Plist="" />
+            <FileData Type="Normal" Path="actions/wenzi/wenzi.ExportJson" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

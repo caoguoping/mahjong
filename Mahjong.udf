@@ -12,11 +12,11 @@
         <LuaIsEncrypt Value="False" />
         <LuaEncryptKey Value="" />
         <LuaEncryptSign Value="" />
-        <Android_PackageName Value="com.tianlian.Mahjong" />
+        <Android_PackageName Value="com.tljm110.majiang" />
         <AndroidkeyStore Value="" />
         <AndroidVersion Value="android-20" />
         <iOS_Target Value="Mahjong-mobile" />
-        <iOS_BundleID Value="" />
+        <iOS_BundleID Value="iPhone Developer: caoguoping101@icloud.com (5ANS5MD7TN)" />
         <Platform Value="Android" />
         <RunPlatform Value="None" />
         <FrameworkVersion Value="cocos2d-x-3.10" />

@@ -36,8 +36,8 @@ end
 
 --1,男，  2，女
 function MusicManager:playCardValueEffect( sex,  young, cardValue)
-    print("sex "..sex.."  young "..young.."  cardCalue "..cardValue)
-    print("soundCnt into ")
+   -- print("sex "..sex.."  young "..young.."  cardCalue "..cardValue)
+    --print("soundCnt into ")
     if sex == 0 then
         sex = 2
     end
@@ -50,15 +50,14 @@ function MusicManager:playCardValueEffect( sex,  young, cardValue)
         strSoundName = "nv_" 
     end
     strSoundName = strSoundName..cardValue.."_"..young.."_"..randNum..".mp3"
-    print("strSoundName")
-    print(strSoundName)
+   -- print("strSoundName")
+   -- print(strSoundName)
     self:playEffect(strSoundName, false)
  end
 
 function MusicManager:stopMusic( )
-    if self.isMusicOn then
-         cc.SimpleAudioEngine:getInstance():stopMusic(true)
-    end
+    print("stopMusic")
+    cc.SimpleAudioEngine:getInstance():stopMusic(true)
 end
 
 function MusicManager:halfMusicVolume()

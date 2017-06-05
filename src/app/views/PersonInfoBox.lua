@@ -15,7 +15,6 @@ function PersonInfoBox:ctor()
   	self.txtName = rootNode:getChildByName("Text_name")
   	self.txtRoomCard = rootNode:getChildByName("Text_roomCard")
   	self.imgHead = rootNode:getChildByName("Image_head")
-
 end
 
 
@@ -25,6 +24,7 @@ function PersonInfoBox:init( clientId ,posx, posy)
 	    self.txtId:setString(dataMgr.myBaseData.dwUserID)
 	    self.txtName:setString(dataMgr.myBaseData.szNickName)
 	    self.txtRoomCard:setString(dataMgr.prop[10])
+        --self.popImage:setPosition(cc.p(200, 200))
 	else
 	    local svrId = dataMgr:getServiceChairId(clientId)
 	    self.txtId:setString(dataMgr.onDeskData[svrId].dwUserID)

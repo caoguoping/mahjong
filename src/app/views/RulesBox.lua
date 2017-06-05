@@ -2,6 +2,7 @@
 local CURRENT_MODULE_NAME = ...
 local dataMgr = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
+local musicMgr = import(".MusicManager"):getInstance()
 
 local RulesBox = class("RulesBox", display.newLayer)
 function RulesBox:ctor()
@@ -35,6 +36,7 @@ function RulesBox:ctor()
     --------基本规则
     btn1:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             rootNode:getChildByName("Node_1"):getChildByName("Image_1"):setVisible(true)
             rootNode:getChildByName("Node_1"):getChildByName("Image_2"):setVisible(false)
 
@@ -54,6 +56,7 @@ function RulesBox:ctor()
     ------翻型与算分
     btn2:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             rootNode:getChildByName("Node_1"):getChildByName("Image_1"):setVisible(false)
             rootNode:getChildByName("Node_1"):getChildByName("Image_2"):setVisible(true)
 
@@ -73,6 +76,7 @@ function RulesBox:ctor()
     -------特殊规则
     btn3:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             rootNode:getChildByName("Node_1"):getChildByName("Image_1"):setVisible(false)
             rootNode:getChildByName("Node_1"):getChildByName("Image_2"):setVisible(true)
 
@@ -92,6 +96,7 @@ function RulesBox:ctor()
     -------结算
     btn4:onClicked(
         function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
             rootNode:getChildByName("Node_1"):getChildByName("Image_1"):setVisible(false)
             rootNode:getChildByName("Node_1"):getChildByName("Image_2"):setVisible(true)
 
@@ -109,10 +114,9 @@ function RulesBox:ctor()
             rootNode:getChildByName("ListView_4"):setVisible(true)
     end)
 
-        --dataMgr.HistroyRecords[i].dwUserID
     btnClose:onClicked(
     function (  )
-            --TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
+        musicMgr:playEffect("game_button_click.mp3", false)
         self:removeSelf()
     end)
 end

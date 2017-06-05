@@ -38,8 +38,8 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_room" ActionTag="890566065" Tag="17197" IconVisible="False" LeftMargin="11.0465" RightMargin="-106.0465" TopMargin="-41.5917" BottomMargin="14.5917" FontSize="24" LabelText="1003235" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="95.0000" Y="27.0000" />
+          <AbstractNodeData Name="Text_room" ActionTag="890566065" Tag="17197" IconVisible="False" LeftMargin="18.0465" RightMargin="-99.0465" TopMargin="-41.5917" BottomMargin="14.5917" FontSize="24" LabelText="103235" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="81.0000" Y="27.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="58.5465" Y="28.0917" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />

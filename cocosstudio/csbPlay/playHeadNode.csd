@@ -40,7 +40,7 @@
             <Size X="115.0000" Y="36.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="0.4639" Y="-28.6853" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Scale ScaleX="1.2500" ScaleY="1.2500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
@@ -50,7 +50,7 @@
             <Size X="40.0000" Y="27.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="0.6789" Y="-31.9339" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Scale ScaleX="1.2500" ScaleY="1.2500" />
             <CColor A="255" R="255" G="204" B="0" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
@@ -70,21 +70,41 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_ready" ActionTag="892747176" Tag="1376" IconVisible="False" LeftMargin="-42.4839" RightMargin="-33.5161" TopMargin="55.8109" BottomMargin="-95.8109" LeftEage="25" RightEage="25" TopEage="13" BottomEage="13" Scale9OriginX="25" Scale9OriginY="13" Scale9Width="26" Scale9Height="14" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_ready" ActionTag="892747176" VisibleForFrame="False" Tag="1376" IconVisible="False" LeftMargin="-42.4839" RightMargin="-33.5161" TopMargin="55.8109" BottomMargin="-95.8109" LeftEage="25" RightEage="25" TopEage="13" BottomEage="13" Scale9OriginX="25" Scale9OriginY="13" Scale9Width="26" Scale9Height="14" ctype="ImageViewObjectData">
             <Size X="76.0000" Y="40.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-4.4839" Y="-75.8109" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Scale ScaleX="1.2500" ScaleY="1.2500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="gameui/img_ready.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_fangzhu" ActionTag="-97302574" Tag="495" IconVisible="False" LeftMargin="-60.4741" RightMargin="32.4741" TopMargin="-65.0867" BottomMargin="36.0867" LeftEage="9" RightEage="9" TopEage="13" BottomEage="13" Scale9OriginX="9" Scale9OriginY="13" Scale9Width="10" Scale9Height="3" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_leave" ActionTag="-119551895" VisibleForFrame="False" Tag="1739" IconVisible="False" LeftMargin="-27.5359" RightMargin="-31.4641" TopMargin="-35.9355" BottomMargin="3.9355" LeftEage="25" RightEage="25" TopEage="13" BottomEage="13" Scale9OriginX="25" Scale9OriginY="13" Scale9Width="9" Scale9Height="6" ctype="ImageViewObjectData">
+            <Size X="59.0000" Y="32.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="1.9641" Y="19.9355" />
+            <Scale ScaleX="1.2500" ScaleY="1.2500" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="gameui/img_leave.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Image_escape" ActionTag="869728794" VisibleForFrame="False" Tag="1740" IconVisible="False" LeftMargin="-28.7597" RightMargin="-30.2403" TopMargin="-35.9931" BottomMargin="3.9931" LeftEage="25" RightEage="25" TopEage="13" BottomEage="13" Scale9OriginX="25" Scale9OriginY="13" Scale9Width="9" Scale9Height="6" ctype="ImageViewObjectData">
+            <Size X="59.0000" Y="32.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="0.7403" Y="19.9931" />
+            <Scale ScaleX="1.2500" ScaleY="1.2500" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="gameui/img_escape.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Image_fangzhu" ActionTag="-97302574" Tag="495" IconVisible="False" LeftMargin="-60.4741" RightMargin="32.4741" TopMargin="-65.0867" BottomMargin="36.0867" LeftEage="9" RightEage="9" TopEage="13" BottomEage="13" Scale9OriginX="9" Scale9OriginY="13" Scale9Width="22" Scale9Height="15" ctype="ImageViewObjectData">
             <Size X="28.0000" Y="29.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="-46.4741" Y="50.5867" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Scale ScaleX="1.2500" ScaleY="1.2500" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />

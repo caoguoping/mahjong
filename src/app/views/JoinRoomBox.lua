@@ -4,11 +4,12 @@ local dataMgr     = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
 local musicMgr = import(".MusicManager"):getInstance()
 
-
+local roomNumLenth = 6      --输入的房间号的长度，6位
 
 local JoinRoomBox = class("JoinRoomBox", display.newLayer)
 function JoinRoomBox:ctor()
 --all Node
+    dataMgr.roomSet.currentJushu = 0
     local rootNode = cc.CSLoader:createNode("joinRoom.csb"):addTo(self)
     self.rootNode = rootNode
     rootNode:setPosition(display.center)
@@ -30,33 +31,46 @@ function JoinRoomBox:ctor()
         end)
 
     self.txts = {}
-    self.roomNum = {}  --7位数
+    self.roomNum = {}  --6位数
     self.nowNum = 0  --已输入的房间位数
-    for i=1,7 do
+    for i=1, roomNumLenth do
         local tmpStr = "Text_"..i
         self.txts[i] = rootNode:getChildByName(tmpStr)
     end
 
     local btns = {}
+    local isCanClick = true    --数字键是否可以点击， 满6个不可点
+
+    --Button_1   上显示的数值是0
     for i=1,10 do
         local tmpStr = "Button_"..i
         btns[i] = rootNode:getChildByName(tmpStr)
-        btns[i]:onClicked(
-        function (  )
-            musicMgr:playEffect("game_button_click.mp3", false)
-            self.nowNum = self.nowNum + 1;
-            self.txts[self.nowNum]:setString(tostring(i - 1))
-            self.txts[self.nowNum]:setVisible(true)
-            self.roomNum[8 - self.nowNum] = i - 1
+        if isCanClick then
+            btns[i]:onClicked(
+            function (  )
+                musicMgr:playEffect("game_button_click.mp3", false)
+                self.nowNum = self.nowNum + 1;
+                print("self.nowNum"..self.nowNum)
+                if self.nowNum < roomNumLenth + 1 then
+                    self.txts[self.nowNum]:setString(tostring(i - 1))
+                    self.txts[self.nowNum]:setVisible(true)
+                    self.roomNum[roomNumLenth + 1 - self.nowNum] = i - 1
 
-            if self.nowNum == 7 then
-                dataMgr.roomSet.dwRoomNum = girl.getAllDicimalValue(self.roomNum, 7)
-                self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game)  
+                    if self.nowNum == roomNumLenth then
+                        dataMgr.roomSet.dwRoomNum = girl.getAllDicimalValue(self.roomNum, roomNumLenth)
+                        self:startGame(netTb.ip, netTb.port.game, netTb.SocketType.Game) 
+                        print("joinRoom"..dataMgr.roomSet.dwRoomNum) 
+                        isCanClick = false
+                    end
+                else
+
+                end
 
 
             end
+            )
         end
-        )
+
     end
 
     local btnReput = rootNode:getChildByName("Button_re")
@@ -70,15 +84,7 @@ function JoinRoomBox:ctor()
     local btnDelete = rootNode:getChildByName("Button_delete")
     btnDelete:onClicked(
         function (  )
-            musicMgr:playEffect("game_button_click.mp3", false)
-            if self.nowNum < 1 then
-               return
-            else
-
-                self.txts[self.nowNum]:setVisible(false)
-                self.nowNum = self.nowNum - 1;
-            end
-
+            self:deleteRoomNum()
         end
         )
 
@@ -87,7 +93,7 @@ function JoinRoomBox:ctor()
         function (  )
             musicMgr:playEffect("game_button_click.mp3", false)
             local strUid = txUid:getString()
-            if #strUid < 7 then
+            if #strUid < roomNumLenth then
                 return
             else
                 dataMgr.roomSet.dwRoomNum = tonumber(strUid)
@@ -110,9 +116,21 @@ end
 function JoinRoomBox:reputRoomNum(  )
     self.roomNum = {}  --7位数
     self.nowNum = 0  --已输入的房间位数
-    for i=1,7 do
+    for i=1,roomNumLenth do
         self.txts[i]:setVisible(false)
     end
+end
+
+function JoinRoomBox:deleteRoomNum(  )
+    musicMgr:playEffect("game_button_click.mp3", false)    
+    if self.nowNum < 1 then
+       return
+    end
+    if self.nowNum >= roomNumLenth + 1 then
+        self.nowNum = roomNumLenth
+    end
+    self.txts[self.nowNum]:setVisible(false)
+    self.nowNum = self.nowNum - 1;    
 end
 
 function JoinRoomBox:startGame(ip, port)
@@ -127,14 +145,12 @@ function JoinRoomBox:startGame(ip, port)
     local wKindID = 3
     
 --关闭点击按钮
---test
-     local wTable = dataMgr.roomSet.dwRoomNum % 65536
-     local wChair = (dataMgr.roomSet.dwRoomNum - wTable)/ 65536    
+    -- local wTable = dataMgr.roomSet.dwRoomNum % 65536
+    -- local wChair = (dataMgr.roomSet.dwRoomNum - wTable)/ 65536  
+    local wTable = (dataMgr.roomSet.dwRoomNum - 16951) % 65536
+    local wChair = (dataMgr.roomSet.dwRoomNum - 16951 - wTable)/ 65536      
 
-   -- local wTable = 0
-   -- local wChair = 0
---test end
-    --为密码，实际总的tableId为：wChair * 65536 + wTable
+    --为密码，实际总的tableId为：wChair * 65536 + wTable + 16951
     --创建房间发满的，加入房间发实际的
 
     snd:wrDWORD(dwPlazaVersion)

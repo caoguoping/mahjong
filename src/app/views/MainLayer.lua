@@ -32,6 +32,7 @@ function MainLayer:ctor()
     self.imgHead:onTouch(
     function(event)
         if "began" == event.name then
+            musicMgr:playEffect("game_button_click.mp3", false)
             layerMgr.boxes[layerMgr.boxIndex.PersonInfoBox] = import(".PersonInfoBox",CURRENT_MODULE_NAME).create()
             layerMgr.boxes[layerMgr.boxIndex.PersonInfoBox]:init(1, 150, 100)
         elseif "ended" == event.name or "cancelled" == event.name      then
@@ -51,24 +52,46 @@ function MainLayer:ctor()
     self.btnSetting = rootNode:getChildByName("Button_setting")
     self.btnShopping = rootNode:getChildByName("Button_shopping")  --商城
     self.btnService = rootNode:getChildByName("Button_service")   --客服
-    
-
-
+    self.btnShare = rootNode:getChildByName("Button_share")    --分享
+    self.imgPeople = rootNode:getChildByName("Image_people")   --人像
     self.btnSetting:onClicked(
         function (  )
+                --0
             musicMgr:playEffect("game_button_click.mp3", false)
             layerMgr.boxes[layerMgr.boxIndex.SettingBox] = import(".SettingBox",CURRENT_MODULE_NAME).create()
         end
 
         )
 
+    self.btnShare:onClicked(
+        function (  )
+            musicMgr:playEffect("game_button_click.mp3", false)
+            local targetPlatform = cc.Application:getInstance():getTargetPlatform()
+            if  device.platform == "android" then
+                print(" android !!!!!!")
+                --path, roomNum, type, isToAllfriends
+                --//图片路径  ，roomNum,  type (1邀请好友打牌  2分享战绩)，  isToAllFriends(1分享到朋友圈，0分享给好友)
+                --Helpers:callWechatShareJoin("/sdcard/headshot_example.png","http://101.37.20.36:8383/index.html", dataMgr.roomSet.dwRoomNum , 0) 
+                Helpers:callWechatShareJoin("/sdcard/headshot_example.png","http://majiang.nettl.cn/jump.html", 0 , 1) 
+            elseif  device.platform == "ios" then
+                --whj 添加ios微信分享邀请好友
+                print("IOS···")
+                Helpers:weichatShare("/sdcard/headshot_example.png", "http://majiang.nettl.cn/jump.html", 0, 1)
+                --Helpers:weichatShare("/sdcard/headshot_example.png", "http://192.168.3.15:8888/index.html", dataMgr.roomSet.dwRoomNum, 0)
+            else
+                print("windows!!!!!!")
+            end
+        end
+        )
+
     self.btnCreate:onClicked(
     function ()
     --先显示界面，点创建界面的创建按钮，连网络(startGame)，连接成功时， 发创建参数
-        musicMgr:playEffect("game_button_click.mp3", false)     
+        musicMgr:playEffect("game_button_click.mp3", false)  
+        --self.btnCreate:setTouchEnabled(false)   
         dataMgr.roomSet.bIsCreate = 1
         dataMgr.joinPeople = 0
-        dataMgr.playerStatus = 0
+        dataMgr.status.player = 0
 
         layerMgr.boxes[layerMgr.boxIndex.CreateRoomBox] = import(".CreateRoomBox",CURRENT_MODULE_NAME).create()
         local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
@@ -79,6 +102,7 @@ function MainLayer:ctor()
 
     self.btnJoin:onClicked(
     function ()
+        musicMgr:playEffect("game_button_click.mp3", false)  
         self:btnJoinRoom()
     end
     )  
@@ -161,7 +185,7 @@ function MainLayer:btnJoinRoom(  )
     musicMgr:playEffect("game_button_click.mp3", false)
     dataMgr.roomSet.bIsCreate = 0
     dataMgr.joinPeople = 0
-    dataMgr.playerStatus = 0
+    dataMgr.status.player = 0
     layerMgr.boxes[layerMgr.boxIndex.JoinRoomBox] = import(".JoinRoomBox",CURRENT_MODULE_NAME).create()
 
     local playLayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
@@ -196,7 +220,10 @@ function MainLayer:cutHeadImg()
     local headPath = cc.FileUtils:getInstance():getWritablePath().."headImage_1.png"
     local headSize = self.imgHead:getContentSize()
     local sp = display.createCircleSprite(headPath, "headshot_example.png"):addTo(self.imgHead)
+
     sp:setPosition(headSize.width * 0.5, headSize.height * 0.5)
+    --display.spriteGray(sp )
+    --display.removeSpriteGray(sp)
 end
 
 function MainLayer:showCreateRoom(  )
@@ -207,8 +234,37 @@ function MainLayer.creator( )
    return MainLayer.new()
 end
 
+
+--游戏服务器心跳检测
+function MainLayer:heartAttack(  )
+    local nowTime = os.time()
+    local lastTime = dataMgr.lastRcvTime
+
+    local playlayer = layerMgr:getLayer(layerMgr.layIndex.PlayLayer, params)
+    playlayer.txtTimeSub:setString(nowTime - lastTime)
+    if nowTime - lastTime > 70 then   --心跳停止了
+        TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
+        layerMgr.LoginScene.btnTimers[31]:stopAllActions()
+        local popupbox =  import(".popUpBox",CURRENT_MODULE_NAME).create() 
+        popupbox:setInfo(Strings.heartLost)
+        local btnOk = popupbox:getBtns(1)
+        btnOk:onClicked(function (  )
+            popupbox:remove()
+            layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
+        end)
+    end
+end
+
+
 function MainLayer:startGame(ip, port)
     TTSocketClient:getInstance():startSocket(ip, port, netTb.SocketType.Game)
+    dataMgr.lastRcvTime = os.time()
+    layerMgr.LoginScene.btnTimers[31]:schedule(layerMgr.LoginScene.btnTimers[31],
+    function()
+        self:heartAttack()
+    end
+    ,5.0
+    )
 
     local snd = DataSnd:create(1, 1)
     local uid = dataMgr.myBaseData.uid
@@ -220,8 +276,6 @@ function MainLayer:startGame(ip, port)
     local wKindID = 3
     local wTable = 65535
     local wChair = 65535       
-    --为密码，实际总的tableId为：wChair * 65536 + wTable
-    --创建房间发满的，加入房间发实际的
 
     snd:wrDWORD(dwPlazaVersion)
     snd:wrDWORD(dwFrameVersion)

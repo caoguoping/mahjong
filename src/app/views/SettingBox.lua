@@ -1,6 +1,5 @@
 --  设置弹出界面--
 local CURRENT_MODULE_NAME = ...
-local dataMgr = import(".DataManager"):getInstance()
 local layerMgr = import(".LayerManager"):getInstance()
 local musicMgr = import(".MusicManager"):getInstance()
 
@@ -22,19 +21,22 @@ function SettingBox:ctor()
     local imgEffectOn = node2:getChildByName("Image_effOn")
     local imgEffectOff = node2:getChildByName("Image_effOff")
 
+
+
+
 	btnMusic:onClicked(
 	function()
 		musicMgr:playEffect("game_button_click.mp3", false)
-		if dataMgr.isMusicOn == true then
+		if musicMgr.isMusicOn == true then
 			imgMusicOn:setVisible(false)
 			imgMusicOff:setVisible(true)
-			dataMgr.isMusicOn = false
+			musicMgr.isMusicOn = false
 			musicMgr:stopMusic()
-			print("On to Off")
+			print("MOn to Off")
 		else
 			imgMusicOn:setVisible(true)
 			imgMusicOff:setVisible(false)
-			dataMgr.isMusicOn = true
+			musicMgr.isMusicOn = true
     		musicMgr:playMusic("bg.mp3", true)
 			print("Off to on")
 		end
@@ -43,14 +45,16 @@ function SettingBox:ctor()
 	btnEffect:onClicked(
 	function()
 		musicMgr:playEffect("game_button_click.mp3", false)
-		if dataMgr.isEffectOn == true then
+		if musicMgr.isEffectOn == true then
 			imgEffectOn:setVisible(false)
 			imgEffectOff:setVisible(true)
-			dataMgr.isEffectOn = false
+			musicMgr.isEffectOn = false
+			print("E On to Off")
 		else
 			imgEffectOn:setVisible(true)
 			imgEffectOff:setVisible(false)
-			dataMgr.isEffectOn = true
+			musicMgr.isEffectOn = true
+			print("E Off to on")
 		end
 	end)
 
@@ -59,6 +63,14 @@ function SettingBox:ctor()
     	musicMgr:playEffect("game_button_click.mp3", false)
         self:removeSelf()
     end)
+
+	imgMusicOn:setVisible(musicMgr.isMusicOn)
+	imgMusicOff:setVisible(not musicMgr.isMusicOn)
+	imgEffectOn:setVisible(musicMgr.isEffectOn)
+	imgEffectOff:setVisible(not musicMgr.isEffectOn)
+
+
+
 end
 
 

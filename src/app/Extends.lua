@@ -143,35 +143,66 @@ end
 	self:unschedule()
 
 ]]
+-- function Node:schedule(node, callback, delay)
+-- 	if not self.actionPool then
+--         self.actionPool = {}
+--     end
+
+--     local delay = cc.DelayTime:create(delay or 1/60.0)
+--     local sequence = cc.Sequence:create(delay, cc.CallFunc:create(callback,{delay = delay}))
+--     local action = cc.RepeatForever:create(sequence)
+--     table.insert(self.actionPool, action)
+--     node:runAction(action)
+--     return action
+-- end
+
 function Node:schedule(node, callback, delay)
-	if not self.actionPool then
-        self.actionPool = {}
-    end
+    -- if not self.actionPool then
+    --     self.actionPool = {}
+    -- end
 
     local delay = cc.DelayTime:create(delay or 1/60.0)
     local sequence = cc.Sequence:create(delay, cc.CallFunc:create(callback,{delay = delay}))
     local action = cc.RepeatForever:create(sequence)
-    table.insert(self.actionPool, action)
+    --table.insert(self.actionPool, action)
     node:runAction(action)
-    return action
+    --return action
 end
 
-function Node:unschedule(schedule)
 
-	for i,v in ipairs(self.actionPool) do
+--function Node:unschedule()
+
+	--for i,v in ipairs(self.actionPool) do
         -- 如果没有cb，就清空所有的
-        if not schedule then
-            table.remove(self.actionPool,1)
-            self:stopAction(v)
-        else
-            if v == schedule then
-                table.remove(self.actionPool,i)
-                self:stopAction(v)
-                return
-            end
-        end
-    end
-end
+       -- if not schedule then
+           -- table.remove(self.actionPool,1)
+            --self:stopAction()
+       -- else
+           -- if v == schedule then
+               -- table.remove(self.actionPool,i)
+                --self:stopAction(v)
+               -- return
+           -- end
+       -- end
+    --end
+--end
+
+-- function Node:unschedule(schedule)
+
+--     for i,v in ipairs(self.actionPool) do
+--         -- 如果没有cb，就清空所有的
+--         if not schedule then
+--             table.remove(self.actionPool,1)
+--             self:stopAction(v)
+--         else
+--             if v == schedule then
+--                 table.remove(self.actionPool,i)
+--                 self:stopAction(v)
+--                 return
+--             end
+--         end
+--     end
+-- end
 
 local Widget = ccui.Widget
 
@@ -307,3 +338,97 @@ function display.createCircleSprite(srcFile, maskFile)
     masked_sprite:setFlippedY(true)  
     return masked_sprite  
 end  
+
+
+
+
+-- 默认vert  
+local vertDefaultSource = "\n"..  
+   "attribute vec4 a_position; \n" ..  
+   "attribute vec2 a_texCoord; \n" ..  
+   "attribute vec4 a_color; \n"..                                                      
+   "#ifdef GL_ES  \n"..  
+   "varying lowp vec4 v_fragmentColor;\n"..  
+   "varying mediump vec2 v_texCoord;\n"..  
+   "#else                      \n" ..  
+   "varying vec4 v_fragmentColor; \n" ..  
+   "varying vec2 v_texCoord;  \n"..  
+   "#endif    \n"..  
+   "void main() \n"..  
+   "{\n" ..  
+    "gl_Position = CC_PMatrix * a_position; \n"..  
+   "v_fragmentColor = a_color;\n"..  
+   "v_texCoord = a_texCoord;\n"..  
+   "}"  
+
+-- 置灰frag  
+local pszGrayShader = "#ifdef GL_ES \n" ..  
+                          "precision mediump float; \n" ..  
+                            "#endif \n" ..  
+                            "varying vec4 v_fragmentColor; \n" ..  
+                            "varying vec2 v_texCoord; \n" ..  
+                            "void main(void) \n" ..  
+                            "{ \n" ..  
+                            "vec4 c = texture2D(CC_Texture0, v_texCoord); \n" ..  
+                            "float gray = dot(c.rgb, vec3(0.299, 0.587, 0.114)); \n" ..  
+                            "gl_FragColor.xyz = vec3(gray); \n"..  
+                            "gl_FragColor.w = c.w; \n"..  
+                            "}"  
+
+-- 移除置灰frag  
+local pszRemoveGrayShader = "#ifdef GL_ES \n" ..  
+        "precision mediump float; \n" ..  
+        "#endif \n" ..  
+        "varying vec4 v_fragmentColor; \n" ..  
+        "varying vec2 v_texCoord; \n" ..  
+        "void main(void) \n" ..  
+        "{ \n" ..  
+        "gl_FragColor = texture2D(CC_Texture0, v_texCoord); \n" ..  
+        "}" 
+
+
+
+function display.spriteGray(sp )
+    local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource, pszGrayShader)  
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION, cc.VERTEX_ATTRIB_POSITION)  
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR, cc.VERTEX_ATTRIB_COLOR)  
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD, cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)  
+    pProgram:link()  
+    pProgram:updateUniforms()  
+    sp:setGLProgram(pProgram)  
+
+        -- ImageView  
+    --imageview:getVirtualRenderer():getSprite():setGLProgram(pProgram) 
+end
+
+function display.removeSpriteGray(sp )
+    local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource, pszRemoveGrayShader)  
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION, cc.VERTEX_ATTRIB_POSITION)  
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR, cc.VERTEX_ATTRIB_COLOR)  
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD, cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)  
+    pProgram:link()  
+    pProgram:updateUniforms()  
+    sp:setGLProgram(pProgram)  
+end
+
+function display.imageGray(img )
+    local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource, pszGrayShader)  
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION, cc.VERTEX_ATTRIB_POSITION)  
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR, cc.VERTEX_ATTRIB_COLOR)  
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD, cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)  
+    pProgram:link()  
+    pProgram:updateUniforms()  
+   -- sp:setGLProgram(pProgram)  
+    img:getVirtualRenderer():getSprite():setGLProgram(pProgram) 
+end
+
+function display.removeImageGray(img)
+    local pProgram = cc.GLProgram:createWithByteArrays(vertDefaultSource, pszRemoveGrayShader)  
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_POSITION, cc.VERTEX_ATTRIB_POSITION)  
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_COLOR, cc.VERTEX_ATTRIB_COLOR)  
+    pProgram:bindAttribLocation(cc.ATTRIBUTE_NAME_TEX_COORD, cc.VERTEX_ATTRIB_FLAG_TEX_COORDS)  
+    pProgram:link()  
+    pProgram:updateUniforms()  
+    img:getVirtualRenderer():getSprite():setGLProgram(pProgram) 
+end
+

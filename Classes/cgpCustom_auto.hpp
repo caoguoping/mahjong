@@ -72,4 +72,12 @@ int register_all_cgpCustom(lua_State* tolua_S);
 
 
 
+
+
+
+
+
+
+
+
 #endif // __cgpCustom_h__

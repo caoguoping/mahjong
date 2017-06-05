@@ -24,16 +24,18 @@ function CardDataManager:init()
 
     self.handValues = {}  --手牌值（只有自己），打出去的去掉
     self.bankClient = 0  --庄家客户端
-    self.currentClient = 0   --当前客户端
+    self.currentDrawer = 0   --当前客户端, 谁抓的牌, 自己碰牌后也相当于抓牌
     self.totalOutNum = 0  --总打出的牌
     self.outType = 0     --抓牌打出 0,    碰牌打出 1。
-    self.pengGangNum = {}  --碰与杠的和的个数，4家       都是客户端椅子Id
-    self.pengNum = {}      --碰的个数， 4家
-    self.gangNum = {}      --杠的个数， 4家
-    self.pengValue = {}  --碰的值 4家，每家3个相同只取一个  
-    self.gangValue = {}   --杠的值 4家
-    self.pengGangValue = {}   --碰和杠的值的值，按顺序存的，每个只存一个   4家
     
+    self.pengNum = {}      --碰的个数， 4家
+    self.pengValue = {}  --碰的值 4家，每家3个相同只取一个  
+    self.gangNum = {}      --杠的个数， 4家
+    self.gangValue = {}   --杠的值 4家
+    self.pengGangNum = {}  --碰与杠的和的个数，4家       都是客户端椅子Id
+    self.pengGangValue = {}   --碰和杠的值的值，按顺序存的，每个只存一个   4家
+
+
     for i=1,4 do
         self.pengValue[i] = {}
         self.pengGangValue[i] = {}
@@ -53,6 +55,11 @@ end
 
 --每局清空数据
 function CardDataManager:refresh(  )
+
+    self.kongContinue = 0     --连杆，  （碰杠，明杠，暗杠都抓一张牌， 如果抓的牌可以继续碰杠和暗杠，  则是连杆，进行抓的牌的插入操作
+    self.kongCardSave = nil   --杠牌抓的牌暂存
+    self.kongValueSave = 0  --杠牌抓的牌的牌值暂存
+
     for i=1,4 do
         self.outNum[i] = 0
         self.pengGangNum[i] = 0

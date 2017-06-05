@@ -15,12 +15,12 @@ function JiesuanBox:ctor()
     layerMgr.LoginScene:addChild(self, 10000)
   
     --返回按钮、继续游戏按钮、分享按钮
-    local btnBack = rootNode:getChildByName("Button_back")
+    self.btnBack = rootNode:getChildByName("Button_back")
     self.btnContiue = rootNode:getChildByName("Button_contiue")
-    local btnShare = rootNode:getChildByName("Button_share")
+    self.btnShare = rootNode:getChildByName("Button_share")
 
     --返回按钮、
-    btnBack:onClicked(
+    self.btnBack:onClicked(
     function()
         musicMgr:playEffect("game_button_click.mp3", false)
         local mainlayer = layerMgr:getLayer(layerMgr.layIndex.MainLayer)
@@ -30,6 +30,7 @@ function JiesuanBox:ctor()
 --        musicMgr:playMusic("bg.mp3", true)
         layerMgr:showLayer(layerMgr.layIndex.MainLayer, params)
         TTSocketClient:getInstance():closeMySocket(netTb.SocketType.Game)
+        layerMgr.LoginScene.btnTimers[31]:stopAllActions()
         self:removeSelf()
     end)
 
@@ -42,7 +43,7 @@ function JiesuanBox:ctor()
         local snd = DataSnd:create(100, 2)
         snd:sendData(netTb.SocketType.Game)
         snd:release();
-        dataMgr.playerStatus = 0    --回到游戏前状态
+        dataMgr.status.player = 0    --回到游戏前状态
         self:removeSelf()
 
         --显示剩余钱
@@ -57,7 +58,7 @@ function JiesuanBox:ctor()
     end)
 
     --、分享按钮
-    btnShare:onClicked(
+    self.btnShare:onClicked(
     function()
         -- musicMgr:playEffect("game_button_click.mp3", false)
         -- dataMgr.isNormalEnd = true
@@ -80,7 +81,7 @@ function JiesuanBox:ctor()
     --只有我赢了才显示
     self.nodeIsMeWin = rootNode:getChildByName("Node_isMeWin")
 
-    local nodeHead = {}   --3家头像节点, clientId 1,2,3,4去掉赢的人
+    self.nodeHead = {}   --3家头像节点, clientId 1,2,3,4去掉赢的人
     self.imgHead = {} 
     self.txtName = {}
     self.txtScore = {}
@@ -91,13 +92,13 @@ function JiesuanBox:ctor()
     --下标为下排三个头像，从左到右1,2,3
     for i=1,3 do
         local tempName = "FileNode_head_"..i
-        nodeHead[i] = rootNode:getChildByName(tempName) 
-        self.imgHead[i] = nodeHead[i]:getChildByName("Image_head")  --头像
-        self.imgClient[i] = nodeHead[i]:getChildByName("img_myself")
-        self.imgIsBaopai[i] = nodeHead[i]:getChildByName("img_baopai")
+        self.nodeHead[i] = rootNode:getChildByName(tempName) 
+        self.imgHead[i] = self.nodeHead[i]:getChildByName("Image_head")  --头像
+        self.imgClient[i] = self.nodeHead[i]:getChildByName("img_myself")
+        self.imgIsBaopai[i] = self.nodeHead[i]:getChildByName("img_baopai")
         self.imgIsBaopai[i]:setVisible(false)
-        self.txtName[i] = nodeHead[i]:getChildByName("name_Text")
-        self.txtScore[i] = nodeHead[i]:getChildByName("fen_Text")
+        self.txtName[i] = self.nodeHead[i]:getChildByName("name_Text")
+        self.txtScore[i] = self.nodeHead[i]:getChildByName("fen_Text")
     end
 
     --赢家
@@ -135,6 +136,21 @@ end
 
 function JiesuanBox:initData( gameEndData )
 
+    if gameEndData.status == 2 then  --最后一小局， 不可操作
+        self.btnBack:setVisible(false)
+        self.btnContiue:setVisible(false)
+        self.btnShare:setVisible(false)
+        local delayAction     = cc.DelayTime:create(girl.delayTime.BigJiesuan - 2)
+        local callFuncAction1 = cc.CallFunc:create(
+            function()
+                print("remove jiesuanBox")
+                self:removeSelf()
+            end)
+        local sequenceAction  = cc.Sequence:create(delayAction, callFuncAction1)
+        layerMgr.LoginScene.btnTimers[3]:runAction(sequenceAction)      --小结算
+    end
+
+
     local mySvrId = dataMgr:getServiceChairId(1)  --已转 我 1，到4
 
     local winClient = 1   --要显示的赢家的客户端ID,默认是自己
@@ -152,13 +168,22 @@ function JiesuanBox:initData( gameEndData )
        -- print("\n\n\ntempWinSvr "..tempWinSvr.." fanSave "..fanSave.."  i  "..i.." winClient "..winClient)
     end
 
---流局
-    if fanSave == 0 then  --流局
-        self:setTopImg(5)
-        self.nodeIsMeWin:setVisible(false)
-        self.nodePengMe:setVisible(false)
-        return
-    end
+-- --流局
+--     if fanSave == 0 then  --流局
+--         self:setTopImg(5)
+--         self.nodeIsMeWin:setVisible(false)
+--         self.nodePengMe:setVisible(false)
+--         for i=1,3 do
+--             self.nodeHead[i]:setVisible(false)
+--         end
+--         --赢家
+--         self.imgHeadWin:setVisible(false)
+--         self.imgBenjia:setVisible(false)
+--         self.txtNameWin:setVisible(false)
+--         self.rootNode:getChildByName("headshot_top_28"):setVisible(false)    --quan
+--         self.rootNode:getChildByName("Image_111"):setVisible(false)            --name
+--         return
+--     end
 
 
     local pengGangNum = 0

@@ -154,7 +154,6 @@ bool TTSocketClient::recvDateGame()
 		isContinune = true;
 		if (0 == iRetCode)
 		{
-			log("cocos2d-x game recv 0 header");
 			continue;
 		}
 		else if (iRetCode < 0)
@@ -181,10 +180,10 @@ bool TTSocketClient::recvDateGame()
 			while (mSocketGame != 0)
 			{
 				iRetCode = recv(mSocketGame, pRecvBufGame + recv_len, wPacketSize - recv_len, 0);
-				//log("cocos2d-x Body %d", iRetCode);
 				lastRcvTimeGame = time(NULL);   //更新接收时间
 				if (iRetCode == 0)
 				{
+					log("cocos2d-x Body = 0");
 					isContinune = false;
 					continue;
 				}
@@ -236,6 +235,11 @@ bool TTSocketClient::ConnectIPv4(const char *ip, unsigned short port, unsigned c
 {
 	SOCKET socketTmp;
 	socketTmp = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	if (socketTmp == 0)
+	{
+		socketTmp = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+	}
+
 	struct sockaddr_in svraddr;
 	svraddr.sin_family = AF_INET;
 	svraddr.sin_addr.s_addr = inet_addr(ip);

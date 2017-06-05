@@ -26,37 +26,46 @@ function TuiGuangBox:ctor()
 	rootNode:getChildByName("Node_3"):setVisible(true)
 	rootNode:getChildByName("Node_4"):setVisible(false)
 
+	if dataMgr.myBaseData.isBind == 1 then
+		btn_bangding:setEnabled(false)
+	else
+		btn_bangding:setEnabled(true)
+	end
+
 		btn1:onClicked(
 		function()
 			musicMgr:playEffect("game_button_click.mp3", false)
-		rootNode:getChildByName("Node_1"):getChildByName("Image_1"):setVisible(true)
-		rootNode:getChildByName("Node_1"):getChildByName("Image_2"):setVisible(false)
-		rootNode:getChildByName("Node_2"):getChildByName("Image_1"):setVisible(false)
-		rootNode:getChildByName("Node_2"):getChildByName("Image_2"):setVisible(true)
+			rootNode:getChildByName("Node_1"):getChildByName("Image_1"):setVisible(true)
+			rootNode:getChildByName("Node_1"):getChildByName("Image_2"):setVisible(false)
+			rootNode:getChildByName("Node_2"):getChildByName("Image_1"):setVisible(false)
+			rootNode:getChildByName("Node_2"):getChildByName("Image_2"):setVisible(true)
 
-		rootNode:getChildByName("Node_3"):setVisible(true)
-		rootNode:getChildByName("Node_4"):setVisible(false)
-
-
-		end)
+			rootNode:getChildByName("Node_3"):setVisible(true)
+			rootNode:getChildByName("Node_4"):setVisible(false)
+		end
+		)
 
 		btn2:onClicked(
 		function()
 			musicMgr:playEffect("game_button_click.mp3", false)
-		rootNode:getChildByName("Node_1"):getChildByName("Image_1"):setVisible(false)
-		rootNode:getChildByName("Node_1"):getChildByName("Image_2"):setVisible(true)
-		rootNode:getChildByName("Node_2"):getChildByName("Image_1"):setVisible(true)
-		rootNode:getChildByName("Node_2"):getChildByName("Image_2"):setVisible(false)
+			rootNode:getChildByName("Node_1"):getChildByName("Image_1"):setVisible(false)
+			rootNode:getChildByName("Node_1"):getChildByName("Image_2"):setVisible(true)
+			rootNode:getChildByName("Node_2"):getChildByName("Image_1"):setVisible(true)
+			rootNode:getChildByName("Node_2"):getChildByName("Image_2"):setVisible(false)
 
-		rootNode:getChildByName("Node_3"):setVisible(false)
-		rootNode:getChildByName("Node_4"):setVisible(true)
-
+			rootNode:getChildByName("Node_3"):setVisible(false)
+			rootNode:getChildByName("Node_4"):setVisible(true)
 		end)
 
 		btn_bangding:onClicked(
 		function()
-
-
+			musicMgr:playEffect("game_button_click.mp3", false)
+			local code = TextField_1:getString()
+			local snd = DataSnd:create(1, 8)
+			snd:wrDWORD(dataMgr.myBaseData.dwUserID)
+			snd:wrString(code, 32)
+    		snd:sendData(netTb.SocketType.Login)
+    		snd:release()
 		end)
 
 		btnclose:onClicked(

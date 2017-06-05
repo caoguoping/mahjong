@@ -482,7 +482,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="csbPlay/ZhanJiHead.csd" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_share" ActionTag="269702815" Tag="2833" IconVisible="False" LeftMargin="368.6922" RightMargin="339.3078" TopMargin="438.5087" BottomMargin="-63.5087" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="196" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_share" ActionTag="269702815" VisibleForFrame="False" Tag="2833" IconVisible="False" LeftMargin="368.6922" RightMargin="339.3078" TopMargin="438.5087" BottomMargin="-63.5087" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="196" Scale9Height="55" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="226.0000" Y="77.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="481.6922" Y="-25.0087" />
